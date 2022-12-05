@@ -3,9 +3,9 @@ GET https://microbloglite.herokuapp.com/api/users
 Content-Type: application/json
 
 {
-    "username": "",
-    "fullName": "",
-    "password": "",
+    "username": "Suniverse",
+    "fullName": "Steven Universe",
+    "password": "l10nattack",
 }
 
 ### Request login
