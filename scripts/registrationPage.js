@@ -1,4 +1,4 @@
-"strict use;"
+
  const $q = (s) => document.querySelector(s);
 
 
@@ -8,7 +8,7 @@ const userName = $q("#regUsername");
 const password = $q("#regPassword");
 
 function registerNewUser(event) {
-    event.preventDefault();
+     event.preventDefault();
 
     const bodyData = {
         username: userName.value,
@@ -23,13 +23,19 @@ function registerNewUser(event) {
     }).then((response) => response.json)
         .then((user) => {
             console.log(user);
-            window.location = "./posts/";
+            window.location.href = "./index.html";
             sessionStorage.message = `Welcome ${userName.value}`
+        })
+        .catch((err) => {
+            console.log(err);
+            
     })
 
 }
 
 
+
+
 window.onload = () => {
-    registratonForm.onsubmit = 
+    registratonForm.onsubmit = registerNewUser; 
 }

@@ -16,16 +16,18 @@
         <!-- Page-specific CSS -->
         <link rel="stylesheet" href="./landing.css">
 
-        <title>Login to the Microblog Network!</title>
+        <script src="../scripts/auth.js"></script>
+        <script>
+            if (isLoggedIn() === false) window.location.replace("/");
+        </script>
 
-        <!-- Run BEFORE page is finished loading (before window.onload): -->
-        <script src="/auth.js"></script>
+        <title>Registration to the Morning Star</title>
     </head>
 
     <body>
 
         <header>
-            <h1><code>Registration</code></h1>
+            <h1><code>Morning Star Registration</code></h1>
         </header>
 
         <main>
@@ -59,7 +61,7 @@
             crossorigin="anonymous"></script>
 
         <!-- Page-specific code -->
-        <script src="./registrationPage.js"></script>
+        <script src="./scripts/registrationPage.js"></script>
     </body>
 
 </html>
