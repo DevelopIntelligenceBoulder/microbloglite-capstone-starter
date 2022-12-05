@@ -1,0 +1,12 @@
+### Register or create new user
+GET https://microbloglite.herokuapp.com/api/users
+Content-Type: application/json
+
+{
+    "username": "",
+    "fullName": "",
+    "password": "",
+}
+
+### Request login
+Get https://microbloglite.herokuapp.com/api/login
