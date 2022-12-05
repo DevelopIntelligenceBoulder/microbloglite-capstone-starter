@@ -1,0 +1,22 @@
+### Register/create user
+POST https://microbloglite.herokuapp.com/api/users
+Content-Type: application/json
+
+{
+    "username": "snk",
+    "fullName": "Samuel Kahura",
+    "password": "snk-99"
+}
+
+### Login
+POST https://microbloglite.herokuapp.com/auth/login
+Content-Type: application/json
+
+{
+    "username": "snk",
+    "password": "snk-99"
+}
+
+### Get Users
+GET https://microbloglite.herokuapp.com/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNuayIsImlhdCI6MTY3MDAxNDE5NywiZXhwIjoxNjcwMTAwNTk3fQ.dd0aKa8oLwZuH_Gf37Vunc2wF6Akn0j3oEt_pZZUcAg
