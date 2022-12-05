@@ -7,3 +7,6 @@ Content-Type: application/json
     "fullName": "",
     "password": "",
 }
+
+### Request login
+Get https://microbloglite.herokuapp.com/api/login
