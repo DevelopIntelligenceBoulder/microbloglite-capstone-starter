@@ -83,5 +83,5 @@ window.onload = () => {
     const $q = (s) => document.querySelector(s);
     const logoutButton = $q('#logoutButton');
 
-    logoutButton.onClick = logout;
+    logoutButton.onclick = logout;
 }
