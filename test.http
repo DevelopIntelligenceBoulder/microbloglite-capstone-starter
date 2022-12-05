@@ -5,7 +5,7 @@ Content-Type: application/json
 {
     "username": "Suniverse",
     "fullName": "Steven Universe",
-    "password": "l10nattack"
+    "password": "l10nattack",
 }
 
 ### Login
