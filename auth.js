@@ -79,8 +79,4 @@ function logout () {
         });
 }
 
-window.onload = () => {
-    const logoutBtn = document.getElementById("logout-btn");
 
-    logoutBtn.onclick = logout
-}
