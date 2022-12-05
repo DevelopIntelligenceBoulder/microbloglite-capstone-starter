@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
+
+
+/* 
+
+font-family: 'Poppins', sans-serif;
+
+*/
+
+/* root styling */
+
+:root{
+    --light: white;
+    --secondary: rgb(164, 164, 164);
+    --dark:black;
+    --primary-color:rgb(238, 74, 102);
+    --secondary-color:aqua;
+    --border:white;
+}
+
+body{
+font-family: 'Roboto', sans-serif;
+padding: 0;
+margin: 0;
+}
+
+a{
+text-decoration: none;
+}
+
+* > * {
+box-sizing: border-box;
+}
+/*global styling*/
+.text-light{
+    color: var(light);
+}
+
+.text-secondary{
+    color: var(--secondary);
+}
+.text-dark{
+    color: var(--dark);
+}
+.text-primary{
+    color: var(--primary-color);
+}
+
+.bg-light{
+    background-color: var(--light);
+}
+
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+}
+/* section styling */
+
+/*---------Navigation Menu -----*/
+.navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav-brand{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    align-self: center;
+    font-size: 32px;
+}
+
+.collapse{
+    align-self: center;
+}
+.nav-link{
+    font-size: 18px;
+    margin:12px;
+    color:var(--dark);
+    font-family: 'Poppins', sans-serif;
+}
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.search-box{
+    display:inline; 
+    border-right: 1px solid var(--secondary);
+    padding-right: 12px;
+    margin-right: 10px;
+} 
+
+.toggle-button{
+    font-size: 21px;
+    background-color: transparent;
+    border:none;
+    position: absolute;
+    right: 0;
+    margin: 8px 10px;
+    display: none;
+
+}.toggle-button:focus{
+    outline: none;
+
+}
+
+/*---------Navigation Menu -----*/
+
+
+/*Media Query */
+
+@media(max-width: 992px){
+    .navbar{
+       flex-direction: column; 
+    }
+}
+
+@media(max-width: 574px){
+    .toggle-button{
+display: initial ;
+    }
+    .collapse{
+        max-height:0;
+        overflow: hidden;
+    }
+    
+    .collapse.nav-link{
+        display: block;
+        text-align: center;
+    }
+    .search-box{
+        border-right: none;
+    }
+}
