@@ -8,33 +8,33 @@
     <link rel="stylesheet" href="/global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css" />
+    <link rel="stylesheet" href="./register.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <script src="/logInPage/auth.js"></script>
     <script>
-      if (isregistered() === true) window.location.replace("/posts.html");
+      if (isLoggedIn() === true) window.location.replace("/posts/");
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E%3Clink
-    rel="preconnect" href="https://fonts.gstatic.com%22 crossorigin><link
-    href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap%22
-    rel="stylesheet"> <link rel="preconnect"
+    rel="preconnect" href="https://fonts.gstatic.com%22 crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap%22" rel="stylesheet"> <link rel="preconnect"
     href="https://fonts.googleapis.com%22%3E%3Clink rel="preconnect"
     href="https://fonts.gstatic.com%22 crossorigin><link
-    href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap%22
+    href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap%22"
     rel="stylesheet">
   </head>
   <body>
     <h1><i>Sign up here!</i></h1>
     <main>
-      <form id="register">
+      <form id="registrationForm">
         <div>
-          <label for="FullName">Full Name</label>
-          <input type="text" id="FullName" minlength="3" />
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" minlength="3" />
         </div>
         <div>
           <label for="username">Username</label>
@@ -46,7 +46,7 @@
           <input type="password" id="password" minlength="6" />
         </div>
 
-        <button id="loginButton" type="submit">Login</button>
+        <button id="registerButton" type="submit">Register</button>
       </form>
     </main>
 

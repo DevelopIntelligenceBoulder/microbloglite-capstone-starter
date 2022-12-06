@@ -1,45 +1,32 @@
-const api = "https://microbloglite.herokuapp.com";
+const registrationForm = document.getElementById("registrationForm");
+const fullName = document.getElementById("fullname");
+const userName = document.getElementById("username");
+const password = document.getElementById("password");
+function registerNewUser(event) {
+  event.preventDefault();
 
-function getRegisterData() {
-  return JSON.parse(window.localStorage.getItem("Register-data")) || {};
-}
-
-function getRegister() {
-  const registerData = getRegisterData();
-  return Boolean(registerData.token);
-}
-
-function register(registerData) {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(registerData),
+  const bodyData = {
+    username: userName.value,
+    fullName: fullName.value,
+    password: password.value,
   };
 
-  return fetch(api + "/auth/register", options)
+  fetch("https://microbloglite.herokuapp.com/api/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bodyData),
+  })
     .then((response) => response.json())
-    .then((registerData) => {
-      window.localStorage.setItem(
-        "register-data",
-        JSON.stringify(registerData)
-      );
-      window.location.assign("/posts");
+    .then((user) => {
+      console.log(user);
+      window.location.href = "/logInPage/index.html";
+      sessionStorage.message = `Welcome ${userName.value}`;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
-function register () {
-  const registerData = getRegisterData();
-  fetch(api + "/auth/logout", options)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .finally(() => {
-      // We're using `finally()` so that we will continue with the
-      // browser side of logging out (below) even if there is an
-      // error with the fetch request above.
-
-      window.localStorage.removeItem("register-data"); // remove login data from LocalStorage
-      window.location.assign("/"); // redirect to landing page
-    });
-}
+window.onload = () => {
+  registrationForm.onsubmit = registerNewUser;
+};
