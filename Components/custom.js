@@ -6,7 +6,7 @@ NavTemplate.innerHTML = `
         <a href="#">Home</a>
         <a href="#">Login</a>
     </slot>
-    </div>
+</div>
     <style>
         .header {
             background-color: #333;
