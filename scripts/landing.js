@@ -1,8 +1,8 @@
 /* Landing Page JavaScript */
 
 "use strict";
-
 const loginForm = document.querySelector("#login");
+
 
 loginForm.onsubmit = function (event) {
     // Prevent the form from refreshing the page,
@@ -22,3 +22,15 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+
+function displayAlert() {
+  if (sessionStorage.message) {
+    console.log(sessionStorage.message);
+    userName.innerText = sessionStorage.message;
+    // userName.style = "display-block";
+  }
+}
+
+
+
