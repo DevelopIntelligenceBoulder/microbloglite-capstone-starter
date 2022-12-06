@@ -1,22 +1,60 @@
-### Register/create user
-POST https://microbloglite.herokuapp.com/api/users
-Content-Type: application/json
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
 
-{
-    "username": "snk",
-    "fullName": "Samuel Kahura",
-    "password": "snk-99"
-}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
-### Login
-POST https://microbloglite.herokuapp.com/auth/login
-Content-Type: application/json
+    <link rel="stylesheet" href="/global.css" />
+    <style>
+      p,
+      h1 {
+        font-weight: bold;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Morning Star Profile</h1>
 
-{
-    "username": "snk",
-    "password": "snk-99"
-}
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link active" aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="./posts/posts.html" class="nav-link">Post</a>
+          </li>
+          <li class="button"><a href="#" class="nav-link">Log Out</a></li>
+        </ul>
+      </header>
+    </div>
 
-### Get Users
-GET https://microbloglite.herokuapp.com/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNuayIsImlhdCI6MTY3MDI3MDU4MywiZXhwIjoxNjcwMzU2OTgzfQ.E4_lkjhnmVfzYsPij7dj1iZGXFtaLDXEpoSUGZvDvdQ
+    <nav>
+      <img src="" alt="" />
+      <p>@morningStar</p>
+      <p>This is Morning Star's Profile</p>
+    </nav>
+
+    <button id="addPostButton">Add Post</button>
+
+    <script src="./scripts/auth.js"></script>
+  </body>
+</html>
