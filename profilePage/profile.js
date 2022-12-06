@@ -3,6 +3,13 @@
 const api = "https://microbloglite.herokuapp.com";
 const $q = (selector) => document.querySelector(selector);
 const submitPostButton = $q("#submitPostButton");
+const fullName = $q("#fullName");
+const username = $q("#username");
+const bio = $q("#bio");
+const editButton = $q("#editButton");
+const postText = $q("#postText");
+
+
 
 
 // You can use this to get the login data of the logged-in user (if any). 
@@ -36,6 +43,11 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect to landing page
+            window.location.assign("/logInPage/");  // redirect to landing page
         });
+}
+
+
+window.onload = {
+    
 }

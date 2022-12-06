@@ -39,15 +39,15 @@
 
 
     </nav>
-    <div id="name"></div>
+    <div id="fullName"></div>
     <div id="username"></div>
+    <div id="bio"></div>
     <button id="editButton" class="btn btn-info m-2">Edit Profile</button>
     <form class="m-3">
       <label for="postText">Type your bubbly thoughts away..</label>
-      <textarea id="postText" class="form-control" rows="5"></textarea>
+      <textarea id="postText" class="form-control" rows="5" required></textarea>
       <button class="btn btn-success m-2" id="submitPostButton">Send~</button>
     </form>
-    <div id="content"></div>
     <button class="btn btn-danger p-2 m-2" id="logoutButton" onclick="logout();">Mission Abort!</button>
   </body>
 </html>
