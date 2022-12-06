@@ -10,6 +10,7 @@ const api = "https://microbloglite.herokuapp.com";
 // or an empty object if the visitor is not logged in.
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
+
 }
 
 
@@ -45,8 +46,10 @@ function login(loginData) {
     return fetch(api + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
+        
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts/posts.html");  // redirect
+            
         });
 }
 

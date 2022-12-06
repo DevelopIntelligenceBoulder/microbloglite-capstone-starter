@@ -25,7 +25,7 @@ function registerNewUser(event) {
         .then((user) => {
             console.log(user);
             window.location.href = "./index.html";
-            sessionStorage.message = `Welcome ${userName.value}`
+            localeStorage.message = `${userName.value}`
         })
         .catch((err) => {
             console.log(err);
