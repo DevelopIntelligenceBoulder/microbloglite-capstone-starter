@@ -1,11 +1,31 @@
+import globalTheme from './globalTheme'
+
+let theme = globalTheme.getTheme(color)
+
 const NavTemplate = document.createElement('template');
 NavTemplate.innerHTML = `
 <div class="header">
-    <slot name="logo"></slot>
-    <slot name="links">
-        <a href="#">Home</a>
-        <a href="#">Login</a>
-    </slot>
+    <div class="header__logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="header__menu">
+        <div class="header__menu__search">
+            <input type="text" placeholder="Search">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul class="header__menu__nav">
+            <li class="header__menu__nav__item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="header__menu__nav__item">
+                <a href="post.html">Post</a>
+            </li>
+            <li class="header__menu__nav__item">
+                <a href="profile.html">Profile</a>
+            </li>
+        </ul>
 </div>
     <style>
         .header {
