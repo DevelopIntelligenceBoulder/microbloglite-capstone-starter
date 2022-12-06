@@ -21,20 +21,16 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="./scripts/auth.js"></script>
     <script>
-      if (isLoggedIn() === true) window.location.replace("/posts.html");
+      if (isLoggedIn() === true) window.location.replace("./post/posts.html");
     </script>
   </head>
-  <body>
-    <header>
-      <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
 
 <body>
 
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
             <div class="col-lg-7 text-center text-lg-start">
-                <h1 class="display-4 fw-bold lh-1 mb-3">Welcome to <code>Morning star</code>
+                <h1 class="display-3 fw-bold lh-1 mb-3">Welcome to <code>Morning star</code>
                 </h1>
             </div>
             <div class="col-md-10 mx-auto col-lg-5 p-4 p-md-5 border rounded-3 bg-light">
@@ -85,16 +81,7 @@
                 </div>
 
             </div>
-
-
         </div>
-
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" minlength="6" />
-        </div>
-
-        <button id="loginButton" type="submit">Login</button>
       </form>
     </main>
 
@@ -110,6 +97,6 @@
     <!-- Page-specific code -->
     <script src="./scripts/landing.js"></script>
     <!-- <script src="./scripts/registrationPage.js"></script> -->
-</body>
+  </body>
 
 </html>

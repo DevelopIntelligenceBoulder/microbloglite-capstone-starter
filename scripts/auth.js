@@ -8,10 +8,10 @@ const api = "https://microbloglite.herokuapp.com";
 // You can use this to get the login data of the logged-in user (if any). 
 // Returns either an object including the username and token,
 // or an empty object if the visitor is not logged in.
-`````````````````````````function getLoginData() {
+function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 
-}`````````````````````````
+}
 
 
 // You can use this to see whether the current visitor is logged in. 
