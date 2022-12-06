@@ -1,0 +1,16 @@
+# POST https://microbloglite.herokuapp.com/api/users
+# Content-Type: application/json
+
+# {
+#   "username": "buttercup99",
+#   "fullName": "Buttercup Utonium",
+#   "password": "power123"
+# }
+
+PUT https://microbloglite.herokuapp.com/api/users/buttercup99
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJ1dHRlcmN1cDk5IiwiaWF0IjoxNjcwMzQyMzc2LCJleHAiOjE2NzA0Mjg3NzZ9.QLu6Ldn_tIzQ1sV3ZbsHOq34ua-lkMDDV91oFxNBcyE
+
+{
+  "bio": "Buttercup is here"
+}
