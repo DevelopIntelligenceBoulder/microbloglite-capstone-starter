@@ -87,4 +87,5 @@ window.onload = () => {
     const logoutButton = $q('#logoutButton');
 
     logoutButton.onclick = logout;
+    
 }
