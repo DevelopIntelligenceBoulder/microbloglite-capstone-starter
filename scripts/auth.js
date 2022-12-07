@@ -10,6 +10,7 @@ const api = "https://microbloglite.herokuapp.com";
 // or an empty object if the visitor is not logged in.
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
+
 }
 
 
@@ -18,6 +19,10 @@ function getLoginData() {
 function isLoggedIn() {
     const loginData = getLoginData();
     return Boolean(loginData.token);
+}
+
+function displayUserName() {
+    sessionStorage.message = loginData.username
 }
 
 
@@ -41,8 +46,10 @@ function login(loginData) {
     return fetch(api + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
+        
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts/posts.html");  // redirect
+            
         });
 }
 
@@ -84,5 +91,5 @@ window.onload = () => {
     const logoutButton = $q('#logoutButton');
 
     logoutButton.onclick = logout;
-    
+
 }
