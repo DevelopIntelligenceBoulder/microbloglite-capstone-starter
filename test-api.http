@@ -1,0 +1,27 @@
+### Register or Create new user
+POST https://microbloglite.herokuapp.com/api/users
+Content-Type: application/json
+
+{
+  "username": "tstark",
+  "fullName": "Tony Stark",
+  "password": "abc123"
+}
+
+### Login
+POST https://microbloglite.herokuapp.com/auth/login
+Content-Type: application/json
+
+{
+  "username": "tstark",
+  "password": "abc123"
+}
+
+### Get Users
+GET https://microbloglite.herokuapp.com/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRzdGFyayIsImlhdCI6MTY3MDM1NjkxMSwiZXhwIjoxNjcwNDQzMzExfQ.aClESUt1-RN_4Z3Cp-z3FyfRhEscheEWg2bv6x2nd7A
+
+
+### Get Posts
+GET https://microbloglite.herokuapp.com/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRzdGFyayIsImlhdCI6MTY3MDM1NjkxMSwiZXhwIjoxNjcwNDQzMzExfQ.aClESUt1-RN_4Z3Cp-z3FyfRhEscheEWg2bv6x2nd7A
