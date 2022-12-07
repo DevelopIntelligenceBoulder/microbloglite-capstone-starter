@@ -11,3 +11,42 @@
 .margin {
     margin-bottom: 2rem;
 }
+.usernameTitle {
+    
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    color: #0d6efd;
+}
+header {
+    border-bottom: solid;
+    border-bottom-color: #0d6efd;
+    border-bottom-width: 2px;
+}
+.navbar {
+    background-color: black;
+    padding-bottom: 5rem;
+
+}
+.nav-link {
+    color:#0d6efd;
+}
+#newPostNav {
+    color: #0d6efd;
+}
+#usersPostsNav {
+    color: #0d6efd;
+}
+#card {
+    background-color: black;
+}
+#postLabel {
+    color: #0d6efd;
+}
+img {
+    border-radius: 45%;
+    border: 3px solid black;
+    margin-right: 5px;
+}
+#newPostDisplay {
+    margin-top: 1rem;
+}
