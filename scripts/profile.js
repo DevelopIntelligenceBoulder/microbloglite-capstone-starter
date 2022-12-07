@@ -68,6 +68,7 @@ function buildPostCard(section, data) {
   //created the card
   const cardDiv = document.createElement("div");
   cardDiv.className = "card";
+  cardDiv.className = "card p-3";
   //put the colDiv on the card-section div then put cardDiv inside colDiv
   section.appendChild(colDiv);
   colDiv.appendChild(cardDiv);
@@ -76,6 +77,8 @@ function buildPostCard(section, data) {
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
   cardTitle.innerText = data.username;
+  cardTitle.className = "card-title text-center";
+  cardTitle.innerText = `@${data.username}`;
 
   //create card div text for the card body
   const cardTextPara = document.createElement("p")
@@ -83,11 +86,38 @@ function buildPostCard(section, data) {
   cardTextPara.innerText = data.text
 
   //create the .card-body div to plant the card-text div
+  // create div to hold btn-group div with other bs-utilities
+  const dFlexDiv = document.createElement("div")
+  dFlexDiv.className = "d-flex justify-content-between align-items-center";
+  //create btn-group div to carry the btns
+  const btnGroupDiv = document.createElement("div")
+  btnGroupDiv.className = "btn-group";
+
+
+  //create btns and timeposted to put inside the btnGroupDiv
+  const deleteBtn = document.createElement("button")
+  deleteBtn.className = "btn btn-sm btn-outline-secondary";
+  deleteBtn.innerText = "Delete"
+
+  const editBtn = document.createElement("button")
+  editBtn.className = "btn btn-sm btn-outline-secondary";
+  editBtn.innerText = "Edit"
+
+  const postTime = document.createElement("small")
+  postTime.className = "text-muted"
+  // postTime.innerText = `${data.createdAt}`
+
+  btnGroupDiv.append(deleteBtn, editBtn)
+
+  dFlexDiv.append(btnGroupDiv, postTime);
+  //create the .card-body div to plant inside the card-text div
   const divCardBody = document.createElement("div");
   divCardBody.className = "card-body";
 
   cardDiv.appendChild(divCardBody);
   divCardBody.append(cardTitle, cardTextPara);
+  cardDiv.append(cardTitle, divCardBody);
+  divCardBody.append(cardTextPara, dFlexDiv);
 }
 
 function loadName() {
