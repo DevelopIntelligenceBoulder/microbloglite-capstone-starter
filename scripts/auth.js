@@ -22,7 +22,7 @@ function isLoggedIn() {
 }
 
 function displayUserName() {
-    sessionStorage.message = loginData.username
+   return sessionStorage.message = loginData.username
 }
 
 
