@@ -131,7 +131,7 @@ function logout() {
       // server for any API requests which require the user
       // to be logged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
-      Authorization: `Bearer ${loginData.token}`,
+      Authorization: `Bearer ${loginData.token}`
     },
   };
 
