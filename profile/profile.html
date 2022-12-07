@@ -23,7 +23,7 @@
 <body>
     <div class="col-lg-8 mx-auto p-4 py-md-5">
         <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-            <h1 class="d-flex align-items-center text-dark text-decoration-none">Users Name</h1>
+            <h1 id="usernameTitle" class="d-flex align-items-center text-dark text-decoration-none"></h1>
             <div class="col-lg-8"></div>
             <button class="btn btn-danger " type="button" id="logoutBtn">Logout</button>
         </header>
@@ -33,7 +33,10 @@
             <div class="navbar">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="./profile.html">New Post</a>
+                      <a class="nav-link active" aria-current="page" href="./profile.html"><button id="newPostNav" type="button" class="btn">New Post</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><button id="usersPostsNav" type="button" class="btn">My Posts</button></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/posts/index.html">Posts</a>
@@ -41,13 +44,13 @@
                   </ul>
             </div>
             
-            <div class="postform">
+            <div id="postform">
                 <form id="new-post">
                     <div class="card">
                         <div class="card-body">
                             <label for="postTextarea">#share...</label><br>
                             <textarea name="postTextarea" id="postTextarea" cols="114" rows="5"></textarea>
-                            <button type="button" class="btn btn-primary" id="postBtn">Post</button>
+                            <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
                         </div>
                       </div>
                       
@@ -57,6 +60,14 @@
     
         </main>
     
+        <div id="newPostDisplay" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="usernameOutput"></h4>
+                    <p id="postDisplayOutput"></p>
+                </div>
+            </div>
+        </div>
         <footer></footer>
 
     </div>
