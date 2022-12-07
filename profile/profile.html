@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <title>Title</title>
+     <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -16,21 +19,91 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-  </head>
+<!-- Page-specific CSS -->
+    <link rel="stylesheet" href="profile.css">
+    
+    
 
+    <!-- Page-specific code -->
+    <script src="/auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+
+  </head>
   <body>
     <header>
       <!-- place navbar here -->
       <nav class="navbar navbar-expand navbar-light bg-light">
           <ul class="nav navbar-nav">
               <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page">Nav 1 <span class="visually-hidden">(current)</span></a>
+                  <a class="nav-link active" href="#" aria-current="page">Profile <span class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Nav 2</a>
+                  <a class="nav-link" href="#">Post</a>
               </li>
           </ul>
       </nav>
+      <!--profile info/pic-->
+      <div class="container">
+        <div class="box">
+          <img src="https://th.bing.com/th/id/OIP.dNtWcnFO5e7OgU_7OeZWQwHaHa?w=153&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+          <ul>
+            <li> Tony Stark</li>
+            <li>39 Years Old</li>
+            <li>Avenger</li>
+            <i style="font-size:24px" class="fa">&#xf230;</i>
+            <i style="font-size:24px" class="fa">&#xf0d5;</i>
+            <i style="font-size:24px" class="fa">&#xf0e1;</i></li>
+          </ul>
+        </div>
+        <div class="About">
+          <ul>
+            <h1>About</h1>
+          </ul>
+          <ul>
+          <h3>Work</h3>
+          <li>Avenger</li>
+          </ul>
+          <ul>
+            <h3>Gender</h3>
+            <li>Male</li>
+           </ul>
+            <ul>
+          <h3>Country</h3>
+          <li>United States Of America</li>
+            </ul>
+            <ul>
+              <h3>More Information</h3>
+              <p>Genius. Billionaire. Philanthropist. Sarcastic. Egomaniac. Iron Man. That's what most people know me as but outside of my spectatcular armor made by your's truly and outside of the Armani Exchange suit's I'm just another man who appreciate's life for what it is. Forgetting the battle's of occasional Alien's and Purple guy's who's went off the brink of insanity. I mean the simple thing's in life such as getting a coffee or driving my Lamborghini to headquarter's or even just driving up to the beach to collect my thought's or even something as starting a blog page. I was born in Long Island raised as orphan due to my parent's being killed in a car accident but ever since that tragic story I've always had a thing for writing in a journal I guess you could say keeping tabs about daily thing's happening in my life so I figured why not do what this socially depressing society does and create a blog of the in scops of my life so here it is.</p>
+            </ul>
+            <ul>
+              <h3>Contact</h3>
+              <li>tonyS3000@gmail.com</li>
+              
+              <!--Blog post box-->
+              <section id="app">
+                <div class="container1">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="thoughts">
+                    <p v-for="items in item" v-text="items"></p>
+                      </div>
+                      </div>
+                      </div>
+                  <div class="row">
+                    <div class="col-6">
+                  <textarea type="text" class="input" placeholder="Tell us what you're thinking!" v-model="newItem" @keyup.enter="addItem()"></textarea>
+                      <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Thoughts Here</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                
+               
+
+
+
     </header>
     <main></main>
     <footer>
@@ -47,5 +120,11 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+
+
+    <!-- Page-specific code -->
+    <script src="profile.js"></script>
+
+ 
   </body>
 </html>
