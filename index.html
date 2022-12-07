@@ -74,18 +74,25 @@
                           <span class="padding-bottom--15">Sign in to your account</span>
                           <form id="stripe-login">
                             <div class="field padding-bottom--24">
-                              <label for="email">Email</label>
-                              <input type="email" name="email">
+                             <!------------------------------>
+                              <label for="email">Username</label>
+                              <input type="username" id="username">
                             </div>
+                            <!---------------------------------->
                             <div class="field padding-bottom--24">
                               <div class="grid--50-50">
+                                <!------------label for password------->
                                 <label for="password">Password</label>
+                                
+                                <!--------------.label-------> 
                                 <div class="reset-pass">
                                   <a href="#">Forgot your password?</a>
                                 </div>
                               </div>
-                              <input type="password" name="password">
+                             <!-------------password-id------------>
+                             <input type="password" id="password">
                             </div>
+                            <!-------------.password id--------->
                             <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                               <label for="checkbox">
                                 <input type="checkbox" name="checkbox"> Stay signed in for a week
