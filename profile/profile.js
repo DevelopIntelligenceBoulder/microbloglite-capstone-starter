@@ -13,6 +13,7 @@ const postFormDisplayDiv = document.querySelector("#postform");
 function loadUsersName() {
     const loginData = getLoginData();
     const usersName = loginData.username;
+    usersName.className = "usernameTitle";
     usernameTitle.innerHTML = usersName;
 
 }

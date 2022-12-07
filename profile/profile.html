@@ -22,16 +22,17 @@
 </head>
 <body>
     <div class="col-lg-8 mx-auto p-4 py-md-5">
-        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <header class="d-flex align-items-center pb-3 mb-5">
+            <img src="/images/SuniverseProfilePic.jpg" alt="Suniverse Profile Picture with lion" width="150" height="165">
             <h1 id="usernameTitle" class="d-flex align-items-center text-dark text-decoration-none"></h1>
-            <div class="col-lg-8"></div>
+            <div class="col-lg-6"></div>
             <button class="btn btn-danger " type="button" id="logoutBtn">Logout</button>
         </header>
     
         <main>
 
             <div class="navbar">
-                <ul class="nav nav-tabs">
+                <ul id="navbar" class="nav nav-tabs">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="./profile.html"><button id="newPostNav" type="button" class="btn">New Post</button></a>
                     </li>
@@ -47,8 +48,8 @@
             <div id="postform">
                 <form id="new-post">
                     <div class="card">
-                        <div class="card-body">
-                            <label for="postTextarea">#share...</label><br>
+                        <div id="card" class="card-body">
+                            <label id="postLabel" for="postTextarea">#share...</label><br>
                             <textarea name="postTextarea" id="postTextarea" cols="112" rows="5"></textarea>
                             <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
                         </div>
