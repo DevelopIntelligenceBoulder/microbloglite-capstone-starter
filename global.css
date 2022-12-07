@@ -16,3 +16,8 @@
 #profile-aside {
   margin-left: 10rem;
 }
+
+#profile-aside-content,
+#user-name {
+  padding-left: 2.5rem;
+}
