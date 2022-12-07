@@ -8,14 +8,14 @@ const api = "https://microbloglite.herokuapp.com";
 // You can use this to get the login data of the logged-in user (if any). 
 // Returns either an object including the username and token,
 // or an empty object if the visitor is not logged in.
-function getLoginData () {
+function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
 
 
 // You can use this to see whether the current visitor is logged in. 
 // Returns either `true` or `false`.
-function isLoggedIn () {
+function isLoggedIn() {
     const loginData = getLoginData();
     return Boolean(loginData.token);
 }
@@ -25,9 +25,9 @@ function isLoggedIn () {
 // landing page, in order to process a user's login. READ this code,
 // and feel free to re-use parts of it for other `fetch()` requests
 // you may need to write.
-function login (loginData) {
+function login(loginData) {
     // POST /auth/login
-    const options = { 
+    const options = {
         method: "POST",
         headers: {
             // This header specifies the type of content we're sending.
@@ -42,7 +42,7 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.assign("/posts/posts.html");  // redirect
         });
 }
 
@@ -51,13 +51,13 @@ function login (loginData) {
 // which you may include in various pages in your app. Again, READ this
 // function and you will probably want to re-use parts of it for other
 // `fetch()` requests you may need to write.
-function logout () {
+function logout() {
     const loginData = getLoginData();
 
     // GET /auth/logout
-    const options = { 
+    const options = {
         method: "GET",
-        headers: { 
+        headers: {
             // This header is how we authenticate our user with the
             // server for any API requests which require the user
             // to be logged-in in order to have access.
@@ -75,6 +75,13 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect to landing page
+            window.location.assign("/index.html");  // redirect to landing page
         });
+}
+
+window.onload = () => {
+    const $q = (s) => document.querySelector(s);
+    const logoutButton = $q('#logoutButton');
+
+    logoutButton.onclick = logout;
 }
