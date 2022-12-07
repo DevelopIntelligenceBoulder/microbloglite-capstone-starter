@@ -39,21 +39,46 @@
   </head>
   <body>
     <header>
+      <!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://i.pinimg.com/474x/7a/b2/95/7ab29575cb839bac2cd7831317b46531--the-powerpuff-girls-my-childhood.jpg');
+        height: 500px;
+        "></div>
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(302, 67%, 42%, 0.676);
+        backdrop-filter: blur(70px);
+        ">
+    <div class="card-body py-5 px-md-5">
       <h1>Welcome to POWERPUFF UNIVERSE</h1>
     </header>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
     <a href="/registerPage/register.html" class="btn btn-secondary">register</a>
     <main>
       <form id="login">
-        <div>
+        <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
           <label for="username">Username</label>
           <input type="text" id="username" minlength="3" />
         </div>
-
+</div>
+              </div>
         <div>
+           <div class="col-md-6 mb-4">
+                <div class="form-outline">
           <label for="password">Password</label>
           <input type="password" id="password" minlength="6" />
         </div>
-
+</div>
+              </div>
         <button id="loginButton" type="submit">Login</button>
          
 
