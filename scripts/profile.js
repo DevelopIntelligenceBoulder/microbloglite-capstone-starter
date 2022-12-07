@@ -4,6 +4,7 @@ const postBtn = $q("#postBtn");
 const form = $q("form");
 const cardSection = $q("#card-section");
 const logoutButton = $q("#logoutButton");
+const bioName = $q("#user-name");
 
 const loginData = getLoginData();
 
@@ -84,13 +85,14 @@ function buildPostCard(section, data) {
   //create the .card-body div to plant the card-text div
   const divCardBody = document.createElement("div");
   divCardBody.className = "card-body";
-  
+
   cardDiv.appendChild(divCardBody);
   divCardBody.append(cardTitle, cardTextPara);
 }
 
 function loadName() {
   userName.innerText = loginData.username;
+  bioName.innerText = `@${loginData.username}`;
 }
 
 function logout() {
@@ -128,6 +130,6 @@ window.onload = () => {
   displayProfilePost();
   form.onsubmit = createPost;
 
-  
+
   logoutButton.onclick = logout;
 };
