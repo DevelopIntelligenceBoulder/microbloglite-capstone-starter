@@ -18,7 +18,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts.html");
+        if (isLoggedIn() === true) window.location.replace("/posts");   
     </script>
 </head>
 <body>
@@ -106,8 +106,10 @@
                           </form>
                         </div>
                       </div>
+                     </main>
+                     <footer>
                       <div class="footer-link padding-top--24">
-                        <span>Don't have an account? <a href="">Sign up</a></span>
+                        <span>Don't have an account? <a href="./Registration/regi.html">Sign up</a></span>
                         <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
                           <span><a href="#">Contact</a></span>
                           <span><a href="#">Privacy & terms</a></span>
@@ -117,8 +119,7 @@
                   </div>
                 </div>
               </div>
-
-    <footer></footer>
+              </footer>
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
