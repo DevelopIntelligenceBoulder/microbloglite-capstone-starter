@@ -1,100 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Page</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
 
-    <link rel="stylesheet" href="/global.css" />
-  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-  <body>
-    <main class="d-flex flex-nowrap">
-      <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-        style="min-height: 100vh; width: 280px"
-      >
-        <a
-          href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-        >
-          <svg class="bi pe-none me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-          <span class="fs-4">Morning Star</span>
-        </a>
-        <hr />
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="#home"></use>
-              </svg>
-              What's on your mind?
-            </a>
-          </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-link" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="#home"></use>
-              </svg>
-              Profile
-            </a>
-          </li>
-          <li>
-            <a href="./posts/posts.html" class="nav-link text-white">
-              <svg class="bi pe-none me-2" width="16" height="16">
-                <use xlink:href="./posts/posts.html">Timeline</use>
-              </svg>
-              Timeline
-            </a>
-          </li>
+  <link rel="stylesheet" href="/global.css" />
+</head>
 
-          <div>
-            <button
-              type="button"
-              class="btn btn-primary "
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Click Me
-            </button>
-          </div>
-        </ul>
-        <hr />
-        <div class="dropdown">
-          <a
-            href="#"
-            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="bi bi-person-circle px-1"></i>
-            <strong id="userName"></strong>
+<body>
+  <main class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Morning Star</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <div>
+
+        </div>
+        <li class="nav-item">
+          <a href="#" class="nav-link active" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+            Profile
           </a>
+        </li>
+        <li>
+          <a href="./posts/posts.html" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="./posts/posts.html">Timeline</use>
+            </svg>
+            Timeline
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+            <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+              click me
+            </button>
+          </a>
+        </li>
 
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <a class="dropdown-item" id="logoutButton" href="#">Log out</a>
-            </li>
-          </ul>
+
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle px-1"></i>
+          <strong id="userName"></strong>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" id="logoutButton" href="#">Log out</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- <div id="card-section" class="row">
+
+    </div> -->
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="card-section">
+          <!-- <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div> -->
         </div>
       </div>
-      <div></div>
+    </div>
+
+    <div id="profile-aside" class="d-flex justify-content-between flex-column flex-shrink-0 p-3 text-bg-dark "
+      style="min-height: 100vh; width: 30vh;">
+      <div d-flex>
+        <div class="col-lg-4">
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+            role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
+              dy=".3em">140x140</text>
+          </svg>
+
+          <h2 class="fw-normal" id="user-name">Heading</h2>
+          <!-- <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
+          </p> -->
+        </div>
+      </div>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Morning Star Post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input id="textField" class="form-control form-control-lg" type="text" placeholder="Type Here...">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="postBtn" type="submit" class="btn btn-primary">Post</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 
       <!-- Modal -->
       <div
