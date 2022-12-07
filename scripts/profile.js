@@ -1,6 +1,7 @@
 const $q = (s) => document.querySelector(s);
-const textField = $q("#textField")
+const textField = $q("#textField");
 const postBtn = $q("#postBtn");
+const form = $q("form");
 function getLoginData() {
   return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
@@ -10,23 +11,25 @@ function createPost(event) {
     const bodyData = {
         text: textField.value
     }
-     const loginData = getLoginData();
+    const loginData = getLoginData();
 
     fetch("https://microbloglite.herokuapp.com/api/posts", {
       method: "POST",
       headers: {
-          "Content-type": "application/json",
+        "Content-type": "application/json",
+        "Authorization": `Bearer ${loginData.token}`
       },
-      body: JSON.stringify(bodyData)
-    }).then(response => response.json())
-    .then(data => { 
-            console.log(data)
+      body: JSON.stringify(bodyData),
     })
-        .catch((err) => {
-        console.log(err)
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 }
 
 window.onload = () => {
-    postBtn.onclick = createPost; 
+    form.onsubmit = createPost; 
 };
