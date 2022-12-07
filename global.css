@@ -18,4 +18,8 @@
 }
 button {
     margin-left: 40px;
+
+#profile-aside-content,
+#user-name {
+  padding-left: 2.5rem;
 }
