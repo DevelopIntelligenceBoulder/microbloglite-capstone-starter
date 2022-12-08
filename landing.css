@@ -1,1 +1,6 @@
 /* Landing Page CSS */
+#landing-page-header {
+    background-image: url("./images/dawid-zawila--G3rw6Y02D0-unsplash.jpg");
+    height: rem;
+    
+}
