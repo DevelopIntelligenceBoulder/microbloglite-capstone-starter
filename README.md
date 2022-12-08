@@ -18,3 +18,11 @@ Tuesday 12.06.2022 Log(from Buttercup:
 3. Starting on creating post and POST the request to the api but it got too late and past my bedtime.
 
 GOOD NIGHT! - Buttercup
+
+Wednesday 12.07.2022 Log(from Blossom:
+- We met up at a boba tea shop to better progress in our work.
+- Minor issues fixed : landing page, authentication key and so on
+- Did i have trouble with the post Yes, is it resolved.... No 
+- I know that my issue lies with how i call out the api in the fetch request and node also seems to be bugging out here 
+and there so my only hope was(shes going on for ages)
+
