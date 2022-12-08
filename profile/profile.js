@@ -9,17 +9,20 @@ const usersPostsNav = document.getElementById("usersPostsNav");
 const newPostNav = document.getElementById("newPostNav");
 const postDisplayDiv = document.querySelector("#newPostDisplay");
 const postFormDisplayDiv = document.querySelector("#postform");
+const profilePicDiv = document.querySelector("#profilePic");
+const newNav = document.querySelector("#newNav");
+const myNav = document.querySelector("#myNav")
+
 
 function loadUsersName() {
     const loginData = getLoginData();
     const usersName = loginData.username;
-    usernameTitle.innerHTML = usersName;
+    usersName.className = "usernameTitle";
+    usernameTitle.innerText = usersName;
+    newNav.className = "navActive";
 
 }
 
-function getLoginData () {
-    return JSON.parse(window.localStorage.getItem("login-data")) || {};
-}
 
 function createNewPost(event) {
     event.preventDefault();
@@ -52,9 +55,12 @@ function createNewPost(event) {
 
 }
 
+
 function showUsersPost() {
     postDisplayDiv.style.display = "block";
     postFormDisplayDiv.innerHTML = " "
+    myNav.className = "navActive";
+    newNav.className = "navNonActive";
 
     const loginData = getLoginData();
     const usersName = loginData.username;
@@ -70,13 +76,45 @@ function showUsersPost() {
         },
     };
 
-    fetch(api + "/api/posts", options)
-    .then(response => response.json())
+    fetch(api + "/api/posts", options).then(response => response.json())
     .then(UsersPosts => {
         UsersPosts.forEach(post => {
             if(post.username == usersName) {
-                cardUsernameOutput.innerText = post.username;
-                cardPostTextDisplay.innerText = post.text;
+                console.log(post);
+
+                let cardSection = document.createElement("div");
+                cardSection.className = "card";
+                cardSection.className = "margin";
+                postDisplayDiv.appendChild(cardSection);
+
+                let cardTitle = document.createElement("h3");
+                cardTitle.className = "card-title";
+                cardTitle.className = "headColor"
+                cardTitle.innerText = post.username;
+
+                let cardDescription = document.createElement("p");
+                cardDescription.className = "postSpacing"
+                cardDescription.innerText = post.text;
+
+                let cardLikes = document.createElement("h5");
+                cardLikes.className = "card-subtitle";
+                cardLikes.className = "likeColor"
+                cardLikes.innerHTML = `&#9825; ${countedLikes()}`;
+
+                
+                const divContainer = document.createElement("div");
+                divContainer.className = "card-body";
+                divContainer.className = "padding"
+                cardSection.appendChild(divContainer);
+                divContainer.append(cardTitle, cardDescription, cardLikes);
+                
+                function countedLikes() {
+                    let counter = 0;
+                    for (const user of post.likes) {
+                        if(user._id == post._id) counter += 1;
+                    }
+                    return counter;
+                }
             }
         });
     })
@@ -85,6 +123,8 @@ function showUsersPost() {
 function hideUsersPosts() {
     postDisplayDiv.innerHTML = " ";
     postFormDisplayDiv.style.display = "block";
+    myNav.className = "navNonActive";
+    newNav.className = "navActive";
 }
 
 function logout () {
@@ -115,7 +155,22 @@ function logout () {
         });
 }
 
+function loadUsersProfilePicture() {
+    const loginData = getLoginData();
+
+    let imageSource = md5(loginData.username);
+
+    const profileImg = document.createElement("img");
+    profileImg.src = `https://www.gravatar.com/avatar/${imageSource}?d=${encodeURIComponent("https://i.pinimg.com/564x/70/fe/ea/70feea152ba479ad2767c49811126f6c.jpg")}&s=150`;
+    profileImg.alt = "User's profile Picture";
+    profileImg.width = 150;
+
+    profilePicDiv.appendChild(profileImg);
+
+}
+
 window.onload = () => {
+    loadUsersProfilePicture();
     loadUsersName();
     postBtn.onclick = createNewPost;
     usersPostsNav.onclick = showUsersPost;
