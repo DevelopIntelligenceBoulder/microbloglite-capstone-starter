@@ -1,156 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
+        <!-- Global CSS (CSS rules you want applied to all pages) -->
+        <link rel="stylesheet" href="/global.css">
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="posts.css">
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="posts.css">
 
-    <title>POSTS</title>
+        <title>POSTS</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../scripts/auth.js"></script>
-    <script>
-        if (isLoggedIn() === false) window.location.replace("/");
-    </script>
-</head>
+        <!-- Run BEFORE page is finished loading (before window.onload): -->
+        <script src="../scripts/auth.js"></script>
+        <script>
+            if (isLoggedIn() === false) window.location.replace("/");
+        </script>
+    </head>
 
-<body>
+    <body>
 
-<!-- <div class="container">
-    <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
-        </a>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="./profile-page" class="nav-link px-2 link-dark">Profile</a></li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2" id="logoutButton">Logout</button>
-        </div>
-    </header>
-</div> -->
-
-
-
-<main class="d-flex flex-nowrap">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
-            <span class="fs-4">Morning Star</span>
-        </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="#home"></use>
+        <main class="d-flex flex-nowrap">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <svg class="bi pe-none me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
                     </svg>
-                    Timeline
+                    <span class="fs-4">Morning Star</span>
                 </a>
-            </li>
-            <li>
-                <a href="../profile-page.html" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16">
-                        <use xlink:href="../profile-page">Profile</use>
-                    </svg>
-                    Profile
-                </a>
-            </li>
-      
-            
-        </ul>
-        <hr>
-        <div class="dropdown">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-circle px-1"></i>        
-                <strong id="userName"></strong>
-            </a>
-           
-            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" id="logoutButton" href="#">Log out</a></li>
-            </ul>
-            
-        </div>
-    </div>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            Timeline
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../profile-page.html" class="nav-link text-white">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="../profile-page">Profile</use>
+                            </svg>
+                            Profile
+                        </a>
+                    </li>
 
-    <section class=" text-center flex-row container ">
-        <div class="row py-lg-12">
-            <div class="col-lg-12 col-md-12 mx-auto">
-                <h1 class="fw-light">Posts</h1>
-                <p class="lead text-muted">Placeholder</p>
-            </div>
-        </div>
 
-            <div class="album bg-light">
-                <div class="container">
-            
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <div class="col">
-                            <div class="card ">
-                                <div class="card-title"></div>
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            
-            
-            
-            
-            
-            
-            
-                    </div>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle px-2"></i>
+                        <strong id="userName"></strong>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" id="logoutButton" href="#">Log out</a></li>
+                    </ul>
+
                 </div>
             </div>
 
-    </section>
+            <section class=" text-center flex-row container ">
+                <div class="row py-lg-12">
+                    <div class="col-lg-12 col-md-12 mx-auto">
+                        <h1 class="fw-light">Posts</h1>
+                        <p class="lead text-muted">Placeholder</p>
+                    </div>
+                </div>
+
+                <div class="album bg-light">
+                    <div class="container">
+
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div class="col">
+                                <div class="card ">
+                                    <div class="card-title"></div>
+                                    <div class="card-body">
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn btn-sm btn-outline-secondary">View</button>
+                                                <button type="button"
+                                                    class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            </div>
+                                            <small class="text-muted">9 mins</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-
-</main>
-
-    <footer></footer>
 
 
-    <!-- Bootstrap Bundle (including Popper for popovers) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
 
-    <!-- Page-specific code -->
-    <script src="posts.js"></script>
-</body>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+        </main>
+
+        <footer></footer>
+
+
+        <!-- Bootstrap Bundle (including Popper for popovers) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+        <!-- Page-specific code -->
+        <script src="posts.js"></script>
+    </body>
 
 </html>
