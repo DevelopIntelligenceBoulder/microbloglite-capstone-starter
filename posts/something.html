@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="/global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="posts.css">
+
+    <title>/POSTS</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="/auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="" aria-current="page">Post<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../profile/profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      
+        <div class="postContainer">
+            <div class="container">
+                <label for="post"> What's on your mind?</label>
+                <span class="close"></span>
+                <div></div>
+                <textarea name="postText" id="postText" placeholder="Tell Us...."></textarea>
+                <button id="postBtn"></button>
+            </div>          
+        </div>
+        <div id="card"></div>
+    </main>
+
+    <footer></footer>
+
+
+    <!-- Bootstrap Bundle (including Popper for popovers) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    
+    <!-- Page-specific code -->
+    <script src="posts.js"></script>
+</body>
+</html>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
