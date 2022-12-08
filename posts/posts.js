@@ -8,6 +8,9 @@ const cardSection = $q("#card-section");
 const bioUserName = $q("#user-name");
 const loginData = getLoginData();
 const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
+const form = $q("form");
+const postBtn = $q("#postBtn");
+const textField = $q("#textField");
 
 function getLoginData() {
   return JSON.parse(window.localStorage.getItem("login-data")) || {};
@@ -54,10 +57,10 @@ function buildPostCard(section, data) {
   //create card title for username
   const cardTitle = document.createElement("h6");
 
-  cardTitle.className = "card-title";
+
   cardTitle.innerText = data.username;
 
-  cardTitle.className = "card-title text-center";
+  cardTitle.className = "card-title text-start ms-3 pt-2";
   cardTitle.innerText = `@${data.username}`;
 
   //create card div text for the card body
@@ -76,7 +79,7 @@ function buildPostCard(section, data) {
 
   //create btns and timeposted to put inside the btnGroupDiv
   const likeBtn = document.createElement("button");
-  likeBtn.className = "btn btn-sm btn-outline-secondary";
+  likeBtn.className = "btn btn-sm btn-outline-warning";
   likeBtn.innerText = "Like";
   function likePost(event) {
     event.preventDefault();
@@ -124,6 +127,30 @@ function buildPostCard(section, data) {
   divCardBody.append(cardTextPara, dFlexDiv);
 }
 
+function createPost(event) {
+  event.preventDefault();
+  const bodyData = {
+    text: textField.value,
+  };
+
+  fetch("https://microbloglite.herokuapp.com/api/posts", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+    body: JSON.stringify(bodyData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      window.location.href = "./posts.html";
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 
 const userName = $q("#userName")
 function displayAlert() {
@@ -169,6 +196,7 @@ function logout() {
 }
 
 window.onload = () => {
+  form.onsubmit = createPost;
   loadName();
   displayProfilePost();
   logoutButton.onclick = logout;

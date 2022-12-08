@@ -130,13 +130,13 @@ function buildPostCard(section, data) {
   cardTitle.className = "card-title";
   cardTitle.innerText = data.username;
 
-  cardTitle.className = "card-title text-center";
+  cardTitle.className = "card-title text-start ms-3 pt-2";;
   cardTitle.innerText = `@${data.username}`;
 
   //create card div text for the card body
 
   const cardTextPara = document.createElement("p");
-  cardTextPara.className = "card-text";
+  cardTextPara.className = "card-text text-center";
   cardTextPara.innerText = data.text;
 
   //create the .card-body div to plant the card-text div
@@ -149,7 +149,7 @@ function buildPostCard(section, data) {
 
   //create btns and timeposted to put inside the btnGroupDiv
   const deleteBtn = document.createElement("button");
-  deleteBtn.className = "btn btn-sm btn-outline-secondary";
+  deleteBtn.className = "btn btn-sm btn-outline-warning";
   deleteBtn.innerText = "Delete";
   function deletePost(event) {
     event.preventDefault();
