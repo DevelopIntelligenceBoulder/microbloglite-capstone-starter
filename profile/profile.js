@@ -8,6 +8,7 @@ const username = $q(".username");
 
 
 const loginData = getLoginData();
+const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
 
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
@@ -88,9 +89,7 @@ function card(section, data) {
               <p class="text-base leading-6 font-medium text-white username">
                 ${section.username}
                 <span class="text-sm atName leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                 @${section.username}
-                </span>
-
+                ${section.username}
                   </span>
                    </p>
             </div>
@@ -102,7 +101,9 @@ function card(section, data) {
          ${section.text}
         </p>
 
-
+        <p class="text-base width-auto font-medium text-white flex-shrink">
+         ${section.text}
+        </p>
         <div class="flex">
             <div class="w-full">
                 
@@ -160,5 +161,5 @@ function loadName() {
 window.onload = () => {
     loadName();
     displayProfilePost();
-
+   
 };
