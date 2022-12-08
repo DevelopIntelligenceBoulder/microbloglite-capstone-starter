@@ -1,0 +1,9 @@
+body h1 {
+  font-family: "IM Fell English SC", serif;
+}
+body {
+  font-family: "Audiowide", cursive;
+}
+* {
+  box-sizing: border-box;
+}
