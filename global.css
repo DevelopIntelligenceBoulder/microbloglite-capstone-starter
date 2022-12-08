@@ -46,3 +46,9 @@
 .main-section {
   margin-top: 10rem;
 }
+
+.nav-link {
+ display: flex;
+ justify-content: end;
+ padding-right: 5em;
+}
