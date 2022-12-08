@@ -2,9 +2,13 @@ const $q = (s) => document.querySelector(s);
 const textField = $q("#textField");
 const postBtn = $q("#postBtn");
 const form = $q("form");
+const bioForm = $q("#bioForm");
 const cardSection = $q("#card-section");
 const logoutButton = $q("#logoutButton");
 const bioName = $q("#user-name");
+const bio = $q("#bio");
+const bioInput = $q("#bioInput");
+const bioUpdateBtn = $q("#bioUpdateBtn");
 
 const loginData = getLoginData();
 const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
@@ -36,6 +40,51 @@ function createPost(event) {
       console.log(err);
     });
 }
+
+function addBio(event) {
+  event.preventDefault();
+  const bodyData = {
+    bio: bioInput.value
+  };
+  let username = loginData.username
+  fetch("https://microbloglite.herokuapp.com/api/users/" + username, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+    body: JSON.stringify(bodyData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      bio.innerText = data.bio
+      window.location.href = "./profile-page.html"
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function displayBio() {
+  let username = loginData.username
+  fetch("https://microbloglite.herokuapp.com/api/users/" + username, {
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+    // body: JSON.stringify(bodyData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      bio.innerText = data.bio
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function displayProfilePost() {
   const options = {
     method: "GET",
@@ -105,7 +154,7 @@ function buildPostCard(section, data) {
   function deletePost(event) {
     event.preventDefault();
     let id = data._id
-    fetch("https://microbloglite.herokuapp.com/api/posts/"+ id, {
+    fetch("https://microbloglite.herokuapp.com/api/posts/" + id, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${loginData.token}`
@@ -145,7 +194,7 @@ function buildPostCard(section, data) {
 }
 
 
- 
+
 function loadName() {
   userName.innerText = loginData.username;
   bioName.innerText = `@${loginData.username}`;
@@ -181,10 +230,12 @@ function logout() {
 }
 
 window.onload = () => {
+  displayBio()
   loadName();
   displayProfilePost();
   form.onsubmit = createPost;
-  
 
+  bioForm.onsubmit = addBio;
   logoutButton.onclick = logout;
+  // bioUpdateBtn.onclick = displayBio;
 };

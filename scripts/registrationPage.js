@@ -14,9 +14,9 @@ function registerNewUser(event) {
     const bodyData = {
         username: userName.value,
         fullName: fullName.value,
-        password: password.value
+        password: password.value,
     }
-
+    console.log(bodyData)
     fetch("https://microbloglite.herokuapp.com/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,5 +39,4 @@ function registerNewUser(event) {
 
 window.onload = () => {
     registratonForm.onsubmit = registerNewUser;
-
 }
