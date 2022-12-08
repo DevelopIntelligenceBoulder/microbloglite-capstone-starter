@@ -137,7 +137,7 @@ function displayAlert() {
 
 function loadName() {
   const loginData = getLoginData();
-  bioUserName.innerText = `@${loginData.username}`;
+  bioUserName.innerText = `${loginData.username}`;
 }
 
 function logout() {
