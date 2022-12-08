@@ -2,10 +2,10 @@
 
 "use strict";
 
-const $q = (s) => document.querySelector(s); 
+const $q = (s) => document.querySelector(s);
 const logoutButton = $q("#logoutButton");
 const cardSection = $q("#card-section");
-
+const bioUserName = $q("#user-name");
 const loginData = getLoginData();
 const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
 
@@ -30,11 +30,11 @@ function displayProfilePost() {
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {
-          buildPostCard(cardSection, post);
-        
+        buildPostCard(cardSection, post);
+
       });
     });
- }
+}
 
 
 function buildPostCard(section, data) {
@@ -80,12 +80,12 @@ function buildPostCard(section, data) {
   likeBtn.innerText = "Like";
   function likePost(event) {
     event.preventDefault();
-    
+
     const bodyData = {
       postId: data._id
     };
 
-    
+
     fetch("https://microbloglite.herokuapp.com/api/likes", {
       method: "POST",
       headers: {
@@ -135,41 +135,41 @@ function displayAlert() {
 }
 
 
- function loadName() {
-     const loginData = getLoginData();
-     userName.innerText = loginData.username; 
- }
+function loadName() {
+  const loginData = getLoginData();
+  bioUserName.innerText = `@${loginData.username}`;
+}
 
- function logout() {
-   const loginData = getLoginData();
+function logout() {
+  const loginData = getLoginData();
 
-   // GET /auth/logout
-   const options = {
-     method: "GET",
-     headers: {
-       // This header is how we authenticate our user with the
-       // server for any API requests which require the user
-       // to be logged-in in order to have access.
-       // In the API docs, these endpoints display a lock icon.
-       Authorization: `Bearer ${loginData.token}`,
-     },
-   };
+  // GET /auth/logout
+  const options = {
+    method: "GET",
+    headers: {
+      // This header is how we authenticate our user with the
+      // server for any API requests which require the user
+      // to be logged-in in order to have access.
+      // In the API docs, these endpoints display a lock icon.
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
 
-   fetch(api + "/auth/logout", options)
-     .then((response) => response.json())
-     .then((data) => console.log(data))
-     .finally(() => {
-       // We're using `finally()` so that we will continue with the
-       // browser side of logging out (below) even if there is an
-       // error with the fetch request above.
+  fetch(api + "/auth/logout", options)
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .finally(() => {
+      // We're using `finally()` so that we will continue with the
+      // browser side of logging out (below) even if there is an
+      // error with the fetch request above.
 
-       window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
-       window.location.assign("../index.html"); // redirect to landing page
-     });
- }
+      window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
+      window.location.assign("../index.html"); // redirect to landing page
+    });
+}
 
 window.onload = () => {
-    loadName();
-    displayProfilePost();
-    logoutButton.onclick = logout;
+  loadName();
+  displayProfilePost();
+  logoutButton.onclick = logout;
 }
