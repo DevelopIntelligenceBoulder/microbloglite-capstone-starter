@@ -93,3 +93,6 @@ h1 {
 .navNonActive {
     background-color: black;
 }
+#editDescriptionLabel {
+    color: aliceblue;
+}

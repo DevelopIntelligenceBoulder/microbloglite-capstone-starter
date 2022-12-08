@@ -29,13 +29,19 @@
             </div>
             <!-- <img src="/images/SuniverseProfilePic.jpg" alt="Suniverse Profile Picture with lion" width="150" height="165"> -->
             <h1 id="usernameTitle" class="d-flex align-items-center text-decoration-none"></h1>
+            <p id="editBtn"><button type="button">&#9998;</button></p>
             <div class="col-lg-6"></div>
         </header>
         
         <main>
             <div id="userBio">
                 <h4>Bio</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, impedit consequuntur. Nam voluptatibus cum adipisci odit, voluptate consectetur ducimus nihil quae optio reiciendis quisquam magni rerum soluta eos reprehenderit error!</p>
+                <p id="userBioDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, impedit consequuntur. Nam voluptatibus cum adipisci odit, voluptate consectetur ducimus nihil quae optio reiciendis quisquam magni rerum soluta eos reprehenderit error!</p>
+            </div>
+            
+            <div id="editUserBio">
+                <label id="editDescriptionLabel" for="editDescription"><h4>Bio</h4></label><br>
+                <textarea name="editUserBioDescription" id="editDescription" cols="100" rows="10"></textarea>
             </div>
             <div class="navbar">
                 <ul id="navbar" class="nav nav-tabs">
@@ -60,7 +66,7 @@
                     <div class="card">
                         <div id="card" class="card-body">
                             <label id="postLabel" for="postTextarea">#share...</label><br>
-                            <textarea name="postTextarea" id="postTextarea" cols="112" rows="5"></textarea><br>
+                            <textarea name="postTextarea" id="postTextarea" cols="100" rows="5"></textarea><br>
                             <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
                         </div>
                       </div>
