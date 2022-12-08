@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="/global.css">
     <!-- Page-specific CSS -->
@@ -195,8 +195,8 @@
 <div class="profile-photo">
 <img src="./images/Tony.jpeg">
 </div>
-<input type="text" placeholder="What's on your mind?" id="create-post"> 
-<input type="submit" value="Post" class= "btn btn-primary">
+<input type="text" placeholder="What's on your mind?" id="create-Post"> 
+<input type="submit" value="Post"  id="submit" onsubmit="savePost(event)" class= "btn btn-primary">
 </form>
 <!-------FEEDS-------------->
 <div class="feeds">
@@ -218,7 +218,7 @@
 </div> 
 
 <div class="photo">
-<img src="./images/feed-1.jpg">
+<img src="./images/feed-3.jpg">
 </div>
 
 <div class="action-buttons">
@@ -236,32 +236,278 @@
     <span><img src="./images/profile-10.jpg"></span> 
     <span><img src="./images/profile-4.jpg"></span> 
     <span><img src="./images/profile-15.jpg"></span>
-    <p>Liked by <b>Brian Bell</b> and <b>2,323 others</b></p>
+    <p>Liked by <b>Joy Wanjama </b> and <b>2,323 others</b></p>
 </div>
 
 <div class="caption">
-<p><b>Diana Santos </b>Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+<p><b>Diana Santos </b> Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
 </div>
 <div class="comments text-muted">View all 277 comments</div>
 </div>
+<!----------------2---------->
+<div class="feed">
+    <div class="head">
+    <div class="user">
+    <div class="profile-photo">
+    <img src="./images/profile-8.jpg">
+    </div> 
+    <div class="ingo">
+    <h3>Craig McKeachie</h3>
+    <small>Brazil, 3 DAYS AGO</small>
+    </div> 
+    </div>
+    <span class="edit">
+        <i class="uil uil-ellipsis-h"></i>  
+    </span>
+    </div> 
+    
+    <div class="photo">
+    <img src="./images/feed-2.jpg">
+    </div>
+    
+    <div class="action-buttons">
+    <div class="interaction-buttons">
+        <span><i class="uil uil-heart"></i></span>
+        <span><i class="uil uil-comment-dots"></i></span>
+        <span><i class="uil uil-share-alt"></i></span>
+    </div>
+    <div class="bookmark">
+        <span><i class="uil uil-bookmark-full"></i></span>
+    </div>
+    </div>
+    
+    <div class="liked-by">
+        <span><img src="./images/profile-13.jpg"></span> 
+        <span><img src="./images/profile-14.jpg"></span> 
+        <span><img src="./images/profile-19.jpg"></span>
+        <p>Liked by <b>Sophia Valente</b> and <b>2,323 others</b></p>
+    </div>
+    
+    <div class="caption">
+    <p><b>Craig McKeachie </b> Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+    </div>
+    <div class="comments text-muted">View all 277 comments</div>
+    </div>
+    <!----------------3---------->
+    <div class="feed">
+        <div class="head">
+        <div class="user">
+        <div class="profile-photo">
+        <img src="./images/profile-7.jpg">
+        </div> 
+        <div class="ingo">
+        <h3>Sylonjia Odion</h3>
+        <small>Tampa Bay, 30 MINUTES AGO</small>
+        </div> 
+        </div>
+        <span class="edit">
+            <i class="uil uil-ellipsis-h"></i>  
+        </span>
+        </div> 
+        
+        <div class="photo">
+        <img src="./images/feed-7.jpg">
+        </div>
+        
+        <div class="action-buttons">
+        <div class="interaction-buttons">
+            <span><i class="uil uil-heart"></i></span>
+            <span><i class="uil uil-comment-dots"></i></span>
+            <span><i class="uil uil-share-alt"></i></span>
+        </div>
+        <div class="bookmark">
+            <span><i class="uil uil-bookmark-full"></i></span>
+        </div>
+        </div>
+        
+        <div class="liked-by">
+            <span><img src="./images/profile-15.jpg"></span> 
+            <span><img src="./images/feed-2.jpg"></span> 
+            <span><img src="./images/profile-16.jpg"></span>
+            <p>Liked by <b>Eric Harris</b> and <b>2,323 others</b></p>
+        </div>
+        
+        <div class="caption">
+        <p><b>Sylonjia Odion</b> Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+        </div>
+        <div class="comments text-muted">View all 277 comments</div>
+        </div>
+        <!----------------4---------->
+        <div class="feed">
+            <div class="head">
+            <div class="user">
+            <div class="profile-photo">
+            <img src="./images/profile-4.jpg">
+            </div> 
+            <div class="ingo">
+            <h3>Ngoc Nguyen</h3>
+            <small>Chicago, 15 MINUTES AGO</small>
+            </div> 
+            </div>
+            <span class="edit">
+                <i class="uil uil-ellipsis-h"></i>  
+            </span>
+            </div> 
+            
+            <div class="photo">
+            <img src="./images/profile-5.jpg">
+            </div>
+            
+            <div class="action-buttons">
+            <div class="interaction-buttons">
+                <span><i class="uil uil-heart"></i></span>
+                <span><i class="uil uil-comment-dots"></i></span>
+                <span><i class="uil uil-share-alt"></i></span>
+            </div>
+            <div class="bookmark">
+                <span><i class="uil uil-bookmark-full"></i></span>
+            </div>
+            </div>
+            
+            <div class="liked-by">
+                <span><img src="./images/profile-3.jpg"></span> 
+                <span><img src="./images/profile-2.jpg"></span> 
+                <span><img src="./images/profile-18.jpg"></span>
+                <p>Liked by <b>Brian Bell</b> and <b>2,323 others</b></p>
+            </div>
+            
+            <div class="caption">
+            <p><b>Ngoc Nguyen</b> Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+            </div>
+            <div class="comments text-muted">View all 277 comments</div>
+            </div>
+            <!----------------5---------->
+            <div class="feed">
+                <div class="head">
+                <div class="user">
+                <div class="profile-photo">
+                <img src="./images/profile-11.jpg">
+                </div> 
+                <div class="ingo">
+                <h3>Brian Bell</h3>
+                <small>Oklahoma, 15 MINUTES AGO</small>
+                </div> 
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"></i>  
+                </span>
+                </div> 
+                
+                <div class="photo">
+                <img src="./images/profile-11.jpg">
+                </div>
+                
+                <div class="action-buttons">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+                </div>
+                
+                <div class="liked-by">
+                    <span><img src="./images/feed-7.jpg"></span> 
+                    <span><img src="./images/feed-5.jpg"></span> 
+                    <span><img src="./images/profile-11.jpg"></span>
+                    <p>Liked by <b>Lianna Liriano </b> and <b>2,323 others</b></p>
+                </div>
+                <!---------------5-------------->
+                <div class="caption">
+                <p><b> Brian Bell</b> Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+                </div>
+                <div class="comments text-muted">View all 277 comments</div>
+                </div>
+                <div class="feed">
+                    <div class="head">
+                    <div class="user">
+                    <div class="profile-photo">
+                    <img src="./images/profile-9.jpg">
+                    </div> 
+                    <div class="ingo">
+                    <h3>Jarel Wright</h3>
+                    <small>Atlanta, 15 MINUTES AGO</small>
+                    </div> 
+                    </div>
+                    <span class="edit">
+                        <i class="uil uil-ellipsis-h"></i>  
+                    </span>
+                    </div> 
+                    
+                    <div class="photo">
+                    <img src="./images/feed-6.jpg">
+                    </div>
+                    
+                    <div class="action-buttons">
+                    <div class="interaction-buttons">
+                        <span><i class="uil uil-heart"></i></span>
+                        <span><i class="uil uil-comment-dots"></i></span>
+                        <span><i class="uil uil-share-alt"></i></span>
+                    </div>
+                    <div class="bookmark">
+                        <span><i class="uil uil-bookmark-full"></i></span>
+                    </div>
+                    </div>
+                    
+                    <div class="liked-by">
+                        <span><img src="./images/profile-9.jpg"></span> 
+                        <span><img src="./images/profile-8.jpg"></span> 
+                        <span><img src="./images/profile-19.jpg"></span>
+                        <p>Liked by <b>Sylonjia Odion</b> and <b>2,323 others</b></p>
+                    </div>
+                    
+                    <div class="caption">
+                    <p><b>Jarel Wright </b>Lorem ipsum dolor sit quisquam eius. <span class="harsh-tag">#lifestyle</span></p>
+                    </div>
+                    <div class="comments text-muted">View all 277 comments</div>
+                    </div>
 </div>
+<!-------end of feed--------------> 
 </div>
 <!-------end of feeds--------------> 
-<!-------FEED1-------------->  
+</div>
+<!---------------END OF MIDDLE----------->
 
 
-
-
-
-
-
-<!---------------right----------------->
+<!---------------Right----------->
 <div class="right">
-    
+    <div class="messages">
+    <div class="heading">
+    <h4>Messages</h4><i class="uil uil-edit"></i>
+</div>
+<!---------SEARCH BAR----------->
+<div class="search-bar">
+<i class="wil uil-search"></i>
+<input type="search" placeholder="Search messages" id="message-search"> 
 </div>
 
+<!---------MESSAGES CATEGORY---------->
+<div class="category">
+<h6 class="active">Primary</h6>
+<h6>General</h6>
+<h6 class="message-requests">Requests(7)</h6>
+</div>
+<!--------Messages Category--------->
+<div class="message">
+    <div class="profile-photo">
+    <img src="./images/profile-17.jpg"> 
+</div> 
+<div class="message-body"> 
+    <h5>Edem Quist</h5>
+    <p class="text-muted">Just woke up bruh</p>
+</div> 
+</div>
+</div>
+<!----------end of messages--------->
 
 
+
+<!----------friend request--------->
+
+</div>
+</div>
 
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
@@ -269,5 +515,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <!-- Page-specific code -->
     <script src="posts.js"></script>
+    <script src="styles.js"></script>
+ </main>
 </body>
 </html>

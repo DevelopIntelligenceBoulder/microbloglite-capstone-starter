@@ -218,7 +218,7 @@ main .container .left .profile{
     background: var(--color-primary);
 }
 
-.left .sidebar menu-item:first-child.active{
+.left .sidebar .menu-item:first-child.active{
     border-top-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
@@ -257,14 +257,14 @@ main .container .left .profile{
         left: -0.6rem;
         transform: rotate(45deg);
     }
-    .left notifications-popup > div {
+    .left .notifications-popup > div {
         display: flex;
         align-items: start;
         gap: 1rem;
         margin-bottom: 1rem;
         }
 
-        .left notifications-popup small { 
+        .left .notifications-popup .small { 
         display: block;
         }
 
@@ -345,10 +345,10 @@ main .container .left .profile{
                                         border-radius: var(--border-radius);
                                         }
                                         
-                                        .middle .create-post input [type="text"] {
+                                        .middle .create-post input[type="text"] {
                                             justify-self: start;
                                             width: 100%;
-                                            padding-left: Irem;
+                                            padding-left: 1rem;
                                             background: transparent; 
                                             color: var(--color-dark);
                                             margin-right: 1rem;
@@ -378,11 +378,11 @@ main .container .left .profile{
             
                 .middle .feed .photo{ 
                 border-radius: var(--card-border-radius);
-                overflow:hidden;
+                overflow: hidden;
                 margin: 0.7rem 0;
                 }
 
-                .middle .feed .action-buttons {
+                .middle .feed .action-buttons{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;  
@@ -395,13 +395,14 @@ main .container .left .profile{
 
                 .middle .liked-by span {
                     width: 1.4rem;
-                    height: 1.4rem; display: block;
+                    height: 1.4rem; 
+                    display: block;
                     border-radius: 50%;
                     overflow: hidden;
                     border: 2px solid var(--color-white);
                     margin-left: -0.6rem;
                 }
-                .middle .liked-by span:first-child {
+                .middle .liked-by span:first-child{
                     margin: 0;
                 }
 
