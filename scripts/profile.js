@@ -1,11 +1,11 @@
-/* Posts Page JavaScript */
-
-"use strict";
-
 const $q = (s) => document.querySelector(s);
-const logoutButton = $q("#logoutButton");
+const textField = $q("#textField");
+const postBtn = $q("#postBtn");
+const form = $q("form");
 const cardSection = $q("#card-section");
-const bioUserName = $q("#user-name");
+const logoutButton = $q("#logoutButton");
+const bioName = $q("#user-name");
+
 const loginData = getLoginData();
 const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
 
@@ -13,7 +13,29 @@ function getLoginData() {
   return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
 
+function createPost(event) {
+  event.preventDefault();
+  const bodyData = {
+    text: textField.value,
+  };
 
+  fetch("https://microbloglite.herokuapp.com/api/posts", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+    body: JSON.stringify(bodyData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      window.location.href = "./profile-page.html";
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 function displayProfilePost() {
   const options = {
     method: "GET",
@@ -25,17 +47,18 @@ function displayProfilePost() {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
+  const profileUserName = loginData.username;
 
   fetch(postAPI, options)
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {
-        buildPostCard(cardSection, post);
-
+        if (profileUserName == post.username) {
+          buildPostCard(cardSection, post);
+        }
       });
     });
 }
-
 
 function buildPostCard(section, data) {
   //create col div for BS
@@ -46,6 +69,7 @@ function buildPostCard(section, data) {
   const cardDiv = document.createElement("div");
 
   cardDiv.className = "card p-2";
+
 
   //put the colDiv on the card-section div then put cardDiv inside colDiv
   section.appendChild(colDiv);
@@ -75,47 +99,43 @@ function buildPostCard(section, data) {
   btnGroupDiv.className = "btn-group";
 
   //create btns and timeposted to put inside the btnGroupDiv
-  const likeBtn = document.createElement("button");
-  likeBtn.className = "btn btn-sm btn-outline-secondary";
-  likeBtn.innerText = "Like";
-  function likePost(event) {
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "btn btn-sm btn-outline-secondary";
+  deleteBtn.innerText = "Delete";
+  function deletePost(event) {
     event.preventDefault();
-
-    const bodyData = {
-      postId: data._id
-    };
-
-
-    fetch("https://microbloglite.herokuapp.com/api/likes", {
-      method: "POST",
+    let id = data._id
+    fetch("https://microbloglite.herokuapp.com/api/posts/"+ id, {
+      method: "DELETE",
       headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${loginData.token}`,
-      },
-      body: JSON.stringify(bodyData),
+        "Authorization": `Bearer ${loginData.token}`
+      }
     })
       .then((response) => response.json())
       .then((data) => {
-        sessionStorage.message = "Succesfully Liked.";
-        likeBtn.className = "btn btn-sm btn-success";
+        sessionStorage.message = "Succesfully deleted.";
+        window.location.href = "./profile-page.html"
       })
       .catch((err) => {
         console.log(err);
       });
   }
-  likeBtn.onclick = likePost;
+  deleteBtn.onclick = deletePost;
+
 
   const postTime = document.createElement("small");
   postTime.className = "text-muted";
   let timeCreated = new Date(data.createdAt);
-  postTime.innerText = `${timeCreated.toLocaleString()}`;
+  postTime.innerText = `${timeCreated.toLocaleString()}`
 
-  btnGroupDiv.appendChild(likeBtn);
+  btnGroupDiv.appendChild(deleteBtn);
+
 
   dFlexDiv.append(btnGroupDiv, postTime);
   //create the .card-body div to plant inside the card-text div
   const divCardBody = document.createElement("div");
   divCardBody.className = "card-body";
+
 
   cardDiv.appendChild(divCardBody);
   divCardBody.append(cardTitle, cardTextPara);
@@ -125,23 +145,15 @@ function buildPostCard(section, data) {
 }
 
 
-const userName = $q("#userName")
-function displayAlert() {
-  if (sessionStorage.message) {
-    console.log(sessionStorage.message);
-    successAlert.innerText = sessionStorage.message;
-    successAlert.style = "display-block";
-  }
-}
-
-
+ 
 function loadName() {
-  const loginData = getLoginData();
-  bioUserName.innerText = `@${loginData.username}`;
+  userName.innerText = loginData.username;
+  bioName.innerText = `@${loginData.username}`;
 }
 
 function logout() {
   const loginData = getLoginData();
+  const api = "https://microbloglite.herokuapp.com";
 
   // GET /auth/logout
   const options = {
@@ -151,7 +163,7 @@ function logout() {
       // server for any API requests which require the user
       // to be logged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
-      Authorization: `Bearer ${loginData.token}`,
+      Authorization: `Bearer ${loginData.token}`
     },
   };
 
@@ -164,12 +176,15 @@ function logout() {
       // error with the fetch request above.
 
       window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
-      window.location.assign("../index.html"); // redirect to landing page
+      window.location.assign("/index.html"); // redirect to landing page
     });
 }
 
 window.onload = () => {
   loadName();
   displayProfilePost();
+  form.onsubmit = createPost;
+  
+
   logoutButton.onclick = logout;
-}
+};
