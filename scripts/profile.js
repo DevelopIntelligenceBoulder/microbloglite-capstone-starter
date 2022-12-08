@@ -7,7 +7,7 @@ const logoutButton = $q("#logoutButton");
 const bioName = $q("#user-name");
 
 const loginData = getLoginData();
-const postAPI = "https://microbloglite.herokuapp.com/api/posts";
+const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
 
 function getLoginData() {
   return JSON.parse(window.localStorage.getItem("login-data")) || {};
@@ -102,6 +102,25 @@ function buildPostCard(section, data) {
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-sm btn-outline-secondary";
   deleteBtn.innerText = "Delete";
+  function deletePost(event) {
+    event.preventDefault();
+    let id = data._id
+    fetch("https://microbloglite.herokuapp.com/api/posts/"+ id, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${loginData.token}`
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        sessionStorage.message = "Succesfully deleted.";
+        window.location.href = "./profile-page.html"
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  deleteBtn.onclick = deletePost;
 
 
   const postTime = document.createElement("small");
@@ -125,9 +144,7 @@ function buildPostCard(section, data) {
   divCardBody.append(cardTextPara, dFlexDiv);
 }
 
-function deletePost() {
-  fetch(postAPI )
-}
+
  
 function loadName() {
   userName.innerText = loginData.username;
@@ -167,6 +184,7 @@ window.onload = () => {
   loadName();
   displayProfilePost();
   form.onsubmit = createPost;
+  
 
   logoutButton.onclick = logout;
 };

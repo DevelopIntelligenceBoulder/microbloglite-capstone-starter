@@ -30,7 +30,7 @@
 
         </div>
         <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
+          <a href="#" class="nav-link text-white" aria-current="page">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home"></use>
             </svg>
@@ -73,13 +73,6 @@
 
       </div>
     </div>
-
-    <!-- <div id="card-section" class="row">
-
-    </div> -->
-
-
-    <div id="timeline" class="py-5">
 
     <div class="album py-4 bg-light">
       <h1 class="text-center mb-5">Profile Posts</h1>
@@ -130,6 +123,26 @@
         </div>
       </form>
     </div>
+    <!-- Delete Modal Form -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <form id="deleteForm">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Would you like to Delete Post?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <input id="textField" class="form-control form-control-lg" type="text">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button id="postBtn" type="submit" class="btn btn-primary">Post</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
 
 
 
