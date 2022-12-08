@@ -30,3 +30,7 @@
 #sun-header {
   color: gold;
 }
+
+#main-div {
+  min-height: 100vh;
+}
