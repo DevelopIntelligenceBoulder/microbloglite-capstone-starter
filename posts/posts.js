@@ -52,7 +52,7 @@ function buildPostCard(section, data) {
   colDiv.appendChild(cardDiv);
 
   //create card title for username
-  const cardTitle = document.createElement("h5");
+  const cardTitle = document.createElement("h6");
 
   cardTitle.className = "card-title";
   cardTitle.innerText = data.username;

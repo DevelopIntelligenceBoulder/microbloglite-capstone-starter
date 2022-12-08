@@ -22,9 +22,9 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="./scripts/auth.js"></script>
     <script>
-      if (isLoggedIn() === true) window.location.replace("./post/posts.html");
+        if (isLoggedIn() === true) window.location.replace("./post/posts.html");
     </script>
-  </head>
+</head>
 
 <body>
     <div id="main-div" class="d-flex flex-fill container col-xl-10 col-xxl-8 ">
@@ -74,6 +74,10 @@
                             <input type="password" id="regPassword" class="form-control" minlength="6">
                             <label for="password">Password</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="bio" class="form-control" required>
+                            <label for="bio">About</label>
+                        </div>
 
                         <button class="w-100 btn btn-lg btn-warning" id="registButton" type="submit">Enter</button>
 
@@ -89,9 +93,9 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-    <!-- Page-specific code -->
-    <script src="./scripts/landing.js"></script>
-    <!-- <script src="./scripts/registrationPage.js"></script> -->
-  </body>
+        <!-- Page-specific code -->
+        <script src="./scripts/landing.js"></script>
+        <!-- <script src="./scripts/registrationPage.js"></script> -->
+</body>
 
 </html>
