@@ -36,21 +36,42 @@
   </head>
   <body>
     <nav>
-
-
+      <header class="p-3 text-bg-dark">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/profilePage/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <img height="50em" src="image/IMG_0153.png" alt="profile">
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 mr-2">
+              <li><a href="/posts/" class="nav-link px-2 text-white">Living Space</a></li>
+              <li><a href="/profilePage/" class="nav-link px-2 text-white">Bedroom</a></li>
+            </ul>
+    
+            <div class="text-end">
+              <button type="button" class="btn btn-warning"><a class="nav-link" href="/registerPage/">Sign-up</a></button>
+              <button class="btn btn-danger p-2 m-2" id="logoutButton" onclick="logout();">Mission Abort!</button>
+            </div>
+          </div>
+        </div>
+      </header>
     </nav>
-    <div class="text-center text-success" id="fullName"></div>
-    <div class="text-center" id="username"></div>
-    <div class="text-center text-muted" id="bio"></div>
-    <!-- <button id="editButton" class="btn btn-info m-2">Edit Profile</button> -->
+    
+    <div class="container">
+      <img class="d-block mx-auto mt-4" src="image/IMG_0153.png" alt="Profile Picture" height="150px">
+      <div class="text-center text-success mt-2" id="fullName"></div>
+      <div class="text-center" id="username"></div>
+      <div class="text-center text-muted" id="bio"></div>
+      <!-- <button id="editButton" class="btn btn-info m-2">Edit Profile</button> -->
 
-    <form class="m-3" onsubmit="postBubblyThoughts(event);">
-      <label for="postText">Type your bubbly thoughts away..</label>
-      <textarea id="postText" class="form-control" rows="5" required></textarea>
-      <button class="btn btn-success m-2" type="submit">Send~</button>
-    </form>
+      <form class="m-3" onsubmit="postBubblyThoughts(event);">
+        <label for="postText">Type your bubbly thoughts away..</label>
+        <textarea id="postText" class="form-control" rows="5" required></textarea>
+        <button class="btn btn-success m-2" type="submit">Send~</button>
+      </form>
+      <p id="messagePara" class="text-success"></p>
 
-    <button class="btn btn-danger p-2 m-2" id="logoutButton" onclick="logout();">Mission Abort!</button>
-    <div id="contentDiv"></div>
+      <div id="contentDiv"></div>
+    </div>
   </body>
 </html>

@@ -9,7 +9,7 @@ Team Meetup, Tasks were assigned like below.
 3. Buttercup works on profile page
 
 
-Tuesday 12.06.2022 Log(from Buttercup:
+Tuesday 12.06.2022 Log(from Buttercup):
 - Team meetup at 10am in class, got help from Justin and Pastor E with the project.
 - UGHH, I thought the edit feature was required and worked on it for an hour it sucks.
 - My progress today: 
