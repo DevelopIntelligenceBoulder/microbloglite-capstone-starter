@@ -67,20 +67,25 @@ function buildPostCard(section, data) {
 
   //created the card
   const cardDiv = document.createElement("div");
-  cardDiv.className = "card";
+
+
   cardDiv.className = "card p-2";
+
   //put the colDiv on the card-section div then put cardDiv inside colDiv
   section.appendChild(colDiv);
   colDiv.appendChild(cardDiv);
 
   //create card title for username
   const cardTitle = document.createElement("h5");
+
   cardTitle.className = "card-title";
   cardTitle.innerText = data.username;
+
   cardTitle.className = "card-title text-center";
   cardTitle.innerText = `@${data.username}`;
 
   //create card div text for the card body
+
   const cardTextPara = document.createElement("p");
   cardTextPara.className = "card-text";
   cardTextPara.innerText = data.text;
@@ -106,13 +111,16 @@ function buildPostCard(section, data) {
 
   btnGroupDiv.appendChild(deleteBtn);
 
+
   dFlexDiv.append(btnGroupDiv, postTime);
   //create the .card-body div to plant inside the card-text div
   const divCardBody = document.createElement("div");
   divCardBody.className = "card-body";
 
+
   cardDiv.appendChild(divCardBody);
   divCardBody.append(cardTitle, cardTextPara);
+
   cardDiv.append(cardTitle, divCardBody);
   divCardBody.append(cardTextPara, dFlexDiv);
 }
@@ -138,7 +146,7 @@ function logout() {
       // server for any API requests which require the user
       // to be logged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
-      Authorization: `Bearer ${loginData.token}`,
+      Authorization: `Bearer ${loginData.token}`
     },
   };
 
