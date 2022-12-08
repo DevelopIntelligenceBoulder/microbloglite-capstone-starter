@@ -1,1 +1,12 @@
 /* Landing Page CSS */
+a{
+    margin-bottom: 5rem;
+}
+#registrationPage {
+    margin-bottom: 5rem;
+    color: aliceblue;
+    text-decoration: none;
+}
+img{
+    margin-top: 1rem;
+}
