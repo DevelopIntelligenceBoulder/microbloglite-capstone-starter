@@ -21,6 +21,10 @@ function isLoggedIn() {
     return Boolean(loginData.token);
 }
 
+function displayUserName() {
+   return sessionStorage.message = loginData.username
+}
+
 
 // This function is already being used in the starter code for the
 // landing page, in order to process a user's login. READ this code,
@@ -87,5 +91,5 @@ window.onload = () => {
     const logoutButton = $q('#logoutButton');
 
     logoutButton.onclick = logout;
-    
+
 }
