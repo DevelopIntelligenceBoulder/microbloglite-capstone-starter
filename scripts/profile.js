@@ -197,7 +197,7 @@ function buildPostCard(section, data) {
 
 function loadName() {
   userName.innerText = loginData.username;
-  bioName.innerText = `@${loginData.username}`;
+  bioName.innerText = `${loginData.username}`;
 }
 
 function logout() {
