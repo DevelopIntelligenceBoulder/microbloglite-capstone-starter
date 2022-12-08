@@ -68,8 +68,8 @@ function buildPostCard(section, data) {
   //created the card
   const cardDiv = document.createElement("div");
 
-
   cardDiv.className = "card p-2";
+
 
   //put the colDiv on the card-section div then put cardDiv inside colDiv
   section.appendChild(colDiv);
