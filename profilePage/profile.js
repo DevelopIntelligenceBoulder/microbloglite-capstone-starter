@@ -8,6 +8,7 @@ const bio = $q("#bio");
 // const editButton = $q("#editButton");
 const postText = $q("#postText");
 const contentDiv = $q("#contentDiv");
+const messagePara = $q("#messagePara");
 
 // You can use this to get the login data of the logged-in user (if any).
 // Returns either an object including the username and token,
@@ -42,7 +43,6 @@ function loadProfileInfo() {
 function postBubblyThoughts(event) {
   event.preventDefault();
   const loginData = getLoginData();
-  let content = postText.innerText;
   const options = {
     method: "POST",
     headers: {
@@ -53,12 +53,15 @@ function postBubblyThoughts(event) {
       Authorization: `Bearer ${loginData.token}`,
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      text: postText.value,
+    }),
   };
-  fetch(api + "api/posts/", options)
+  fetch(api + "api/posts", options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      
+      messagePara.innerText = `Powerpuff Universe has received your thought!`;
     });
 }
 

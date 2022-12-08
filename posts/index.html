@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -23,7 +34,27 @@
     </script>
 </head>
 <body>
-
+    <nav>
+        <header class="p-3 text-bg-dark">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="/profilePage/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img height="50em" src="/profilePage/image/IMG_0153.png" alt="profile">
+              </a>
+      
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 mr-2">
+                <li><a href="/posts/" class="nav-link px-2 text-white">Living Space</a></li>
+                <li><a href="/profilePage/" class="nav-link px-2 text-white">Bedroom</a></li>
+              </ul>
+      
+              <div class="text-end">
+                <button type="button" class="btn btn-warning"><a class="nav-link" href="/registerPage/">Sign-up</a></button>
+                <button class="btn btn-danger p-2 m-2" id="logoutButton" onclick="logout();">Mission Abort!</button>
+              </div>
+            </div>
+          </div>
+        </header>
+      </nav>
     <header>
         <h1>POSTS PAGE</h1>
     </header>
