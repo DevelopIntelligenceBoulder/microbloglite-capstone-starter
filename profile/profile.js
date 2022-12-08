@@ -10,12 +10,16 @@ const newPostNav = document.getElementById("newPostNav");
 const postDisplayDiv = document.querySelector("#newPostDisplay");
 const postFormDisplayDiv = document.querySelector("#postform");
 const profilePicDiv = document.querySelector("#profilePic");
+const newNav = document.querySelector("#newNav");
+const myNav = document.querySelector("#myNav")
+
 
 function loadUsersName() {
     const loginData = getLoginData();
     const usersName = loginData.username;
     usersName.className = "usernameTitle";
-    usernameTitle.innerHTML = usersName;
+    usernameTitle.innerText = usersName;
+    newNav.className = "navActive";
 
 }
 
@@ -55,6 +59,8 @@ function createNewPost(event) {
 function showUsersPost() {
     postDisplayDiv.style.display = "block";
     postFormDisplayDiv.innerHTML = " "
+    myNav.className = "navActive";
+    newNav.className = "navNonActive";
 
     const loginData = getLoginData();
     const usersName = loginData.username;
@@ -83,14 +89,17 @@ function showUsersPost() {
 
                 let cardTitle = document.createElement("h3");
                 cardTitle.className = "card-title";
+                cardTitle.className = "headColor"
                 cardTitle.innerText = post.username;
 
                 let cardDescription = document.createElement("p");
+                cardDescription.className = "postSpacing"
                 cardDescription.innerText = post.text;
 
                 let cardLikes = document.createElement("h5");
                 cardLikes.className = "card-subtitle";
-                cardLikes.innerText = `Likes ${countedLikes()}`;
+                cardLikes.className = "likeColor"
+                cardLikes.innerHTML = `&#9825; ${countedLikes()}`;
 
                 
                 const divContainer = document.createElement("div");
@@ -114,6 +123,8 @@ function showUsersPost() {
 function hideUsersPosts() {
     postDisplayDiv.innerHTML = " ";
     postFormDisplayDiv.style.display = "block";
+    myNav.className = "navNonActive";
+    newNav.className = "navActive";
 }
 
 function logout () {
