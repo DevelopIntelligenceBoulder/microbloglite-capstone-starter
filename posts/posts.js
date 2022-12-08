@@ -4,10 +4,14 @@
 
 const $q = (s) => document.querySelector(s); 
 const logoutButton = $q("#logoutButton");
+const cardSection = $q("#card-section");
 
 function getLoginData() {
   return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
+
+
+
 
 
 const userName = $q("#userName")
