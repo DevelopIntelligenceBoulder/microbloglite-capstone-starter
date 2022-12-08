@@ -17,6 +17,6 @@ Content-Type: application/json
     "password": "snk-99"
 }
 
-### Get Users
-GET https://microbloglite.herokuapp.com/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNuayIsImlhdCI6MTY3MDI2NDg2MCwiZXhwIjoxNjcwMzUxMjYwfQ.QBlg60SDMNolG3113dTztr62nS7zrc_CrJueoUSmFLw
+### Get POSTS
+GET https://microbloglite.herokuapp.com/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNuayIsImlhdCI6MTY3MDUxNTEwMiwiZXhwIjoxNjcwNjAxNTAyfQ.7myEwx7oqazYxnVOnagicEWNicjOPw-IOSrFxsVTo04
