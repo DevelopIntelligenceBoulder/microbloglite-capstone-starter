@@ -1,23 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Page</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 
-    <link rel="stylesheet" href="/global.css" />
-  </head>
+  <link rel="stylesheet" href="/global.css" />
+  
+  
+</head>
+
+<body>
+
+
+  <main class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Morning Star</span>
+      </a>
+      <hr>
+      <section>
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-grow-1 ms-3">
+                <h6 class="mb-1" id="user-name"></h6>
+                <h5 id="bio"></h5>
+                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                  Update Bio
+                </button>
+                <!-- <input type="text" id="bioInput">
+                <button id="bioBtn">submit</button> -->
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2" style="background-color: #efefef;">
+                  <div>
+                    <p class="small text-muted mb-1">Posts</p>
+                    <p class="mb-0">41</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1">Followers</p>
+                    <p class="mb-0">976</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted mb-1">Rating</p>
+                    <p class="mb-0">8.5</p>
+                  </div>
+                </div>
+                <div class="d-flex pt-1">
+                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Messages</button>
+                  <button id="bioUpdateBtn" type="button" class="btn btn-primary " data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Post
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <div>
+        </div>
+        <li>
+          <a href="./posts/posts.html" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="./posts/posts.html">Timeline</use>
+            </svg>
+            Timeline
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+
 
   <body>
 
 
+
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3" id="card-section">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Morning Star Post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input id="textField" class="form-control form-control-lg" type="text" placeholder="Type Here...
     <main>
       <div class="d-flex">
         <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
@@ -60,6 +159,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </section>
           <ul class="nav nav-pills flex-column mb-auto">
@@ -114,7 +214,27 @@
   
     </div>
 
-   
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form id="bioForm">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Update Bio</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input id="bioInput" class="form-control form-control-lg" type="text" placeholder="Type Here...">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="bioUpdateBtn" type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
 
 </div>
 
