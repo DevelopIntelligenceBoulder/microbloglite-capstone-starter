@@ -80,7 +80,7 @@ function buildPostCard(section, data) {
   likeBtn.innerText = "Like";
   function likePost(event) {
     event.preventDefault();
-    let id = data._id;
+    
     const bodyData = {
       postId: data._id
     };
