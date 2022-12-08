@@ -13,7 +13,7 @@ loginForm.onsubmit = function (event) {
     // We can use loginForm.username (for example) to access
     // the input element in the form which has the ID of "username".
     const loginData = {
-        username: loginForm.floatingUsername.value,
+        username: loginForm.floatingInput.value,
         password: loginForm.floatingPassword.value,
     }
 
