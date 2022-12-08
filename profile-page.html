@@ -16,6 +16,8 @@
 </head>
 
 <body>
+
+
   <main class="d-flex flex-nowrap">
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="min-height: 100vh; width: 280px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -25,9 +27,40 @@
         <span class="fs-4">Morning Star</span>
       </a>
       <hr>
+      <section>
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-grow-1 ms-3">
+                <h5 class="mb-1" id="user-name"></h5>
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2" style="background-color: #efefef;">
+                  <div>
+                    <p class="small text-muted mb-1">Posts</p>
+                    <p class="mb-0">41</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1">Followers</p>
+                    <p class="mb-0">976</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted mb-1">Rating</p>
+                    <p class="mb-0">8.5</p>
+                  </div>
+                </div>
+                <div class="d-flex pt-1">
+                  <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Messages</button>
+                  <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Post
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ul class="nav nav-pills flex-column mb-auto">
         <div>
-
         </div>
         <li class="nav-item">
           <a href="#" class="nav-link text-white" aria-current="page">
@@ -50,9 +83,7 @@
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#home"></use>
             </svg>
-            <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
-              click me
-            </button>
+
           </a>
         </li>
 
@@ -73,7 +104,6 @@
 
       </div>
     </div>
-
     <div class="album py-4 bg-light">
       <h1 class="text-center mb-5">Profile Posts</h1>
 
@@ -85,7 +115,8 @@
     </div>
 
 
-    <div id="profile-aside" class="d-flex justify-content-between flex-column flex-shrink-0 p-3 text-bg-dark "
+
+    <!-- <div id="profile-aside" class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark "
       style="min-height: 100vh; width: 30vh;">
       <div class="d-flex">
         <div class="col-lg-4" id="profile-aside-content">
@@ -97,12 +128,9 @@
           </svg>
 
           <h5 class="fw-normal" id="user-name">Heading</h5>
-          <!-- <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
-          </p> -->
         </div>
       </div>
-
-    </div>
+    </div> -->
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <form>
@@ -124,27 +152,25 @@
       </form>
     </div>
     <!-- Delete Modal Form -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <form id="deleteForm">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Would you like to Delete Post?</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <input id="textField" class="form-control form-control-lg" type="text">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button id="postBtn" type="submit" class="btn btn-primary">Post</button>
-                </div>
-              </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form id="deleteForm">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Would you like to Delete Post?</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </form>
+            <div class="modal-body">
+              <input id="textField" class="form-control form-control-lg" type="text">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="postBtn" type="submit" class="btn btn-primary">Post</button>
+            </div>
+          </div>
         </div>
-
-
+      </form>
+    </div>
 
   </main>
   <!-- Page-specific code -->
