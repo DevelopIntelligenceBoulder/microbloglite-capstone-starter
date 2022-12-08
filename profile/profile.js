@@ -9,6 +9,7 @@ const usersPostsNav = document.getElementById("usersPostsNav");
 const newPostNav = document.getElementById("newPostNav");
 const postDisplayDiv = document.querySelector("#newPostDisplay");
 const postFormDisplayDiv = document.querySelector("#postform");
+const profilePicDiv = document.querySelector("#profilePic");
 
 function loadUsersName() {
     const loginData = getLoginData();
@@ -69,13 +70,11 @@ function showUsersPost() {
         },
     };
 
-    
-
-    fetch(api + "/api/posts", options)
-    .then(response => response.json())
+    fetch(api + "/api/posts", options).then(response => response.json())
     .then(UsersPosts => {
         UsersPosts.forEach(post => {
             if(post.username == usersName) {
+                console.log(post);
 
                 let cardSection = document.createElement("div");
                 cardSection.className = "card";
@@ -145,7 +144,22 @@ function logout () {
         });
 }
 
+function loadUsersProfilePicture() {
+    const loginData = getLoginData();
+
+    let imageSource = md5(loginData.username);
+
+    const profileImg = document.createElement("img");
+    profileImg.src = `https://www.gravatar.com/avatar/${imageSource}?d=${encodeURIComponent("https://i.pinimg.com/564x/70/fe/ea/70feea152ba479ad2767c49811126f6c.jpg")}&s=150`;
+    profileImg.alt = "User's profile Picture";
+    profileImg.width = 150;
+
+    profilePicDiv.appendChild(profileImg);
+
+}
+
 window.onload = () => {
+    loadUsersProfilePicture();
     loadUsersName();
     postBtn.onclick = createNewPost;
     usersPostsNav.onclick = showUsersPost;
