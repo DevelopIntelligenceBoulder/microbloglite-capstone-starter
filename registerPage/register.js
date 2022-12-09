@@ -1,30 +1,32 @@
-const api = "https://microbloglite.herokuapp.com";
+const registrationForm = document.getElementById("registrationForm");
+const fullName = document.getElementById("fullname");
+const userName = document.getElementById("username");
+const password = document.getElementById("password");
+function registerNewUser(event) {
+  event.preventDefault();
 
-function getRegisterData() {
-  return JSON.parse(window.localStorage.getItem("Register-data")) || {};
-}
-
-function getRegister() {
-  const registerData = getRegisterData();
-  return Boolean(registerData.token);
-}
-
-function register(registerData) {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(registerData),
+  const bodyData = {
+    username: userName.value,
+    fullName: fullName.value,
+    password: password.value,
   };
 
-  return fetch(api + "/auth/register", options)
+  fetch("https://microbloglite.herokuapp.com/api/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bodyData),
+  })
     .then((response) => response.json())
-    .then((registerData) => {
-      window.localStorage.setItem(
-        "register-data",
-        JSON.stringify(registerData)
-      );
-      window.location.assign("/posts"); 
+    .then((user) => {
+      console.log(user);
+      window.location.href = "/logInPage/index.html";
+      sessionStorage.message = `Welcome ${userName.value}`;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
+
+window.onload = () => {
+  registrationForm.onsubmit = registerNewUser;
+};
