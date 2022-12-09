@@ -195,6 +195,7 @@ function loadUsersProfilePicture() {
     profileImg.src = `https://www.gravatar.com/avatar/${imageSource}?d=${encodeURIComponent("https://cdn.pixabay.com/photo/2014/12/21/23/59/toy-576514_1280.png")}&s=150`;
     profileImg.alt = "User's profile Picture";
     profileImg.width = 140;
+    profileImg.height = 150;
 
     profilePicDiv.appendChild(profileImg);
 
