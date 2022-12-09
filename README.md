@@ -7,7 +7,7 @@ Practice and experimentation provide experience, and experience provides confide
 ## Group Progress
 - As a group we decided it would better to use the project board to help everyone understand where we should individually start
 
-- on Wednesday; We as a group(main votes from Ari and Rayna) wanted to go for a Universe Theme. We wanted to focus on blue, black, and white as the main colors.
+- on Wednesday; We as a group(main votes from Ari and Rayna) wanted to go for a Universe Theme. We wanted to focus on blue, black, and white as the main colors.<br>
 
 <img src="./images/progress/ProjectProgress.png" width=500>
 
