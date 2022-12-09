@@ -9,6 +9,12 @@ const bio = $q("#bio");
 const postText = $q("#postText");
 const contentDiv = $q("#contentDiv");
 const messagePara = $q("#messagePara");
+const editForm = $q("#editForm");
+editForm.style.display = "none";
+// const passwordInput = $q("#passwordInput");
+// const fullNameInput = $q("#fullNameInput");
+const bioInput = $q("#bioInput");
+const messageDiv = $q("#messageDiv");
 
 // You can use this to get the login data of the logged-in user (if any).
 // Returns either an object including the username and token,
@@ -65,20 +71,37 @@ function postBubblyThoughts(event) {
     });
 }
 
-//Edit Feauture pls do if have time at the end !!!!!!!!!!
-// function editProfile() {
-//     const loginData = getLoginData();
-//     fetch(api + "api/users/" + loginData.username)
+function unhiddenEditForm() {
+  editForm.style.display = "block";
+}
 
-//     const options = {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer ${loginData.token}`,
-//         },
-//         body: JSON.stringify(editInfo)
-//     }
-// }
+function hideEditForm() {
+  editForm.style.display = "none";
+}
+
+function editProfile(event) {
+  event.preventDefault();
+    const loginData = getLoginData();
+
+    const options = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        body: JSON.stringify({
+          // password: passwordInput.value,
+          bio: bioInput.value,
+          // fullName: fullNameInput.value,
+        })
+    }
+    fetch(api + "api/users/" + loginData.username, options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      messageDiv.innerText = `Saved successfully! Please refresh your room.`
+    });
+}
 
 function logout() {
   const loginData = getLoginData();
@@ -109,6 +132,6 @@ function logout() {
 }
 
 window.onload = () => {
-  // editButton.onlick = editProfile;
+  editButton.onlick = editProfile;
   loadProfileInfo();
 };

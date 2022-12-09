@@ -62,10 +62,18 @@
       <div class="text-center text-success mt-2" id="fullName"></div>
       <div class="text-center" id="username"></div>
       <div class="text-center text-muted" id="bio"></div>
-      <!-- <button id="editButton" class="btn btn-info m-2">Edit Profile</button> -->
+      <button onclick="unhiddenEditForm();" id="editButton" class="btn btn-info">Edit My Bio</button>
+      <form onsubmit="editProfile(event);" id="editForm">
+        <!-- <input id="passwordInput" class="form-control w-50 m-2" type="text" placeholder="Edit Password"> -->
+        <!-- <input id="fullNameInput" class="form-control w-50 m-2" type="text" placeholder="Edit Name"> -->
+        <input id="bioInput" class="form-control w-50 m-2" type="text" placeholder="Edit Bio">
+        <button type="submit" class="btn btn-warning">Make Changes</button>
+        <button class="btn btn-danger" onclick="hideEditForm();">Nevermind</button>
+        <div id="messageDiv" class="text-success"></div>
+      </form>
 
       <form class="m-3" onsubmit="postBubblyThoughts(event);">
-        <label for="postText">Type your bubbly thoughts away..</label>
+        <label for="postText"><h4>Type your bubbly thoughts away..</h4></label>
         <textarea id="postText" class="form-control" rows="5" required></textarea>
         <button class="btn btn-success m-2" type="submit">Send~</button>
       </form>
