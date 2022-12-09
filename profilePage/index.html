@@ -24,17 +24,41 @@
       crossorigin="anonymous"
     />
     <!-- JavaScript Bundle with Popper -->
-    <script defer
+    <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="/logInPage/auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("/logInPage");
+    </script>
     <script defer src="profile.js"></script>
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="../global.css" />
     <title>Profile</title>
   </head>
   <body>
+<<<<<<< HEAD
+    <nav></nav>
+    <div id="fullName"></div>
+    <div id="username"></div>
+    <div id="bio"></div>
+    <button id="editButton" class="btn btn-info m-2">Edit Profile</button>
+    <form class="m-3">
+      <label for="postText">Type your bubbly thoughts away..</label>
+      <textarea id="postText" class="form-control" rows="5" required></textarea>
+      <button class="btn btn-success m-2" id="submitPostButton">Send~</button>
+    </form>
+    <button
+      class="btn btn-danger p-2 m-2"
+      id="logoutButton"
+      onclick="logout();"
+    >
+      Mission Abort!
+    </button>
+=======
     <nav>
       <header class="p-3 text-bg-dark">
         <div class="container">
@@ -73,5 +97,6 @@
 
       <div id="contentDiv"></div>
     </div>
+>>>>>>> 9d6c34d731769a4dca9b23e601bea4b815d7ed8c
   </body>
 </html>
