@@ -153,9 +153,31 @@ function card(section) {
     `
     postContent.prepend(resultHtml);
 }
-function myFunction(x) {
-    x.classList.toggle("fa-thumbs-down");
-  }
+function displayProfilePost() {
+
+
+    $.ajax({
+        method: "GET",
+        url: `https://microbloglite.herokuapp.com/api/posts`,
+        headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        data: {}
+    }).then((posts) => {
+        let username = loginData.username;
+
+        posts.forEach((post) => {
+            if (username == post.username) {
+                card(post, cardSection);
+            }
+        });
+
+    }).catch((err) => {
+        console.log(err);
+    });
+}
+
 function savePost(event) {
     event.preventDefault();
     const bodyData = {
