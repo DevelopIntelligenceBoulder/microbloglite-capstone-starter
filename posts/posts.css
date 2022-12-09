@@ -40,16 +40,12 @@ body {
             color: antiquewhite;
         }
 
-        table, th, td {
-            border: 1px solid #0d6efd;
-            border-collapse: collapse;
-          }
-          th, td {
-            background-color: white;
-          }
+      
           img {
             border-radius: 45%;
             border: 3px solid aliceblue;
             margin-right: 5px;
         }
-       
+       .tabletext {
+        color: antiquewhite;
+       }
