@@ -39,22 +39,49 @@
   </head>
   <body>
     <header>
-      <h1>Welcome to <code><h1>POWERPUFF UNIVERSE</h1></code></h1>
-    </header>
+      <!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-7 bg-image" style="
+        background-image: url('https://th.bing.com/th/id/R.a4ea6d4b60c11dc82a448f5baedf1930?rik=xa7Kk7Bc%2baxsng&riu=http%3a%2f%2f1.bp.blogspot.com%2f-FKkpSfmPHV4%2fUXJYT9c9pMI%2fAAAAAAAAY2c%2fMOeq7_czEZw%2fs1600%2fPowerpuff-Girls.jpg&ehk=RGgHiV8valqDus3qklCIwZvI52GhOVFk%2ftGQjT8A8XA%3d&risl=&pid=ImgRaw&r=0');
+        height: 590px;
+        width: 1009px;
+        "></div>
+  <!-- Background image -->
 
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: rgba(237, 77, 131, 0.619);
+        backdrop-filter: blur(100px);
+        ">
+    <div class="card-body py-5 px-md-5">
+      <h1>Welcome to POWERPUFF UNIVERSE</h1>
+    </header>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+    <a href="/registerPage/register.html" class="btn btn-secondary">register</a>
     <main>
       <form id="login">
-        <div>
+        <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
           <label for="username">Username</label>
           <input type="text" id="username" minlength="3" />
         </div>
-
+</div>
+              </div>
         <div>
+           <div class="col-md-6 mb-4">
+                <div class="form-outline">
           <label for="password">Password</label>
           <input type="password" id="password" minlength="6" />
         </div>
-
-        <button class="btn btn-dark m-2" id="loginButton" type="submit">Login</button>
+</div>
+              </div>
+        <button id="loginButton" type="submit">Login</button>
+         
       </form>
     </main>
 
