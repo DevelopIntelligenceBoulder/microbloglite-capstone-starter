@@ -25,33 +25,53 @@
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <h1>Welcome to <code>YOUR MICROBLOG UNIVERSE</code></h1>
     </header>
 
     <main>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+        <body class="text-center">
+    
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+            <main class="form-signin w-25 m-auto">
+              <form id="login">
+                <img class="mb-4" src="./ocean.jpg" alt="photo of ocean">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
 
-    </main>
+                </div>
+                <div class="form-floating">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+            
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" id="loginButton" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+              </form>
+            </main>
+            
+            
+                
+            </body>
 
-    <footer></footer>
+        
+
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
+
+    
 </body>
 </html>
