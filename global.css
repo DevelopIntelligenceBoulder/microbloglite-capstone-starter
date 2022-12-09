@@ -13,11 +13,41 @@
   /* outline: 1px dotted red; */
 }
 
-body {
-  margin: 10px;
-  border: 2px;
+#profile-aside {
+  margin-left: 10rem;
+}
+
+#profile-aside-content,
+#user-name {
+  padding-left: 2.5rem;
+}
+
+#timeline {
+  margin-left: 6rem;
+}
+
+#sun-header {
+  color: gold;
+}
+
+#main-div {
+  min-height: 100vh;
+}
+
+#div-body {
   font-weight: bold;
   font-size: 100%;
+  min-height: 100vh;
   text-align: center;
   background-image: url("https://images.pexels.com/photos/219998/pexels-photo-219998.jpeg?cs=srgb&amp;dl=pexels-pixabay-219998.jpg&amp;fm=jpg");
+}
+
+.main-section {
+  margin-top: 10rem;
+}
+
+#nav-link {
+  display: flex;
+  justify-content: end;
+  padding-right: 5em;
 }
