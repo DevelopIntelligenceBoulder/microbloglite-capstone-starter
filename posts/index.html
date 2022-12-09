@@ -47,13 +47,16 @@
 <div class="left">
 <a class="profile">
 <div class="profile-photo">
-<img src="./images/Tony.jpeg">
+<img src="./images/profile-19.jpg" alt="">
 </div>
 <div class="handle">
-<h4 class="username">Tony Stark</h4>
-<p class="text-muted atName">
-@tonyS
-</p>
+    <h4 class="username">Tony Stark</h4>
+    <p class="text-muted atName">
+    @tonyS
+    </p>
+    <div>
+        <button type="button" class="btn btn-outline-danger" onclick="onEditUserName()"><i class="fa fa-edit"></i>&nbsp; Edit</button>
+    </div>
 </div>
 </a>
 <!-----------sidebar----------------->
@@ -61,10 +64,10 @@
     <a class="menu-item active" href="./index.html">
         <span><i class="uil uil-home"></i></span><h3>Post</h3>
         </a>
-        <a class="menu-item"  href="../">
+        <a class="menu-item"  href="../profile/profile.html">
             <span><i class="uil uil-compass"></i></span><h3>Profile</h3>
             </a>
-            <a class="menu-item" id="notification">
+            <a class="menu-item" id="notification" onclick="deleteCard();">
                 <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span><h3>Notifications</h3>
                 <!---------------NOTIF POPUP-------->
                 <div class="notifications-popup">
@@ -152,7 +155,7 @@
 <div class="stories">
 <div class="story">
 <div class="profile-photo">
-<img src="./images/Tony.jpeg">
+    <img src="./images/profile-19.jpg" alt="">
 </div>
 <p class="name">Your story</p>
 </div>
@@ -191,9 +194,9 @@
 <!----------------end of stories---------->
 <form class="create-post" onsubmit="savePost(event)">
 <div class="profile-photo">
-<img src="./images/Tony.jpeg" alt="">
+    <img src="./images/profile-19.jpg" alt="">
 </div>
-<input type="text" placeholder="What's on your mind?" id="create-Post"> 
+<input type="text" placeholder="What's on your mind?" id="create-Post" required> 
 <input type="submit" value="Post"  id="submit" class= "btn btn-primary">
 </form>
 <!-------FEEDS-------------->
@@ -505,6 +508,20 @@
 <!----------friend request--------->
 
 </div>
+</div>
+<div class="modal fade" id="edit_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Edit Content</h5>
+                </div>
+                <div class="modal-body" id="edit_body">
+                    
+                </div>
+            </div>
+         </div>
+     </div>    
+                
 </div>
     
       

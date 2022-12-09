@@ -8,8 +8,8 @@ const createPost = document.querySelector('#create-post');
 const feed = document.querySelector('.feed');
 const feeds = document.querySelector('.feeds');
 const user = document.querySelector('.user');
-const atName = document.querySelector(".atName");
-const username = document.querySelector(".username");
+const atNameComponent = document.querySelector(".atName");
+const usernameComponent = document.querySelector(".username");
 
 const loginData = getLoginData();
 
@@ -20,7 +20,7 @@ function getLoginData() {
 
 
 function displayProfilePost() {
-    const api = "https://microbloglite.herokuapp.com/api/posts";
+    const api = "https://microbloglite.herokuapp.com";
     const options = {
         method: "GET",
         headers: {
@@ -29,23 +29,101 @@ function displayProfilePost() {
             // to be logged-in in order to have access.
             // In the API docs, these endpoints display a lock icon.
             Authorization: `Bearer ${loginData.token}`,
-            
+
         },
     };
     const profileName = loginData.username;
 
-    fetch(api, options)
+    fetch(api + "/api/users", options)
         .then((response) => response.json())
         .then((posts) => {
+            loadName();
             posts.forEach((post) => {
                 if (profileName == post.username) {
-                    card(post, cardSection);
+                    card(post, "");
                 }
-           
+
             });
-            messagePara.innerText = `Post created`;
+            // messagePara.innerText = `Post created`;
         });
 
+}
+
+function onUpdateUserName(event) {
+    event.preventDefault();
+
+    let fullname = $('#edit_fullname').val();
+    console.log(loginData.token);
+
+    $.ajax({
+        method: "PUT",
+        url: `https://microbloglite.herokuapp.com/api/users/${username}`,
+        headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        data: {
+            fullname: username.val
+        }
+    }).then((res) => {
+        usernameComponent.innerText = res.fullName;
+        onEditCancel();
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
+function onEditCancel() {
+    $('#edit_modal').modal('hide');
+}
+
+
+
+function onEditUserName() {
+    let userName = $('.username').html();
+
+    let contentHtml = `<form onsubmit="onUpdateUserName(event)">
+    <div class="form-group">
+        <label for="edit_fullname">User Name</label>
+        <input type="text" class="form-control" id="edit_fullname" value="${userName}" placeholder="on your mind" required>
+    </div>
+    <div class="py-2 align-item-center">
+        <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
+        <button type="button" class="btn btn-primary btn-sm " onclick="onEditCancel()">Cancel</button>
+    </div>
+</form>`;
+
+    $('#edit_modal .modal-body').html(contentHtml);
+    $('#edit_modal').modal('show');
+
+}
+
+function onDelete(data) {
+    let postId = data._id;
+    if (!!postId) {
+        $.ajax({
+            method: "DELETE",
+            url: `https://microbloglite.herokuapp.com/api/posts/${postId}`,
+            headers: {
+                "Content-type": "application/json",
+                Authorization: `Bearer ${loginData.token}`,
+            },
+            data: {
+
+            }
+        }).then((res) => {
+            console.log(res);
+            alert('Deleted');
+
+            // just delete item in front
+            let item = $(`.feed-id-${postId}`).remove();
+
+
+        }).catch((err) => {
+
+        })
+
+    }
 }
 
 
@@ -53,21 +131,24 @@ function card(section) {
     // show 
     let postContent = $('#feeds');
 
-    let resultHtml = `<div class="feed">
+    let resultHtml = `<div class="feed feed-id-${section._id ? section._id : ''}">
     <div class="head">
-    <div class="user">
-    <div class="profile-photo">
-    <img src="./images/profile-13.jpg">
-    </div> 
-    <div class="ingo">
-    <h3>${section.username}</h3>
-    <small>${section.createdAt}</small>
-    </div> 
+        <div class="user">
+            <div class="profile-photo">
+                <img src="./images/profile-13.jpg">
+            </div> 
+        <div class="ingo">
+        <h3>${section.username}</h3>
+        <small>${section.createdAt}</small>
+        </div> 
     </div>
 
     <h4>${section.text} <span class="harsh-tag">#lifestyle</span></h4>
     
     <div class="comments text-muted">View all 0 comments</div>
+    <div>
+        <button type="button" class="btn btn-primary" onclick='onDelete(${JSON.stringify(section)})'>Delete</button>
+    </div>
     </div>
     `
     postContent.prepend(resultHtml);
@@ -104,9 +185,28 @@ function savePost(event) {
 }
 
 
+
 function loadName() {
-    username.innerText = loginData.fullname;
-    atName.innerText = `@${loginData.username}`;
+    let uName = loginData.username;
+
+    $.ajax({
+        method: "GET",
+        url: `https://microbloglite.herokuapp.com/api/users/${uName}`,
+        headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        data: {}
+    }).then((res) => {
+        console.log(res);
+
+        usernameComponent.innerText = res.fullName;
+        atNameComponent.innerText = `@${loginData.username}`;
+    }).catch((err) => {
+
+    });
+
+
 }
 
 window.onload = () => {

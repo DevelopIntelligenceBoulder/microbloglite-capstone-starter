@@ -4,8 +4,9 @@ const loginData = getLoginData();
 const cardSection = $q("#cardSection");
 const postBtn = $q("#postBtn");
 const post = $q("#postMaker");
-const atName = $q(".atName");
-const username = $q(".username");
+const atNameComponent = $q(".atName");
+const usernameComponent = $q(".username");
+
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
@@ -13,28 +14,28 @@ function getLoginData() {
 
 
 function displayProfilePost() {
-    const postAPI = "https://microbloglite.herokuapp.com/api/posts"+ user;
-    const options = {
+
+
+    $.ajax({
         method: "GET",
+        url: `https://microbloglite.herokuapp.com/api/posts`,
         headers: {
-            // This header is how we authenticate our user with the
-            // server for any API requests which require the user
-            // to be logged-in in order to have access.
-            // In the API docs, these endpoints display a lock icon.
+            "Content-type": "application/json",
             Authorization: `Bearer ${loginData.token}`,
         },
-    };
-    const profileName = loginData.username;
+        data: {}
+    }).then((posts) => {
+        let username = loginData.username;
 
-    fetch(postAPI, options)
-        .then((response) => response.json())
-        .then((posts) => {
-            posts.forEach((post) => {
-                if (profileName == post.username) {
-                    card(post, cardSection);
-                }
-            });
+        posts.forEach((post) => {
+            if (username == post.username) {
+                card(post, cardSection);
+            }
         });
+
+    }).catch((err) => {
+        console.log(err);
+    });
 }
 
 function createPost(event) {
@@ -61,7 +62,7 @@ function createPost(event) {
             document.getElementById('text').value = '';
             // delete 
             // displayProfilePost();
-        
+
         })
         .catch((err) => {
             console.log(err);
@@ -80,10 +81,10 @@ function card(section) {
         <a href="#" class="flex-shrink-0 group block">
           <div class="flex items-center">
             <div>
-              <img class="inline-block h-10 w-10 rounded-full" src=<img src="./images/Tony.jpeg"              alt="" />
+              <img class="inline-block h-10 w-10 rounded-full"  src="../posts/images/profile-19.jpg"              alt="" />
             </div>
             <div class="ml-3">
-              <p class="text-base leading-6 font-medium text-white username">
+              <p class="text-base leading-6 font-medium text-black  username">
                 ${section.username}
                 <span class="text-sm atName leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
                 @${loginData.username}
@@ -94,7 +95,7 @@ function card(section) {
         </a>
     </div>
     <div class="pl-16">
-        <p class="text-base width-auto font-medium text-white flex-shrink">
+        <p class="text-base width-auto font-medium text-black flex-shrink">
          ${section.text}
         </p>
 
@@ -149,13 +150,33 @@ function card(section) {
 
 }
 
+
+
 function loadName() {
-    username.innerText = loginData.fullname;
-    atName.innerText = `@${loginData.username}`;
+    let uName = loginData.username;
+
+    $.ajax({
+        method: "GET",
+        url: `https://microbloglite.herokuapp.com/api/users/${uName}`,
+        headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        data: {}
+    }).then((res) => {
+        console.log(res);
+
+        usernameComponent.innerText = res.fullName;
+        atNameComponent.innerText = `@${loginData.username}`;
+    }).catch((err) => {
+
+    });
+
+
 }
 
 window.onload = () => {
     loadName();
     displayProfilePost();
-   
+
 };
