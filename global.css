@@ -52,3 +52,9 @@
  justify-content: end;
  padding-right: 5em;
 }
+
+#index-header {
+  position: relative;
+  top: -10rem;
+  left: 3rem;
+}
