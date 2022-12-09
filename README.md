@@ -16,6 +16,7 @@ Tuesday 12.06.2022 Log(from Buttercup):
 1. Got the Logout feature to work.
 2. Successfully load profile information e.g. full name, username and bio description.
 3. Starting on creating post and POST the request to the api but it got too late and past my bedtime.
+-BUBBLES(  i was having a problem running the logout button a min ago but Mr.craig helped me. -smiles-)
 
 GOOD NIGHT! - Buttercup
 
@@ -25,4 +26,11 @@ Wednesday 12.07.2022 Log(from Blossom:
 - Did i have trouble with the post Yes, is it resolved.... No 
 - I know that my issue lies with how i call out the api in the fetch request and node also seems to be bugging out here 
 and there so my only hope was(shes going on for ages)
+-BUBBLES( i have successfully managed to fix my images on log in and register. The pictures are very cute)
 
+Thursday 12.08.2022(from bubbles)
+blossom and bubbles were on zoom in the morning until 4:00pm
+-BUUBLES(i see blossom is struggling so hard,she almost icebeamed her computer wehn she tried to fix the bugging. Unfortunately, she managed to fix it. shes happy now -smile-)
+using their ultra-superbrains, blossom, bubbles, and buttercup have dedicated their lives working together to make sure their website is super awesome!     👩🏿👩🏻👩🏻‍🦰
+
+( THANKYOU. HAVE A GREAT NIGHT!🎉❤️ )
