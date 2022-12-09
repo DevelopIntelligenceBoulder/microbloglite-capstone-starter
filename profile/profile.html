@@ -12,6 +12,10 @@
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./profile.css">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
     <title>Profile Page</title>
 
 
@@ -22,24 +26,52 @@
     </script>
 </head>
 <body>
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-        <header class="d-flex align-items-center pb-3 mb-5">
-            <div id="profilePic">
+    <main>
+            <div class="col-lg-8 mx-auto p-4 py-md-5">
+                <header class="d-flex align-items-center pb-3">
+                    <div id="profilePic">
             
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <h1 id="usernameTitle" class="d-flex align-items-center text-decoration-none "></h1>
+                            </div>
+                            <div class="row">
+                                <h3 id="usersName"></h3>
+                                <div id="editUserFullname" style="display: none;">
+                                    <input type="text" class="form-controll" id="floatingFullnameInput" placeholder="Full Name">
+                                    <label for="floatingFullnameInput"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <img src="/images/SuniverseProfilePic.jpg" alt="Suniverse Profile Picture with lion" width="150" height="165"> -->
+            
+                    <div class="row">
+                        <p><button id="editBtn" type="button">&#9998;</button></p>
+                    </div>
+                </header>
+                
+            <div id="userBio">
+                <h3>Bio</h3>
+                <p id="userBioDescription"></p>
             </div>
-            <!-- <img src="/images/SuniverseProfilePic.jpg" alt="Suniverse Profile Picture with lion" width="150" height="165"> -->
-            <h1 id="usernameTitle" class="d-flex align-items-center text-dark text-decoration-none"></h1>
-            <div class="col-lg-6"></div>
-        </header>
-        
-        <main>
-            <div class="container" ></div>
+            
+            <div id="editUserBio" style="display: none;">
+                <label id="editDescriptionLabel" for="editDescription"><h4>Bio</h4></label> 
+                <button id="editSaveBtn" class="btn btn-success" type="button">Save</button><br>
+                <textarea name="editUserBioDescription" id="editDescription" cols="100" rows="10"></textarea>
+            </div>
+
             <div class="navbar">
                 <ul id="navbar" class="nav nav-tabs">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="./profile.html"><button id="newPostNav" type="button" class="btn">New Post</button></a>
+                    <li class="nav-item" id="newNav">
+                      <a class="nav-link" href="./profile.html"><button id="newPostNav" type="button" class="btn">New Post</button></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="myNav">
                         <a class="nav-link"><button id="usersPostsNav" type="button" class="btn">My Posts</button></a>
                     </li>
                     <li class="nav-item">
@@ -56,8 +88,8 @@
                 <form id="new-post">
                     <div class="card">
                         <div id="card" class="card-body">
-                            <label id="postLabel" for="postTextarea">#share...</label><br>
-                            <textarea name="postTextarea" id="postTextarea" cols="112" rows="5"></textarea>
+                            <label id="postLabel" for="postTextarea">#TheUniverseShouldKnow...</label><br>
+                            <textarea name="postTextarea" id="postTextarea" cols="100" rows="5"></textarea><br>
                             <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
                         </div>
                       </div>
@@ -68,7 +100,7 @@
     
         </main>
     
-        <div id="newPostDisplay" style="display: none;">
+        <div id="newPostDisplay" class="container" style="display: none;">
             
         </div>
         <footer></footer>

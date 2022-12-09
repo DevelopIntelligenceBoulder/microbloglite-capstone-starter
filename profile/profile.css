@@ -5,7 +5,8 @@
     padding-left: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border: 3px solid black;
+    border: 3px solid aliceblue;
+    background-color: black;
     border-radius: 5%;
 }
 .margin {
@@ -15,12 +16,19 @@
     
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    color: #0d6efd;
+    color: blueviolet;
+    
 }
 header {
     border-bottom: solid;
     border-bottom-color: #0d6efd;
     border-bottom-width: 2px;
+    background-color: black;
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+    border-radius: 35%;
+    padding-left: 3rem;
+    padding-right: 5rem;
 }
 .navbar {
     background-color: black;
@@ -49,9 +57,58 @@ header {
 }
 img {
     border-radius: 45%;
-    border: 3px solid black;
+    border: 3px solid aliceblue;
     margin-right: 5px;
 }
 #newPostDisplay {
     margin-top: 1rem;
+}
+body {
+    background-image: url(/images/Sidebar-background.jpg);
+}
+h1 {
+    color: aliceblue;
+    border-radius: 45%;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    font-size: 30px;
+}
+.color {
+    color: aliceblue;
+}
+.postSpacing {
+    padding-left: 1rem;
+    color: aliceblue;
+}
+.headColor {
+    color: #0d6efd;
+}
+.likeColor {
+    color: crimson;
+}
+#userBio {
+    margin-bottom: 5rem;
+    color: aliceblue;
+    padding-left: 1.5rem;
+}
+.navActive {
+    background-color: aliceblue;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+}
+.navNonActive {
+    background-color: black;
+}
+#editDescriptionLabel {
+    color: aliceblue;
+}
+#editUserBio {
+    margin-left: 1.3rem;
+}
+#editSaveBtn {
+    margin-bottom: 1rem;
+}
+#usersName {
+    color: #0d6efd;
 }

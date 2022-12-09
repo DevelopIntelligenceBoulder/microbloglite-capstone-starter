@@ -10,12 +10,48 @@ const newPostNav = document.getElementById("newPostNav");
 const postDisplayDiv = document.querySelector("#newPostDisplay");
 const postFormDisplayDiv = document.querySelector("#postform");
 const profilePicDiv = document.querySelector("#profilePic");
+const newNav = document.querySelector("#newNav");
+const myNav = document.querySelector("#myNav")
+const editButton = document.getElementById("editBtn");
+const userBioDisplayDiv = document.querySelector("#userBio");
+const editBioDisplayDiv = document.querySelector("#editUserBio");
+const usersNameOutput = document.querySelector("#usersName");
+const editFullnameDisplayDiv = document.querySelector("#editUserFullname");
+const saveEditsBtn = document.getElementById("editSaveBtn");
+const editDescriptionInput = document.querySelector("#editDescription");
+const editFullnameInput = document.querySelector("#floatingFullnameInput");
+const userBioDescriptionOutput = document.querySelector("#userBioDescription");
+
+
 
 function loadUsersName() {
+    usersNameOutput.style.display = "block";
     const loginData = getLoginData();
     const usersName = loginData.username;
     usersName.className = "usernameTitle";
-    usernameTitle.innerHTML = usersName;
+    usernameTitle.innerText = usersName;
+    newNav.className = "navActive";
+
+    const options = { 
+        method: "GET",
+        headers: { 
+            // This header is how we authenticate our user with the
+            // server for any API requests which require the user
+            // to be logged-in in order to have access.
+            // In the API docs, these endpoints display a lock icon.
+            Authorization: `Bearer ${loginData.token}`,
+        },
+    };
+
+    fetch(api + "/api/users", options)
+    .then(response => response.json())
+    .then(usersData => {
+        for (const user of usersData) {
+            if(user.username == loginData.username) {
+                usersNameOutput.innerText = user.fullName;
+            }
+        }
+    })
 
 }
 
@@ -55,6 +91,8 @@ function createNewPost(event) {
 function showUsersPost() {
     postDisplayDiv.style.display = "block";
     postFormDisplayDiv.innerHTML = " "
+    myNav.className = "navActive";
+    newNav.className = "navNonActive";
 
     const loginData = getLoginData();
     const usersName = loginData.username;
@@ -74,7 +112,6 @@ function showUsersPost() {
     .then(UsersPosts => {
         UsersPosts.forEach(post => {
             if(post.username == usersName) {
-                console.log(post);
 
                 let cardSection = document.createElement("div");
                 cardSection.className = "card";
@@ -83,14 +120,17 @@ function showUsersPost() {
 
                 let cardTitle = document.createElement("h3");
                 cardTitle.className = "card-title";
+                cardTitle.className = "headColor"
                 cardTitle.innerText = post.username;
 
                 let cardDescription = document.createElement("p");
+                cardDescription.className = "postSpacing"
                 cardDescription.innerText = post.text;
 
                 let cardLikes = document.createElement("h5");
                 cardLikes.className = "card-subtitle";
-                cardLikes.innerText = `Likes ${countedLikes()}`;
+                cardLikes.className = "likeColor"
+                cardLikes.innerHTML = `&#9825; ${countedLikes()}`;
 
                 
                 const divContainer = document.createElement("div");
@@ -114,6 +154,8 @@ function showUsersPost() {
 function hideUsersPosts() {
     postDisplayDiv.innerHTML = " ";
     postFormDisplayDiv.style.display = "block";
+    myNav.className = "navNonActive";
+    newNav.className = "navActive";
 }
 
 function logout () {
@@ -150,21 +192,90 @@ function loadUsersProfilePicture() {
     let imageSource = md5(loginData.username);
 
     const profileImg = document.createElement("img");
-    profileImg.src = `https://www.gravatar.com/avatar/${imageSource}?d=${encodeURIComponent("https://i.pinimg.com/564x/70/fe/ea/70feea152ba479ad2767c49811126f6c.jpg")}&s=150`;
+    profileImg.src = `https://www.gravatar.com/avatar/${imageSource}?d=${encodeURIComponent("https://cdn.pixabay.com/photo/2014/12/21/23/59/toy-576514_1280.png")}&s=150`;
     profileImg.alt = "User's profile Picture";
-    profileImg.width = 150;
+    profileImg.width = 140;
+    profileImg.height = 150;
 
     profilePicDiv.appendChild(profileImg);
 
 }
 
+function loadEditInputs() {
+    userBioDisplayDiv.style.display = "none";
+    usersNameOutput.style.display = "none"
+    editBioDisplayDiv.style.display = "block";
+    editFullnameDisplayDiv.style.display = "block"
+
+}
+
+function saveEdits() {
+    userBioDisplayDiv.style.display = "block";
+    usersNameOutput.style.display = "block";
+    editBioDisplayDiv.style.display = "none";
+    editFullnameDisplayDiv.style.display = "none";
+
+    const loginData = getLoginData();
+
+    const editInputs = {
+        password: loginData.password,
+        bio: editDescriptionInput.value,
+        fullName: editFullnameInput.value
+      }
+
+    const options = { 
+        method: "PUT",
+        headers: {
+            // This header specifies the type of content we're sending.
+            // This is required for endpoints expecting us to send
+            // JSON data.
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+        body: JSON.stringify(editInputs),
+    };
+
+    fetch(api + `/api/users/${loginData.username}`, options)
+    .then(response => response.json())
+    .then(userData => {
+        console.log(userData);
+        userBioDescriptionOutput.innerText = userData.bio;
+        usersNameOutput.innerText = userData.fullName;
+        loadBio(userData.bio);
+    })
+
+}
+
+function loadBio() {
+    const loginData = getLoginData();
+
+    const options = { 
+        method: "GET",
+        headers: {
+            // This header specifies the type of content we're sending.
+            // This is required for endpoints expecting us to send
+            // JSON data.
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loginData.token}`,
+        },
+    };
+
+    fetch(api + `/api/users/${loginData.username}`, options)
+    .then(response => response.json())
+    .then(usersData => {
+        userBioDescriptionOutput.innerText = usersData.bio;
+    })
+}
+
 window.onload = () => {
     loadUsersProfilePicture();
     loadUsersName();
+    loadBio();
     postBtn.onclick = createNewPost;
     usersPostsNav.onclick = showUsersPost;
     newPostNav.onclick = hideUsersPosts;
-
+    editButton.onclick = loadEditInputs;
+    saveEditsBtn.onclick = saveEdits;
     const logoutBtn = document.getElementById("logoutBtn");
     logoutBtn.onclick = logout;
 }
