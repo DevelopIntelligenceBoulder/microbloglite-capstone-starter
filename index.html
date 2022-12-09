@@ -22,7 +22,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts.html");
+        if (isLoggedIn() === true) window.location.replace("/posts/index.html");
     </script>
 </head>
 <body>
@@ -34,17 +34,18 @@
     <main>
 
         <body class="text-center">
-    
-
+          <button class="btn btn-primary">
+          <a href="./registration.html" id="registrationPage">Registration</a>
+          </button>
             <main class="form-signin w-25 m-auto">
-              <form id="login">
-                <img class="mb-4" src="./ocean.jpg" alt="photo of ocean">
+
+              <form id="loginForm">
+                <img class="mb-4" src="/images/Sidebar-background.jpg" alt="photo of galaxy" height="300" width="340">
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
-
+                  <input type="text" class="form-control" id="floatingUsername" placeholder="Username">
+                  <label for="floatingUsername">Username</label>
 
                 </div>
                 <div class="form-floating">
@@ -54,7 +55,7 @@
             
                 <div class="checkbox mb-3">
                   <label>
-                    <input type="checkbox" value="remember-me"> Remember me
+                    <input type="checkbox" value="remember-me" id="remember-me"> Remember me
                   </label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" id="loginButton" type="submit">Sign in</button>
