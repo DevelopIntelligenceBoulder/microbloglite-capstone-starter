@@ -145,7 +145,7 @@ function card(section) {
 
     <h4>${section.text} <span class="harsh-tag">#lifestyle</span></h4>
     
-    <div class="comments text-muted">View all 0 comments</div>
+    <div><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i></div>
     <div>
         <button type="button" class="btn btn-primary" onclick='onDelete(${JSON.stringify(section)})'>Delete</button>
     </div>
@@ -153,7 +153,9 @@ function card(section) {
     `
     postContent.prepend(resultHtml);
 }
-
+function myFunction(x) {
+    x.classList.toggle("fa-thumbs-down");
+  }
 function savePost(event) {
     event.preventDefault();
     const bodyData = {
