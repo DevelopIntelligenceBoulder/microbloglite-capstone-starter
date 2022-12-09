@@ -1,22 +1,19 @@
 const $q = (select) => document.querySelector(select);
 const textField = $q("#text");
+const loginData = getLoginData();
 const cardSection = $q("#cardSection");
 const postBtn = $q("#postBtn");
 const post = $q("#postMaker");
 const atName = $q(".atName");
 const username = $q(".username");
-
-
-const loginData = getLoginData();
-const postAPI = "https://microbloglite.herokuapp.com/api/posts/";
-
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
 
 
+
 function displayProfilePost() {
-    const postAPI = "https://microbloglite.herokuapp.com/api/posts";
+    const postAPI = "https://microbloglite.herokuapp.com/api/posts"+ user;
     const options = {
         method: "GET",
         headers: {
@@ -64,7 +61,7 @@ function createPost(event) {
             document.getElementById('text').value = '';
             // delete 
             // displayProfilePost();
-            // window.location.href = "./profile.html"
+        
         })
         .catch((err) => {
             console.log(err);
@@ -72,24 +69,24 @@ function createPost(event) {
 }
 
 
-function card(section, data) {
+function card(section) {
     // show 
     let postContent = $('#post_content');
 
-    let result = JSON.stringify(section);
+    let result = JSON.stringify(section); // Tests If section is being displayed
 
     let resultHtml = ` <div>
     <div class="flex flex-shrink-0 p-4 pb-0">
         <a href="#" class="flex-shrink-0 group block">
           <div class="flex items-center">
             <div>
-              <img class="inline-block h-10 w-10 rounded-full" src="https://via.placeholder.com/10" alt="" />
+              <img class="inline-block h-10 w-10 rounded-full" src=<img src="./images/Tony.jpeg"              alt="" />
             </div>
             <div class="ml-3">
               <p class="text-base leading-6 font-medium text-white username">
                 ${section.username}
                 <span class="text-sm atName leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                ${section.username}
+                @${loginData.username}
                   </span>
                    </p>
             </div>
@@ -101,9 +98,6 @@ function card(section, data) {
          ${section.text}
         </p>
 
-        <p class="text-base width-auto font-medium text-white flex-shrink">
-         ${section.text}
-        </p>
         <div class="flex">
             <div class="w-full">
                 
@@ -151,10 +145,12 @@ function card(section, data) {
 
 </div>`
     postContent.prepend(resultHtml);
+    console.log(result);
+
 }
 
 function loadName() {
-    username.innerText = loginData.username;
+    username.innerText = loginData.fullname;
     atName.innerText = `@${loginData.username}`;
 }
 

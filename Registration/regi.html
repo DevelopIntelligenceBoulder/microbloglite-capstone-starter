@@ -10,10 +10,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"/>
+      crossorigin="anonymous"
+    />
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="/global.css" />
+
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="landing.css" />
     <!-- <script src="../auth.js"></script>
@@ -21,30 +23,110 @@
       if (isLoggedIn() === true) window.location.replace("/posts/");
     </script> -->
 
-
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="regi.css">
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
   </head>
   <body>
     <main>
+      <div class="login-root">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+          <div class="loginbackground box-background--white padding-top--64">
+            <div class="loginbackground-gridContainer">
+              <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                <div class="box-root" style="background-image: linear-gradient(rgb(31, 69, 240) 0%, rgb(223, 222, 222) 33%); flex-grow: 1;">
+                </div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+              </div>
+              <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+            <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+              <h1><a href="http://blog.stackfindover.com/" rel="dofollow"></a>WELCOME TO YOUR MICROBLOG NETWORK</h1>
+            </div>
+            <div class="formbg-outer">
+              <div class="formbg">
+                <div class="formbg-inner padding-horizontal--48">
+                  <span class="padding-bottom--15">Sign in to your account</span>
+                  <form id="registration">
+                    <div class="field padding-bottom--24">
+                          <!---------------------------------->
+                          <label for="username">Username:</label><br />
+                          <input type="text" id="username" name="username" /><br />
+                    </div>
+                    <!---------------------------------->
+                    <div class="field padding-bottom--24">
+                      <!------------label for password------->
+                      <label for="password">Password:</label>
+                      <input type="password" id="password" name="password" />
+                      </div>
+                        <!--------------.label-------> 
+                        <div class="field padding-bottom--24">
+                          <label for="username">Fullname:</label>
+                          <input type="text" id="fullname" name="fullname" />
+                      
+                    </div>
+                    <!-------------.password id--------->
+                    <div class="field padding-bottom--24">
+                      <button type="submit" id="signUp" >Register</button>
+                      <a href="../index.html" >Log in</a>
+                    </div>
+                    <div class="field">
+                      <a class="ssolink" href="./Registration/regi.html">Sign Up with (Google) instead</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+             </main>
+             <footer>
+              <div class="footer-link padding-top--24">
+                <span>Don't have an account? <a href="./Registration/regi.html">Sign up</a></span>
+                <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+                  <span><a href="#">Contact</a></span>
+                  <span><a href="#">Privacy & terms</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </footer>
 
-        <h1>WELCOME TO YOUR MICROBLOG NETWORK</h1>
-      <form id="registration">
-        <label for="username">Username:</label><br />
-        <input type="text" id="username" name="username" /><br />
-        <label for="username">Fullname:</label><br />
-        <input type="text" id="fullname" name="fullname" /><br />
+       <h1>WELCOME TO YOUR MICROBLOG NETWORK</h1>
+       <div style="position: relative;right: 500px; top: 60px;">  
+       
+        <br />
         <label for="email">Email:</label><br />
         <input type="text" id="email" name="email" /><br />
-        <label for="password">Password:</label><br />
-        <input type="password" id="password" name="password" /><br /><br />
+        <br />
         <div>
-        <button type="submit" id="signUp" >Register</button>
-        <a href="../index.html" >Log in</a>
+        
     </div>
       </form>
-
     </main>
 
     <footer></footer>
