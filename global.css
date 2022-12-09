@@ -22,7 +22,7 @@
   padding-left: 2.5rem;
 }
 
-#timeline {
+#timeline{
   margin-left: 6rem;
 }
 
@@ -47,7 +47,7 @@
 }
 
 #nav-link {
-  display: flex;
-  justify-content: end;
-  padding-right: 5em;
+ display: flex;
+ justify-content: end;
+ padding-right: 5em;
 }

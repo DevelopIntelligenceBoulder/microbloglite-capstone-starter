@@ -10,31 +10,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="/global.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css" />
 
-    <title>Login to the Microblog Network!</title>
+    <title>Login to the Morning Star!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="./scripts/auth.js"></script>
     <script>
-      if (isLoggedIn() === true) window.location.replace("./post/posts.html");
+        if (isLoggedIn() === true) window.location.replace("./posts/posts.html");
     </script>
-  </head>
+</head>
 
 <body>
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-        <div class="row align-items-center g-lg-5 py-5">
-            <div class="col-lg-7 text-center text-warning">
-                <h1 class="display-3 fw-bold lh-1 mb-3">Welcome to Morning star</h1>
+    <div id="main-div" class="d-flex flex-fill container col-xl-10 col-xxl-8 ">
+        <div   id="landing-page-header" class="row align-items-center g-lg-5 py-5">
+            <div id="landing-page-header1" class="d-flex col-lg-7 text-center text-lg-start">
+                <h1 class="display-3 fw-bold lh-1 mb-3">Welcome to <code class="text-warning">Morning Star<i id="sun-header" class="fs text-warning bi bi-brightness-low"></i></code>
+                </h1>
             </div>
             <div class="col-md-10 mx-auto col-lg-5 p-4 p-md-5 border rounded-3 bg-light">
-                <div>
-                    <button type="button" class="btn btn-light" id="loginForm">Login</button>
-                    <button type="button" class="btn btn-light" id="signUPForm">SignUp</button>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-warning" id="loginForm">Login</button>
+                    <button type="button" class="btn btn-outline-warning" id="signUPForm">Sign Up</button>
                 </div>
                 <hr class="my-4">
 
@@ -42,15 +44,15 @@
                     <form id="login">
 
                         <div class="form-floating mb-3">
-                            <input type="username" class="form-control" id="username" placeholder="Username">
+                            <input type="username" class="form-control" id="username" placeholder="Username" required>
                             <label for="username">Username</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
                             <label for="password">Password</label>
                         </div>
 
-                        <button class="w-100 btn btn-lg btn-primary" id="loginButton" type="submit">Login</button>
+                        <button class="w-100 btn btn-lg btn-warning" id="loginButton" type="submit">Login</button>
 
                     </form>
                 </div>
@@ -59,21 +61,25 @@
                     <form id="registration">
 
                         <div class="form-floating mb-3">
-                            <input type="text" id="regFullName" class="form-control">
+                            <input type="text" id="regFullName" class="form-control" required>
                             <label for="fullName">Type Full Name:</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="username" id="regUsername" class="form-control" minlength="3">
+                            <input type="username" id="regUsername" class="form-control" minlength="3" required>
                             <label for="username">Username</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" id="regPassword" class="form-control" minlength="6">
+                            <input type="password" id="regPassword" class="form-control" minlength="6" required>
                             <label for="password">Password</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="bio" class="form-control" required>
+                            <label for="bio">About</label>
+                        </div>
 
-                        <button class="w-100 btn btn-lg btn-primary" id="registButton" type="submit">Enter</button>
+                        <button class="w-100 btn btn-lg btn-warning" id="registButton" type="submit">Enter</button>
 
                     </form>
                 </div>
@@ -82,19 +88,14 @@
         </div>
       </form>
     </main>
-
-
-
-    <footer></footer>
-
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-    <!-- Page-specific code -->
-    <script src="./scripts/landing.js"></script>
-    <!-- <script src="./scripts/registrationPage.js"></script> -->
-  </body>
+        <!-- Page-specific code -->
+        <script src="./scripts/landing.js"></script>
+        <!-- <script src="./scripts/registrationPage.js"></script> -->
+</body>
 
 </html>
