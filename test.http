@@ -23,13 +23,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1b
 
 ### Get Posts
 Get https://microbloglite.herokuapp.com/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1bml2ZXJzZSIsImlhdCI6MTY3MDQzMjgyNCwiZXhwIjoxNjcwNTE5MjI0fQ.griFDtGbnNeIx78Jsyc_TO52xilWsc7clKeuI-voVOU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1bml2ZXJzZSIsImlhdCI6MTY3MDYwMDI4MSwiZXhwIjoxNjcwNjg2NjgxfQ.rH6tYKDMH6bgtuAs2TFYSFV9SqrmOppmk3ZIAPx92gU
 
 ### Create Post
 POST https://microbloglite.herokuapp.com/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1bml2ZXJzZSIsImlhdCI6MTY3MDM0NjM2MiwiZXhwIjoxNjcwNDMyNzYyfQ.5_lNMRNeIlMy8XBjD1NMmu9_2P6j9CwKVK8wQPUszwA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlN1bml2ZXJzZSIsImlhdCI6MTY3MDYwMDI4MSwiZXhwIjoxNjcwNjg2NjgxfQ.rH6tYKDMH6bgtuAs2TFYSFV9SqrmOppmk3ZIAPx92gU
 
 {
-    "text": "Cookie Cat"
+    "text": "Gems"
 }
