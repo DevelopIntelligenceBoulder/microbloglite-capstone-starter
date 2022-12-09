@@ -23,6 +23,12 @@ header {
     border-bottom: solid;
     border-bottom-color: #0d6efd;
     border-bottom-width: 2px;
+    background-color: black;
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+    border-radius: 35%;
+    padding-left: 3rem;
+    padding-right: 5rem;
 }
 .navbar {
     background-color: black;
@@ -95,4 +101,13 @@ h1 {
 }
 #editDescriptionLabel {
     color: aliceblue;
+}
+#editUserBio {
+    margin-left: 1.3rem;
+}
+#editSaveBtn {
+    margin-bottom: 1rem;
+}
+#usersName {
+    color: #0d6efd;
 }
