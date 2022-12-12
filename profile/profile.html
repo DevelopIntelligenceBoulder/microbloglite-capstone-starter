@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="/global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./profile.css">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Profile Page</title>
+
+
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="/auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/index.html");
+    </script>
+</head>
+<body>
+    <main>
+            <div class="col-lg-8 mx-auto p-4 py-md-5">
+                <header class="d-flex align-items-center pb-3">
+                    <div id="profilePic">
+            
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <h1 id="usernameTitle" class="d-flex align-items-center text-decoration-none "></h1>
+                            </div>
+                            <div class="row">
+                                <h3 id="usersName"></h3>
+                                <div id="editUserFullname" style="display: none;">
+                                    <input type="text" class="form-controll" id="floatingFullnameInput" placeholder="Full Name">
+                                    <label for="floatingFullnameInput"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <img src="/images/SuniverseProfilePic.jpg" alt="Suniverse Profile Picture with lion" width="150" height="165"> -->
+            
+                    <div class="row">
+                        <p><button id="editBtn" type="button">&#9998;</button></p>
+                    </div>
+                </header>
+                
+            <div id="userBio">
+                <h3>Bio</h3>
+                <p id="userBioDescription"></p>
+            </div>
+            
+            <div id="editUserBio" style="display: none;">
+                <label id="editDescriptionLabel" for="editDescription"><h4>Bio</h4></label> 
+                <button id="editSaveBtn" class="btn btn-success" type="button">Save</button><br>
+                <textarea name="editUserBioDescription" id="editDescription" cols="100" rows="10"></textarea>
+            </div>
+
+            <div class="navbar">
+                <ul id="navbar" class="nav nav-tabs">
+                    <li class="nav-item" id="newNav">
+                      <a class="nav-link" href="./profile.html"><button id="newPostNav" type="button" class="btn">New Post</button></a>
+                    </li>
+                    <li class="nav-item" id="myNav">
+                        <a class="nav-link"><button id="usersPostsNav" type="button" class="btn">My Posts</button></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/posts/index.html">Posts</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-danger " type="button" id="logoutBtn">Logout</button>
+                    </li>
+
+                  </ul>
+            </div>
+            
+            <div id="postform">
+                <form id="new-post">
+                    <div class="card">
+                        <div id="card" class="card-body">
+                            <label id="postLabel" for="postTextarea">#TheUniverseShouldKnow...</label><br>
+                            <textarea name="postTextarea" id="postTextarea" cols="100" rows="5"></textarea><br>
+                            <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
+                        </div>
+                      </div>
+                      
+                </form>
+            </div>
+    
+    
+        </main>
+    
+        <div id="newPostDisplay" class="container" style="display: none;">
+            
+        </div>
+        <footer></footer>
+
+    </div>
+
+    <!-- Bootstrap Bundle (including Popper for popovers) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Gravatar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"> </script>
+
+    <!-- Page-specific code -->
+    <script src="./profile.js"></script>
+</body>
+</html>
