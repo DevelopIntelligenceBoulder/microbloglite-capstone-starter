@@ -1,7 +1,23 @@
 /* Landing Page CSS */
 
+
 /*Google Fonts*/
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); </style>
+ 
+ body {
+    background: #007bff;
+    background: linear-gradient(to right, #502C73, #a90aff);
+  }
+  
+  .btn-login {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.75rem 1rem;
+  }
+  button {
+    color: #502C73;
+  }
+
 
 {
     font-family: 'Poppins', sans-serif;
@@ -70,6 +86,7 @@ header{
     color: var(--second-color);
 }
 
+
 /*Footer*/
 .footer {
     display: flex;
@@ -93,3 +110,4 @@ header{
     color: var(--second-color);
     transition: 0.3s all linear;
   }
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="./landing.css">
+
+  <!-- Run BEFORE page is finished loading (before window.onload): -->
+  <script src="/auth.js"></script>
+  <script>
+    if (isLoggedIn() === true) window.location.replace("/posts.html");
+  </script>
+</head>
+
+<body>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10" id="loginWhiteBox">
+        <div class="card bg-dark rounded-5 text-light">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="images/highLIGHT (1).png" style="width: 300px;" alt="logo">
+                </div>
+
+                <form id="registrationForm">
+                  <h1>Sign Up</h1>
+                  <form>
+                    <div class="form-floating mb-3 text-dark">
+                      <input type="name" class="form-control" id="nameField" placeholder="John">
+                      <label for="Name">Name</label>
+                    </div>
+                    <div class="form-floating mb-3 text-dark">
+                      <input type="lastName" class="form-control" id="lastNameField" placeholder="Doe">
+                      <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-3 text-dark">
+                      <input type="username" class="form-control" id="usernameField" placeholder="Username">
+                      <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating mb-3 text-dark">
+                      <input type="password" class="form-control" id="passwordField" placeholder="Password">
+                      <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="d-grid">
+                      <button class="btn btn-light btn-login text-uppercase fw-bold mb-4" id="signinBtn"
+                        type="submit">Sign
+                        in</button>
+                    </div>
+                  </form>
+
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Do you have an account?</p>
+                    <a href="index.html"><button type="button" class="btn btn-outline-light">Sign In</button></a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center">
+              <div class="text-light px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+<footer></footer>
+
+<!-- Bootstrap Bundle (including Popper for popovers) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<!-- Page-specific code -->
+<script src="./landing.js"></script>
+</body>
+
+</html>
