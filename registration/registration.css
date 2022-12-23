@@ -1,0 +1,20 @@
+
+.RegistrationForm{
+    margin-top: 10rem;
+    border: 2px solid black;
+    border-radius: 7px;
+    max-width: 50%;
+    min-width: 300px;
+    max-width: 40%;
+    min-height: 300px;
+
+}
+.btnCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+#registerBtn{
+    justify-content: center;
+}
