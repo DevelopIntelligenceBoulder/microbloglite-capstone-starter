@@ -1,0 +1,19 @@
+body::before{
+    display: block;
+    content: '';
+    height: 60px;
+    background-color:dimgray;
+  }
+  
+  @media(min-width: 768px){
+    .news-input{
+        width: 50%;
+    }
+  }
+  
+  
+  div.card-body h1, .card-body h2, div.card-bod h3, div.card-body  h4, div.card-bod h5 div.card-bo h6, div.card-body p{
+  
+    font-size: 0.9em;
+    
+  }
