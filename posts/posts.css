@@ -1,1 +1,35 @@
 /* Posts Page CSS */
+:root {
+  --maincolor: #ffff;
+  --secondary: #564592;
+  --thirdColor: #e15a97;
+  --foruthcolor: #0496ff;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+/* this is the begining of the mini profile */
+.miniprofile {
+  /* border: 2px solid var(--foruthcolor); */
+  width: 18em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-right: 2rem;
+  text-align: center;
+}
+.miniProfile-Pic {
+  justify-content: center;
+  border-radius: 50%;
+}
+/* this is the syles for the post area */
+.main-content {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* this is the news styles  */
+.news {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 1rem;
+}

@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="posts.css">
+    <link rel="stylesheet" href="posts.css" />
 
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="/auth.js"></script>
+    <!-- <script src="/auth.js"></script>
     <script>
-        if (isLoggedIn() === false) window.location.replace("/");
-    </script>
-</head>
-<body>
+      if (isLoggedIn() === false) window.location.replace("/");
+    </script> -->
+  </head>
+  <body>
+    <header></header>
+    <nav class="navbar navbar-expand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="">Logo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto navEdit mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">About</a></li>
+                <li><a class="dropdown-item" href="#">LogOut </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
-
-    <main></main>
+    <main class="mt-4">
+      <div class="miniprofile">
+        <div>
+          <img src="images/benjamin-voros-wITd9_eDTw8-unsplash.jpg" alt="" />
+        </div>
+        <img
+          class="miniProfile-Pic"
+          src="images/Screenshot 2020-09-17 081807 - Copy.jpg"
+          alt="profilepic"
+        />
+        <h2>kehinde ojo</h2>
+        <p></p>
+        <div>
+          <div>
+            <p>5</p>
+            <p>backer</p>
+          </div>
+          <div>
+            <p>1</p>
+            <p>following</p>
+          </div>
+        </div>
+        <hr />
+        <button>Edit Profile</button>
+      </div>
+      <div class="main-content">
+        <button>
+          <a href="/profile/profile.html">NEW POST </a>
+          <div>
+            <div>
+              <p></p>
+              <div>
+                <p id="author "></p>
+                <p id=""></p>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="news">
+        <h4>Recent news</h4>
+        <ul>
+          <li>
+            <a href=""
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
 
     <footer></footer>
 
-
     <!-- Bootstrap Bundle (including Popper for popovers) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Page-specific code -->
     <script src="posts.js"></script>
-</body>
+  </body>
 </html>
