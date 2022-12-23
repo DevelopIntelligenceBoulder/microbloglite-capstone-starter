@@ -26,5 +26,6 @@ function register(userData) {
         method: "POST",
         body: userData
     })
-    .then(result => result.json());
+    .then(result => result.json())
+    .then(window.location.href = "index.html");
 }
