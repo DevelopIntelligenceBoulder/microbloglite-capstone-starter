@@ -69,3 +69,27 @@ header{
     background: black;
     color: var(--second-color);
 }
+
+/*Footer*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+  }
+  .footer p {
+    font-size: 0.938rem;
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+  .social .bx {
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+  .social .bx:hover {
+    color: var(--second-color);
+    transition: 0.3s all linear;
+  }
