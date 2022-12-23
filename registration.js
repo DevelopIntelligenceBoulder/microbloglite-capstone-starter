@@ -16,7 +16,7 @@ registrationForm.onsubmit = function (event) {
     }
 
     // Disables the button after the form has been submitted already:
-    registrationForm.signinButton.disabled = true;
+    registrationForm.signinBtn.disabled = true;
 
     register(registrationData);
 };
