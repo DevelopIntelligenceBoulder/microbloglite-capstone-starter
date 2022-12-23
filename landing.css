@@ -1,5 +1,10 @@
 /* Landing Page CSS */
-body {
+
+
+/*Google Fonts*/
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); </style>
+ 
+ body {
     background: #007bff;
     background: linear-gradient(to right, #502C73, #a90aff);
   }
@@ -14,4 +19,70 @@ body {
   }
 
 
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --container-color: #1a1e21;
+    --second-color: #502c73;
+    --text-color: #172317;
+    --bg-color: #fff;
+
+}
+
+a{
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+img{
+    width: 100;
+}
+section{
+    padding: 3rem 0 2rem;
+}
+.container{
+    max-width: 1068;
+    margin: auto;
+    width: 100%;
+}
+
+/* Header */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 ;
+   
+}
+
+.login{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+}
+
+.login:hover{
+    background: black;
+    color: var(--second-color);
+}
 
