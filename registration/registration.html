@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Registration Page</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,35 +18,48 @@
         <!-- place navbar here -->
     </header>
 
-    <form class="RegistrationForm container">
+    <form class="RegistrationForm container was-validated" novalidate>
         <div class="col">
             <h2 class="text-center">Register</h2>
             <div class="mb-3">
                 <label for="usernameField" class="form-label">Username</label>
-                <input type="text" class="form-control" id="usernameField" placeholder="Enter a username">
+                <input type="text" class="form-control" id="usernameField" placeholder="Enter a username" required minlength="3">
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
             </div>
         </div>
 
         <div class="row g-3">
             <div class="col">
                 <label for="firstField">First Name</label>
-                <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="firstField">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name"
+                    id="firstField" required minlength="3">
             </div>
             <div class="col">
                 <label for="lastField">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lastField">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lastField" required minlength="3">
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="mb-3">
                     <label for="passwordField" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="passwordField" id="passwordField"
-                        placeholder="Enter a password">
+                    <input type="password" class="form-control" name="passwordField" id="passwordField1"
+                        placeholder="Enter a password" required >
+                        <div id="passwordField1Feedback">
+                        </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="passwordField" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="passwordField" id="passwordField2"
+                        placeholder="Enter a password" required minlength="6">
                 </div>
             </div>
             <div class="col-12 btnCol">
-                <input name="registrationButton" id="registerBtn" class="btn btn-primary" type="button" value="Register">
+                <button type="submit" class="btn btn-primary" id="registerBtn">Register</button>
             </div>
         </div>
     </form>
