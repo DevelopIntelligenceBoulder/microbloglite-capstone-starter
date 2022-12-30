@@ -5,31 +5,66 @@
   --thirdColor: #e15a97;
   --foruthcolor: #0496ff;
 }
+body {
+  background-image: url("images/beachImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* this is the stles for the navbar  */
 
+/* this is the main content */
 main {
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
+
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
 }
 /* this is the begining of the mini profile */
-.miniprofile {
-  /* border: 2px solid var(--foruthcolor); */
-  width: 18em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+/* .miniprofile {
+  flex: 1;
+  box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.2);
   margin-right: 2rem;
   text-align: center;
-}
-.miniProfile-Pic {
+  border-radius: 2rem;
+  height: auto;
+  width: 2rem;
+} */
+/* .benjaTheme {
+  width: 100%;
+} */
+
+/* .miniProfile-Pic {
   justify-content: center;
-  border-radius: 50%;
-}
+  border-radius: 60%;
+  position: relative;
+  bottom: 2rem;
+} */
 /* this is the syles for the post area */
 .main-content {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 8px 4px rgba(0, 0, 0, 0.2);
+
+  flex: 4;
+
+  margin-right: 2.5rem;
+  border-radius: 1rem;
+
+  background-color: rgba(255, 255, 255, 0.589);
+  height: 50rem;
 }
 
 /* this is the news styles  */
 .news {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 8px 3px rgba(0, 0, 0, 0.2);
   margin-left: 1rem;
+  flex-basis: 20%;
+  border-radius: 1rem;
+  flex: 1;
+  color: orange;
+}
+.PeopleCount {
+  display: flex;
+
+  justify-content: space-evenly;
 }
