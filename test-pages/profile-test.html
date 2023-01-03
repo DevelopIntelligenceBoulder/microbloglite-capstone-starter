@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile-page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/test-pages/profile-test.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/sticky-browser-icon.png">
+</head>
+
+<body>
+    <!-- Left -->
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" id="menu-test">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="#"
+                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="/test-pages/post-test.html" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Friends</span> </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Trending</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Messages</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span>
+                                        1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span>
+                                        2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/test-pages/profile-test.html" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                                class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">Malic Peters</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            </li>
+                            <li><a class="dropdown-item" href="">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Middle -->
+            <div class="main">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6" id="middle">
+                        <div class="profile-middle">
+                            <!-- profile -->
+                                <div class="profile-content">
+                                    <h3><img src="" alt="User" id="user-image">Malic Peters</h3>
+                                    <span id="user-tag">
+                                        @Kiddito692
+                                    </span>
+                                </div>
+                            <!-- tabs -->
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Posts</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                        aria-selected="false">Following</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="friends-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Friends</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                                        aria-selected="false">Likes</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">Posts the user makes</div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    Who the user follows</div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="friends-tab">
+                                    The users friends</div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    Things the user liked</div>
+                            </div>
+                            <!-- text-area -->
+                            <div class="form-outline">
+                                <textarea class="form-control" id="text-area" rows="8"
+                                    placeholder="What's on your mind?"></textarea>
+                                <button type="button" class="btn btn-warning">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right -->
+                    <div class="col-md-3" class="right">
+                        <div>
+                            <form class="offset-1 d-flex" role="search">
+                                <input class="form-control me-2" id="search-bar" type="search"
+                                    placeholder="Search Post-It" aria-label="Search">
+                            </form>
+                        </div>
+                        <!-- News-section -->
+                        <div class="news-right">
+                            <h3>News</h3>
+                            <ul class="list-group">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Sudden YouTube policy change sparks outcry from creators</h5>
+                                            <small>Today</small>
+                                        </div>
+                                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">"It's Morbin Time"</h5>
+                                            <small class="text-muted">3 hours ago</small>
+                                        </div>
+                                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Disney Stock Plummets 44%</h5>
+                                            <small class="text-muted">10 minutes ago</small>
+                                        </div>
+                                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </a>
+                                </div>
+                        </div>
+                        <!-- Joke-section -->
+                        <div class="joke-right">
+                            <h3>Daily Dad Jokes</h3>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                    <p class="mb-1">"My wife said I should do lunges to stay in shape. That would be a big step forward."</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <p class="mb-1">"I'm afraid for the calendar. Its days are numbered."</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <p class="mb-1">"Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera."</p>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <footer>
+                            <div>
+                                <a href="#!" class="offset-1 text-reset">Terms of Service</a>
+                                <a href="#!" class="text-reset">Privacy Policy</a>
+                                <a href="#!" class="text-reset">Cookie Policy</a>
+                                <a href="#!" class="text-reset">About</a>
+                                <a href="#!" class="offset-1 text-reset">Developers</a>
+                                <span>© 2023 Post It, Inc. </span>
+                            </div>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
