@@ -2,7 +2,7 @@
 
 "use strict";
 
-const loginForm = document.querySelector("#login");
+const loginForm = document.querySelector("#loginForm");
 
 loginForm.onsubmit = function (event) {
     // Prevent the form from refreshing the page,
@@ -17,7 +17,8 @@ loginForm.onsubmit = function (event) {
     }
 
     // Disables the button after the form has been submitted already:
-    loginForm.loginBtn.disabled = true;
+
+    loginForm.signinBtn.disabled = true;
 
     // Time to actually process the login using the function from auth.js!
     login(loginData);
