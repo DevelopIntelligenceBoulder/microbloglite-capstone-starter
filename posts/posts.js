@@ -2,10 +2,12 @@
 
 "use strict";
 window.onload = function () {
-  getusersblogs();
+  getAllUsers();
 };
-function getusersblogs() {
-  fetch("")
-    .then((res) => res.json)
-    .then((data) => {});
+function getAllUsers() {
+  fetch("https://microbloglite.herokuapp.com/api/post", Options);
+    .then(res => res.json())
+    .then(data => {
+
+    })
 }

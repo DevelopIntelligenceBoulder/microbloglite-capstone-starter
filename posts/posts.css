@@ -21,6 +21,7 @@ main {
   width: 80%;
   margin: auto;
 }
+
 /* this is the begining of the mini profile */
 /* .miniprofile {
   flex: 1;
@@ -50,8 +51,21 @@ main {
   margin-right: 2.5rem;
   border-radius: 1rem;
 
-  background-color: rgba(255, 255, 255, 0.589);
+  background-color: rgba(255, 255, 255, 0.856);
   height: 50rem;
+}
+.NewPost {
+  float: right;
+  margin-top: 2rem;
+  margin-right: 1.5rem;
+}
+
+.mainContentBtn {
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.945);
+  text-decoration: none;
 }
 
 /* this is the news styles  */
@@ -63,8 +77,9 @@ main {
   flex: 1;
   color: orange;
 }
-.PeopleCount {
-  display: flex;
-
-  justify-content: space-evenly;
+/* this is the styles for the posted content */
+.postedcontent {
+  text-align: center;
+  width: 90%;
+  margin: 4.5rem auto;
 }
