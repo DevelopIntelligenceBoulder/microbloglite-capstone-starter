@@ -15,7 +15,7 @@ window.onload = () => {
             e.preventDefault(); // prevents form from submitting
             count = valdateInputs();
         }
-        else{
+        else {
             form.submit();
         }
     });
@@ -107,7 +107,31 @@ window.onload = () => {
             setSuccess(password2);
             count++;
         }
-
+        if (count == 5) {
+            RegisterUser(userValue, fnameValue, lnameValue, password1Value);
+        }
         return count;
     }
+}
+
+function RegisterUser(user, fname, lname, pass) {
+    let bodyData = {
+        username: user,
+        fullName: fname + ' ' + lname,
+        password: pass
+    }
+    console.log(bodyData);
+    const url = 'https://microbloglite.herokuapp.com/api/users'
+    fetch(url, {
+        method: 'POST', 
+        body: JSON.stringify(bodyData),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('form').style.border = '4px solid aqua';
+        document.getElementById('successMessage').innerText = 'SuccessFully Registered';
+    })
 }

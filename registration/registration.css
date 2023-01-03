@@ -49,3 +49,8 @@ body{
 .input-control.error input{
     border-color:red;
 }
+#successMessage { 
+    font-size: 12px;
+    color: aqua;
+    margin-top: 10px;
+}
