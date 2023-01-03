@@ -1,1 +1,24 @@
 /* Posts Page CSS */
+
+div.container {
+    border: 1px solid black;
+    height: 100vh;
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 40vw;
+}
+
+#test {
+    --bs-gutter-x: 0rem;
+}
+
+#toggleBtn {
+    margin: auto;
+    --bs-navbar-toggler-padding-y: .25rem;
+    --bs-navbar-toggler-padding-x: .50rem;
+}
+
+nav {
+    height: 100vh;
+}
