@@ -22,6 +22,4 @@ loginForm.onsubmit = function (event) {
 
     // Time to actually process the login using the function from auth.js!
     login(loginData);
-
-    window.location.href = "posts/index.html";
 };
