@@ -1,0 +1,125 @@
+body {
+    font-family: "Carme";
+    background-color: #FFF4E2;
+}
+
+/* Left-Content---------------------------------------------*/
+
+#menu-test {
+    height: 100%;
+    position: fixed;        /* Fixed sidebar (to stay in place on scroll) */
+    overflow-x: hidden;     /* Disable horizontal scroll */
+}
+
+/* Middle-Content-------------------------------------------*/
+/* Post-Image-Container */
+.middle-picture-post {
+    width: 100%;
+    height: 452px;
+    left: 379px;
+    top: 188px;
+
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* Post-Text-Container */
+.middle-text-post {
+    width: 100%;
+    height: 204px;
+    left: 379px;
+    top: 669px;
+    margin-top: 20px;
+
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+#middle { /* Do not touch - This keeps everything centered */
+    margin-left: 350px;
+    padding: 0px 10px;
+}
+
+
+/* Right-Content--------------------------------------------*/
+/* Containers */
+.right-trending,
+.right-people {
+    width: 100%;
+    height: 564px;
+    left: 1013px;
+    top: 105px;
+    margin: 20px;
+
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+/*-----------------------------------------------------------*/
+/* Search Bar */
+#search-bar {
+    width: 100%;
+    height: 62px;
+    left: 1013px;
+    top: 14px;
+    margin-top: 20px;
+
+    background: #FFFFFF;
+    box-shadow: inset 0px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+}
+/*-----------------------------------------------------------*/
+
+/* Trending styling*/
+a.list-group-item,
+.list-group-item-action {
+    background-color: transparent !important;
+    border: none;
+}
+
+a.list-group-item:hover,
+.list-group-item-action:hover {
+    background-color: rgba(255, 219, 169, 0.4) !important;
+    ;
+}
+/*-----------------------------------------------------------*/
+/* Check Out styling */
+li.list-group-item {
+    background-color: transparent !important;
+    border: none;
+}
+
+li.list-group-item:hover {
+    background-color: rgba(255, 219, 169, 0.4) !important;
+    ;
+}
+/*-----------------------------------------------------------*/
+/* Footer */
+.text-reset {
+    text-decoration: none;
+}
+
+.text-reset:hover {
+    text-decoration: underline;
+    color: blue;
+}
+/*-----------------------------------------------------------*/
+
+/* Right Headers */
+.trend-header, .check-out{
+    font-weight: bolder;
+    text-indent: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+
+#right {
+    margin-right: 350px;
+}
+
+
+
