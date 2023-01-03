@@ -2,24 +2,9 @@
 
 
 /*Google Fonts*/
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); </style>
- 
- body {
-    background: #007bff;
-    background: linear-gradient(to right, #502C73, #a90aff);
-  }
-  
-  .btn-login {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    padding: 0.75rem 1rem;
-  }
-  button {
-    color: #502C73;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-
-{
+* {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -27,6 +12,36 @@
     scroll-padding-top: 2rem;
     box-sizing: border-box;
 }
+
+header {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+body {
+    background: #007bff;
+    background: linear-gradient(to right, #502C73, #a90aff);
+}
+
+
+.btn-login {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.75rem 1rem;
+}
+
+button {
+    color: #502C73;
+}
+
 
 /* Variables */
 :root {
@@ -37,42 +52,22 @@
 
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 li {
     list-style: none;
 }
-img{
-    width: 100;
-}
-section{
-    padding: 3rem 0 2rem;
-}
-.container{
+
+.container {
     max-width: 1068;
     margin: auto;
     width: 100%;
+
 }
 
-/* Header */
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 200;
-}
-
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0 ;
-   
-}
-
-.login{
+.login {
     padding: 8px 14px;
     text-transform: uppercase;
     font-weight: 500;
@@ -81,8 +76,7 @@ header{
     color: var(--bg-color);
 }
 
-.login:hover{
+.login:hover {
     background: black;
     color: var(--second-color);
 }
-
