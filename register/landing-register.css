@@ -18,7 +18,7 @@ body {
     border: none;
     position: relative;
     margin: 20px;
-    width: 100%;
+    width: 529.76px;
     height: 70px;
 
 
@@ -42,7 +42,7 @@ body {
 }
 
 
-#login-container { 
+#loginContainer { 
     animation: container-load 300ms ease-in 300ms;
     position: absolute;
     max-width: 943px;
@@ -56,20 +56,19 @@ body {
     border-radius: 20px;
 }
 
-#submit-button {
+#submitButton {
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 40px;
     width: 530px;
     height: 74.51px;
     left: 454px;
     top: 655px;
-    
     background: #FFD35D;
     box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
 
-#submit-button {
+#submitButton {
     left: 40.41%;
     right: 40.34%;
     top: 32.86%;
@@ -85,20 +84,20 @@ body {
     color: #000000;
 }
 
-#forget-password {
+#forgetPassword {
     color: black;
     text-decoration: none;
 }
 
-#forget-password:hover {
+#forgetPassword:hover {
     color: #003CD6;
 }
 
-#no-account {
+#noAccount {
     margin-top: 10px;
 }
 
-#sign-up {
+#signUP {
     text-decoration: none;
 }
 
