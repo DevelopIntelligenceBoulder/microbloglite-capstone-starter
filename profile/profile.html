@@ -1,68 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Capstone_3_Blog_Site</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/profile/profile.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/profile/profile.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/b1059be12a.js" crossorigin="anonymous"></script>
+
+
+  <title>Capstone_3</title>
 </head>
-<body class=" text-center img-fluid bg-dark">
 
-    <header>
-<!-- Navbar-->
-<nav class="navbar navbar-expand-lg bg-light navbar-light py-2 fixed-top">
+<body class="bg-secondary">
+  <!-- Navbar menu -->
+  <nav class="navbar navbar-expand-lg shadow-sm py-3 fixed-top  te ">
     <div class="container">
-        <a href="profile.html" class="navbar-brand">
-            <h3>Capstone_3_Blog_Site_SpotLight</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <li class="nav-item">
+      <a href="/profile/profile.html" class="navbar-brand">
+        <h2 class="text-white">Capstone_3_Spotlight</h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+          <li class="nav-item">
 
-                    <a href="post.html" class="nav-link">Post</a>
-                </li>
+            <a href="/landing/index.html" class="nav-link" >Home</a>
+          </li>
 
-            </ul>
-        </div>
+
+          <li class="nav-item">
+
+            <a href="/posts/index.html" class="nav-link">Post</a>
+          </li>
+
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
+ 
+  <section id="profileArea" class="text-light p-5 p-lg-0 pt-lg-5 text-sm-start align-item-center">
+    <div class="container-lg">
+      <div class="row-justify-content-center align-item-center">
+        <div class="col-md-6 text-center text-md-start">
 
-    </header>
-    <main>
-        <div class="container">
-            <div class="profile-box">
-                
 
-        
-                
+          <div class="sub-menu-wrap" id="submenuId">
+            <div class="sub-menu">
+              <div class="user-info">
+                <img src="/images/profile/user.svg" alt="user-info">
+                <h3>Ibrahim Bah</h3>
+              </div>
+              <hr>
+              <a href="#" class="sub-menu-link">
+                <img src="/images/profile/profile copy.png" alt="sub-menu">
+
+                <p>Edit profile</p>
+                <span>👈</span>
+              </a>
+              <a href="#" class="sub-menu-link" id="postId">
+                <img src="/images/profile/post copy.png" alt="sub-menu-link">
+                <p>Make a post</p>
+                <span>👈</span>
+              </a>
+
+              <a href="#" class="sub-menu-link" id="logoutBtn">
+                <img src="/images/profile/logout.png" alt="sub-menu-link">
+                <p>Logout</p>
+                <span>👈</span>
+              </a>
+
             </div>
+
+          </div>
+
+          <div class="card mt-3 align-items-center bg-transparent">
+
+            <img src="/images/profile/user.svg" alt="MainProfile" class="user-pic mb-3 mt-3" onclick=" toggleMenu()">
+            <div class="card-body">
+              <div class="container">
+                <form class="form-control" id="addPost">
+
+                  <div class="mb-3">
+                    <label for="input1" class="form-label">Post Title</label>
+                    <input type="Post Title" class="form-control" id="input1" placeholder="What's on your mind?">
+                  </div>
+                  <div class="mb-3">
+                    <label for="textArea1" class="form-label">Post Content</label>
+                    <textarea class="form-control" id="textArea1" rows="3"></textarea>
+                  </div>
+                  <div>
+                    <input type="submit" value="Submit">
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+            <div class="wrapper mt-3 mb-3">
+              <div class="static-txt">Titles:</div>
+              <ul class="dynamic-txts align-items-center">
+                <li><span>Software Developer</span></li>
+                <li><span>Blochain Developer</span></li>
+                <li><span>Robotics Engineer</span></li>
+                <li><span>IOS Developer</span></li>
+
+              </ul>
+            </div>
+
+
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    </main>
 
 
+  <!-- footer -->
+  <footer class="py-3 my fixed-bottom text-center text-white bg-trasparent shadow-sm">
+    <div class="container">
+      <p class="lead">
+        Copyright &copy;2022 Capstone_3
+      </p>
 
-    <footer class="p-3 bg-light text-dark text-center fixed-bottom">
-        <div class="container">
-          <p class="lead">
-            Copyright &copy;2022 YearUp DevsPro Capstone_3_Blog_Site_SpotLight
-          </p>
-    
-        </div>
-    </footer>
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    </div>
+  </footer>
 
-    <script src="/profile/profile.js"></script>
+  <script>
+    let profileId = document.getElementById("submenuId");
+    function toggleMenu() {
+      submenuId.classList.toggle("open-menu");
+
+
+    }
+    toggleMenu();
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+  <script src="/profile/profile.js"></script>
+  <script src="/auth.js"></script>
+
 </body>
 
 </html>
