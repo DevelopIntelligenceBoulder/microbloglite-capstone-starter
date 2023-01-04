@@ -22,9 +22,9 @@
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <!-- <script src="/auth.js"></script>
-    <script>
-      if (isLoggedIn() === false) window.location.replace("/");
+    <!-- <script src="/auth.js"></script> -->
+    <!-- <script>
+      if (isLoggedIn() === false) window.location.replace("../landing/");
     </script> -->
   </head>
   <body>
@@ -59,10 +59,20 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">About</a></li>
-                <li><a class="dropdown-item" href="#">LogOut </a></li>
+                <li>
+                  <a class="dropdown-item" href="../profile/profile.html"
+                    >Profile</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="">Settings</a></li>
+                <li>
+                  <a class="dropdown-item" href="aboutpage.html">About</a>
+                </li>
+                <li>
+                  <a id="Logoutbtn" class="dropdown-item" type="button "
+                    >LogOut
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
