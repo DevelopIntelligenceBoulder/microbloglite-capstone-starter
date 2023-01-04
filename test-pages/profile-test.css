@@ -104,7 +104,6 @@ li.list-group-item:hover {
     height: 100%;
     position: fixed; /* Fixed sidebar (to stay in place on scroll) */
     overflow-x: hidden; /* Disable horizontal scroll */
-
 }
 
 #middle {
