@@ -19,26 +19,21 @@ body {
     border: none;
     position: relative;
     margin: 20px;
+    padding-left: 60px;
     width: 529.76px;
     height: 70px;
 
 
     background: #FFFFFF;
     box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
-
-#username,
-#password {
-    padding-right: 295px;
+    border-radius: 30px;
     font-family: 'Carme';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
 
-    text-align: justify; 
-
+    text-align: start; 
     color: #999999;
 }
 

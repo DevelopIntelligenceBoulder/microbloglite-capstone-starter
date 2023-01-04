@@ -7,7 +7,7 @@ registerForm.onsubmit = function(e) {
 
     const getData = {
         username: registerForm.username.value,
-        fullname: registerForm.fullname.value,
+        fullName: registerForm.fullname.value,
         password: registerForm.password.value,
     }
     console.log(getData)
@@ -27,6 +27,7 @@ function registerUser(formData){
         .then(user => {
             window.location.assign("/index.html")
         });
+        
 }
 
 /* if the log in is successful, then switch to the login page */

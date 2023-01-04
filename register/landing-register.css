@@ -19,34 +19,42 @@ body {
     border: none;
     position: relative;
     margin: 20px;
+    padding-left: 60px;
     width: 529.76px;
     height: 70px;
 
 
     background: #FFFFFF;
     box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+    border-radius: 30px;
 
-    padding-right: 295px;
     font-family: 'Carme';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
 
-    text-align: center;
-
+    text-align: start;
     color: #999999;
 }
 
-#registerContainer { 
+.input-group-text {
+
+    border: none;
+    width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+#registerContainer {
     animation: container-load 300ms ease-in 300ms;
     position: absolute;
     max-width: 943px;
     min-height: 652px;
 
     top: 154px;
-    left: 241px;  
+    left: 241px;
 
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -102,30 +110,23 @@ body {
 
 
 /* Animation */
-@keyframes container-load{
-    from{
+@keyframes container-load {
+    from {
         opacity: 0;
         -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
-        
+
     }
-    to{
+
+    to {
         opacity: 1;
         -webkit-transform: none;
         transform: none;
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 576px) {}
 
+@media (min-width: 992px) {}
 
-}
-
-@media (min-width: 992px) {
-
-}
-
-@media (min-width: 1400px) {
- 
-    
-}
+@media (min-width: 1400px) {}
