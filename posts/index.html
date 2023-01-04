@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <!-- <link rel="stylesheet" href="/global.css"> -->
@@ -23,6 +25,7 @@
     </script>
 
 </head>
+
 <body>
 
     <!-- <header>
@@ -31,7 +34,7 @@
 
     <main>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
                 <!-- Left Side Content NavBar -->
@@ -39,21 +42,23 @@
                     <!-- NavBAr -->
                     <div class="row">
                         <div class="col" id="test">
-                            <nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex flex-column">
+                            <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark d-flex flex-column">
                                 <div class="container-fluid">
-                                    <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                                    <button id="toggleBtn" class="navbar-toggler" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
                                         aria-controls="offcanvasDarkNavbar">
                                         <span class="navbar-toggler-icon"></span>
                                     </button>
-                                    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                                        aria-labelledby="offcanvasDarkNavbarLabel">
+                                    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1"
+                                        id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                                         <!-- <div class="offcanvas-header">
                                             <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">POST-IT</h5>
                                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                                                 aria-label="Close"></button>
                                         </div> -->
                                         <div class="offcanvas-body">
-                                            <ul class="navbar-nav nav nav-pills flex-column justify-content-end flex-grow-1 pe-3">
+                                            <ul
+                                                class="navbar-nav nav nav-pills flex-column justify-content-end flex-grow-1 pe-3">
 
                                                 <!-- LOGO -->
                                                 <li class="nav-item">
@@ -83,7 +88,7 @@
                                                 </li>
 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Profile</a>
+                                                    <a class="nav-link" href="/profile/">Profile</a>
                                                 </li>
 
                                                 <li class="nav-item">
@@ -93,8 +98,11 @@
                                                 <hr>
 
                                                 <div class="d-flex align-items-end">
-                                                    <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1">
-                                                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                                    <a href="/profile/"
+                                                        class="d-flex align-items-center text-white text-decoration-none"
+                                                        id="dropdownUser1">
+                                                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30"
+                                                            height="30" class="rounded-circle">
                                                         <span class="d-sm-inline mx-1">Name</span>
                                                     </a>
                                                 </div>
@@ -108,17 +116,76 @@
                 </div>
 
                 <!-- Center Content (Posts, option to add Post) -->
-                <div class="col-7">
+                <div class="col-sm-7">
                     <div class="row">
                         <h4>Content</h4>
                     </div>
                 </div>
 
                 <!-- Right Side Content (Random users, New, Footer) -->
-                <div class="col-3">
-                    <div class="row">
-                        <h4>Footer</h4>
+                <div class="sidebar col-3" id="rightContent">
+
+                    <div class="jumbotron jumbotron-fluid text-bg-dark rounded-3">
+                        <div class="container">
+                            <h4 class="trending text-center mb-5">Trending</h4>
+                            <hr>
+                            <p id="displayNews"></p>
+                            <img id="img" src="" alt="">
+
+                        </div>
                     </div>
+
+                    <div class="jumbotron jumbotron-fluid  text-bg-dark rounded-3">
+                        <div class="container">
+                            <h5 class="people text-center mb-5">People you may know</h5>
+
+                            <img class="img rounded-5" src="../profile/image/istockphoto-1309328823-170667a.jpg"
+                                height="70" width="100" alt="user">
+                            <div style='vertical-align:middle; display:inline;'>
+                                <a href="#">Micheal Hudson</a>
+                            </div>
+                            <hr>
+                            <img class="img rounded-5" src="../profile/image/pexels-photo-733872.jpeg" height="70"
+                                width="100" alt="user">
+                            <div style='vertical-align:middle; display:inline;'>
+                                <a href="#">Jane Doe</a>
+                            </div>
+                            <hr>
+                            <img class="img rounded-5"
+                                src="../profile/image/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" height="80"
+                                width="100" alt="user">
+                            <div style='vertical-align:middle; display:inline;'>
+                                <a href="#">Peter Parker</a>
+                            </div>
+                            <hr>
+                            <a href="#">show more..</a>
+                            <p id="people">
+                                <i class="fa-thin fa-user "></i>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <div id="footer">
+                        <div class="container">
+                            <footer class="footer sticky-bottom">
+                                <hr>
+                                <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms of
+                                            Service</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy Policy</a>
+                                    </li>
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+
+                                </ul>
+                                <p class="text-center text-muted">© 2022 Post-it, Inc.</p>
+                            </footer>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -131,9 +198,12 @@
 
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 
     <!-- Page-specific code -->
     <script src="posts.js"></script>
 </body>
+
 </html>
