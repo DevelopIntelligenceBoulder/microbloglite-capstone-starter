@@ -4,7 +4,7 @@
 
 const loginForm = document.getElementById("login");
 
-loginForm.onsubmit = function (event) {
+loginForm.onsubmit = function(event) {
     // Prevent the form from refreshing the page,
     // as it will do by default when the Submit event is triggered:
     event.preventDefault();

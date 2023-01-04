@@ -25,7 +25,7 @@ function isLoggedIn () {
 // landing page, in order to process a user's login. READ this code,
 // and feel free to re-use parts of it for other `fetch()` requests
 // you may need to write.
-function login (loginData) {
+function login(loginData) {
     // POST /auth/login
     const options = { 
         method: "POST",
@@ -33,7 +33,7 @@ function login (loginData) {
             // This header specifies the type of content we're sending.
             // This is required for endpoints expecting us to send
             // JSON data.
-            "Contet-Type": "application/json",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(loginData),
     };
