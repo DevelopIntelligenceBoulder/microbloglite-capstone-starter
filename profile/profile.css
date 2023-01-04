@@ -1,0 +1,25 @@
+.jumbotron{
+  margin-bottom: 10px;
+}
+
+.footer {
+  
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+textarea {
+  max-width: 95%;
+}
+
+@media only screen and (max-width: 1026px) {
+  .sidebar {
+      display: none;
+  }
+}
+
+a{
+  color: white;
+}
