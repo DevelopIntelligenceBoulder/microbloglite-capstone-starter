@@ -4,12 +4,9 @@ body {
 }
 
 #logoBlue {
-    max-width: 203px;
-    min-height: 155px;
     margin: 0 auto;
-    left: 602px;
-    top: 174px;
     object-fit: cover;
+    padding-left: 20em;
 }
 
 #username,
@@ -17,11 +14,10 @@ body {
 #password {
     outline: none;
     border: none;
-    position: relative;
     margin: 20px;
     padding-left: 60px;
     width: 529.76px;
-    height: 70px;
+    min-height: 70px;
 
 
     background: #FFFFFF;
@@ -38,8 +34,13 @@ body {
     color: #999999;
 }
 
-.input-group-text {
+#username:focus,
+#fullname:focus,
+#password:focus {
+    background-color: rgb(199, 199, 255);
+}
 
+.input-group-text {
     border: none;
     width: 0;
     padding: 0;
@@ -50,11 +51,11 @@ body {
 #registerContainer {
     animation: container-load 300ms ease-in 300ms;
     position: absolute;
+    display: flex;
+    align-items: center;
     max-width: 943px;
     min-height: 652px;
-
-    top: 154px;
-    left: 241px;
+    margin-top: 100px;
 
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -62,6 +63,7 @@ body {
 }
 
 #submitButton {
+    transition: all .2s ease-in-out; 
     margin-left: 20px;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -71,10 +73,7 @@ body {
     top: 655px;
     background: #FFD35D;
     box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
 
-#submitButton {
     left: 40.41%;
     right: 40.34%;
     top: 32.86%;
@@ -86,28 +85,19 @@ body {
     font-size: 20px;
     line-height: 24px;
     text-align: center;
+    border-radius: 30px;
 
     color: #000000;
 }
 
-#forgetPassword {
-    color: black;
-    text-decoration: none;
+
+#submitButton:hover {
+    transform: scale(0.9); 
 }
 
-#forgetPassword:hover {
-    color: #003CD6;
+#submitButton:focus {
+    background-color: #fff7e2;
 }
-
-#noAccount {
-    margin-top: 10px;
-}
-
-#signUP {
-    text-decoration: none;
-}
-
-
 
 /* Animation */
 @keyframes container-load {
@@ -125,8 +115,8 @@ body {
     }
 }
 
-@media (min-width: 576px) {}
+@media (min-width: 1400px) {}
 
 @media (min-width: 992px) {}
 
-@media (min-width: 1400px) {}
+@media (min-width: 576px) {}
