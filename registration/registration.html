@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Registration Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./registration.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/" id="form" autocomplete="off">
+            <h1>Registration</h1>
+            <div class="input-control">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-control">
+                        <label for="fname">First Name</label>
+                        <input id="fname" name="fname" type="text">
+                        <div class="error"></div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="input-control">
+                        <label for="lname">Last Name</label>
+                        <input id="lname" name="lname" type="text">
+                        <div class="error"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password">
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="password">Confirm Password</label>
+                <input id="password2" name="password2" type="password">
+                <div class="error"></div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="./registration.js"></script>
+</body>
+
+</html>
