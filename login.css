@@ -115,7 +115,7 @@ body {
     width: auto;
   }
   .box-form .right button {
-    float: right;
+    /* float: right; */
     color: #fff;
     font-size: 16px;
     padding: 12px 35px;
