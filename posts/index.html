@@ -9,30 +9,125 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
+    <!-- <link rel="stylesheet" href="/global.css"> -->
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="posts.css">
 
-    <title>/POSTS</title>
+    <title>POST-IT</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
+
 </head>
 <body>
 
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
+    <!-- <header>
+        <h1 class="text-center">POSTS PAGE</h1>
+    </header> -->
 
     <main>
-        <button id="logout">logout</button>
+
+        <div class="container">
+            <div class="row">
+
+                <!-- Left Side Content NavBar -->
+                <div class="col-2">
+                    <!-- NavBAr -->
+                    <div class="row">
+                        <div class="col" id="test">
+                            <nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex flex-column">
+                                <div class="container-fluid">
+                                    <button id="toggleBtn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                                        aria-controls="offcanvasDarkNavbar">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                                        aria-labelledby="offcanvasDarkNavbarLabel">
+                                        <!-- <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">POST-IT</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div> -->
+                                        <div class="offcanvas-body">
+                                            <ul class="navbar-nav nav nav-pills flex-column justify-content-end flex-grow-1 pe-3">
+
+                                                <!-- LOGO -->
+                                                <li class="nav-item">
+                                                    <a class="navbar-brand" href="/posts/">
+                                                        <img src="LOGO" alt="POST-IT" width="15" height="12">
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Explore</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Notifications</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Messages</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Bookmarks</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Profile</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <button class="btn btn-light" id="logout">Logout</button>
+                                                </li>
+
+                                                <hr>
+
+                                                <div class="d-flex align-items-end">
+                                                    <a href="#" class="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1">
+                                                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                                        <span class="d-sm-inline mx-1">Name</span>
+                                                    </a>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Content (Posts, option to add Post) -->
+                <div class="col-7">
+                    <div class="row">
+                        <h4>Content</h4>
+                    </div>
+                </div>
+
+                <!-- Right Side Content (Random users, New, Footer) -->
+                <div class="col-3">
+                    <div class="row">
+                        <h4>Footer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
