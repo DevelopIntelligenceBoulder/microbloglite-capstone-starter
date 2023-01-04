@@ -33,7 +33,7 @@ function login (loginData) {
             // This header specifies the type of content we're sending.
             // This is required for endpoints expecting us to send
             // JSON data.
-            "Content-Type": "application/json",
+            "Contet-Type": "application/json",
         },
         body: JSON.stringify(loginData),
     };

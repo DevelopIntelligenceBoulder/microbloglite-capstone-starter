@@ -5,8 +5,22 @@ window.onload = function () {
   let postBtn = document.getElementById("postBtn");
   postBtn.onclick = postBtnOnClick;
 
+  displayPost();
+  
+  document.getElementById("name").innerText = (loginData()).username
+
+  console.log(getLoginData())
   //setInterval(displayNews, 10000);
 };
+
+function loginData () {
+  // let name = document.getElementById("name")
+  // name.textContent =  JSON.parse(window.localStorage.getItem("login-data")) || {};
+  
+  // return name;
+  let loginData = getLoginData()
+  return loginData;
+}
 
 
 function displayNews() {
@@ -38,9 +52,6 @@ function displayNews() {
 }
 
 
-
-
-
 function postBtnOnClick() {
 
   let inputElement = document.getElementById('post');
@@ -49,77 +60,50 @@ function postBtnOnClick() {
   let data = { text: textToPost };
 
 
+
   let options = {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGwiLCJpYXQiOjE2NzIwNzgzMDMsImV4cCI6MTY3MjE2NDcwM30.TcF9VVdZIPE9mEJsXsoRppKx3K3YEZp92lp5982oy9E'
-    }
+      "Content-Type": 'application/json',
+      "Authorization": `Bearer ${(loginData()).token}`
+      
+    },
   };
 
-  fetch('https://microbloglite.herokuapp.com/api/posts', options)
+  fetch('https://microbloglite.herokuapp.com/api/posts/', options)
     .then(response => {
-     
+     console.log(data)
       if (response.ok) {
         
         inputElement.value = '';
       }
     });
 
-    displayPost;
+    
 
 }
 
+
 function displayPost() {
+
+  let options = {
+   
+
+    headers: {
+      "Content-Type": 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGwiLCJpYXQiOjE2NzI3NjI1MTEsImV4cCI6MTY3Mjg0ODkxMX0.p8lcNFPuDyrJScWUrycGaEhwTSMyN8VE-hxSbKo2rZk'
+    }
+  };
  
-  fetch('https://microbloglite.herokuapp.com/api/posts/63a9e42e45c00975ccf50f52')
+  fetch('https://microbloglite.herokuapp.com/api/posts/63b48aa85f3f1f9a6950b481',options)
     .then(response => response.json())
     .then(data => {
       let displayPost = document.getElementById('home-tab-pane');
 
   
-      displayPost.textContent = "hello";
+      displayPost.textContent = JSON.stringify(data.text);
+      console.log(data)
     });
 }
 
-
-
-// async function postBtnOnClick() {
-//   // Get the text to post
-//   let inputElement = document.getElementById('post');
-//   let textToPost = inputElement.value;
-
-//   // Get the user's authorization token
-//   let token = getUserToken();
-
-//   // Create the data to send in the request
-//   let data = { text: textToPost };
-
-//   // Create the request options
-//   let options = {
-//     method: 'POST',
-//     body: JSON.stringify(data),
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Authorization': `Bearer ${token}`
-//     }
-//   };
-
-//   // Send the request
-//   let response = await fetch('https://microbloglite.herokuapp.com/api/posts', options);
-
-//   // Check for a successful response
-//   if (response.ok) {
-//     // Clear the input element
-//     inputElement.value = '';
-//   }
-
-//   displayPost();
-// }
-
-// function getUserToken() {
-//   // Get the user's authorization token from wherever it is stored (e.g. a cookie, local storage, etc.)
-//   let token = /* get the user's token here */;
-//   return token;
-// }
