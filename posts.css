@@ -1,6 +1,6 @@
 header{
     background-color: #000000;
-    height: 100%;
+    height: 12vh;
     background-position: center;
     background-size: cover;
   }
@@ -10,11 +10,9 @@ header{
       padding: 0 10px;
   }
 
-  
-  
   .container{
-    color:blueviolet
-    font-size:100%
+    color:blueviolet;
+    font-size:100%;
   }
 
   
