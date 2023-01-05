@@ -1,0 +1,79 @@
+/* this is the begining of the mini profile */
+body {
+  background-color: lightblue;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 5rem auto;
+}
+.miniprofile {
+  flex: 1;
+  box-shadow: 1px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  margin-right: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  height: auto;
+  width: 2rem;
+  background-color: rgba(255, 255, 255, 0.795);
+}
+.benjaTheme {
+  width: 100%;
+}
+
+.miniProfile-Pic {
+  justify-content: center;
+  border-radius: 60%;
+  position: relative;
+  bottom: 2rem;
+}
+/* this is the begining of post */
+.contentarea {
+  flex: 3;
+}
+.contentheader {
+  background-color: rgba(255, 255, 255, 0.767);
+  height: 10%;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.contentheader h5 {
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+}
+.contentposted h5 {
+}
+.otherp {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* this is the dstyles for the like btns */
+.likes {
+  display: flex;
+}
+.likes p {
+  padding-left: 9px;
+  padding-top: 10px;
+}
+.likeDislike {
+  display: flex;
+}
+.likeDislike div button {
+  background-color: whitesmoke;
+  padding: 0%;
+  border: none;
+}
+#dislikedbtn {
+  margin-left: 1rem;
+}
+.likes input {
+  border: none;
+  width: 1rem;
+  background: none;
+  pointer-events: none;
+  color: black;
+}

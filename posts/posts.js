@@ -2,14 +2,14 @@
 
 "use strict";
 window.onload = function () {
-  getAllUsers();
-  logout();
+  getAllpost();
+
   let Logoutbtn = document.getElementById("Logoutbtn");
   Logoutbtn.onclick = function () {
-    logout;
+    logout();
   };
 };
-function getAllUsers() {
+function getAllpost() {
   let headingContent = document.getElementById("headingContent");
   let contentArea = document.getElementById("contentArea");
   let author = document.getElementById("author");
