@@ -6,8 +6,16 @@ const addPost = document.getElementById("addPost");
 const input1 = document.getElementById("input1");
 const textArea1 = document.getElementById("textArea1");
 const logoutBtn = document.getElementById("logoutBtn");
+// const userName = document.getElementById("userName");
+
 
 window.onload = () =>{
+    let loginData = getLoginData();
+
+
+    
+    // userName.innerText =(loginData()).username;
+
     isLoggedIn();
 
     document.getElementById("addPost").style.display = "none";
@@ -28,11 +36,11 @@ window.onload = () =>{
             headers: {
                 'Accept' : 'application/json, text/plain, */*',
                 'content-type': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0cmluZyIsImlhdCI6MTY3Mjg0NDExMSwiZXhwIjoxNjcyOTMwNTExfQ.8Rx3gqwG02QsGWIggYU8FFvaKDcfMLdWgYFGmlKbZuA',
-                
-               
+                'Authorization': `Bearer ${loginData.token}`
+          
              },
-            body: JSON.stringify({ text: textArea1})
+                  body: JSON.stringify({ text: textArea1})
+            
           
 
 
@@ -46,8 +54,6 @@ window.onload = () =>{
         logoutBtn.onclick = () =>{
             logout();
         }
-    
+       
 
-
-
-}
+} 
