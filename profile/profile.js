@@ -9,8 +9,11 @@ const logoutBtn = document.getElementById("logoutBtn");
 
 
 
+
 window.onload = () =>{
     isLoggedIn();
+
+    document.getElementById("userName").innerText = (isLoggedIn()).username;
 
     document.getElementById("addPost").style.display = "none";
 
