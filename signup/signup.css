@@ -1,0 +1,28 @@
+* 
+.bkg__spotlight {
+    position: absolute;
+    width: 100vw;
+    background: radial-gradient(75% 35% at 50% 95%, rgba(80, 82, 98, 0.6) 20%, rgba(80, 82, 98, 0) 90%), linear-gradient(rgba(28, 35, 50, 0) 0%, rgba(28, 35, 50, 1) 80%);
+    z-index: -1;
+}
+
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    word-spacing: 5px;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 100;
+}
+
+h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
