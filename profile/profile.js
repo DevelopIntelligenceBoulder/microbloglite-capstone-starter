@@ -6,18 +6,21 @@ window.onload = function () {
   postBtn.onclick = postBtnOnClick;
 
   displayPost();
-  
+
   document.getElementById("name").innerText = (loginData()).username
 
-  console.log(getLoginData())
+  document.getElementById("accName").innerText = (loginData()).username
+
+  document.getElementById("logout").onclick = logout;
+
   //setInterval(displayNews, 10000);
+
+  randomName();
+   
 };
 
-function loginData () {
-  // let name = document.getElementById("name")
-  // name.textContent =  JSON.parse(window.localStorage.getItem("login-data")) || {};
-  
-  // return name;
+function loginData() {
+
   let loginData = getLoginData()
   return loginData;
 }
@@ -56,10 +59,7 @@ function postBtnOnClick() {
 
   let inputElement = document.getElementById('post');
   let textToPost = inputElement.value;
-
   let data = { text: textToPost };
-
-
 
   let options = {
     method: 'POST',
@@ -67,43 +67,153 @@ function postBtnOnClick() {
     headers: {
       "Content-Type": 'application/json',
       "Authorization": `Bearer ${(loginData()).token}`
-      
+
     },
   };
 
-  fetch('https://microbloglite.herokuapp.com/api/posts/', options)
+  fetch(api + "/api/posts", options)
     .then(response => {
-     console.log(data)
+      console.log(data)
       if (response.ok) {
-        
+
         inputElement.value = '';
       }
     });
-
-    
-
 }
 
+
+// function displayPost() {
+
+//   let options = {
+//     headers: {
+//       "Content-Type": 'application/json',
+//       "Authorization": `Bearer ${(loginData()).token}`
+//     }
+//   };
+
+//   fetch(`${api}/api/posts?username=${(loginData()).username}`, options)
+//     .then(response => response.json())
+//     .then(data => {
+
+//       let loggedInUsername = (loginData()).username;
+//       let postsByLoggedInUser = data.filter(post => post.username === loggedInUsername);
+
+//       postsByLoggedInUser.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+//       let displayPost = document.getElementById('recentPost');
+//       let postsHTML = "";
+//       for (let i = 0; i < postsByLoggedInUser.length; i++) {
+//         let post = postsByLoggedInUser[i];
+//         postsHTML += `
+//               <div class="post">
+//                 <h2>${post.text}</h2>
+//                 <p>${post.createdAt}</p>
+//               </div>
+//             `;
+//       }
+//       displayPost.innerHTML = postsHTML;
+//     });
+// }
 
 function displayPost() {
-
   let options = {
-   
-
     headers: {
       "Content-Type": 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndpbGwiLCJpYXQiOjE2NzI3NjI1MTEsImV4cCI6MTY3Mjg0ODkxMX0.p8lcNFPuDyrJScWUrycGaEhwTSMyN8VE-hxSbKo2rZk'
+      "Authorization": `Bearer ${(loginData()).token}`
     }
   };
- 
-  fetch('https://microbloglite.herokuapp.com/api/posts/63b48aa85f3f1f9a6950b481',options)
+
+  fetch(`${api}/api/posts?username=${(loginData()).username}`, options)
     .then(response => response.json())
     .then(data => {
-      let displayPost = document.getElementById('home-tab-pane');
+      
+      let loggedInUsername = (loginData()).username;
+      let postsByLoggedInUser = data.filter(post => post.username === loggedInUsername);
 
-  
-      displayPost.textContent = JSON.stringify(data.text);
-      console.log(data)
+      postsByLoggedInUser.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+      let displayPost = document.getElementById('recentPost');
+      let postsHTML = "";
+      for (let i = 0; i < postsByLoggedInUser.length; i++) {
+        let post = postsByLoggedInUser[i];
+        postsHTML += 
+
+        `<div class="card mt-3">
+          
+          <div class="card-body">
+          <img src="../profile/image/user image.jpg" alt="image" height="50" width="50" class="rounded-circle">
+          <h5 class="card-title px-2" id="name">${post.username}</h5>
+          
+            <h5 class="card-title mt-3">${post.text}</h5>
+            
+          </div>
+        </div>`;
+}
+      displayPost.innerHTML = postsHTML;
+
+      
+      let deleteButtons = document.querySelectorAll('.delete-button');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', event => {
+          let postId = event.target.dataset.id;
+          deletePost(postId);
+        });
+      });
     });
 }
+
+
+function deletePost(id) {
+  let options = {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": 'application/json',
+      "Authorization": `Bearer ${(loginData()).token}`
+    }
+  };
+
+  fetch(`${api}/api/posts/${id}`, options)
+    .then(response => {
+      if (response.ok) {
+        // If the DELETE request was successful, display the updated list of posts
+        displayPost();
+        alert("Post Deleted")
+      } else {
+        console.error('Error deleting post');
+        alert("Post Cannot be Deleted")
+      }
+    });
+}
+
+
+function randomName(){
+  let randomName = document.getElementById("randomName");
+  let randomName1 = document.getElementById("randomName1");
+  let randomName2 = document.getElementById("randomName2");
+
+  fetch("http://jsonplaceholder.typicode.com/users")
+  .then(response => response.json()) 
+  .then(data => {
+    
+    let randomIndex = Math.floor(Math.random() * data.length);
+    let randomIndex1 = Math.floor(Math.random() * data.length);
+    let randomIndex2 = Math.floor(Math.random() * data.length);
+    
+    
+    while (randomIndex === randomIndex1) {
+      randomIndex1 = Math.floor(Math.random() * data.length);
+    }
+    while (randomIndex === randomIndex2 || randomIndex1 === randomIndex2) {
+      randomIndex2 = Math.floor(Math.random() * data.length);
+    }
+    
+    randomName.innerHTML = data[randomIndex].name;
+    randomName1.innerHTML = data[randomIndex1].name;
+    randomName2.innerHTML = data[randomIndex2].name;
+  });
+}
+
+
+
+
 
