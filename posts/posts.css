@@ -6,6 +6,7 @@
 
 #test {
     --bs-gutter-x: 0rem;
+    text-align: center;
 }
 
 #toggleBtn {
@@ -14,16 +15,106 @@
     --bs-navbar-toggler-padding-x: .50rem;
 }
 
+#postBtn {
+    border-radius: 20px;
+    margin-right: 1%;
+    max-width: 15%;
+    margin-left: 70%;
+}
+
 nav {
     height: 100vh;
+    width: 16.75vw;
+    overflow-x: hidden;
 }
+
+div.sidebar.col-3 {
+    padding-left: 0;
+}
+
+.postInput {
+    background-color: white;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* div.col-7 {
+    margin: ;
+} */
+
+/* Card Styles */
+
+div.card.mb-3 {
+    padding: 0;
+    background-color: white;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+div.card-footer.bg-transparent {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border-top: 0;
+}
+
+.postIcons {
+    transition: all .2s ease-in-out;
+}
+
+.postIcons:hover {
+    transform: scale(1.1);
+    color: #003cd6;
+}
+
+.likeBtn {
+    transition: all .2s ease-in-out;
+}
+
+.likeBtn:hover {
+    transform: scale(1.1);
+    color: red;
+}
+
+.commentBtn {
+    transition: all .2s ease-in-out;
+}
+
+.commentBtn:hover {
+    transform: scale(1.1);
+    color: blue;
+}
+
+.shareBtn {
+    transition: all .2s ease-in-out;
+}
+
+.shareBtn:hover {
+    transform: scale(1.1);
+    color: goldenrod;
+}
+
+.saveBtn {
+    transition: all .2s ease-in-out;
+}
+
+.saveBtn:hover {
+    transform: scale(1.1);
+    color: green;
+}
+
+/* End Of Card Styles */
+
 
 .jumbotron {
     margin-bottom: 10px;
 }
 
 .footer {
-
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -31,7 +122,19 @@ nav {
 }
 
 textarea {
-    max-width: 95%;
+    min-width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+        height: 10vh;
+    }
+    .bg-dark {
+        background-color: #FFF4E2!important;
+    }
+    #toggleBtn {
+        background-color: #212529;
+    }
 }
 
 @media only screen and (max-width: 1026px) {
@@ -45,7 +148,13 @@ a {
 }
 
 #rightContent {
+    margin-top: 10px;
     padding: 1;
+    position: sticky;
+}
+
+.showMore {
+    padding-bottom: 10px;
 }
 
 /* Amy's CSS */
@@ -53,4 +162,12 @@ a {
 body {
     font-family: "Carme";
     background-color: #FFF4E2;
+}
+
+#search-bar {
+    background: #FFFFFF;
+    box-shadow: inset 0px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    margin-bottom: 2.5%;
+    /* margin-right: 0; */
 }
