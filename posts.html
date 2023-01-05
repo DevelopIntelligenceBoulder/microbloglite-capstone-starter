@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no" />
+    <title>ColorLaFleur</title>
+
+    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Mid -->
+</head>
+
+<body onload="handleOnload()">
+
+    <header>
+        <!--nav-->
+        <nav class="navbar navbar-expand-lg navbar-light fw-bold" id="Main Nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./logo5.png" alt="logo" class="logo-img"></a></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Content -->
+
+            <div class="container">
+                <br>
+                <h1><i>Fashion</i></h1>
+        </div>
+                <br>
+
+        <section id="fashionQuote" class="Q1">
+            <div class="container">
+
+                <h4><i>"Fashion is not something that exists in dresses only. Fashion is in the sky, in the street.
+                        Fashion has to do with ideas, the way we live, what is happening."
+                        —Coco Chanel</i></h4>
+
+            </div>
+          
+            <div class="button1">
+            <button type="submit">Create a Board</button>
+            </div>
+<br>
+
+        </section>
+
+    </main>
+    <!-- TRIAL -->
+    <!-- <div class="card1" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Text if you want.</p>
+        </div>
+      </div>
+<br>
+
+      <div class="card2" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Text if you want 2.</p>
+        </div>
+      </div>
+<br>
+      <div class="card3" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Text if you want 3.</p>
+        </div>
+      </div> -->
+
+
+    <!--TRIAL -->
+
+     <!-- TEST CODE-->
+     <div class="container">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--1">
+                <img src="img/image-1.jpg" alt="Gallery image 1" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--2">
+                <img src="img/image-2.jpg" alt="Gallery image 2" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--3">
+                <img src="img/image-3.jpg" alt="Gallery image 3" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--4">
+                <img src="img/image-4.jpg" alt="Gallery image 4" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--5">
+                <img src="img/image-5.jpg" alt="Gallery image 5" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--6">
+                <img src="img/image-6.jpg" alt="Gallery image 6" class="gallery__img">
+            </figure>
+        </div>
+    </div>
+        <!-- END TEST CODE -->
+
+<br>
+<button onClick="handleLogout()">Log out</button>
+
+<br>
+
+    <footer class="bg-dark text-center text-white">
+
+        </div>
+
+        <div class="text-center p-8" style="background-color: rgba(0, 0, 0, 0.2);">
+            ColorLaFleur.com © 2022 Copyright
+        </div>
+    </footer>
+
+<div id="posts">
+
+
+</div>
+
+
+    <script>
+    
+    function handleOnload() {
+        console.log("hello")
+        const loginData=localStorage.getItem("login-data")
+        console.log(loginData)
+        if (!loginData){
+            // location.href="/login"
+            // return
+        }
+        fetch("https://microbloglite.herokuapp.com/api/posts?limit=5")
+
+      .then(response => response.json())
+      .then(json => {
+        let postsHTML = ""
+    for (let m = 0; m < json.length; m += 1) {
+        const postsData = json[m]
+        postsHTML = postsHTML + `
+<div class="mountainCard">
+
+<ul class="mountainInfo">
+
+<li>userName: ${postsData.username}</li>
+<li>: ${postsData.text}</li>
+
+</ul>
+</div>
+`
+  }
+  const m= document.getElementById("posts")
+  m.innerHTML=postsHTML
+      })
+    }
+    function handleLogout(){
+        console.log("handleLogout")
+        localStorage.clear()
+        fetch("https://microbloglite.herokuapp.com/auth/logout")
+      .then(response => response.json())
+      .then(json => console.log(json))
+    }
+    
+        </script>
+</body>
+ 
+
+</html>
