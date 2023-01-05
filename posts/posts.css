@@ -31,7 +31,7 @@ main {
   margin-right: 2.5rem;
   border-radius: 1rem;
 
-  background-color: rgba(255, 255, 255, 0.856);
+  background-color: rgba(173, 216, 230, 0.644);
   height: 50rem;
 }
 .NewPost {
@@ -62,4 +62,36 @@ main {
   text-align: center;
   width: 90%;
   margin: 4.5rem auto;
+  background-color: rgba(30, 255, 180, 0.89);
+}
+.otherp {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* this is the dstyles for the like btns */
+.likes {
+  display: flex;
+}
+.likes p {
+  padding-left: 9px;
+  padding-top: 10px;
+}
+.likeDislike {
+  display: flex;
+}
+.likeDislike div button {
+  background-color: whitesmoke;
+  padding: 0%;
+  border: none;
+}
+#dislikedbtn {
+  margin-left: 1rem;
+}
+.likes input {
+  border: none;
+  width: 1rem;
+  background: none;
+  pointer-events: none;
+  color: black;
 }

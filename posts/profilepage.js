@@ -11,11 +11,12 @@ let title = document.getElementById("title");
 let contentArea = document.getElementById("contentArea");
 let author = document.getElementById("author");
 let timestamp = document.getElementById("timestamp");
+let timestamp = document.getElementById("timestamp");
 fetch(api + "/api/post")
-  .then(res => res.json())
-  .then(data => {
-      for ( of ) {
-    if ((loginuser = data.username)) {
+  .then((res) => res.json())
+  .then((data) => {
+    for (let datas of data) {
+      if ((loginuser = datas.username)) {
         title.innerhtml =
           contentArea.innerhtml =
           author.innerhtml =

@@ -87,36 +87,31 @@
             >NEW POST
           </a>
         </div>
-        <div class="">
-          <div class="card text-bg-light mb-3 postedcontent">
-            <div id=" card-body MainContent">
-              <h5 id="headingContent">My Time In austrailaia</h5>
-              <p id="contentArea">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                minus adipisci quos placeat, dolorum sequi, culpa magni at a
-                fugit dolorem assumenda perferendis fugiat sapiente tempore
-                voluptatem natus inventore corporis. Nulla aut atque, nam eum
-                vel dolores non quam porro quis officia, architecto, error
-                debitis unde corrupti eius ratione necessitatibus et excepturi?
-                Quaerat aperiam tempora natus quibusdam delectus ex odit.
-                Architecto dignissimos repellendus, harum sit, molestiae
-                possimus placeat aspernatur fugit aliquid delectus voluptatum.
-                Distinctio, sint est! Accusantium quasi magnam, hic corrupti,
-                dolore impedit id nostrum quam iusto expedita quod non. Esse,
-                placeat! Ut voluptate, dolorum consequatur beatae ea numquam
-                voluptas, nihil obcaecati ipsa quia molestiae fuga ipsum
-                provident similique minus blanditiis odit veniam dolore soluta
-                suscipit unde aliquid. Beatae, adipisci. Id nihil dicta
-                voluptatibus quod, sit officiis qui aut maxime nisi quis nulla,
-                asperiores recusandae corporis consectetur laboriosam beatae
-                dignissimos earum accusantium? Nam eos consequatur, ipsum velit
-                perspiciatis cumque possimus.
-              </p>
 
-              <div class="otherp">
-                <p id="author ">kehinde ojo</p>
-                <p id="timeStamp">11:88</p>
-                <p id="likedbutton"></p>
+        <div class="card postedcontent">
+          <div class="Maincontent card-body">
+            <h1 class="headingcontent">title</h1>
+            <p class="contentArea card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="otherp">
+              <p>By: <span id="author "></span></p>
+              <p>Created: <span id="timeStamp"></span></p>
+              <div class="likeDislike">
+                <div class="likes">
+                  <button id="likedbtn">
+                    <i class="fa-regular fa-thumbs-up"> </i>
+                  </button>
+
+                  <input id="likeOutput" type="number" value="0" name="" />
+                </div>
+                <div class="likes">
+                  <button id="dislikedbtn">
+                    <i class="fa-regular fa-thumbs-down"></i>
+                  </button>
+                  <input id="dislikeOutput" type="number" value="0" name="" />
+                </div>
               </div>
             </div>
           </div>
@@ -144,5 +139,9 @@
 
     <!-- Page-specific code -->
     <script src="posts.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2b8f924441.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
