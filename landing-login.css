@@ -1,0 +1,120 @@
+ /* Landing Page CSS */
+ body {
+     font-family: "Carme";
+     background-color: #FFF4E2;
+ }
+
+ #logoBlue {
+     margin: 0 auto;
+     object-fit: cover;
+     padding-left: 20em;
+ }
+
+ #username,
+ #password {
+     outline: none;
+     border: none;
+     position: relative;
+     margin: 20px;
+     padding-left: 60px;
+     width: 529px;
+     height: 70px;
+
+
+     background: #FFFFFF;
+     box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.25);
+     border-radius: 30px;
+     font-family: 'Carme';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 20px;
+     line-height: 24px;
+
+     text-align: start;
+     color: #999999;
+ }
+
+ #username:focus,
+ #password:focus {
+     background-color: #fff7e2;
+ }
+
+ #login-container {
+     animation: container-load 300ms ease-in 300ms;
+     position: absolute;
+     display: flex;
+     align-items: center;
+
+     max-width: 943px;
+     min-height: 652px;
+     margin-top: 100px;
+     margin-right: 100px;
+     background: rgba(255, 255, 255, 0.5);
+     box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+     border-radius: 20px;
+ }
+
+ #loginButton {
+     transition: all .2s ease-in-out;
+     margin-left: 20px;
+     margin-top: 20px;
+     width: 530px;
+     height: 74.51px;
+     background: #FFD35D;
+     box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.25);
+     border-radius: 30px;
+
+     font-family: 'Carme';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 20px;
+     line-height: 24px;
+     text-align: center;
+
+     color: #000000;
+
+ }
+
+ #loginButton:hover {
+     transform: scale(0.9);
+ }
+
+ #loginButton:focus {
+     background-color: #fff7e2;
+ }
+
+
+ #forget-password {
+     color: black;
+     text-decoration: none;
+     padding-left: 70px;
+ }
+
+ #forget-password:hover {
+     color: #003CD6;
+ }
+
+ #no-account {
+     margin-top: 10px;
+     padding-left: 60px;
+ }
+
+ #sign-up {
+     text-decoration: none;
+ }
+
+ /* Animation */
+ @keyframes container-load {
+     from {
+         opacity: 0;
+         -webkit-transform: translate3d(0, -100%, 0);
+         transform: translate3d(0, -100%, 0);
+
+     }
+
+     to {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none;
+     }
+ }
