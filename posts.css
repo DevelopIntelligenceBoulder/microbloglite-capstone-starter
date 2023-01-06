@@ -1,20 +1,19 @@
-header {
-  background-color: #000000;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
+header{
+    background-color: #000000;
+    height: 12vh;
+    background-position: center;
+    background-size: cover;
+  }
 
+  
+  .navbar-nav li {
+      padding: 0 10px;
+  }
 
-.navbar-nav li {
-  padding: 0 10px;
-}
-
-
-
-.container {
-  color: blueviolet font-size:100%
-}
+  .container{
+    color:blueviolet;
+    font-size:100%;
+  }
 
 
 
@@ -50,36 +49,21 @@ button {
 
 }
 
+  /* TRIAL */ 
 
-/* GRID */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+  .card1{
+    background-color: rgb(12, 174, 145);
+  }
+
+  .card2{
+    background-color: red;
+  }
+
+.card3{
+    background-color: purple;
 }
 
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  color: #333;
-  font-weight: 300;
-  line-height: 1.6;
-}
-
-.container {
-  width: 40%;
-  margin: 5rem;
-  
-}
-
-
-.galleryas {
+.gallery {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
