@@ -1,54 +1,23 @@
-/* auth.js provides LOGIN-related functions */
 
 "use strict";
 
-// const api = "https://microbloglite.herokuapp.com";
+window.onload = () => {
+    const form = document.getElementById('login');
+    form.addEventListener('submit', e =>{
+        e.preventDefault();
 
-var form = document.forms.loginForm;
-var formData = new FormData(form);
-
-
-var name = formData.get('name');
-
-
-form.onsubmit = (e)=>{
-
-  e.preventDefault(); //preventing from form submitting
-
-  
-var username = document.forms['loginForm'].elements['username'].value;
-var password = document.forms['loginForm'].elements['password'].value;
-
-var loginData = {}
-
-  loginData.username = username;
-  loginData.password = password;
-
-  login(loginData);
+        loggingIn();
+    })
 }
-
-// You can use this to get the login data of the logged-in user (if any). 
-// Returns either an object including the username and token,
-// or an empty object if the visitor is not logged in.
-function getLoginData () {
-    return JSON.parse(window.localStorage.getItem("login-data")) || {};
-}
-
-
-// You can use this to see whether the current visitor is logged in. 
-// Returns either `true` or `false`.
-function isLoggedIn () {
-    const loginData = getLoginData();
-    return Boolean(loginData.token);
-}
-
-
-// This function is already being used in the starter code for the
-// landing page, in order to process a user's login. READ this code,
-// and feel free to re-use parts of it for other `fetch()` requests
-// you may need to write.
-function login (loginData) {
+function loggingIn () {
     // POST /auth/login
+    const user = document.getElementById('username');
+    const pass = document.getElementById('password');
+
+    const LoginInfo = {
+        username: user.value,
+        password: pass.value
+    }
     const options = { 
         method: "POST",
         headers: {
@@ -57,49 +26,16 @@ function login (loginData) {
             // JSON data.
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(loginData),
+        body: JSON.stringify(LoginInfo),
     };
 
-    return fetch("https://microbloglite.herokuapp.com/auth/login", options)
-        .then(response => console.log(response.json()))
+    return fetch(api + "/auth/login", options)
+        .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("http://127.0.0.1:5500/posts.html");  // redirect
-            console.log(window.location.href);
+            window.location.assign("./posts.html");  // redirect
+            console.log(loginData);
+            // console.log(window.location.href);
         });
 }
-
-
-// This is the `logout()` function you will use for any logout button
-// which you may include in various pages in your app. Again, READ this
-// function and you will probably want to re-use parts of it for other
-// `fetch()` requests you may need to write.
-function logout () {
-    const loginData = getLoginData();
-
-    // GET /auth/logout
-    const options = { 
-        method: "GET",
-        headers: { 
-            // This header is how we authenticate our user with the
-            // server for any API requests which require the user
-            // to be logged-in in order to have access.
-            // In the API docs, these endpoints display a lock icon.
-            Authorization: `Bearer ${loginData.token}`,
-        },
-    };
-
-    fetch(api + "/auth/logout", options)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .finally(() => {
-            // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
-            // error with the fetch request above.
-
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect to landing page
-        });
-}
-
 

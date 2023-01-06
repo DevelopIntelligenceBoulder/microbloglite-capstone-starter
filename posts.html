@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no" />
+    <title>ColorLaFleur</title>
+
+    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="navTemplate/navTemplate.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="./auth.js"></script>
+    <script>
+        // if (isLoggedIn() !== true) window.location.replace("/login.html");
+    </script>
+
+
+    <!-- Mid -->
+</head>
+
+<body onload="handleOnload()">
+
+    <header class="header">
+        <nav class="navbar navbar-expand-md header-nav fixed-top">
+            <div class="container-fluid">
+                <!-- Second container with our logo and hamburger menu-->
+                <a class="navbar-brand" href="">
+                    <img src="./images/Logo.png" alt="Logo" width="70" height="70"
+                        class="d-inline-block align-text-center nav-link">
+                    <span>FrontPage Bloggers</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <!-- First container with home/snacks -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../posts.html">Posts</a>
+                        </li>
+                    </ul>
+                    <!-- Third container with Checkout/cart/profile -->
+                    <ul class="navbar-nav ms-auto mt-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="./images/profile-pic-icon.png" width="40" alt="profile-icon">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./profile/profile.html">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" id="logout"><input name="logout"  class="btn btn-primary" type="" value="Logout"></a></li>
+                            </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Content -->
+
+        <div class="container">
+            <br>
+            <h1><i>Fashion</i></h1>
+        </div>
+
+
+        <br>
+
+
+        <section id="fashionQuote" class="Q1">
+            <div class="container">
+
+                <h4><i>"Fashion is not something that exists in dresses only. Fashion is in the sky, in the street.
+                        Fashion has to do with ideas, the way we live, what is happening."
+                        —Coco Chanel</i></h4>
+
+            </div>
+
+
+            <!-- <div class="button1">
+            <button type="submit">Create a Board</button>
+            </div> -->
+
+
+            <br>
+
+        </section>
+
+    </main>
+
+
+    <!-- TEST CODE-->
+    <div class="container">
+        <div class="gallery" id="posts">
+            <figure class="gallery__item gallery__item--0">
+                <img src="./images/post0.pdf" alt="Gallery image 0" class="gallery__img" width="200px" height="200px">
+            </figure>
+            <figure class="gallery__item 1">
+                <img src="./images/post1.pdf" alt="Gallery image 1" class="gallery__img">
+
+            </figure>
+            <figure class="gallery__item gallery__item--2">
+                <img src="./images/post2.pdf" alt="Gallery image 2" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--3">
+                <img src="./images/post3.pdf" alt="Gallery image 3" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--4">
+                <img src="./images/post4.pdf" alt="Gallery image 4" class="gallery__img">
+            </figure>
+            <figure class="gallery__item gallery__item--5">
+                <img src="./images/post5.pdf" alt="Gallery image 5" class="gallery__img">
+            </figure>
+        </div>
+    </div>
+    <!-- END TEST CODE -->
+
+    <br>
+
+    <button onClick="logout()">Log out</button>
+
+
+    <br>
+
+    <footer class="bg-dark text-center text-white">
+
+        </div>
+
+        <div class="text-center p-8" style="background-color: rgba(0, 0, 0, 0.2);">
+            ColorLaFleur.com © 2022 Copyright
+        </div>
+    </footer>
+
+
+
+
+    <script>
+
+
+        function handleOnload() {
+
+            // temp code start
+            const data = [
+                {
+                    "_id": "63936331392812b7683ee388",
+                    "text": "job",
+                    "username": "@LoverGurl666",
+                    "createdAt": "2022-12-09T16:32:49.925Z",
+                    "likes": [
+                        {
+                            "_id": "63a20239cf52ac30665c0206",
+                            "postId": "63936331392812b7683ee388",
+                            "username": "RickyBobby",
+                            "createdAt": "2022-12-20T18:43:05.812Z"
+                        },
+                        {
+                            "_id": "63b44fd85f3f1f9a69507f53",
+                            "postId": "63936331392812b7683ee388",
+                            "username": "ZMS",
+                            "createdAt": "2023-01-03T15:55:04.191Z"
+                        },
+                        {
+                            "_id": "63936564392812b7683ee8f2",
+                            "postId": "63936331392812b7683ee388",
+                            "username": "eharris19",
+                            "createdAt": "2022-12-09T16:42:12.822Z"
+                        },
+                        {
+                            "_id": "6393d4d349b4d0a8887a50d6",
+                            "postId": "63936331392812b7683ee388",
+                            "username": "nsalaam14",
+                            "createdAt": "2022-12-10T00:37:39.338Z"
+                        },
+                        {
+                            "_id": "63b348cb2c8444c25dc544ce",
+                            "postId": "63936331392812b7683ee388",
+                            "username": "samb",
+                            "createdAt": "2023-01-02T21:12:43.733Z"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6393633e392812b7683ee38f",
+                    "text": "can i get a JOOOOOOBBBBBB",
+                    "username": "@intelligent_shoota",
+                    "createdAt": "2022-12-09T16:33:02.124Z",
+                    "likes": [
+                        {
+                            "_id": "63a4b146a95bd690dd6cb389",
+                            "postId": "6393633e392812b7683ee38f",
+                            "username": "RickyBobby",
+                            "createdAt": "2022-12-22T19:34:30.289Z"
+                        },
+                        {
+                            "_id": "63b4502b5f3f1f9a69507fdd",
+                            "postId": "6393633e392812b7683ee38f",
+                            "username": "ZMS",
+                            "createdAt": "2023-01-03T15:56:27.363Z"
+                        },
+                        {
+                            "_id": "63a495f5a95bd690dd6ca95b",
+                            "postId": "6393633e392812b7683ee38f",
+                            "username": "eharris19",
+                            "createdAt": "2022-12-22T17:37:57.951Z"
+                        },
+                        {
+                            "_id": "6393d4d449b4d0a8887a50da",
+                            "postId": "6393633e392812b7683ee38f",
+                            "username": "nsalaam14",
+                            "createdAt": "2022-12-10T00:37:40.343Z"
+                        },
+                        {
+                            "_id": "63b348d82c8444c25dc544d7",
+                            "postId": "6393633e392812b7683ee38f",
+                            "username": "samb",
+                            "createdAt": "2023-01-02T21:12:56.782Z"
+                        }
+                    ]
+                },
+                {
+                    "_id": "6393647e392812b7683ee8c4",
+                    "text": "Final Project Demo\n",
+                    "username": "@baddestB2001",
+                    "createdAt": "2022-12-09T16:38:22.618Z",
+                    "likes": [
+                        {
+                            "_id": "63b450a85f3f1f9a69508082",
+                            "postId": "6393647e392812b7683ee8c4",
+                            "username": "ZMS",
+                            "createdAt": "2023-01-03T15:58:32.186Z"
+                        },
+                        {
+                            "_id": "639365c3392812b7683ee903",
+                            "postId": "6393647e392812b7683ee8c4",
+                            "username": "eharris19",
+                            "createdAt": "2022-12-09T16:43:47.300Z"
+                        },
+                        {
+                            "_id": "63b34d322c8444c25dc54688",
+                            "postId": "6393647e392812b7683ee8c4",
+                            "username": "samb",
+                            "createdAt": "2023-01-02T21:31:30.908Z"
+                        }
+                    ]
+                },
+                {
+                    "_id": "63936547392812b7683ee8dc",
+                    "text": "I am the Boss",
+                    "username": "@lonelybug",
+                    "createdAt": "2022-12-09T16:41:43.567Z",
+                    "likes": [
+                        
+                        {
+                            "_id": "63b453095f3f1f9a695082ab",
+                            "postId": "63936547392812b7683ee8dc",
+                            "username": "ZMS",
+                            "createdAt": "2023-01-03T16:08:41.483Z"
+                        },
+                        {
+                            "_id": "63a495f7a95bd690dd6ca96e",
+                            "postId": "63936547392812b7683ee8dc",
+                            "username": "eharris19",
+                            "createdAt": "2022-12-22T17:37:59.867Z"
+                        },
+                        {
+                            "_id": "63a48065a95bd690dd6ca8ba",
+                            "postId": "63936547392812b7683ee8dc",
+                            "username": "nsalaam14",
+                            "createdAt": "2022-12-22T16:05:57.551Z"
+                        }
+                    ]
+                },
+                {
+                    "_id": "63936672392812b7683ee953",
+                    "text": "For the Homies",
+                    "username": "@simplyMe",
+                    "createdAt": "2022-12-09T16:46:42.086Z",
+                    "likes": [
+                        {
+                            "_id": "63b453a85f3f1f9a69508381",
+                            "postId": "63936672392812b7683ee953",
+                            "username": "ZMS",
+                            "createdAt": "2023-01-03T16:11:20.294Z"
+                        },
+                        {
+                            "_id": "63a495f7a95bd690dd6ca96c",
+                            "postId": "63936672392812b7683ee953",
+                            "username": "eharris19",
+                            "createdAt": "2022-12-22T17:37:59.865Z"
+                        },
+                        {
+                            "_id": "6393d4d549b4d0a8887a50de",
+                            "postId": "63936672392812b7683ee953",
+                            "createdAt": "2022-12-10T00:37:41.306Z",
+                            "username": "nsalaam14",
+                        }
+                    ]
+                }
+            ]
+
+
+
+            let temphtml = '';
+            for (let index = 0; index < data.length; index++) {
+                const postData = data[index];
+                temphtml += `<div class="gallery__container">
+                    <p>${postData.username}</p>
+            <div class="gallery__item gallery__item--1">
+                <img src="./images/post${index}.pdf" alt="Gallery image 1" class="gallery__img">
+            </div>
+     
+                <p>${postData.createdAt}</p>
+            </div>`
+
+            }
+
+            document.getElementById("posts").innerHTML = temphtml;
+            console.log('temphtml', temphtml)
+            // temp code ends       temp
+            //         fetch("https://microbloglite.herokuapp.com/api/posts?limit=5")
+
+            //       .then(response => response.json())
+            //       .then(json => {
+            //         let postsHTML = ""
+            //     for (let m = 0; m < json.length; m += 1) {
+            //         const postsData = json[m]
+            //         postsHTML = postsHTML + `
+            //         <div>
+            //             <figure class="gallery__item gallery__item--1">
+            //                 <img src="./images/post${index}.pdf" alt="Gallery image 1" class="gallery__img">
+            //             </figure>
+            //                 <p>${postData.username}</p>
+            //                 <p>${postData.text}</p>
+            //             </div>
+            // `
+            //   }
+            //   const m= document.getElementById("posts")
+            //   m.innerHTML=postsHTML
+            //       })
+
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+        <script src="posts.js"></script>
+        <script src="./auth.js"></script>
+
+</body>
+
+
+</html>
