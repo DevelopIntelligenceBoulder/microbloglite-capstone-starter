@@ -15,33 +15,39 @@ header{
     font-size:100%;
   }
 
-  
-  
-  h1{
-    color:rgb(200, 10, 10);
-    padding-left: 1rem;
-    font-size: 102pts;
-  }
 
+
+h1 {
+  color: rgb(200, 10, 10);
+  padding-left: 1rem;
+  font-size: 102pts;
+}
+
+h4{
+  /* padding-top: 50px
+  background-color: aquamarine; */
  
-
-
-  .button1{
-        /* background-color: rgb(15, 11, 11); */
-        color: black;
-        outline: 100% solid black;
-        font-size: 20px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     padding: 50px;
-    padding-left: 40%;
 }
 
 
-  button{
-    background-color: rgb(200, 10, 10);
-    justify-content: center;
-    
-  }
+
+
+.button1 {
+  /* background-color: rgb(15, 11, 11); */
+  color: black;
+  outline: 100% solid black;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 50px;
+  padding-left: 40%;
+}
+
+
+button {
+  background-color: rgb(200, 10, 10);
+  justify-content: center;
+
+}
 
   /* TRIAL */ 
 
@@ -61,37 +67,33 @@ header{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
-  grid-gap: 15px;
+  grid-gap: 25rem;
 }
 
-.gallery__item--1 {
+.gallery__item {
+  padding: .3rem;
+  background-color: rgb(3, 8, 16);
+  /* height: 400px; */
+}
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  display: block;
+  position: relative;
+  size: 5rem;
+}
+
+
+
+
+/* .gallery__item--0 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
-}
-.gallery__item--2 {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-.gallery__item--3 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 6;
-}
+  grid-row-end: 3; */
 
-
-
-
-
-  /* Trial */
-
-
-  
-  
- 
-  
-  
+  /** Alternative Syntax **/
+  /* grid-column: 1 / span 2;  */
+  /* grid-row: 1 / span 2; */
+/* } */
