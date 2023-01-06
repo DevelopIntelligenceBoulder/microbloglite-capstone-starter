@@ -36,7 +36,7 @@
                 <!-- Left Side Content NavBar -->
                 <div class="col-2">
                     <!-- NavBAr -->
-                    <div class="row">
+                    <div class="row fixed-top">
                         <div class="col" id="test">
                             <nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex flex-column">
                                 <div class="container-fluid">
@@ -79,6 +79,10 @@
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="/profile/">Profile</a>
+                                                </li>
+
+                                                <li class="nav-item" id="backToTopBtn">
+                                                    <a href="#">Back to Top</a> 
                                                 </li>
 
                                                 <hr>
@@ -160,7 +164,7 @@
                                     <h4 class="card-title"> <span><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                      </svg></span> Success card title <span style="color: #999999; font-size: medium;">@username</span> </h4>
+                                      </svg></span> Name <span style="color: #999999; font-size: medium;">@username</span> </h4>
                                     <p class="card-text">Some quick example text to build on the card title and make up
                                         the bulk of the card's content.</p>
                                 </div>
@@ -216,7 +220,7 @@
                 </div>
 
                 <!-- Right Side Content (Random users, New, Footer) -->
-                <div class="sidebar col-3" id="rightContent">
+                <div class="sidebar col-3 fixed-top" id="rightContent">
                     
                     <div>
                         <form class="offset-1 mx-auto d-flex" role="search">
@@ -225,57 +229,80 @@
                         </form>
                     </div>
 
-                    <div class="jumbotron jumbotron-fluid text-bg-dark rounded-3">
+                    <div class="jumbotron jumbotron-fluid text-bg-dark rounded-3 ">
                         <div class="container">
-                            <h4 class="trending text-center pt-3 mb-3">Trending</h4>
-                            <hr>
+                            <h4 class="trending text-center  p-3">Trending</h4>
+                           
                             <p id="displayNews"></p>
                             <img id="img" src="" alt="">
-
+            
                         </div>
                     </div>
-
+            
                     <div class="jumbotron jumbotron-fluid  text-bg-dark rounded-3">
                         <div class="container">
-                            <h5 class="people text-center pt-3 mb-3">People you may know</h5>
+                            <h4 class="people text-center mb-5 ">People you may know</h4>
+                    
+                            <div class="row">
+                                <div class="col profileImg">
+                                    <img id="randomPhoto" class="img rounded-circle" src="https://xsgames.co/randomusers/avatar.php?g=male"
+                                        height="100" width="100" alt="user">
+                                </div>
+                    
+                                <div class="col profileName m-auto">
+                                    <a id="randomName" href="#">Test</a>
+                                </div>
+                            </div>
 
-                            <img class="img rounded-5" src="../profile/image/istockphoto-1309328823-170667a.jpg"
-                                height="50" width="50" alt="user">
-                            <div style='vertical-align:middle; display:inline;'>
-                                <a href="#">Micheal Hudson</a>
+                            <br>
+                    
+                            <div class="row">
+                                <div class="col profileImg">
+                                    <img id="randomPhoto1" class="img rounded-circle"
+                                        src="https://xsgames.co/randomusers/avatar.php?g=female" height="100" width="100" alt="user">
+                                </div>
+                    
+                                <div class="col profileName m-auto">
+                                    <a id="randomName1" href="#"></a>
+                                </div>
                             </div>
-                            <hr>
-                            <img class="img rounded-5" src="../profile/image/pexels-photo-733872.jpeg" height="70"
-                                width="100" alt="user">
-                            <div style='vertical-align:middle; display:inline;'>
-                                <a href="#">Jane Doe</a>
+
+                            <br>
+                    
+                            <div class="row">
+                                <div class="col profileImg">
+                                    <img id="randomPhoto2" class="img rounded-circle"
+                                        src="https://xsgames.co/randomusers/avatar.php?g=pixel" height="100" width="100" alt="user">
+                                </div>
+                    
+                                <div class="col profileName m-auto">
+                                    <a id="randomName2" href="#"></a>
+                                </div>
                             </div>
-                            <hr>
-                            <img class="img rounded-5"
-                                src="../profile/image/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" height="80"
-                                width="100" alt="user">
-                            <div style='vertical-align:middle; display:inline;'>
-                                <a href="#">Peter Parker</a>
-                            </div>
-                            <hr>
-                            <a href="#" class="showMore">Show more...</a>
+                    
+                            <br>
+
+                            <p id="people">
+                                <i class="fa-thin fa-user "></i>
+                            </p>
+                    
                         </div>
                     </div>
-
-
+            
                     <div id="footer">
                         <div class="container">
                             <footer class="footer sticky-bottom">
                                 <hr>
                                 <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
-                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms of
-                                            Service</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy Policy</a>
-                                    </li>
-                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms of Service</a></li>
 
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy Policy</a></li>
+
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+
+                                    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
                                 </ul>
                                 <p class="text-center text-muted">© 2022 Post-it, Inc.</p>
                             </footer>

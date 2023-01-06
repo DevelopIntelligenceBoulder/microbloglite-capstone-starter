@@ -7,19 +7,49 @@ window.onload = function () {
     document.getElementById("logout").onclick = logout;
     showPosts();
 
+    // displayRandomNames();
     // displayNews();
     // setInterval(displayNews, 10000);
 }
+likeButton();
+
 
 window.addEventListener('scroll', () => {
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+        likeButton();
         showPosts();
     }
-})
+});
 
-function loginData() {
-    let loginData = getLoginData();
-    return loginData
+function displayRandomNames() {
+    let opt = {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${(loginData()).token}`
+        },
+    };
+
+    fetch(`${api}/api/users`, opt)
+        .then(res => res.json())
+        .then(data => {
+            for(let name of data) {
+                document.getElementById("randomName").textContent = Math.floor(Math.random(name)).fullName;
+                document.getElementById("randomName1").textContent = Math.floor(Math.random(name)).fullName;
+                document.getElementById("randomName2").textContent = Math.floor(Math.random(name)).fullName;
+            }
+        });
+}
+
+function likeButton() {
+    let buttons = document.querySelectorAll('.btn.likeBtn');
+    
+    console.log(buttons)
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            console.log(this.value);  // the value of the "data-id" attribute of the button
+        });
+    });
 }
 
 function showPosts() {
@@ -30,7 +60,7 @@ function showPosts() {
         },
     };
 
-    fetch(`${api}/api/posts?limit=5&offset=`, opt)
+    fetch(`${api}/api/posts?limit=5&offset=${addOffset()}`, opt)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -38,6 +68,8 @@ function showPosts() {
                 displayCard(data[i]);
             }
         });
+    
+    likeButton()
 }
 
 function displayCard(data) {
@@ -53,7 +85,7 @@ function displayCard(data) {
         </div>
         <div class="card-footer bg-transparent">
             <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
-                <button type="button" class="btn likeBtn" style="width: 33.3%;">
+                <button type="button" class="btn likeBtn" value="${data._id}" style="width: 33.3%;">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-hand-thumbs-up"
@@ -94,6 +126,17 @@ function displayCard(data) {
     </div>
 </div>
     `;
+}
+
+function loginData() {
+    let loginData = getLoginData();
+    return loginData
+}
+
+let offset = 0;
+function addOffset() {
+    offset += 5;
+    return offset;
 }
 
 // function displayNews() {

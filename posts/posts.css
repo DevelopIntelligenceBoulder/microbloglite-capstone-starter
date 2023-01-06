@@ -42,9 +42,14 @@ a {
     text-decoration: none;
 }
 
-/* div.col-7 {
-    margin: ;
-} */
+div.col-7 {
+    padding-left: 12px!important;
+    z-index: 1030;
+}
+
+#backToTopBtn {
+    display: none;
+}
 
 /* Card Styles */
 
@@ -128,12 +133,19 @@ textarea {
 @media only screen and (max-width: 767px) {
     nav {
         height: 10vh;
+        margin-left: 15px;
     }
     .bg-dark {
         background-color: #FFF4E2!important;
     }
     #toggleBtn {
         background-color: #212529;
+    }
+    #backToTopBtn {
+        display: block;
+    }
+    div.col-7 {
+        z-index: 1024;
     }
 }
 
@@ -150,8 +162,17 @@ a {
 #rightContent {
     margin-top: 10px;
     padding: 1;
-    position: sticky;
+    margin-left: auto;
 }
+
+.profileImg {
+    display: flex;
+    justify-content: center;
+}
+
+/* .profileName {
+    margin-top: 10px;
+} */
 
 .showMore {
     padding-bottom: 10px;
