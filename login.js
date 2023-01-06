@@ -1,18 +1,30 @@
+/* auth.js provides LOGIN-related functions */
+
 "use strict";
 
-const api = "https://microbloglite.herokuapp.com";
+// const api = "https://microbloglite.herokuapp.com";
 
-const form = document.querySelector('login');
-uField = form.querySelector(".username"),
-uInput = eField.querySelector("input"),
-pField = form.querySelector(".password"),
-pInput = pField.querySelector("input");
+var form = document.forms.loginForm;
+var formData = new FormData(form);
+
+
+var name = formData.get('name');
+
+
 form.onsubmit = (e)=>{
-    var loginData;
-    loginData.username = uInput;
-    loginData.password = pInput;
-    e.preventDefault(); 
-    login(loginData);
+
+  e.preventDefault(); //preventing from form submitting
+
+  
+var username = document.forms['loginForm'].elements['username'].value;
+var password = document.forms['loginForm'].elements['password'].value;
+
+var loginData = {}
+
+  loginData.username = username;
+  loginData.password = password;
+
+  login(loginData);
 }
 
 // You can use this to get the login data of the logged-in user (if any). 
@@ -48,12 +60,46 @@ function login (loginData) {
         body: JSON.stringify(loginData),
     };
 
-    return fetch(api + "/auth/login", options)
-        .then(response => response.json())
+    return fetch("https://microbloglite.herokuapp.com/auth/login", options)
+        .then(response => console.log(response.json()))
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("./posts");  // redirect
+            window.location.assign("http://127.0.0.1:5500/posts.html");  // redirect
             console.log(window.location.href);
         });
 }
+
+
+// This is the `logout()` function you will use for any logout button
+// which you may include in various pages in your app. Again, READ this
+// function and you will probably want to re-use parts of it for other
+// `fetch()` requests you may need to write.
+function logout () {
+    const loginData = getLoginData();
+
+    // GET /auth/logout
+    const options = { 
+        method: "GET",
+        headers: { 
+            // This header is how we authenticate our user with the
+            // server for any API requests which require the user
+            // to be logged-in in order to have access.
+            // In the API docs, these endpoints display a lock icon.
+            Authorization: `Bearer ${loginData.token}`,
+        },
+    };
+
+    fetch(api + "/auth/logout", options)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .finally(() => {
+            // We're using `finally()` so that we will continue with the
+            // browser side of logging out (below) even if there is an 
+            // error with the fetch request above.
+
+            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
+            window.location.assign("/");  // redirect to landing page
+        });
+}
+
 
