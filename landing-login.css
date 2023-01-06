@@ -36,7 +36,7 @@
 
  #username:focus,
  #password:focus {
-     background-color: rgb(199, 199, 255);
+     background-color: #fff7e2;
  }
 
  #login-container {

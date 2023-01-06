@@ -37,7 +37,7 @@ body {
 #username:focus,
 #fullname:focus,
 #password:focus {
-    background-color: rgb(199, 199, 255);
+    background-color: #fff7e2;
 }
 
 .input-group-text {
