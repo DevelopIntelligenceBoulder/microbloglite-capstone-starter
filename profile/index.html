@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST-IT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../profile/profile.css">
+
+  <script src="/auth.js"></script>
+  <script>
+    if (isLoggedIn() === false) window.location.replace("/");
+  </script>
+
+
+
+</head>
+
+<body class="container-fluid">
+
+   
+    <div class="row">
+
+      <!-- Left Side Content NavBar -->
+
+     <div class="col-2">
+                    <!-- NavBAr -->
+                    <div class="row fixed-top">
+                        <div class="col" id="test">
+                            <nav class="navbar navbar-expand-md navbar-dark bg-dark d-flex flex-column">
+                                <div class="container-fluid">
+                                    <button id="toggleBtn" class="navbar-toggler" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                                        aria-controls="offcanvasDarkNavbar">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                                        <div class="offcanvas-body">
+                                            <ul class="navbar-nav nav nav-pills flex-column justify-content-end flex-grow-1 pe-3" >
+
+                                                <!-- LOGO -->
+                                                <li class="nav-item text-center">
+                                                    <a class="navbar-brand " href="/posts/">
+                                                        <img src="/images/Post-it-white.png" alt="POST-IT" width="100"
+                                                            height="100">
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" aria-current="page" href="/posts/index.html">Home</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Explore</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Notifications</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Messages</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Bookmarks</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="/profile/">Profile</a>
+                                                </li>
+
+                                                <li class="nav-item" id="backToTopBtn">
+                                                    <a href="#">Back to Top</a> 
+                                                </li>
+
+                                                <hr>
+
+                                                <div class="dropdown pb-4" style="margin: auto;">
+                                                    <a href="#"
+                                                        class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <img src="/profile/image/user image.jpg" alt="hugenerd" width="30" height="30"
+                                                            class="rounded-circle">
+                                                        <span class="d-none d-sm-inline mx-1" id="navBarUserName"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                                                        aria-labelledby="dropdownUser1">
+                                                        </li>
+                                                        <li><a class="dropdown-item" id="logout">Sign out</a></li>
+                                                    </ul>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+      <!-- END nav  Content  -->
+
+
+      <!-- Center Content (Posts, option to add Post) -->
+      <div class="col-7 px-4 mt-5">
+        <div class="container p-0 ">
+        <div class="info">
+
+        
+          <div class="profile-content">
+          <img src="../profile/image/user image.jpg" alt="image" height="100" width="100" class="rounded-circle">
+         
+            <h1 id="name" ><img src="" alt="User" id="user-image"> User</h1>
+            <p id="bio p-3" class="bio mt-2">Hello I am <span id="nameBio" style="text-transform: capitalize;"></span>.<br>Software Engineer <br>
+                Yup, I'm just another Post-it influencer.<br>Follow Me To Greatness </p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" " viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/> <p class="city text-muted "style="display: inline";> NewYork City</p>
+                  </svg>
+<br>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                  </svg> <p class="city text-muted "style="display: inline";> Joined Dec 2021</p>
+                  </svg>
+                  
+
+                  <button type="button" id="followBtn" class="btn btn-primary ";>Follow</button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="mail bi-envelope"viewBox="0 0 16 16"  >
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                  </svg>
+                  
+                 
+
+                
+          </div>
+          <hr>
+        </div>
+
+        
+        <div class="postInput p-4">
+            <textarea class="text rounded mt-3" id="post" rows="3" placeholder="Quick Post-It" style="border: none;"></textarea>
+
+            <br>
+
+            <div class="card-footer bg-transparent">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+                    <button type="button" class="btn postIcons" style="width: 5%;">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                              </svg>
+                        </span>
+                        <!-- Image Icon -->
+                    </button>
+
+                    <button type="button" class="btn postIcons" style="width: 5%;">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+                                <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                              </svg>
+                        </span>
+                        <!-- Paper Clip -->
+                    </button>
+
+                    <button type="button" class="btn postIcons" style="width: 5%;">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                              </svg>
+                        </span>
+                        <!-- Emoji -->
+                    </button>
+
+                    <button type="button" id="postBtn" class="btn btn-warning mt-3" style="width: 85%;">Post</button>
+                </div>
+            </div>
+           
+        </div>
+        </div>
+
+        <div class="container" id="recentPosts">
+
+
+
+          <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#recentPost"
+                type="button" role="tab" aria-controls="recentPost" aria-selected="true">Posts</button>
+              
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Likes</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Re-posts</button>
+            </li>
+
+          </ul>
+
+          <div class="tab-content mt-4" id="myTabContent">
+        
+              <div class="tab-pane fade show active" id="recentPost" role="tabpanel" aria-labelledby="home-tab"
+              tabindex="0">Display recent post here</div>
+           
+
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"></div>
+             
+              
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"></div>
+           
+          </div>
+          
+          <h5>
+            <a id="top" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+            </svg>
+          </a></h5> 
+
+        </div>
+
+
+      </div>
+      
+      <!-- END center Content 
+
+
+
+
+      <!-- Right Side Content (Random users, New, Footer) -->
+      
+      <div class="sidebar col-3 fixed-top" id="rightContent">
+
+        <div>
+            <form class="offset-1 mx-auto d-flex" role="search">
+                <input class="form-control me-2" id="search-bar" type="search"
+                    placeholder="Search Post-It" aria-label="Search">
+            </form>
+        </div>
+        <div class="jumbotron jumbotron-fluid text-bg-dark rounded-3 ">
+            <div class="container">
+                <h4 class="trending text-center ">Trending</h4>
+               
+                <p id="displayNews"></p>
+                <img id="img" src="" alt="">
+
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid text-bg-dark rounded-3">
+            <div class="container">
+                <h4 class="people text-center mb-5 ">People you may know</h4>
+
+                <img id="randomPhoto" class="img rounded-circle mb-4" src="https://xsgames.co/randomusers/avatar.php?g=male"
+                    height="50" width="50" alt="user">
+                <div style='vertical-align:middle; display:inline;'>
+                    <a id="name3" href="#">Micheal Hudson</a>
+                </div>
+             <br>
+                
+                <img id="randomPhoto1" class="img rounded-circle mb-4" src="https://xsgames.co/randomusers/avatar.php?g=female" height="50"
+                    width="50" alt="user">
+                <div style='vertical-align:middle; display:inline;'>
+                    <a id="name1" href="#">Jane Doe</a>
+                </div>
+                <br>
+            
+                <img id="randomPhoto2" class="img rounded-circle mb-4"
+                    src="https://xsgames.co/randomusers/avatar.php?g=pixel" height=50"
+                    width="50" alt="user">
+                <div style='vertical-align:middle; display:inline;'>
+                    <a id="name2" href="#">Peter Parker</a>
+                </div>
+        
+
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <div class="container">
+                <footer class="footer sticky-bottom">
+                    <hr>
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms of
+                                Service</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+
+                    </ul>
+                    <p class="text-center text-muted">© 2022 Post-it, Inc.</p>
+                </footer>
+            </div>
+        </div>
+        
+
+     </div>
+
+      <!-- END Right Side Content  -->
+
+      
+      
+ 
+
+ 
+  <script src="../profile/profile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
