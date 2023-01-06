@@ -2,6 +2,7 @@
 
 window.onload = () => {
     const form = document.getElementById('form');
+    const logoutBtn = document.getElementById('logout');
     //storeLoginInfoTest();
     const loginData = getLoginData();
     console.log(loginData.token)
@@ -11,6 +12,8 @@ const subBtn = document.getElementById('submitBtn');
         createPost();
         getPosts();
     })
+    
+    logoutBtn.addEventListener('click', logout);
 }
 
 function createPost() {
