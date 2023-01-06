@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontPage Bloggers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="navTemplate.css">
+</head>
+
+<body>
+    <!-- Created our Navbar with bootstrap -->
+
+    <header class="header">
+        <nav class="navbar navbar-expand-md header-nav fixed-top">
+            <div class="container-fluid">
+                <!-- Second container with our logo and hamburger menu-->
+                <a class="navbar-brand" href="">
+                    <img src="../images/Logo.png" alt="Logo" width="70" height="70"
+                        class="d-inline-block align-text-center nav-link">
+                    <span>FrontPage Bloggers</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <!-- First container with home/snacks -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../posts.html">Posts</a>
+                        </li>
+                    </ul>
+                    <!-- Third container with Checkout/cart/profile -->
+                    <ul class="navbar-nav ms-auto mt-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/profile-pic-icon.png" width="40" alt="profile-icon">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="">Logout</a></li>
+                            </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
