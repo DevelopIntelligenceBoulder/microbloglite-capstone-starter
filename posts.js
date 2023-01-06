@@ -1,3 +1,4 @@
+
 "use strict";
 
 window.onload = () => {
@@ -5,3 +6,4 @@ window.onload = () => {
 
     logoutBtn.addEventListener('click', logout);
     }
+
