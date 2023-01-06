@@ -1,3 +1,4 @@
+
 "use strict";
 
 window.onload = () => {
@@ -37,3 +38,4 @@ function loggingIn () {
             // console.log(window.location.href);
         });
 }
+
