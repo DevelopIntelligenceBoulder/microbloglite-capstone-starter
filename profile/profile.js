@@ -10,16 +10,14 @@ window.onload = function () {
 
   document.getElementById("name").innerText = (loginData()).username
 
-  document.getElementById("navBarUserName").innerText = (loginData()).username
+  document.getElementById("nameBio").innerText = (loginData()).username
 
- 
+  document.getElementById("navBarUserName").innerText = (loginData()).username
 
   document.getElementById("logout").onclick = logout;
 
-  //setInterval(displayNews, 10000);
+  setInterval(displayNews, 10000);
 
- 
-   
 };
 
 function loginData() {
@@ -96,7 +94,7 @@ function displayPost() {
   fetch(`${api}/api/posts?username=${(loginData()).username}`, options)
     .then(response => response.json())
     .then(data => {
-      
+
       let loggedInUsername = (loginData()).username;
       let postsByLoggedInUser = data.filter(post => post.username === loggedInUsername);
 
@@ -106,9 +104,9 @@ function displayPost() {
       let postsHTML = "";
       for (let i = 0; i < postsByLoggedInUser.length; i++) {
         let post = postsByLoggedInUser[i];
-        postsHTML += 
+        postsHTML +=
 
-        ` <div class="row">
+          ` <div class="row">
         <div class="card mb-3" style="max-width: auto;">
             <div class="card-body">
                 <h4 class="card-title"> <img src="../profile/image/user image.jpg" alt="image" height="60" width="60" class="rounded-circle"><span id="cardName">${post.username}</span>  <span style="color: #999999; font-size: medium;">@${post.username}</span> </h4>
@@ -157,42 +155,42 @@ function displayPost() {
         </div>
     </div>
         `;
-}
+      }
       displayPost.innerHTML = postsHTML;
 
-      
-      
-  });
+
+
+    });
 }
 
 
-function randomName(){
+function randomName() {
   let randomName = document.getElementById("name3");
   let randomName1 = document.getElementById("name1");
   let randomName2 = document.getElementById("name2");
 
   fetch("https://jsonplaceholder.typicode.com/users")
-  .then(response => response.json()) 
-  .then(data => {
-    console.log(data)
-   
-    let randomIndex = Math.floor(Math.random() * data.length);
-    let randomIndex1 = Math.floor(Math.random() * data.length);
-    let randomIndex2 = Math.floor(Math.random() * data.length);
-    
-    
-    while (randomIndex === randomIndex1) {
-      randomIndex1 = Math.floor(Math.random() * data.length);
-    }
-    while (randomIndex === randomIndex2 || randomIndex1 === randomIndex2) {
-      randomIndex2 = Math.floor(Math.random() * data.length);
-    }
-    console.log(data[randomIndex].name)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
 
-    randomName.innerHTML = data[randomIndex].name;
-    randomName1.innerHTML = data[randomIndex1].name;
-    randomName2.innerHTML = data[randomIndex2].name;
-  });
+      let randomIndex = Math.floor(Math.random() * data.length);
+      let randomIndex1 = Math.floor(Math.random() * data.length);
+      let randomIndex2 = Math.floor(Math.random() * data.length);
+
+
+      while (randomIndex === randomIndex1) {
+        randomIndex1 = Math.floor(Math.random() * data.length);
+      }
+      while (randomIndex === randomIndex2 || randomIndex1 === randomIndex2) {
+        randomIndex2 = Math.floor(Math.random() * data.length);
+      }
+      console.log(data[randomIndex].name)
+
+      randomName.innerHTML = data[randomIndex].name;
+      randomName1.innerHTML = data[randomIndex1].name;
+      randomName2.innerHTML = data[randomIndex2].name;
+    });
 }
 
 
