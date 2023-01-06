@@ -192,3 +192,7 @@ body {
     margin-bottom: 2.5%;
     /* margin-right: 0; */
 }
+
+.article {
+    text-align: center;
+}

@@ -5,52 +5,32 @@
 window.onload = function () {
     document.getElementById("navBarUserName").textContent = loginData().username;
     document.getElementById("logout").onclick = logout;
+    document.getElementById("postBtn").onclick = postBtnOnClick;
     showPosts();
 
     // displayRandomNames();
     // displayNews();
     // setInterval(displayNews, 10000);
 }
-likeButton();
-
 
 window.addEventListener('scroll', () => {
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-        likeButton();
+        // likeButton();
         showPosts();
     }
 });
 
-function displayRandomNames() {
-    let opt = {
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${(loginData()).token}`
-        },
-    };
-
-    fetch(`${api}/api/users`, opt)
-        .then(res => res.json())
-        .then(data => {
-            for(let name of data) {
-                document.getElementById("randomName").textContent = Math.floor(Math.random(name)).fullName;
-                document.getElementById("randomName1").textContent = Math.floor(Math.random(name)).fullName;
-                document.getElementById("randomName2").textContent = Math.floor(Math.random(name)).fullName;
-            }
-        });
-}
-
-function likeButton() {
-    let buttons = document.querySelectorAll('.btn.likeBtn');
+// function likeButton() {
+//     let buttons = document.querySelectorAll('.btn.likeBtn');
     
-    console.log(buttons)
+//     console.log(buttons)
 
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            console.log(this.value);  // the value of the "data-id" attribute of the button
-        });
-    });
-}
+//     buttons.forEach(button => {
+//         button.addEventListener('click', function () {
+//             console.log(this.value);  // the value of the "data-id" attribute of the button
+//         });
+//     });
+// }
 
 function showPosts() {
     let opt = {
@@ -68,9 +48,31 @@ function showPosts() {
                 displayCard(data[i]);
             }
         });
-    
-    likeButton()
 }
+
+function postBtnOnClick() {
+    let inputElement = document.getElementById('post');
+    let textToPost = inputElement.value;
+    let data = { text: textToPost };
+  
+    let options = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": 'application/json',
+        "Authorization": `Bearer ${(loginData()).token}`
+      },
+    };
+  
+    fetch(api + "/api/posts", options)
+      .then(response => {
+        console.log(data)
+        if (response.ok) {
+  
+          inputElement.value = '';
+        }
+      });
+  }
 
 function displayCard(data) {
     document.getElementById("divForPost").innerHTML += `
@@ -80,7 +82,7 @@ function displayCard(data) {
             <h4 class="card-title"> <span><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg></span> ${data.username} <span style="color: #999999; font-size: medium;">@${data.username}</span> </h4>
+            </svg></span> ${data.username} <span style="color: #999999; font-size: medium;">@${data.username}</span> <span style="color: #999999; font-size: x-small;"> Posted On:${data.createdAt}</span></h4>
             <p class="card-text">${data.text}</p>
         </div>
         <div class="card-footer bg-transparent">
