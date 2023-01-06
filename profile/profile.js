@@ -8,7 +8,7 @@ window.onload = () => {
     console.log(loginData.token)
 const subBtn = document.getElementById('submitBtn');
     form.addEventListener('submit', e =>{
-        e.preventDefault();
+        // e.preventDefault();
         createPost();
         getPosts();
     })

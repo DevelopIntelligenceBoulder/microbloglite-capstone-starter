@@ -1,19 +1,19 @@
-header{
-    background-color: #000000;
-    height: 12vh;
-    background-position: center;
-    background-size: cover;
-  }
+header {
+  background-color: #000000;
+  height: 12vh;
+  background-position: center;
+  background-size: cover;
+}
 
-  
-  .navbar-nav li {
-      padding: 0 10px;
-  }
 
-  .container{
-    color:blueviolet;
-    font-size:100%;
-  }
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.container {
+  color: rgba(240, 240, 240, 0.637);
+  font-size: 100%;
+}
 
 
 
@@ -23,10 +23,10 @@ h1 {
   font-size: 102pts;
 }
 
-h4{
-  /* padding-top: 50px
-  background-color: aquamarine; */
- 
+h4 {
+  padding-top: 50px;
+  color: black
+
 }
 
 
@@ -43,47 +43,39 @@ h4{
 }
 
 
-button {
+/* button {
   background-color: rgb(200, 10, 10);
   justify-content: center;
 
-}
-
-  /* TRIAL */ 
-
-  .card1{
-    background-color: rgb(12, 174, 145);
-  }
-
-  .card2{
-    background-color: red;
-  }
-
-.card3{
-    background-color: purple;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 25rem;
-}
+} */
 
 .gallery__item {
   padding: .3rem;
-  background-color: rgb(3, 8, 16);
-  /* height: 400px; */
+  background-color: rgb(0, 0, 0);
+  height: 510px;
+  border-radius: 5px;
 }
+
+.gallery__item small {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
 .gallery__img {
-  width: 100%;
-  height: 100%;
-  /* object-fit: cover; */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   display: block;
   position: relative;
   size: 5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
 
 
 
@@ -93,7 +85,7 @@ button {
   grid-row-start: 1;
   grid-row-end: 3; */
 
-  /** Alternative Syntax **/
-  /* grid-column: 1 / span 2;  */
-  /* grid-row: 1 / span 2; */
+/** Alternative Syntax **/
+/* grid-column: 1 / span 2;  */
+/* grid-row: 1 / span 2; */
 /* } */

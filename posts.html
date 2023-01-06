@@ -15,7 +15,7 @@
 
     <script src="./auth.js"></script>
     <script>
-         if (isLoggedIn() === false) window.location.replace("./index.html");
+        if (isLoggedIn() === false) window.location.replace("./index.html");
     </script>
 
 
@@ -60,7 +60,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" id="logout"><input name="logout"  class="btn btn-primary" type="" value="Logout"></a></li>
+                                <li><a class="dropdown-item" id="logout"><input name="logout" class="btn btn-primary"
+                                            type="" value="Logout"></a></li>
                             </ul>
                     </ul>
                 </div>
@@ -105,36 +106,68 @@
 
     <!-- TEST CODE-->
     <div class="container">
-        <div class="gallery" id="posts">
-            <figure class="gallery__item gallery__item--0">
-                <img src="./images/post0.pdf" alt="Gallery image 0" class="gallery__img" width="200px" height="200px">
-            </figure>
-            <figure class="gallery__item 1">
-                <img src="./images/post1.pdf" alt="Gallery image 1" class="gallery__img">
+        <div class="row">
+            <div class="col my-3">
+                <div class="gallery" id="posts">
+                    <figure class="gallery__item gallery__item--0">
+                        <small class="userID"></small>
+                        <img src="./images/blue-flower.jpg" alt="Gallery image 0" class="gallery__img">
+                        <p class="textField"></p>
+                        <small class="date"></small>
+                    </figure>
+                </div>
+            </div>
 
-            </figure>
-            <figure class="gallery__item gallery__item--2">
-                <img src="./images/post2.pdf" alt="Gallery image 2" class="gallery__img">
-            </figure>
-            <figure class="gallery__item gallery__item--3">
-                <img src="./images/post3.pdf" alt="Gallery image 3" class="gallery__img">
-            </figure>
-            <figure class="gallery__item gallery__item--4">
-                <img src="./images/post4.pdf" alt="Gallery image 4" class="gallery__img">
-            </figure>
-            <figure class="gallery__item gallery__item--5">
-                <img src="./images/post5.pdf" alt="Gallery image 5" class="gallery__img">
-            </figure>
+            <div class="col my-3">
+                <figure class="gallery__item 1">
+                    <small class="userID">Testing</small>
+                    <img src="./images/close-up-purple.jpg" alt="Gallery image 1" class="gallery__img">
+                    <p class="textField"></p>
+                    <small class="date"></small>
+                </figure>
+            </div>
+
+            <div class="col my-3">
+                <figure class="gallery__item gallery__item--2">
+                    <small class="userID"></small>
+                    <img src="./images/fall-dazzle.jpg" alt="Gallery image 2" class="gallery__img">
+                    <p class="textField"></p>
+                    <small class="date"></small>
+                </figure>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col my-3">
+                <figure class="gallery__item gallery__item--3">
+                    <small class="userID"></small>
+                    <img src="./images/green-catwalk.jpg" alt="Gallery image 3" class="gallery__img">
+                    <p class="textField"></p>
+                    <small class="date"></small>
+                </figure>
+            </div>
+            <div class="col my-3">
+                <figure class="gallery__item gallery__item--4">
+                    <small class="userID"></small>
+                    <img src="./images/poka-dot.jpg" alt="Gallery image 4" class="gallery__img">
+                    <p class="textField"></p>
+                    <small class="date"></small>
+                </figure>
+            </div>
+            <div class="col my-3">
+                <figure class="gallery__item gallery__item--5">
+                    <small class="userID"></small>
+                    <img src="./images/grinch-in-the-fall.jpg" alt="Gallery image 5" class="gallery__img">
+                    <p class="textField"></p>
+                    <small class="date"></small>
+                </figure>
+            </div>
+        </div>
+
+    </div>
     </div>
     <!-- END TEST CODE -->
 
-    <br>
-
-    <button onClick="logout()">Log out</button>
-
-
-    <br>
 
     <footer class="bg-dark text-center text-white">
 
@@ -145,225 +178,14 @@
         </div>
     </footer>
 
-
-
-
-    <script>
-
-
-        function handleOnload() {
-
-            // temp code start
-            const data = [
-                {
-                    "_id": "63936331392812b7683ee388",
-                    "text": "job",
-                    "username": "@LoverGurl666",
-                    "createdAt": "2022-12-09T16:32:49.925Z",
-                    "likes": [
-                        {
-                            "_id": "63a20239cf52ac30665c0206",
-                            "postId": "63936331392812b7683ee388",
-                            "username": "RickyBobby",
-                            "createdAt": "2022-12-20T18:43:05.812Z"
-                        },
-                        {
-                            "_id": "63b44fd85f3f1f9a69507f53",
-                            "postId": "63936331392812b7683ee388",
-                            "username": "ZMS",
-                            "createdAt": "2023-01-03T15:55:04.191Z"
-                        },
-                        {
-                            "_id": "63936564392812b7683ee8f2",
-                            "postId": "63936331392812b7683ee388",
-                            "username": "eharris19",
-                            "createdAt": "2022-12-09T16:42:12.822Z"
-                        },
-                        {
-                            "_id": "6393d4d349b4d0a8887a50d6",
-                            "postId": "63936331392812b7683ee388",
-                            "username": "nsalaam14",
-                            "createdAt": "2022-12-10T00:37:39.338Z"
-                        },
-                        {
-                            "_id": "63b348cb2c8444c25dc544ce",
-                            "postId": "63936331392812b7683ee388",
-                            "username": "samb",
-                            "createdAt": "2023-01-02T21:12:43.733Z"
-                        }
-                    ]
-                },
-                {
-                    "_id": "6393633e392812b7683ee38f",
-                    "text": "can i get a JOOOOOOBBBBBB",
-                    "username": "@intelligent_shoota",
-                    "createdAt": "2022-12-09T16:33:02.124Z",
-                    "likes": [
-                        {
-                            "_id": "63a4b146a95bd690dd6cb389",
-                            "postId": "6393633e392812b7683ee38f",
-                            "username": "RickyBobby",
-                            "createdAt": "2022-12-22T19:34:30.289Z"
-                        },
-                        {
-                            "_id": "63b4502b5f3f1f9a69507fdd",
-                            "postId": "6393633e392812b7683ee38f",
-                            "username": "ZMS",
-                            "createdAt": "2023-01-03T15:56:27.363Z"
-                        },
-                        {
-                            "_id": "63a495f5a95bd690dd6ca95b",
-                            "postId": "6393633e392812b7683ee38f",
-                            "username": "eharris19",
-                            "createdAt": "2022-12-22T17:37:57.951Z"
-                        },
-                        {
-                            "_id": "6393d4d449b4d0a8887a50da",
-                            "postId": "6393633e392812b7683ee38f",
-                            "username": "nsalaam14",
-                            "createdAt": "2022-12-10T00:37:40.343Z"
-                        },
-                        {
-                            "_id": "63b348d82c8444c25dc544d7",
-                            "postId": "6393633e392812b7683ee38f",
-                            "username": "samb",
-                            "createdAt": "2023-01-02T21:12:56.782Z"
-                        }
-                    ]
-                },
-                {
-                    "_id": "6393647e392812b7683ee8c4",
-                    "text": "Final Project Demo\n",
-                    "username": "@baddestB2001",
-                    "createdAt": "2022-12-09T16:38:22.618Z",
-                    "likes": [
-                        {
-                            "_id": "63b450a85f3f1f9a69508082",
-                            "postId": "6393647e392812b7683ee8c4",
-                            "username": "ZMS",
-                            "createdAt": "2023-01-03T15:58:32.186Z"
-                        },
-                        {
-                            "_id": "639365c3392812b7683ee903",
-                            "postId": "6393647e392812b7683ee8c4",
-                            "username": "eharris19",
-                            "createdAt": "2022-12-09T16:43:47.300Z"
-                        },
-                        {
-                            "_id": "63b34d322c8444c25dc54688",
-                            "postId": "6393647e392812b7683ee8c4",
-                            "username": "samb",
-                            "createdAt": "2023-01-02T21:31:30.908Z"
-                        }
-                    ]
-                },
-                {
-                    "_id": "63936547392812b7683ee8dc",
-                    "text": "I am the Boss",
-                    "username": "@lonelybug",
-                    "createdAt": "2022-12-09T16:41:43.567Z",
-                    "likes": [
-                        
-                        {
-                            "_id": "63b453095f3f1f9a695082ab",
-                            "postId": "63936547392812b7683ee8dc",
-                            "username": "ZMS",
-                            "createdAt": "2023-01-03T16:08:41.483Z"
-                        },
-                        {
-                            "_id": "63a495f7a95bd690dd6ca96e",
-                            "postId": "63936547392812b7683ee8dc",
-                            "username": "eharris19",
-                            "createdAt": "2022-12-22T17:37:59.867Z"
-                        },
-                        {
-                            "_id": "63a48065a95bd690dd6ca8ba",
-                            "postId": "63936547392812b7683ee8dc",
-                            "username": "nsalaam14",
-                            "createdAt": "2022-12-22T16:05:57.551Z"
-                        }
-                    ]
-                },
-                {
-                    "_id": "63936672392812b7683ee953",
-                    "text": "For the Homies",
-                    "username": "@simplyMe",
-                    "createdAt": "2022-12-09T16:46:42.086Z",
-                    "likes": [
-                        {
-                            "_id": "63b453a85f3f1f9a69508381",
-                            "postId": "63936672392812b7683ee953",
-                            "username": "ZMS",
-                            "createdAt": "2023-01-03T16:11:20.294Z"
-                        },
-                        {
-                            "_id": "63a495f7a95bd690dd6ca96c",
-                            "postId": "63936672392812b7683ee953",
-                            "username": "eharris19",
-                            "createdAt": "2022-12-22T17:37:59.865Z"
-                        },
-                        {
-                            "_id": "6393d4d549b4d0a8887a50de",
-                            "postId": "63936672392812b7683ee953",
-                            "createdAt": "2022-12-10T00:37:41.306Z",
-                            "username": "nsalaam14",
-                        }
-                    ]
-                }
-            ]
-
-
-
-            let temphtml = '';
-            for (let index = 0; index < data.length; index++) {
-                const postData = data[index];
-                temphtml += `<div class="gallery__container">
-                    <p>${postData.username}</p>
-            <div class="gallery__item gallery__item--1">
-                <img src="./images/post${index}.pdf" alt="Gallery image 1" class="gallery__img">
-            </div>
-     
-                <p>${postData.createdAt}</p>
-            </div>`
-
-            }
-
-            document.getElementById("posts").innerHTML = temphtml;
-            console.log('temphtml', temphtml)
-            // temp code ends       temp
-            //         fetch("https://microbloglite.herokuapp.com/api/posts?limit=5")
-
-            //       .then(response => response.json())
-            //       .then(json => {
-            //         let postsHTML = ""
-            //     for (let m = 0; m < json.length; m += 1) {
-            //         const postsData = json[m]
-            //         postsHTML = postsHTML + `
-            //         <div>
-            //             <figure class="gallery__item gallery__item--1">
-            //                 <img src="./images/post${index}.pdf" alt="Gallery image 1" class="gallery__img">
-            //             </figure>
-            //                 <p>${postData.username}</p>
-            //                 <p>${postData.text}</p>
-            //             </div>
-            // `
-            //   }
-            //   const m= document.getElementById("posts")
-            //   m.innerHTML=postsHTML
-            //       })
-
-
-        }
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-        <script src="posts.js"></script>
-        <script src="./auth.js"></script>
+    <script src="posts.js"></script>
+    <script src="./auth.js"></script>
 
 </body>
 
