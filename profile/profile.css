@@ -1,0 +1,13 @@
+#form label {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#form button {
+    width: 100%;
+}
+header{
+    height: 12vh;
+}
