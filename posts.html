@@ -9,9 +9,9 @@
 
     <link rel="stylesheet" href="./posts.css">
     <link rel="stylesheet" href="navTemplate/navTemplate.css">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Mid -->
 </head>
 
@@ -53,7 +53,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="">Logout</a></li>
+                                <li><a class="dropdown-item" id="logout"><input name="logout"  class="btn btn-primary" type="" value="Logout"></a></li>
                             </ul>
                     </ul>
                 </div>
@@ -65,11 +65,11 @@
 
         <!-- Content -->
 
-            <div class="container">
-                <br>
-                <h1><i>Fashion</i></h1>
+        <div class="container">
+            <br>
+            <h1><i>Fashion</i></h1>
         </div>
-                <br>
+        <br>
 
         <section id="fashionQuote" class="Q1">
             <div class="container">
@@ -79,11 +79,11 @@
                         —Coco Chanel</i></h4>
 
             </div>
-          
+
             <div class="button1">
-            <button type="submit">Create a Board</button>
+                <button type="submit">Create a Board</button>
             </div>
-<br>
+            <br>
 
         </section>
 
@@ -114,8 +114,8 @@
 
     <!--TRIAL -->
 
-     <!-- TEST CODE-->
-     <div class="container">
+    <!-- TEST CODE-->
+    <div class="container">
         <div class="gallery">
             <figure class="gallery__item gallery__item--1">
                 <img src="img/image-1.jpg" alt="Gallery image 1" class="gallery__img">
@@ -137,12 +137,12 @@
             </figure>
         </div>
     </div>
-        <!-- END TEST CODE -->
+    <!-- END TEST CODE -->
 
-<br>
-<button onClick="handleLogout()">Log out</button>
+    <br>
+    <button onClick="handleLogout()">Log out</button>
 
-<br>
+    <br>
 
     <footer class="bg-dark text-center text-white">
 
@@ -153,30 +153,31 @@
         </div>
     </footer>
 
-<div id="posts">
+    <div id="posts">
 
 
-</div>
+    </div>
 
 
-    <script>
-    
-    function handleOnload() {
-        console.log("hello")
-        const loginData=localStorage.getItem("login-data")
-        console.log(loginData)
-        if (!loginData){
-            // location.href="/login"
-            // return
-        }
-        fetch("https://microbloglite.herokuapp.com/api/posts?limit=5")
+    <!-- <script>
 
-      .then(response => response.json())
-      .then(json => {
-        let postsHTML = ""
-    for (let m = 0; m < json.length; m += 1) {
-        const postsData = json[m]
-        postsHTML = postsHTML + `
+
+        function handleOnload() {
+            console.log("hello")
+            const loginData = localStorage.getItem("login-data")
+            console.log(loginData)
+            if (!loginData) {
+                // location.href="/login"
+                // return
+            }
+            fetch("https://microbloglite.herokuapp.com/api/posts?limit=5")
+
+                .then(response => response.json())
+                .then(json => {
+                    let postsHTML = ""
+                    for (let m = 0; m < json.length; m += 1) {
+                        const postsData = json[m]
+                        postsHTML = postsHTML + `
 <div class="mountainCard">
 
 <ul class="mountainInfo">
@@ -187,21 +188,29 @@
 </ul>
 </div>
 `
-  }
-  const m= document.getElementById("posts")
-  m.innerHTML=postsHTML
-      })
-    }
-    function handleLogout(){
-        console.log("handleLogout")
-        localStorage.clear()
-        fetch("https://microbloglite.herokuapp.com/auth/logout")
-      .then(response => response.json())
-      .then(json => console.log(json))
-    }
-    
-        </script>
+                    }
+                    const m = document.getElementById("posts")
+                    m.innerHTML = postsHTML
+                })
+        }
+        function handleLogout() {
+            console.log("handleLogout")
+            localStorage.clear()
+            fetch("https://microbloglite.herokuapp.com/auth/logout")
+                .then(response => response.json())
+                .then(json => console.log(json))
+        }
+
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+        <script src="posts.js"></script>
+        <script src="./auth.js"></script>
 </body>
- 
+
 
 </html>
