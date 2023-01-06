@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-It-Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="landing-register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/sticky-browser-icon.png">
+</head>
+
+<body>
+    <div class="offset-3 container" id="registerContainer">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 col-sm-10">
+                <div class= "col-6">
+                    <img class="text-center" src="/images/Post-it-blue.png" alt="" id="logoBlue">
+                </div>
+                <form id="register">
+                    <div class="offset-3" id="usernameField">
+                        <!-- <span class="input-group-text">
+                             <img src="/images/username-icon-blue.png" alt="" class="img-responsive">
+                        </span> -->
+                        <input type="text" id="username" placeholder="Username" minlength="3" autocomplete="off">
+                    </div>
+                    <div class="offset-3" id="fullnameField">
+                       <!--  <img src="/images/name-icon-blue.png" alt="" class="img-responsive"> -->
+                        <input type="text" id="fullname" placeholder="Fullname" minlength="6" autocomplete="off">
+                    </div>
+                    <div class="offset-3" id="passwordField">
+                        <!-- <img src="/images/lock-icon-icon.png" alt=""  class="img-responsive"> -->
+                        <input type="password" id="password" placeholder="Create Password" minlength="6"
+                            autocomplete="off">
+                    </div>
+                    <div class="offset-5 form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Agree to <a href="">Terms of Service</a>
+                        </label>
+                    </div>
+                    <div class="offset-3">
+                        <button type="submit" class="btn" id="submitButton">MAKE ACCOUNT</button>
+                        <p class="offset-5">Have an account?<a href="/index.html"> Log in</a></p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="/register/landing-register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
