@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 "use strict";
 
 window.onload = () => {
@@ -38,5 +38,4 @@ function loggingIn () {
             // console.log(window.location.href);
         });
 }
-=======
->>>>>>> 973fed3 (changed redirection to login page)
+
