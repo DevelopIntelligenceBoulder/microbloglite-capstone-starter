@@ -13,6 +13,7 @@ function getLoginData () {
 }
 
 
+
 // You can use this to see whether the current visitor is logged in. 
 // Returns either `true` or `false`.
 function isLoggedIn () {
@@ -38,11 +39,14 @@ function login (loginData) {
         body: JSON.stringify(loginData),
     };
 
+    //body logindata
+
     return fetch(api + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.assign("./posts");  // redirect
+            console.log(window.location.href);
         });
 }
 
