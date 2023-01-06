@@ -13,6 +13,13 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="../navTemplate/navTemplate.css">
+    <script src="../auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) {
+            console.log(isLoggedIn())
+            window.location.replace("../index.html")
+        }
+    </script>
 </head>
 
 <body>
@@ -82,7 +89,6 @@
         </script>
 
     <script src="./profile.js"></script>
-    <script src="../auth.js"></script>
 </body>
 
 </html>

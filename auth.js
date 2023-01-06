@@ -17,6 +17,7 @@ function getLoginData () {
 // Returns either `true` or `false`.
 function isLoggedIn () {
     const loginData = getLoginData();
+    console.log(Boolean(loginData.token))
     return Boolean(loginData.token);
 }
 
