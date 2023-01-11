@@ -11,6 +11,8 @@ const api = "https://microbloglite.herokuapp.com";
 function getLoginData () {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
+
+   
 // alert(window.localStorage.getItem("login-data"));
 
 
@@ -44,6 +46,9 @@ function login (loginData) {
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
+            alert(loginData);
+            let test = getLoginData(); 
+            console.log(test);
         });
 }
 

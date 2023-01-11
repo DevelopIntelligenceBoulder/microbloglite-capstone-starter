@@ -6,8 +6,8 @@ function CreateUser() {
 
   let raw = JSON.stringify({
     username: document.getElementById("username").value,
-    fullName: "michaelmartinez5",
-    password: "mike",
+    fullName: document.getElementById("fullname").value,
+    password: document.getElementById("password").value,
   });
 
   // post request
