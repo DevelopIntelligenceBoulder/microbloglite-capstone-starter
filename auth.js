@@ -11,6 +11,7 @@ const api = "https://microbloglite.herokuapp.com";
 function getLoginData () {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
+// alert(window.localStorage.getItem("login-data"));
 
 
 // You can use this to see whether the current visitor is logged in. 
