@@ -2,32 +2,32 @@
 
 "use strict";
 
-// function authorizes that user is logged in and captures when they create a post
-function CreatePost() {
-  let myHeaders = new Headers();
-  // token authorization
-  let loginData = getLoginData();
-  myHeaders.append("accept", "application/json");
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", "Bearer " + loginData.token);
+// // function authorizes that user is logged in and captures when they create a post
+// function CreatePost() {
+//   let myHeaders = new Headers();
+//   // token authorization
+//   let loginData = getLoginData();
+//   myHeaders.append("accept", "application/json");
+//   myHeaders.append("Content-Type", "application/json");
+//   myHeaders.append("Authorization", "Bearer " + loginData.token);
 
-  let raw = JSON.stringify({
-    text: document.getElementById("capturePost").value,
-  });
+//   let raw = JSON.stringify({
+//     text: document.getElementById("capturePost").value,
+//   });
 
-  let requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
+//   let requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: "follow",
+//   };
 
-  fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
-  DisplayAllPost();
-}
+//   fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
+//     .then((response) => response.text())
+//     .then((result) => console.log(result))
+//     .catch((error) => console.log("error", error));
+//   DisplayAllPost();
+// }
 
 function DisplayAllPost() {
   let element = document.getElementById("displayPostHere");
@@ -57,3 +57,4 @@ function DisplayAllPost() {
       }
     });
 }
+DisplayAllPost();
