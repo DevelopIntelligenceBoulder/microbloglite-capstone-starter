@@ -12,6 +12,9 @@ function getLoginData () {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
 }
 
+   
+// alert(window.localStorage.getItem("login-data"));
+
 
 // You can use this to see whether the current visitor is logged in. 
 // Returns either `true` or `false`.
@@ -43,6 +46,9 @@ function login (loginData) {
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
+            alert(loginData);
+            let test = getLoginData(); 
+            console.log(test);
         });
 }
 

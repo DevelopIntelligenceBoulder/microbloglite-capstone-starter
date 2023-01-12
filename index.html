@@ -19,7 +19,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts.html");
+        // if (isLoggedIn() === true) window.location.replace("/posts.html");
     </script>
 </head>
 <body>
@@ -41,7 +41,7 @@
                 <input type="password" id="password" minlength="6">
             </div>
 
-            <button id="loginButton" type="submit">Login</button>
+            <button onclick="getLoginData()" id="loginButton" type="submit">Login</button>
         </form>
 
     </main>
