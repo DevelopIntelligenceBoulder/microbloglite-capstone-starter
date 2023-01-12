@@ -45,7 +45,10 @@ function DisplayAllPost() {
     redirect: "follow",
   };
 
-  fetch("https://microbloglite.herokuapp.com/api/posts", requestOptions)
+  fetch(
+    "https://microbloglite.herokuapp.com/api/posts?limit=2000&offset=0",
+    requestOptions
+  )
     .then((response) => response.json())
     .then((result) => {
       for (let i = 0; i < result.length; i++) {
