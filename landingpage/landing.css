@@ -25,3 +25,16 @@
 h1 {
     text-align: center;
 }
+
+code {
+  color:rgb(10, 148, 203)  
+}
+
+a {
+  color:rgb(10, 148, 203) 
+}
+
+body {
+    background-color: black;
+    color:rgb(10, 148, 203)
+}
