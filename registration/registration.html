@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/landingpage/landing.css">
     <title>Registration</title>
   </head>
   <body>
+    <div class="login-form">
+      <form id="login" action="/examples/actions/confirmation.php" method="post">
     <!-- username -->
     <div>
+      <h2 class="text-center">Register</h2>
       <label for="username">Username</label>
-      <input type="text" id="username" minlength="3" />
+      <input class="form-control" type="text" id="username" minlength="3" />
     </div>
 
     <!-- fullname -->
     <div>
       <label for="fullname">Fullname</label>
-      <input type="text" id="fullname" minlength="3" />
+      <input class="form-control" type="text" id="fullname" minlength="3" />
     </div>
 
     <!-- password -->
     <div>
       <label for="password">Password</label>
-      <input type="password" id="password" minlength="6" />
+      <input class="form-control" type="password" id="password" minlength="6" />
     </div>
 
     <!-- register button -->
-    <button onclick="CreateUser()" id="loginButton">Register</button>
-
+    <button onclick="CreateUser()" class="btn btn-primary btn-block" id="loginButton">Register</button>
+  </div>
+</form>
     <!-- javscript -->
     <script src="/registration.js"></script>
     <script src="/auth.js"></script>
