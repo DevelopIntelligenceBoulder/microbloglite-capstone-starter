@@ -46,7 +46,7 @@ function login (loginData) {
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
-            alert(loginData);
+            alert("Successful Login");
             let test = getLoginData(); 
             console.log(test);
         });
@@ -81,6 +81,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect to landing page
+            window.location.assign("/landingpage/index.html");  // redirect to landing page
         });
 }

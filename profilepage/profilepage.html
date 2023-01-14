@@ -18,8 +18,8 @@
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="/posts/posts.css" />
-    <link rel="stylesheet" href="/posts/post2.css" />
-    <title>/POSTS</title>
+
+    <title>Profile Page</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
@@ -28,39 +28,18 @@
     </script>
   </head>
   <body>
-    <header>
-      <h1>POSTS PAGE</h1>
-    </header>
-
     <main>
-      <div class="post-container">
-        <div class="post-header">
-          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
-          <span class="username">@username</span>
-          <span class="time">12:00 PM - 12 Jan 2023</span>
-        </div>
-        <div id="post" class="post-body">
-    
-        </div>
-        <div class="post-footer">
-          <button class="like-btn">Like</button>
-          <button class="retweet-btn">Retweet</button>
-          <button class="comment-btn">Comment</button>
-        </div>
-      </div>
-      
       <!-- create post button -->
-      <!-- <button onclick="CreatePost(); DisplayAllPost()" id="postButton">
-        Create Post
-      </button> -->
+      <button onclick="CreatePost()" id="postButton">Create Post</button>
       <!-- text box -->
-      <!-- <input type="text" id="capturePost" /> -->
-      <button onclick="logout()" id="logoutButton">Logout</button>
-      <a href="/profilepage/profilepage.html">Profile Page</a>
+      <input type="text" id="capturePost" />
       <p id="displayPostHere"></p>
+      <button onclick="logout()" id="logoutButton">Logout</button>
     </main>
 
-    <footer></footer>
+    <footer>
+      <a href="/posts/index.html">Post Page</a>
+    </footer>
 
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script
@@ -70,6 +49,6 @@
     ></script>
 
     <!-- Page-specific code -->
-    <script src="/posts/posts.js"></script>
+    <script src="/profilepage/profilefilter.js"></script>
   </body>
 </html>
