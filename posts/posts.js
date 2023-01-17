@@ -57,4 +57,4 @@ function DisplayAllPost() {
       }
     });
 }
-//DisplayAllPost();
+DisplayAllPost();
