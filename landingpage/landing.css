@@ -1,40 +1,59 @@
 /* login/register form */
 .login-form {
-    width: 340px;
-    margin: 50px auto;
-  	font-size: 15px;
+  width: 340px;
+  margin: 50px auto;
+  font-size: 15px;
 }
 .login-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
 }
 .login-form h2 {
-    margin: 0 0 15px;
+  margin: 0 0 15px;
 }
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
+.form-control,
+.btn {
+  min-height: 38px;
+  border-radius: 2px;
 }
-.btn {        
-    font-size: 15px;
-    font-weight: bold;
+.btn {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 h1 {
-    text-align: center;
-}
-
-code {
-  color:rgb(10, 148, 203)  
+  text-align: center;
 }
 
 a {
-  color:rgb(10, 148, 203) 
+  color: rgb(10, 148, 203);
 }
 
 body {
-    background-color: black;
-    color:rgb(10, 148, 203)
+  background-color: black;
+  color: rgb(10, 148, 203);
+}
+
+/* nav bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Title {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding: 10px 20px;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
 }

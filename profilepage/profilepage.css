@@ -1,0 +1,9 @@
+.card {
+	max-width: 500px;
+	border-color: black;
+	margin-top: 15px;
+}
+#capturePost {
+	position: absolute;
+	max-width: 500px;
+}
