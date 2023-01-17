@@ -111,3 +111,23 @@ h1 {
 body {
   background-color: black;
 }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Title {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding: 10px 20px;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
