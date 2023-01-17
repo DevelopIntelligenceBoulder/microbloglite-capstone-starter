@@ -27,8 +27,9 @@
     <script>
       if (isLoggedIn() === false) window.location.replace("/landingpage/index.html");
     </script>
+
     <!-- Navagation bar -->
-    	<nav role='navigation'>
+    	<nav role='navigation' id="nav">
         <ul>
         <li id="menu"><a href="/posts/index.html"><span class="material-symbols-outlined">
           home
@@ -38,24 +39,25 @@
         </ul>
     </nav>	
   </head>
+
   <body>
-    <h1>Profile Page</h1>
+  
     <main>
+      <form>
       <!-- text box -->
       <input type="text" id="capturePost" />
       <!-- create post button -->
-      <button onclick="CreatePost()" id="postButton">Create Post</button>
-      
+      <button onclick="CreatePost()" id="postButton">Create Post</button> <br>
+      </form>
       <!-- Display post here -->
       <div class="container">
-      <p id="displayPostHere"></p>
+      <p id="displayProfilePostHere"></p>
       </div>
 
       <button onclick="logout()" id="logoutButton">Logout</button>
     </main>
 
     <footer>
-      <a href="/posts/index.html">Post Page</a>
     </footer>
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script
