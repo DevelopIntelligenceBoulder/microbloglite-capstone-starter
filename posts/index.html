@@ -24,7 +24,8 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
-      if (isLoggedIn() === false) window.location.replace("/");
+      if (isLoggedIn() === false)
+        window.location.replace("/landingpage/index.html");
     </script>
   </head>
   <body>
@@ -35,20 +36,22 @@
     <main>
       <div class="post-container">
         <div class="post-header">
-          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <img
+            src="profile-pic.jpg"
+            alt="Profile Picture"
+            class="profile-pic"
+          />
           <span class="username">@username</span>
           <span class="time">12:00 PM - 12 Jan 2023</span>
         </div>
-        <div id="post" class="post-body">
-    
-        </div>
+        <div id="post" class="post-body"></div>
         <div class="post-footer">
           <button class="like-btn">Like</button>
           <button class="retweet-btn">Retweet</button>
           <button class="comment-btn">Comment</button>
         </div>
       </div>
-      
+
       <!-- create post button -->
       <!-- <button onclick="CreatePost(); DisplayAllPost()" id="postButton">
         Create Post
