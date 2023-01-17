@@ -19,7 +19,7 @@
     <nav>
       <h2 class="Title">MicroBlog</h2>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/homepage/index.html">Home</a></li>
         <li><a href="/registration/registration.html">Registration</a></li>
         <li><a href="/landingpage/index.html">Login</a></li>
         <li><a href="/posts/index.html">Post</a></li>
@@ -28,7 +28,7 @@
     </nav>
   </div>
   <div class="login-form">
-    <form id="login" action="/examples/actions/confirmation.php" method="post">
+    <form id="login">
       <!-- username -->
       <div>
         <h2 class="text-center">Register</h2>
@@ -49,7 +49,7 @@
       </div>
 
       <!-- register button -->
-      <button onclick="CreateUser()" class="btn btn-primary btn-block" id="loginButton">Register</button>
+      <button type="reset" onclick="CreateUser()" class="btn btn-primary btn-block" id="loginButton">Register</button>
   </div>
   </form>
   <!-- Footer -->
@@ -78,7 +78,7 @@
       </div>
   </footer>
   <!-- javscript -->
-  <script src="/registration.js"></script>
+  <script src="/registration/registration.js"></script>
   <script src="/auth.js"></script>
 </body>
 
