@@ -4,6 +4,9 @@ function ProfileFilter() {
   let myHeaders = new Headers();
 
   let loginData = getLoginData();
+
+  let usernameEndPoint = loginData.username;
+  
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", "Bearer " + loginData.token);
@@ -15,7 +18,7 @@ function ProfileFilter() {
   };
 
   fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=2000&offset=0",
+    "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0&username=" + usernameEndPoint,
     requestOptions
   )
     .then((response) => {
@@ -25,14 +28,21 @@ function ProfileFilter() {
       return response.json();
     })
     .then((result) => {
-      let filteredPosts = result.filter(
-        (post) => post.username === loginData.username
-      );
-      for (let i = 0; i < filteredPosts.length; i++) {
-        let userPostInfo = `${filteredPosts[i].username} <br> ${filteredPosts[i].createdAt} <br> ${filteredPosts[i].text} <br>`;
-        element.innerHTML += userPostInfo + "<br>";
+      // let filteredPosts = result.filter((post) => post.username === "usernameEndPoint");
+      for (let i = 0; i < result.length; i++) {
+        let userPostInfo = `
+        <div class="card">
+          <div class="card-header">
+            ${result[i]._id} @${result[i].username} <br> ${result[i].createdAt}
+          </div>
+          <div class="card-body">
+            ${result[i].text}
+          </div>
+        </div>`;
+        element.innerHTML += userPostInfo;
       }
     })
     .catch((error) => console.log(error));
 }
+
 ProfileFilter();

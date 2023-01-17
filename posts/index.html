@@ -24,8 +24,10 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="/auth.js"></script>
     <script>
+    
       if (isLoggedIn() === false)
         window.location.replace("/landingpage/index.html");
+
     </script>
   </head>
   <body>
