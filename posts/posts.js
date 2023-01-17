@@ -50,11 +50,47 @@ function DisplayAllPost() {
     requestOptions
   )
     .then((response) => response.json())
-    .then((result) => {
-      for (let i = 0; i < result.length; i++) {
-        let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
-        element.innerHTML += userPostInfo + "<br>";
-      }
-    });
+    .then((result) => document.getElementById("post").innerHTML = result.map(postTemplate).join(" "))
+    
+    
+    //   for (let i = 0; i < result.length; i++) {
+
+    //     let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
+    //     element.innerHTML += userPostInfo + "<br>";
+        
+    //   }
+    // });
 }
 DisplayAllPost();
+
+function postTemplate(post) {
+  return `<div class="card">
+<div> class="card-content">
+<h3 class="card-title">${post.username}</h3>
+<p class="card-description">${post.text}</p>
+<p>${post.createdAt}</p>
+</div>
+</div>`
+
+}
+
+
+
+
+
+
+
+
+
+
+// let element = document.getElementById("displayPostHere");
+        // let userPostInfo =  `
+        //     <div id="user-post-info">
+        //         <div>
+        //             <span id="username">${result[i].username}</span>
+        //             <span id="created-at">${result[i].createdAt}</span>
+        //         </div>
+        //         <div id="text">${result[i].text}</div>
+        //     </div>`;
+        // element.innerHTML += userPostInfo;
+
