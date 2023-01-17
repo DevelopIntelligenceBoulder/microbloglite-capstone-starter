@@ -18,7 +18,7 @@
   <!-- Page-specific CSS -->
   <link rel="stylesheet" href="/landingpage/landing.css" />
 
-  <title>Login</title>
+  <title>Welcome To MicroBlog</title>
 
   <!-- Run BEFORE page is finished loading (before window.onload): -->
   <script src="/auth.js"></script>
@@ -32,7 +32,7 @@
     <nav>
       <h2 class="Title">MicroBlog</h2>
       <ul>
-        <li><a href="/homepage/index.html">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="/registration/registration.html">Registration</a></li>
         <li><a href="/landingpage/index.html">Login</a></li>
         <li><a href="/posts/index.html">Post</a></li>
@@ -44,26 +44,7 @@
     <header>
       <h1>Welcome to MicroBlog</h1>
     </header>
-    <!-- login form -->
-    <div class="login-form">
-      <form id="login" action="/examples/actions/confirmation.php" method="post">
-        <div>
-          <h2 class="text-center">Log in</h2>
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" minlength="3" />
-        </div>
-
-        <div>
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" minlength="6" />
-        </div>
-
-        <button onclick="getLoginData()" class="btn btn-primary btn-block" id="loginButton" type="submit">
-          Login
-        </button>
-    </div>
-    </form>
-    <p class="text-center"><a href="/registration/registration.html">Create an Account</a></p>
+   
   </main>
 
   <!-- Footer -->
