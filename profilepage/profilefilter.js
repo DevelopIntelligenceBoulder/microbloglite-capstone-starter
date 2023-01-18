@@ -60,7 +60,7 @@ function ProfileFilter() {
         let userPostInfo = `
         <div class="card">
           <div class="card-header">
-            ${result[i]._id} @${result[i].username} <br> ${result[i].createdAt}
+            ${result[i]._id} <p class="username">@${result[i].username} ${result[i].createdAt}</p>
           </div>
           <div class="card-body">
             ${result[i].text}
