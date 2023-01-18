@@ -65,7 +65,7 @@ DisplayAllPost();
 
 function postTemplate(post) {
   return `<div class="card">
-<div> class="card-content">
+<div> 
 <h3 class="card-title">${post.username}</h3>
 </div>
 <p class="card-description">${post.text}</p>
