@@ -23,7 +23,7 @@ function CreateUser() {
     .then((data) => {
       alert(data);
       // sends you to index page
-      window.location.href = "/index.html";
+      window.location.href = "/landingpage/index.html";
     })
     .catch((error) => console.log("error", error));
   // storing users info
