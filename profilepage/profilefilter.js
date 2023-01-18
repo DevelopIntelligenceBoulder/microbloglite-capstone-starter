@@ -45,7 +45,7 @@ function ProfileFilter() {
   };
 
   fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0&username=" + usernameEndPoint,
+    "https://microbloglite.herokuapp.com/api/posts?limit=1000&offset=0&username=" + usernameEndPoint,
     requestOptions
   )
     .then((response) => {
@@ -60,7 +60,7 @@ function ProfileFilter() {
         let userPostInfo = `
         <div class="card">
           <div class="card-header">
-            ${result[i]._id} <p class="username">@${result[i].username} ${result[i].createdAt}</p>
+            ${result[i]._id} @${result[i].username} <br> ${result[i].createdAt}
           </div>
           <div class="card-body">
             ${result[i].text}

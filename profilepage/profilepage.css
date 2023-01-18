@@ -19,6 +19,17 @@ nav {
 	text-decoration: none;
 	font-weight: bold;
   }
+  .logoutbtn {
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	margin: none;
+	padding: none;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+	color: white;
+	font-weight: bold;
+  }
   a {
 	color: rgb(10, 148, 203);
   }
@@ -34,10 +45,27 @@ input[type=text] {
 	resize: none;
 }
 #capturePost {
-	margin-left: 20%;
+	margin-left: 25%;
 	margin-right: 15px;
+	margin-top: 25px;
 	padding: 12px 20px;
 }
+/* Create Post Button */
+.postbtn {
+	background-color: rgb(10, 148, 203); 
+	color: black; 
+	border-radius: 8px;
+	border: none;
+	margin: 4px 2px;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+  }
+  
+  .postbtn:hover {
+	background-color: rgb(10, 148, 203);
+	color: white;
+  }
 
 /* Post cards */ 
 .card {
