@@ -19,6 +19,15 @@ nav {
 	text-decoration: none;
 	font-weight: bold;
   }
+  .logoutbtn {
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+	color: white;
+	font-weight: bold;
+  }
   a {
 	color: rgb(10, 148, 203);
   }

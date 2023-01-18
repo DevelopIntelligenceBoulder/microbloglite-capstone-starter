@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!--     Bootstrap CSS -->
+     <!--     Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"/> 
+      <!-- fonts awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="/global.css" />
+
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="/profilepage/profilepage.css" />
     
@@ -38,28 +41,52 @@
           <li><a href="/landingpage/index.html">Login</a></li>
           <li><a href="/posts/index.html">Post</a></li>
           <li><a href="/profilepage/profilepage.html">Profile</a></li>
-          <li><button onclick='logout()'>Logout</button></li>
+          <li><button class="logoutbtn" onclick='logout()'>Logout</button></li>
         </ul>
       </nav>
     </div>
 
     <main>
+      <!--Create a Post -->
       <form>
       <!-- text box -->
       <input type="text" id="capturePost" />
       <!-- create post button -->
       <button onclick="CreatePost()" id="postButton">Create Post</button> <br>
       </form>
+      
       <!-- Display post here -->
       <div class="container">
       <p id="displayProfilePostHere"></p>
       </div>
 
-      
     </main>
 
-    <footer>
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"><i
+              class="fa fa-facebook"></i></a>
+  
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"><i
+              class="fa fa-twitter"></i></a>
+  
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"><i
+              class="fa fa-instagram"></i></a>
+        </section>
+  
+        </form>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2023 Copyright
+        </div>
     </footer>
+    
     <!-- Bootstrap Bundle (including Popper for popovers) -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
