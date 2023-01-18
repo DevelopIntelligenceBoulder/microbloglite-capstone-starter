@@ -49,13 +49,13 @@ main {
   order: -1;
 }
 
-.star-btn, .like-btn, .add-btn {
+/* .star-btn, .like-btn, .add-btn {
   margin-top: -27.5px;
 }
 
 .star-btn i, .like-btn i, .add-btn i {
   font-size: 26px;
-}
+} */
 
 .details {
   display: flex;
@@ -119,4 +119,12 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
 }
-
+nav ul #logoutButton {
+  background-color: white;
+  margin-right: 5px;
+  background: none;
+  padding: 0%;
+  border: none;
+  color: white;
+  font-weight: bold;
+}

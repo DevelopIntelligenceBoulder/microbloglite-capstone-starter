@@ -39,14 +39,39 @@
     margin-top: 10px;
   }
   
-  .like-btn, .retweet-btn, .comment-btn {
-    padding: 10px 20px;
+  .like-btn {
+    padding: 10px 45px;
     border: none;
     background-color: #1da1f2;
     color: #fff;
     cursor: pointer;
     margin-left: 10px;
   }
+  
+  .retweet-btn {
+    padding: 10px 45px;
+    border: none;
+    background-color: #1da1f2;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .comment-btn {
+    padding: 10px 45px;
+    border: none;
+    background-color: #1da1f2;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
   
   .like-btn:hover, .retweet-btn:hover, .comment-btn:hover {
     background-color: #0c77f8;
@@ -65,3 +90,4 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* add some depth */
     
   }
+  
