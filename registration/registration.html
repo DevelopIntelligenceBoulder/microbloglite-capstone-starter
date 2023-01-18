@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- fonts awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/landingpage/landing.css">
+  <title>Registration</title>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <h2 class="Title">MicroBlog</h2>
+      <ul>
+        <li><a href="/homepage/index.html">Home</a></li>
+        <li><a href="/registration/registration.html">Registration</a></li>
+        <li><a href="/landingpage/index.html">Login</a></li>
+        <li><a href="/posts/index.html">Post</a></li>
+        <li><a href="/profilepage/profilepage.html">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="login-form">
+    <form id="login">
+      <!-- username -->
+      <div>
+        <h2 class="text-center">Register</h2>
+        <label for="username">Username</label>
+        <input class="form-control" type="text" id="username" minlength="3" />
+      </div>
+
+      <!-- fullname -->
+      <div>
+        <label for="fullname">Fullname</label>
+        <input class="form-control" type="text" id="fullname" minlength="3" />
+      </div>
+
+      <!-- password -->
+      <div>
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" minlength="6" />
+      </div>
+
+      <!-- register button -->
+      <button type="reset" onclick="CreateUser()" class="btn btn-primary btn-block" id="loginButton">Register</button>
+  </div>
+  </form>
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"><i
+            class="fa fa-facebook"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"><i
+            class="fa fa-twitter"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"><i
+            class="fa fa-instagram"></i></a>
+      </section>
+
+      </form>
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright
+      </div>
+  </footer>
+  <!-- javscript -->
+  <script src="/registration/registration.js"></script>
+  <script src="/auth.js"></script>
+</body>
+
+</html>

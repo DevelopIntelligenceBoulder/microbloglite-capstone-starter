@@ -1,0 +1,17 @@
+/* Nav Bar */
+#nav {
+	z-index: 1000;
+	background: #2196F3;
+}
+.card {
+	max-width: 500px;
+	border-color: black;
+	margin-top: 15px;
+}
+#capturePost {
+	max-width: 500px;
+	margin-left: 40%;
+}
+.card-header {
+	font-weight: bold;
+}
