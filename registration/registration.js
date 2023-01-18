@@ -21,9 +21,10 @@ function CreateUser() {
   fetch("https://microbloglite.herokuapp.com/api/users", requestOptions)
     .then((response) => response.text())
     .then((data) => {
-      alert(data);
+      alert("Registered successfully");
+      
       // sends you to index page
-      window.location.href = "/index.html";
+      window.location.href = "/landingpage/index.html";
     })
     .catch((error) => console.log("error", error));
   // storing users info

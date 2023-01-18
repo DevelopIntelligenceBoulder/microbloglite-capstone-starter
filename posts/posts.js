@@ -51,15 +51,15 @@ function DisplayAllPost() {
   )
     .then((response) => response.json())
     .then((result) => document.getElementById("post").innerHTML = result.map(postTemplate).join(" "))
-    
-    
-    //   for (let i = 0; i < result.length; i++) {
 
-    //     let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
-    //     element.innerHTML += userPostInfo + "<br>";
-        
-    //   }
-    // });
+
+  //   for (let i = 0; i < result.length; i++) {
+
+  //     let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
+  //     element.innerHTML += userPostInfo + "<br>";
+
+  //   }
+  // });
 }
 DisplayAllPost();
 
@@ -67,15 +67,13 @@ function postTemplate(post) {
   return `<div class="card">
 <div> class="card-content">
 <h3 class="card-title">${post.username}</h3>
+</div>
 <p class="card-description">${post.text}</p>
 <p>${post.createdAt}</p>
 </div>
 </div>`
-
+  element.innerHTML += postTemplate;
 }
-
-
-
 
 
 
