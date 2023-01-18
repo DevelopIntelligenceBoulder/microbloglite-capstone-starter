@@ -1,4 +1,35 @@
 /* Posts Page JavaScript */
+// Assume this data comes from a server-side API
+const postData = {
+    author: 'John Doe',
+    timestamp: 'Jan 1, 2021',
+    content: 'Hello, world!',
+    image: 'https://example.com/image.jpg',
+    avatar: 'https://example.com/avatar.jpg',
+}
+
+// Get the elements by their ID
+const postAvatar = document.getElementById('post-avatar');
+const postAuthor = document.getElementById('post-author');
+const postTimestamp = document.getElementById('post-timestamp');
+const postContent = document.getElementById('post-content');
+const postImage = document.getElementById('post-image');
+const postActionButton = document.getElementById('post-action-button');
+
+// Set the elements' content
+postAvatar.src = postData.avatar;
+postAuthor.textContent = postData.author;
+postTimestamp.textContent = postData.timestamp;
+postContent.textContent = postData.content;
+postImage.src = postData.image;
+
+postActionButton.addEventListener("click", handleLike);
+
+function handleLike(event) {
+    event.preventDefault();
+    console.log("like clicked");
+    // handle the like event here
+}
 
 "use strict";
 
@@ -51,15 +82,15 @@ function DisplayAllPost() {
   )
     .then((response) => response.json())
     .then((result) => document.getElementById("post").innerHTML = result.map(postTemplate).join(" "))
-    
-    
-    //   for (let i = 0; i < result.length; i++) {
 
-    //     let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
-    //     element.innerHTML += userPostInfo + "<br>";
-        
-    //   }
-    // });
+
+  //   for (let i = 0; i < result.length; i++) {
+
+  //     let userPostInfo = `${result[i].username} <br> ${result[i].createdAt} <br> ${result[i].text} <br>`;
+  //     element.innerHTML += userPostInfo + "<br>";
+
+  //   }
+  // });
 }
 DisplayAllPost();
 
@@ -67,15 +98,13 @@ function postTemplate(post) {
   return `<div class="card">
 <div> class="card-content">
 <h3 class="card-title">${post.username}</h3>
+</div>
 <p class="card-description">${post.text}</p>
 <p>${post.createdAt}</p>
 </div>
 </div>`
-
+  element.innerHTML += postTemplate;
 }
-
-
-
 
 
 
