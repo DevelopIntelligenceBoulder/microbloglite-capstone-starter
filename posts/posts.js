@@ -81,7 +81,11 @@ function DisplayAllPost() {
     requestOptions
   )
     .then((response) => response.json())
-    .then((result) => document.getElementById("post").innerHTML = result.map(postTemplate).join(" "))
+    .then((result) => {
+      result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      document.getElementById("post").innerHTML = result.map(postTemplate).join(" ")
+  
+  })
 
 
   //   for (let i = 0; i < result.length; i++) {
