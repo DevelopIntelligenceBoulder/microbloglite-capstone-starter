@@ -43,9 +43,9 @@ function ProfileFilter() {
     headers: myHeaders,
     redirect: "follow",
   };
-
+  // The fetch post only finds the posts from the username that is logged in. This is the filter
   fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=1000&offset=0&username=" + usernameEndPoint,
+    "https://microbloglite.herokuapp.com/api/posts?limit=500&offset=0&username=" + usernameEndPoint,
     requestOptions
   )
     .then((response) => {
@@ -56,11 +56,14 @@ function ProfileFilter() {
     })
     .then((result) => {
       // let filteredPosts = result.filter((post) => post.username === "usernameEndPoint");
+      // sorting the time of the results
+      result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      //for loop to loop through all the posts
       for (let i = 0; i < result.length; i++) {
         let userPostInfo = `
         <div class="card">
           <div class="card-header">
-            ${result[i]._id} @${result[i].username} <br> ${result[i].createdAt}
+            ${result[i]._id} @${result[i].username}<br> ${result[i].createdAt}
           </div>
           <div class="card-body">
             ${result[i].text}
