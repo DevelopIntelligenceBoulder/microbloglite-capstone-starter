@@ -77,7 +77,7 @@ function DisplayAllPost() {
   };
 
   fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=2000&offset=0",
+    "https://microbloglite.herokuapp.com/api/posts?limit=200&offset=0",
     requestOptions
   )
     .then((response) => response.json())
@@ -100,7 +100,7 @@ DisplayAllPost();
 
 function postTemplate(post) {
   return `<div class="card">
-<div> class="card-content">
+<div class="card-content">
 <h3 class="card-title">${post.username}</h3>
 </div>
 <p class="card-description">${post.text}</p>
