@@ -2,19 +2,20 @@
 
 "use strict";
 
-const api = "https://microbloglite.herokuapp.com";
+const apiBaseURL = "https://microbloglite.herokuapp.com";
+// Backup server:   https://microbloglite.onrender.com
 
-
-// You can use this to get the login data of the logged-in user (if any). 
-// Returns either an object including the username and token,
-// or an empty object if the visitor is not logged in.
+// You can use this function to get the login data of the logged-in
+// user (if any). It returns either an object including the username
+// and token, or an empty object if the visitor is not logged in.
 function getLoginData () {
-    return JSON.parse(window.localStorage.getItem("login-data")) || {};
+    const loginJSON = window.localStorage.getItem("login-data");
+    return JSON.parse(loginJSON) || {};
 }
 
 
-// You can use this to see whether the current visitor is logged in. 
-// Returns either `true` or `false`.
+// You can use this function to see whether the current visitor is
+// logged in. It returns either `true` or `false`.
 function isLoggedIn () {
     const loginData = getLoginData();
     return Boolean(loginData.token);
@@ -38,11 +39,13 @@ function login (loginData) {
         body: JSON.stringify(loginData),
     };
 
-    return fetch(api + "/auth/login", options)
+    return fetch(apiBaseURL + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
+
+            return loginData;
         });
 }
 
@@ -66,7 +69,7 @@ function logout () {
         },
     };
 
-    fetch(api + "/auth/logout", options)
+    fetch(apiBaseURL + "/auth/logout", options)
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
@@ -75,6 +78,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect to landing page
+            window.location.assign("/");  // redirect back to landing page
         });
 }
