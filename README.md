@@ -5,4 +5,6 @@ Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.heroku
 Practice and experimentation provide experience, and experience provides confidence.
 
 ## Collaborators
+Ariel Kelbore
 Alejandro R.
+
