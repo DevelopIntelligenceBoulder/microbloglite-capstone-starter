@@ -60,7 +60,7 @@ body {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: orange;
+  --bs-btn-bg: #ffa500;
   --bs-btn-border-color: orange;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: orange;
@@ -88,4 +88,8 @@ body {
 #registerTitle {
     color:#ffffff;
     text-decoration: underline;
+}
+
+.below {
+    color: #f5f5f5;
 }
