@@ -5,6 +5,10 @@ Don't forget to read the [_MicroblogLite_ API docs](https://microbloglite.heroku
 Practice and experimentation provide experience, and experience provides confidence.
 
 ## collaborators
+
+Sephora Pashe
+
 Ahava Boyer
 Julle Nguyen
+
 
