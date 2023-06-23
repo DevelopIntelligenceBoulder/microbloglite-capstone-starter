@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffffff, #ffa500);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-comments {
+            margin-top: 20px;
+        }
+
+        .comment-card {
+            margin-bottom: 20px;
+        }
+        
+        .navbar {
+            background-color: #fdbe4a;
+            padding: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover {
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">ASK MATT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="profile.html">Profile Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="posts.html">Posts Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Registration Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card profile-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="path/to/profile_picture.jpg" alt="Profile Picture" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Sean Mugendi</h5>
+                        <p class="card-text">Birthdate: January 1, 1990</p>
+                        <p class="card-text">Email: smugendi@yearup.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card profile-comments">
+            <div class="card-body">
+                <h5 class="card-title">Past Comments</h5>
+
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">How do I access and utilize APIs properly?</p>
+                        <p class="card-text"><small class="text-muted">June 10, 2023</small></p>
+                    </div>
+                </div>
+
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">Thank you for the response, Matt!</p>
+                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
+                    </div>
+                </div>
+
+                <!-- Add more profile comments here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
