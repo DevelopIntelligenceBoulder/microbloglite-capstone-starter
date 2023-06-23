@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="./global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./home.css">
+
+    <title>Microblog Home</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+    <script src="./auth.js"></script>
+    <script>
+        if (!isLoggedIn()) window.location.replace("/");
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Microblog Network</h1>
+            <ul>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><button id="logoutButton">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Microblog Network!</h2>
+        <p>Share your thoughts, insights, and experiences with others in the community.</p>
+    </main>
+
+    <footer></footer>
+
+    <!-- Page-specific code -->
+    <script src="./home.js"></script>
+</body>
+</html>
