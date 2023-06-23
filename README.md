@@ -6,4 +6,7 @@ Practice and experimentation provide experience, and experience provides confide
 
 ## Collaborators
 
-Carlos Guardado
+
+-Carlos Guardado
+- Adan Cruz
+
