@@ -1,0 +1,14 @@
+/* Landing page styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Add more landing page styles here */
+  
