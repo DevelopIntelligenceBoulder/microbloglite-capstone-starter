@@ -59,7 +59,7 @@ async function handleLoginForm(event) {
         window.localStorage.setItem("login-data", JSON.stringify(loginData));
 
         // Redirect to the home page or dashboard
-        window.location.href = "home.html";
+        window.location.href = "../html/home.html";
     } catch (error) {
         alert(error.message);
         loginButton.disabled = false;
