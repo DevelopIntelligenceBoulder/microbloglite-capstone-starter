@@ -1,10 +1,10 @@
 # Enjoy the Microblog Project and the MicroblogLite API!
 
-Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in *Postman!*
+Don't forget to read the [_MicroblogLite_ API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in _Postman!_
 
 Practice and experimentation provide experience, and experience provides confidence.
 
 ## collaborators
-
-
+Ahava Boyer
 Julle Nguyen
+
