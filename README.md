@@ -6,3 +6,5 @@ Practice and experimentation provide experience, and experience provides confide
 
 ## Collaborators
 Chauni Brown
+Ariel Kelbore
+Alejandro R.
