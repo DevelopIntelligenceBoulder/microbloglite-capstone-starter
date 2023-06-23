@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="../global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./register.css">
+
+    <title>register</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+<!--     <script src="../auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/");
+    </script> -->
+</head>
+
+<body>
+    <nav id="navbar" class="nav">
+        <h1 id="header">BLOG</h1>
+        <ul class="nav-list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/posts/posts.html">Posts</a></li>
+          <li><a href="/profile/profile.html">Profile</a></li>
+          <li><a href="/test.html">Test</a></li>
+        </ul>
+    </nav>
+    <div id="page-container">
+        <div class="container my-3 my-sm-5">
+            <main>
+                <form action="action_page.php">
+                    <div class="container">
+                        <h1 class="headng"><b>Register</b></h1>
+                        <p class="headng">Please fill in this form to create an account.</p>
+                        <hr>
+    
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                        <hr>
+    
+                        <div class="form-control">
+                            <label for="role" id="label-role">
+                                How did you hear about us?
+                            </label>
+    
+                            <!-- Dropdown options -->
+                            <select name="role" id="role">
+                                <option value="search"></option>
+                                <option value="search">Search Engine</option>
+                                <option value="recommend">Recommended by Friend</option>
+                                <option value="social">
+                                    Social Media
+                                </option>
+                                <option value="other">Blog or Publication</option>
+                                <option value="recommend">Other</option>
+                            </select>
+                        </div>
+    
+                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                        <button type="submit" class="registerbtn">Register</button>
+                    </div>
+    
+                    <div class="container signin">
+                        <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+                    </div>
+                </form>
+            </main>
+        </div>
+    
+        <footer>
+          <p>For more information please contact blogs@cap.stone.org</p>
+          <p>Thank you for checking out this awesome new site.</p>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </footer>
+      </div>
+      <script src="./register.js"></script>
+</body>
+</html>
