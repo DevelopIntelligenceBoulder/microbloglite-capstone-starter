@@ -6,4 +6,12 @@ Practice and experimentation provide experience, and experience provides confide
 
 ## collaborators
 
+
 Cecelia Mwangi
+
+
+Kelly Cruz
+
+Dillon Coe
+
+
