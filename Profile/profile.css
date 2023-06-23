@@ -27,10 +27,16 @@
 
 } */
 
+h1{
+
+    margin-top: 4%;
+}
+
+
 #mainbox{
 
     background-color: rgba(246, 226, 201, 0.892);
-    margin-top: 10%;
+    margin-top: 4%;
 }
 
 
