@@ -1,0 +1,40 @@
+#about {
+
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+/* #rightcolumn {
+
+    margin-top: 8%;
+
+    position: absolute;
+    right: 10%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-inline: 2%;
+    width: 30%;
+
+} */
+
+#mainbox{
+
+    background-color: rgba(246, 226, 201, 0.892);
+    margin-top: 10%;
+}
+
+
+#buttongroup{
+
+    margin-top: 10%;
+}
