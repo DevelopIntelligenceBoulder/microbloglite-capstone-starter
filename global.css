@@ -16,3 +16,115 @@
 :root {
     font-size: 1rem;
 }
+
+
+#header {
+  background-color: blueviolet;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-size: clamp(30px, 3vw, 40px);
+  color: white;
+  width: 100%;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  z-index: 1;
+  padding: 10px 0;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background: blueviolet;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-list a {
+  display: block;
+  font-size: 1rem;
+  padding: 1rem;
+  color: white;
+  list-style-type: none;
+  align-items: center;
+  text-decoration: none;
+}
+
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+footer {
+  background-color: blueviolet;
+  padding: 50px;
+  text-align: center;
+  width:100%;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#page-container {
+  min-height: 100%;
+  display: grid;
+  overflow: auto;
+  grid-template-rows: 1fr auto;
+}
+
+nav ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+nav a:hover {
+  filter: brightness(90%);
+}
+
+#parkLocationDetails {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.list-group-container {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.list-group-container .list-group {
+  width: 100%;
+}
+
+.img-custom {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
