@@ -64,7 +64,7 @@ function buildUserPostsCard(posts) {
 
         let cardUserTimeStamp = document.createElement("p");
         cardUserTimeStamp.className = "card-text";
-        cardUserTimeStamp.textContent = "Updates: " + post.updatedAt;
+        cardUserTimeStamp.textContent = "Updates: " + new Date(post.createdAt);
 
         divCardBody.appendChild(cardUserName);
         divCardBody.appendChild(cardUserContent);
