@@ -31,39 +31,54 @@
 
 <body>
 
-    <header>
+    <header class="border">
         <h1>POSTS PAGE</h1>
         <a href="../Profile/index.html">Profile page</a>
-        <button type="button" for="button" id="logout">LOGOUT</button>
+        <a class="btn btn-primary" id="logoutButton">LOGOUT</a>
+
+
     </header>
 
-    <main>
+    <main class=" border">
 
-        <div class="container">
+        <section id="recipePost">
+            <img src="/images/recipeImage.png" width="400" height ="400">
+            <img src="/images/recipe2.png" width="400" height ="400">
 
 
-            <div id="postsFromUsers">
+        </section>
+
+        <div id="postsFromUsers">
 
 
-                <div class=" row border">
-                    <div class="col-12">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-9 border">
                         <div class="card mb-3" style="max-width: 540px;">
 
 
 
-                            <div class="col-md-8" id="usersPostCard">
+
+                            <div id="usersPostCard">
+
 
                             </div>
+
+
+
 
                         </div>
 
 
 
                     </div>
-                </div>
 
+                </div>
             </div>
+
         </div>
+
 
 
 

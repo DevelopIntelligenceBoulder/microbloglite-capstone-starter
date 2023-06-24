@@ -1,17 +1,25 @@
-/* Posts Page JavaScript */
+
 
 "use strict";
 
 
 
+const logoutButton = document.getElementById("logoutButton");
+
 const usersPostCard = document.getElementById("usersPostCard");
 
-window.onload =  () =>{
+window.onload = () => {
     console.log("hello");
 
-  getAllPosts();
-  
+    getAllPosts();
+    logoutButton.onclick = logout;
+    console.log("click");
+
 }
+
+// function onLogoutClick(){
+//     logout();
+// }
 
 
 
@@ -25,7 +33,7 @@ function getAllPosts() {
         },
     };
     // note: the api variable is defined in auth.js
-    fetch(apiBaseURL + "/api/posts",options)
+    fetch(apiBaseURL + "/api/posts", options)
         .then(response => response.json())
         .then(posts => {
             // Do something with the users array...
@@ -34,93 +42,47 @@ function getAllPosts() {
         });
 }
 
-function buildUserPostsCard(posts){
 
 
-    for(let post of posts){
 
+
+function buildUserPostsCard(posts) {
+    for (let post of posts) {
+        let divCard = document.createElement("div");
+        divCard.className = "card";
 
         let divCardBody = document.createElement("div");
         divCardBody.className = "card-body";
-        usersPostCard.appendChild(divCardBody);
 
-
-        let cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.innerHTML = "Post";
-        divCardBody.appendChild(cardTitle);
-
-        
-        let cardUserName= document.createElement("p");
+        let cardUserName = document.createElement("p");
         cardUserName.className = "card-text";
-        cardUserName.innerHTML = "Author name: " + post.username;
-        cardTitle.appendChild(cardUserName);
+        cardUserName.textContent = "username@_" + post.username;
 
-
-        let cardUserContent= document.createElement("p");
+        let cardUserContent = document.createElement("p");
         cardUserContent.className = "card-text";
-        cardUserContent.innerHTML = "Content: " + post.text;
-        cardUserName.appendChild(cardUserContent);
+        cardUserContent.textContent = "Content: " + post.text;
 
-        let cardUserTimeStamp= document.createElement("p");
+        let cardUserTimeStamp = document.createElement("p");
         cardUserTimeStamp.className = "card-text";
-        cardUserTimeStamp.innerHTML = "Updates: " + post.updatedAt;
-        cardUserContent.appendChild(cardUserTimeStamp);
+        cardUserTimeStamp.textContent = "Updates: " + post.updatedAt;
 
+        divCardBody.appendChild(cardUserName);
+        divCardBody.appendChild(cardUserContent);
+        divCardBody.appendChild(cardUserTimeStamp);
+
+        let likeButton = document.createElement("button");
+        likeButton.className = "btn btn-primary";
+        likeButton.textContent = "Like";
+
+
+
+
+        divCardBody.appendChild(likeButton);
+
+
+        divCard.appendChild(divCardBody);
+        usersPostCard.appendChild(divCard);
     }
-   
 
 }
-// function showDetailforProductCard(product) {
-    
- 
 
- 
-
-
-//     let cardTitle = document.createElement("h5");
-//     cardTitle.className = "card-title";
-//     cardTitle.innerHTML = "Product ID: " + product.productId;
-//     divCardBody.appendChild(cardTitle);
-
-//     let cardText= document.createElement("p");
-//     cardText.className = "card-text";
-//     cardText.innerHTML = "Product Name: " + product.productName;
-//     cardTitle.appendChild(cardText);
-
-//     let unorderedList = document.createElement("ul");
-//     unorderedList.className = "list-group list-group-flush";
-//     cardText.appendChild(unorderedList);
-
-//     let supplierInfo = document.createElement("li");
-//    supplierInfo.className = "list-group-item";
-//    supplierInfo.innerHTML= "Supplier: " + product.supplier;
-//    unorderedList.appendChild(supplierInfo);
-
-//     let unitsInfo = document.createElement("li");
-//     unitsInfo.className = "list-group-item";
-//     unitsInfo.innerHTML= "Available units: " + product.unitsInStock;
-//     supplierInfo.appendChild(unitsInfo);
-
-//     let productStatus = document.createElement("li");
-//     productStatus.className = "list-group-item";
-//     productStatus.innerHTML= "Discontinued: " + product.discontinued;
-//     unitsInfo.appendChild( productStatus);
-
-//     let unitPrice = document.createElement("li");
-//     unitPrice.className = "list-group-item";
-//     unitPrice.innerHTML= "Price: " + product.unitPrice;
-//     productStatus.appendChild(unitPrice);
-
-//     let cardBody = document.createElement("div");
-//     cardBody.className = "card-body";
-//     unitPrice.appendChild(cardBody);
-
-
-//     let anchor = document.createElement("a");
-//     anchor.className = "card-link";
-//     anchor.href = "products.html";
-//     anchor.text= "Back to products";
-//     cardBody.appendChild(anchor);
-    
-// }
