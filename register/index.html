@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,45 +24,54 @@
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="../auth.js"></script>
 </head>
+
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        
     </header>
 
     <main>
         <!--------registration form------>
-        <form id="register">
-            <h3>Register</h3>
-            <div id="innerText"></div>
-            <div class="mb-3">
-                <label for="nameA" class="form-label">Name</label>
-                <input type="text" class="col-2" id="nameA" minlength="3" required>
-                <div class="invalid-feedback">Please enter a valid name (minimum 3 characters).</div>
+
+        <div class="custom-container shadow">
+            <div class="row">
+                <div class="col">
+                    <form id="register">
+                        <h1 class="text-center">Welcome to <code>YOUR RECIPESHARE Register</code></h1>
+                        <div class="row mb-3">
+                            <label for="nameA" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="nameA" minlength="3" required>
+                            <div class="invalid-feedback">Please enter a valid name (minimum 3 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" minlength="3" required>
+                            <div class="invalid-feedback">Please enter a valid username (minimum 3 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="6" required>
+                            <div class="invalid-feedback">Please enter a valid password (minimum 6 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" minlength="6" required>
+                            <div class="invalid-feedback">Passwords do not match.</div>
+                        </div>
+                        <!-----Button------>
+                        <div class="d-flex justify-content-center">
+                        <button id="registerButton" type="button" class="btn btn-primary">Register</button>
+                    </div>
+                    </form>
+                </div>
             </div>
-        
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="col-2" id="username" minlength="3" required>
-                <div class="invalid-feedback">Please enter a valid username (minimum 3 characters).</div>
-            </div>
-        
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="col-2" id="password" minlength="6" required>
-                <div class="invalid-feedback">Please enter a valid password (minimum 6 characters).</div>
-            </div>
-        
-            <div class="mb-3">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="col-2" id="confirmPassword" minlength="6" required>
-                <div class="invalid-feedback">Passwords do not match.</div>
-            </div>
-            <!-----Button------>
-            <button id="registerButton" type="button" class="btn btn-primary">Register</button>
-        </form>
-        
-        
+        </div>
+
+
     </main>
 
     <footer></footer>
@@ -69,4 +79,5 @@
     <!-- Page-specific code -->
     <script src="./register.js"></script>
 </body>
+
 </html>

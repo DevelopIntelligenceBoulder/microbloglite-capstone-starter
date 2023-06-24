@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,33 +27,46 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
     <header>
-        <h1>Welcome to <code>RECIPE SHARE</code></h1>
+       
     </header>
 
     <main>
+        <div class="custom-container shadow">
+            <div class="row">
+                <div class="col">
+                    <h1>Welcome to <code>RECIPESHARE</code></h1>
+                    <form id="login">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" minlength="3">
+                        </div>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="6">
+                        </div>
+
+                         <!-- Added a remember me button (line 53/59) -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="lsRememberMe" id="rememberMe" >
+                                <label class="form-check-label" for="rememberMe">
+                                    Remember me
+                                </label>
+                            </div>
+                        <!-- buttons id --------------------------------------------------------------------------------->
+                       <div class="form-button">
+                        <button id="loginButton"  class="btn btn-primary" type="submit">Login</button>
+                        <button id="registerButton"  class="btn btn-primary"  type="submit">Register</button>
+                       </div>
+                    </form>
+                    
+                </div>
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-            <!-- buttons id --------------------------------------------------------------------------------->
-            <button id="loginButton" type="submit">Login</button>
-            <button id="registerButton" type="submit">Register</button>
-        </form>
-
-        <!-- Added a remember me button (line 52/53) -->
-        <input type="checkbox" value="lsRememberMe" id="rememberMe">
-        <label id="rememberMe" for="rememberMe">Remember me</label>
-
+        </div>
     </main>
 
     <footer></footer>
@@ -60,4 +74,5 @@
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
 </body>
+
 </html>
