@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,11 +19,12 @@
     <title>Registration</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <script src="../js/auth.js"></script>
     <script>
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
     <header>
@@ -33,26 +35,27 @@
 
         <form id="registration">
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3" maxlength="20" required>
+                <input type="text" placeholder="Username" id="username" minlength="3" maxlength="20" required>
             </div>
 
             <div>
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" required>
+                <input type="text" placeholder="Full Name" id="fullName" required>
             </div>
 
             <div>
-                <label for="about">About</label>
-                <textarea id="about" rows="4" required></textarea>
+                <textarea id="about" placeholder="Profile Description" rows="1"></textarea>
             </div>
 
             <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6" required>
+                <input type="password" placeholder="Password" id="password" minlength="6" required>
             </div>
 
             <button id="registerButton" type="submit">Register</button>
+
+            <div>
+                <p>Already have an account?</p> <a href="../html/index.html">Sign-In</a>
+            </div>
+
         </form>
 
     </main>
@@ -62,4 +65,5 @@
     <!-- Page-specific code -->
     <script src="../js/registration.js"></script>
 </body>
+
 </html>

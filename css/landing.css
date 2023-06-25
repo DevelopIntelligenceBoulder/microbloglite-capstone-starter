@@ -1,14 +1,39 @@
 /* Landing page styles */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  /* Add more landing page styles here */
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+body {
+  background-image: url("../img/blue-pattern.jpg");
+  background-repeat: repeat;
+}
+
+main {
+  background-color: rgb(241, 246, 246);
+  margin: 5% 25% auto 25%;
+  border-radius: 10px;
+  border-color: #333;
+  padding-left: 10%;
+}
+
+div {
+  margin: auto auto 10px auto;
+}
+
+button {
+  margin: auto auto 5px auto;
+}
+
+p {
+  text-decoration: italic;
+  text-decoration-thickness: 10px;
+}
+
+/* Add more landing page styles here */
