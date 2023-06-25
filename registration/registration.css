@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(198, 212, 121);
+}
+
+#loginLink {
+  margin-top: 3rem;
+  margin-left: 5rem;
+}
+
+#formBody {
+  margin: 5rem;
+}
+
