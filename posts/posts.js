@@ -56,15 +56,15 @@ function buildUserPostsCard(posts) {
 
         let cardUserName = document.createElement("p");
         cardUserName.className = "card-text";
-        cardUserName.textContent = "username@_" + post.username;
+        cardUserName.textContent = "@" + post.username;
 
         let cardUserContent = document.createElement("p");
         cardUserContent.className = "card-text";
-        cardUserContent.textContent = "Content: " + post.text;
+        cardUserContent.textContent =  post.text;
 
         let cardUserTimeStamp = document.createElement("p");
         cardUserTimeStamp.className = "card-text";
-        cardUserTimeStamp.textContent = "Updates: " + new Date(post.createdAt);
+        cardUserTimeStamp.textContent = `${new Date(post.createdAt).toDateString()} , ${new Date(post.createdAt).toLocaleTimeString()}`;
 
         divCardBody.appendChild(cardUserName);
         divCardBody.appendChild(cardUserContent);
@@ -75,6 +75,18 @@ function buildUserPostsCard(posts) {
         likeButton.textContent = "Like";
 
 
+        let date =new Date(post.createdAt).toDateString();
+        console.log(date);
+
+        let time =new Date(post.createdAt).toLocaleTimeString();
+        console.log(time);
+
+        let  fullTime = ` Last update ${date}, ${time} `;
+
+        console.log(fullTime);
+
+
+ 
 
 
         divCardBody.appendChild(likeButton);
