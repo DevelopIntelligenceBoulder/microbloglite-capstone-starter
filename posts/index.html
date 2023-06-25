@@ -20,13 +20,15 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./posts.css">
 
-    <title>/POSTS</title>
+    <title>POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
+    <!-- main post JS -->
+    <script src="./posts.js"></script>
 </head>
 
 <body>
@@ -34,14 +36,21 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../"><i class="fa-solid fa-person-hiking"> FitBlog</i></a>
-
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="./">FitBlog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-nav" href="../profile/profile.html"> My Profile</a>
+                    </li>
+            </div>
+    <!-- logout button -->
+            <button id="logoutButton" class="btn btn-dark" type="button">logout</button>
+        </nav>
     </header>
-    <h1>POSTS PAGE</h1>
+    <h1>POSTS</h1>
 
-    <main>
-
-    </main>
+    <main></main>
 
     <footer></footer>
 
