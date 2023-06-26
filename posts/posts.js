@@ -36,10 +36,21 @@ const parentElement = document.querySelector("main");
 
 function loadAllPosts(posts) {
   for (const post of posts) {
+
     const mainCard = document.createElement("div");
     mainCard.classList.add("mainCard");
     mainCard.textContent = post.text; // Modify this line based on your post structure
     parentElement.append(mainCard);
+
+    const userName = document.createElement("h2");
+    userName.classList.add("userName");
+    userName.textContent = post.username;
+    parentElement.append(userName)
+
+    const likesArea = document.createElement("h5");
+    likes.classList.add("likesArea");
+    likes.textContent = post.likes;
+    parentElement.append(likesArea)
   }
 }
 
