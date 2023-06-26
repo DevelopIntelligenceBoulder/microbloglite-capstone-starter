@@ -39,14 +39,11 @@ function login (loginData) {
         body: JSON.stringify(loginData),
     };
 
-    return fetch(apiBaseURL + "/auth/login", options)
-        .then(response => response.json())
-        .then(loginData => {
-            window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
-
-            return loginData;
-        });
+    const response = await fetch(apiBaseURL + "/auth/login", options);
+    const loginData_1 = await response.json();
+    window.localStorage.setItem("login-data", JSON.stringify(loginData_1));
+    window.location.assign("/posts"); // redirect
+    return loginData_1;
 }
 
 
