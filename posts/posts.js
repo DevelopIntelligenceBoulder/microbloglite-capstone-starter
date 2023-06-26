@@ -1,6 +1,7 @@
 /* Posts Page JavaScript */
 
 "use strict";
+const postsList = document.querySelector(".postsList");
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
   logout();
@@ -22,7 +23,18 @@ if (isLoggedIn()) {
   fetch(postsUrl, options)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      data.forEach((post) => {});
+      data.forEach((post) => {
+        const postDate = new Date(post.createdAt);
+        const postContent = `
+         <li class="post">
+             <div class="postDetails">
+               <strong class="author">${post.username}</strong>
+               <p class="postText">${post.text}</p>
+               <small class="timestamp">${postDate.toDateString()}</small>
+             </div>
+         </li>`;
+        postsList.innerHTML += postContent;
+      });
+      // Found this method at https://medium.com/@macharia3041/build-a-twitter-clone-with-vanilla-javascript-acb672fbdad7
     });
 }
