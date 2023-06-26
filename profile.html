@@ -3,129 +3,114 @@
 <head>
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #ffffff, #ffa500);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    <link rel="stylesheet" href="css/profile.css">
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .profile-comments {
-            margin-top: 20px;
-        }
-
-        .comment-card {
-            margin-bottom: 20px;
-        }
-        
-        .navbar {
-            background-color: #fdbe4a;
-            padding: 10px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .navbar-brand:hover {
-            color: white;
-        }
-
-        .navbar-nav .nav-link {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #fff;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">ASK MATT</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">ASK MATT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="profile.html">Profile Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="posts.html">Posts Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.html">Registration Page</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="card profile-header">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="path/to/profile_picture.jpg" alt="Profile Picture" class="card-img">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Sean Mugendi</h5>
-                        <p class="card-text">Birthdate: January 1, 1990</p>
-                        <p class="card-text">Email: smugendi@yearup.com</p>
-                    </div>
-                </div>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="profile.html">Profile Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="posts.html">Posts Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="registration.html">Registration Page</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card profile-header">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/Virgil1.jpg" alt="Profile Picture" class="card-img">
             </div>
-        </div>
-
-        <div class="card profile-comments">
-            <div class="card-body">
-                <h5 class="card-title">Past Comments</h5>
-
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">How do I access and utilize APIs properly?</p>
-                        <p class="card-text"><small class="text-muted">June 10, 2023</small></p>
-                    </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Virgil Abloah</h5>
+                    <p class="card-text">Birthdate: January 1, 1990</p>
+                    <p class="card-text">Email: VirigilAbloah@gmail.com</p>
                 </div>
-
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Thank you for the response, Matt!</p>
-                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
-                    </div>
-                </div>
-                
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Thank you for the response, Matt!</p>
-                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
-                    </div>
-                </div>
-
-                <!-- Add more profile comments here -->
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/profile.js"></script>
+    <div class="search-form">
+        <input type="date" class="search-input" id="commentDate" />
+        <button class="btn btn-primary" onclick="searchComments()">Search</button>
+    </div>
+
+    <div class="card profile-comments">
+        <div class="card-body">
+            <h5 class="card-title">Past Comments</h5>
+
+            <div id="commentContainer">
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">Hey Matt, How do I access and utilize APIs properly?</p>
+                        <p class="card-text"><small class="text-muted">June 10, 2023</small></p>
+                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">Understand the API: Read the API documentation to understand its purpose, functionality, and available endpoints. Pay attention to the authentication methods required (e.g., API keys, OAuth, etc.) and any rate limits imposed by the API provider.</li>
+                            <li class="list-group-item">Obtain API Credentials: If the API requires authentication, sign up for an API key or access token from the provider. This typically involves creating an account and following their authentication process.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">Hey Matt, What is the best way to learn JavaScript?</p>
+                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
+                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">PRACTICE, PRACTICE, PRACTICE!!!</li>
+                            <li class="list-group-item">Start with the Basics: Begin by understanding the fundamentals of JavaScript, such as variables, data types, operators, control structures (if statements, loops), functions, and arrays. Online tutorials and beginner-friendly resources can provide a solid foundation.</li>
+                            <li class="list-group-item">Online Learning Platforms: Utilize popular online learning platforms like Codecademy, freeCodeCamp, Udemy, or Coursera, which offer structured JavaScript courses for beginners. These platforms provide interactive lessons, exercises, and quizzes to help you grasp the language concepts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">Hey Matt, Thank you for the response, Matt!</p>
+                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
+                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">Yes Virgil, No Problem</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card comment-card">
+                    <div class="card-body">
+                        <p class="card-text">Hey Matt, What is the best way to apply CSS styling.</p>
+                        <p class="card-text"><small class="text-muted">June 23, 2023</small></p>
+                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">Practice CSS Specificity: Understand CSS specificity and how it affects the precedence of styles. When necessary, use more specific selectors or consider using !important sparingly to override styles. </li>
+                            <li class="list-group-item">Utilize CSS Frameworks: CSS frameworks like Bootstrap, Foundation, or Tailwind CSS provide pre-built styles and components that can speed up your development process. However, be mindful of their file sizes and only include the components you need to avoid unnecessary bloat. </li>
+                            <li class="list-group-item">Test and Refine: Regularly test your CSS styles in different browsers and devices to ensure consistent rendering. Use browser developer tools to inspect elements, debug layout issues, and fine-tune your styles as needed. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/profile.js"></script>
 </body>
 </html>

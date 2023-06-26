@@ -1,32 +1,41 @@
+// Retrieve the comment cards
+const commentCards = document.querySelectorAll('.comment-card');
 
-    // Sample comments data
-    const comments = [
-        {
-            content: "How do I access and utilize APIs properly?",
-            date: "June 10, 2023"
-        },
-        {
-            content: "Thank you for the response, Matt!",
-            date: "June 5, 2023"
-        }
-        // Add more comments here
-    ];
+// Function to filter comments by date
+function filterCommentsByDate(date) {
+  const commentContainer = document.getElementById('commentContainer');
+  commentContainer.innerHTML = ''; // Clear previous comments
 
-    // Function to dynamically insert comments
-    function insertComments() {
-        const commentTemplate = document.getElementById("comment-template");
+  commentCards.forEach((card) => {
+    const commentDate = card.querySelector('.text-muted').textContent.trim();
+    const commentText = card.querySelector('.card-text').textContent.trim();
 
-        const commentContainer = document.querySelector(".profile-comments .card-body");
+    if (commentDate === date) {
+      const commentCard = document.createElement('div');
+      commentCard.classList.add('card', 'comment-card');
 
-        comments.forEach(comment => {
-            const clone = commentTemplate.content.cloneNode(true);
-            clone.querySelector(".card-text").textContent = comment.content;
-            clone.querySelector(".text-muted").textContent = comment.date;
+      const cardBody = document.createElement('div');
+      cardBody.classList.add('card-body');
 
-            commentContainer.appendChild(clone);
-        });
+      const commentTextElement = document.createElement('p');
+      commentTextElement.classList.add('card-text');
+      commentTextElement.textContent = commentText;
+
+      const commentDateElement = document.createElement('p');
+      commentDateElement.classList.add('card-text', 'text-muted');
+      commentDateElement.innerHTML = `<small>${commentDate}</small>`;
+
+      cardBody.appendChild(commentTextElement);
+      cardBody.appendChild(commentDateElement);
+      commentCard.appendChild(cardBody);
+      commentContainer.appendChild(commentCard);
     }
+  });
+}
 
-    // Call the function to insert comments
-    insertComments();
-
+// Add event listener to the date search input
+const searchInput = document.querySelector('#commentDate');
+searchInput.addEventListener('change', (event) => {
+  const searchDate = event.target.value;
+  filterCommentsByDate(searchDate);
+});
