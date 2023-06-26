@@ -39,3 +39,7 @@ To-do list for this project (not necessarily in order)
 - Bonus
     - Settings/account page
         - change name/username/password
+    - "Retweet"/repost feature (dubbed "rebbit")
+        - Client-side feature
+        - Will just post the link to the post by itself (via API)
+        - Webpage should detect it and render it properly
