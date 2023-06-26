@@ -2,7 +2,6 @@ console.log("js working");
 
 const registerForm = document.querySelector("#register");
 const messagePEl = document.getElementById("messageP");
-const apiBaseURL = "https://microbloglite.herokuapp.com";
 
 registerForm.onsubmit = function (event) {
   event.preventDefault();
