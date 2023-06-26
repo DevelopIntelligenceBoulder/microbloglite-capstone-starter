@@ -29,16 +29,11 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
-<<<<<<< HEAD
       if (isLoggedIn() === false) window.location.replace("/");
-=======
-      if (isLoggedIn() === false) window.location.href = "../index.html";
->>>>>>> main
     </script>
   </head>
   <body>
     <header>
-<<<<<<< HEAD
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="./index.html">Logo</a>
@@ -68,14 +63,21 @@
           </div>
         </div>
       </nav>
-=======
->>>>>>> main
       <h1>POSTS PAGE</h1>
     </header>
 
     <main>
-      <div class="container-fluid container-lg"></div>
+      <div class="container-fluid container-lg">
+        <div class="row">
+          <div class="col">
+            <div class="postsContainer"></div>
+          </div>
+        </div>
+      </div>
     </main>
+    <div class="card" id="postCard">
+      <div class="card-body">Basic card</div>
+    </div>
 
     <footer></footer>
 
