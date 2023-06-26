@@ -85,8 +85,11 @@ body {
   margin-bottom: 15px;
 }
 
-.form-square {
-  color: white;
+main label,  .login-register p {
+  color: #ffffffa8;
+}
+.login-register p {
+  font-size: 14px;
 }
 .newAccAlert {
   position: absolute;
@@ -161,3 +164,4 @@ body {
     gap: 20px;
   }
 
+  
