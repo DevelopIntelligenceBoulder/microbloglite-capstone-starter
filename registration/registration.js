@@ -50,7 +50,7 @@ const registerUser = async () => {
         }
         const errorData = await response.json();
         console.error('Registration failed:', errorData.message);
- 
+
       }
     } catch (error) {
       console.error('Registration failed:', error);
