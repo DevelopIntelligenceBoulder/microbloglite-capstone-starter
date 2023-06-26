@@ -7,12 +7,13 @@
 
 
 body {
-  background-color: rgb(198, 212, 121);
+  background-image: url('../assets/gabin-vallet-J154nEkpzlQ-unsplash.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
+  background-position: center;
+  background-size: cover;
 }
 
 .hide {
@@ -42,6 +43,9 @@ body {
   align-items: center;
 }
 
+.wrapper-alt{
+  background-color: rgba(0, 0, 0, 0.649);
+}
 
 .wrapper-alt .form-box {
   width: 100%;
@@ -57,6 +61,7 @@ body {
 .passHolder {
   position: relative;
 }
+
 #passShow, #passHide {
   position: absolute;
   top: 80%;
@@ -73,4 +78,14 @@ body {
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+.logoReg {
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.form-square {
+  color: white;
 }
