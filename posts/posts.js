@@ -1,39 +1,45 @@
 "use strict";
 
+
 window.onload = function () {
-  getAllPost();
+  const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token; 
+  // Replace with the actual access token
+  console.log(JSON.parse(window.localStorage.getItem("login-data")).token)
+  getAllPosts(accessToken);
 };
 
-function getAllPost(accessPost) {
+function getAllPosts(accessToken) {
   const options = {
-    method: "POST",
+    method: "GET",
     headers: {
-      // This header specifies the type of content we're sending.
-      // This is required for endpoints expecting us to send
-      // JSON data.
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
     },
-    body: JSON.stringify(accessPost),
-
   };
-  
-  return fetch(apiBaseURL + "api/posts" + options)
-    .then((response) => response.json())
+
+  fetch(apiBaseURL + "/api/posts", options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to retrieve posts");
+      }
+    })
     .then((data) => {
-      loadAllPost(data);
-      console.log(data);
+      loadAllPosts(data);
     })
     .catch((error) => {
-      console.error("Error fetching users:", error);
+      console.error("Error fetching posts:", error);
     });
 }
 
 const parentElement = document.querySelector("main");
 
-function loadAllPost(posts) {
-  for (post of posts) {
+function loadAllPosts(posts) {
+  for (const post of posts) {
     const mainCard = document.createElement("div");
     mainCard.classList.add("mainCard");
+    mainCard.textContent = post.text; // Modify this line based on your post structure
     parentElement.append(mainCard);
   }
 }
+
