@@ -7,11 +7,12 @@
 
 
 body {
-  background-image: url('../assets/gabin-vallet-J154nEkpzlQ-unsplash.jpg');
+  background-image: url('../assets/HeroComp.webp');
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
