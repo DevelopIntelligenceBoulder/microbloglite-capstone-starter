@@ -1,33 +1,45 @@
 "use strict";
 
+
 window.onload = function () {
-  getAllPost();
+  const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token; 
+  // Replace with the actual access token
+  console.log(JSON.parse(window.localStorage.getItem("login-data")).token)
+  getAllPosts(accessToken);
 };
 
-function getAllPost() {
-  return fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0"
-  )
-    .then((response) => response.json())
+function getAllPosts(accessToken) {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  };
+
+  fetch(apiBaseURL + "/api/posts", options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Failed to retrieve posts");
+      }
+    })
     .then((data) => {
-      loadAllPost(data)
-      console.log(data)
+      loadAllPosts(data);
     })
     .catch((error) => {
-      console.error("Error fetching users:", error);
+      console.error("Error fetching posts:", error);
     });
-
 }
 
-const parentElement = document.querySelector("main")
+const parentElement = document.querySelector("main");
 
-function loadAllPost(posts) {
-
-  for(post of posts) {
-    
-    const mainCard = document.createElement("div")
-      mainCard.classList.add("mainCard")
-      parentElement.append(mainCard)
-
+function loadAllPosts(posts) {
+  for (const post of posts) {
+    const mainCard = document.createElement("div");
+    mainCard.classList.add("mainCard");
+    mainCard.textContent = post.text; // Modify this line based on your post structure
+    parentElement.append(mainCard);
   }
 }
+
