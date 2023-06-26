@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,19 +22,20 @@
     <title>Microblog Home</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <script src="../js/auth.js"></script>
     <script>
         if (!isLoggedIn()) window.location.replace("/");
     </script>
 </head>
+
 <body>
 
     <header>
         <nav>
             <h1>Microblog Network</h1>
             <ul>
-                <li><a href="../posts">Posts</a></li>
-                <li><a href="/profile">Profile</a></li>
+                <li><a href="../posts.html">Posts</a></li>
+                <li><a href="../profile.html">Profile</a></li>
                 <li><button id="logoutButton">Logout</button></li>
             </ul>
         </nav>
@@ -49,4 +51,5 @@
     <!-- Page-specific code -->
     <script src="../html/home.js"></script>
 </body>
+
 </html>
