@@ -32,42 +32,46 @@
     <main>
 
         <div class="container text-center">
-            <h1>Welcome to <code>YOUR RECIPE SHARE PROFILE!</code></h1>
+            <h1><code>RECIPE SHARE PROFILE</code></h1>
         </div>
 
 
 
 
 
-        <div class="container shadow" id="mainbox">
+        <div class="custom-container shadow" style="width: 50%;" id="mainbox">
             <div class="row">
                 <div class="col">
-
+                    <!---------------------------------About me----------------------------------->
                     <h3>Profile Picture</h3>
                     <img src="images/profileicon.jpg" alt="Profile Picture" width="200" height="200">
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Upload an Image</label>
                         <input type="file" id="postImage" name="postImage">
                     </div>
+                    <h1>About Me</h1>
+                    <div id="bio" style="background-color:beige;">
 
-                    <div id="bio">
-                        <h1>About Me</h1>
-                        <p>Write a brief description about yourself here.<br>
+                        <p id="bioText">Write a brief description about yourself here.
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            <br>sed do eiusmod tempor incididunt ut labore et dolore
-                            <br>exercitation ullamco laboris.
-                        </p>
+                            sed do eiusmod tempor incididunt ut labore et dolore
+                            exercitation ullamco laboris.</p>
+
+                    </div> <button id="editBioBtn" class="btn btn-primary">Edit Bio</button>
+                    <!-- Add the Edit Bio button -->
+                    <div id="editBioContainer">
+
+                        <textarea id="editBioInput" class="form-control"></textarea>
+                        <button id="updateBioBtn" class="btn btn-primary">Update</button>
                     </div>
+
 
 
                 </div>
                 <!-------------------------------------------create post------------------------------------>
                 <div class="col" id="postbox">
-
-
                     <h1 class="text-center">Create a Post</h1>
-
-                    <div class="container mt-5 shadow" style="background-color:beige;">
+                    <div class="container shadow" id="postContainer" style="background-color:beige;">
                         <div class="row">
 
                             <h4 class="text-center">Add your post</h4>
