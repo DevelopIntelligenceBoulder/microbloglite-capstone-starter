@@ -47,6 +47,7 @@ function onPostBtnClick() {
             // If the POST finishes successfully, display a message
 
             console.log(post)
+            window.location.replace("../posts/index.html");
 
 
         });
