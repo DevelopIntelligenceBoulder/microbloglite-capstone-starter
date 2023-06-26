@@ -16,3 +16,9 @@ h1{
   margin-top: 3rem;
   margin-left: 1rem;
 }
+
+main{
+  background-color: rgb(0, 0, 0);
+  color: beige;
+  text-align: center;
+}
