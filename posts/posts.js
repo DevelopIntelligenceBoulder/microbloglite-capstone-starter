@@ -85,12 +85,15 @@ function buildUserPostsCard(posts) {
 
         console.log(fullTime);
 
-
- 
-
+        let deletePost = document.createElement("button");
+        deletePost.value = post._id;
+        deletePost.id = ("deleteButton");
+        deletePost.textContent = "Delete";
+        deletePost.onclick = () => deletePostForUser(deletePost.value);
+        
 
         divCardBody.appendChild(likeButton);
-
+        divCardBody.appendChild(deletePost);
 
         divCard.appendChild(divCardBody);
         usersPostCard.appendChild(divCard);
@@ -98,3 +101,21 @@ function buildUserPostsCard(posts) {
 
 }
 
+function deletePostForUser(theId) {
+    console.log(theId);
+    const loginData = getLoginData();
+    const options = {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${loginData.token}`,
+      },
+    };
+  
+    fetch(apiBaseURL + "/api/posts/" + theId, options)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        window.location.reload();
+      })
+      .catch(error => console.error(error));
+  }
