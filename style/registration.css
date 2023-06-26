@@ -1,0 +1,19 @@
+/* Landing Page CSS - style for index. */
+
+
+body {
+    background-image: url("/media/registrationbg.png");
+    background-size: 101%;
+    
+}
+
+ .btn{
+   color: white;
+   background-color: rgb(255, 11, 157);
+   outline: none;
+   padding-top: 0.3rem;
+   padding-bottom: 0.3rem;
+   font-weight: bold;
+   font-style: italic;
+   font-family:
+}
