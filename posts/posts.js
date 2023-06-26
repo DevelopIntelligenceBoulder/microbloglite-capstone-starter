@@ -7,8 +7,10 @@
 const textboxEl = document.getElementById("textbox");
 const postBtnEl = document.getElementById("postBtn");
 const postsMadeUlEl = document.getElementById("postsMadeUl");
+const logoutBtnEl = document.getElementById("logoutBtn");
 
 postBtnEl.onclick = getPosts;
+logoutBtnEl.onclick = logout;
 
 function getPosts() {
   const loginData = getLoginData();
@@ -31,6 +33,33 @@ function getPosts() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      data.forEach((post) => {
+        console.log(post);
+        const posts = document.createElement("li");
+        posts.innerText = post.text;
+        postsMadeUlEl.appendChild(posts);
+      });
+
+      //   console.log(data);
+      //   const posts = document.createElement("li");
+      //   posts.innerText = data.text;
+      //   postsMadeUlEl.appendChild(posts);
     });
 }
+
+// fetch(
+//     "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0",
+//     options
+//   )
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const posts = document.createElement(data._id, data.text);
+//       postsMadeUlEl.appendChild(posts);
+//     });
+
+// console.log const posts = document.createElement(data._id, data.text);
+//       postsMadeUlEl.appendChild(posts);
+
+//       var li = document.createElement('li');
+//       li.innerText = data[i];
+//       list.appendChild(li);
