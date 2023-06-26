@@ -15,6 +15,10 @@ body {
 
 }
 
+.hide {
+  display: none;
+}
+
 #loginLink {
   margin-top: 3rem;
   margin-left: 5rem;
@@ -48,4 +52,19 @@ body {
   font-size: 2em;
   color: rgb(0, 0, 0);
   text-align: center;
+}
+
+.passHolder {
+  position: relative;
+}
+#passShow, #passHide {
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  transform: translate(5%, -55%);
+
+}
+
+#passShow:hover, #passHide:hover{
+  cursor: pointer;
 }
