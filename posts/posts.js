@@ -2,8 +2,9 @@
 
 "use strict";
 
-
+const logoutButton = document.querySelector("#logout")
 const postContainer = document.querySelector('#postContainer')
+logoutButton.onclick = logout
 
 function postFetch () {
     const loginData = getLoginData();
@@ -29,3 +30,5 @@ function postFetch () {
 }
 
 postFetch()
+
+
