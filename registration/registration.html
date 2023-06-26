@@ -9,26 +9,38 @@
   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./global.css">
-    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="../registration/registration.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-    <script defer src="registration.js"></script>
+    <script defer src="../registration/registration.js"></script>
 </head>
 <body>
 
     <header>
-        <h1><code>PLAYBYTE</code></h1>
-        <p>Get to scrolling.</p>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="../landing/index.html">
+              <img src="../images/playbyte_light_logo_2" alt="">
+              Bootstrap
+            </a>
+            <ul>
+                <li><a href="../landing/index.html">home</a></li>
+                    <li><a href="../registration/registration.html">sign up</a></li>
+                    <li><a href="../profile/profile.html">profile</a></li>
+                    <li><a href="../posts/index.html">post</a></li>
+            </ul>
+          </nav>
     </header>
-
+    
+    <h1><code>PLAYBYTE</code></h1>
+    <p>Get to scrolling.</p>
     <main>
 
-        <form id="login">
+        <form id="signupForm">
             <div>
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" minlength="3">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" minlength="3">
             </div>
 
             <div>
@@ -41,7 +53,7 @@
                 <input type="password" id="password" minlength="6">
             </div>
 
-            <button id="loginButton" type="submit">Login</button>
+            <button id="signUpButton" type="submit">Sign Up</button>
         </form>
 
     </main>

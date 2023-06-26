@@ -20,3 +20,17 @@
 body {
     background-color: blanchedalmond;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    text-decoration: none;
+}
+
+img {
+    width: 154px;
+    height: auto;
+}
