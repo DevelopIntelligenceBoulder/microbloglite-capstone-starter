@@ -13,7 +13,7 @@ loginForm.onsubmit = function (event) {
   loginForm.loginButton.disabled = true;
 
   // API endpoint for retrieving user credentials
-  const endpoint = 'https://microbloglite.onrender.com/auth/login';
+  const endpoint = 'https://example.com/api/login';
 
   // Send a GET request to the API endpoint
   fetch(endpoint)
