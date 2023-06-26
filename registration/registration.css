@@ -69,3 +69,8 @@ body {
   cursor: pointer;
 }
 
+.form-label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
