@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="profile/css/profile.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="../global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./posts.css">
+
+    <title>Profile page</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../auth.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+</head>
+
+<body>
+    <div class="px-3 py-2 text-bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <!--company logo-->
+                    <img class="logo" src="profile/images/micro-co-logo.png" alt="logo">
+                </div>
+                <div class="col-11">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a href="/"
+                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+
+                            <!--Website name-->
+                            <header class="website-heading"> <i><b>The Micro Co Post Website</b></i>
+                            </header>
+
+                        </a>
+                        <!--navbar open-->
+                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                            <li>
+                                <a href="#" class="nav-link text-secondary">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#home"></use>
+                                    </svg>
+                                    Profile
+                                    <i class="bi bi-house"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="posts.html" class="nav-link text-white">
+                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                        <use xlink:href="#table"></use>
+                                    </svg>
+                                    Post page link
+                                    <i class="bi bi-house"></i>
+                                </a>
+                            </li>
+                            <!--Username here, clickable with dropdown button showing logout and profile bio-->
+                           
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <h1>PROFILE PAGE:</h1>
+    <main>
+        <div class="container">
+            <p id="userName"></p> 
+            <button type="button" class="btn btn-danger">Log out</button>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div id="createPostsSection">
+                        <textarea id="createPostInput" class="form-control"></textarea>
+                        <button type="button" class="btn btn-primary mt-2">Post</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="displayPostsDiv">
+                <p>Posts go here</p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer></footer>
+
+    <!-- Page-specific code -->
+    <script src="./posts.js"></script>
+</body>
+
+</html>
