@@ -1,5 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+
 body {
   background-color: rgb(198, 212, 121);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+.hide {
+  display: none;
 }
 
 #loginLink {
@@ -11,3 +28,49 @@ body {
   margin: 5rem;
 }
 
+.wrapper-alt{
+  position: relative;
+  width: 400px;
+  height: 550px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.wrapper-alt .form-box {
+  width: 100%;
+  padding: 50px;
+}
+
+.form-box h2{
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.passHolder {
+  position: relative;
+}
+#passShow, #passHide {
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  transform: translate(5%, -55%);
+
+}
+
+#passShow:hover, #passHide:hover{
+  cursor: pointer;
+}
+
+.form-label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
