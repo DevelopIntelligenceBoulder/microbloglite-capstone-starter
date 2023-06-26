@@ -36,12 +36,18 @@ const registerUser = async () => {
         },
         body: JSON.stringify({ fullName, username, password })
       });
-  
+
+  let newAccAlert = document.getElementById('newAccAlert')
+
       if (response.ok) {
-        window.open('../index.html', '_blank')
-        let files = response.json()
-        console.log(files)
+        newAccAlert.classList.remove('hide')
+            setTimeout(() => {
+                window.location.href = '../index.html'
+            }, 2000);
       } else {
+        if (!(newAccAlert.classList.contains('hide'))){
+            newAccAlert.classList.add('hide')
+        }
         const errorData = await response.json();
         console.error('Registration failed:', errorData.message);
  

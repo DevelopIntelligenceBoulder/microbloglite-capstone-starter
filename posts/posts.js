@@ -9,7 +9,10 @@ function getAllPost() {
     "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0"
   )
     .then((response) => response.json())
-    .then((data) => loadAllPost(data))
+    .then((data) => {
+      loadAllPost(data)
+      console.log(data)
+    })
     .catch((error) => {
       console.error("Error fetching users:", error);
     });
