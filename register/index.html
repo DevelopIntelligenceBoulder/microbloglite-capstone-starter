@@ -31,35 +31,32 @@
 
     <main>
         <!--------registration form------>
-        <form id="register">
+        <form id="register" class="needs-validation">
             <h3>Register</h3>
             <div id="innerText"></div>
             <div class="mb-3">
                 <label for="nameA" class="form-label">Name</label>
                 <input type="text" class="col-2" id="nameA" minlength="3" required>
-                <div class="invalid-feedback">Please enter a valid name (minimum 3 characters).</div>
             </div>
         
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="col-2" id="username" minlength="3" required>
-                <div class="invalid-feedback">Please enter a valid username (minimum 3 characters).</div>
             </div>
         
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="col-2" id="password" minlength="6" required>
-                <div class="invalid-feedback">Please enter a valid password (minimum 6 characters).</div>
             </div>
         
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                 <input type="password" class="col-2" id="confirmPassword" minlength="6" required>
-                <div class="invalid-feedback">Passwords do not match.</div>
             </div>
-            <!-----Button------>
-            <button id="registerButton" type="button" class="btn btn-primary">Register</button>
+        
+            <button id="registerButton" type="button" class="btn btn-primary" value="Submit">Register</button>
         </form>
+        
         
         
     </main>
