@@ -18,12 +18,13 @@
 </head>
 
 <body>
+  <div class="mask"></div>
     <main class="wrapper-alt">
-        <form >
+        <form id="regForm">
             <div class="form-box register">
                 <img class ="logoReg" src="../assets/fitblog-logo-tprt.png" alt="logo.png">
                 <div class="mb-3 input-box">
-                    <label for="name" class="form-label"><ion-icon name="person"></ion-icon> Full Name</label>
+                    <label for="name" class="form-label" id="name"><ion-icon name="person"></ion-icon> Full Name</label>
                     <input type="fullName" class="form-control" id="Inputfullname">
                 </div>
                 <div class="mb-3 input-box">
@@ -42,15 +43,17 @@
                     <span id="passHide" class="hide" onclick="passHideClick()"><ion-icon
                             name="eye-off-outline"></ion-icon></span>
                 </div>
-                <div class="form-check">
+                <div class="formBottom">
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="Check1">
                     <label class="form-check-label" for="Check1">Remember Me</label>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="registerUser()">Register</button>
+                <button type="submit" class="btn btn-primary" >Register</button>
                 <div class="login-register">
                     <p>Already have an account?
                         <a href="../index.html" class="login-link">Login</a>
                     </p>
+                </div>
                 </div>
         </form>
 
