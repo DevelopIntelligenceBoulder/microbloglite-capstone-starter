@@ -27,26 +27,32 @@
     </script>
 </head>
 <body>
-
-    <header>
+    <ul class="nav justify-content-end bg-dark" style="height: 80px;">
+        <li class="nav-item">
+           <a href="register.html"><button id="" type="submit" class="btn btn-outline-primary">Sign Up</button></a> 
+        </li>
+        <li class="nav-item">
+            <a href="index.html"><button id="" type="submit" class="btn btn-outline-primary">Log In</button></a>
+        </li>
+      </ul>
+    <header class="container d-flex justify-content-center mb-5">
         <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
     </header>
 
     <main>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+         <form class="container border border-dark rounded w-25" id="login">
+            <h2 class="d-flex justify-content-center mt-3">Login</h2>
+            <div class="form-group mt-3">
+              <label for="loginUserName">User Name</label>
+              <input type="text" class="form-control" id="loginUserName">
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
+            <div class="form-group mb-3">
+              <label for="loginPassword">Password</label>
+              <input type="password" class="form-control" id="loginPassword">
             </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
+            <button type="submit" class="btn btn-primary mb-5">Log In</button>
+          </form>
 
     </main>
 
