@@ -1,20 +1,4 @@
-body {
-    padding-top: 40px;
-  }
-  
-  .container {
-    max-width: 600px;
-  }
-  
-  #postContainer {
-    margin-top: 20px;
-  }
-  
-  .post {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+
   .post {
     max-width: 500px;
     margin: 0 auto;
@@ -42,4 +26,14 @@ body {
     margin-bottom: 10px;
   }
   
+  .post-update {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  .post-update img {
+    max-width: 100%;
+    margin-top: 10px;
+}
   
