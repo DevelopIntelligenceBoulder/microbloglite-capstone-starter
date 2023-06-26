@@ -8,6 +8,7 @@ const textboxEl = document.getElementById("textbox");
 const postBtnEl = document.getElementById("postBtn");
 const postsMadeUlEl = document.getElementById("postsMadeUl");
 const logoutBtnEl = document.getElementById("logoutBtn");
+
 const postCardsDivEl = document.getElementById("postCards");
 
 const likeBtn = document.createElement("BUTTON");
@@ -64,6 +65,7 @@ function getPosts() {
 
         postCardsDivEl.innerHTML += content;
       });
+
     });
 }
 
