@@ -4,7 +4,7 @@ function createAccount() {
 
 let passShow = document.getElementById('passShow')
 let passHide = document.getElementById('passHide')
-let passInput = document.getElementById('exampleInputPassword1')
+let passInput = document.getElementById('InputPassword1')
 
 function passShowClick(){
     passShow.classList.add('hide')
@@ -24,9 +24,9 @@ function passHideClick(){
 
 const registerUser = async () => {
     
-    const fullName = document.getElementById('exampleInputfullname').value
-    const username = document.getElementById('exampleInputUsername').value
-    const password = document.getElementById('exampleInputPassword1').value
+    const fullName = document.getElementById('Inputfullname').value
+    const username = document.getElementById('InputUsername').value
+    const password = document.getElementById('InputPassword1').value
 
     try {
       const response = await fetch('https://microbloglite.herokuapp.com/api/users', {
