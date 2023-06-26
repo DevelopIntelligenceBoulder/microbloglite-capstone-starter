@@ -14,10 +14,10 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="css/global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="css/posts.css">
 
     <title>/POSTS</title>
 
@@ -28,16 +28,51 @@
     </script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">ASK MATT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"  aria-current="page" href="posts.html">Posts Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Registration Page</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <header>
-        <h1>ASK MATT</h1>
+        <h1>Posts</h1>
+
     </header>
 
-    <main></main>
+    <main>
+        <div class= "card">
+            <div id="userCard">
+            <div class="container">
+                <h4><b></b></h4>
+                <p></p>
+            </div>
+        </div>
+        </div>
 
-    <footer></footer>
+        <button type="button" btn btn-primary id="logoutBtn" name="logoutBtn">Logout</button>
+    </main>
+
+    <footer><p class="mt-5 mb-3 text-body-secondary">&copy; AskMatt! Inc. 2023</p></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="scripts/posts.js"></script>
 </body>
 </html>
