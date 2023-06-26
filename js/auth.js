@@ -141,3 +141,47 @@ async function handleLoginForm(event) {
 // Add event listener to the login form
 const loginForm = document.getElementById("login");
 loginForm.addEventListener("submit", handleLoginForm);
+
+// Helper function to handle API errors
+function handleAPIError(response) {
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json();
+  }
+  
+  // Function to handle user login
+  async function login(username, password) {
+    try {
+      const response = await fetch('https://microbloglite.herokuapp.com/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await handleAPIError(response);
+      return data;
+    } catch (error) {
+      console.error('Login Error:', error.message);
+      throw error;
+    }
+  }
+  
+  // Function to handle user logout
+  async function logout() {
+    try {
+      const response = await fetch('https://microbloglite.herokuapp.com/auth/logout', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await handleAPIError(response);
+      return data;
+    } catch (error) {
+      console.error('Logout Error:', error.message);
+      throw error;
+    }
+  }
+  
