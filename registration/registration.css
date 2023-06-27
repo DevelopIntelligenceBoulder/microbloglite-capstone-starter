@@ -1,0 +1,60 @@
+body {
+    /*background: rgb(2,0,36);*/
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(74,13,141,1) 35%, rgb(2, 148, 102) 100%);
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+     padding: 10px 50px 10px 50px;
+     margin-top: 10px;
+ }
+ 
+ .navbar-logo img{
+     max-height: 130px;
+ }
+ 
+ .page-links li {
+     list-style: none;
+     display: inline;
+     margin: 15px;
+     font-weight: 500;
+     text-transform: uppercase;
+ }
+ @media screen and (max-width: 600px) {
+ 
+ }
+
+ .page-links a {
+     text-decoration: none;
+     color: white;
+ }
+
+ .page-links a:hover, .page-links .current{
+     text-decoration: underline;
+     text-decoration-color: black;
+     text-decoration-thickness: 2px;
+ }
+
+ hr {
+     margin-bottom: 0;
+     color: gainsboro;
+ }
+
+h1 {
+    font-size: 75px;
+    font-weight: light;
+    margin: 60px;
+}
+
+#registrationForm {
+    margin: 60px;
+    max-width: 45%;
+    color: black;
+}
+
+#signUp {
+    width: 25%;
+    margin-top: 10px;
+}
