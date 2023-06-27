@@ -25,34 +25,41 @@
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
     <!-- main post JS -->
-    <script src="./posts.js"></script>
+    <script defer src="./posts.js"></script>
 </head>
 
 <body>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong">
-            <div class="container-fluid">
+            <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="navbar-brand" href="./"><img class="homeLogo" src="../assets/fitblog-logo-tprt.png" alt="logo.png"></a>
+                        <a class="navbar-brand" href="./"><img class="homeLogo" src="../assets/fitblog-logo-tprt.png"
+                                alt="logo.png"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../profile/profile.html">My Profile</a>
+                        <a class="nav-link active" href="../profile/profile.html"></a>
                     </li>
             </div>
-    <!-- logout button -->
+            <!-- logout button -->
             <button onclick="logout()" id="logoutButton" class="btn btn-dark" type="button">logout</button>
         </nav>
     </header>
     <h1>POSTS</h1>
-
-    <main></main>
+    <main>
+        <h5 class="postQ">What keeps you fit?</h4>
+        <div class="container">
+            <div class="mb-3">
+                <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post"></textarea>
+            </div>
+            <button onclick="addPost()" id="addPostButton" class="btn btn-success">Add Post</button>
+        </div>
+        <div id="postContainer" class="container mt-4"></div>    
+    </main>
 
     <footer></footer>
 
-    <!-- Page-specific code -->
-    <script src="./posts.js"></script>
 </body>
 
 

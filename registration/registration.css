@@ -7,15 +7,21 @@
 
 
 body {
-  background-image: url('../assets/gabin-vallet-J154nEkpzlQ-unsplash.jpg');
+  background-image: url('../assets/HeroComp.webp');
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
+.mask {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.247);
+}
 .hide {
   display: none !important;
 }
@@ -30,10 +36,10 @@ body {
 }
 
 .wrapper-alt{
-  position: relative;
+  position: absolute;
   width: 400px;
   height: 550px;
-  background: transparent;
+  background-color: #ffffff52;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
@@ -41,11 +47,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
-.wrapper-alt{
-  background-color: rgba(0, 0, 0, 0.649);
-}
 
 .wrapper-alt .form-box {
   width: 100%;
@@ -85,8 +89,11 @@ body {
   margin-bottom: 15px;
 }
 
-.form-square {
-  color: white;
+main label,  .login-register p {
+  color: #000000d2;
+}
+.login-register p {
+  font-size: 14px;
 }
 .newAccAlert {
   position: absolute;
@@ -99,6 +106,7 @@ body {
   display: grid;
   place-content: center;
   background-color: rgba(255, 255, 255, 0.726);
+  z-index: 5;
 }
 
 .newAccAlert p {
@@ -161,3 +169,34 @@ body {
     gap: 20px;
   }
 
+  .dupe {
+    border: 2px solid red;
+    animation: shake 0.5s ease forwards 1;
+  }
+  .newAccSuccess {
+    border: 3px solid green;
+  }
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  .formBottom {
+    display: grid;
+    gap: 5px;
+  }
+
+  .showError {
+    color: rgb(95, 10, 10);
+    text-align: right;
+    font-size: 14px;
+    margin-top: 5px;
+  }
