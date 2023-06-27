@@ -16,3 +16,7 @@
 :root {
     font-size: 1rem;
 }
+
+code{
+    color: rgb(230, 130, 59);
+  }
