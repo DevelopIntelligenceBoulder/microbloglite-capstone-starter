@@ -33,6 +33,7 @@
         <h1>POSTS PAGE</h1>
         <a href="#">My Profile</a>
         <a href="#">Posts</a>
+        <button type="button" class="btn btn-danger" id="logoutBtn">Logout</button>
     </header>
 
     <hr>
@@ -42,8 +43,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <div id="createPostsSection">
-                        <textarea id="createPostInput" class="form-control"></textarea>
-                        <button type="button" class="btn btn-primary mt-2">Post</button>
+                        <textarea id="createPostInput" class="form-control" placeholder="Create a post..."></textarea>
+                        <button type="button" class="btn btn-primary mt-2" id="postBtn">Post</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,14 @@
             <hr>
 
             <div id="displayPostsDiv">
-                <p>Posts go here</p>
+                <h2>Timeline</h2>
+                <!-- <template id="postDisplay">
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                    <button type="button" class="btn btn-danger" id="likeBtn">like</button>
+                </template> -->
+
             </div>
         </div>
     </main>
