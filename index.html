@@ -1,58 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="./landing.css" />
 
-    <title>Login to the Microblog Network!</title>
+    <title>Login to the PLAYBYTE!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <script src="auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
+      if (isLoggedIn() === true) window.location.replace("../posts/index.html");
+      console.log(isLoggedIn());
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <img src="../images/playbyte_light_logo_2" />
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../microbloglite-capstone-3/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./registration/registration.html"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./profile/profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./posts/index.html">Post</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
-
+    <h1>Welcome to <code>PLAYBYTE</code></h1>
     <main>
+      <form id="loginForm">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" minlength="3" />
+        </div>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" minlength="6" />
+        </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
-
+        <button id="loginButton" type="submit">Login</button>
+        <button
+          id="signUpButton"
+          onclick="window.location.href = './registration/registration.html'"
+        >
+          Sign Up!
+        </button>
+      </form>
     </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
-</body>
+  </body>
 </html>

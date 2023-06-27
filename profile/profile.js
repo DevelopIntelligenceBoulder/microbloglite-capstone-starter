@@ -1,5 +1,3 @@
-/* Posts Page JavaScript */
-
 function displayUserName() {
   const loginData = getLoginData();
   const welcomeMessage = document.querySelector("#welcomeMessage");
