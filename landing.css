@@ -1,1 +1,110 @@
-/* Landing Page CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bree Serif', serif;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+
+
+#navbarNav {
+    width: 100%;
+    height: 10vh;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+div .navbar-nav {
+    width: 53%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+section h1 {
+    margin: 13px 0 10px 0;
+    font-size: 44px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+section h3 {
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+}
+
+.LoginF {
+    font-size: 24px;
+    letter-spacing: 3px;
+    display: inline-block;
+}
+
+.col {
+    border-radius: 12px;
+    border-radius: 12px;
+    padding: 6px 6px;
+    margin: 18px 10px 20px 9px;
+}
+
+
+#loginButton {
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #3e8e41;
+}
+
+button:focus {
+    outline: none;
+}
+
+.change_content::after {
+    content: '';
+    animation: changetext 3s infinite linear;
+}
+
+@keyframes changetext {
+    0% {
+        content: " And Get Your Game On";
+    }
+
+}
