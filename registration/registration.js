@@ -76,3 +76,20 @@ const registerUser = async (event) => {
 
   let regForm = document.getElementById('regForm')
   regForm.onsubmit = registerUser
+
+  // light/dark mode
+let lightIco = document.getElementById('lightIco')
+let darkIco = document.getElementById('darkIco')
+
+  function darkMod() {
+    document.body.classList.remove('light')
+    lightIco.classList.remove('hide')
+    darkIco.classList.add('hide')
+
+  }
+
+  function lightMod() {
+    document.body.classList.add('light')
+    darkIco.classList.remove('hide')
+    lightIco.classList.add('hide')
+  }
