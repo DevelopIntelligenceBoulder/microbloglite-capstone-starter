@@ -14,10 +14,10 @@
   <title>Registration</title>
   <!------------------------------NAVBAR------------------------------------------------------------->
   <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="/index.html">
-        <img src="/images/ASKMATT-LOGO.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-top">
-      </a>
-    
+    <a class="navbar-brand" href="/index.html">
+      <img src="/images/ASKMATT-LOGO.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-top">
+    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,42 +28,67 @@
           <a class="nav-link" href="profile.html">Profile Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
+          <a class="nav-link" href="index.html">Landing Page/Login Page</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="posts.html">Posts Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="registration.html">Registration Page</a>
+          <a class="nav-link active" aria-current="page" href="registration.html">Sign-Up Page</a>
         </li>
       </ul>
     </div>
   </nav>
-  <!------------------------------REGISTER FORM------------------------------------------------------------->
   <main>
-    <main class="form-signin w-100 m-auto">
-      <form>
+    <main class="w-50 m-auto ">
+      <form class="container mt-3 p-4 p-md-5 border rounded-3 bg-body-tertiary">
         <img class="gif" src="/images/code gif.gif" alt="coding">
-        <h1 class="h3 mb-3 fw-normal" id="registerTitle"><span>Register</span></h1>
+        <h1 class="h2 mb-3 fw-normal text-center" id="registerTitle"><span>Sign-Up</span></h1>
 
-        <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Username</label>
+        <!-----------------------------------REGISTER FORM------------------------------------------------------------->
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="inputName" placeholder="John Doe">
+          <label for="inputName">Full Name</label>
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="re-enter-Password">
-          <label for="floatingPassword">Re-Enter Password</label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="button" id="registerButton">Register Now</button>
 
-        <hr>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+          <label for="inputUsername">Username</label>
+        </div>
 
-        <p class="below">Already Have an Account? Log-In below!</p>
-        <a class="w-100 btn btn-lg btn-dark" href="index.html">Log In</a>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+          <label for="InputPassowrd">Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="InputReEnterPassword" placeholder="Re-Enter Password">
+          <label for="InputReEnterPassword">Re-Enter Password</label>
+        </div>
+
+
+        <button class="w-100 btn btn-lg btn-primary" type="button" id="registerButton">Sign-Up Now</button>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="signUpModalLabel">Success</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              </div>
+
+              <hr>
+
+              <p class="below">Already Have an Account? Log-In below!</p>
+              <a class="w-100 btn btn-lg btn-dark" href="index.html">Log In</a>
       </form>
     </main>
   </main>

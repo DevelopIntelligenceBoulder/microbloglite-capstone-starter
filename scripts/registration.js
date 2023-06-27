@@ -1,28 +1,38 @@
 "use strict";
-const usernameInputEl = document.getElementById("floatingInput");
-const passwordInputEl = document.getElementById("floatingPassword");
-const fullnameInputEl = document.getElementById("fullnameInput");
-const registerBtnEl = document.getElementById("registerButton");
+const fullnameInput = document.getElementById("inputName");
+const usernameInput = document.getElementById("inputUsername");
+const passwordInput = document.getElementById("InputPassword");
+const confirmPasswordInput = document.getElementById("InputReEnterPassword");
+const registerBtn = document.getElementById("registerButton");
 
-// registerBtnEl.onclick = register;
+window.onload = () => {
+    registerBtn.onclick = registerBtnClicked
+}
 
-registerBtnEl.addEventListener("click", () => {
-    let bodyData = {
-        username: usernameInputEl.value,
-        fullName: fullnameInputEl.value,
-        password: passwordInputEl.value,
+function registerBtnClicked(){
+
+    if(passwordInput.value == confirmPasswordInput.value && usernameInput.value != "" && fullnameInput.value != "" ){
+        let bodyData = {
+            username: usernameInput.value,
+            fullName: fullnameInput.value,
+            password: passwordInput.value,
+        };
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData),
     };
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyData),
-    };
-
+    
     return fetch("https://microbloglite.herokuapp.com/api/users", options)
         .then((response) => response.json())
         .then((loginData) => {
-            window.location.assign("../index.html");
+            window.location.assign("posts.html");
         });
-});
+    }
+    else{
+        console.log("error")
+        errorMessage.innerHTML = "Password does not match"
+    }
+};
