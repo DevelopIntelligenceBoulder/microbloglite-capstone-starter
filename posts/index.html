@@ -20,7 +20,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./posts.css">
 
-    <title>/POSTS</title>
+    <title>POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
@@ -31,18 +31,33 @@
 
 <body>
 
+<div class="navbar">
+    <div class="navbar-logo">
+        <a href="index.html"> <img src="../images/craftsHQ.png" alt="LOGO"></a>
+    </div>
+
+    <div class="page-links">
+        <ul>
+            <li><a href="../profile/index.html" id="profile">Profile</a></li>
+            <li><button id="logout" class="btn btn-outline-light">Logout</button></li>
+        </ul>
+    </div>
+
+</div><hr>
+
+<div class="content">
+    
     <header>
-        <h1>POSTS PAGE</h1>
+        <h1>FEED</h1>
     </header>
 
 
     <main>
       <div id="postContainer"></div>
 
-      <button id="logout">Logout</button>
-
     </main>
 
+</div>
     <footer></footer>
 
     <!-- Page-specific code -->
