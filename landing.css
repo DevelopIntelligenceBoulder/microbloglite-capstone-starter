@@ -1,1 +1,26 @@
 /* Landing Page CSS */
+.titleOfPage,
+.aboutUs {
+  text-align: center;
+}
+
+.log {
+  text-align: center;
+
+}
+
+.user,
+.pass {
+  text-align: center;
+}
+
+.jumbotron {
+  height:100%;
+  width:100%;
+}
+.container {
+  width:1025px;
+}
+.jumbotron .container {
+  max-width: 100%;
+} 
