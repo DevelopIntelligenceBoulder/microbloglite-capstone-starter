@@ -18,7 +18,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css">
 
-    <title>Login to the Microblog Network!</title>
+    <title>Login | CraftsHQ</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
@@ -29,23 +29,46 @@
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <div class="navbar">
+    
+            <div class="navbar-logo">
+                <a href="index.html"> <img src="images/craftsHQ.png" alt="LOGO"></a>
+    
+            </div>
+    
+            <div class="page-links">
+                <ul>
+                    <li><a href="registration/index.html"> <button id="loginButton" type="submit" class="btn btn-outline-light">Get Started</button></a></li>
+                </ul>
+            </div>
+        </div>
+    <hr>
+
+    <div class="intro-text">
+        <h1>Welcome to CraftsHQ!</h1>
+        <p>Unleash your creativity as you explore a vibrant community, exchanging insights, tips, and experiences across a multitude of crafts, hobbies, and interests.</p>
+    </div>
+    
     </header>
 
     <main>
 
         <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+                <div class="form-floating">
+                    <input type="text" id="username" minlength="3" placeholder="Username" class="form-control">
+                    <label for="username">Username</label>
+                </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+                <br>
+        
+                <div class="form-floating">
+                    <input type="password" id="password" minlength="6" placeholder="Password" class="form-control">
+                    <label for="password">Password</label>
+                </div>
 
-            <button id="loginButton" type="submit">Login</button>
+                <br>
+
+                <button id="loginButton" type="submit" class="btn btn-outline-light">Login</button>
         </form>
 
     </main>

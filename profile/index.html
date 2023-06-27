@@ -1,4 +1,3 @@
-<!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +17,9 @@
     <link rel="stylesheet" href="../global.css">
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="./profile.css">
 
-    <title>Posts | CraftsHQ</title>
+    <title>/Profile</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
@@ -31,37 +30,28 @@
 
 <body>
 
-<div class="navbar">
-    <div class="navbar-logo">
-        <a href="index.html"> <img src="../images/craftsHQ.png" alt="LOGO"></a>
-    </div>
-
-    <div class="page-links">
-        <ul>
-            <li><a href="../profile/index.html" ><img src="../images/profile.png" id="profile"></a></li>
-            <li><button id="logout" class="btn btn-outline-light">Logout</button></li>
-        </ul>
-    </div>
-
-</div><hr>
-
-<div class="content">
-    
     <header>
-        <h1>FEED</h1>
+        <h1>Profile PAGE</h1>
     </header>
 
 
     <main>
-      <div id="postContainer"></div>
 
+        <button id="logout">Logout</button>
+
+        <form id="userPost">
+            <textarea name="userPostArea" id="userPostArea" cols="30" rows="10"></textarea><br>
+            <button type="submit" id="submit">submit</button>
+        </form>
+
+        <div id="profileContainer"></div>
+        
     </main>
 
-</div>
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="./profile.js"></script>
 </body>
 
 </html>

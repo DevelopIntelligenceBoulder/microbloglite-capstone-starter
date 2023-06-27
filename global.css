@@ -16,3 +16,53 @@
 :root {
     font-size: 1rem;
 }
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    /*background-color: #fdfdd2;*/
+
+     /*background-color: azure;*/
+     padding: 10px 50px 10px 50px;
+     margin-top: 10px;
+ }
+ 
+ .navbar-logo img{
+     max-height: 130px;
+ }
+ 
+#get-started {
+padding: 10px;
+border-color: white;
+color: white;
+border-radius: 10px;
+font-weight: 700;
+text-decoration: none;
+ }
+ 
+ .page-links li {
+     list-style: none;
+     display: inline;
+     margin: 15px;
+     font-weight: 500;
+     text-transform: uppercase;
+ }
+ @media screen and (max-width: 600px) {
+ 
+ }
+
+ .page-links a {
+     text-decoration: none;
+     color: white;
+ }
+
+ .page-links a:hover, .page-links .current{
+     text-decoration: underline;
+     text-decoration-color: black;
+     text-decoration-thickness: 2px;
+ }
+
+ hr {
+     margin-bottom: 0;
+     color: gainsboro;
+ }

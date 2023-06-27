@@ -1,11 +1,9 @@
-/* Posts Page CSS */
 body {
-    background: rgb(2,0,36);
+    /*background: rgb(2,0,36);*/
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(74,13,141,1) 35%, rgb(2, 148, 102) 100%);
     color: #ffffff;
 }
 
-/*NAVIGATION PAGE*/
 .navbar {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +14,7 @@ body {
  .navbar-logo img{
      max-height: 130px;
  }
-
+ 
  .page-links li {
      list-style: none;
      display: inline;
@@ -39,36 +37,24 @@ body {
      text-decoration-thickness: 2px;
  }
 
-#profile {
-    max-height: 30px;
-}
-
  hr {
      margin-bottom: 0;
      color: gainsboro;
  }
- /* END OF NAVIGATION */
 
- .content {
+h1 {
+    font-size: 75px;
+    font-weight: light;
     margin: 60px;
- }
-
- h1 {
-    margin-bottom: 40px;
-    font-weight: bold;
- }
-
- #postContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-  }
-
- #cards {
-    margin: 30px;
-    max-width: 15in;
 }
-.like-button {
-    border-style: none;
-    background: none;
+
+#registrationForm {
+    margin: 60px;
+    max-width: 45%;
+    color: black;
+}
+
+#signUp {
+    width: 25%;
+    margin-top: 10px;
 }

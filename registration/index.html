@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | CraftsHQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./registration.css">
+    <script src="../auth.js"></script>
+    <script defer src="./registration.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+    
+        <div class="navbar-logo">
+            <a href="../index.html"> <img src="../images/craftsHQ.png" alt="LOGO"></a>
+
+        </div>
+
+        <div class="page-links">
+            <ul>
+                <li><a href="/index.html"> <button id="loginButton" type="submit" class="btn btn-outline-light">Log In</button></a></li>
+            </ul>
+        </div>
+    </div>
+<hr>
+
+
+    <header>
+        <h1>Create Account</h1>
+    </header>
+    <main>
+        <form id="registrationForm">
+            <div class="form-floating">
+                <input type="text" id="fullNameInput" placeholder="Full Name" class="form-control">
+                <label for="fullNameInput">Full Name</label>                
+            </div>
+    
+            <br>
+    
+            <div class="form-floating">
+                <input type="text" id="userNameInput" minlength="3" placeholder="Username" class="form-control">
+                <label for="userNameInput">Username</label>
+            </div>
+    
+            <br>
+    
+            <div class="form-floating">
+                <input type="password" id="passwordInput" minlength="6" placeholder="Password" class="form-control">
+                <label for="passwordInput">Password</label>
+            </div>
+    
+    
+            <br>
+    
+            <button id="signUp" type="submit" class="btn btn-outline-light">Register</button>
+    
+        </form>
+
+    </main>
+</body>
+
+</html>
