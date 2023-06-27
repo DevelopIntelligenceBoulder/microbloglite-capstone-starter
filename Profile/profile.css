@@ -50,7 +50,7 @@ h1{
 
 #mainbox{
 
-    background-color: rgba(243, 214, 176, 0.823);
+    background-color: rgba(203, 237, 139, 0.5);
     margin-top: 4%;
 
 }
@@ -117,7 +117,7 @@ h1{
    
 }
 #logOut{
-    background-color: rgb(221, 140, 120); /* Set the background color to pink */
+    background-color: rgb(214, 43, 34); /* Set the background color to pink */
     padding: 5px 10px; /* Adjust the padding to make it small */
     font-size: 14px; /* Adjust the font size to make it small */
     border: none; /* Remove the default button border */

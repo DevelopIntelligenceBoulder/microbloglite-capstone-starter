@@ -30,76 +30,94 @@
 </head>
 
 <body>
-    <div class="container border">
-        <div class="row">
-            <div class="col">
+
+    <main>
+        <div class="container border">
+            <div class="row">
+                <div class="col">
 
 
-                <header class="border">
-                    <div>
-                        <img src="../images/bannerImage.png" alt="bannerImage" height="1%" width="100%">
-                    </div>
+                    <header class="border">
+                        <div>
+                            <img src="../images/foodbanner.png" alt="bannerImage" height="1%" width="100%">
+                        </div>
 
-                </header>
-                <main class=" border">
-                    <div class="container bg-white" id="profileLinks">
+                    </header>
+                    <div class=" border">
+                        <div id="profileLinks">
 
-                        <a href="../Profile/index.html">Profile page</a>
-                        <a class="btn btn-danger" id="logoutButton">LOGOUT</a>
-                    </div>
-
-
-
-                    <div class="container bg-body-secondary mt-5" id="recipeText">
-
-
-                        <p>
-
-                            Welcome to "The Recipe Exchange" - a blog where culinary enthusiasts gather to share
-                            their favorite recipes from around the world! Discover a treasure trove of flavors
-                            as we explore diverse cuisines, innovative cooking techniques, and delightful twists
-                            on beloved classics. From mouthwatering main courses to delectable desserts, "The
-                            Recipe Exchange" is your passport to a culinary adventure. Join our community, swap
-                            recipes, and ignite your creativity in the kitchen. Let's embark on a culinary
-                            journey together and savor the joy of recipe sharing!
-                        </p>
+                            <a  class="btn btn-primary" href="../Profile/index.html"  id="profileButton">Profile page</a>
+                            <a class="btn btn-danger" id="logoutButton">Logout</a>
+                        </div>
 
 
 
+                        <div class="container bg-body-secondary mt-5" id="recipeText">
 
+
+                            <p>
+
+                                Welcome to "The Recipe Exchange" - a blog where culinary enthusiasts gather to share
+                                their favorite recipes from around the world! Discover a treasure trove of flavors
+                                as we explore diverse cuisines, innovative cooking techniques, and delightful twists
+                                on beloved classics. From mouthwatering main courses to delectable desserts, "The
+                                Recipe Exchange" is your passport to a culinary adventure. Join our community, swap
+                                recipes, and ignite your creativity in the kitchen. Let's embark on a culinary
+                                journey together and savor the joy of recipe sharing!
+                            </p>
+
+
+
+
+                        </div>
+
+                        <hr>
+                        <div class="card" id="quotecard">
+                            <div class="card-header">
+                                Quote
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>A well-known quote, contained in a blockquote element.</p>
+                                    <footer class="blockquote-footer">Someone famous in <cite
+                                            title="Source Title">Source
+                                            Title</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
 
                     <hr>
-                    <div class="card">
-                        <div class="card-header">
-                            Quote
-                        </div>
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>A well-known quote, contained in a blockquote element.</p>
-                                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
-                                        Title</cite></footer>
-                            </blockquote>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="postsFromUsers" class="mt-3">
+            <!-- <div class="container">
+                <div class="row"> -->
+                    <div class="container" id="cardcontainer">
+                        <div class="card">
+                            <div id="usersPostCard">
+                                <!-- Users post card content -->
+
+                                <div id="buttonContainer"></div>
+                            </div>
                         </div>
                     </div>
-            </div>
-
-            <hr>
-
-
+                 
+        </div>
+            <!-- <div id="postsFromUsers">
 
 
-
-            <div id="postsFromUsers">
-
-
-                <div class="container">
+                <div class="container" id="cardcontainer">
                     <div class="row">
 
 
 
                         <div class="col-9 border">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3">
 
 
 
@@ -121,18 +139,17 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
 
 
 
-            </main>
-        </div>
-    </div>
 
 
 
-    </div>
+
+      
+    </main>
 
     <footer></footer>
 
