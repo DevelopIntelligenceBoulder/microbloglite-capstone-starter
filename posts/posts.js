@@ -8,25 +8,28 @@ logoutButton.onclick = logout
 
 function postFetch () {
     const loginData = getLoginData();
-  console.log(JSON.parse(loginData.token))
+  console.log(loginData.token)
     
-    //const options = { 
-        //method: "GET",
-        //headers: { 
+    const options = { 
+        method: "GET",
+        headers: { 
             
-            //Authorization: `Bearer ${loginData.token}`,
-       // },
-   // };
+            Authorization: `Bearer ${loginData.token}`,
+        },
+    };
 
-    //fetch(apiBaseURL + "/auth/logout", options)
-        //.then(response => response.json())
-       // .then(data => console.log(data))
-        //.finally(() => {
-           
-
-           // window.localStorage.removeItem("login-data");  
-           // window.location.assign("/");  
-       /// });
+    fetch(apiBaseURL + "/api/posts", options)
+        .then(response => response.json())
+        .then(posts => posts.forEach(post => 
+            {const pContainer = document.createElement("p")
+            pContainer.innerText = post.text
+            postContainer.append(pContainer)}
+             )
+        
+        )
+            
+        
+        
 }
 
 postFetch()
