@@ -19,7 +19,7 @@
     ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./registration.css" />
@@ -27,10 +27,10 @@
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
-    <script>
-      if (isLoggedIn() === true) window.location.replace("/posts");
-    </script>
+    <script src="../auth.js"></script>
+    <!-- <script>
+      if (isLoggedIn() === true) window.location.href = "../posts/index.html";
+    </script> -->
   </head>
   <body>
     <div class="container-fluid container-lg">
@@ -107,6 +107,9 @@
                 Return to Login
               </button>
             </div>
+          </div>
+          <div class="row">
+            <p id="messageP"></p>
           </div>
         </form>
       </main>

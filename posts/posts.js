@@ -1,3 +1,4 @@
+
 /* Posts Page JavaScript */
 
 "use strict";
@@ -51,10 +52,13 @@ function logout() {
 }
 
 // Add event listener to wait for the DOM content to load
-document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function() {
+
   if (isLoggedIn() === false) window.location.replace("/");
 
   // Add click event listener to the logout link
   const logoutLink = document.getElementById("logout");
   logoutLink.addEventListener("click", logout);
 });
+
