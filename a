@@ -1,0 +1,194 @@
+[33mcommit db21bca63ed8160650b55e873b44e8289038d426[m[33m ([m[1;36mHEAD -> [m[1;32mdeleteJs[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 6f946ae 478d7bf
+Author: Jnguyenappdev <129987308+Jnguyenappdev@users.noreply.github.com>
+Date:   Tue Jun 27 10:52:51 2023 -0400
+
+    Merge pull request #10 from yoitshavi/unfinished-html-merge
+    
+    Partially completed merges
+
+[33mcommit 478d7bf90de61427d45a2b9ce943e3032eb162a1[m[33m ([m[1;31morigin/unfinished-html-merge[m[33m)[m
+Author: Julle Nguyen <jnguyen@appdev.yearup.org>
+Date:   Tue Jun 27 10:51:48 2023 -0400
+
+    Partially completed merges
+
+[33mcommit 6f946ae4fa83cbcbfa94cb742462b3250b9b4532[m[33m ([m[1;32mprofile[m[33m)[m
+Merge: 555d223 6f7b507
+Author: Jnguyenappdev <129987308+Jnguyenappdev@users.noreply.github.com>
+Date:   Mon Jun 26 15:41:22 2023 -0400
+
+    Merge pull request #9 from yoitshavi/layout-and-images
+    
+    Layout, nav bar, images and css
+
+[33mcommit 6f7b507a00817ccac1e50bc387aeb37ac6cdc817[m[33m ([m[1;31morigin/layout-and-images[m[33m)[m
+Author: Julle Nguyen <jnguyen@appdev.yearup.org>
+Date:   Mon Jun 26 15:39:54 2023 -0400
+
+    Layout, nav bar, images and css
+
+[33mcommit 555d223df6ab9d1cd69f36069d9ce4b394b65a4b[m
+Merge: 8a3fdb8 c99e2ed
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Mon Jun 26 15:31:08 2023 -0400
+
+    Merge pull request #8 from yoitshavi/registrationPage
+    
+    registration page working
+
+[33mcommit c99e2ed15a8c280cf054ea9c1c428a875e4e7c03[m[33m ([m[1;31morigin/registrationPage[m[33m, [m[1;32mregistrationPage[m[33m)[m
+Author: yoitshavi <aboyer@appdev.yearup.org>
+Date:   Mon Jun 26 15:29:56 2023 -0400
+
+    registration page working
+
+[33mcommit 8a3fdb8d1cd3125a8a9e0a920f55a08f0f6a77fe[m
+Merge: 07fff8f 45232bb
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Mon Jun 26 14:23:22 2023 -0400
+
+    Merge pull request #7 from yoitshavi/postsOnPage
+    
+    added posts to page
+
+[33mcommit 45232bb39f6bc62d38bd757c76dee07ed95751ea[m
+Merge: 632cc34 07fff8f
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Mon Jun 26 14:23:15 2023 -0400
+
+    Merge branch 'main' into postsOnPage
+
+[33mcommit 632cc34051e31cda7a204384de1dcdbc2e8d8739[m[33m ([m[1;31morigin/postsOnPage[m[33m, [m[1;32mpostsOnPage[m[33m)[m
+Author: yoitshavi <aboyer@appdev.yearup.org>
+Date:   Mon Jun 26 14:18:44 2023 -0400
+
+    added posts to page
+
+[33mcommit 07fff8fdb392b28633f2d4f26273765ca576f70b[m
+Merge: 32fcef6 d6369af
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Mon Jun 26 11:37:56 2023 -0400
+
+    Merge pull request #6 from yoitshavi/postsjs
+    
+    postsJs Logout button
+
+[33mcommit d6369afa69f2df29ca59d0cbe09ec58a73540bfa[m[33m ([m[1;31morigin/postsjs[m[33m, [m[1;32mpostsjs[m[33m)[m
+Author: yoitshavi <aboyer@appdev.yearup.org>
+Date:   Mon Jun 26 11:37:00 2023 -0400
+
+    postsJs Logout button
+
+[33mcommit 32fcef65bb0db0d45e30727f766a5b51678e4280[m
+Merge: 93031ff a7a843d
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Mon Jun 26 10:22:01 2023 -0400
+
+    Merge pull request #5 from yoitshavi/posts
+    
+    posts js
+
+[33mcommit a7a843dc2ab383f82dd056ddf1fe8c424c036fd3[m
+Author: yoitshavi <aboyer@appdev.yearup.org>
+Date:   Mon Jun 26 10:19:16 2023 -0400
+
+    posts js
+
+[33mcommit 93031ff2fbab06cf4d8f13e76d59e8480be65db4[m
+Merge: 2a8804c 8b05e5f
+Author: Jnguyenappdev <129987308+Jnguyenappdev@users.noreply.github.com>
+Date:   Fri Jun 23 16:11:32 2023 -0400
+
+    Merge pull request #4 from yoitshavi/insert-images
+    
+    Inserted fuel images
+
+[33mcommit 8b05e5fe148efd7ef4eae6ffc4518b5c5ac94e5b[m[33m ([m[1;31morigin/insert-images[m[33m)[m
+Author: Julle Nguyen <jnguyen@appdev.yearup.org>
+Date:   Fri Jun 23 16:10:32 2023 -0400
+
+    Inserted fuel images
+
+[33mcommit 2a8804c01880dcb1db8c7a5dbe52582da326861a[m
+Merge: 6c9e7a0 e829dfd
+Author: Spashe1 <129992888+Spashe1@users.noreply.github.com>
+Date:   Fri Jun 23 11:15:53 2023 -0400
+
+    Merge pull request #3 from yoitshavi/name-change
+    
+    name-change
+
+[33mcommit e829dfd88eb9f7d6cdcec78095bdac97d3196a66[m[33m ([m[1;31morigin/name-change[m[33m)[m
+Merge: 927bed6 6c9e7a0
+Author: Spashe1 <129992888+Spashe1@users.noreply.github.com>
+Date:   Fri Jun 23 11:15:36 2023 -0400
+
+    Merge branch 'main' into name-change
+
+[33mcommit 927bed6903db7bd7625de4e3a9df42fa29bc7c4a[m
+Author: Sephora Pashe <Spashe@appdev.yearup.org>
+Date:   Fri Jun 23 11:13:00 2023 -0400
+
+    name-change
+
+[33mcommit 6c9e7a0b7037e7579d324efbdc32e751167fc2f6[m
+Merge: 766cf75 adb40bc
+Author: Jnguyenappdev <129987308+Jnguyenappdev@users.noreply.github.com>
+Date:   Fri Jun 23 11:10:03 2023 -0400
+
+    Merge pull request #1 from yoitshavi/ahavacollab
+    
+    added ahava collaborator
+
+[33mcommit adb40bc188231c6ab94c9eb660b3ef364fab267e[m[33m ([m[1;31morigin/ahavacollab[m[33m)[m
+Merge: 3f06a5a 766cf75
+Author: Jnguyenappdev <129987308+Jnguyenappdev@users.noreply.github.com>
+Date:   Fri Jun 23 11:09:51 2023 -0400
+
+    Merge branch 'main' into ahavacollab
+
+[33mcommit 766cf75a0dce226df5f2c8cc618db1475be30504[m
+Merge: ef587be c2bb6b5
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Fri Jun 23 11:08:55 2023 -0400
+
+    Merge pull request #2 from yoitshavi/test-commit-julle
+    
+    Test commit add Julle
+
+[33mcommit 3f06a5a4208539c7fe0f2cb89506f83b08d95d19[m[33m ([m[1;32mahavacollab[m[33m)[m
+Author: yoitshavi <aboyer@appdev.yearup.org>
+Date:   Fri Jun 23 10:56:18 2023 -0400
+
+    added ahava collaborator
+
+[33mcommit c2bb6b57acbb9859244297c96113416b148d6afb[m[33m ([m[1;31morigin/test-commit-julle[m[33m)[m
+Author: Julle Nguyen <jnguyen@appdev.yearup.org>
+Date:   Fri Jun 23 10:55:20 2023 -0400
+
+    Test commit add Julle
+
+[33mcommit ef587beddc24cf23890c52202aa94d65a92c4d53[m
+Author: Ahava <129992361+yoitshavi@users.noreply.github.com>
+Date:   Fri Jun 23 10:46:56 2023 -0400
+
+    Update README.md
+
+[33mcommit ae302309ae1e4c89ec0b932ddc3201263cd183cb[m
+Author: davegregg@gmail.com <davegregg@gmail.com>
+Date:   Tue Jun 13 08:54:36 2023 -0400
+
+    Path fixes for compatibility with GitHub Pages & local servers; Updates Bootstrap; Fixes posts.html bug; Minor fixes and improvements.
+
+[33mcommit d042fa3003e5aa99e82d6cacc66167d65434c026[m
+Author: davegregg@gmail.com <davegregg@gmail.com>
+Date:   Thu Nov 17 09:40:07 2022 -0500
+
+    Added license
+
+[33mcommit 84f6d3675bb57b22275020c5b9b22d78a6aa63eb[m
+Author: davegregg@gmail.com <davegregg@gmail.com>
+Date:   Thu Nov 17 09:38:43 2022 -0500
+
+    init

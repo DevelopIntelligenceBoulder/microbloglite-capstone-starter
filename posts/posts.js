@@ -11,11 +11,8 @@ const logoutBtnEl = document.getElementById("logoutBtn");
 
 const postCardsDivEl = document.getElementById("postCards");
 
-const likeBtn = document.createElement("BUTTON");
-
 logoutBtnEl.onclick = logout;
 const loginData = getLoginData();
-// postBtnEl.onclick =;
 window.onload = getPosts;
 
 function getPosts() {
@@ -23,11 +20,6 @@ function getPosts() {
   const options = {
     method: "GET",
     headers: {
-      // This header is how we authenticate our user with the
-      // server for any API requests which require the user
-      // to be logged-in in order to have access.
-      // In the API docs, these endpoints display a lock icon.
-      //   accept: "application/json",
       Authorization: `Bearer ${loginData.token}`,
     },
   };
@@ -40,55 +32,89 @@ function getPosts() {
     .then((data) => {
       //   console.log(data);
       data.forEach((post) => {
-        console.log(post);
-        const card = document.createElement("div");
-        card.classList = "row";
-        // card.value = post._id;
+        // console.log(post);
+        const templateEl = document.querySelector("#postCards");
+        // const title = document.querySelector(".card-title");
+        // const postInfo = document.querySelector(".card-text");
+        // const likeBtn = document.querySelector(type[button]);
 
-        const content = ` <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title" value="${post._id}">${post.username}</h5>
-            <p class="card-text">
-              ${post.text}
-            </p>
-            <input type="button" value="Like" id="likeBtn"/>
-          </div>
-        </div>
-      </div>`;
+        // Clone the new row and insert it into the table
+        const clone = templateEl.content.cloneNode(true);
+        let title = clone.querySelector(".card-title");
+        let postInfo = clone.querySelector(".card-text");
+        let likeBtn = clone.querySelector('input[type="button"]');
+        title.textContent = post.username;
+        postInfo.textContent = post.text;
+        likeBtn.value = `${post.likes.length} Likes`;
+        templateEl.appendChild(clone);
 
-        // const like = document.createElement("BUTTON");
-        // var t = document.createTextNode("Like");
-        // //   btnUpdate.id = 'update0';
-        // like.appendChild(t);
-        // likeButton.appendChild(like);
-
-        postCardsDivEl.innerHTML += content;
+        // const likeButton = document.querySelector('input[type="button"]');
+        const userLikes = post.likes.find(
+          (data) => data.username === loginData.username
+        );
+        if (userLikes) {
+          likeBtn.style.color = "blue";
+          likeBtn.addEventListener("click", () => {
+            const options = {
+              method: "DELETE",
+              headers: {
+                "Content-type": "application/json; charset=utf-8",
+                Authorization: `Bearer ${loginData.token}`,
+              },
+            };
+            const url = `https://microbloglite.herokuapp.com/api/likes/${post._id}`;
+            fetch(url, options)
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+                window.location.href = "/posts";
+              });
+          });
+        } else {
+          likeBtn.addEventListener("click", () => {
+            let bodyData = {
+              postId: post._id,
+            };
+            const options = {
+              method: "POST",
+              body: JSON.stringify(bodyData),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${loginData.token}`,
+              },
+            };
+            const url = "https://microbloglite.herokuapp.com/api/likes";
+            fetch(url, options)
+              .then((response) => response.json())
+              .then((data) => {
+                window.location.assign("/posts");
+              });
+          });
+        }
       });
-
     });
 }
 
-// postBtnEl.addEventListener("click", () => {
-//   let bodyData = {
-//     text: textboxEl.value,
-//     username: loginData.username,
-//   };
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify(bodyData),
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8",
-//       Authorization: `Bearer ${loginData.token}`,
-//     },
-//   };
-//   const url = "https://microbloglite.herokuapp.com/api/posts";
-//   fetch(url, options)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       window.location.assign("/posts");
-//     });
-// });
+postBtnEl.addEventListener("click", () => {
+  let bodyData = {
+    text: textboxEl.value,
+    username: loginData.username,
+  };
+  const options = {
+    method: "POST",
+    body: JSON.stringify(bodyData),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
+  const url = "https://microbloglite.herokuapp.com/api/posts";
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.assign("/posts");
+    });
+});
 
 // const likeBtnEl = document.getElementById("likeBtn");
 // const cardId = document.getElementsByClassName("card-title");
@@ -113,3 +139,26 @@ function getPosts() {
 //       window.location.assign("/posts");
 //     });
 // });
+
+// fetch(`http://localhost:8081/api/courses`)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     data.forEach((course) => {
+//       deleteBtnEl.addEventListener("click", () => {
+//         const options = {
+//           method: "DELETE",
+//           headers: {
+//             "Content-type": "application/json; charset=utf-8",
+//             Authorization: `Bearer ${loginData.token}`,
+//           },
+//         };
+//         const url = `http://localhost:8081/api/courses/${course.id}`;
+//         fetch(url, options)
+//           .then((response) => response.json())
+//           .then((data) => {
+//             alert(`Deleted ${courseNameEl.value}`);
+//             window.location.href = "./posts";
+//           });
+//       });
+//     });
+//   });
