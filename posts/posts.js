@@ -7,10 +7,6 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   logout();
 });
 
-document.getElementById("newPostBtn").addEventListener("click", () => {
-  location.href = "./new-post.html";
-});
-
 const postsUrl =
   "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0";
 
