@@ -1,9 +1,71 @@
-body{
-    margin-top:20px;
-    margin-bottom: 20px;
-    background:#f8f8f8
-}
-
-h1 {
+body {
+    background-color: rgb(8, 19, 63);
+    
+  }
+  
+  header {
+    background-color: rgba(0, 0, 0, 0.722);
+    margin-left: auto;
+    margin-right: auto;
+    min-width:165px;
+    white-space: nowrap;
+  }
+  
+  .navbar {
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  .navbar-brand {
+    margin-right: 10rem;
+  }
+  .nav-link {
+    margin-top: 10px;
+  }
+  
+  .homeLogo{
+    width: 150px;
+  }
+  
+  h1{
+    color: rgb(255, 255, 255);
+    margin-top: 3rem;
     text-align: center;
-}
+    margin-bottom: 2rem;
+  }
+  
+  .postQ{
+    color: white;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  main {
+    margin: 5rem 25rem 0rem 25rem;
+  }
+  
+  .card {
+    background-color: rgb(0, 0, 0);
+    color: antiquewhite;
+    border-color: white;
+    border-width: 2px;
+  }
+  
+  #addPostButton {
+    margin-bottom: 4rem;
+  }
+  
+  @media screen and (max-width: 1500px) {
+    main {
+      margin:3rem;
+    }
+  
+    .postQ {
+      margin-left: 1rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  .card-title {
+    font-size: 25px;
+  }
