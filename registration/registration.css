@@ -21,7 +21,9 @@ body {
   height: 100vh;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.247);
+  background-color: rgba(0, 0, 0, 0.336);
 }
+
 .hide {
   display: none !important;
 }
@@ -39,8 +41,8 @@ body {
   position: absolute;
   width: 400px;
   height: 550px;
-  background-color: #ffffff52;
-  border: 2px solid rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, 0.618);
+  border: 2px solid transparent;
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
@@ -90,7 +92,7 @@ body {
 }
 
 main label,  .login-register p {
-  color: #000000d2;
+  color: #ffffffc2;
 }
 .login-register p {
   font-size: 14px;
@@ -200,3 +202,28 @@ main label,  .login-register p {
     font-size: 14px;
     margin-top: 5px;
   }
+
+  /* light dark */
+  .lightIco, .darkIco {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    transform: translate(0);
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px 0 5px 5px;
+  }
+
+  .lightIco img, .darkIco img{
+    width: 30px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+
+  .lightIco img:hover, .darkIco img:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+
