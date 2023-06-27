@@ -50,7 +50,7 @@ main {
     font-size: 25px;
 }
 
-#sub-area @media screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
     main {
         margin: 3rem;
     }
