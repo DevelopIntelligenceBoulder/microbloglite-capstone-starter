@@ -1,11 +1,10 @@
 <!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -23,6 +22,7 @@
     ></script>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../posts/posts.js"></script>
     <script src="../auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
@@ -30,45 +30,56 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <img src="../images/playbyeeee_copy_2 (1).png">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../registration/registration.html">Sign Up</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../profile/profile.html">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"  href="../posts/index.html">Post</a>
-                  </li>
-                </ul>
-              </div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <img src="../images/playbyeeee_copy_2 (1).png" />
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../registration/registration.html"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../profile/profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../posts/index.html"
+                  >Post</a
+                >
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
 
-    <h1>Welcome user</h1>
     <main>
-<button class="logoutButton" id="logoutButton"> logout</button>
+      <button class="logoutButton" id="logoutButton">logout</button>
+      <h1><span id="welcomeMessage"></span></h1>
     </main>
 
+    <footer></footer>
 
-  <footer></footer>
-
-  <!-- Page-specific code -->
-  <script src="./posts.js"></script>
-</body>
-
+    <!-- Page-specific code -->
+    <script src="./posts.js"></script>
+  </body>
 </html>

@@ -20,6 +20,7 @@
     ></script>
     <script defer src="../profile/profile.js"></script>
     <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../profile/profile.js"></script>
     <script src="auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
@@ -71,6 +72,6 @@
       <button class="logoutButton" id="logoutButton">logout</button>
     </header>
 
-    <h1>Welcome back, (NAME OF USER)</h1>
+    <h1><span id="welcomeMessage"></span></h1>
   </body>
 </html>
