@@ -24,7 +24,17 @@ function registerBtnClicked(){
             },
             body: JSON.stringify(bodyData),
     };
-    
+    // fetch(apiBaseURL + "/api/users", options)
+    // .then((response) => response.json())
+    // .then((acctCreation) => {
+    //   messagePEl.textContent = "Success returning to login";
+    //   setTimeout(() => {
+    //     window.location.href = "posts.html";
+    //   }, 1000);
+    // })
+    // .catch((err) => {
+    //   errorMessage.innerHTML = "An error has occured Please try again later";
+    // });
     return fetch("https://microbloglite.herokuapp.com/api/users", options)
         .then((response) => response.json())
         .then((loginData) => {
@@ -33,6 +43,6 @@ function registerBtnClicked(){
     }
     else{
         console.log("error")
-        errorMessage.innerHTML = "Password does not match"
+        errorPass2.innerHTML = "Password does not match"
     }
 };
