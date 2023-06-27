@@ -1,10 +1,5 @@
 "use strict";
 
-// prevents access to page unless visitor is logged in
-if (isLoggedIn() === true) {
-    window.location.replace("/registration");
-}
-
 // logout button event listener
 const logoutButton = document.getElementById("logoutButton");
 logoutButton.addEventListener("click", () => {
