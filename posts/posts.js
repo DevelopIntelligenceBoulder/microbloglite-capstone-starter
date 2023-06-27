@@ -29,7 +29,11 @@ function getPosts() {
         const dateArea = clone.querySelector(".creationDate");
         const likesArea = clone.querySelector(".likes");
         likesArea.innerHTML = `<button id=likeBtn${i}>Like: ${post.likes.length}</button>`;
-        dateArea.textContent = post.createdAt;
+        const date = new Date(post.createdAt);
+        console.log(date.getDate());
+        dateArea.textContent = `${date.getDate()}-${
+          date.getMonth() + 1
+        }-${date.getFullYear()}`;
         userArea.textContent = post.username;
         postArea.textContent = post.text;
         postsContainerEl.appendChild(clone);
