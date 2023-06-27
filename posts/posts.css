@@ -50,10 +50,11 @@ body{
 
 
 body{
-    background-image: url("/images/backgroundImage.png");
-    background-repeat: round;
+    background-image: url("/images/recipebg.png");
     background-size: cover;
-    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -76,3 +77,45 @@ html{
   color:maroon;
   
 } */
+
+#usersPostCard{
+    border: 4px dotted #73b99b;
+    padding: 5%;
+    border-radius: 20px;
+    background-color: rgba(191, 236, 108, 0.5);
+   
+}
+
+
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    max-width: 750px;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    border-color: rgb(244, 246, 244);
+    background-color: rgba(252, 252, 252, 0.789);
+   
+    
+}
+
+#profileButton{
+    background-color: rgb(129, 168, 39); /* Set the background color to pink */
+        padding: 7px 17px; /* Adjust the padding to make it small */
+        font-size: 17px; /* Adjust the font size to make it small */
+        border: none; /* Remove the default button border */
+        color: white; /* Set the text color to white for better visibility */
+}
+
+
+#quotecard{
+
+    background-color: rgba(191, 236, 108, 0.5);
+}
