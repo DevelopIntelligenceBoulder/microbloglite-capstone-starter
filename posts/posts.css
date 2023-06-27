@@ -1,6 +1,11 @@
 .card{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
+        margin: 10%;
+
+       
+        
+
 }
 
 #postsFromUsers{
@@ -10,9 +15,64 @@
 }
 
 
+
+
+#profileLinks{
+    display: flex;
+    justify-content: end;
+}
+
+#recipeText{
+    display: flex;
+    justify-content: center;
+}
+
+/* {
+    background:linear-gradient(red,green,yellow);
+} */
+
+
+main {
+   
+    
+    height:100%;
+}
+
+
+/* 
 body{
     background-image: url("/images/backgroundImage.png");
     background-repeat: no-repeat;
-    background-blend-mode: darken;
+    background-blend-mode: normal;
+    background-size:100%;
+    height:100%;
+} */
+
+
+body{
+    background-image: url("/images/backgroundImage.png");
+    background-repeat: round;
+    background-size: cover;
+    height: 100%;
 }
 
+
+html{
+    height:100%;
+}
+
+
+#heroSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+/* svg:hover{
+  color:maroon;
+  
+} */
