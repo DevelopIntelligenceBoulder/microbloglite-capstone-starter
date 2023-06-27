@@ -42,6 +42,7 @@
           </ul>
           <div class="container">
             <div class="row">
+              <!--left side bar-->
                 <div class="col-md-3 left-sidebar">
                   <button type="button" class="btn btn-secondary edit-profile-button" id="logoutButton">Log Out</button>
                     <img class="profile-pic" src="images/profile-icon-9.png" alt="User Profile Picture" style="margin-left: 30%;"> 
@@ -64,7 +65,8 @@
                             <p><small>June 23, 2023 </small></p>
                     </div>
                 </div>
-                <div class="col-md-6 main-content">
+                <!--main Content-->
+                <div class="col-md-6 main-content" id="main-content">
                     <div class="container" id="form-container" style="background-color: rgb(249, 249, 249); border-radius: 20px; margin-bottom: 10%;">
                         <form id="postForm">
                             <div class="form-group" id="formGroup">
@@ -78,35 +80,24 @@
                             <button type="submit" id="Bttnpostsubmit" class="btn btn-secondary">Submit</button>
                         </form>
                     </div>
-                    <div class="container-form">
-                        <div class="post">
-                            <div class="post-header">
+                    <div class="container-form" id="CardPosted">
+                        <div class="post" id="divPost">
+                            <div class="post-header" id="divPostheader">
                                 <img src="images/profile-icon-9.png"    alt="Profile Picture">
                                 <h5 id="userNameDisplayhere">User123</h5>
                             </div>
-                            <div class="post-content">
+                            <div class="post-content" id="WhereContentWillBeHeld">
                               <p><strong>🌟 Exciting News! 🌟</strong></p>
                               <img src="images/profile-icon-9.png" alt="Image 1">
                               <p id="contentForm">Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
                             </div>
                             <p id="dateForm"><small>June 23, 2023 </small></p>
                         </div>
-                        <div class="post">
-                          <div class="post-header">
-                              <img src="images/profile-icon-9.png" alt="Profile Picture">
-                              <h5>User123</h5>
-                          </div>
-                          <div class="post-content">
-                            <p><strong>🌟 Exciting News! 🌟</strong></p>
-                            <img src="images/profile-icon-9.png" alt="Image 1">
-                            <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
-                          </div>
-                          <p><small>June 23, 2023 </small></p>
-                      </div>
                     </div>
                 </div>
+
                 <!--right Sidebar-->
-                <div class="col-md-3 right-sidebar" id="rightSideBar">
+   <div class="col-md-3 right-sidebar" id="rightSideBar">
                   <div class="friend-profile" id="usersFriendsProfile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
                       <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
