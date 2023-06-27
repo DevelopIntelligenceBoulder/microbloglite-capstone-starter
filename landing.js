@@ -1,24 +1,37 @@
-/* Landing Page JavaScript */
-
 "use strict";
 
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {
-    // Prevent the form from refreshing the page,
-    // as it will do by default when the Submit event is triggered:
-    event.preventDefault();
+  event.preventDefault();
 
-    // We can use loginForm.username (for example) to access
-    // the input element in the form which has the ID of "username".
-    const loginData = {
-        username: loginForm.username.value,
-        password: loginForm.password.value,
-    }
+  const loginData = {
+    username: loginForm.username.value,
+    password: loginForm.password.value,
+  };
 
-    // Disables the button after the form has been submitted already:
-    loginForm.loginButton.disabled = true;
+  loginForm.loginButton.disabled = true;
 
-    // Time to actually process the login using the function from auth.js!
-    login(loginData);
+  // API endpoint for retrieving user credentials
+  const endpoint = 'https://example.com/api/login';
+
+  // Send a GET request to the API endpoint
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      const foundUser = data.find(user => user.username === loginData.username && user.password === loginData.password);
+
+      if (foundUser) {
+        // User authentication successful
+        alert('Login successful!');
+        // Redirect to the dashboard or perform further actions
+      } else {
+        // Invalid credentials
+        alert('Invalid username or password. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    });
 };
