@@ -22,3 +22,28 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+
+
+const signUpBtn =  document.getElementById("signUpBtn");
+const newUserBtn = document.getElementById("newUserBtn");
+
+
+window.onload = () => {
+    signUpBtn.onclick = signUpBtnClicked;
+    newUserBtn.onclick = newUserBtnClicked;
+
+
+
+}
+
+
+function signUpBtnClicked(){
+    window.location.href = "registration.html";
+    
+}
+
+function newUserBtnClicked(){
+    window.location.href = "registration.html";
+    
+}
