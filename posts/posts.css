@@ -1,6 +1,9 @@
 /* Posts Page CSS */
 body {
-  background-color: rgb(8, 19, 63);
+  background-image: url(../assets/nadine-primeau--ftWfohtjNw-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   
 }
 

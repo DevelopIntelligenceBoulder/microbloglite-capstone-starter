@@ -117,8 +117,8 @@ function loadAllPosts(posts) {
     userName.textContent = post.username;
 
     const likesArea = document.createElement("h6");
-    likesArea.classList.add("card-subtitle", "text-muted");
-    likesArea.textContent = `${post.likes}`;
+    likesArea.classList.add("card-subtitle");
+    likesArea.textContent = `${post.likes.length}`;
 
     cardBody.appendChild(userName);
     cardBody.appendChild(postText);
