@@ -4,7 +4,7 @@ const createPostInputEl = document.getElementById(`createPostInput`);
 
 postBtnEl.addEventListener(`click`, () => {
   //console.log(`click`); works
-  console.log(createPostInputEl.value);
+  //console.log(createPostInputEl.value);
 
   const options = {
     method: "POST",
@@ -17,7 +17,5 @@ postBtnEl.addEventListener(`click`, () => {
   const url = "microbloglite.herokuapp.com/api/posts";
   fetch(url, options)
     .then((response) => response.json())
-    .then((posts) => {
-      let message = posts.text;
-    });
+    .then((posts) => {});
 });
