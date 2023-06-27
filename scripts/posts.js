@@ -18,12 +18,12 @@ fetch("https://microbloglite.herokuapp.com/api/posts")
   .then(response => response.json())
   .then(posts => {
     posts.forEach(post => {
-      const postElement = document.createElement("div"); 
+      const postElement = document.createElement("div"); //creates new div/container for post
       postElement.textContent = post.text;
-      postsContainer.appendChild(postElement);
+      postsContainer.appendChild(postElement); // displays the post
     });
   })
   .catch(error => {
-    console.error("Error fetching posts:", error);
+    console.error("Error displaying user posts:", error);
   });
 
