@@ -68,8 +68,8 @@
                 </div>
                 <div class="col p-2 p-md-4 align-self-end">
                     <hgroup class="mb-3">
-                        <h3 class="mb-0">User FullName</h3>
-                        <p class="lead text-muted">@username</p>
+                        <h3 class="mb-0" id="user-fullname">User FullName</h3>
+                        <p class="lead text-muted" id="username">@username</p>
                     </hgroup>
                 </div>
                 <div class="col-12 py-2 py-lg-4 col-lg-auto align-self-end">
@@ -83,24 +83,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-3 col-xl-2 p-4 bg-body mb-3 mb-lg-0 me-lg-3">
+                    <p id="user-bio"></p>
                     <p>
-                        User Bio
-                    </p>
-                    <p>
-                        Ribbits: <strong>##</strong>
+                        Ribbits: <strong id="num-posts">##</strong>
                     </p>
                 </div>
                 <div class="col p-0 bg-body">
-                    <form class="p-4 border-bottom">
+                    <form id="post-form" class="p-4 border-bottom">
                         <div class="mb-3">
                             <textarea class="form-control post-field" name="text" id="post-text" rows="3" placeholder="What's on your mind?"></textarea>
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-lg btn-success fw-bold">Ribbit</button>
+                            <button name="postBtn" class="btn btn-lg btn-success fw-bold">Ribbit</button>
                         </div>
                     </form>
                     <template id="ribbit-post">
-                        <div class="px-4 py-3 border-bottom">
+                        <div class="ribbit-post px-4 py-3 border-bottom">
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                   <img class="rounded-5" width="55" src="https://placehold.it/500" alt="...">
@@ -162,6 +160,9 @@
         </div>
     </footer>
 
+    <script src="../utils.js"></script>
+    <script src="../postUtils.js"></script>
+    
     <script src="user.js"></script>
     <script>
         // Parse emoji on the page with twemoji
