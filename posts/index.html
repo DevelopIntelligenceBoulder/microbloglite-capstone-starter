@@ -37,29 +37,107 @@
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
     </script>
+    <link rel="stylesheet" href="/posts/posts.css" />
   </head>
-  <body>
+  <body class="bodyNav">
     <div class="container">
       <div class="row">
         <header>
           <h1>POSTS PAGE</h1>
         </header>
       </div>
+      <!-- ------------------------------------------------------------------------------------------------- -->
+      <nav class="navbar bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <div class="imgWrap">
+              <img
+                class="imgNavbar"
+                src="/images/transparent-color-fuel-the-flame.png"
+                alt="Logo"
+                width="40"
+                height="40"
+              />
+              <p class="imgDescription">Fuel the fire!!!</p>
+            </div>
+          </a>
+          <div class="gggImg">
+            <a class="navbar-item" href="">
+              <img src="/images/GGG.png" alt="GGG" width="300" />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+          <img
+            class="offcanvasimg"
+            src="images/black-white-logo.jpg"
+            alt="logo"
+          />
+        </h5> -->
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html"> Login </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/posts/index.html"> Posts </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">My Profile</a>
+                </li>
+              </ul>
+              <div class="position-relative fixed-bottom">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-lg btn-block"
+                  id="logoutBtn"
+                >
+                  It's too hot in here!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-      <main>
+      <!-- ------------------------------------------------------------------------------------------------- -->
+      <main class="main">
         <div class="row">
-          <input type="text" value="Truthful Posts Only" id="textbox" />
-          <input type="button" value="Post" id="postBtn" />
+          <div class="inputFields">
+            <input type="text" value="Truthful Posts Only" id="textbox" />
+            <input type="button" value="Post" id="postBtn" />
+          </div>
         </div>
         <div id="postCards"></div>
         <div class="row">
           <div class="col">
             <input type="button" value="Logout" id="logoutBtn" />
           </div>
-      </div>
+        </div>
       </main>
-
 
       <footer></footer>
 
