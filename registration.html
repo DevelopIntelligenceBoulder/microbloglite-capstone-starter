@@ -67,28 +67,24 @@
         </div>
 
 
-        <button class="w-100 btn btn-lg btn-primary" type="button" id="registerButton">Sign-Up Now</button>
+        <button class="w-100 btn btn-lg btn-primary" type="button" id="registerButton" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign-Up Now</button>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
-        </button>
-
+        <p class="below">Already Have an Account? Log-In below!</p>
+        <a class="w-100 btn btn-lg btn-dark" href="index.html">Log In</a>
         <!-- Modal -->
         <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="signUpModalLabel">Success</h1>
+                <h1 class="modal-title fs-2" id="signUpModalLabel">Success</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
+                <h5>Your account has been successfully created!</h5>
               </div>
 
               <hr>
 
-              <p class="below">Already Have an Account? Log-In below!</p>
-              <a class="w-100 btn btn-lg btn-dark" href="index.html">Log In</a>
       </form>
     </main>
   </main>
