@@ -56,6 +56,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+   
 }
 
 
@@ -81,6 +82,8 @@ html {
     padding: 5%;
     border-radius: 20px;
     background-color: rgba(191, 236, 108, 0.5);
+
+    
    
 }
 
@@ -117,4 +120,6 @@ html {
 
     background-color: rgba(191, 236, 108, 0.5);
 }
+
+
 
