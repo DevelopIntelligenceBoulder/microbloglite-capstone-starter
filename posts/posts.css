@@ -39,6 +39,10 @@ body {
      text-decoration-thickness: 2px;
  }
 
+#profile {
+    max-height: 30px;
+}
+
  hr {
      margin-bottom: 0;
      color: gainsboro;
