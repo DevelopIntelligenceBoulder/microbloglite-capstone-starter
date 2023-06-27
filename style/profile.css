@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    height: 25vh; /* 1/4 of the viewport height */
+    background-color: #f1f1f1;
+    
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .sidebar {
+    width: 20%; 
+
+    
+    
+  }
+  .left-sidebar {
+    width: 20%; 
+    margin-right: 10%; 
+    
+  }
+  
+  
+  .main-content {
+    width: 60%; 
+    margin-top: auto;
+
+   
+  }
+  
+  

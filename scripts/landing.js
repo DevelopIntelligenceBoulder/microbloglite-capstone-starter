@@ -1,5 +1,5 @@
 "use strict";
-
+//variables
 const loginForm = document.getElementById("login");
 const loginUsername = document.getElementById("username");
 const loginPassword = document.getElementById("password");
