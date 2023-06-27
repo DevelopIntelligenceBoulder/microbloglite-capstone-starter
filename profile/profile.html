@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/POSTS</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/profile/profile.css">
+    <script src="/auth.js"></script>
+    <script src="/profile/profile.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/index.html");
+    </script>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header id="header">
+        <div class="logo">
+            <a href="#">FitBlog</a>
+        </div>
+        <ul class="navigation">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/posts/index.html">Posts</a></li>
+            <li><button type="button" id="logoutBtn">Logout</button></li>
+        </ul>
+    </header>
+    
+    <!-- USER PROFILE -->
+    
+    <header>
+        <h1>USER PROFILE</h1>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="e-profile">
+                            <div class="row">
+                                <div class="col-12 col-sm-auto mb-3">
+                                    <div class="mx-auto" style="width: 140px;">
+                                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                                            <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Full Name</h4>
+                                        <div class="mt-2">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fa fa-fw fa-camera"></i>
+                                                <span>Change Photo</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a href="#" class="active nav-link">Profile</a></li>
+                            </ul>
+                            <div class="tab-content pt-3">
+                                <div class="tab-pane active">
+                                    <form class="form" novalidate>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="fullName">Full Name</label>
+                                                    <input class="form-control" type="text" id="fullName" placeholder="Full Name" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username">Username</label>
+                                                    <input class="form-control" type="text" id="userName" placeholder="Username" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input class="form-control" type="text" id="emailAddress" placeholder="Email" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password">Password</label>
+                                                    <input class="form-control" type="password" id="passWord" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                              <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-edit"></i><span>Edit</span></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POST BOX -->
+    
+    <header>
+        <h1>PROFILE POST</h1>
+    </header>
+    
+    <main>
+        <section class="col-lg-4 offset-lg-4" id="text-box">
+            <div id="sub-area">
+                <textarea id="message-area" name="msgArea" rows="4" cols="60"></textarea>
+                <br>
+                <input id="message-button" type="submit">
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
