@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css" />
+    <link rel="stylesheet" href="/profiles/profiles.css" />
 
-    <title>/PROFILE</title>
+    <title>PROFILE</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
+    <script src="/auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
     </script>
@@ -36,15 +36,19 @@
   <body>
     <header>
       <h1>PROFILE PAGE</h1>
+      <div class="navbar navbar-expand-lg" style="background-color: #c4bebe">
+        <a href="/posts/index.html">Home</a>
+        <a href="/profiles/index.html">Profile</a>
+        <a href="/Registration/index.html" class="nav-link disabled">Sign Up</a>
+        <button class="btn btn-outline-danger" id="logoutBtn">Logout</button>
+      </div>
     </header>
 
-    <main>
-      <button id="logoutButton" type="submit">Logout</button>
-    </main>
+    <main></main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./.js"></script>
+    <script src="/profiles/profiles.js"></script>
   </body>
 </html>
