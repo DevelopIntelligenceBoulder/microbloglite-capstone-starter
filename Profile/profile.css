@@ -1,18 +1,31 @@
-#about {
+/* Profile Page CSS */
 
-    margin-top: 10%;
-    margin-left: 10%;
+body {
+    min-height: 100%;
+    background-image: url(../images/bagel23bg.png);
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    /* background-position: center;
+       backdrop-filter: blur(7px) ; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
 
-.row {
-    display: flex;
+.custom-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    background-color: rgba(166, 165, 163, 0.236);
+    padding: 1%;
+    border-radius: 20px;
+    align-content: center;
 }
 
-.column {
-    flex: 50%;
-}
+
+
 
 /* #rightcolumn {
 
@@ -29,14 +42,17 @@
 
 h1{
 
-    margin-top: 4%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    color: #ed7519;
 }
 
 
 #mainbox{
 
-    background-color: rgba(246, 226, 201, 0.892);
+    background-color: rgba(243, 214, 176, 0.823);
     margin-top: 4%;
+
 }
 
 
@@ -44,3 +60,85 @@ h1{
 
     margin-top: 10%;
 }
+
+#bio {
+    width: 400px; /* Adjust the width to your desired size */
+    border: 4px dotted #83cc8e; /* Add a border */
+    padding: 10px; /* Add some padding around the content */
+    padding: 1%;
+    border-radius: 20px;
+}
+
+#bioText {
+    word-wrap: break-word; /* Enable word wrapping */
+}
+    
+
+
+#editBioContainer{
+    margin-left: 1%;
+    margin-right: 40%;
+    
+}
+
+#editBioBtn{
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
+        padding: 5px 10px; /* Adjust the padding to make it small */
+        font-size: 14px; /* Adjust the font size to make it small */
+        border: none; /* Remove the default button border */
+        color: white; /* Set the text color to white for better visibility */
+}
+
+#updateBioBtn{
+    background-color: rgb(159, 210, 34); /* Set the background color to pink */
+    padding: 5px 10px; /* Adjust the padding to make it small */
+    font-size: 14px; /* Adjust the font size to make it small */
+    border: none; /* Remove the default button border */
+    color: white; /* Set the text color to white for better visibility */
+}
+
+#postBtn{
+
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
+        padding: 5px 10px; /* Adjust the padding to make it small */
+        font-size: 14px; /* Adjust the font size to make it small */
+        border: none; /* Remove the default button border */
+        color: white; /* Set the text color to white for better visibility */
+        margin-bottom: 6%;
+        
+}
+
+#postPage{
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
+    padding: 5px 10px; /* Adjust the padding to make it small */
+    font-size: 14px; /* Adjust the font size to make it small */
+    border: none; /* Remove the default button border */
+    color: white; /* Set the text color to white for better visibility */
+   
+}
+#logOut{
+    background-color: rgb(221, 140, 120); /* Set the background color to pink */
+    padding: 5px 10px; /* Adjust the padding to make it small */
+    font-size: 14px; /* Adjust the font size to make it small */
+    border: none; /* Remove the default button border */
+    color: white; /* Set the text color to white for better visibility */
+    
+}
+
+#postContainer{
+    border: 4px dotted #73b99b;
+    padding: 1%;
+    border-radius: 20px;
+
+}
+
+
+#postbox {
+    margin-top: 60px; /* Adjust the margin-top value as needed */
+}
+
+h1.text-center {
+    margin-bottom: 10px; /* Adjust the margin-bottom value as needed */
+}
+
+
