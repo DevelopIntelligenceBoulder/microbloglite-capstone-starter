@@ -1,1 +1,39 @@
 /* Landing Page CSS */
+
+body {
+    background-image: url('./assets/healthyphoto.webp');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+#help{
+  color: #ffffff;
+}
+
+#login{
+  color:#ffffff
+}
+
+.form-group{
+  margin-top: 1rem;
+}
+
+#loginButton{
+  margin-top: 1rem;
+}
+#registerLink{
+  margin-top: 1rem;
+}
+main{
+  background-color: rgba(0, 0, 0, 0.618);
+  padding: 2rem;
+  border-radius: 20px;
+}
+#logo{
+ max-width: 200px;
+ margin-left: 40px;
+}
