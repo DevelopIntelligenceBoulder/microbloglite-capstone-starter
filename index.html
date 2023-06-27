@@ -19,12 +19,12 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="css/landing.css">
 
-    <title>Login to the Microblog Network!</title>
+    <title>AskMatt.com/login</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="scripts/auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
+        if (isLoggedIn() === true) window.location.replace("/posts.html");
     </script>
 </head>
 
@@ -33,20 +33,20 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="images/ASKMATT-LOGO.png" alt="logo" height="50" width="80">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/ASKMATT-LOGO.png" alt="logo" height="50" width="80" class="d-inline-block align-text-top">
                 </a>
                 <div class="d-flex justify-content-end">
 
                     
                     <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Login</button>
-                    <button type="button" id="signUpbtn" class="btn btn-dark" data-bs-toggle="modal">Sign up</button>
+                    <button type="button" id="signUpBtn" class="btn btn-dark">Sign up</button>
                 </div>
             </div>
         </nav>
-            
-            <!-- Modal -->
+
+        <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="row container mt-4">
 
-                                            <button id="loginButton" type="button"
+                                            <button id="loginButton" type="submit"
                                                 class="btn btn-primary">Login</button>
                                         </div>
                                 </div>
@@ -86,7 +86,7 @@
 
                         <div class="col">
                             <button id="#" type="button" class="btn opacity-75">Forget Password?</button>
-                            <button id="signUpbtn" type="button" class="btn opacity-75">Not A Member Yet?</button>
+                            <button id="newUserBtn" type="button" class="btn opacity-75">Not A Member Yet?</button>
                         </div>
                     </div>
                 </div>
@@ -95,9 +95,14 @@
     </header>
 
     <main>
-        <h1 class="text-center">Content here</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem necessitatibus earum velit sequi rerum, deserunt enim excepturi illo quam ab tempora repellat placeat quae a saepe at expedita illum deleniti!</p>
-       <hr>
+        <div class="container">
+
+            <h1 class="text-center">Welcome to AskMatt.com!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem necessitatibus earum velit sequi rerum,
+                deserunt enim excepturi illo quam ab tempora repellat placeat quae a saepe at expedita illum deleniti!
+            </p>
+        </div>
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -128,10 +133,16 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center">Content here</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi culpa. Commodi maxime rem doloribus quis.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi culpa. Commodi maxime rem doloribus quis.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi culpa. Commodi maxime rem doloribus quis.</p>
+                    <h1 class="text-center">Meet Matt</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus
+                        vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi
+                        culpa. Commodi maxime rem doloribus quis.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus
+                        vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi
+                        culpa. Commodi maxime rem doloribus quis.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ex illum necessitatibus
+                        vitae nobis. Molestiae iste voluptatum mollitia, eveniet ut quis architecto molestias nisi
+                        culpa. Commodi maxime rem doloribus quis.</p>
                 </div>
             </div>
         </div>
@@ -142,7 +153,7 @@
     </footer>
 
     <!-- Page-specific code -->
-    <script src="./landing.js"></script>
+    <script src="scripts/landing.js"></script>
 </body>
 
 </html>
