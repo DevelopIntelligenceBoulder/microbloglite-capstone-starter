@@ -24,7 +24,7 @@ function postFetch () {
             {const pContainer = document.createElement("p")
             pContainer.innerText = post.text
             postContainer.append(pContainer)}
-             )
+            )
         
         )
             
