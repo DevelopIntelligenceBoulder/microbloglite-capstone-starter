@@ -1,4 +1,5 @@
-<!doctype html>
+
+ <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -37,92 +38,62 @@
           </ul>
           <div class="container">
             <div class="row">
-                <div class="col-md-3 left-sidebar" id="">
+              <!--left side bar-->
+                <div class="col-md-3 left-sidebar">
                   <button type="button" class="btn btn-secondary edit-profile-button">Edit Profile</button>
                     <img class="profile-pic" src="images/profile-icon-9.png" alt="User Profile Picture" style="margin-left: 30%;"> 
                     <div class="username-name" style="margin-left: 19%;">
-                      <h4>@username</h4>
+                      <h4 id="username">@username</h4>
                     </div>
-                    <button type="button" class="btn btn-secondary" style="margin-left: 14%;">Your Recent Posts</button>
+                    <button type="button" id="recentPostId"  class="btn btn-secondary" style="margin-left: 14%;">Your Recent Posts</button>
                     <div class="container" alt="follower.count" style="display:flex; flex-direction: row; justify-content: space-around; margin-top: 10px;" >
                       
-                      <h4>18 followers</h4> <h4>26 Posts</h4>
+                      <h4 id="usersFollowers">18 followers</h4> <h4 id="usersPostsCount">6 Posts</h4>
                     </div>
-                    <div class="post">
+                    <div class="UserspersonalPost">
                         <div class="post-header">
                                 <img src="images/profile-icon-9.png"    alt="Profile Picture">
-                                <h5>User123</h5>
+                                <h5 id="personalUserName">User123</h5>
                             </div>
-                            <div class="post-content">
+                            <div class="personalPostpost-content" id="personalPostpost-content" >
                               <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
                             </div>
                             <p><small>June 23, 2023 </small></p>
                     </div>
-                    <div class="post">
-                      <div class="post-header">
-                        <img src="images/profile-icon-9.png"    alt="Profile Picture">
-                        <h5>User123</h5>
-                    </div>
-                    <div class="post-content">
-                      <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
-                    </div>
-                    <p><small>June 23, 2023 </small></p>
-                    </div>
-                    <div class="post">
-                      <div class="post-header">
-                        <img src="images/profile-icon-9.png"    alt="Profile Picture">
-                        <h5>User123</h5>
-                    </div>
-                    <div class="post-content">
-                      <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
-                    </div>
-                    <p><small>June 23, 2023 </small></p>
-                    </div>
                 </div>
+                <!--main Content-->
                 <div class="col-md-6 main-content" id="main-content">
                     <div class="container" id="form-container" style="background-color: rgb(249, 249, 249); border-radius: 20px; margin-bottom: 10%;">
                         <form id="postForm">
-                            <div class="form-group">
+                            <div class="form-group" id="formGroup">
                                 <label for="postContent">Post Content:</label>
-                                <textarea class="form-control" id="postContent" rows="4" required></textarea>
+                                <textarea class="form-control" id="form-control" rows="4" required></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="postImage">Upload Image:</label>
-                                <input type="file" class="form-control-file" id="postImage">
+                            <div class="form-group" id="groupformImage">
+                                <label for="postImage" id="postImage">Upload Image:</label>
+                                <input type="file" class="form-control-file" id="postImages">
                             </div>
-                            <button type="submit" class="btn btn-secondary">Submit</button>
+                            <button type="submit" id="Bttnpostsubmit" class="btn btn-secondary">Submit</button>
                         </form>
                     </div>
-                    <div class="container-form" id="container-form">
-                        <div class="post" id="post">
-                            <div class="post-header" id="post-header">
+                    <div class="container-form" id="CardPosted">
+                        <div class="post" id="divPost">
+                            <div class="post-header" id="divPostheader">
                                 <img src="images/profile-icon-9.png"    alt="Profile Picture">
-                                <h5>User123</h5>
+                                <h5 id="userNameDisplayhere">User123</h5>
                             </div>
-                            <div class="post-content" id="post-content">
+                            <div class="post-content" id="WhereContentWillBeHeld">
                               <p><strong>🌟 Exciting News! 🌟</strong></p>
                               <img src="images/profile-icon-9.png" alt="Image 1">
-                              <p id="contentForm">Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
+                              <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
                             </div>
                             <p id="dateForm"><small>June 23, 2023 </small></p>
                         </div>
-                        <div class="container-form" id="container-form">
-                          <div class="post" id="post">
-                              <div class="post-header" id="post-header">
-                                  <img src="images/profile-icon-9.png"    alt="Profile Picture">
-                                  <h5>User123</h5>
-                              </div>
-                              <div class="post-content" id="post-content">
-                                <p><strong>🌟 Exciting News! 🌟</strong></p>
-                                <img src="images/profile-icon-9.png" alt="Image 1">
-                                <p id="contentForm">Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
-                              </div>
-                              <p id="dateForm"><small>June 23, 2023 </small></p>
-                          </div>
                     </div>
                 </div>
-                <div class="col-md-3 right-sidebar">
-                  <div class="friend-profile">
+                <!--Left Sidebar-->
+                <div class="col-md-3 right-sidebar" id="rightSideBar">
+                  <div class="friend-profile" id="usersFriendsProfile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots-fill" viewBox="0 0 16 16">
                       <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
                     </svg>
