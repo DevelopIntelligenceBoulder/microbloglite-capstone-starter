@@ -16,10 +16,12 @@ signUpBtn.addEventListener('click', () => {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
-            Authorization: `Bearer ${loginData.token}`,
+            // Authorization: `Bearer ${loginData.token}`,
             'Content-type': 'application/json; charset=utf-8'}
-    }).then((response) => response.json()).then(data => {
-        console.log(data);
     });
-
+    // .then((response) => response.json()).then(data => {
+    //     console.log(data);
+    // });
+    
+    return false
 });
