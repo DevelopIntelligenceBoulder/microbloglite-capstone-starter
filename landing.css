@@ -14,6 +14,13 @@
   text-align: center;
 }
 
-.reg {
-  text-align: center;
+.jumbotron {
+  height:100%;
+  width:100%;
 }
+.container {
+  width:1025px;
+}
+.jumbotron .container {
+  max-width: 100%;
+} 

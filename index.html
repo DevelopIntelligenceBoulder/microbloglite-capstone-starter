@@ -84,22 +84,8 @@
 
     <main>
       <h1 class="titleOfPage">WELCOME TO PROJECT RIBBIT</h1>
-
-      <div class="aboutUs">
-        <h2>Who are We</h2>
-        <p class="bigPara">
-          Ribbit was created by 4 amazing coders. We created Ribbit with the aim
-          of fostering a vibrant online community dedicated to sharing and
-          discussing topics related to personal growth, self-improvement, and
-          well-being. Our primary motivation was to create a space where
-          individuals from all walks of life could come together to exchange
-          ideas, experiences, and insights, ultimately inspiring and empowering
-          one another.
-        </p>
-        <br />
-        <h2>How to Use the App</h2>
-        <p class="howTo">this section is use to explain how to use the app</p>
-      </div>
+      <br />
+      <br />
 
       <form id="login">
         <div class="user">
@@ -113,15 +99,113 @@
         </div>
         <br />
         <div class="log">
+          <button
+            id="loginButton"
+            type="submit"
+            class="btn btn-primary btn-block mb-3"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+
+      <br />
+      <div class="jumbotron">
+        <div class="container text-center">
+          <div class="aboutUs">
+            <h2>Who are We</h2>
+            <p class="bigPara">
+              Ribbit was created by 4 amazing coders. We created Ribbit with the
+              aim of fostering a vibrant online community dedicated to sharing
+              and discussing topics related to personal growth,
+              self-improvement, and well-being. Our primary motivation was to
+              create a space where individuals from all walks of life could come
+              together to exchange ideas, experiences, and insights, ultimately
+              inspiring and empowering one another.
+            </p>
+            <br />
+            <h2>How to Use the Site</h2>
+            <p class="howTo">
+              To use Ribbit all you need to do is sign up. Once you sign up for
+              Ribbit you have full control of the profile. From customizing your
+              profile picture to editing your bio. To simply post on Ribbit, all
+              you must do is fill the message you in the box and hit Ribble and
+              all your friends and see what you post. To view only your own
+              post, you can stay on your own profile page. To view your and your
+              friends post you can click on the post page.
+            </p>
+            <h2>Don't Have an Account</h2>
+            <p class="signing">
+              If you don't have an account? no worries Click on the link below
+              to Sign up!!
+            </p>
+            <a href="">Register</a>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <!-- <form id="login">
+        <div class="user">
+          <label for="username">Username</label>
+          <input type="text" id="username" minlength="3" />
+        
+        </div>
+        <br />
+        <div class="pass">
+          <label for="password">Password</label>
+          <input type="password" id="password" minlength="6" />
+        </div>
+        <br />
+        <div class="log" >
           <button id="loginButton" type="submit">Login</button>
         </div>
       </form>
-      <br />
+      <br /> 
+     -->
 
-      <a class="reg" href="register.html">Register</a>
+      <!-- 
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"> Launch Login</a>
+</div> -->
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="container text-center text-secondary p-5">
+        <p>&copy; TeamRibbit 2023</p>
+      </div>
+    </footer>
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
