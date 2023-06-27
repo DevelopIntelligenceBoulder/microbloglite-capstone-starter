@@ -39,3 +39,12 @@ searchInput.addEventListener('change', (event) => {
   const searchDate = event.target.value;
   filterCommentsByDate(searchDate);
 });
+// profile.js
+
+function logout() {
+  // Perform any necessary logout operations or clear user session if applicable
+
+  // Redirect to index.html
+  window.location.href = "index.html";
+}
+
