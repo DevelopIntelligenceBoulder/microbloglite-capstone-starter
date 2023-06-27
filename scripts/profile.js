@@ -3,7 +3,7 @@
 const logOutBtn = document.getElementById("logOutBtn");
 const postBtn = document.getElementById("postBtn");
 const bioField = document.getElementById("bioInput");
-const postField = document.getElementById("postInput")
+const postField = document.getElementById("postField")
 
 const loginData = getLoginData();
 const token = loginData.token;
@@ -18,9 +18,10 @@ function onLogoutBtnClicked(){
     logout();
 }
 
+console.log("it works ln 21")
 function onPostBtnClicked() {
     let bodyData = {
-        "text": postField.value
+        text: postField.value
     }
     fetch(apiBaseURL + "/api/posts", {
         method: "POST",
@@ -28,7 +29,7 @@ function onPostBtnClicked() {
         headers: {
             "Content-type": "application/json; charset=UTF-8",
             Authorization: `Bearer ${loginData.token}`
-        }
+        } 
             .then(response => response.JSON())
             .then(post => {
                 //Success msg
