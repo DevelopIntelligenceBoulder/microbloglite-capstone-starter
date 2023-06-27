@@ -1,1 +1,11 @@
 /* Landing Page CSS */
+
+body {
+    background-image: url('../assets/fitblog-photo.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+  }
