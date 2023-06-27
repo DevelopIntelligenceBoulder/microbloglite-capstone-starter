@@ -21,7 +21,7 @@
                         Profile Page
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        <li><a class="dropdown-item" href="index.html" onclick="logout()">Sign Out</a></li>
                         <li><a class="dropdown-item" href="profile.html">Visit Profile</a></li>
                     </ul>
                 </li>
@@ -34,9 +34,48 @@
                 <li class="nav-item">
                     <a class="nav-link" href="registration.html">Registration Page</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                       aria-controls="offcanvasNavbar">
+                        <img src="" alt="Profile Picture" class="profile-picture">
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Profile Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Offcanvas Navbar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Profile Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Profile</a></li>
+                <li class="list-group-item"><a href="#">Settings</a></li>
+                <li class="list-group-item"><a href="#">Help</a></li>
+            </ul>
+        </div>
+    </div>
 
 <div class="container">
     <div class="card profile-header">
