@@ -37,7 +37,7 @@
           </ul>
           <div class="container">
             <div class="row">
-                <div class="col-md-3 left-sidebar">
+                <div class="col-md-3 left-sidebar" id="">
                   <button type="button" class="btn btn-secondary edit-profile-button">Edit Profile</button>
                     <img class="profile-pic" src="images/profile-icon-9.png" alt="User Profile Picture" style="margin-left: 30%;"> 
                     <div class="username-name" style="margin-left: 19%;">
@@ -79,7 +79,7 @@
                     <p><small>June 23, 2023 </small></p>
                     </div>
                 </div>
-                <div class="col-md-6 main-content">
+                <div class="col-md-6 main-content" id="main-content">
                     <div class="container" id="form-container" style="background-color: rgb(249, 249, 249); border-radius: 20px; margin-bottom: 10%;">
                         <form id="postForm">
                             <div class="form-group">
@@ -93,31 +93,32 @@
                             <button type="submit" class="btn btn-secondary">Submit</button>
                         </form>
                     </div>
-                    <div class="container-form">
-                        <div class="post">
-                            <div class="post-header">
+                    <div class="container-form" id="container-form">
+                        <div class="post" id="post">
+                            <div class="post-header" id="post-header">
                                 <img src="images/profile-icon-9.png"    alt="Profile Picture">
                                 <h5>User123</h5>
                             </div>
-                            <div class="post-content">
+                            <div class="post-content" id="post-content">
                               <p><strong>🌟 Exciting News! 🌟</strong></p>
                               <img src="images/profile-icon-9.png" alt="Image 1">
-                              <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
+                              <p id="contentForm">Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
                             </div>
-                            <p><small>June 23, 2023 </small></p>
+                            <p id="dateForm"><small>June 23, 2023 </small></p>
                         </div>
-                        <div class="post">
-                          <div class="post-header">
-                              <img src="images/profile-icon-9.png" alt="Profile Picture">
-                              <h5>User123</h5>
+                        <div class="container-form" id="container-form">
+                          <div class="post" id="post">
+                              <div class="post-header" id="post-header">
+                                  <img src="images/profile-icon-9.png"    alt="Profile Picture">
+                                  <h5>User123</h5>
+                              </div>
+                              <div class="post-content" id="post-content">
+                                <p><strong>🌟 Exciting News! 🌟</strong></p>
+                                <img src="images/profile-icon-9.png" alt="Image 1">
+                                <p id="contentForm">Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
+                              </div>
+                              <p id="dateForm"><small>June 23, 2023 </small></p>
                           </div>
-                          <div class="post-content">
-                            <p><strong>🌟 Exciting News! 🌟</strong></p>
-                            <img src="images/profile-icon-9.png" alt="Image 1">
-                            <p>Hey everyone! I'm thrilled to announce that my new project is finally complete. 🎉 </p>
-                          </div>
-                          <p><small>June 23, 2023 </small></p>
-                      </div>
                     </div>
                 </div>
                 <div class="col-md-3 right-sidebar">
@@ -140,5 +141,6 @@
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="./scripts/posts.js"></script>
   </body>
 </html>
