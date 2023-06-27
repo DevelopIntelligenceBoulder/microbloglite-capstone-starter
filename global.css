@@ -34,3 +34,9 @@ img {
   width: 154px;
   height: auto;
 }
+
+.logout {
+  padding-left: 148rem;
+  display: flex;
+  justify-content: space-between;
+}
