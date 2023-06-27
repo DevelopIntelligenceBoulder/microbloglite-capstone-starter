@@ -22,10 +22,3 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
-
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
