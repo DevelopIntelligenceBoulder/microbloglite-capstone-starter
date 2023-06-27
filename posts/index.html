@@ -24,6 +24,7 @@
     ></script>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../posts/posts.js"></script>
     <script src="../auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
@@ -65,7 +66,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="../posts/index.html">Post</a>
               </li>
-              <div class="logout">
+              <div id="logoutButton" class="logoutButton">
                 <button>logout</button>
               </div>
             </ul>
@@ -76,7 +77,7 @@
 
     <h1>Welcome user</h1>
     <main>
-      
+      <form action=""></form>
     </main>
 
     <footer></footer>
