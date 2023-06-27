@@ -25,7 +25,6 @@ function isLoggedIn() {
 // and feel free to re-use parts of it for other `fetch()` requests
 // you may need to write.
 function login(loginData) {
-  const loginData = loginData;
   // POST /auth/login
   const options = {
     method: "POST",
