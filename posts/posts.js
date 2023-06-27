@@ -1,46 +1,21 @@
 /* Posts Page JavaScript */
 
-console.log("js working");
+"use strict";
 
-const registerForm = document.querySelector("#register");
-const messagePEl = document.getElementById("messageP");
+// Function to handle the logout action
+function logout() {
+  // Clear any authentication-related data (replace this with your own implementation)
+  clearAuthentication();
 
-registerForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (
-    registerForm.registrationConfirmPassword.value !==
-    registerForm.registrationPassword.value
-  ) {
-    return;
-  }
-  const registrationBody = {
-    username: registerForm.registrationUsername.value,
-    fullName: registerForm.registrationFullname.value,
-    password: registerForm.registrationPassword.value,
-  };
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(registrationBody),
-  };
-  fetch(apiBaseURL + "/api/users", options)
-    .then((response) => response.json())
-    .then((acctCreation) => {
-      messagePEl.textContent = "Success, returning to login...";
-      setTimeout(() => {
-        window.location.href = "../index.html";
-      }, 1000);
-    })
-    .catch((err) => {
-      messagePEl.textContent = "An error has occurred. Please try again later.";
-    });
-});
+  // Redirect the user to the home page
+  window.location.replace("/");
+}
 
-// logout button event listener
-const logoutButton = document.getElementById("logoutButton");
-logoutButton.addEventListener("click", function() {
-  // User logout button action
-  console.log("User logged out");
+// Add event listener to wait for the DOM content to load
+document.addEventListener("DOMContentLoaded", function() {
+  if (isLoggedIn() === false) window.location.replace("/");
+
+  // Add click event listener to the logout link
+  const logoutLink = document.getElementById("logout");
+  logoutLink.addEventListener("click", logout);
 });
