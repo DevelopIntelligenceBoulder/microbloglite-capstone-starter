@@ -35,7 +35,7 @@ img {
   height: auto;
 }
 
-.logout {
+.logoutButton {
   padding-left: 148rem;
   display: flex;
   justify-content: space-between;
