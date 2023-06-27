@@ -25,6 +25,11 @@
     border-radius: 4px;
 }
 
+h1{
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -41,7 +46,7 @@
     padding: 2px 16px;
   }
 
-  .button {
+  button {
     border: none;
     color: white;
     padding: 16px 32px;
@@ -54,10 +59,26 @@
     cursor: pointer;
     background-color: white; 
     color: black; 
-    border: 2px solid #cf8537;
+    border: 2px solid #FDBE4A;
   }
-  .button:hover {
-    background-color: #4CAF50;
+  button:hover {
+    background-color: #101610;
     color: white;
   }
+
+  body {
+    background-image:radial-gradient(#fff,#FDBE4A, #f19e1a,rgba(184, 103, 45, 0.6), #fff); 
+    background-size: 300% 300%; 
+    animation: color 12s ease infinite; 
+  }
+  @keyframes color { 
+    0%{background-position:0 50%; 
+  }
+  50%{background-position: 100% 50%; 
+  }
+  100%{background-position:0 50%; 
+  }
+}
+
+
   
