@@ -5,7 +5,10 @@ const fullName = document.getElementById('fullName');
 const userName = document.getElementById('userName');
 const password = document.getElementById('password');
 
-signUpBtn.addEventListener('click', () => {
+signUpBtn.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
     console.log('clicked')
     const formData = {
         username: userName.value,
@@ -18,10 +21,9 @@ signUpBtn.addEventListener('click', () => {
         headers: {
             // Authorization: `Bearer ${loginData.token}`,
             'Content-type': 'application/json; charset=utf-8'}
+    })
+    .then((response) => response.json()).then(data => {
+        console.log(data);
+        window.location.href = "index.html"
     });
-    // .then((response) => response.json()).then(data => {
-    //     console.log(data);
-    // });
-    
-    return false
 });
