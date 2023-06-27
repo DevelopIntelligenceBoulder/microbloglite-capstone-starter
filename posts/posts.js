@@ -14,18 +14,18 @@ document.getElementById("newPostBtn").addEventListener("click", () => {
 const postsUrl =
   "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0";
 
-if (isLoggedIn()) {
+async function displayPosts() {
   const authData = getLoginData();
   const options = {
     method: "GET",
     headers: { Authorization: `Bearer ${authData.token}` },
   };
-  fetch(postsUrl, options)
-    .then((res) => res.json())
-    .then((data) => {
-      data.forEach((post) => {
-        const postDate = new Date(post.createdAt);
-        const postContent = `
+  const res = await fetch(postsUrl, options);
+  const data = await res.json();
+
+  return data.forEach((post) => {
+    const postDate = new Date(post.createdAt);
+    const postContent = `
          <li class="post">
              <div class="postDetails">
                <strong class="author">${post.username}</strong>
@@ -33,8 +33,11 @@ if (isLoggedIn()) {
                <small class="timestamp">${postDate.toDateString()}</small>
              </div>
          </li>`;
-        postsList.innerHTML += postContent;
-      });
-      // Found this method at https://medium.com/@macharia3041/build-a-twitter-clone-with-vanilla-javascript-acb672fbdad7
-    });
+    postsList.innerHTML += postContent;
+    // Found this method at https://medium.com/@macharia3041/build-a-twitter-clone-with-vanilla-javascript-acb672fbdad7
+  });
+}
+
+if (isLoggedIn()) {
+  displayPosts();
 }
