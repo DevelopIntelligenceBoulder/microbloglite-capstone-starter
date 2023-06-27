@@ -47,5 +47,15 @@ function createNewUser() {
             // Extract the authentication token from the response data
             const authToken = data.token;
         })
+}
+if (response.ok) {
+    window.location.href = '../index.html'
+}
+else {
+    alert("An unexpexted error has occured. Please try again later.")
+}
 
+function onRegisterBtnClicked() {
+    requireInput();
+    createNewUser();
 }
