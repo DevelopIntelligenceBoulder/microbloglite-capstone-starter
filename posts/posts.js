@@ -8,7 +8,6 @@ getPosts();
 
 function likePost(id) {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
-  console.log(id);
 
   const likeBody = {
     postId: id,
@@ -32,11 +31,31 @@ function likePost(id) {
       const clickedBtn = document.querySelector(`button[id='${id}']`);
       clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
       clickedBtn.classList.add("bg-primary");
-      const likect = +clickedBtn.textContent.substring(6) + 1;
-      clickedBtn.textContent = `like ${likect}`;
+      const likes = getLikes(id);
     })
     .catch((err) => {
       console.log(err, err.status);
+    });
+}
+
+function getLikes(postID) {
+  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  const options = {
+    method: "GET",
+    headers: {
+      // This header is how we authenticate our user with the
+      // server for any API requests which require the user
+      // to be logit gged-in in order to have access.
+      // In the API docs, these endpoints display a lock icon.
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
+  fetch(apiBaseURL + `/api/posts/${postID}`, options)
+    .then((response) => response.json())
+    .then((posts) => {
+      posts.forEach((post) => {
+        return post.likes.length;
+      });
     });
 }
 
@@ -104,13 +123,6 @@ function getPosts() {
 }
 
 // Function to handle the logout action
-function logout() {
-  // Clear any authentication-related data (replace this with your own implementation)
-  clearAuthentication();
-
-  // Redirect the user to the home page
-  window.location.replace("/");
-}
 
 // Add event listener to wait for the DOM content to load
 
