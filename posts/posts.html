@@ -21,10 +21,10 @@
     <title>POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
+ <!--    <script src="../auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
-    </script>
+    </script> -->
 </head>
 <body>
   <nav id="navbar" class="nav">
@@ -33,8 +33,9 @@
       <li><a href="/index.html">Home</a></li>
       <li><a href="/posts/posts.html">Posts</a></li>
       <li><a href="/profile/profile.html">Profile</a></li>
+      <li><a href="/test/test.html">Register</a></li>
     </ul>
-  </nav>
+ </nav>
   
     <div id="page-container">
       <div class="container my-3 my-sm-5">
@@ -42,8 +43,19 @@
         <p></p>
         <h3>Welcome to the Posts</h3>
 
-        <main>
-        </main>
+
+
+      
+      <div class="content">
+              <h3>FEED</h3>
+          <main>
+            <div id="postContainer"></div>
+      
+          </main>
+      
+    
+    </div>
+
 
 
 
