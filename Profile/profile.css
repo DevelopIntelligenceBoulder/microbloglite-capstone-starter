@@ -44,13 +44,13 @@ h1{
 
     margin-top: 2%;
     margin-bottom: 4%;
-    color: #ed7519;
+    color: #456e3cb8;
 }
 
 
 #mainbox{
 
-    background-color: rgba(203, 237, 139, 0.5);
+    background-color: rgba(186, 208, 144, 0.529);
     margin-top: 4%;
 
 }
@@ -62,7 +62,7 @@ h1{
 }
 
 #bio {
-    width: 400px; /* Adjust the width to your desired size */
+   
     border: 4px dotted #83cc8e; /* Add a border */
     padding: 10px; /* Add some padding around the content */
     padding: 1%;

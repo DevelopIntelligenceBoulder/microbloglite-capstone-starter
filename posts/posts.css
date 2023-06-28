@@ -25,7 +25,14 @@
 #recipeText {
     display: flex;
     justify-content: center;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(169, 101, 101);
+    max-width: 85%;
+    font-size: 25px;
+    
 }
+
 
 /* {
     background:linear-gradient(red,green,yellow);
@@ -77,10 +84,10 @@ html {
 
 
 #usersPostCard{
-    border: 4px dotted #73b99b;
+    border: 4px dotted #737bb9;
     padding: 5%;
     border-radius: 20px;
-    background-color: rgba(191, 236, 108, 0.5);
+    background-color: rgba(186, 208, 144, 0.5);
    
 }
 
@@ -115,6 +122,6 @@ html {
 
 #quotecard{
 
-    background-color: rgba(191, 236, 108, 0.5);
+    background-color: rgba(186, 208, 144, 0.5);
 }
 
