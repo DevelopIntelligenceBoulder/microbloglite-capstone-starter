@@ -76,7 +76,7 @@ function getPosts() {
     headers: {
       // This header is how we authenticate our user with the
       // server for any API requests which require the user
-      // to be logged-in in order to have access.
+      // to be logit gged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
       Authorization: `Bearer ${loginData.token}`,
     },
