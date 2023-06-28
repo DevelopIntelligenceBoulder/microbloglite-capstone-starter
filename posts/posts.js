@@ -3,16 +3,10 @@
 
 window.onload = function () {
   const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
-  // console.log(accessToken)
   console.log(JSON.parse(window.localStorage.getItem("login-data")))
   getAllPosts(accessToken);
 };
 
-
-function showUserName() {
-  const currentUser = JSON.parse(window.localStorage.getItem("login-data")).username;
-  return currentUser
-}
 
 // Add a post
 function addPost(accessToken) {
@@ -128,5 +122,6 @@ function loadAllPosts(posts) {
     parentElement.appendChild(cardContainer);
   }
 }
+
 
 

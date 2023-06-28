@@ -26,6 +26,10 @@
     </script>
     <!-- main post JS -->
     <script defer src="./posts.js"></script>
+    <!-- photo page JS -->
+    <script defer src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script defer src="../photoScript.js" type="text/javascript"></script>
+    <script defer src="https://kit.fontawesome.com/708d681e86.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -49,13 +53,33 @@
     <h1>POSTS</h1>
     <main>
         <h5 class="postQ">What keeps you fit?</h4>
-        <div class="container">
-            <div class="mb-3">
-                <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post"></textarea>
+            <div class="container">
+                <div class="mb-3">
+                    <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post"></textarea>
+                </div>
+                <!-- Buttons -->
+                <div>
+                    <button type="button" class="btn btn-primary" id="open-modal-button"><i class="fa-solid fa-camera" style="color: #ffffff;"></i>Add Photo</button>
+                    <button onclick="addPost()" id="addPostButton" class="btn btn-success">Add Post</button>
+                </div>  
+                <!-- Modal for images -->
+                <dialog id="imageDialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Image Preview</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="dialog"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="" id="imagePreview" alt="Uploaded Image" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+
             </div>
-            <button onclick="addPost()" id="addPostButton" class="btn btn-success">Add Post</button>
-        </div>
-        <div id="postContainer" class="container mt-4"></div>    
+            <div id="postContainer" class="container mt-4"></div>
     </main>
 
     <footer></footer>
