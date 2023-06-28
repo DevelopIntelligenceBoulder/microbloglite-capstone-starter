@@ -29,86 +29,89 @@
     </script>
 </head>
 
-<body>
-    <div class="px-3 py-2 text-bg-dark">
+<body class="text-bg-dark">
+    <header class="p-3 mb-3 border-bottom border-secondary">
         <div class="container">
-            <div class="row">
-                <div class="col-1">
-                    <!--company logo-->
-                    <img class="logo" src="#" alt="logo">
-                </div>
-                <div class="col-11">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/"
-                            class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <img src="../global-images/micro_co_logo.png" width="80">
+              <h1 class="text-light">Chatter</h1>
+            </a>
+    
+            <ul class="nav col-8 mb-2 justify-content-center mb-md-0 nav-pills">
+              <li><a href="../posts/posts.html" class="nav-link px-2 link-light me-2">Timeline</a></li>
+              <li><a href="../profile/profile.html" class="nav-link px-2 link-dark active">My Profile</a></li>
+            </ul>
 
-                            <!--Website name-->
-                            <header class="website-heading"> <i><b>The Micro Co Post Website</b></i>
-                            </header>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM=" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                  <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#" id="logoutBtn">Sign out</a></li>
+                </ul>
+              </div>
 
-                        </a>
-                        <!--navbar open-->
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li>
-                                <a href="#" class="nav-link text-secondary">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#home"></use>
-                                    </svg>
-                                    Link
-                                    <i class="bi bi-house"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="posts.html" class="nav-link text-white">
-                                    <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                        <use xlink:href="#table"></use>
-                                    </svg>
-                                    Link 
-                                    <i class="bi bi-house"></i>
-                                </a>
-                            </li>
-                            <!--Username here, clickable with dropdown button showing logout and profile bio-->
-                           
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
+          </div>
         </div>
+      </header>
+      <div class="container">
+    <h1>PROFILE PAGE</h1>
     </div>
-    <br>
-    <h1>PROFILE PAGE:</h1>
     <main>
-        <div class="container">
-            <p id="userName"></p> 
-            <button type="button" class="btn btn-danger">Log out</button>
-        </div>
-        <hr>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <div id="createPostsSection">
-                        <textarea id="createPostInput" class="form-control"></textarea>
-                        <button type="button" class="btn btn-primary mt-2" id="postBtn">Post</button>
-                    </div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9">
+                  <h2>Create a post</h2>
+                  <div id="createPostsSection">
+                    <textarea id="createPostInput" class="form-control" placeholder="Create a post..."></textarea>
+                    <button type="button" class="btn btn-info mt-2" id="postBtn">Post</button>
+                  </div>
                 </div>
+              </div>
+        
+              <h2 class="d-flex justify-content-center border-bottom border-top border-secondary mt-3 py-3">Timeline</h2>
+        
+              <div id="displayPostsDiv">
+                <template id="postDisplay">
+                  <div class="border-bottom border-secondary p-3">
+                    <h3></h3>
+                    <p></p>
+                    <small></small>
+                    <button type="button" class="btn btn-outline-danger" id="likeBtn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+                        viewBox="0 0 16 16" id="heartIcon">
+                        <path
+                          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                      </svg>
+                      <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-heart-fill" viewBox="0 0 16 16" id="filledHeartIcon">
+                          <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-outline-info">Comment</button>
+        
+                  </div>
+                </template>
+        
+              </div>
             </div>
-
-            <hr>
-
-            <div id="displayPostsDiv">
-                <p>Posts go here</p>
-            </div>
-        </div>
-    </main>
+          </main>
+        
+    
 
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="profile.js"></script>
+    
 
 </body>
 

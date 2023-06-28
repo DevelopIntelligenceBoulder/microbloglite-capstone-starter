@@ -2,93 +2,113 @@
 
 "use strict";
 
-console.log('hi')
+console.log("hi");
 
-const createPostsDiv = document.getElementById('createPostsSection')
-const createPostInput = document.getElementById('createPostInput')
-const postBtn = document.getElementById('postBtn')
-const logoutBtn = document.getElementById('logoutBtn')
+const createPostsDiv = document.getElementById("createPostsSection");
+const createPostInput = document.getElementById("createPostInput");
+const postBtn = document.getElementById("postBtn");
+const logoutBtn = document.getElementById("logoutBtn");
 
-const displayPostsDiv = document.getElementById('displayPostsDiv');
+const displayPostsDiv = document.getElementById("displayPostsDiv");
 
-const postDisplayTemplate = document.getElementById('postDisplay')
+const postDisplayTemplate = document.getElementById("postDisplay");
 
-const likeBtn = document.getElementById('likeBtn');
+const likeBtn = document.getElementById("likeBtn");
 
-postBtn.addEventListener('click', () => {
-    console.log(createPostInput.value)
+const profileLinkEl = document.getElementById(`profileLink`);
+//------------------------------------------------------------------
 
-    // fetch("https://microbloglite.herokuapp.com/api/posts", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         text: createPostInput.value
-    //     }),
-    //     headers: {
-    //         Authorization: `Bearer ${loginData.token}`,
-    //         "Content-type": "application/json; charset=utf-8"
-    //     }
-    // });
+profileLinkEl.addEventListener(`click`, () => {
+  //   fetch(`https://microbloglite.herokuapp.com/api/users/${username}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  window.location.href = `../profile/profile.html?user=${username}`;
 });
 
-logoutBtn.addEventListener('click', () => {
-    logout();
+postBtn.addEventListener("click", () => {
+  console.log(createPostInput.value);
+
+  // fetch("https://microbloglite.herokuapp.com/api/posts", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //         text: createPostInput.value
+  //     }),
+  //     headers: {
+  //         Authorization: `Bearer ${loginData.token}`,
+  //         "Content-type": "application/json; charset=utf-8"
+  //     }
+  // });
+  window.location.reload() = `posts.html`
+});
+
+logoutBtn.addEventListener("click", () => {
+  logout();
 });
 
 window.onload = getPosts;
 
-function getPosts () {
-    const loginData = getLoginData();
+function getPosts() {
+  const loginData = getLoginData();
 
-    const options = { 
-        method: "GET",
-        headers: { 
-            Authorization: `Bearer ${loginData.token}`,
-        },
-    };
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
 
-    fetch("https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0", options)
-        .then(response => response.json())
-        .then((data) => {
+  fetch("https://microbloglite.herokuapp.com/api/posts", options)
+    .then((response) => response.json())
+    .then((data) => {
+      let template;
 
-            // let template, content, username, textPost
+      template = document.getElementById("postDisplay");
 
-            // template = document.getElementById('postDisplay')
+      data.forEach((post) => {
+        // const content = `
+        // <div class="border p-3 m-3">
+        // <h3><span>@</span>${post.username}</h3>
 
-            // content = template.content
+        // <p>${post.text}</p>
 
-            // username = document.querySelectorAll('h3')
-            // username.textContent = data.username;
+        // <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
+        // </div>
+        // `
+        // const createButton = document.createElement('button')
+        // createButton.setAttribute('type','button')
+        // createButton.classList.add('btn', 'btn-danger')
+        // createButton.textContent = 'Like'
 
-            // textPost = document.querySelectorAll('h3 > p')
-            // textPost.textContent = data.text;
-            
-            data.forEach((post) => {
+        // displayPostsDiv.innerHTML += content;
 
-                const content = `
-                <div class="border p-3 m-3">
-                <h3><span>@</span>${post.username}</h3>
+        // displayPostsDiv.append(createButton);
 
-                <p>${post.text}</p>
+        if ("content" in document.createElement("template")) {
+          const postEl = template.content.cloneNode(true);
 
-                <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
-                </div>
-                `
-                const createButton = document.createElement('button')
-                createButton.setAttribute('type','button')
-                createButton.classList.add('btn', 'btn-danger')
-                createButton.textContent = 'Like'
+          const username = postEl.querySelector("h3");
+          username.textContent = post.username;
 
-                displayPostsDiv.innerHTML += content;
+          const postText = postEl.querySelector("p");
+          postText.textContent = post.text;
 
-                displayPostsDiv.append(createButton);
-                
-                // if("content" in document.createElement("template")) {
+          const timeStamp = postEl.querySelector("small");
+          timeStamp.textContent = post.createdAt;
 
-                //     displayPostsDiv.appendChild(template);
-                // }
-                
-            })
-        });
+          const likeBtn = postEl.querySelector("button");
+          likeBtn.addEventListener("click", () => {
+            const heartIcon = document.getElementById("heartIcon");
+            const filledHeartIcon = document.getElementById("filledHeartIcon");
+
+            heartIcon.style.display = "none";
+            filledHeartIcon.style.display = "flex";
+
+            // fetch()
+          });
+
+          displayPostsDiv.appendChild(postEl);
+        }
+      });
+    });
 }
-
-

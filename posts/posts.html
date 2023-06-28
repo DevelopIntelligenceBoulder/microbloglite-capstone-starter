@@ -1,72 +1,130 @@
 <!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+  <!-- Global CSS (CSS rules you want applied to all pages) -->
+  <link rel="stylesheet" href="../global.css">
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./posts.css">
 
-    <title>/POSTS</title>
+  <title>/POSTS</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
-    <script>
-        if (isLoggedIn() === false) window.location.replace("/");
-    </script>
+  <!-- Run BEFORE page is finished loading (before window.onload): -->
+  <script src="../auth.js"></script>
+  <script>
+    if (isLoggedIn() === false) window.location.replace("/");
+  </script>
+
+  <!-- heart icon -->
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+      </svg> -->
 </head>
-<body>
 
-    <header>
+<body class="text-light bg-dark">
+
+  <!-- <header>
         <h1>POSTS PAGE</h1>
         <a href="#">My Profile</a>
         <a href="#">Posts</a>
-        <button type="button" class="btn btn-danger" id="logoutBtn">Logout</button>
-    </header>
+    </header> -->
+  <!-- <button type="button" class="btn btn-danger" >Logout</button> -->
 
-    <hr>
 
-    <main>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <div id="createPostsSection">
-                        <textarea id="createPostInput" class="form-control" placeholder="Create a post..."></textarea>
-                        <button type="button" class="btn btn-primary mt-2" id="postBtn">Post</button>
-                    </div>
-                </div>
-            </div>
+  <header class="p-3 mb-3 border-bottom border-secondary">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+          <img src="../global-images/micro_co_logo.png" width="80">
+          <h1 class="text-light">Chatter</h1>
+        </a>
 
-            <hr>
+        <ul class="nav col-8 mb-2 justify-content-center mb-md-0 nav-pills">
+          <li><a href="./posts.html" class="nav-link px-2 link-dark me-2 active">Timeline</a></li>
+          <li><a href="../profile/profile.html" class="nav-link px-2 link-light" id="profileLink">My Profile</a></li>
+        </ul>
 
-            <div id="displayPostsDiv">
-                <h2>Timeline</h2>
-                <!-- <template id="postDisplay">
-                    <h3></h3>
-                    <p></p>
-                    <p></p>
-                    <button type="button" class="btn btn-danger" id="likeBtn">like</button>
-                </template> -->
-
-            </div>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img
+              src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM="
+              alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" id="logoutBtn">Sign out</a></li>
+          </ul>
         </div>
-    </main>
 
-    <footer></footer>
+      </div>
+    </div>
+  </header>
 
-    <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+  <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <h2>Create a post</h2>
+          <div id="createPostsSection">
+            <textarea id="createPostInput" class="form-control" placeholder="Create a post..."></textarea>
+            <button type="button" class="btn btn-info mt-2" id="postBtn">Post</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="d-flex justify-content-center border-bottom border-top border-secondary mt-3 py-3">Timeline</h2>
+
+      <div id="displayPostsDiv">
+        <template id="postDisplay">
+          <div class="border-bottom border-secondary p-3">
+            <h3></h3>
+            <p></p>
+            <small></small>
+            <button type="button" class="btn btn-outline-danger" id="likeBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+                viewBox="0 0 16 16" id="heartIcon">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+              </svg>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-heart-fill" viewBox="0 0 16 16" id="filledHeartIcon">
+                  <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg>
+              </span>
+            </button>
+            <button type="button" class="btn btn-outline-info">Comment</button>
+
+          </div>
+        </template>
+
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <!-- Page-specific code -->
+  <script src="./posts.js"></script>
 </body>
+
 </html>
