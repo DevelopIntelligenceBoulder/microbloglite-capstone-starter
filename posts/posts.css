@@ -287,6 +287,10 @@ main {
   border-radius: 20px;
 }
 
+#add-post {
+  margin: 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

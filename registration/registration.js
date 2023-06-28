@@ -93,3 +93,4 @@ let darkIco = document.getElementById('darkIco')
     darkIco.classList.remove('hide')
     lightIco.classList.add('hide')
   }
+  // light/dark mode end

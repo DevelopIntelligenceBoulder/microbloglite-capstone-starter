@@ -27,13 +27,14 @@ function displayEmojis(emojis) {
 
   emojis.forEach(emoji => {
     const emojiSpan = document.createElement('span');
+    emojiSpan.setAttribute('id', 'emojiChar')
     emojiSpan.textContent = emoji.character;
     emojiContainer.appendChild(emojiSpan);
   });
 }
 
 function addEmojiClickListeners(emojis) {
-  const spanElements = Array.from(document.getElementsByTagName('span'));
+  const spanElements = document.querySelectorAll('#emojiChar')
 
   spanElements.forEach(function(spanElement) {
     spanElement.addEventListener('click', function() {
@@ -58,7 +59,7 @@ function xClick() {
 
 document.getElementById('x').addEventListener('click', xClick);
 postTextarea.addEventListener('click', xClick);
-// window.onscroll = xClick;
+window.onscroll = xClick;
 emojiCont.addEventListener('click', getAllEmojis);
 
 function reset(){
@@ -74,7 +75,8 @@ function reset(){
     })
 }
 resetBtn.addEventListener('click', function(){
-    postTextarea.value = ''
+    postTextarea.value = null
     this.classList.add('hide')
 })
 reset()
+
