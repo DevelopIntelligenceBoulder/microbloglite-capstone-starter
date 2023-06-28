@@ -57,28 +57,50 @@ h1{
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
     border: 2px solid #FDBE4A;
   }
+  
   button:hover {
     background-color: #101610;
     color: white;
+    border-color: white; /* Optional: Change the border color on hover */
+  }
+  
+  body {
+    background-image: radial-gradient(#fff, #FDBE4A, #f19e1a, rgba(184, 103, 45, 0.6), #fff);
+    background-size: 300% 300%;
+    animation: color 12s ease infinite;
+  }
+  
+  @keyframes color {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
   }
 
-  body {
-    background-image:radial-gradient(#fff,#FDBE4A, #f19e1a,rgba(184, 103, 45, 0.6), #fff); 
-    background-size: 300% 300%; 
-    animation: color 12s ease infinite; 
-  }
-  @keyframes color { 
-    0%{background-position:0 50%; 
-  }
-  50%{background-position: 100% 50%; 
-  }
-  100%{background-position:0 50%; 
-  }
+  #chat-logo {
+    background-image: url('images\chat bubble icon.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
 }
 
-
+#chat-logo h1 {
+    color: white;
+    text-decoration: underline;
+}
   
+.navbar-brand img {
+  height: 75px; /* Adjust the desired height */
+  width: auto; /* Maintain aspect ratio */
+}
