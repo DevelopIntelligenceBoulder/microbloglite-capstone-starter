@@ -52,7 +52,7 @@ function createPost(content) {
   };
 
   // Make an API request to store the post data
-  fetch(apiBaseURL + "/posts", {
+  fetch(apiBaseURL + "/api/" + "/posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

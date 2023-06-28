@@ -19,7 +19,7 @@ document
     };
 
     // Make an API request to store the user data
-    fetch(apiBaseURL + "/posts", {
+    fetch(apiBaseURL + "/api" + "/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
