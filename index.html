@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,57 +29,48 @@
 </head>
 
 
+
 <body>
 
-    <main>
+    <main> <!--INCLUDES THE HERO IMAGE AND THE LOGIN FORM-->
+
         <div class="px-4 my-4 text-center">
+            <!--HERO IMAGE-->
             <img class="d-block mx-auto" src="media/logo.png" alt="" width="800" height="auto">
             <div class="d-flex flex-wrap justify-content-center" style="margin-left: 2cm;">
             </div>
 
-        <div class="d-flex justify-content-center py-4">
-            <h1 style="font-weight: bold; font-style: italic;">LOGIN</h1>
-        </div>
 
-        <div class="container d-flex flex-wrap justify-content-center">
-            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" style="width: 25rem;"">
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
-                </div>
-                <div class="checkbox mb-3">
-                  <label>
+            <div class="d-flex justify-content-center py-4">
+                <h1 style="font-weight: bold; font-style: italic;">LOGIN</h1>
+            </div>
+            <!--LOGIN FORM-->
+            <div class="container d-flex flex-wrap justify-content-center">
+                <form id="login" class="p-4 p-md-5 border rounded-3 bg-body-tertiary" style="width: 25rem;"">
+                <div class=" form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
                     <input type="checkbox" value="remember-me"> Remember me
-                  </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-                <hr class="my-4">
-                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-              </form>
+                </label>
+            </div>
+            <button id="submitBtn" class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            </form>
         </div>
-
-
-        <!-- <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form> -->
 
     </main>
 
-    <!-- Page-specific code -->
+    <script src="scripts/landing.js"></script> <!--LINKS TO LANDING PAGE-->
 
-    <script src="scripts/landing.js"></script>
 </body>
+
+
+</html>

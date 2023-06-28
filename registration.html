@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +22,7 @@
     <title>Fit Block</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <script src="scripts/auth.js"></script>
     <script>
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
@@ -30,34 +31,46 @@
 
 <body>
 
-    <main>
+    <main> <!--INCLUDES THE JOIN US MESSAGE, LOGO, AND REGISTRATION FORM-->
+
         <div class="container col-xl-10 col-xxl-8 px-4 py-5 grid gap-3">
             <div class="row align-items-center g-lg-5 py-5">
               <div class="col-lg-7">
+                <!--JOIN US MESSAGE & LOGO-->
                 <h1 class="display-4 lh-1 text-body-emphasis justify-content-center" style="font-weight: bold; font-style: italic;">JOIN US!</h1>
                 <img class="d-block" style="padding-right: 4rem" src="media/logo.png" alt="" width="500" height="auto"> 
             </div>
 
-
+<!--REGISTRATION FORM-->
               <div class="col-md-10 mx-auto col-lg-5 px-4 mb-3">
                 <div class="d-flex flex-wrap justify-content-center">
-                    <h1 style="font-weight: bold; font-style: italic;">LOGIN</h1>
+                    <h1 style="font-weight: bold; font-style: italic;">REGISTER</h1>
                 </div>
-                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                <form id= "registerForm" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
+
+                    <input type="text" class="form-control" id="fullNameInput" placeholder="name@example.com">
+                    <label for="floatingInput">Full Name</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="text" class="form-control" id="UsernameInput" placeholder="name@example.com">
+                    <label for="floatingInput">Username</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="pass1Input" placeholder="Password">
                     <label for="floatingPassword">Password</label>
+
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="pass2Input" placeholder="Password">
+                    <label for="floatingPassword">Confirm Password</label>
                   </div>
                   <div class="checkbox mb-3">
                     <label>
-                      <input type="checkbox" value="remember-me"> Remember me
+                      <input type="checkbox" value="remember-me">Remember me
                     </label>
                   </div>
-                  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                  <button class="w-100 btn btn-lg btn-primary" id="registerBtn" type="submit">Sign up</button>
                   <hr class="my-4">
                   <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
                 </form>
