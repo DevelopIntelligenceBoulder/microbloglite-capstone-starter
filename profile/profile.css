@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(8, 19, 63);
+    background-image: url(../assets/thomas-yohei-BAlBUJb-SXQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
 }
 
@@ -40,10 +43,11 @@ main {
 }
 
 .card {
-    background-color: rgb(0, 0, 0);
-    color: antiquewhite;
-    border-color: white;
-    border-width: 2px;
+    background-color: rgba(0, 0, 0, 0.565);
+    color: white;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;  
+    border-radius: 20px;
 }
 
 .card-title {
