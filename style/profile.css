@@ -39,16 +39,36 @@ body {
 
 }
 #FullName{
-  padding-top: 40%;
+  padding-top: 37%;
   padding-left: 10%;
 }
 div.bio-card{
   margin-top: 10%;
-  padding-left: 10%S;
+  padding-left: 10%;
 }
 
 button#logOutBtn.btn.btn-secondary{
   margin-top: 10%;
   margin-left: 20%;
 }
-  
+
+div.EditingContentsHere{
+  margin-top: 20%;
+}
+div#CardContentsHeldHere{
+  margin-top: 10%;;
+}
+button#EditProfileBtn.btn.btn-secondary{ 
+  border:None;
+  outline:none;
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: small;
+}
+button#DoneWithProfileBtn.btn.btn-secondary{ 
+  border:None;
+  outline:none;
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: small;
+}
