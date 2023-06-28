@@ -1,0 +1,11 @@
+.light .mask {
+    background-color: rgba(114, 114, 114, 0.11);
+  background-color: rgba(0, 0, 0, 0.192);
+
+}
+.light .wrapper-alt{
+    background-color: #ffffff52;
+}
+.light main label, .light .login-register p {
+    color: #000000d2;
+  }
