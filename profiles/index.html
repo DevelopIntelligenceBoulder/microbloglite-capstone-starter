@@ -43,12 +43,23 @@
         <button class="btn btn-outline-danger" id="logoutBtn">Logout</button>
       </div>
     </header>
-
-    <main></main>
+    <main>
+      <form>
+        <textarea
+          class="form-control"
+          id="newContent"
+          placeholder="New Post"
+        ></textarea>
+        <button class="btn btn-primary" type="submit" id="createBtn">
+          Create post
+        </button>
+      </form>
+    </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="./new-post.js"></script>
     <script src="/profiles/profiles.js"></script>
   </body>
 </html>
