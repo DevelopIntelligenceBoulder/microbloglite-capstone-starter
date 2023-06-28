@@ -46,31 +46,45 @@
     </header>
 
     <body>
-      <form class="login-form">
-        <div class="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" />
+      <div class="container">
+        <div class="card">
+          <div class="card-top d-flex justify-content-center">
+            <img src="/images/images (6).jpg" alt="donut" />
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  title="Must be a valid email address"
+                  pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
+                  type="email"
+                  class="form-control"
+                  id="Email"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input
+                  title="Must be atleast 8 characters"
+                  pattern="[a-zA-Z0-9]{8,}"
+                  type="password"
+                  class="form-control"
+                  id="Password"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="Check" />
+                <label class="form-check-label" for="Check">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Blasting Off Away!
+              </button>
+            </form>
           </div>
         </div>
-        <div class="row mb-3">
-          <label for="inputPassword3" class="col-sm-2 col-form-label"
-            >Password</label
-          >
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" />
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-sm-10 offset-sm-2"></div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-
-        <p>
-          Don't have an account?
-          <a href="../html/registration.html">Register here</a>
-        </p>
-      </form>
+      </div>
     </body>
 
     <footer></footer>
