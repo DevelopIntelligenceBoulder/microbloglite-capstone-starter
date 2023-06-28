@@ -31,7 +31,6 @@
     ></script>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../posts/posts.js"></script>
     <script src="../auth.js"></script>
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
@@ -82,38 +81,29 @@
         </div>
       </nav>
     </header>
-
-    <a href="../profile/">Profile</a>
-  
+    <h1 id="welcomeMessage" class="welcomeMessage"></h1>
     <main>
       <button class="logoutButton" id="logoutButton">logout</button>
       <h1><span id="welcomeMessage"></span></h1>
-    </main>
-    <div class="container">
-      <form>
-        <div class="form-group">
-          <textarea
-            class="form-control status-box"
-            rows="2"
-            placeholder="What's on your mind?"
-          ></textarea>
-        </div>
+      <form class="statusUpdate" id="statusUpdate">
+        <textarea
+          name="statusText"
+          id="statusText"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button type="submit">Post</button>
       </form>
-      <div class="button-group pull-right">
-        <p class="counter">140</p>
-        <a href="#" class="btn btn-primary" id="postButton">Post</a>
-      </div>
+    </main>
 
-      <ul class="posts"></ul>
-    </div>
+    <ul class="postContent"></ul>
+
     <div id="feed"></div>
 
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="../posts/posts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <script src="app.js"></script>
   </body>
 </html>
