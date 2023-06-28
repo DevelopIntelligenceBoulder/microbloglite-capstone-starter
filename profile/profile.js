@@ -19,3 +19,10 @@ postBtnEl.addEventListener(`click`, () => {
     .then((response) => response.json())
     .then((posts) => {});
 });
+//----------------------------------------------------------------------------------
+const userNameUrl = `https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0&username=A007`;
+fetch(userNameUrl)
+  .then((response) => response.json())
+  .then((post) => {
+    console.log(post);
+  });
