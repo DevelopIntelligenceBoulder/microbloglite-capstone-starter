@@ -26,8 +26,9 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
-<body>
-    <ul class="nav justify-content-end bg-dark" style="height: 80px;">
+<body class="bg-dark">
+    <!--
+    <ul class="nav justify-content-end bg-warning border-bottom border-secondary" style="height: 80px;">
         <li class="nav-item">
            <a href="register.html"><button id="" type="submit" class="btn btn-outline-primary">Sign Up</button></a> 
         </li>
@@ -36,26 +37,64 @@
         </li>
       </ul>
     <header class="container d-flex justify-content-center mb-5">
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+    </header> -->
+    
+    <header class="p-3 mb-3 border-bottom border-secondary">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+              <img src="global-images/micro_co_logo.png" width="80">
+              <h1 class="text-light">Chatter</h1>
+            </a>
+    
+            <ul class="nav col-8 mb-2 justify-content-md-end justify-content-sm-center mb-md-0">
+              <li><a href="./register.html" class="px-2 btn btn-outline-info text-light me-2">Sign Up</a></li>
+              <li><a href="./index.html" class="px-2 btn btn-warning link-body-emphasis">Login</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </header>
 
     <main>
-        <form id="login" class="container border border-dark rounded w-25">
+        <a href="./register.html" class="link-light d-flex justify-content-center mb-3">Don't have an account? Sign Up</a>
+
+        <form id="login" class="container border border-warning rounded w-50 p-3 text-light">
+            <h2 class="d-flex justify-content-center mt-3">Log In</h2>
                 <div>
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" minlength="3">
+                <input type="text" class="form-control bg-dark text-light border-secondary" id="username" minlength="3">
             </div>
 
             <div>
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" minlength="6">
+                <input type="password" class="form-control bg-dark text-light border-secondary" id="password" minlength="6">
             </div>
 
-            <button id="loginButton" class="btn btn-primary mt-3 mb-3" type="submit">Login</button>
+            <button id="loginButton" class="btn btn-warning mt-3 mb-3 col-12" type="submit">Login</button>
         </form>
     </main>
 
-    <footer></footer>
+    <!-- footer -->
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top border-secondary">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1">
+                <img src="global-images/micro_co_logo.png" width="40">
+            </a>
+            <span class="mb-3 mb-md-0 text-light">Chatter</span>
+          </div>
+          <span class="mb-3 mb-md-0 text-secondary">&copy; 2023 Company, Inc</span>
+
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-light" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+            <li class="ms-3"><a class="text-light" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+            <li class="ms-3"><a class="text-light" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+          </ul>
+        </footer>
+      </div>
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
