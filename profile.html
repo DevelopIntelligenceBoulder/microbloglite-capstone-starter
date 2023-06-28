@@ -4,7 +4,6 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/profile.css">
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -15,34 +14,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Profile Page
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="index.html" onclick="logout()">Sign Out</a></li>
-                        <li><a class="dropdown-item" href="profile.html">Visit Profile</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="landing.html">Landing Page/Login Page</a>
+                    <a class="nav-link" href="registration.html">Make An Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="posts.html">Posts Page</a>
+                    <a class="nav-link" href="index.html">Logout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.html">Registration Page</a>
-                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                        aria-controls="offcanvasNavbar">
-                        <img src="" alt="Profile Picture" class="profile-picture">
+                        <img src="images/Virgil1.jpg" alt="Profile Picture" class="profile-picture">
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
+
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Profile Menu</h5>
@@ -51,112 +43,98 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="profile.html">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="registration.html">Make An Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="index.html">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-    <!-- Offcanvas Navbar -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Profile Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="#">Profile</a></li>
-                <li class="list-group-item"><a href="#">Settings</a></li>
-                <li class="list-group-item"><a href="#">Help</a></li>
-            </ul>
-        </div>
-    </div>
 
-<div class="container">
-    <div class="card profile-header">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="images/Virgil1.jpg" alt="Profile Picture" class="card-img">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Virgil Abloah</h5>
-                    <p class="card-text">Birthdate: January 1, 1990</p>
-                    <p class="card-text">Email: VirigilAbloah@gmail.com</p>
+    <div class="container">
+        <div class="card profile-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/Virgil1.jpg" alt="Profile Picture" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Virgil Abloh</h5>
+                        <p class="card-text">Birthdate: January 1, 1990</p>
+                        <p class="card-text">Email: virgilabloh@gmail.com</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="search-form">
-        <input type="date" class="search-input" id="commentDate" />
-        <button class="btn btn-primary" onclick="searchComments()">Search</button>
-    </div>
+        <div class="search-form">
+            <input type="date" class="search-input" id="commentDate" />
+            <button class="btn btn-primary" onclick="searchComments()">Search</button>
+        </div>
 
-    <div class="card profile-comments">
-        <div class="card-body">
-            <h5 class="card-title">Past Comments</h5>
+        <div class="card profile-comments">
+            <div class="card-body">
+                <h5 class="card-title">Past Comments</h5>
 
-            <div id="commentContainer">
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Hey Matt, How do I access and utilize APIs properly?</p>
-                        <p class="card-text"><small class="text-muted">June 10, 2023</small></p>
-                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">Understand the API: Read the API documentation to understand its purpose, functionality, and available endpoints. Pay attention to the authentication methods required (e.g., API keys, OAuth, etc.) and any rate limits imposed by the API provider.</li>
-                            <li class="list-group-item">Obtain API Credentials: If the API requires authentication, sign up for an API key or access token from the provider. This typically involves creating an account and following their authentication process.</li>
-                        </ul>
+                <div id="commentContainer">
+                    <div class="card comment-card">
+                        <div class="card-body">
+                            <p class="card-text">Hey Matt, How do I access and utilize APIs properly?</p>
+                            <p class="card-text"><small class="text-muted">June 10, 2023</small></p>
+                            <h6 class="card-subtitle mb-2 text-muted">Replies: MATT</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">Understand the API: Read the API documentation to understand its purpose, functionality, and available endpoints. Pay attention to the authentication methods required (e.g., API keys, OAuth, etc.) and any rate limits imposed by the API provider.</li>
+                                <li class="list-group-item">Obtain API Credentials: If the API requires authentication, sign up for an API key or access token from the provider. This typically involves creating an account and following their authentication process.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Hey Matt, What is the best way to learn JavaScript?</p>
-                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
-                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">PRACTICE, PRACTICE, PRACTICE!!!</li>
-                            <li class="list-group-item">Start with the Basics: Begin by understanding the fundamentals of JavaScript, such as variables, data types, operators, control structures (if statements, loops), functions, and arrays. Online tutorials and beginner-friendly resources can provide a solid foundation.</li>
-                            <li class="list-group-item">Online Learning Platforms: Utilize popular online learning platforms like Codecademy, freeCodeCamp, Udemy, or Coursera, which offer structured JavaScript courses for beginners. These platforms provide interactive lessons, exercises, and quizzes to help you grasp the language concepts.</li>
-                        </ul>
+                    <div class="card comment-card">
+                        <div class="card-body">
+                            <p class="card-text">Hey Matt, What is the best way to learn JavaScript?</p>
+                            <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
+                            <h6 class="card-subtitle mb-2 text-muted">Replies: MATT</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">PRACTICE, PRACTICE, PRACTICE!!!</li>
+                                <li class="list-group-item">Start with the Basics: Begin by understanding the fundamentals of JavaScript, such as variables, data types, operators, control structures (if statements, loops), functions, and arrays. Online tutorials and beginner-friendly resources can provide a solid foundation.</li>
+                                <li class="list-group-item">Online Learning Platforms: Utilize popular online learning platforms like Codecademy, freeCodeCamp, Udemy, or Coursera, which offer structured JavaScript courses for beginners. These platforms provide interactive lessons, exercises, and quizzes to help you grasp the language concepts.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Hey Matt, Thank you for the response, Matt!</p>
-                        <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
-                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">Yes Virgil, No Problem</li>
-                        </ul>
+                    <div class="card comment-card">
+                        <div class="card-body">
+                            <p class="card-text">Hey Matt, Thank you for the response, Matt!</p>
+                            <p class="card-text"><small class="text-muted">June 5, 2023</small></p>
+                            <h6 class="card-subtitle mb-2 text-muted">Replies: MATT</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">Yes Virgil, No Problem</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card comment-card">
-                    <div class="card-body">
-                        <p class="card-text">Hey Matt, What is the best way to apply CSS styling.</p>
-                        <p class="card-text"><small class="text-muted">June 23, 2023</small></p>
-                        <h6 class="card-subtitle mb-2 text-muted">Replies:MATT</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">Practice CSS Specificity: Understand CSS specificity and how it affects the precedence of styles. When necessary, use more specific selectors or consider using !important sparingly to override styles. </li>
-                            <li class="list-group-item">Utilize CSS Frameworks: CSS frameworks like Bootstrap, Foundation, or Tailwind CSS provide pre-built styles and components that can speed up your development process. However, be mindful of their file sizes and only include the components you need to avoid unnecessary bloat. </li>
-                            <li class="list-group-item">Test and Refine: Regularly test your CSS styles in different browsers and devices to ensure consistent rendering. Use browser developer tools to inspect elements, debug layout issues, and fine-tune your styles as needed. </li>
-                        </ul>
+                    <div class="card comment-card">
+                        <div class="card-body">
+                            <p class="card-text">Hey Matt, What is the best way to apply CSS styling?</p>
+                            <p class="card-text"><small class="text-muted">June 23, 2023</small></p>
+                            <h6 class="card-subtitle mb-2 text-muted">Replies: MATT</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">Practice CSS Specificity: Understand CSS specificity and how it affects the precedence of styles. This will help you write more targeted and efficient CSS rules.</li>
+                                <li class="list-group-item">Use External Stylesheets: Keep your styles separate from your HTML by using external CSS files. This allows for easier maintenance and reusability.</li>
+                                <li class="list-group-item">Leverage CSS Frameworks: Consider using CSS frameworks like Bootstrap or Tailwind CSS, which provide pre-designed components and responsive grids that can accelerate your styling process.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/profile.js"></script>
 </body>
 </html>
