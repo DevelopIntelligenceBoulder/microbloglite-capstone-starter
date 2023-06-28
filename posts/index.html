@@ -1,43 +1,229 @@
 <!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Twemoji (Twitter Emojis) -->
+    <script
+      src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="./posts.css" />
 
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
-        if (isLoggedIn() === false) window.location.replace("/");
+      if (isLoggedIn() === false) window.location.replace("/");
     </script>
-</head>
-<body>
-
+  </head>
+  <body class="bg-body-secondary">
     <header>
-        <h1>POSTS PAGE</h1>
+      <nav class="navbar navbar-dark navbar-expand-lg text-bg-success">
+        <div class="container">
+          <a class="navbar-brand py-0" style="font-size: xx-large" href="#"
+            >🐸</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="../">Home</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  User
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main></main>
+    <main class="bg-body-tertiary">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12 col-lg-3 col-xl-2 p-4 bg-body mb-3 mb-lg-0 me-lg-3"
+          >
+            <h2 class="mb-3">Trending</h2>
+            <ul class="list-group">
+              <li class="list-group-item">#webdevelopment</li>
+              <li class="list-group-item">#photography</li>
+              <li class="list-group-item">#painting</li>
+              <li class="list-group-item">#fitness</li>
+              <li class="list-group-item">#cooking</li>
+            </ul>
+          </div>
+          <div class="col p-0 bg-body">
+            <form id="post-form" class="p-4 border-bottom">
+              <div class="mb-3">
+                <textarea
+                  class="form-control post-field"
+                  name="text"
+                  id="post-text"
+                  rows="3"
+                  placeholder="What's on your mind?"
+                ></textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <button name="postBtn" class="btn btn-lg btn-success fw-bold">
+                  Ribbit
+                </button>
+              </div>
+            </form>
+            <template id="ribbit-post">
+              <div class="ribbit-post px-4 py-3 border-bottom">
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="rounded-5"
+                      width="55"
+                      src="https://placehold.it/500"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-3">
+                    <div class="row">
+                      <div class="col-auto pe-1">
+                        <a
+                          class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                          href="user/"
+                        >
+                          <strong id="post-author-fullname"
+                            >User FullName</strong
+                          >
+                        </a>
+                      </div>
+                      <div class="col p-0">
+                        <a
+                          id="post-author-username"
+                          class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                          href="user/"
+                        >
+                          @username
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      <p id="post-content">
+                        This is some content from a media component. You can
+                        replace this with any content and adjust it as needed.
+                      </p>
+                    </div>
+                    <div>
+                      <div
+                        class="row fw-semibold text-body-secondary mb-0 gx-2 gx-lg-4"
+                      >
+                        <div class="col col-lg-auto">
+                          <a
+                            id="post-like-btn"
+                            class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0"
+                            href="#"
+                          >
+                            <i class="bi bi-heart"></i>
+                            Like
+                          </a>
+                        </div>
+                        <div class="col col-lg-auto">
+                          <a
+                            id="post-reribbit-btn"
+                            class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0"
+                            href="#"
+                          >
+                            <i class="bi bi-repeat"></i>
+                            Reribbit
+                          </a>
+                        </div>
+                        <div class="col col-lg-auto">
+                          <a
+                            id="post-delete-btn"
+                            class="d-none link-danger text-danger link-underline link-underline-opacity-0"
+                            href="#"
+                          >
+                            <i class="bi bi-x-circle"></i>
+                            Delete
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </main>
 
-    <footer></footer>
+    <footer>
+      <div class="container text-center text-secondary p-5">
+        <p>&copy; TeamRibbit 2023</p>
+      </div>
+    </footer>
 
-    <!-- Page-specific code -->
+    <script src="../utils.js"></script>
+    <script src="../postUtils.js"></script>
+
     <script src="./posts.js"></script>
-</body>
+    <script>
+      // Parse emoji on the page with twemoji
+      twemoji.parse(document.body);
+    </script>
+  </body>
 </html>
