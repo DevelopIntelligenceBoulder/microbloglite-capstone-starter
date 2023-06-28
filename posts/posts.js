@@ -31,14 +31,15 @@ function likePost(id) {
       const clickedBtn = document.querySelector(`button[id='${id}']`);
       clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
       clickedBtn.classList.add("bg-primary");
-      const likes = getLikes(id);
+      printLikes(id, clickedBtn);
     })
     .catch((err) => {
       console.log(err, err.status);
     });
 }
 
-function getLikes(postID) {
+function printLikes(postID, likeEl) {
+  console.log("getlikes");
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
     method: "GET",
@@ -52,10 +53,10 @@ function getLikes(postID) {
   };
   fetch(apiBaseURL + `/api/posts/${postID}`, options)
     .then((response) => response.json())
-    .then((posts) => {
-      posts.forEach((post) => {
-        return post.likes.length;
-      });
+    .then((post) => {
+      console.log(post.likes.length);
+      likeEl.textContent = `Like: ${post.likes.length}`;
+      return 1;
     });
 }
 
@@ -80,8 +81,7 @@ function removeLike(likeId, postId) {
         const clickedBtn = document.querySelector(`button[id='${postId}']`);
         clickedBtn.setAttribute("onclick", `likePost(this.id)`);
         clickedBtn.removeAttribute("class");
-        const likect = +clickedBtn.textContent.substring(6);
-        clickedBtn.textContent = `like ${likect}`;
+        printLikes(postId, clickedBtn);
       }
     })
     .catch((err) => {
@@ -104,6 +104,8 @@ function getPosts() {
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {
+        console.log(post.likes);
+        console.log(loginData.username);
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");

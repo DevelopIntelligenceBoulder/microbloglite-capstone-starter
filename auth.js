@@ -44,7 +44,7 @@ function login(loginData) {
       window.localStorage.setItem("login-data", JSON.stringify(loginData));
       console.log(loginData.statusCode);
       if (loginData.statusCode < 400) {
-        window.location.replace("/");
+        window.location.replace("./posts/");
         return loginData;
       } else {
         alert("incorrect user info");
