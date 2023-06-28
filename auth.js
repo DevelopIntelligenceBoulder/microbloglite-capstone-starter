@@ -42,9 +42,13 @@ function login(loginData) {
     .then((response) => response.json())
     .then((loginData) => {
       window.localStorage.setItem("login-data", JSON.stringify(loginData));
-      window.location.assign("/posts"); // redirect
-
-      return loginData;
+      console.log(loginData.statusCode);
+      if (loginData.statusCode < 400) {
+        window.location.replace("/");
+        return loginData;
+      } else {
+        alert("incorrect user info");
+      }
     });
 }
 

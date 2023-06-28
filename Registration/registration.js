@@ -32,12 +32,17 @@ registerForm.onsubmit = function (event) {
   fetch(apiBaseURL + "/api/users", options)
     .then((response) => response.json())
     .then((acctCreation) => {
-      messagePEl.textContent = "Success returning to login";
-      setTimeout(() => {
-        window.location.href = "../index.html";
-      }, 1000);
+      console.log(acctCreation.statusCode);
+      if (acctCreation.statusCode < 400) {
+        messagePEl.textContent = "Success returning to login";
+        setTimeout(() => {
+          window.location.href = "../index.html";
+        }, 1500);
+      } else {
+        console.log(acctCreation.message, acctCreation.statusCode);
+      }
     })
     .catch((err) => {
-      messagePEl.textContent = "An error has occured Please try again later";
+      console.log(err, err.status);
     });
 };
