@@ -19,7 +19,7 @@ document
     };
 
     // Make an API request to store the user data
-    fetch("https://microbloglite.herokuapp.com/api/users", {
+    fetch(apiBaseURL + "/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
