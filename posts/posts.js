@@ -60,7 +60,7 @@ function createPost(post) {
 
   const likesArea = document.createElement("h6");
   likesArea.classList.add("card-subtitle");
-  likesArea.textContent = `Likes: ${post.likes.length}`;
+  // likesArea.textContent = `Likes: ${post.likes}`;
 
   cardBody.append(userName, postText, likesArea, postDate);
 

@@ -59,7 +59,7 @@ function xClick() {
 
 document.getElementById('x').addEventListener('click', xClick);
 postTextarea.addEventListener('click', xClick);
-// window.onscroll = xClick;
+window.onscroll = xClick;
 emojiCont.addEventListener('click', getAllEmojis);
 
 function reset(){
