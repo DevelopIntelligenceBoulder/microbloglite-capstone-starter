@@ -67,3 +67,17 @@ body {
 .search-input {
     width: 200px;
 }
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.offcanvas-header {
+    background-color: orange;
+    color: white;
+}
+
+.offcanvas-body {
+    background-color: rgb(255, 160, 50);
+    color: black;
+}
