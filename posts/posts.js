@@ -51,6 +51,11 @@ function getAllPosts() {
 
 function buildUserPostsCard(posts) {
     for (let post of posts) {
+        let userImage = document.createElement("img");
+        userImage.src = "https://github.com/michaeljean3456.png";
+        userImage.style.width = "50px";
+        userImage.style.height = "50px"
+
         let divCard = document.createElement("div");
         divCard.className = "card";
 
@@ -69,6 +74,7 @@ function buildUserPostsCard(posts) {
         cardUserTimeStamp.className = "card-text";
         cardUserTimeStamp.textContent = `${new Date(post.createdAt).toDateString()} , ${new Date(post.createdAt).toLocaleTimeString()}`;
 
+        divCardBody.appendChild(userImage);
         divCardBody.appendChild(cardUserName);
         divCardBody.appendChild(cardUserContent);
         divCardBody.appendChild(cardUserTimeStamp);
