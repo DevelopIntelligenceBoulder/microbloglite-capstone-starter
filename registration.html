@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Global CSS (CSS rules you want applied to all pages)
+    <link rel="stylesheet" href="style/global.css"> -->
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="style/registration.css">
+
+    <title>Fit Block</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+    <script src="./auth.js"></script>
+    <script>
+        if (isLoggedIn() === true) window.location.replace("/posts");
+    </script>
+</head>
+
+
+<body>
+
+    <main> <!--INCLUDES THE JOIN US MESSAGE, LOGO, AND REGISTRATION FORM-->
+
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5 grid gap-3">
+            <div class="row align-items-center g-lg-5 py-5">
+              <div class="col-lg-7">
+                <!--JOIN US MESSAGE & LOGO-->
+                <h1 class="display-4 lh-1 text-body-emphasis justify-content-center" style="font-weight: bold; font-style: italic;">JOIN US!</h1>
+                <img class="d-block" style="padding-right: 4rem" src="media/logo.png" alt="" width="500" height="auto"> 
+            </div>
+
+<!--REGISTRATION FORM-->
+              <div class="col-md-10 mx-auto col-lg-5 px-4 mb-3">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <h1 style="font-weight: bold; font-style: italic;">REGISTER</h1>
+                </div>
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="loginUsername" placeholder="name@example.com">
+                    <label for="loginUsername">Username</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                    <label for="loginPassword">Password</label>
+                  </div>
+                  <div class="checkbox mb-3">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                  </div>
+                  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                  <hr class="my-4">
+                  <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+       <!-- <div class="px-4 my-4 text-center">
+            <img class="d-block mx-auto" src="media/logo.png" alt="" width="800" height="auto">
+            <div class="d-flex flex-wrap justify-content-center" style="margin-left: 2cm;">
+            </div>
+
+        <div class="d-flex justify-content-center py-4">
+            <h1 style="font-weight: bold; font-style: italic;">LOGIN</h1>
+        </div>
+
+        <div class="container d-flex flex-wrap justify-content-center">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" style="width: 25rem;">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+                <hr class="my-4">
+                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+              </form>
+        </div> -->
+
+
+        <!-- <form id="login">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" minlength="3">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" minlength="6">
+            </div>
+
+            <button id="loginButton" type="submit">Login</button>
+        </form> -->
+
+    </main>
+
+    <!-- Page-specific code -->
+
+    <script src="scripts/registration.js"></script>
+</body>
