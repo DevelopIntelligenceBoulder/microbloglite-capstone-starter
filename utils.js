@@ -43,7 +43,7 @@ async function putJSON(url, object) {
 
 async function request(url, options={}) {
     const response = await fetch(url, options);
-    if (!response.ok) {
+    if (!response.ok) {a
         const errorDetails = await response.json();
         throw errorDetails;
     }
