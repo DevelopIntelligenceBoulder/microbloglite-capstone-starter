@@ -69,8 +69,10 @@ img {
 
 footer {
   background-color: #F8F9FA;
-  height: 50px;
-  width: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
 }
 
 footer:hover {
