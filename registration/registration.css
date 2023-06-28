@@ -39,12 +39,13 @@ body {
 .wrapper-alt{
   position: absolute;
   width: 400px;
-  height: 550px;
   background-color: rgba(0, 0, 0, 0.618);
   border: 2px solid transparent;
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
