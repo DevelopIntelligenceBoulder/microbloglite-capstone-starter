@@ -48,6 +48,7 @@ h1{
 }
 
 .form-group label {
+  
   font-size: 18px; /* Adjust the font size as needed */
   color: #333; /* Adjust the label color */
   margin-bottom: 5px; /* Adjust the label margin-bottom as needed */
@@ -57,10 +58,21 @@ h1{
 
 .form-check{
   margin-left: 14%;
-
-}
-.form-button{
-  margin-left: 14%;
   margin-top: 3%;
 
 }
+.form-button{
+  max-width: fit-content;
+  margin-left: 18%;
+  margin-top: 3%;
+
+}
+
+#loginButton{
+  background-color: rgb(159, 210, 38); /* Set the background color to pink */
+  padding: 9px 15px; /* Adjust the padding to make it small */
+  font-size: 15px; /* Adjust the font size to make it small */
+  border: none; /* Remove the default button border */
+  color: white; 
+}
+  
