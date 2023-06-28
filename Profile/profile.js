@@ -1,6 +1,10 @@
 "use strict";
 
+
 // Get references to various DOM elements
+
+// Get references to HTML elements
+
 const bio = document.getElementById("bio");
 const postDescription = document.getElementById("postDescription");
 const postBtn = document.getElementById("postBtn");
@@ -12,6 +16,7 @@ const editBioInput = document.getElementById("editBioInput");
 const editBioBtn = document.getElementById("editBioBtn");
 const updateBioBtn = document.getElementById("updateBioBtn");
 
+
 // Get login data and extract the token
 const loginData = getLoginData();
 const token = loginData.token;
@@ -21,6 +26,17 @@ window.onload = function () {
     console.log("window loaded");
 
     // Attach event listeners to elements
+
+// Get login data from storage
+const loginData = getLoginData();
+const token = loginData.token;
+
+// Function to be executed when the window is loaded
+window.onload = function () {
+    console.log("window loaded");
+
+    // Assign click event handlers to buttons
+
     postBtn.onclick = onPostBtnClick;
     logOut.onclick = logout;
     editBioBtn.onclick = onEditButtonClick;
@@ -28,6 +44,7 @@ window.onload = function () {
 
     // Hide the bio edit container initially
     editBioContainer.style.display = "none";
+
 }
 
 // Function called when the post button is clicked
@@ -38,6 +55,26 @@ function onPostBtnClick() {
     }
 
     // Send a POST request to the API endpoint
+
+
+    // Retrieve saved bio from local storage, if available
+    const savedBio = localStorage.getItem("bio");
+    if (savedBio) {
+        bioText.textContent = savedBio;
+    }
+}
+
+// Function to execute when the Post button is clicked
+function onPostBtnClick() {
+    // Create a new post using the API!
+
+    // Create JSON object to include in the request body
+    let bodyData = {
+        "text": postDescription.value
+    };
+
+    // Send the request to create a new post
+
     fetch(apiBaseURL + "/api/posts", {
         method: "POST",
         body: JSON.stringify(bodyData),
@@ -48,15 +85,26 @@ function onPostBtnClick() {
     })
     .then(response => response.json())
     .then(post => {
+
         // If the POST finishes successfully, display a message
         console.log(post)
+
+        // If the POST request finishes successfully, display a message
+        console.log(post);
+
         window.location.replace("../posts/index.html");
     });
 }
 
+
 // Function called when the edit button is clicked
 function onEditButtonClick() {
     // Set the value of the edit bio input to the current bio text
+
+// Function to execute when the Edit button is clicked
+function onEditButtonClick() {
+    // Set the value of the edit bio input box to the current bio text
+
     editBioInput.value = bioText.textContent;
 
     // Hide the bio text and show the edit bio input box
@@ -65,7 +113,11 @@ function onEditButtonClick() {
     editBioBtn.style.display = "none"; // Hide the edit button
 }
 
+
 // Function called when the update bio button is clicked
+
+// Function to execute when the Update Bio button is clicked
+
 function onUpdateBioBtnClick() {
     // Update the bio text with the value from the input box
     bioText.textContent = editBioInput.value;
@@ -82,7 +134,11 @@ function onUpdateBioBtnClick() {
         "bio": editBioInput.value
     };
 
+
     // Send a PUT request to update the user's bio
+
+    // Send the request to update the user's bio
+
     fetch(apiBaseURL + "/api/users/" + username, {
         method: "PUT",
         body: JSON.stringify(bodyData),
@@ -104,6 +160,12 @@ function onUpdateBioBtnClick() {
 
         // Show the edit button
         editBioBtn.style.display = "block";
+
+
+
+        // Save the updated bio in local storage
+        localStorage.setItem("bio", editBioInput.value);
+
     })
     .catch(error => {
         console.error("Error updating bio:", error);

@@ -45,3 +45,6 @@ body {
     max-width: 300px; 
     margin: 0 auto;
   }
+  .innerText{
+    text-align: center;
+  }
