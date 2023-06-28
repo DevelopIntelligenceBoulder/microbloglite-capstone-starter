@@ -28,7 +28,7 @@ const loginData = getLoginData();
 //
 //
 
-window.onload = function getUserInfo() {
+window.addEventListener("load", function getUserInfo() {
   const options = {
     method: "GET",
     headers: {
@@ -48,9 +48,9 @@ window.onload = function getUserInfo() {
       changeNameInput.value = data.fullName;
       bioInput.value = data.bio;
     });
-};
+});
 
-window.onload = function getPosts() {
+window.addEventListener("load", function getPosts() {
   console.log(loginData);
   const options = {
     method: "GET",
@@ -65,8 +65,9 @@ window.onload = function getPosts() {
   )
     .then((response) => response.json())
     .then((data) => {
-      //   console.log(data);
+      console.log(data);
       data.forEach((post) => {
+        console.log(post);
         const templateEl = document.querySelector("#postCards");
 
         const clone = templateEl.content.cloneNode(true);
@@ -77,32 +78,33 @@ window.onload = function getPosts() {
         title.textContent = post.username;
         postInfo.value = post.text;
         deleteBtn.textContent = "Delete";
-        editBtn.textContent = `Edit`;
+        // editBtn.textContent = `Edit`;
         templateEl.appendChild(clone);
 
         console.log(post);
-        editBtn.addEventListener("click", () => {
-          let bodyData = {
-            text: postInfo.value,
-            username: title.value,
-            _id: post._id,
-          };
-          const options = {
-            method: "PUT",
-            body: JSON.stringify(bodyData),
-            headers: {
-              "Content-type": "application/json; charset=UTF-8",
-              Authorization: `Bearer ${loginData.token}`,
-            },
-          };
-          const url = `https://microbloglite.herokuapp.com/api/posts/${post._id}`;
-          fetch(url, options)
-            .then((response) => response.json())
-            .then((data) => {
-              alert("Updated");
-              window.location.assign("/profile/profile.html");
-            });
-        });
+        // editBtn.addEventListener("click", () => {
+        //   let bodyData = {
+        //     text: postInfo.value,
+        //     username: title.value,
+        //     _id: post._id,
+        //   };
+        //   const options = {
+        //     method: "PUT",
+        //     body: JSON.stringify(bodyData),
+        //     headers: {
+        //       "Content-type": "application/json; charset=UTF-8",
+        //       Authorization: `Bearer ${loginData.token}`,
+        //     },
+        //   };
+        //   const url = `https://microbloglite.herokuapp.com/api/posts/${post._id}`;
+        //   fetch(url, options)
+        //     .then((response) => response.json())
+        //     .then((data) => {
+
+        //       alert("Updated");
+        //       window.location.assign("/profile/profile.html");
+        //     });
+        // });
         console.log(post);
         deleteBtn.addEventListener("click", () => {
           const options = {
@@ -125,7 +127,7 @@ window.onload = function getPosts() {
         // );
       });
     });
-};
+});
 
 // get request to get user info to plug in info
 
@@ -149,6 +151,27 @@ updateBtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       alert("Updated");
+      window.location.assign("/profile/profile.html");
+    });
+});
+
+postBtnEl.addEventListener("click", () => {
+  let bodyData = {
+    text: textboxEl.value,
+    username: loginData.username,
+  };
+  const options = {
+    method: "POST",
+    body: JSON.stringify(bodyData),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
+  const url = `${apiBaseURL}api/posts`;
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
       window.location.assign("/profile/profile.html");
     });
 });

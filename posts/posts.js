@@ -15,6 +15,8 @@ logoutBtnEl.onclick = logout;
 const loginData = getLoginData();
 window.onload = getPosts;
 
+function renderPosts() {}
+
 function getPosts() {
   console.log(loginData);
   const options = {
@@ -24,10 +26,7 @@ function getPosts() {
     },
   };
 
-  fetch(
-    "https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0",
-    options
-  )
+  fetch(`${apiBaseURL}api/posts?limit=100&offset=0`, options)
     .then((response) => response.json())
     .then((data) => {
       //   console.log(data);
@@ -39,22 +38,45 @@ function getPosts() {
         // const likeBtn = document.querySelector(type[button]);
 
         // Clone the new row and insert it into the table
+        // const hrefEl = document.querySelector("#hrefUser");
+        // let anchor = "../profile/otherProfile/";
+
+        // Create anchor element.
+        var a = document.createElement("a");
+        a.textContent = post.username;
+
+        a.title = post.username;
+
+        a.href = `../profile/otherProfile.html?username=${post.username}`;
+
+        document.body.appendChild(a);
+
         const clone = templateEl.content.cloneNode(true);
         let title = clone.querySelector(".card-title");
         let postInfo = clone.querySelector(".card-text");
-        let likeBtn = clone.querySelector('input[type="button"]');
-        title.textContent = post.username;
+        let likeBtn = clone.querySelector('button[class="button"]');
+        likeBtn.textContent = post.likes.length;
+        title.appendChild(a);
         postInfo.textContent = post.text;
-        likeBtn.value = `${post.likes.length} Likes`;
+
+        const imgEl = document.createElement("img");
+
+        likeBtn.value = `${post.likes.length} `;
         templateEl.appendChild(clone);
 
         // const likeButton = document.querySelector('input[type="button"]');
-        const userLikes = post.likes.find(
+        const userLike = post.likes.find(
           (data) => data.username === loginData.username
         );
-        if (userLikes) {
-          likeBtn.style.color = "blue";
-          likeBtn.addEventListener("click", () => {
+        // console.log(userLike);
+        console.log(post);
+        if (userLike) {
+          imgEl.src = "../images/likeFlame.png";
+          imgEl.alt = "Like Flame";
+          likeBtn.appendChild(imgEl);
+
+          likeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
             const options = {
               method: "DELETE",
               headers: {
@@ -62,16 +84,21 @@ function getPosts() {
                 Authorization: `Bearer ${loginData.token}`,
               },
             };
-            const url = `https://microbloglite.herokuapp.com/api/likes/${post._id}`;
+
+            const url = `${apiBaseURL}api/likes/${userLike._id}`;
             fetch(url, options)
               .then((response) => response.json())
               .then((data) => {
                 console.log(data);
-                window.location.href = "/posts";
+                window.location.assign("/posts");
               });
           });
         } else {
-          likeBtn.addEventListener("click", () => {
+          imgEl.src = "../images/dislikeFlame.png";
+          imgEl.alt = "Dislike Flame";
+          likeBtn.appendChild(imgEl);
+          likeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
             let bodyData = {
               postId: post._id,
             };
@@ -83,7 +110,7 @@ function getPosts() {
                 Authorization: `Bearer ${loginData.token}`,
               },
             };
-            const url = "https://microbloglite.herokuapp.com/api/likes";
+            const url = `${apiBaseURL}api/likes`;
             fetch(url, options)
               .then((response) => response.json())
               .then((data) => {
@@ -108,7 +135,7 @@ postBtnEl.addEventListener("click", () => {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-  const url = "https://microbloglite.herokuapp.com/api/posts";
+  const url = `${apiBaseURL}api/posts`;
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
