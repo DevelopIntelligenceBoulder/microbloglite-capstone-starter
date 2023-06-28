@@ -19,7 +19,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./profile.css">
 
-    <title>/Profile</title>
+    <title>Profile | CraftsHQ</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
@@ -28,24 +28,60 @@
     </script>
 </head>
 
+
 <body>
-<!---Header-->
-    <header>
-        <h1>Profile PAGE</h1>
-    </header>
+
+    <div class="navbar">
+    
+        <div class="navbar-logo">
+            <a href="../index.html"> <img src="../images/craftsHQ.png" alt="LOGO"></a>
+
+        </div>
+
+        <div class="page-links">
+            <ul>
+                <li><a href="../posts/index.html">Posts</a></li>
+                <li><button id="logout" class="btn btn-outline-light">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+
+<hr>
 
 
-    <main>
-        <!---logout button-->
-        <button id="logout">Logout</button>
+<main>
 
+<div class="userInfo">
+    <div class="img-name">
+        <img src="../images/profile.png" alt="profile image" id="profile-img">
+
+        <div id="userDataContainer"></div>
+    </div>
+
+    <div class="about">
+        <p class="aboutMe">About Me</p>
+        <div id="bioContainer"></div>
+    </div>
+</div>
+
+<br><hr><br>
+
+<div class="posts">
+    
+
+    <div class="new">
+        <h4>Create New Post</h4>
         <form id="userPost">
-            <textarea name="userPostArea" id="userPostArea" cols="30" rows="10"></textarea><br>
-            <button type="submit" id="submit">submit</button>
+            <textarea name="userPostArea" id="userPostArea" cols="30" rows="10"></textarea><br><br>
+            <button type="submit" id="submit" class="btn btn-outline-light">Submit</button>
         </form>
-
+    </div>
+   <div class="mine">
+        <h4 class="header">My Posts</h4>
         <div id="profileContainer"></div>
-        
+    </div> 
+</div>
+
     </main>
 
     <footer></footer>
