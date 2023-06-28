@@ -1,18 +1,59 @@
 /* Global CSS for all pages */
 
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
-    box-sizing: border-box;
+  /* Sizing helper: See Workbook 1b, page 2-33. */
+  box-sizing: border-box;
 
-    /* 
+  /* 
        Vizualization helper: While styling or debugging your HTML & CSS, 
        uncomment the rule below to see all the boxes on your page more
        clearly! (Remove this outline before submitting: users won't 
        want to see it!)
     */
-    /* outline: 1px dotted red; */
+  /* outline: 1px dotted red; */
 }
 
 :root {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: black;
+}
+
+a.nav-link:hover {
+  color: #53AD39;
+  text-decoration: none;
+}
+
+ul {
+  text-decoration: none;
+}
+
+img {
+  width: 154px;
+  height: auto;
+}
+
+.logoutButton {
+  padding-left: 148rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: #fff;
+}
+
+footer: hover {
+  background-color: ##86117C;
 }
