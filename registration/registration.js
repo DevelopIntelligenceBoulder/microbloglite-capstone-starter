@@ -30,6 +30,7 @@ document
       .then((data) => {
         // Handle the API response
         console.log("User data stored:", data);
+        window.location.assign("../index.html");
         // Optionally, perform any additional actions or show a success message
       })
       .catch((error) => {
