@@ -14,6 +14,11 @@ CAPSTONE 3 - Nikolas Vega
 
 Team
 
+Jezz Rodriguez
+Nikolas Vega
+Emaneul Figueroa Pasha
+Andrea Martinez
+
 David Park
 Aazad Gas
 Tatiana Stewart
