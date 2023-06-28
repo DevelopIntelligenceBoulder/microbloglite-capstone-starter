@@ -2,68 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../css/global.css">
+  <!-- Global CSS (CSS rules you want applied to all pages) -->
+  <link rel="stylesheet" href="../css/global.css" />
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="../css/registration.css">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="../css/registration.css" />
 
-    <title>Registration</title>
+  <title>Registration</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="../js/auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
-    </script>
+  <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+  <script src="../js/auth.js"></script>
+  <script>
+    if (isLoggedIn() === true) window.location.replace("/posts");
+  </script>
 </head>
+
+<header>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../img/logo.png" Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Plugged<span>In</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
 
 <body>
 
-    <header>
-        <h1>Create an Account</h1>
-    </header>
-
-    <main>
-
-        <form id="registration">
+  <div class="container">
+    <div class="card">
+      <div class="card-top d-flex justify-content-center">
+        <img src="../" alt="" />
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="Username" class="form-label">Username</label>
+            <input title="Must be a valid Username" pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}" type="username"
+              class="form-control" id="Username" aria-describedby="UsernameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Username Confirmation" class="form-label">Confirm Username</label>
+            <input title="Must be a valid Username" pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}" type="username"
+              class="form-control" id="Confirm Username" aria-describedby="UsernameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Email" class="form-label">Email address</label>
+            <input title="Must be a valid email address" pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
+              type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+          </div>
+          <p id="input-hint" class="form-text">We'll never share your email with anyone else.</p>
+          <div class="mb-3">
+            <label for="Email Confirmation" class="form-label">Confirm Email address</label>
+            <input title="Must be a valid email address" pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
+              type="email" class="form-control" id="Confirm Email" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input title="Must be atleast 8 characters" pattern="[a-zA-Z0-9]{8,}" type="password" class="form-control"
+              id="Password">
+          </div>
+          <div class="mb-3">
+            <label for="Password Confirmation" class="form-label">Confirm Password</label>
+            <input title="Must be atleast 8 characters" pattern="[a-zA-Z0-9]{8,}" type="password" class="form-control"
+              id="Comfirm Password">
+          </div>
+          <div>
+            <a href="../html/login.html">Login?</a>
+          </div>
+          <!-- <fieldset>
+            <legend>How did you hear about us?</legend>
             <div>
-                <input type="text" placeholder="Username" id="username" minlength="3" maxlength="20" required>
+              <input type="radio" id="contactChoice1" name="contact" value="email" />
+              <label for="contactChoice1">Twitter</label>
+
+              <input type="radio" id="contactChoice2" name="contact" value="phone" />
+              <label for="contactChoice2">Youtube</label>
+
+              <input type="radio" id="contactChoice3" name="contact" value="mail" />
+              <label for="contactChoice3">Instagram</label>
+
+              <input type="radio" id="contactChoice3" name="contact" value="mail" />
+              <label for="contactChoice3">Facebook</label>
             </div>
-
-            <div>
-                <input type="text" placeholder="Full Name" id="fullName" required>
-            </div>
-
-            <div>
-                <textarea id="about" placeholder="Profile Description" rows="1"></textarea>
-            </div>
-
-            <div>
-                <input type="password" placeholder="Password" id="password" minlength="6" required>
-            </div>
-
-            <button id="registerButton" type="submit">Register</button>
-
-            <div>
-                <p>Already have an account?</p> <a href="../html/index.html">Sign-In</a>
-            </div>
-
+          </fieldset> -->
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
         </form>
+      </div>
+    </div>
+  </div>
+  <!-- <form class="registration">
+        <div>
+          <input
+            type="text"
+            placeholder="Username"
+            id="username"
+            minlength="3"
+            maxlength="20"
+            required
+          />
+        </div>
 
-    </main>
+        <div>
+          <input type="text" placeholder="Full Name" id="fullName" required />
+        </div>
 
-    <footer></footer>
+        <div>
+          <textarea
+            id="about"
+            placeholder="Profile Description"
+            rows="1"
+          ></textarea>
+        </div>
 
-    <!-- Page-specific code -->
-    <script src="../js/registration.js"></script>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            minlength="6"
+            required
+          />
+        </div>
+
+        <button id="registerButton" type="submit">Register</button>
+
+        <div>
+          <p>Already have an account?</p>
+          <a href="../html/index.html">Sign-In</a>
+        </div>
+      </form> -->
+  </main>
+
+  <footer></footer>
+
+  <!-- Page-specific code -->
+  <script src="../js/registration.js"></script>
 </body>
 
 </html>

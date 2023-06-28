@@ -11,29 +11,26 @@ h1 {
 }
 
 body {
-  background-image: url("../img/blue-pattern.jpg");
-  background-repeat: repeat;
+  background-image: url("../img/milky-way-l.jpg");
+  background-size: cover;
 }
 
-main {
-  background-color: rgb(241, 246, 246);
-  margin: 5% 25% auto 25%;
-  border-radius: 10px;
-  border-color: #333;
-  padding-left: 10%;
+
+.btn{
+  display:inline-block;
+   margin-top: 15rem;
+   margin-left: 35rem;
 }
 
-div {
-  margin: auto auto 10px auto;
+
+span{
+  color: pink;
 }
 
-button {
-  margin: auto auto 5px auto;
+header{
+  background-color: black;
 }
 
-p {
-  text-decoration: italic;
-  text-decoration-thickness: 10px;
+.navbar-brand {
+  color: whitesmoke;
 }
-
-/* Add more landing page styles here */
