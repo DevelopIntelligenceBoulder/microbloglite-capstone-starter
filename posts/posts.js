@@ -1,12 +1,8 @@
 "use strict";
 
-
-window.onload = function () {
   const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
-  // console.log(accessToken)
-  console.log(JSON.parse(window.localStorage.getItem("login-data")))
   getAllPosts(accessToken);
-};
+
 
 
 function showUserName() {
@@ -14,63 +10,67 @@ function showUserName() {
   return currentUser
 }
 
-// Add a post
-function addPost(accessToken) {
+function addPost() {
+let postTextarea = document.getElementById('postTextarea').value
   const options = {
     method: "POST",
     headers: {
       Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json"
     },
+    body: JSON.stringify({ text: postTextarea})
   };
-  
   fetch(apiBaseURL + "/api/posts", options)
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("Failed to send a post, try again later");
-    }
+  .then(response => response.json())
+  .then(data =>{
+    let parEl = document.getElementById('postParent')
+    createPost(data, parentElement)
+  }).catch (error => {
+    console.log(error)
   })
-  .then((data) => {
-    createPost(data);
-  })
-  .then(
-    document.querySelector("addPostButton").onclick = createPost()
-  )
-  .catch((error) => {
-    console.error("Error fetching posts:", error);
-  });
+  
 }
 
-// Show new post
-function createPost(newPosts) {
-  for (newPost of newPosts) {
-    const cardContainer = document.createElement("div");
-    cardContainer.classList.add("card", "mb-3");
+function createPost(post) {
+  const postContainer = document.getElementById("postContainer");
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("card", "mb-3", "userInfo");
 
-    const postText = document.createElement("p");
-    postText.classList.add("card-text");
-    postText.textContent = post.text;
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
 
-    const userName = document.createElement("h5");
-    userName.classList.add("card-title");
-    userName.textContent = post.username;
+  const postText = document.createElement("p");
+  postText.classList.add("card-text");
+  postText.textContent = post.text;
 
-    const likesArea = document.createElement("h6");
-    likesArea.classList.add("card-subtitle", "text-muted");
-    likesArea.textContent = `${post.likes}`;
+  const postDate = document.createElement('p')
+  postDate.setAttribute('class', 'post-date')
+  let str = post.createdAt
+  let date = str.slice(0, 10)
+  let time = str.slice(11, 19)
+  postDate.textContent = `${time} | ${date}`;
 
-    cardBody.appendChild(userName);
-    cardBody.appendChild(postText);
-    cardBody.appendChild(likesArea);
+  const userName = document.createElement("h5");
+  userName.classList.add("card-title");
+  let uName = post.username
+  let fLetter = uName.charAt(0).toUpperCase()
+  let subName = uName.slice(1)
+  userName.textContent = fLetter + subName;
 
-    cardContainer.appendChild(cardBody);
-    parentElement.appendChild(cardContainer);
-  }
+  const likesArea = document.createElement("h6");
+  likesArea.classList.add("card-subtitle", "text-muted");
+  likesArea.textContent = `${post.likes}`;
+
+  cardBody.appendChild(userName);
+  cardBody.appendChild(postText);
+  cardBody.appendChild(likesArea);
+  cardBody.appendChild(postDate);
+
+  cardContainer.appendChild(cardBody);
+  postContainer.insertBefore(cardContainer, postContainer.firstChild);
 }
+
 
 // Get all post
 function getAllPosts(accessToken) {
@@ -90,6 +90,8 @@ function getAllPosts(accessToken) {
       }
     })
     .then((data) => {
+      const postContainer = document.getElementById("postContainer");
+      postContainer.innerHTML = "";
       loadAllPosts(data);
     })
     .catch((error) => {
@@ -99,34 +101,34 @@ function getAllPosts(accessToken) {
 
 const parentElement = document.querySelector("main");
 
-// Create all post in JS
 function loadAllPosts(posts) {
-  for (const post of posts) {
-    const cardContainer = document.createElement("div");
-    cardContainer.classList.add("card", "mb-3");
+  const postContainer = document.getElementById("postContainer");
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    const postText = document.createElement("p");
-    postText.classList.add("card-text");
-    postText.textContent = post.text;
-
-    const userName = document.createElement("h5");
-    userName.classList.add("card-title");
-    userName.textContent = post.username;
-
-    const likesArea = document.createElement("h6");
-    likesArea.classList.add("card-subtitle");
-    likesArea.textContent = `${post.likes.length}`;
-
-    cardBody.appendChild(userName);
-    cardBody.appendChild(postText);
-    cardBody.appendChild(likesArea);
-
-    cardContainer.appendChild(cardBody);
-    parentElement.appendChild(cardContainer);
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    createPost(post, postContainer);
   }
 }
 
+
+let addPostClick = document.getElementById('addPostButton');
+let roller = document.getElementById('roller')
+let addPostBtn = document.getElementById('add-post')
+
+addPostClick.addEventListener('click', function() {
+  addPostBtn.classList.add('hide')
+  roller.classList.remove('hide')
+  setTimeout(() => {
+    addPostBtn.classList.remove('hide')
+    addPostBtn.innerText = 'Posted!'
+    roller.classList.add('hide')
+    
+  }, 2000);
+  setTimeout(() => {
+    let postTextarea = document.getElementById('postTextarea');
+  addPost(accessToken, postTextarea.value);
+  postTextarea.textContent = null;
+  addPostBtn.innerText = 'Add Post'
+  }, 4000);
+});
 

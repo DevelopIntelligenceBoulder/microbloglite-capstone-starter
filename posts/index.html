@@ -47,19 +47,29 @@
         </nav>
     </header>
     <h1>POSTS</h1>
-    <main>
+    <main id="postParent">
         <h5 class="postQ">What keeps you fit?</h4>
         <div class="container">
-            <div class="mb-3">
-                <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post"></textarea>
+            <div class="mb-3 position-relative">
+                <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post here ..."></textarea>
+                <button type="submit" class="EmojiBtn" id="EmojiBtn"><p id="default" class="default">😀</p> <p id="x" class="x hide">❌</p></button>
+                <button type="submit" class="resetBtn hide" id="resetBtn">reset</button>
+                <div id="emojiContainer" class="hide"></div>
             </div>
-            <button onclick="addPost()" id="addPostButton" class="btn btn-success">Add Post</button>
+            <button id="addPostButton" class="btn btn-success">
+                <span id="add-post">Add Post</span>
+                <div class="lds-roller hide" id="roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+            </button>
         </div>
         <div id="postContainer" class="container mt-4"></div>    
     </main>
 
     <footer></footer>
 
+
+    <!-- script -->
+    <script src="./emojies.js" type="module"></script>
 </body>
 
 
