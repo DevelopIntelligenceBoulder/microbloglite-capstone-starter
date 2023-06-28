@@ -25,7 +25,7 @@ function signup() {
       // if (Boolean(data.success)) {
       //   console.log(data.success);
       //   alert("Sign up successful!");
-      window.location.href = "./test.html";
+      window.location.href = "/index.html";
       // } else {
       //   alert("Sign up failed. Please try again.");
       // }
