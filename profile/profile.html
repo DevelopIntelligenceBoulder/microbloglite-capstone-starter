@@ -13,15 +13,12 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="profile/css/profile.css">
+    <link rel="stylesheet" href="./css/profile.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="../global.css">
-
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
 
     <title>Profile page</title>
 
@@ -38,7 +35,7 @@
             <div class="row">
                 <div class="col-1">
                     <!--company logo-->
-                    <img class="logo" src="profile/images/micro-co-logo.png" alt="logo">
+                    <img class="logo" src="#" alt="logo">
                 </div>
                 <div class="col-11">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -57,7 +54,7 @@
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#home"></use>
                                     </svg>
-                                    Profile
+                                    Link
                                     <i class="bi bi-house"></i>
                                 </a>
                             </li>
@@ -67,7 +64,7 @@
                                     <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                         <use xlink:href="#table"></use>
                                     </svg>
-                                    Post page link
+                                    Link 
                                     <i class="bi bi-house"></i>
                                 </a>
                             </li>
@@ -94,7 +91,7 @@
                 <div class="col-md-7">
                     <div id="createPostsSection">
                         <textarea id="createPostInput" class="form-control"></textarea>
-                        <button type="button" class="btn btn-primary mt-2">Post</button>
+                        <button type="button" class="btn btn-primary mt-2" id="postBtn">Post</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +108,8 @@
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script src="profile.js"></script>
+
 </body>
 
 </html>
