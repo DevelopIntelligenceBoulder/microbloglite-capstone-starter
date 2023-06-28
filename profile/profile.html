@@ -21,20 +21,21 @@
     <title>PROFILE</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
+    <!--     <script src="../auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
-    </script>
+    </script> -->
 </head>
 <body>
-    <nav id="navbar" class="nav">
-        <h1 id="header">BLOG</h1>
-        <ul class="nav-list">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/posts/posts.html">Posts</a></li>
-          <li><a href="/profile/profile.html">Profile</a></li>
-        </ul>
-    </nav>
+<nav id="navbar" class="nav">
+    <h1 id="header">BLOG</h1>
+    <ul class="nav-list">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/posts/posts.html">Posts</a></li>
+      <li><a href="/profile/profile.html">Profile</a></li>
+      <li><a href="/test/test.html">Register</a></li>
+    </ul>
+</nav>
   
     <div id="page-container">
       <div class="container my-3 my-sm-5">
@@ -43,6 +44,17 @@
         <h3>Welcome to the profile</h3>
 
         <main>
+
+          <button id="logout">Logout</button>
+
+          <form id="userPost">
+              <textarea name="userPostArea" id="userPostArea" cols="30" rows="10"></textarea><br>
+              <button type="submit" id="submit">submit</button>
+          </form>
+  
+          <div id="profileContainer"></div>
+
+
         </main>
 
 
