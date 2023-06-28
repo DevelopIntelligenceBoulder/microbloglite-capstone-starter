@@ -5,8 +5,73 @@
 console.log("js working");
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
-console.log(postsTemplate);
-console.log(getPosts());
+
+getPosts();
+
+function likePost(id) {
+  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  console.log(id);
+
+  const likeBody = {
+    postId: id,
+  };
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+
+    body: JSON.stringify(likeBody),
+  };
+
+  fetch(apiBaseURL + "/api/likes", options)
+    .then((response) => response.json())
+    .then((like) => {
+      if (like.statusCode) {
+        return;
+      }
+      const clickedBtn = document.querySelector(`button[id='${id}']`);
+      clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
+      clickedBtn.classList.add("bg-primary");
+      const likect = +clickedBtn.textContent.substring(6) + 1;
+      clickedBtn.textContent = `like ${likect}`;
+    })
+    .catch((err) => {
+      console.log(err, err.status);
+    });
+}
+
+function removeLike(likeId, postId) {
+  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  console.log("post", postId);
+  console.log("like", likeId);
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
+
+  fetch(apiBaseURL + `/api/likes/${likeId}`, options)
+    .then((response) => response.json())
+    .then((like) => {
+      console.log(like);
+      console.log(like.statusCode);
+      if (like.statusCode < 400) {
+        const clickedBtn = document.querySelector(`button[id='${postId}']`);
+        clickedBtn.setAttribute("onclick", `likePost(this.id)`);
+        clickedBtn.removeAttribute("class");
+        const likect = +clickedBtn.textContent.substring(6);
+        clickedBtn.textContent = `like ${likect}`;
+      }
+    })
+    .catch((err) => {
+      console.log(err, err.status);
+    });
+}
+
 function getPosts() {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
@@ -14,7 +79,7 @@ function getPosts() {
     headers: {
       // This header is how we authenticate our user with the
       // server for any API requests which require the user
-      // to be logged-in in order to have access.
+      // to be logit gged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
       Authorization: `Bearer ${loginData.token}`,
     },
@@ -49,6 +114,17 @@ function logout() {
 
   // Redirect the user to the home page
   window.location.replace("/");
+
+
+// Check if the user is logged in (Replace with your own implementation)
+function isLoggedIn() {
+  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  return loginData !== null && loginData.token !== undefined;
+}
+
+// Clear authentication-related data (Replace with your own implementation)
+function clearAuthentication() {
+  window.localStorage.removeItem("login-data");
 }
 
 // Add event listener to wait for the DOM content to load
