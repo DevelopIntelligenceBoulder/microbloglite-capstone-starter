@@ -3,6 +3,8 @@ const postArea = document.getElementById("newContent");
 
 const logoutBtn = document.getElementById("logoutBtn");
 
+const url = `https://microbloglite.herokuapp.com/api/posts`;
+
 logoutBtn.addEventListener("click", () => {
   logout();
 });
