@@ -62,10 +62,7 @@ function createPost(post) {
   likesArea.classList.add("card-subtitle", "text-muted");
   likesArea.textContent = `${post.likes}`;
 
-  cardBody.appendChild(userName);
-  cardBody.appendChild(postText);
-  cardBody.appendChild(likesArea);
-  cardBody.appendChild(postDate);
+  cardBody.append(userName, postText, likesArea, postDate);
 
   cardContainer.appendChild(cardBody);
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
@@ -91,7 +88,6 @@ function getAllPosts(accessToken) {
     })
     .then((data) => {
       const postContainer = document.getElementById("postContainer");
-      postContainer.innerHTML = "";
       loadAllPosts(data);
     })
     .catch((error) => {
@@ -127,8 +123,9 @@ addPostClick.addEventListener('click', function() {
   setTimeout(() => {
     let postTextarea = document.getElementById('postTextarea');
   addPost(accessToken, postTextarea.value);
-  postTextarea.textContent = null;
+  postTextarea.value = null
   addPostBtn.innerText = 'Add Post'
   }, 4000);
+
 });
 
