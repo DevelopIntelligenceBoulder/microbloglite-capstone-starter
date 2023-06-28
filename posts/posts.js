@@ -3,7 +3,7 @@
 "use strict";
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
-
+let allPosts = [];
 getPosts();
 
 function likePost(id) {
@@ -31,6 +31,7 @@ function likePost(id) {
       }
       const clickedBtn = document.querySelector(`button[id='${id}']`);
       clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
+      //class liked
       clickedBtn.classList.add("bg-primary");
       const likect = +clickedBtn.textContent.substring(6) + 1;
       clickedBtn.textContent = `like ${likect}`;
@@ -84,6 +85,7 @@ function getPosts() {
   fetch(apiBaseURL + "/api/posts", options)
     .then((response) => response.json())
     .then((posts) => {
+      allPosts = posts;
       posts.forEach((post) => {
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
