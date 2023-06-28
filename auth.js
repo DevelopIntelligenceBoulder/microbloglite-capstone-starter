@@ -37,7 +37,7 @@ function login(loginData) {
     body: JSON.stringify(loginData),
   };
 
-  return fetch(apiBaseURL + "/auth/login", options)
+  return fetch(apiBaseURL + "auth/login", options)
     .then((response) => response.json())
     .then((loginData) => {
       window.localStorage.setItem("login-data", JSON.stringify(loginData));
