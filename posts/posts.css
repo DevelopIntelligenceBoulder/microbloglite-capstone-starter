@@ -1,1 +1,133 @@
-/* Posts Page CSS */
+.card {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    margin: 10%;
+
+
+
+
+}
+
+#postsFromUsers {
+    display: flex;
+
+
+}
+
+
+
+
+#profileLinks {
+    display: flex;
+    justify-content: end;
+}
+
+#recipeText {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(169, 101, 101);
+    max-width: 85%;
+    font-size: 25px;
+    
+}
+
+
+/* {
+    background:linear-gradient(red,green,yellow);
+} */
+
+
+main {
+
+
+    height: 100%;
+}
+
+
+/* 
+body{
+    background-image: url("/images/backgroundImage.png");
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-size:100%;
+    height:100%;
+} */
+
+
+
+body{
+    background-image: url("/images/recipebg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+
+html {
+    height: 100%;
+}
+
+
+#heroSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+
+
+#usersPostCard{
+    border: 4px dotted #737bb9;
+    padding: 5%;
+    border-radius: 20px;
+
+    background-color: rgba(191, 236, 108, 0.5);
+
+
+   
+}
+
+
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    max-width: 750px;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    border-color: rgb(244, 246, 244);
+    background-color: rgba(252, 252, 252, 0.789);
+   
+    
+}
+
+#profileButton{
+    background-color: rgb(129, 168, 39); /* Set the background color to pink */
+        padding: 7px 17px; /* Adjust the padding to make it small */
+        font-size: 17px; /* Adjust the font size to make it small */
+        border: none; /* Remove the default button border */
+        color: white; /* Set the text color to white for better visibility */
+}
+
+
+#quotecard{
+
+    background-color: rgba(186, 208, 144, 0.5);
+}
+
+
+
