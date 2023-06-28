@@ -8,11 +8,7 @@
 
 }
 
-#postsFromUsers {
-    display: flex;
 
-
-}
 
 
 
@@ -60,11 +56,12 @@ body{
 
 
 body{
-    background-image: url("/images/recipebg.png");
+    background-image: url("/images/backgroundTest.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    /* background-blend-mode:; */
    
 }
 

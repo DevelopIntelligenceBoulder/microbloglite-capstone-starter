@@ -21,6 +21,7 @@ code{
     color: rgb(230, 130, 59);
   }
 
+
   #registerButton{
     background-color: rgb(159, 210, 38); /* Set the background color to pink */
   padding: 9px 15px; /* Adjust the padding to make it small */
@@ -39,3 +40,9 @@ code{
   }
  
   
+
+img{
+    border-radius: 20%;
+    
+  }
+
