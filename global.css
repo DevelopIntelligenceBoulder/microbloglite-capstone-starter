@@ -34,3 +34,8 @@ footer {
 #filledHeartIcon {
     display:none;
 }
+
+.border-warning {
+    background:linear-gradient(to bottom,#f5c343,#5cc7ec)
+
+}
