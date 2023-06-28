@@ -1,4 +1,5 @@
 /* Posts Page JavaScript */
+// fetch all posts from users
 
 function displayUserName() {
   const loginData = getLoginData();
