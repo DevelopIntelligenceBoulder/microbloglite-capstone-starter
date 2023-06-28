@@ -26,7 +26,7 @@ function userInfoFetch (userInfo) {
         .then(response => response.json())
         .then(loginData => {
             console.log(loginData)
-            // window.location.assign("../")  
+            window.location.assign("../")  
         })
     }
 
