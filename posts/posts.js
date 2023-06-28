@@ -59,8 +59,8 @@ function createPost(post) {
   userName.textContent = fLetter + subName;
 
   const likesArea = document.createElement("h6");
-  likesArea.classList.add("card-subtitle", "text-muted");
-  likesArea.textContent = `${post.likes}`;
+  likesArea.classList.add("card-subtitle");
+  likesArea.textContent = `Likes: ${post.likes.length}`;
 
   cardBody.appendChild(userName);
   cardBody.appendChild(postText);
@@ -109,7 +109,6 @@ function loadAllPosts(posts) {
     createPost(post, postContainer);
   }
 }
-
 
 let addPostClick = document.getElementById('addPostButton');
 let roller = document.getElementById('roller')

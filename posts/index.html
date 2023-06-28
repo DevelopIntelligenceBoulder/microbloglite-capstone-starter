@@ -26,6 +26,10 @@
     </script>
     <!-- main post JS -->
     <script defer src="./posts.js"></script>
+    <!-- photo page JS -->
+    <script defer src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script defer src="../photoScript.js" type="text/javascript"></script>
+    <script defer src="https://kit.fontawesome.com/708d681e86.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,23 +50,52 @@
             <button onclick="logout()" id="logoutButton" class="btn btn-dark" type="button">logout</button>
         </nav>
     </header>
-    <h1>POSTS</h1>
     <main id="postParent">
-        <h5 class="postQ">What keeps you fit?</h4>
-        <div class="container">
-            <div class="mb-3 position-relative">
-                <textarea id="postTextarea" class="form-control" rows="3" placeholder="Write your post here ..."></textarea>
-                <button type="submit" class="EmojiBtn" id="EmojiBtn"><p id="default" class="default">😀</p> <p id="x" class="x hide">❌</p></button>
-                <button type="submit" class="resetBtn hide" id="resetBtn">reset</button>
-                <div id="emojiContainer" class="hide"></div>
+        <h1>POSTS</h1>
+        
+            <div class="container">
+                <div class="mb-3 position-relative">
+                    <textarea id="postTextarea" class="form-control" rows="3"
+                        placeholder="What keeps you fit?..."></textarea>
+                    <button type="submit" class="EmojiBtn" id="EmojiBtn">
+                        <p id="default" class="default">😀</p>
+                        <p id="x" class="x hide">❌</p>
+                    </button>
+                    <button type="submit" class="resetBtn hide" id="resetBtn">reset</button>
+                    <div id="emojiContainer" class="hide"></div>
+                </div>
+                <div id="buttonArea">
+                    <button id="addPostButton" class="btn btn-success">
+                        <span id="add-post">Add Post</span>
+                        <div class="lds-roller hide" id="roller">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <button type="button" class="btn btn-primary" id="open-modal-button"><i class="fa-solid fa-camera" style="color: #fafafa;"></i>Add Photo</button>
+                </div>
             </div>
-            <button id="addPostButton" class="btn btn-success">
-                <span id="add-post">Add Post</span>
-                <div class="lds-roller hide" id="roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
-            </button>
-        </div>
-        <div id="postContainer" class="container mt-4"></div>    
+            <dialog id="imageDialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Image Preview</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="dialog"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="" id="imagePreview" alt="Uploaded Image" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+            <div id="postContainer" class="container mt-4"></div>
     </main>
 
     <footer></footer>

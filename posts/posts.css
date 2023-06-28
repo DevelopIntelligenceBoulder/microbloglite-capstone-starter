@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 body::-webkit-scrollbar {
   width: 8px;
@@ -47,18 +47,20 @@ header {
 h1{
   color: rgb(255, 255, 255);
   margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 5rem;
 }
 
-.postQ{
+/* .postQ{
   color: white;
   margin-bottom: 1.5rem;
   margin-left: 1rem;
-}
+} */
 
 main {
-  margin: 5rem 25rem 0rem 25rem;
+  margin-left: 12rem !important;
+  margin-right: 12rem !important;
 }
 
 .card {
@@ -66,15 +68,13 @@ main {
   color: antiquewhite;
   border-color: white;
   border-width: 2px;
+  margin-top: 4rem;
 }
 
-#addPostButton {
-  margin-bottom: 4rem;
-}
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 800px) {
   main {
-    margin:3rem;
+    margin:3rem !important;
   }
 
   .postQ {
@@ -87,6 +87,16 @@ main {
   font-size: 25px;
 }
 
+#buttonArea{
+  display: flex;
+}
+
+#open-modal-button {
+  margin-left: 10px;
+}
+#postTextarea{
+  color: #000;
+}
 .EmojiBtn {
   position: absolute;
   right: 0;
@@ -99,6 +109,7 @@ main {
   width: 35px;
   height: 35px;
   border: 1px solid #000;
+  margin-right:10px;
 
 }
 
@@ -161,12 +172,12 @@ main {
 
 .post-date {
   position: absolute;
-  color: rgb(27, 27, 27);
+  color: rgb(0, 0, 0);
   top: 0;
   right: 0;
   padding: 2px 5px;
-  background-color: rgba(255, 255, 255, 0.699);
-  border-radius:0 18px 0 0;
+  background-color: rgba(255, 255, 255, 0.658);
+  border-radius:0px 18px 0 18px;
 }
 
 /* loading */
@@ -263,18 +274,22 @@ main {
 }
 
 #postContainer {
-  height: 55vh;
-  min-height: fit-content;
-  overflow: auto;
+  /* height: 55vh; */
+  /* min-height: fit-content; */
+  /* overflow: auto; */
   background-color: rgba(78, 78, 78, 0.582);
   backdrop-filter: blur(5px);
-padding: 30px 10px;
-border-radius: 20px;
+  padding: 30px 10px;
+  border-radius: 20px;
 }
+
 .userInfo {
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+.fa-solid {
+  margin-right: 6px;
 }
