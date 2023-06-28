@@ -30,7 +30,12 @@ nav a {
   color: black;
 }
 
-a.nav-link:hover {
+a:hover {
+  color: #53AD39;
+  text-decoration: none;
+}
+
+a.nav-link.active:hover {
   color: #53AD39;
   text-decoration: none;
 }
@@ -51,9 +56,11 @@ img {
 }
 
 footer {
-  background-color: #fff;
+  background-color: #F8F9FA;
+  height: 50px;
+  width: auto;
 }
 
-footer: hover {
-  background-color: ##86117C;
+footer:hover {
+  background-color: #86117C;
 }
