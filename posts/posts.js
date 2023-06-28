@@ -1,9 +1,8 @@
-
 /* Posts Page JavaScript */
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
+// const apiBaseURL = "https://microbloglite.herokuapp.com";
 // Backup server:   https://microbloglite.onrender.com
 
 const postsContainerEl = document.getElementById("postsContainer");
@@ -80,7 +79,7 @@ function getPosts() {
   const options = {
     method: "GET",
     headers: {
-       // This header is how we authenticate our user with the
+      // This header is how we authenticate our user with the
       // server for any API requests which require the user
       // to be logged-in in order to have access.
       // In the API docs, these endpoints display a lock icon.
