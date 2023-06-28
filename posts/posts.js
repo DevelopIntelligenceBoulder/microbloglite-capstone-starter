@@ -15,6 +15,9 @@ const postDisplayTemplate = document.getElementById('postDisplay')
 
 const likeBtn = document.getElementById('likeBtn');
 
+
+
+
 postBtn.addEventListener('click', () => {
     console.log(createPostInput.value)
 
@@ -29,6 +32,8 @@ postBtn.addEventListener('click', () => {
     //     }
     // });
 });
+
+
 
 logoutBtn.addEventListener('click', () => {
     logout();
@@ -46,49 +51,68 @@ function getPosts () {
         },
     };
 
-    fetch("https://microbloglite.herokuapp.com/api/posts?limit=100&offset=0", options)
+    fetch("https://microbloglite.herokuapp.com/api/posts", options)
         .then(response => response.json())
         .then((data) => {
 
-            // let template, content, username, textPost
+            let template
 
-            // template = document.getElementById('postDisplay')
+            template = document.getElementById('postDisplay')
 
-            // content = template.content
 
-            // username = document.querySelectorAll('h3')
-            // username.textContent = data.username;
-
-            // textPost = document.querySelectorAll('h3 > p')
-            // textPost.textContent = data.text;
             
             data.forEach((post) => {
 
-                const content = `
-                <div class="border p-3 m-3">
-                <h3><span>@</span>${post.username}</h3>
+                // const content = `
+                // <div class="border p-3 m-3">
+                // <h3><span>@</span>${post.username}</h3>
 
-                <p>${post.text}</p>
+                // <p>${post.text}</p>
 
-                <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
-                </div>
-                `
-                const createButton = document.createElement('button')
-                createButton.setAttribute('type','button')
-                createButton.classList.add('btn', 'btn-danger')
-                createButton.textContent = 'Like'
+                // <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
+                // </div>
+                // `
+                // const createButton = document.createElement('button')
+                // createButton.setAttribute('type','button')
+                // createButton.classList.add('btn', 'btn-danger')
+                // createButton.textContent = 'Like'
 
-                displayPostsDiv.innerHTML += content;
+                // displayPostsDiv.innerHTML += content;
 
-                displayPostsDiv.append(createButton);
+                // displayPostsDiv.append(createButton);
                 
-                // if("content" in document.createElement("template")) {
+                if("content" in document.createElement("template")) {
 
-                //     displayPostsDiv.appendChild(template);
-                // }
+                const postEl = template.content.cloneNode(true)
+
+                const username = postEl.querySelector('h3')
+                username.textContent = post.username;
+
+                const postText = postEl.querySelector('p')
+                postText.textContent = post.text;
+
+                const timeStamp = postEl.querySelector('small')
+                timeStamp.textContent = post.createdAt;
+
+                const likeBtn = postEl.querySelector('button')
+                likeBtn.addEventListener('click', () => {
+                    const heartIcon = document.getElementById('heartIcon')
+                    const filledHeartIcon = document.getElementById('filledHeartIcon')
+
+                        heartIcon.style.display = "none"
+                        filledHeartIcon.style.display = "flex"
+
+                        // fetch()
+                })
+
+                displayPostsDiv.appendChild(postEl);   
+            }
                 
             })
+
         });
 }
+
+
 
 
