@@ -141,6 +141,7 @@ function handleLike(postId, likeButton) {
     } else {
         likeCount--;
     }
+    
     likeCountElement.textContent = likeCount.toString();
 
     // Save the like state in localStorage
