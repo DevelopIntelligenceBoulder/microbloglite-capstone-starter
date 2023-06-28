@@ -27,7 +27,7 @@
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
     <!-- main post JS -->
-    <script defer src="./posts.js"></script>
+    <script defer src="./posts.js" type="module"></script>
     <!-- photo page JS -->
     <script defer src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script defer src="../photoScript.js" type="text/javascript"></script>
@@ -35,8 +35,9 @@
 </head>
 
 <body>
+    <canvas id="canvas" class="hide">Canvas is not supported in your browser.</canvas>
     <div class="backToTop hide" id="backToTop">
-       <a href="#Home"><img src="../assets/top.png" alt="back to top"></a> 
+       <img src="../assets/top.png" alt="back to top">
       </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong" id="Home">
