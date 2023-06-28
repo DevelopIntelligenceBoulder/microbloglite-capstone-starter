@@ -49,6 +49,7 @@
     width: fit-content;
     margin: 10px auto;
     border-radius: 10pt;
+    margin-top: 100pt;
 }
 
 .fullName {
@@ -107,9 +108,9 @@
 }
 
 .regheader {
-    margin-top: 100pt;
+    margin-top: 10pt;
     margin-bottom: 30pt;
-    width: 450pt;
+    width: 400pt;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -145,3 +146,10 @@
     visibility: visible;
     opacity: .9;
    }
+
+.gggImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

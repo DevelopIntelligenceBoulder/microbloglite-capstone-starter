@@ -51,7 +51,7 @@
             </div>
           </a>
           <div class="gggImg">
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="#">
               <img src="/images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
@@ -95,7 +95,9 @@
                   <a class="nav-link" href="/posts/index.html"> Posts </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/profile/profile.html">My Profile</a>
+                  <a class="nav-link" href="/profile/profile.html"
+                    >My Profile</a
+                  >
                 </li>
               </ul>
               <div class="position-relative fixed-bottom">
@@ -117,26 +119,77 @@
     <header>
       <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
     </header>
-
+    <div class="scrollClick">
+      <div class="imgCSS">
+        <button type="button" onclick="showAfter()" id="letterBtn">
+          <img id="letter" src="" />
+        </button>
+        <script>
+          function showAfter(e) {
+            document.getElementById("letterBtn").style.display = "none";
+            if (e == 1) {
+              document.getElementById("login").style.display = "none";
+            } else {
+              document.getElementById("login").style.display = "block";
+            }
+          }
+        </script>
+      </div>
+      <button type="button" onclick="show()" id="btnImgScroll">
+        <img
+          src="/images/scroll-with-stamp.png"
+          alt="scroll"
+          class="imgScroll"
+        />
+      </button>
+      <script>
+        function show() {
+          document.getElementById("login").style.display = "none";
+          let letter = document.getElementById("letter");
+          letter.src = "images/lord-calcifer-letter.png";
+          document.getElementById("btnImgScroll").style.display = "none"
+          document.getElementById("noahfrom").style.display = "none"
+          ;
+        }
+      </script>
+    </div>
+    <div class="notenoah">
+      <img src="/images/messgae-noah-hp.png" alt="MessageFromLC" class="noahfrom" id="noahfrom"/>
+    </div>
     <main class="loginMain">
       <form id="login">
-        <div>
-          <label for="username">Username</label>
+        <img
+          src="/images/login-header.png"
+          alt="loginheader"
+          class="logheader"
+        />
+
+        <div class="username">
+          <label for="username">Username:</label>
           <input type="text" id="username" minlength="3" />
         </div>
 
-        <div>
-          <label for="password">Password</label>
+        <div class="password">
+          <label for="password">Password:</label>
           <input type="password" id="password" minlength="6" />
         </div>
-
-        <button id="loginButton" type="submit">Login</button>
+        <div class="loginBtn">
+          <button id="loginButton" type="submit">Login</button>
+        </div>
+        <p class="signUpNow">
+          Not an Informant?
+          <a class="regLink" href="registration/registration.html">Sign up!</a>
+        </p>
       </form>
-      <p class="signUpNow"> Not an Informant? <a href="registration/registration.html">Sign up!</a></p>
+      <!-- -----hides form on load until scroll is clicked----- -->
+      <script>
+        window.onload = function () {
+          document.getElementById("login").style.display = "none";
+        };
+      </script>
+      <!-- ------End of script------------------- -->
     </main>
-
     <footer></footer>
-
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
   </body>

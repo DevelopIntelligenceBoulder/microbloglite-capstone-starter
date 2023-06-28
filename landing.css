@@ -19,7 +19,7 @@
   height: 15em;
 } */
 
-.imgNavbar{
+.imgNavbar {
   margin-left: 15pt;
   size: 20pt;
 }
@@ -29,14 +29,123 @@
   color: #5a0303;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .2s, visibility .2s;
+  transition: opacity 0.2s, visibility 0.2s;
   position: absolute;
 }
- .imgWrap:hover .imgDescription {
+.imgWrap:hover .imgDescription {
   visibility: visible;
-  opacity: .3;
- }
+  opacity: 0.3;
+}
+
+#login {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgba(249, 228, 232, 0.75);
+  background-position: center;
+  padding: 50pt;
+  width: fit-content;
+  margin: 10px auto;
+  border-radius: 10pt;
+
+}
+
+
 
 .loginMain {
   margin-top: 80pt;
+  margin-bottom: 80pt;
+
+}
+
+.username {
+  margin-top: 20pt;
+}
+
+#username {
+  border-style: none;
+  border-radius: 5pt;
+}
+
+.password {
+  margin-top: 20pt;
+}
+
+#password {
+  border-style: none;
+  border-radius: 5pt;
+}
+
+.loginBtn {
+  margin-top: 30pt;
+}
+
+#loginButton {
+  border-style: none;
+  padding: 5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border-radius: 4pt;
+  background-color: #f6196a;
+  color: white;
+}
+
+.regLink {
+  text-decoration: none;
+  font-weight: bold;
+  color: #f6196a;
+}
+
+.signUpNow {
+  margin-top: 30pt;
+}
+
+.logheader {
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+  width: 400pt;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgScroll {
+  width: 100%;
+}
+
+.gggImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btnImgScroll {
+  background: rgba(249, 228, 232, 0);
+  border-style: none;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgCSS {
+  margin-top: 60pt;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#letterBtn {
+  background: rgba(249, 228, 232, 0);
+  border-style: none;
+}
+
+.noahfrom {
+  width: 20%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  margin-top: 280pt;
+  margin-left: 60pt;
 }
