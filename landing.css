@@ -1,8 +1,4 @@
 /* Landing Page CSS */
-.titleOfPage,
-.aboutUs {
-  text-align: center;
-}
 
 .col, .pass{
 font-weight: bold;
@@ -21,4 +17,8 @@ font-weight: bold;
 
 .form-signin {
   text-align: right;
+}
+
+.bigPara, .howTo .subTitle{
+  text-align: left;
 }
