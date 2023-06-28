@@ -24,7 +24,6 @@ let postTextarea = document.getElementById('postTextarea').value
   .then(response => response.json())
   .then(data =>{
     let parEl = document.getElementById('postParent')
-    console.log(data)
     createPost(data, parentElement)
   }).catch (error => {
     console.log(error)
