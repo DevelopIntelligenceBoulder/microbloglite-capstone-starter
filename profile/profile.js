@@ -33,7 +33,8 @@ postBtnEl.addEventListener(`click`, (e) => {
     .then((posts) => {
       console.log(posts);
     });
-  window.location.href = "./profile.html";
+  //window.location.href = "./profile.html";
+  getPosts();
 });
 //----------------------------------------------------------------------------------
 
