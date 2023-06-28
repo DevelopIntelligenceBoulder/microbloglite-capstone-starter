@@ -31,28 +31,124 @@
     <script>
       if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
+    <link rel="stylesheet" href="/registration/reg.css" />
   </head>
-  <body>
-    <header>
-      <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+  <body class="body">
+    <!-- ------------------------------------------------------------------------------------------------- -->
+    <div class="bodyNav">
+      <nav class="navbar bg-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <div class="imgWrap">
+              <img
+                class="imgNavbar"
+                src="/images/transparent-color-fuel-the-flame.png"
+                alt="Logo"
+                width="40"
+                height="40"
+              />
+              <p class="imgDescription">Fuel the fire!!!</p>
+            </div>
+          </a>
+          <div class="gggImg">
+            <a class="navbar-item" href="">
+              <img src="/images/GGG.png" alt="GGG" width="300" />
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  <img
+                    class="offcanvasimg"
+                    src="images/black-white-logo.jpg"
+                    alt="logo"
+                  />
+                </h5> -->
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html"> Login </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/posts/index.html"> Posts </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile/profile.html"
+                    >My Profile</a
+                  >
+                </li>
+              </ul>
+              <div class="position-relative fixed-bottom">
+                <button
+                  type="button"
+                  class="btn btn-danger btn-lg btn-block"
+                  id="logoutBtn"
+                >
+                  It's too hot in here!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------- -->
 
     <main>
-      <div>
-        <label for="fullnameInput">Full Name</label>
-        <input type="text" id="fullnameInput" minlength="3" />
+      <img src="/images/reg-header.png" alt="regheader" class="regheader" />
+      <div class="regInputs">
+        <div class="fullName">
+          <label for="fullnameInput">Full Name: </label>
+          <input type="text" id="fullnameInput" minlength="3" />
+        </div>
+        <div class="username">
+          <label for="usernameInput">Username: </label>
+          <input type="text" id="usernameInput" minlength="3" />
+        </div>
+        <div class="password">
+          <label for="passwordInput">Password: </label>
+          <input type="password" id="passwordInput" minlength="6" />
+        </div>
+        <div class="regBtn">
+          <input type="button" value="Register" id="registerBtn" />
+        </div>
+        <p class="loginNow">
+          Already a member of Lord Calcifer's clan?
+          <a href="/index.html" class="loginLink">Log in!</a>
+        </p>
       </div>
-      <div>
-        <label for="usernameInput">Username</label>
-        <input type="text" id="usernameInput" minlength="3" />
-      </div>
-
-      <div>
-        <label for="passwordInput">Password</label>
-        <input type="password" id="passwordInput" minlength="6" />
-      </div>
-
-      <input type="button" value="Register" id="registerBtn" />
+      <a href="#">
+        <div class="imgWrap2">
+          <img
+            src="/images/transparent-noah.png"
+            alt="noahFlame"
+            class="noahCheck"
+          />
+          <p class="noahReg">Hale be thou!!!</p>
+        </div>
+      </a>
     </main>
 
     <footer></footer>
