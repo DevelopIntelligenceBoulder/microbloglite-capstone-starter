@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     loadPosts();
 
     async function loadPosts() {
-        const userPosts = await getPosts(loggedInUser.username);
+        const userPosts = await getPosts();
     
         // sort from newest to oldest
         userPosts.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
