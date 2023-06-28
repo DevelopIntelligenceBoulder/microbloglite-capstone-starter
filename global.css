@@ -18,12 +18,21 @@
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: #000;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+}
+
+nav a {
+  color: black;
+}
+
+a.nav-link:hover {
+  color: #53AD39;
+  text-decoration: none;
 }
 
 ul {
@@ -39,4 +48,12 @@ img {
   padding-left: 148rem;
   display: flex;
   justify-content: space-between;
+}
+
+footer {
+  background-color: #fff;
+}
+
+footer: hover {
+  background-color: ##86117C;
 }
