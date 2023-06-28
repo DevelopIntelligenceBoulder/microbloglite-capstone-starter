@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 25vh; /* 1/4 of the viewport height */
+  background-color: #f1f1f1;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sidebar {
+  width: 20%; 
+
+  
+  
+}
+.left-sidebar {
+  width: 20%; 
+  margin-right: 10%; 
+ 
+}
+
+
+.main-content {
+  width: 60%; 
+  margin-top: 10%;
+}
+
+#username{
+  margin-top: 4%;
+  padding-left:10% ;
+
+}
+#FullName{
+  padding-top: 40%;
+  padding-left: 10%;
+}
+div.bio-card{
+  margin-top: 10%;
+  padding-left: 10%S;
+}
+
+button#logOutBtn.btn.btn-secondary{
+  margin-top: 10%;
+  margin-left: 20%;
+}
+  

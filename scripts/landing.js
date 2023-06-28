@@ -1,11 +1,12 @@
 "use strict";
-
+//variables
 const loginForm = document.getElementById("login");
-const loginUsername = document.getElementById("username");
-const loginPassword = document.getElementById("password");
+const loginUsername = document.getElementById("loginUsername");
+const loginPassword = document.getElementById("loginPassword");
+const submitBtn = document.getElementById("submitBtn");
 
 
-loginForm.onsubmit = function (event) {
+submitBtn.onclick = function (event) {
     // Prevent the form from refreshing the page,
     // as it will do by default when the Submit event is triggered:
     event.preventDefault();
