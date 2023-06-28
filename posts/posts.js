@@ -60,7 +60,7 @@ function createPost(post) {
 
   const likesArea = document.createElement("h6");
   likesArea.classList.add("card-subtitle");
-  // likesArea.textContent = `Likes: ${post.likes}`;
+  //  likesArea.textContent = `Likes: ${post.likes.}`;
 
   cardBody.append(userName, postText, likesArea, postDate);
 
@@ -128,3 +128,14 @@ addPostClick.addEventListener('click', function() {
 
 });
 
+// back to top
+
+window.addEventListener('scroll', function() {
+  const windowScrolled = window.scrollY
+  if (windowScrolled > 120){
+    document.getElementById('backToTop').classList.remove('hide')
+  } else {
+    document.getElementById('backToTop').classList.add('hide')
+
+  }
+})

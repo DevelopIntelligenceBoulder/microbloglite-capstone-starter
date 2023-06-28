@@ -297,3 +297,24 @@ main {
 .fa-solid {
   margin-right: 6px;
 }
+/* back to top */
+
+.backToTop {
+  background-color: rgba(78, 78, 78, 0.582);
+  padding: 5px 10px;
+  width: fit-content;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  transition: all 0.5s;
+}
+.backToTop img {
+  width: 30px;
+}
+
+.backToTop:hover {
+  transform: scale(1.1);
+  background-color: rgba(168, 168, 168, 0.582);
+  
+}
