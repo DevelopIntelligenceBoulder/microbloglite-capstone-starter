@@ -63,6 +63,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+   
 }
 
 
@@ -87,7 +88,10 @@ html {
     border: 4px dotted #737bb9;
     padding: 5%;
     border-radius: 20px;
-    background-color: rgba(186, 208, 144, 0.5);
+
+    background-color: rgba(191, 236, 108, 0.5);
+
+
    
 }
 
@@ -124,4 +128,6 @@ html {
 
     background-color: rgba(186, 208, 144, 0.5);
 }
+
+
 
