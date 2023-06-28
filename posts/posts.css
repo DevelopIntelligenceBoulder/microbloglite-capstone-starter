@@ -23,9 +23,11 @@
     justify-content: center;
     text-align: center;
     align-content: center;
-    background-color: rgb(169, 101, 101);
-    max-width: 85%;
+    /* background-color: rgb(186, 208, 144, 0.5); */
+    max-width: 105%;
     font-size: 25px;
+    font-style: oblique;
+    font-weight: 700;
     
 }
 
@@ -82,11 +84,11 @@ html {
 
 
 #usersPostCard{
-    border: 4px dotted #737bb9;
+    border: 4px  #737bb9;
     padding: 5%;
     border-radius: 20px;
 
-    background-color: rgba(191, 236, 108, 0.5);
+    background-color: rgba(186, 208, 144, 0.5);
 
 
    
@@ -113,7 +115,7 @@ html {
 }
 
 #profileButton{
-    background-color: rgb(129, 168, 39); /* Set the background color to pink */
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
         padding: 7px 17px; /* Adjust the padding to make it small */
         font-size: 17px; /* Adjust the font size to make it small */
         border: none; /* Remove the default button border */

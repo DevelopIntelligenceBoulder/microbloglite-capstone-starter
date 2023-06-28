@@ -20,7 +20,29 @@
 code{
     color: rgb(230, 130, 59);
   }
+
+
+  #registerButton{
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
+  padding: 9px 15px; /* Adjust the padding to make it small */
+  font-size: 15px; /* Adjust the font size to make it small */
+  border: none; /* Remove the default button border */
+  color: white; 
+  }
+
+  .formButton{
+
+    background-color: rgb(159, 210, 38); /* Set the background color to pink */
+      padding: 9px 15px; /* Adjust the padding to make it small */
+      font-size: 15px; /* Adjust the font size to make it small */
+      border: none; /* Remove the default button border */
+      color: white; 
+  }
+ 
+  
+
 img{
     border-radius: 20%;
     
   }
+
