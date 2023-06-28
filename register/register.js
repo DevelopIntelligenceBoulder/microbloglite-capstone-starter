@@ -1,5 +1,5 @@
 "use strict";
-
+// sup 
 // Get references to various DOM elements
 const register = document.getElementById("register");
 const nameA = document.getElementById("nameA");
