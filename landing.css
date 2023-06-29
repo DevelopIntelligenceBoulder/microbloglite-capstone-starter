@@ -22,3 +22,7 @@ font-weight: bold;
 .bigPara, .howTo .subTitle{
   text-align: left;
 }
+
+.pageTitle {
+  text-align: center;
+}
