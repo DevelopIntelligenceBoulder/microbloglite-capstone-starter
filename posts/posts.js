@@ -80,6 +80,8 @@ function postFetch() {
     fetch(apiBaseURL + "/api/posts", options)
         .then(response => response.json())
         .then(posts => {
+            posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
             posts.forEach(post => {
                 const cardHTML = `
             <div class="card text-center" id="cards" data-post-id="${post._id}">
