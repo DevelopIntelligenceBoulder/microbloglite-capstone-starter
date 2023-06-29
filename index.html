@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -24,12 +23,12 @@
   <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
   <script src="auth.js"></script>
   <script>
-    if (isLoggedIn() === true) window.location.replace("../posts/index.html");
-    console.log(isLoggedIn());
+    if (isLoggedIn() === false) window.location.replace("../index.html");
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -88,34 +87,13 @@
 
   </main>
   <footer class="foot">
+
     <h3>Created by:</h3>
-    <div class="footlogo">
-      <div>
-        <a href="https://github.com/TheCodester1">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" </a>
-          <p>Imani Watley</p>
-      </div>
-      <div>
-        <a href="https://github.com/blazematter">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" </a>
-          <p>Andy Ho</p>
-      </div>
-      <div>
-        <a href="https://github.com/margaritafern">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" </a>
-          <p>Rita Fernandez</p>
-      </div>
-      <div>
-        <a href="https://github.com/Hacktivist295">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" </a>
-          <p>Sameer Ahmad</p>
-      </div>
-      <div>
-        <a href="https://github.com/rsteward85">
-          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" </a>
-          <p>Ricardo Steward</p>
-      </div>
-    </div>
+    <p>Ricardo - <a href="https://github.com/rsteward85">https://github.com/rsteward85</a></p>
+    <p>Andy - <a href="https://github.com/blazematter">https://github.com/blazematter</a></p>
+    <p>Sameer - <a href="https://github.com/Hacktivist295">https://github.com/Hacktivist295</a></p>
+    <p>Margarita - <a href=""></a> </p>
+    <p>Imani - <a href="https://github.com/TheCodester1">https://github.com/TheCodester1</a></p>
 
   </footer>
 
