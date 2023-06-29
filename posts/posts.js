@@ -2,7 +2,7 @@
 
 "use strict";
 
-// const apiBaseURL = "https://microbloglite.herokuapp.com";
+const apiBaseURL = "https://microbloglite.herokuapp.com";
 // Backup server:   https://microbloglite.onrender.com
 
 const postsContainerEl = document.getElementById("postsContainer");
@@ -35,14 +35,15 @@ function likePost(id) {
       const clickedBtn = document.querySelector(`button[id='${id}']`);
       clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
       clickedBtn.classList.add("bg-primary");
-      const likes = getLikes(id);
+      printLikes(id, clickedBtn);
     })
     .catch((err) => {
       console.log(err, err.status);
     });
 }
 
-function getLikes(postID) {
+function printLikes(postID, likeEl) {
+  console.log("getlikes");
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
     method: "GET",
@@ -56,10 +57,9 @@ function getLikes(postID) {
   };
   fetch(apiBaseURL + `/api/posts/${postID}`, options)
     .then((response) => response.json())
-    .then((posts) => {
-      posts.forEach((post) => {
-        return post.likes.length;
-      });
+    .then((post) => {
+      console.log(post.likes.length);
+      likeEl.textContent = `Like: ${post.likes.length}`;
     });
 }
 
@@ -84,15 +84,13 @@ function removeLike(likeId, postId) {
         const clickedBtn = document.querySelector(`button[id='${postId}']`);
         clickedBtn.setAttribute("onclick", `likePost(this.id)`);
         clickedBtn.removeAttribute("class");
-        const likect = +clickedBtn.textContent.substring(6);
-        clickedBtn.textContent = `like ${likect}`;
+        printLikes(postId, clickedBtn);
       }
     })
     .catch((err) => {
       console.log(err, err.status);
     });
 }
-
 function getPosts() {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
@@ -105,11 +103,12 @@ function getPosts() {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-
   fetch(apiBaseURL + "/api/posts", options)
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {
+        console.log(post.likes);
+        console.log(loginData.username);
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");
@@ -125,27 +124,13 @@ function getPosts() {
         postArea.textContent = post.text;
         postsContainerEl.appendChild(clone);
       });
-    })
-    .catch((err) => {
-      console.log(err, err.status);
     });
 }
 
 // Function to handle the logout action
 
-
-// Check if the user is logged in (Replace with your own implementation)
-function isLoggedIn() {
-  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
-  return loginData !== null && loginData.token !== undefined;
-}
-
-// Clear authentication-related data (Replace with your own implementation)
-function clearAuthentication() {
-  window.localStorage.removeItem("login-data");
-}
-
 // Add event listener to wait for the DOM content to load
+
 document.addEventListener("DOMContentLoaded", function () {
   if (isLoggedIn() === false) window.location.replace("/");
 

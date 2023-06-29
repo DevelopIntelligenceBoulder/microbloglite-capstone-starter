@@ -20,5 +20,5 @@ loginForm.onsubmit = function (event) {
   loginForm.landingLogin.disabled = true;
 
   // Time to actually process the login using the function from auth.js!
-  login(loginData).then((data) => console.log(loginData));
+  login(loginData);
 };
