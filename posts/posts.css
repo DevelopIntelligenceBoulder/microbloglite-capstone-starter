@@ -41,52 +41,49 @@
 }
 
 #textbox {
-    border-radius: 5px; 
-    padding: 15px;
-    margin-bottom: 20pt;
-    width: 75%;
-    border-style: none;
-    
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20pt;
+  width: 75%;
+  border-style: none;
 }
 
 .inputFields {
-    text-align: center;
+  text-align: center;
 }
 
 #postBtn {
-    margin-left: 10pt;
-    border-radius: 5px;
-    border-style: none;
-    width: 40pt;
-    height: 20pt;
-    background-color: #EF466F ;
+  /* margin-left: 5pt; */
+  margin-bottom: 10pt;
 
-    
+  border-radius: 5px;
+  border-style: none;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ef467000;
 }
 
 .card {
-    margin-bottom: 10pt;
-
+  margin-bottom: 10pt;
 }
 
 #likeBtn {
-    margin-top: 10pt;
-    margin-left: 10pt;
-    margin-bottom: 10pt;
-
+  margin-top: 10pt;
+  margin-left: 10pt;
+  margin-bottom: 10pt;
 }
 
 .card-text {
-    margin-top: 20pt;
-    margin-left: 20pt;
+  margin-top: 20pt;
+  margin-left: 20pt;
 }
 
 .card-title {
-    margin-top: 10pt;
-    margin-left: 5pt;
+  margin-top: 10pt;
+  margin-left: 5pt;
 }
 
 #postCards {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }

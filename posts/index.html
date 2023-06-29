@@ -106,9 +106,9 @@
                   <a class="nav-link" href="/posts/index.html"> Posts </a>
                 </li>
                 <li class="nav-item">
-
-                  <a class="nav-link" href="/profile/profile.html">My Profile</a>
-
+                  <a class="nav-link" href="/profile/profile.html"
+                    >My Profile</a
+                  >
                 </li>
               </ul>
               <div class="position-relative fixed-bottom">
@@ -130,7 +130,7 @@
         <div class="row">
           <div class="inputFields">
             <input type="text" value="Truthful Posts Only" id="textbox" />
-            <input type="button" value="Post" id="postBtn" />
+            <button type="button" value="Post" id="postBtn"></button>
           </div>
         </div>
 
@@ -146,6 +146,21 @@
               </div>
             </div>
           </div>
+        </template>
+        <template id="pagesBottom">
+          <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#"></a></li>
+              <!-- <li class="page-item"><a class="page-link" href="#"></a></li>
+              <li class="page-item"><a class="page-link" href="#"></a></li> -->
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
         </template>
         <div class="row">
           <div class="col">
