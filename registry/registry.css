@@ -1,4 +1,4 @@
-body{
+/* body{
     /* Safari 4-5, Chrome 1-9 */
       background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
   
@@ -11,7 +11,7 @@ body{
     /* IE 10 */
       background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
       height:600px;
-  }
+  /* }
   
   .centered-form{
       margin-top: 60px;
@@ -26,4 +26,8 @@ body{
       font-weight: bold;
       color: #46b8da;
       font-size: 11px;
+  } */ */
+
+  .register  {
+    text-align: center;
   }
