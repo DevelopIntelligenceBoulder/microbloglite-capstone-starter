@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -13,43 +14,58 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="../global.css">
+
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="./posts.css">
 
-    <title>HOME</title>
+    <title>Posts | CraftsHQ</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../auth.js"></script>
     <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
+        if (isLoggedIn() === false) window.location.replace("/");
     </script>
-</head>    
+</head>
+</head>
 <body>
-    <nav id="navbar" class="nav">
-        <h1 id="header">BLOG</h1>
-        <ul class="nav-list">
-          <li><a href="/home/home.html">Home</a></li>
-          <li><a href="/posts/posts.html">Posts</a></li>
-          <li><a href="/profile/profile.html">Profile</a></li>
-          <li><a href="/test/test.html">Register</a></li>
-        </ul>
-      </nav>
+  <nav id="navbar" class="nav">
+    <h1 id="header">BLOG</h1>
+    <ul class="nav-list">
+      <li><a href="../home/">Home</a></li>
+      <li><a href="../posts/">Posts</a></li>
+      <li><a href="../profile/">Profile</a></li>
+      <li><a href="../test/">Register</a></li>
+    </ul>
+  </nav>
+
   
     <div id="page-container">
       <div class="container my-3 my-sm-5">
-        <h1>HOME PAGE</h1>
+        <h1>POSTS PAGE</h1>
         <p></p>
-        <h3>Welcome to the Blog Site</h3>
-
-        <main>
+        <h3>Welcome to the Posts</h3>
 
 
+
+      
+      <div class="content">
+              <h3>FEED</h3>
+          <main>
+            <div id="postContainer">
+
+
+
+            </div>
+      
+          </main>
+      
     
-        </main>
+    </div>
 
 
-        </ul>
+
+
       </div>
   
       <footer>
@@ -63,7 +79,7 @@
         <a href="#" class="fa fa-twitter"></a>
       </footer>
     </div>
-    <!-- Page-specific code -->
-    <script src="./home.js"></script>
+         <!-- Page-specific code -->
+         <script src="./posts.js"></script>
   </body>
 </html>
