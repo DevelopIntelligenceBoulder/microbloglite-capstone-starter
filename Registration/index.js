@@ -6,6 +6,11 @@ function signup() {
   const fullName = document.getElementById("name").value;
   const password = document.getElementById("password").value;
 
+  if (username === "" || fullName === "" || password === "") {
+    alert("Please fill out all fields!");
+    return;
+  }
+
   const userData = {
     username: username,
     fullName: fullName,
@@ -21,17 +26,10 @@ function signup() {
   })
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
-      // if (Boolean(data.success)) {
-      //   console.log(data.success);
-      //   alert("Sign up successful!");
       window.location.href = "/index.html";
-      // } else {
-      //   alert("Sign up failed. Please try again.");
-      // }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("Please fill out all fields!");
+      alert("Something went wrong, please try again!");
     });
 }
