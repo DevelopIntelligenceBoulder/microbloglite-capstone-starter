@@ -25,8 +25,7 @@ function userInfoFetch (userInfo) {
     return fetch(apiBaseURL + "/api/users", options)
         .then(response => response.json())
         .then(loginData => {
-            console.log(loginData)
-            window.location.assign("../index.html")  
+            window.location.assign("../")   
         })
     }
 

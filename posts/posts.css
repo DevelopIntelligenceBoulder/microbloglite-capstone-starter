@@ -71,4 +71,13 @@ body {
 .like-button {
     border-style: none;
     background: none;
+    opacity: 0.2;
+}
+
+.liked {
+    opacity: 1.0;
+}
+
+.mousedOver {
+    background-color: black;
 }
