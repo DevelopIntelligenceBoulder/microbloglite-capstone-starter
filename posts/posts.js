@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     async function loadPosts() {
         const userPosts = await getPosts();
+
+        console.log(userPosts);
     
         // sort from newest to oldest
-        userPosts.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
-        userPosts.forEach((post) => addPost(post, loggedInUser));
+        //userPosts.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+        // userPosts.forEach((post) => addPost(post, loggedInUser));
+        for (const post of userPosts) {
+            await addPost(post, loggedInUser);
+        }
     }
 
     postBtn.addEventListener('click', async (ev) => {
