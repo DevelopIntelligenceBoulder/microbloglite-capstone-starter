@@ -11,7 +11,7 @@ margin-bottom: 15px;
 }
 
 body {
-    font-family: 'Bree Serif', serif;
+    /* font-family: 'Bree Serif', serif; */
     overflow: auto;
 
 
@@ -140,7 +140,7 @@ button:focus {
 
 }
 
-.foot {
+/* .foot {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -149,5 +149,8 @@ button:focus {
     padding: 20px;
     text-align: center;
     color: #333;
-    font-size: 14px;
-}
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+} */
