@@ -5,8 +5,14 @@ const displayPostsDivEl = document.getElementById(`DisplayPostsDivs`);
 const postDisplayEl = document.getElementById(`postDisplay`);
 const userAccount = document.getElementById('userAccount');
 const userInfo = document.getElementById('userInfo');
+const usernamePosts = document.getElementById('usernamePosts')
+const editBio = document.getElementById('editBio')
 
 const loginData = getLoginData();
+
+editBio.addEventListener('click', () => {
+  
+})
 
 //------------------------------------------------------------------
 logoutBtn.addEventListener("click", () => {
@@ -37,7 +43,8 @@ postBtnEl.addEventListener(`click`, (e) => {
     .then((posts) => {
       console.log(posts);
     });
-  getPosts();
+  // getPosts();
+  window.location.reload();
 });
 //----------------------------------------------------------------------------------
 
@@ -57,29 +64,13 @@ function getPosts() {
 
       userInfo.innerHTML = `${loginData.username}'s Profile`
 
+      usernamePosts.innerHTML = `${loginData.username}'s Posts`
+
       let template;
       
       template = document.getElementById("postDisplay");
 
       data.forEach((post) => {
-
-        // const content = `
-        // <div class="border p-3 m-3">
-        // <h3><span>@</span>${post.username}</h3>
-
-        // <p>${post.text}</p>
-
-        // <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
-        // </div>
-        // `
-        // const createButton = document.createElement('button')
-        // createButton.setAttribute('type','button')
-        // createButton.classList.add('btn', 'btn-danger')
-        // createButton.textContent = 'Like'
-
-        // displayPostsDiv.innerHTML += content;
-
-        // displayPostsDiv.append(createButton);
 
         if ("content" in document.createElement("template")) {
           const postEl = template.content.cloneNode(true);
@@ -91,23 +82,35 @@ function getPosts() {
           postText.textContent = post.text;
 
           const timeStamp = postEl.querySelector("small");
-          timeStamp.textContent = post.createdAt;
+          timeStamp.textContent = (new Date(post.createdAt).toLocaleString());
 
-          const deleteBtnEl = postEl.getElementById(`deleteBtn`);
+          const trashBtnEl = postEl.getElementById(`trashBtn`);
+
+          const deleteBtnEl = postEl.getElementById('deleteBtn')
 
           deleteBtnEl.addEventListener("click", () => {
-            fetch(`microbloglite.herokuapp.com/api/posts/${post._id}`, {
-              method: `DELETE`,
+
+            console.log('post deleted?')
+            fetch(`https://microbloglite.herokuapp.com/api/posts/${post._id}`, {
+              method: 'DELETE',
+
               headers: {
                 Authorization: `Bearer ${loginData.token}`,
+                "Content-type": "application/json; charset=utf-8"
               },
             });
+            window.location.reload();
           });
           //--------------------------------------------------------------------
-          const likeBtn = postEl.querySelector("input");
-          likeBtn.addEventListener("click", () => {
-            const heartIcon = document.getElementById("heartIcon");
-            const filledHeartIcon = document.getElementById("filledHeartIcon");
+          const likeBtn = postEl.querySelector("a");
+
+          likeBtn.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            console.log(post._id);
+            const heartIcon = likeBtn.querySelector(".heartIcon");
+            const filledHeartIcon = likeBtn.querySelector(".filledHeartIcon");
 
             heartIcon.style.display = "none";
             filledHeartIcon.style.display = "flex";

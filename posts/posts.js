@@ -16,8 +16,7 @@ const postDisplayTemplate = document.getElementById("postDisplay");
 
 const profileLinkEl = document.getElementById(`profileLink`);
 
-
-const userAccount = document.getElementById('userAccount');
+const userAccount = document.getElementById("userAccount");
 
 //------------------------------------------------------------------
 
@@ -57,6 +56,28 @@ logoutBtn.addEventListener("click", () => {
   logout();
 });
 
+// function sortPost() {
+//     const options = {
+//       method: "GET",
+//       headers: {
+//         Authorization: `Bearer ${loginData.token}`,
+//         "Content-type": "application/json; charset=utf-8"
+//       },
+//     };
+//     fetch("https://microbloglite.herokuapp.com/api/posts?limit=100000&offset=0", options)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         data.sort(function (a, b) {
+//             if (a.createdAt > b.createdAt) return -1;
+//             else if (+a.createdAt == +b.createdAt) return 0;
+//             else return 1;
+//           });
+//         });
+//   }
+  
+//   sortPost();
+
+
 window.onload = getPosts;
 
 function getPosts() {
@@ -70,29 +91,11 @@ function getPosts() {
   fetch("https://microbloglite.herokuapp.com/api/posts", options)
     .then((response) => response.json())
     .then((data) => {
-
-        userAccount.innerHTML = loginData.username
+      userAccount.innerHTML = loginData.username;
 
       const template = document.getElementById("postDisplay");
 
       data.forEach((post) => {
-        // const content = `
-        // <div class="border p-3 m-3">
-        // <h3><span>@</span>${post.username}</h3>
-
-        // <p>${post.text}</p>
-
-        // <p class="fs-6 lead">${Date(post.createdAt).toLocaleString()}</p>
-        // </div>
-        // `
-        // const createButton = document.createElement('button')
-        // createButton.setAttribute('type','button')
-        // createButton.classList.add('btn', 'btn-danger')
-        // createButton.textContent = 'Like'
-
-        // displayPostsDiv.innerHTML += content;
-
-        // displayPostsDiv.append(createButton);
 
         if ("content" in document.createElement("template")) {
           const postEl = template.content.cloneNode(true);
@@ -104,12 +107,11 @@ function getPosts() {
           postText.textContent = post.text;
 
           const timeStamp = postEl.querySelector("small");
-          timeStamp.textContent = (new Date(post.createdAt)).toLocaleString()
+          timeStamp.textContent = new Date(post.createdAt).toLocaleString();
 
           const likeBtn = postEl.querySelector("a");
 
           likeBtn.addEventListener("click", (e) => {
-
             e.preventDefault();
 
             console.log(post._id);
@@ -139,26 +141,4 @@ function getPosts() {
 }
 
 
-// function sortPost() {
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       Authorization: `Bearer ${loginData.token}`,
-//     },
-//   };
-//   fetch("https://microbloglite.herokuapp.com/api/posts?limit=100000&offset=0", options)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const postDate = data.filter(data.createdAt);
-//       console.log(postDate);
-//       data.forEach((post) => {
-//         post.createdAt.sort(function (a, b) {
-//           if (a > b) return -1;
-//           else if (a == b) return 0;
-//           else return 1;
-//         });
-//       });
-//     });
-// }
 
-// sortPost();
