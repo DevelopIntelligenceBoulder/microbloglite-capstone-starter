@@ -6,3 +6,6 @@ function getuser() {
       ///does stuff
     });
 }
+
+const logoutLink = document.getElementById("logout");
+logoutLink.addEventListener("click", logout);
