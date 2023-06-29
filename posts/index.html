@@ -30,7 +30,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">Logo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -45,9 +45,7 @@
               <a class="nav-link" href="../profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
-
               <a class="nav-link" href="#" id="logout">Logout</a>
-
             </li>
           </ul>
         </div>
@@ -64,18 +62,20 @@
         <div class="col">
           <div id="postsContainer"></div>
         </div>
-      </div>
-      <template id="postCard">
-        <div class="card">
-          <div class="card-header">Featured</div>
-          <div class="card-body">Basic card</div>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-sm-3 creationDate"></div>
-              <div class="col-sm-3 likes"></div>
+        <template id="postCard">
+          <div class="card">
+            <div class="card-header">Featured</div>
+            <div class="card-body">Basic card</div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-3 creationDate"></div>
+                <div class="col-3">
+                  <button type="button" class=""></button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
   </main>
 
