@@ -9,17 +9,33 @@ function getLoginData() {
     const userName = document.getElementById("userName");
     const editButton = document.getElementById("editButton");
     const saveButton = document.getElementById("saveButton");
+    const cancelButton = document.getElementById("cancelButton");
   
-    editButton.addEventListener("click", enableEdit);
-  
+    editButton.addEventListener("click", toggleEdit);
     saveButton.addEventListener("click", saveProfile);
+    cancelButton.addEventListener("click", cancelEdit);
+  
+    let isEditing = false;
+    let originalFullName = "";
+    let originalUserName = "";
   
     fetchUserProfile();
   
-    function enableEdit() {
-      fullName.disabled = false;
-      userName.disabled = false;
-      saveButton.disabled = false;
+    function toggleEdit() {
+      isEditing = !isEditing;
+  
+      fullName.disabled = !isEditing;
+      userName.disabled = !isEditing;
+      saveButton.disabled = !isEditing;
+      cancelButton.disabled = !isEditing;
+  
+      if (isEditing) {
+        originalFullName = fullName.value;
+        originalUserName = userName.value;
+      } else {
+        fullName.value = originalFullName;
+        userName.value = originalUserName;
+      }
     }
   
     function saveProfile() {
@@ -27,7 +43,7 @@ function getLoginData() {
         fullName: fullName.value,
         username: userName.value,
       };
-  
+    
       fetch(baseURL + `/api/users/${loginData.username}`, {
         method: "PUT",
         headers: {
@@ -42,14 +58,34 @@ function getLoginData() {
           }
           return response.json();
         })
-        .then(() => {
-          fullName.disabled = true;
-          userName.disabled = true;
-          saveButton.disabled = true;
+        .then((data) => {
+          toggleEdit();
+    
+          if (updatedData.fullName !== loginData.fullName) {
+            alert("Successfully Changed Full Name!");
+            loginData.fullName = updatedData.fullName;
+            window.location.reload();
+          }
+    
+          if (updatedData.username !== loginData.username) {
+            loginData.username = updatedData.username;
+            window.localStorage.removeItem("login-data");
+            setTimeout(() => {
+              alert("Successfully Changed Username! Press OK to Re-Login.");
+              window.location.href = "/index.html";
+            }, 0);
+          } else {
+            window.localStorage.setItem("login-data", JSON.stringify(loginData));
+          }
         })
         .catch((error) => {
           console.error("Failed to update user profile data:", error);
         });
+    }
+  
+  
+    function cancelEdit() {
+      toggleEdit();
     }
   
     function fetchUserProfile() {
