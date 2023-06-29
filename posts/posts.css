@@ -22,3 +22,6 @@ ul {
 .timestamp {
   color: #666;
 }
+i:hover {
+  cursor: pointer;
+}
