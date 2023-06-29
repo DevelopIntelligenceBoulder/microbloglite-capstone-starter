@@ -32,4 +32,5 @@ function signup() {
       console.error("Error:", error);
       alert("Something went wrong, please try again!");
     });
+  // Found this method on stackoverflow
 }
