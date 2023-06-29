@@ -6,10 +6,10 @@
 
 
 
-// function showUserName() {
-//   const currentUser = JSON.parse(window.localStorage.getItem("login-data")).username;
-//   return currentUser
-// }
+function showUserName() {
+  const currentUser = JSON.parse(window.localStorage.getItem("login-data")).username;
+  return currentUser
+}
 
 function addPost() {
 let postTextarea = document.getElementById('postTextarea').value
@@ -60,15 +60,105 @@ function createPost(post) {
   let subName = uName.slice(1)
   userName.textContent = fLetter + subName;
 
-  const likesArea = document.createElement("h6");
-  likesArea.classList.add("card-subtitle");
-  likesArea.textContent = `Likes: ${post.likes.length}`;
+//  like funcitonality
+
+const likesArea = document.createElement("div");
+likesArea.classList.add("card-subtitle");
+
+const likeBtn = document.createElement('img')
+likeBtn.setAttribute('src', '../assets/like.svg')
+likeBtn.setAttribute('class', 'likeBtn')
+likesArea.appendChild(likeBtn)
+
+const spanElLike = document.createElement('span')
+spanElLike.setAttribute('id', 'spanElLike')
+spanElLike.textContent = 0
+
+likeBtn.addEventListener('click', function () {
+  if (spanElDislike.textContent == 0){
+    spanElLike.textContent = 1
+  } else if (spanElDislike.textContent == 1) {
+    spanElDislike.textContent = 0
+    spanElLike.textContent = 1
+  }
+  sendReaction(post._id, 'like')
+  })
+likesArea.appendChild(spanElLike)
+
+
+const dislikeBtn = document.createElement('img')
+dislikeBtn.setAttribute('src', '../assets/dislike.svg')
+dislikeBtn.setAttribute('class', 'dislikeBtn')
+likesArea.appendChild(dislikeBtn)
+const spanElDislike = document.createElement('span')
+spanElDislike.setAttribute('id', 'spanElDislike')
+spanElDislike.textContent = 0
+dislikeBtn.addEventListener('click', function() {
+  if (spanElLike.textContent == 0){
+    spanElDislike.textContent = 1
+  } else if (spanElLike.textContent == 1) {
+    spanElLike.textContent = 0
+    spanElDislike.textContent = 1
+  }
+  sendReaction(post._id, 'dislike')
+})
+likesArea.appendChild(spanElDislike)
+
+
+
+// end
 
   cardBody.append(userName, postText, likesArea, postDate);
 
   cardContainer.appendChild(cardBody);
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
 }
+
+
+
+function sendReaction(postId, reaction) {
+  const options = {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ postId, reaction })
+  };
+
+  fetch(apiBaseURL + "/api/likes", options)
+    .then(response => {
+      if (response.ok) {
+        console.log("Reaction saved successfully");
+        console.log(response)
+      } else {
+        throw new Error("Failed post reaction");
+      }
+    })
+    .catch(error => {
+      console.error("Error occured:", error);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Get all post
@@ -130,6 +220,17 @@ addPostClick.addEventListener('click', function() {
 
 });
 
+// back to top
+
+window.addEventListener('scroll', function() {
+  const windowScrolled = window.scrollY
+  if (windowScrolled > 120){
+    document.getElementById('backToTop').classList.remove('hide')
+  } else {
+    document.getElementById('backToTop').classList.add('hide')
+
+  }
+})
 
 let backToTop = document.getElementById('backToTop')
 backToTop.addEventListener("click", function(){

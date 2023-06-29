@@ -303,6 +303,7 @@ main {
   margin-right: 6px;
 }
 /* back to top */
+
 .backToTop {
   background-color: rgba(78, 78, 78, 0.582);
   padding: 5px 10px;
@@ -394,22 +395,3 @@ main {
   75%{transform: translateY(6px);}
   100%{transform: translateY(0);}
 }
-
-
-.image-container {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.post-image {
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-}
-
-#postTextarea {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
