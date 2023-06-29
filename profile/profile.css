@@ -1,12 +1,15 @@
-body {
-  font-family: "Bree Serif", serif;
+body  {
+  /* font-family: "Bree Serif", serif; */
 }
 
 .nav-item {
   padding-left: 250px;
 }
 
-.statusUpdate textarea {
+img {
+    width: 154px;
+    height: auto;
+}.statusUpdate textarea {
   width: 100%;
   height: 100px;
   resize: none;
