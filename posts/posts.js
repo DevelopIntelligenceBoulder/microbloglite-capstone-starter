@@ -4,9 +4,10 @@
 
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
+const sortDropdown = document.getElementById("postSort");
 
+sortDropdown.addEventListener("change", getPosts);
 getPosts();
-
 function likePost(id) {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
 
@@ -40,7 +41,6 @@ function likePost(id) {
 }
 
 function printLikes(postID, likeEl) {
-  console.log("getlikes");
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
     method: "GET",
@@ -55,15 +55,12 @@ function printLikes(postID, likeEl) {
   fetch(apiBaseURL + `/api/posts/${postID}`, options)
     .then((response) => response.json())
     .then((post) => {
-      console.log(post.likes.length);
       likeEl.textContent = `Like: ${post.likes.length}`;
     });
 }
 
 function removeLike(likeId, postId) {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
-  console.log("post", postId);
-  console.log("like", likeId);
 
   const options = {
     method: "DELETE",
@@ -75,8 +72,6 @@ function removeLike(likeId, postId) {
   fetch(apiBaseURL + `/api/likes/${likeId}`, options)
     .then((response) => response.json())
     .then((like) => {
-      console.log(like);
-      console.log(like.statusCode);
       if (like.statusCode < 400) {
         const clickedBtn = document.querySelector(`button[id='${postId}']`);
         clickedBtn.setAttribute("onclick", `likePost(this.id)`);
@@ -90,7 +85,9 @@ function removeLike(likeId, postId) {
 }
 
 function getPosts() {
+  postsContainerEl.innerHTML = "";
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  const sort = sortDropdown.value;
   const options = {
     method: "GET",
     headers: {
@@ -104,7 +101,25 @@ function getPosts() {
   fetch(apiBaseURL + "/api/posts?limit=1000", options)
     .then((response) => response.json())
     .then((posts) => {
-      posts.forEach((post) => {
+      const sortedPosts = Array.from(posts).sort(function (a, b) {
+        if (sort === "createdAt") {
+          return new Date(b[sort]) - new Date(a[sort]);
+        }
+        if (sort === "username") {
+          if (a[sort].toLowerCase() < b[sort].toLowerCase()) {
+            return -1;
+          }
+          if (a[sort].toLowerCase() > b[sort].toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        }
+        if (sort === "likes") {
+          return b[sort].length - a[sort].length;
+        }
+      });
+
+      sortedPosts.forEach((post) => {
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");
@@ -116,7 +131,6 @@ function getPosts() {
         let likeId;
         post.likes.forEach((like) => {
           if (like.username === loginData.username) {
-            console.log(like._id, like.postId);
             likesArea.setAttribute("class", "likedPost");
             likeId = like._id;
             liked = true;

@@ -1,5 +1,3 @@
-console.log("update");
-
 const loginData = JSON.parse(window.localStorage.getItem("login-data"));
 const usernameField = document.getElementById("username");
 const nameField = document.getElementById("newName");
