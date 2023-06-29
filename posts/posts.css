@@ -41,11 +41,14 @@
 }
 
 #textbox {
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 20pt;
-  width: 75%;
-  border-style: none;
+
+    border-radius: 5px; 
+    padding: 15px;
+    margin-bottom: 20pt;
+    width: 75%;
+    border-style: none;
+    background-color:  #f5f3e3;
+   
 }
 
 .inputFields {
@@ -53,6 +56,7 @@
 }
 
 #postBtn {
+
   /* margin-left: 5pt; */
   margin-bottom: 10pt;
 
@@ -61,6 +65,7 @@
   width: fit-content;
   height: fit-content;
   background-color: #ef467000;
+
 }
 
 .card {
@@ -84,6 +89,22 @@
 }
 
 #postCards {
+
   display: flex;
   flex-direction: column-reverse;
 }
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.card{
+  background-color: #f5f3e3;
+  border: #a32645 solid;
+}
+
+nav {
+  background-color: #f5f3e3;
+}
+
+

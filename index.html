@@ -36,7 +36,7 @@
   <body class="body">
     <!-- ------------------------------------------------------------------------------------------------- -->
     <div class="bodyNav">
-      <nav class="navbar bg-light fixed-top">
+      <nav class="navbar fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="./index.html">
             <div class="imgWrap">
@@ -115,15 +115,46 @@
       </nav>
     </div>
     <!-- ------------------------------------------------------------------------------------------------- -->
+    <div class="container">
+      <!-- <div class="row">
+        <header>
+          <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        </header>
+      </div> -->
 
-    <header>
-      <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
-    <div class="scrollClick">
-      <div class="imgCSS">
-        <button type="button" onclick="showAfter()" id="letterBtn">
-          <img id="letter" src="" />
-        </button>
+      <div class="row">
+        <div class="notenoah col-sm-3">
+          <img
+            src="/images/messgae-noah-hp.png"
+            alt="MessageFromLC"
+            class="noahfrom"
+            id="noahfrom"
+          />
+        </div>
+        <div class="col-sm-9">
+          <button type="button" onclick="show()" id="btnImgScroll">
+            <img
+              src="/images/scroll-with-stamp.png"
+              alt="scroll"
+              class="imgScroll"
+            />
+          </button>
+        </div>
+        <div class="imgCSS">
+          <button type="button" onclick="showAfter()" id="letterBtn">
+            <img id="letter" src="" />
+          </button>
+        </div>
+
+        <script>
+          function show() {
+            document.getElementById("login").style.display = "none";
+            let letter = document.getElementById("letter");
+            letter.src = "images/lord-calcifer-letter.png";
+            document.getElementById("btnImgScroll").style.display = "none";
+            document.getElementById("noahfrom").style.display = "none";
+          }
+        </script>
         <script>
           function showAfter(e) {
             document.getElementById("letterBtn").style.display = "none";
@@ -135,26 +166,6 @@
           }
         </script>
       </div>
-      <button type="button" onclick="show()" id="btnImgScroll">
-        <img
-          src="/images/scroll-with-stamp.png"
-          alt="scroll"
-          class="imgScroll"
-        />
-      </button>
-      <script>
-        function show() {
-          document.getElementById("login").style.display = "none";
-          let letter = document.getElementById("letter");
-          letter.src = "images/lord-calcifer-letter.png";
-          document.getElementById("btnImgScroll").style.display = "none"
-          document.getElementById("noahfrom").style.display = "none"
-          ;
-        }
-      </script>
-    </div>
-    <div class="notenoah">
-      <img src="/images/messgae-noah-hp.png" alt="MessageFromLC" class="noahfrom" id="noahfrom"/>
     </div>
     <main class="loginMain">
       <form id="login">
