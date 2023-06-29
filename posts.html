@@ -1,12 +1,9 @@
-<!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -17,22 +14,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
-
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="css/global.css">
-
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="css/posts.css">
-
     <title>/POSTS</title>
-
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <!-- <script src="posts.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script> -->
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.html">
@@ -59,39 +51,34 @@
             </ul>
         </div>
     </nav>
-
     <header>
         <div class="chat-logo"></div>
         <h1>
             <ins>HEY MATT</ins>
         </h1>
 
+        <div class="newPostContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" id="createNewPostBtn" width="60" height="40" fill="currentColor" class="bi bi-postcard-heart-fill" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2Zm6 2.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2 5.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+              </svg>
+              </svg>
+        </div>
     </header>
-
     <main>
-
 
         <div class="postContainer container">
         
 
+
         </div>
-
-        
-
-
-            
-
-
         <button type="button" id="logoutBtn" name="logoutBtn">Logout</button>
     </main>
-
     <footer>
         <p class="mt-5 mb-3 text-body-secondary">&copy; AskMatt! Inc. 2023</p>
     </footer>
-
     <!-- Page-specific code -->
-    <script src="scripts/posts.js"></script>
     <script src="scripts/auth.js"></script>
+    <script src="scripts/posts.js"></script>
+  
 </body>
-
 </html>
