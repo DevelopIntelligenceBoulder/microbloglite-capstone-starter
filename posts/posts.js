@@ -30,6 +30,8 @@ function postFetch() {
     fetch(apiBaseURL + "/api/posts", options)
         .then(response => response.json())
         .then(posts => {
+            posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
             posts.forEach(post => {
                 if(window.localStorage.getItem(post._id) === null) {
                     const cardHTML = `

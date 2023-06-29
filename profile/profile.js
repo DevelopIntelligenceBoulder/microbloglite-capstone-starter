@@ -4,9 +4,13 @@ const logoutButton = document.querySelector("#logout");
 const profileContainer = document.querySelector("#profileContainer");
 const userPost = document.querySelector("#userPost");
 const dataContainer = document.querySelector("#userDataContainer");
+const bioDisplay = document.querySelector("#bioDisplay");
+const saveBioButton = document.querySelector("#saveBio");
+const bioTextarea = document.querySelector("#biotext");
 
 userPost.onsubmit = formSubmit;
 logoutButton.onclick = logout;
+saveBioButton.onclick = saveBio;
 
 function convertDateTime(apiDateTime) {
   const date = new Date(apiDateTime);
@@ -14,7 +18,7 @@ function convertDateTime(apiDateTime) {
   return formattedDateTime;
 }
 
-//Displays Your Posts
+//Display Your Posts
 function profileFetch() {
   const loginData = getLoginData();
   const options = {
@@ -52,7 +56,6 @@ function profileFetch() {
         console.error(error);
       });
 }
-//End of Your Posts Display
 
 
 //Display User Info
@@ -75,21 +78,57 @@ function displayUserData() {
         <div class = "username">@${userData.username}</div>`;
         dataContainer.innerHTML = data;
 
-        const bio = `<div> ${userData.bio}</div>`;
-        bioContainer.innerHTML = bio;
+        const bio = `${userData.bio}`;
+        bioDisplay.textContent = bio || "No bio yet!";
       })
       .catch(error => {
         console.error(error);
       });
     }
-  //End of User Info Display
 
 
+//Update User Bio
+function updateBio() {
+  const loginData = getLoginData();
+  const newBio = bioTextarea.value;
+  const options = {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${loginData.token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({bio: newBio}),
+  };
+
+  fetch(apiBaseURL + "/api/users/" + loginData.username, options)
+    .then(response => {
+      displayUserData();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+function saveBio() {
+  if (!bioDisplay || !bioTextarea || !saveBioButton) {
+    return; // Elements not found, exit the function
+  }
+
+  bioDisplay.textContent = bioTextarea.value;
+  bioDisplay.style.display = "block";
+  bioTextarea.style.display = "none";
+  saveBioButton.style.display = "none";
+  updateBio();
+}
+
+//Form Submit
 function formSubmit(event) {
   event.preventDefault();
   profileContainer.replaceChildren();
   sendData(userPost.userPostArea.value);
 }
+
+//Send Data
 function sendData(postContent) {
   const loginData = getLoginData();
   console.log(loginData);
@@ -109,6 +148,7 @@ function sendData(postContent) {
       console.log(data);
     });
 }
+
 window.onload = main;
 
 function main() {
