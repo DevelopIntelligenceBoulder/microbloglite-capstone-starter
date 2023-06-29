@@ -110,6 +110,7 @@
 
 .imgScroll {
   width: 100%;
+  margin-top: 150pt
 }
 
 .gggImg {
@@ -128,7 +129,7 @@
 }
 
 .imgCSS {
-  margin-top: 60pt;
+  margin-top: 150pt;
   text-align: center;
   display: block;
   margin-left: auto;
@@ -141,11 +142,12 @@
 }
 
 .noahfrom {
-  width: 20%;
-  position: absolute;
+  width: 100%;
+  margin-top: 150pt;
+  /* position: absolute;
   left: 0px;
   top: 0px;
   z-index: -1;
   margin-top: 280pt;
-  margin-left: 60pt;
+  margin-left: 60pt; */
 }
