@@ -18,10 +18,11 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../profile/profile.js"></script> 
+    <script defer src="../posts/posts.js"></script>
+    <script defer src="../profile/profile.js"></script>
     <script defer src="../auth.js"></script>
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-   
+
     <script>
       if (isLoggedIn() === false) window.location.replace("../index.html");
     </script>
@@ -71,7 +72,9 @@
           </div>
         </div>
       </nav>
-      <button class="glow-on-hover" class="logoutButton" id="logoutButton">logout</button>
+      <button class="glow-on-hover" class="logoutButton" id="logoutButton">
+        logout
+      </button>
     </header>
 
     <h1><span id="welcomeMessage"></span></h1>
