@@ -69,7 +69,7 @@ h1{
   }
   
   body {
-    background-image: radial-gradient(#fff, #FDBE4A, #f19e1a, rgba(184, 103, 45, 0.6), #fff);
+    background-image: radial-gradient(#fff, #FDBE4A,#c78512, #f19e1a, rgba(184, 103, 45, 0.6), #fff);
     background-size: 300% 300%;
     animation: color 12s ease infinite;
   }
