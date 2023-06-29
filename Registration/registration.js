@@ -1,5 +1,3 @@
-console.log("js working");
-
 const registerForm = document.querySelector("#register");
 const messagePEl = document.getElementById("messageP");
 const returnToLoginBtn = document.getElementById("returnToLogin");
@@ -32,7 +30,6 @@ registerForm.onsubmit = function (event) {
   fetch(apiBaseURL + "/api/users", options)
     .then((response) => response.json())
     .then((acctCreation) => {
-      console.log(acctCreation.statusCode);
       if (acctCreation.statusCode < 400) {
         messagePEl.textContent = "Success returning to login";
         setTimeout(() => {

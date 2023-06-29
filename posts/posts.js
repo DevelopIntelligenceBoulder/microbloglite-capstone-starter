@@ -4,7 +4,40 @@
 
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
+const sortDropdown = document.getElementById("postSort");
+const nextPgBtns = document.querySelectorAll("button.next");
+const prevPgBtns = document.querySelectorAll("button.previous");
+const pgCtEl = document.getElementById("pgCt");
+let pageCt = 1;
+let offset = 0;
+const postPerPage = 25;
 
+nextPgBtns.forEach((btn) => {
+  btn.addEventListener("click", nextPage);
+});
+prevPgBtns.forEach((btn) => {
+  btn.addEventListener("click", prevPage);
+});
+
+function prevPage() {
+  if (offset < postPerPage || pageCt < 2) return;
+  offset -= postPerPage;
+  pageCt--;
+
+  getPosts();
+}
+
+function nextPage() {
+  offset += postPerPage;
+  pageCt++;
+  getPosts();
+}
+
+sortDropdown.addEventListener("change", () => {
+  pageCt = 1;
+  offset = 0;
+  getPosts();
+});
 getPosts();
 
 function likePost(id) {
@@ -40,7 +73,6 @@ function likePost(id) {
 }
 
 function printLikes(postID, likeEl) {
-  console.log("getlikes");
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
     method: "GET",
@@ -55,15 +87,12 @@ function printLikes(postID, likeEl) {
   fetch(apiBaseURL + `/api/posts/${postID}`, options)
     .then((response) => response.json())
     .then((post) => {
-      console.log(post.likes.length);
       likeEl.textContent = `Like: ${post.likes.length}`;
     });
 }
 
 function removeLike(likeId, postId) {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
-  console.log("post", postId);
-  console.log("like", likeId);
 
   const options = {
     method: "DELETE",
@@ -75,8 +104,6 @@ function removeLike(likeId, postId) {
   fetch(apiBaseURL + `/api/likes/${likeId}`, options)
     .then((response) => response.json())
     .then((like) => {
-      console.log(like);
-      console.log(like.statusCode);
       if (like.statusCode < 400) {
         const clickedBtn = document.querySelector(`button[id='${postId}']`);
         clickedBtn.setAttribute("onclick", `likePost(this.id)`);
@@ -90,7 +117,10 @@ function removeLike(likeId, postId) {
 }
 
 function getPosts() {
+  postsContainerEl.innerHTML = "";
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+  const sort = sortDropdown.value;
+  console.log(sort);
   const options = {
     method: "GET",
     headers: {
@@ -101,10 +131,33 @@ function getPosts() {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-  fetch(apiBaseURL + "/api/posts?limit=1000", options)
+  fetch(apiBaseURL + "/api/posts?limit=2000", options)
     .then((response) => response.json())
     .then((posts) => {
-      posts.forEach((post) => {
+      const sortedPosts = Array.from(posts).sort(function (a, b) {
+        if (sort === "createdAt") {
+          return new Date(b[sort]) - new Date(a[sort]);
+        }
+        if (sort === "username") {
+          if (a[sort].toLowerCase() < b[sort].toLowerCase()) {
+            return -1;
+          }
+          if (a[sort].toLowerCase() > b[sort].toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        }
+        if (sort === "likes") {
+          return b[sort].length - a[sort].length;
+        }
+      });
+      for (let i = +offset; i <= +offset + postPerPage; i++) {
+        const post = sortedPosts[i];
+        if (!post) {
+          offset -= postPerPage;
+          pageCt--;
+          break;
+        }
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");
@@ -116,7 +169,6 @@ function getPosts() {
         let likeId;
         post.likes.forEach((like) => {
           if (like.username === loginData.username) {
-            console.log(like._id, like.postId);
             likesArea.setAttribute("class", "likedPost");
             likeId = like._id;
             liked = true;
@@ -139,7 +191,43 @@ function getPosts() {
         userArea.textContent = post.username;
         postArea.textContent = post.text;
         postsContainerEl.appendChild(clone);
-      });
+        pgCtEl.textContent = pageCt;
+      }
+      // sortedPosts.forEach((post) => {
+      //   const clone = postsTemplate.content.cloneNode(true);
+      //   const postArea = clone.querySelector(".card-body");
+      //   const userArea = clone.querySelector(".card-header");
+      //   const dateArea = clone.querySelector(".creationDate");
+      //   const likesArea = clone.querySelector("div button");
+      //   likesArea.id = post._id;
+      //   likesArea.textContent = `Like: ${post.likes.length}`;
+      //   let liked = false;
+      //   let likeId;
+      //   post.likes.forEach((like) => {
+      //     if (like.username === loginData.username) {
+      //       likesArea.setAttribute("class", "likedPost");
+      //       likeId = like._id;
+      //       liked = true;
+      //     }
+      //   });
+      //   if (liked) {
+      //     likesArea.setAttribute(
+      //       "onclick",
+      //       `removeLike('${likeId}', '${post._id}')`
+      //     );
+      //   } else {
+      //     likesArea.setAttribute("onclick", "likePost(this.id)");
+      //   }
+
+      //   const date = new Date(post.createdAt);
+
+      //   dateArea.textContent = `${date.getDate()}-${
+      //     date.getMonth() + 1
+      //   }-${date.getFullYear()}`;
+      //   userArea.textContent = post.username;
+      //   postArea.textContent = post.text;
+      //   postsContainerEl.appendChild(clone);
+      // });
     });
 }
 
