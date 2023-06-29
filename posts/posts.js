@@ -47,15 +47,21 @@ function getAllPosts() {
 }
 
 
-
+// function to build userPostCard
 
 function buildUserPostsCard(posts) {
+
+    // for of loop ,
     for (let post of posts) {
+
+        //create img tag element for user profile image
         let userImage = document.createElement("img");
         userImage.src = "https://github.com/michaeljean3456.png";
         userImage.style.width = "50px";
         userImage.style.height = "50px"
 
+
+        //cretae div element with class card 
         let divCard = document.createElement("div");
         divCard.className = "card";
 
