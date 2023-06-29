@@ -5,6 +5,10 @@ const logoutBtn = document.getElementById("logoutBtn");
 
 const commentBtn = document.getElementById("commentBtn");
 const userCard = document.getElementById("userCard");
+const createPostsBtn = document.getElementById("createPostsBtn");
+const createNewPostBtn = document.getElementById("createNewPostBtn");
+
+
 //user will need to be logged into before they are able to enter page
 // if (isLoggedIn() === false) {
 //   window.location.replace("/");
@@ -14,6 +18,10 @@ window.onload = function () {
   console.log("Page is loading....");
   // logoutBtn.onclick = logoutBtnClicked;
   // commentBtn.onclick = commentBtnClicked;
+
+  createPostsBtn.onclick = createPostsBtnClicked;
+  createNewPostBtn.onclick = createNewPostBtnClicked;
+  
 
 
 
@@ -33,9 +41,39 @@ function unLikeBtnClicked2(post, unlikeBtnSvg, likeBtnSvg) {
   unlikeBtnSvg.style.display = "none"
   likeBtnSvg.style.display = "block"
 }
-function commentBtnClicked() {
-  console.log("CLICKED")
-}
+// function commentBtnClicked() {
+//   // Get the username and text from the input fields
+//   const username = document.getElementById("usernameIdField").value;
+//   const text = document.getElementById("textIdField").value;
+//   const createdAt = document.getElementById("createdAtIdField").value;
+//   // Create the post object
+//   const newPost = {
+//     username: username,
+//     text: text,
+//     created: createdAt,
+//   };
+//   // Set the authentication token
+//   const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNlcmVhbGFuZE1pbGsiLCJpYXQiOjE2ODgwMjA2ODAsImV4cCI6MTY4ODEwNzA4MH0.L51BoEVowCeLLxLlTKXQsbR38lYMDi5uBEBJd3iF1Po";
+//   // Set the request options
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       Authorization: `Bearer ${authToken}`,
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(newPost)
+//   };
+//   // Send the POST request to create a new post
+//   fetch("https://microbloglite.onrender.com/api/posts", options)
+//     .then(response => response.json())
+//     .then(createdPost => {
+//       console.log("New post created:", createdPost);
+//       // Do something with the created post, such as displaying it on the page
+//     })
+//     .catch(error => {
+//       console.error("Interesting...It looks like there was an error creating new post:", error);
+//     });
+// }
 
 // function viewAllPosts() {
 
@@ -172,109 +210,65 @@ function createNewPost() {
     likes: document.getElementById("likesIdField").value,
     createdAt: document.getElementById("createdAtIdField").value,
   };
-  fetch("https://microbloglite.herokuapp.com/api/posts", {
+  let authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRoZWJlYXRsZXMiLCJpYXQiOjE2ODgwNDQ2MjMsImV4cCI6MTY4ODEzMTAyM30.x5G4Fa9npe3u7-MKjSP7IZZ5Iok051e8LmGH4xVHgPQ";
+  let options = {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${loginData.token}`,
+      Authorization: `Bearer ${authToken}`,
       "Content-Type": "application/json" // Add the content type header
     },
     body: JSON.stringify(bodyData) // Convert the bodyData to JSON string
-  })
-
-    .then(response => response.json())
-    .then(json => {
+  };
+  fetch("https://microbloglite.herokuapp.com/api/posts", options)
+    .then(response => {
+      console.log("Creating a new post...");
+      return response.json();
+    })
+    .then(createdPost => {
+      console.log("New Post Created", createdPost);
+      const postsContainer = document.getElementById("postsContainer");
+      const postElement = document.createElement("div");
+      postElement.innerHTML = `
+        <h3>${createdPost.username}</h3>
+        <p>${createdPost.text}</p>
+        <p>Created at: ${createdPost.created}</p>
+      `;
+      postsContainer.appendChild(postElement);
       // If the POST finishes successfully, ...
-      let confirmationMessage = document.getElementById(confirmationMessage);
-      confirmationMessage.innerHTML = "New Post Added";
+      let confirmationMessage = document.getElementById("confirmationMessage");
+      confirmationMessage.textContent = "New Post Added";
+      confirmationMessage.style.display = 'block';
     })
     .catch(error => {
       // If the POST returns an error, ...
-      let confirmationMessage = document.getElementById(confirmationMessage);
-      confirmationMessage.innerHTML = "Unexpected error";
+      let confirmationMessage = document.getElementById("confirmationMessage");
+      confirmationMessage.innerHTML = "Interesting... It looks like you are unable to submit a post at the moment";
     });
 }
 
 
-// User logs out
-//  function logoutBtnClicked() {
 //function logout () {
-// const loginData = getLoginData();
-
-// // GET /auth/logout
-// const options = {
-//     method: "GET",
-//     headers: {
-//         // This header is how we authenticate our user with the
-//         // server for any API requests which require the user
-//         // to be logged-in in order to have access.
-//         // In the API docs, these endpoints display a lock icon.
-//         Authorization: `Bearer ${loginData.token}`,
-//     },
-// };
-
-// fetch(apiBaseURL + "/auth/logout", options)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .finally(() => {
+  // const loginData = getLoginData();
+  // // GET /auth/logout
+  // const options = {
+  //     method: "GET",
+  //     headers: {
+  //         // This header is how we authenticate our user with the
+  //         // server for any API requests which require the user
+  //         // to be logged-in in order to have access.
+  //         // In the API docs, these endpoints display a lock icon.
+  //         Authorization: `Bearer ${loginData.token}`,
+  //     },
+  // };
+  // fetch(apiBaseURL + "/auth/logout", options)
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  //     .finally(() => {
 //             // We're using `finally()` so that we will continue with the
 //             // browser side of logging out (below) even if there is an
 //             // error with the fetch request above.
-
 //             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
 //             window.location.assign("/");  // redirect back to landing page
 //         });
 // }
 // logout();
-
-//   window.location.href = '/';
-// }
-
-
-
-
-
-// function renderUserPosts(users) {
-//   let cardsContainer = document.querySelector("userCard"); // Reference to the HTML element where the cards should be displayed
-//   userCard.innerHTML = ""; // Clear the container before rendering the posts
-
-//   users.forEach(user => {
-//     const div = document.createElement("div");
-//     const image = document.createElement("img");
-//     const name = document.createElement("h3");
-//     const text = document.createElement("p");
-//     const like = document.createElement("button");
-//     const unlike = document.createElement("button");
-//     div.classList = "card";
-//     image.classList = "card-img";
-//     like.classList = "empty";
-//     image.src = user.image;
-//     name.innerText = `Name: ${user.fullName}`;
-//     text.innerText = `Text: ${user.text}`;
-//     like.textContent = "like";
-//     unlike.textContent = "unlike";
-//     div.appendChild(image);
-//     div.appendChild(name);
-//     div.appendChild(text);
-//     div.appendChild(like);
-//     div.appendChild(unlike);
-//     cardsContainer.appendChild(div);
-//   });
-// }
-
-// // View all posts using GET
-// function viewAllPosts(users) {
-//   let element = document.querySelector("#postArea");
-//   fetch("https://microbloglite.herokuapp.com/api/posts")
-//     .then(response => response.json())
-//     .then(data => {
-//       for (let i = 0; i < data.length; i++) {
-//         // let row = table.insertRow(-1);
-//         // let cell1 = row.insertCell(0);
-//         // let cell2 = row.insertCell(1);
-//         // cell1.innerHTML = data[i].username;
-//         // cell2.innerHTML = data[i].text;
-//         renderUserPosts(users)
-//       }
-//     });
-// }
-
