@@ -1,1 +1,74 @@
 /* Landing Page CSS */
+.custom-container {
+    max-width: 500px;
+    /* Adjust the width as per your needs */
+    
+  margin-top: 10%; 
+  margin-left: 60%;
+  margin-right: auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-inline: 2%;
+  background-color: rgba(166, 165, 163, 0.236);
+  width: 30%;
+  padding: 3%;
+  border-radius: 20px;
+}
+
+body {
+  min-height: 100%;
+  background-image: url("images/post.png");
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  /* background-position: center;
+ backdrop-filter: blur(7px) ; */
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+h1{
+  margin-top: 4%;
+  text-align: center;
+  
+}
+
+.form-control {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 300px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-group label {
+  
+  font-size: 18px; /* Adjust the font size as needed */
+  color: #333; /* Adjust the label color */
+  margin-bottom: 5px; /* Adjust the label margin-bottom as needed */
+  margin-left: 13%;
+}
+
+
+.form-check{
+  margin-left: 14%;
+  margin-top: 3%;
+
+}
+.form-button{
+  max-width: fit-content;
+  margin-left: 18%;
+  margin-top: 3%;
+
+}
+
+#loginButton{
+  background-color: rgb(159, 210, 38); /* Set the background color to pink */
+  padding: 9px 15px; /* Adjust the padding to make it small */
+  font-size: 15px; /* Adjust the font size to make it small */
+  border: none; /* Remove the default button border */
+  color: white; 
+}
+  

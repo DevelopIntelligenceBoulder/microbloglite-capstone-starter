@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="../global.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./register.css">
+
+    <title>Login to the Microblog Network!</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+    <script src="../auth.js"></script>
+</head>
+
+<body>
+
+    <header>
+        
+    </header>
+
+    <main>
+        <!--------registration form------>
+
+
+        <div class="custom-container shadow">
+            <div class="row">
+                <div class="col">
+                    <form id="register">
+                        <img src="../images/RecipeShare.png" alt="" width="120" height="120" class="rounded mx-auto d-block">
+                        <h1 class="text-center"> <code> RECIPESHARE Register</code></h1>
+                      <div id="innerText" class="innerText"></div>
+                        <div class="row mb-3">
+                            <label for="nameA" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="nameA" minlength="3" required>
+                            <div class="invalid-feedback">Please enter a valid name (minimum 3 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" minlength="3" required>
+                            <div class="invalid-feedback">Please enter a valid username (minimum 3 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="6" required>
+                            <div class="invalid-feedback">Please enter a valid password (minimum 6 characters).</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" minlength="6" required>
+                            <div class="invalid-feedback">Passwords do not match.</div>
+                        </div>
+                        <!-----Button------>
+                        <div class="d-flex justify-content-center">
+                        <button id="registerButton" type="button" class="btn btn-primary">Register</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Page-specific code -->
+    <script src="./register.js"></script>
+</body>
+
+</html>
