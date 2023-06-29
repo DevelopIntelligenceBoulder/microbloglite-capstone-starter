@@ -18,7 +18,7 @@
     ></script>
 
     <title>Register</title>
-    <link rel="stylesheet" href="registry.js" />
+    <!-- <link rel="stylesheet" href="registry.js" /> -->
     <link rel="stylesheet" href="registry.css" />
     <script src="../auth.js"></script>
   </head>
@@ -94,10 +94,10 @@
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="text"
-                              id="form3Example1c"
+                              id="full-name"
                               class="form-control"
                             />
-                            <label class="form-label" for="form3Example1c"
+                            <label class="form-label" for="full-name"
                               >Your Name</label
                             >
                           </div>
@@ -107,11 +107,11 @@
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <input
-                              type="email"
-                              id="form3Example3c"
+                              type="text"
+                              id="username"
                               class="form-control"
                             />
-                            <label class="form-label" for="form3Example3c"
+                            <label class="form-label" for="username"
                               >Your username</label
                             >
                           </div>
@@ -122,10 +122,10 @@
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              id="form3Example4c"
+                              id="password"
                               class="form-control"
                             />
-                            <label class="form-label" for="form3Example4c"
+                            <label class="form-label" for="password"
                               >Password</label
                             >
                           </div>
@@ -136,10 +136,10 @@
                           <div class="form-outline flex-fill mb-0">
                             <input
                               type="password"
-                              id="form3Example4cd"
+                              id="password-confirm"
                               class="form-control"
                             />
-                            <label class="form-label" for="form3Example4cd"
+                            <label class="form-label" for="password-confirm"
                               >Repeat your password</label
                             >
                           </div>
@@ -152,9 +152,9 @@
                             class="form-check-input me-2"
                             type="checkbox"
                             value=""
-                            id="form2Example3c"
+                            id="agree-terms"
                           />
-                          <label class="form-check-label" for="form2Example3">
+                          <label class="form-check-label" for="agree-terms">
                             I agree all statements in
                             <a href="#!">Terms of service</a>
                           </label>
@@ -164,8 +164,7 @@
                           class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
                         >
                           <button
-                            id="registerButoon"
-                            type="button"
+                            id="registerButton"
                             class="btn btn-success btn-lg"
                           >
                             Ribbit in
@@ -192,5 +191,7 @@
     </main>
 
     <footer></footer>
+
+    <script src="registry.js"></script>
   </body>
 </html>
