@@ -29,54 +29,46 @@ function createPost(content) {
 
 // Function to display a post in the feed
 function displayPost(post) {
-  const feed = document.getElementById("feed");
+  post.forEach((update) => {
+    const feed = document.getElementById("feed");
 
-  const postElement = document.createElement("div");
-  postElement.classList.add("post");
+    const postElement = document.createElement("div");
+    postElement.classList.add("post");
 
-  const contentElement = document.createElement("p");
-  contentElement.innerText = post.text;
+    const contentElement = document.createElement("p");
+    contentElement.innerText = update.text;
 
-  const detailsElement = document.createElement("div");
-  detailsElement.classList.add("post-details");
-  const usernameElement = document.createElement("span");
-  usernameElement.textContent = post.username;
-  const timestampElement = document.createElement("span");
-  timestampElement.textContent = post.createdAt;
+    const detailsElement = document.createElement("div");
+    detailsElement.classList.add("post-details");
+    const usernameElement = document.createElement("span");
+    usernameElement.textContent = update.username;
+    const timestampElement = document.createElement("span");
+    timestampElement.textContent = update.createdAt;
 
-  detailsElement.appendChild(usernameElement);
-  detailsElement.appendChild(timestampElement);
-  postElement.appendChild(contentElement);
-  postElement.appendChild(detailsElement);
+    detailsElement.appendChild(usernameElement);
+    detailsElement.appendChild(timestampElement);
+    postElement.appendChild(contentElement);
+    postElement.appendChild(detailsElement);
 
-  feed.prepend(postElement);
+    feed.prepend(postElement);
+  });
 }
 
 // Function to fetch and display all posts
-function fetchPosts() {
-  fetch(apiBaseURL + "/api/posts", {
+
+function getAllPosts(content) {
+  const loginData = getLoginData();
+
+  const options = {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${getLoginData().token}`,
+      Authorization: `Bearer ${loginData.token}`,
     },
-  })
-    .then((response) => response.json())
-  .then((test => console.log(test)))
-    .then((data) => {
-      if (data.success) {
-        const posts = data.posts;
-        feed.innerHTML = "";
+  };
 
-        posts.forEach((post) => {
-          displayPost(post);
-        });
-      } else {
-        console.error("Failed to fetch posts.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching posts:", error);
-    });
+  fetch(apiBaseURL + "/api/posts?limit=12", options)
+    .then((response) => response.json())
+    .then((data) => displayPost(data));
 }
 
 // Event listener for the status update form submission
@@ -88,4 +80,4 @@ statusUpdate.onsubmit = function (event) {
 };
 
 // Fetch and display posts when the page is initially loaded
-document.addEventListener("DOMContentLoaded", fetchPosts);
+document.addEventListener("DOMContentLoaded", getAllPosts);
