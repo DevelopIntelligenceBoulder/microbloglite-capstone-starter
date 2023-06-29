@@ -1,8 +1,4 @@
-function getLoginData() {
-    return JSON.parse(window.localStorage.getItem("login-data")) || {};
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const baseURL = "https://microbloglite.herokuapp.com";
     const loginData = getLoginData();
     const fullName = document.getElementById("fullName");
@@ -10,6 +6,7 @@ function getLoginData() {
     const editButton = document.getElementById("editButton");
     const saveButton = document.getElementById("saveButton");
     const cancelButton = document.getElementById("cancelButton");
+    const profileTitle = document.getElementById("profileTitle");
   
     editButton.addEventListener("click", toggleEdit);
     saveButton.addEventListener("click", saveProfile);
@@ -43,7 +40,7 @@ function getLoginData() {
         fullName: fullName.value,
         username: userName.value,
       };
-    
+  
       fetch(baseURL + `/api/users/${loginData.username}`, {
         method: "PUT",
         headers: {
@@ -60,13 +57,13 @@ function getLoginData() {
         })
         .then((data) => {
           toggleEdit();
-    
+  
           if (updatedData.fullName !== loginData.fullName) {
-            alert("Successfully Changed Full Name!");
+            alert("Successfully Changed Full Name");
             loginData.fullName = updatedData.fullName;
             window.location.reload();
           }
-    
+  
           if (updatedData.username !== loginData.username) {
             loginData.username = updatedData.username;
             window.localStorage.removeItem("login-data");
@@ -82,7 +79,6 @@ function getLoginData() {
           console.error("Failed to update user profile data:", error);
         });
     }
-  
   
     function cancelEdit() {
       toggleEdit();
@@ -105,10 +101,28 @@ function getLoginData() {
         .then((data) => {
           fullName.value = data.fullName;
           userName.value = data.username;
+          profileTitle.textContent = data.fullName;
+          displayAccountDate(data.createdAt);
         })
         .catch((error) => {
           console.error("Failed to fetch user profile data:", error);
         });
+    }
+  
+    function displayAccountDate(dateString) {
+      const accountDateElement = document.getElementById("creationDate");
+  
+      if (dateString) {
+        const accountDate = new Date(dateString);
+        if (!isNaN(accountDate)) {
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const formattedDate = accountDate.toLocaleDateString(undefined, options);
+          accountDateElement.textContent = formattedDate;
+          return;
+        }
+      }
+  
+      accountDateElement.textContent = "Date not available";
     }
   });
   
