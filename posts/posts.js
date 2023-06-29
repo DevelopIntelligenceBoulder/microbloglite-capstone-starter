@@ -56,7 +56,7 @@ function postFetch() {
                     <b>@${post.username}</b>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">${post.text}</p>
+                    <p class="card-text" >${post.text}</p>
                     </div><br>
                     <div class="card-footer text-muted">
                     ${convertDateTime(post.createdAt)}<br>

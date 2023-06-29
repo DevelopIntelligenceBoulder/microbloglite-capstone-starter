@@ -55,6 +55,8 @@ hr {
 .userInfo {
     display: flex;
     justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .username {
@@ -98,8 +100,8 @@ hr {
   }
   
   #biotext {
-    width: 750px;
-    height: 100px;
+    width: 700px;
+    height: 75pt;
     border-radius: 10px;
     margin-right: 30px;
     padding: 10px;
@@ -108,25 +110,37 @@ hr {
   }
 
 @media (max-width: 1000px){
-    #bioContainer {
+    #bioDisplay {
         background: rgba(220, 220, 220, 0.336);
         width: 300px;
         height: 100pt;
         border-radius: 10px;
         margin-right: 30px;
     }
-    
+    #biotext {
+        background: white;
+        width: 300px;
+        height: 75pt;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
 }
 
 @media (max-width: 600px){
-    #bioContainer {
+    #bioDisplay {
         background: rgba(220, 220, 220, 0.336);
         width: 100px;
         height: 100pt;
         border-radius: 10px;
         margin-right: 30px;
     }
-    
+    #biotext {
+        background: white;
+        width: 100px;
+        height: 100pt;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
 }
 
 h4 {
@@ -175,5 +189,6 @@ main {
 .deleteButton {
     border-style: none;
     background: none;
-    
+    display: flex;
+    justify-content:end;
 }
