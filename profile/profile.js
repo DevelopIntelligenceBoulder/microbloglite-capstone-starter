@@ -4,6 +4,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 const displayPostsDivEl = document.getElementById(`DisplayPostsDivs`);
 const postDisplayEl = document.getElementById(`postDisplay`);
 const loginData = getLoginData();
+
 //------------------------------------------------------------------
 logoutBtn.addEventListener("click", () => {
   logout();
@@ -33,6 +34,7 @@ postBtnEl.addEventListener(`click`, (e) => {
     .then((posts) => {
       console.log(posts);
     });
+  getPosts();
 });
 //----------------------------------------------------------------------------------
 
@@ -82,7 +84,18 @@ function getPosts() {
           const timeStamp = postEl.querySelector("small");
           timeStamp.textContent = post.createdAt;
 
-          const likeBtn = postEl.querySelector("button");
+          const deleteBtnEl = postEl.getElementById(`deleteBtn`);
+
+          deleteBtnEl.addEventListener("click", () => {
+            fetch(`microbloglite.herokuapp.com/api/posts/${post._id}`, {
+              method: `DELETE`,
+              headers: {
+                Authorization: `Bearer ${loginData.token}`,
+              },
+            });
+          });
+          //--------------------------------------------------------------------
+          const likeBtn = postEl.querySelector("input");
           likeBtn.addEventListener("click", () => {
             const heartIcon = document.getElementById("heartIcon");
             const filledHeartIcon = document.getElementById("filledHeartIcon");
@@ -108,3 +121,4 @@ function getPosts() {
       });
     });
 }
+//------------------------------------------------------------------------------------------
