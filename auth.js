@@ -2,8 +2,9 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
-// Backup server:   https://microbloglite.onrender.com
+// const apiBaseURL = "https://microbloglite.herokuapp.com";
+// Backup server:
+const apiBaseURL = "https://microbloglite.onrender.com";
 
 // You can use this function to get the login data of the logged-in
 // user (if any). It returns either an object including the username
@@ -50,30 +51,28 @@ function login(loginData) {
 // which you may include in various pages in your app. Again, READ this
 // function and you will probably want to re-use parts of it for other
 // `fetch()` requests you may need to write.
-function logout() {
-  const loginData = getLoginData();
+document.addEventListener("DOMContentLoaded", function () {
+  const logoutButton = document.getElementById("logoutButton");
 
-  // GET /auth/logout
-  const options = {
-    method: "GET",
-    headers: {
-      // This header is how we authenticate our user with the
-      // server for any API requests which require the user
-      // to be logged-in in order to have access.
-      // In the API docs, these endpoints display a lock icon.
-      Authorization: `Bearer ${loginData.token}`,
-    },
-  };
+  function logout() {
+    const loginData = getLoginData();
 
-  fetch(apiBaseURL + "/auth/logout", options)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .finally(() => {
-      // We're using `finally()` so that we will continue with the
-      // browser side of logging out (below) even if there is an
-      // error with the fetch request above.
+    // GET /auth/logout
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${loginData.token}`,
+      },
+    };
 
-      window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
-      window.location.assign("/"); // redirect back to landing page
-    });
-}
+    fetch(apiBaseURL + "/auth/logout", options)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .finally(() => {
+        window.localStorage.removeItem("login-data");
+        window.location.assign("/");
+      });
+  }
+
+  logoutButton.addEventListener("click", logout);
+});
