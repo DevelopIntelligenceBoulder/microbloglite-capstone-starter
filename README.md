@@ -10,6 +10,12 @@ This site contains:
 
 Images of pages:
 
+home [Imgur](https://imgur.com/Xpd6uxL)
+registration   [Imgur](https://imgur.com/RrJJPKc)
+profile [Imgur](https://imgur.com/Itn0vtT)
+posts  [Imgur](https://imgur.com/1edP8YD)
+
+
 
 Interesting code we implemented:
  - https://codepen.io/yellowbob/pen/doZOLb
