@@ -1,1 +1,49 @@
 /* Landing Page CSS */
+body {
+    background-image: url('./images/background2.jpg');
+}
+
+main {
+    background-color: rgba(228, 248, 248, 0.196);
+    backdrop-filter: blur(4px);
+    padding: 6rem;
+    border-radius: 20px;
+    height: 40rem;
+}
+
+h1 {
+    -webkit-text-fill-color: white;
+    text-align: center;
+}
+h2{
+    -webkit-text-fill-color: white;
+    text-align: center;
+    font-size: large;
+    background-color: black;
+
+}
+.form-text {
+    -webkit-text-fill-color: white;
+    font-size: larger;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    width: 8rem;
+    height: 6rem;
+    margin-right: 4%;
+    margin-left: 44%;
+}
+
+#loginButton{
+    margin-top: 1rem;
+}
+.register{
+    -webkit-text-fill-color: white;
+    background-color: black;
+    margin-top: 1rem;
+}
+#registrationLink{
+    -webkit-text-fill-color:white;
+}
