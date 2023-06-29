@@ -11,12 +11,12 @@ h1 {
 }
 
 body {
-  background-image: url("../img/casey-horner-RmoWqDCqN2E-unsplash\ \(1\).jpg");
+  background-image: url("../img/nasa-Q1p7bh3SHj8-unsplash.jpg");
   background-size: cover;
 }
 header {
   background: transparent;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding-bottom: 0.01%;
   padding-top: 0.01%;
 }
@@ -55,13 +55,16 @@ header {
 }
 
 .card-body {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding: 20px;
+  color: rgba(133, 91, 236, 0.8);
+  text-decoration-color: rgba(133, 91, 236, 0.8);
 }
 
 form {
   margin: 0 auto;
   max-width: 400px;
+  color: rgba(133, 91, 236, 0.8);
 }
 
 input,
