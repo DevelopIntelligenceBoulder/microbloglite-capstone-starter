@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
+const apiBaseURL = "https://microbloglite.herokuapp.com" 
 // Backup server:   https://microbloglite.onrender.com
 
 

@@ -94,9 +94,9 @@ const spanElDislike = document.createElement('span')
 spanElDislike.setAttribute('id', 'spanElDislike')
 spanElDislike.textContent = 0
 dislikeBtn.addEventListener('click', function() {
-  if (spanElLike.textContent == 0){
+  if (spanElLike.textContent === 0){
     spanElDislike.textContent = 1
-  } else if (spanElLike.textContent == 1) {
+  } else if (spanElLike.textContent === 1) {
     spanElLike.textContent = 0
     spanElDislike.textContent = 1
   }
@@ -125,6 +125,9 @@ function sendReaction(postId, reaction) {
     },
     body: JSON.stringify({ postId, reaction })
   };
+  // Test Server 
+  console.log(reaction)
+  console.log(postId)
 
   fetch(apiBaseURL + "/api/likes", options)
     .then(response => {
@@ -139,27 +142,6 @@ function sendReaction(postId, reaction) {
       console.error("Error occured:", error);
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Get all post
 function getAllPosts(accessToken) {
