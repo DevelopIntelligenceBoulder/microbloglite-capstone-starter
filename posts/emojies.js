@@ -80,3 +80,4 @@ resetBtn.addEventListener('click', function(){
 })
 reset()
 
+document.getElementById('addPostButton').addEventListener('click', xClick)
