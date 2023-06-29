@@ -1,88 +1,10 @@
-<!DOCTYPE html>
-<html lang="eng">
-<head>
-  <style>
-    body 
-    /*img {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-    }*/
-    
-    {
+ */{
   background-image: url('8myno3ir.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-    </style>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../ok2.css" />
-    <link rel="stylesheet" href="test.css" />
-<link rel="stylesheet" type="text/css"
-href="ok2.css">
-    
-    
-    
-</head>
 
-
-<div class="image"></div
-<div class="flex-container">
-<div class="box one"><!DOCTYPE html>
-<html lang="eng">
-<head>
-  <style>
-    body 
-    /*img {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-    }*/
-    
-    {
-  background-image: url('8myno3ir.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-    </style>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../ok2.css" />
-    <link rel="stylesheet" href="test.css" />
-<link rel="stylesheet" type="text/css"
-href="ok2.css">
-    
-    
-</head>
-
-
-<div class="image"></div
-<div class="flex-container">
-<div class="box one"></div>
-<div class="box two"></div>
-<div class="box three"></div>
-<div class="box four"></div>
-<div class="box five"></div>
-<div class="box six"></div>
-<div class="box seven"></div>
-<div class="box eight"></div>
-<div class="box nine"></div>
-
-
-<div style="z-index:100; position: fixed;"> <section></div>
-  <div class="item item-1"><div class="container">
-    <div class="item item-1"><div><section>
-<div class="container">
-  <div class="item item-1"><div class="all">
-    <title>Example</title>
-    <style>
       * {
         box-sizing: border-box; 
       }
@@ -121,68 +43,6 @@ href="ok2.css">
       header, footer, article, nav, aside {
         padding: 1em;
       }
-    </style>
-     <link rel="stylesheet" type="text/css"
-     href="custom.css">
-    <body>
-      <nav class="col-1"><div class="wrapper">
-        
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Stores.html">Stores</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Gallery.html">gallery</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Login.html">Login</a></li>
-            </ul>
-       
-    </div></nav>
-      <div class="col-2">
-          <header>Header</header>
-        <main class="content">
-        <article>Article</article>
-        <aside>Aside</aside>
-        </main>
-          <footer>You can contact us at (1)-(678)-(8765)</footer>
-      </div>
- 
-    </div>
-    </div></div>
-</div></div>
-<div class="item item-2"></div> 
- 
-</body>
-</html>
-
-</div>
-<div class="box two"></div>
-<div class="box three"></div>
-<div class="box four"></div>
-<div class="box five"></div>
-<div class="box six"></div>
-<div class="box seven"></div>
-<div class="box eight"></div>
-<div class="box nine"></div>
-
-
-<div style="z-index:100; position: fixed;"> <section></div>
-  <div class="item item-1"><div class="container">
-    <div class="item item-1"><div><section>
-<div class="container">
-  <div class="item item-1"><div class="all">
-
-    </div>
-    </div></div>
-</div></div>
-<div class="item item-2"></div> 
- 
-</body>
-</html>
-
-
-
 */header{
     border-radius: 30px;
     background-image: url("img/vectorspace.jpg");
