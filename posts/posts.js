@@ -73,7 +73,7 @@ function getAllPosts(content) {
     },
   };
 
-  fetch(apiBaseURL + "/api/posts?limit=12", options)
+  fetch(apiBaseURL + "/api/posts?limit=7", options)
     .then((response) => response.json())
     .then((data) => displayPost(data));
 }
