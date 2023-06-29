@@ -117,3 +117,12 @@ async function authRequest(url, options={}) {
 function slashJoin(...strs) {
     return strs.join('/');
 }
+async function updateUserProfile(username, profile) {
+    try {
+        const response = await putJSON(slashJoin(apiUrl, 'users', username), profile);
+        return response;
+    } catch (err) {
+        console.error('Failed to update profile', err);
+        throw new Error('Failed to update profile');
+    }
+}

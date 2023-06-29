@@ -25,20 +25,18 @@ document.addEventListener('DOMContentLoaded', async function() {
     postBtn.addEventListener('click', async (ev) => {
         ev.preventDefault();
 
-        Swal.fire({
-            title: '<strong>Cannot post an empty Ribbit!</strong>',
-            imageUrl: 'https://th.bing.com/th/id/OIP.pxz5dUW_3Qk5HAWyGt0TVQAAAA?pid=ImgDet&rs=1',
-            imageWidth: 150,
-            imageHeight: 110,
-            imageAlt: 'Custom image',            html: '<div style="color:#F8BB86">You need to type something in the post box before submitting.</div>',
-            showCloseButton: true,
-            showCancelButton: true,
-            focusConfirm: false,
-            confirmButtonText: 'Got it!',
-            confirmButtonAriaLabel: 'Thumbs up, great!',
-          })
-        
-          
+        if (postTextarea.value.trim() === "") {
+            Swal.fire({
+                imageUrl: 'https://th.bing.com/th/id/OIP.pxz5dUW_3Qk5HAWyGt0TVQAAAA?pid=ImgDet&rs=1',
+                imageWidth: 150,
+                imageHeight: 150,
+                imageAlt: 'Custom image',            html: '<div style="color:#F8BB86">You need to type something in the post box before submitting.</div>',
+                title: 'Oops...',
+                text: 'Cannot post an empty Ribbit!',
+                confirmButtonText: 'OK'
+            });
+            return;
+        }
 
         await createPost(postTextarea.value);
 
