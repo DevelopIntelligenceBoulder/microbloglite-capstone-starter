@@ -46,71 +46,76 @@
 
     <div class="container">
         <div class="row">
-            <div class="col mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="e-profile">
-                            <div class="row">
-                                <div class="col-12 col-sm-auto mb-3">
-                                    <div class="mx-auto" style="width: 140px;">
-                                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                                            <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Edit Profile</h4>
-                                    </div>
-                                    <div class="text-center text-sm-right">
-                                        <div class="mt-2">
-                                            <button id="editButton" class="btn btn-primary" type="button">
-                                                <i class="fa fa-fw fa-edit"></i>
-                                                <span>Edit</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a href="#" class="active nav-link">Profile</a></li>
-                            </ul>
-                            <div class="tab-content pt-3">
-                                <div class="tab-pane active">
-                                    <form class="form" novalidate>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="fullName">Full Name</label>
-                                                    <input class="form-control" type="text" id="fullName" placeholder="Full Name" disabled>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="username">Username</label>
-                                                    <input class="form-control" type="text" id="userName" placeholder="Username" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <button id="saveButton" class="btn btn-primary" type="button" disabled>
-                                                    <i class="fa fa-fw fa-save"></i>
-                                                    <span>Save</span>
-                                                </button>
-                                                <button id="cancelButton" class="btn btn-secondary" type="button" disabled>
-                                                    <i class="fa fa-fw fa-times"></i>
-                                                    <span>Cancel</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col-12 col-sm-auto mb-3">
+                      <div class="mx-auto" style="width: 140px;">
+                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                          <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
                         </div>
+                      </div>
                     </div>
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 id="profileTitle" class="pt-sm-2 pb-1 mb-0 text-nowrap">Edit Profile</h4>
+                        <p id="accountDate">Joined <span id="creationDate"></span></p>
+                        <button class="btn btn-primary" type="button">
+                          <i class="fa fa-fw fa-camera"></i>
+                          <span>Change Photo</span>
+                        </button>
+                      </div>
+                      <div class="text-center text-sm-right">
+                        <div class="mt-2">
+                          <button id="editButton" class="btn btn-primary" type="button">
+                            <i class="fa fa-fw fa-edit"></i>
+                            <span>Edit</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="#" class="active nav-link">Profile</a></li>
+                  </ul>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label for="fullName">Full Name</label>
+                              <input class="form-control" type="text" id="fullName" placeholder="Full Name" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label for="username">Username</label>
+                              <input class="form-control" type="text" id="userName" placeholder="Username" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <button id="saveButton" class="btn btn-primary" type="button" disabled>
+                              <i class="fa fa-fw fa-save"></i>
+                              <span>Save</span>
+                            </button>
+                            <button id="cancelButton" class="btn btn-secondary" type="button" disabled>
+                              <i class="fa fa-fw fa-times"></i>
+                              <span>Cancel</span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
   </body>
   </html>
