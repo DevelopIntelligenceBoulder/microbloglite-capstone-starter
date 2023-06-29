@@ -12,9 +12,11 @@ const displayPostsDiv = document.getElementById("displayPostsDiv");
 
 const postDisplayTemplate = document.getElementById("postDisplay");
 
-const likeBtn = document.getElementById("likeBtn");
+// const likeBtn = document.getElementById("likeBtn");
 
 const profileLinkEl = document.getElementById(`profileLink`);
+
+const userAccount = document.getElementById('userAccount');
 //------------------------------------------------------------------
 
 profileLinkEl.addEventListener(`click`, () => {
@@ -66,9 +68,10 @@ function getPosts() {
   fetch("https://microbloglite.herokuapp.com/api/posts", options)
     .then((response) => response.json())
     .then((data) => {
-      let template;
 
-      template = document.getElementById("postDisplay");
+        userAccount.innerHTML = loginData.username
+
+      const template = document.getElementById("postDisplay");
 
       data.forEach((post) => {
         // const content = `
@@ -99,16 +102,17 @@ function getPosts() {
           postText.textContent = post.text;
 
           const timeStamp = postEl.querySelector("small");
-          timeStamp.textContent = post.createdAt;
+          timeStamp.textContent = (new Date(post.createdAt)).toLocaleString()
 
-          // const timeDate = Date(post.createdAt).toString();
+          const likeBtn = postEl.querySelector("a");
 
-          const likeBtn = postEl.querySelector("input");
+          likeBtn.addEventListener("click", (e) => {
 
-          likeBtn.addEventListener("click", () => {
+            e.preventDefault();
+
             console.log(post._id);
-            const heartIcon = document.getElementById("heartIcon");
-            const filledHeartIcon = document.getElementById("filledHeartIcon");
+            const heartIcon = likeBtn.querySelector(".heartIcon");
+            const filledHeartIcon = likeBtn.querySelector(".filledHeartIcon");
 
             heartIcon.style.display = "none";
             filledHeartIcon.style.display = "flex";

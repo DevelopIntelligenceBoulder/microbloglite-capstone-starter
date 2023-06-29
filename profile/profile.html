@@ -30,6 +30,8 @@
 </head>
 
 <body class="text-bg-dark">
+
+  <!-- header -->
   <header class="p-3 mb-3 border-bottom border-secondary">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -38,7 +40,7 @@
           <h1 class="text-light">Chatter</h1>
         </a>
 
-        <ul class="nav col-8 mb-2 justify-content-center mb-md-0 nav-pills">
+        <ul class="nav col mb-2 justify-content-center mb-md-0 nav-pills">
           <li><a href="../posts/posts.html" class="nav-link px-2 link-light me-2">Timeline</a></li>
           <li><a href="../profile/profile.html" class="nav-link px-2 link-dark active">My Profile</a></li>
         </ul>
@@ -49,6 +51,7 @@
             <img
               src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM="
               alt="mdo" width="32" height="32" class="rounded-circle">
+              <span id="userAccount"></span>
           </a>
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
@@ -63,14 +66,26 @@
       </div>
     </div>
   </header>
-  <div class="container">
-    <h1>PROFILE PAGE</h1>
+
+  <!-- user bio -->
+  <div class="container border-bottom border-secondary mb-3 p-3">
+    <h1 id="userInfo" class="mb-4"></h1>
+        <img 
+        src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM="
+        width="100" height="100" class="rounded-circle me-3">
+        <span id="userBio" class="lead fst-italic me-3 text-secondary">No bio created</span>
+        <button type="button" class="btn btn-sm btn-secondary" id="editBio">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg></button>
   </div>
+
+  <!-- user posts -->
   <main>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-9">
-          <h2>Create a post</h2>
           <div id="createPostsSection">
             <textarea id="createPostInput" class="form-control" placeholder="Create a post..."></textarea>
             <button type="button" class="btn btn-info mt-2" id="postBtn">Post</button>
@@ -78,7 +93,7 @@
         </div>
       </div>
 
-      <h2 class="d-flex justify-content-center border-bottom border-top border-secondary mt-3 py-3">Timeline</h2>
+      <h2 class="d-flex justify-content-center border-bottom border-top border-secondary mt-3 py-3" id="usernamePosts">user's Posts</h2>
 
       <div id="displayPostsDiv">
         <template id="postDisplay">
@@ -129,7 +144,7 @@
 
 
 
-
+<!-- footer -->
   <footer></footer>
 
   <!-- Page-specific code -->
