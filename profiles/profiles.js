@@ -2,6 +2,8 @@ const form = document.querySelector("form");
 const postArea = document.getElementById("newContent");
 
 
+const url = `https://microbloglite.herokuapp.com/api/posts`;
+
 logoutBtn.addEventListener("click", () => {
   logout();
 });
