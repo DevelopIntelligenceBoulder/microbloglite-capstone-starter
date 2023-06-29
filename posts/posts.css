@@ -1,4 +1,10 @@
 /* Posts Page CSS */
+
+body {
+  font-family: 'Bree Serif', serif;
+}
+
+
 .nav-item {
   padding-left: 250px;
 }

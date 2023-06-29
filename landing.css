@@ -58,17 +58,28 @@ section h3 {
 
 }
 
+section h5 {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
 .LoginF {
     font-size: 24px;
     letter-spacing: 3px;
     display: inline-block;
 }
 
+.logcs {}
+
 .col {
     border-radius: 12px;
     border-radius: 12px;
     padding: 6px 6px;
     margin: 18px 10px 20px 9px;
+    width: 280px;
+    margin-right: 35px;
 }
 
 
@@ -80,6 +91,16 @@ section h3 {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    padding: 12px 30px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    
+    margin-right: 0px;
+    margin-left: 25px;
 }
 
 button:hover {
