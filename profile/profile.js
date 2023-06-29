@@ -89,9 +89,11 @@ function getPosts() {
           const deleteBtnEl = postEl.getElementById('deleteBtn')
 
           deleteBtnEl.addEventListener("click", () => {
+
             console.log('post deleted?')
             fetch(`https://microbloglite.herokuapp.com/api/posts/${post._id}`, {
               method: 'DELETE',
+
               headers: {
                 Authorization: `Bearer ${loginData.token}`,
                 "Content-type": "application/json; charset=utf-8"
