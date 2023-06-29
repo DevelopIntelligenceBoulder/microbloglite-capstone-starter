@@ -16,8 +16,7 @@ const postDisplayTemplate = document.getElementById("postDisplay");
 
 const profileLinkEl = document.getElementById(`profileLink`);
 
-
-const userAccount = document.getElementById('userAccount');
+const userAccount = document.getElementById("userAccount");
 
 //------------------------------------------------------------------
 
@@ -70,8 +69,7 @@ function getPosts() {
   fetch("https://microbloglite.herokuapp.com/api/posts", options)
     .then((response) => response.json())
     .then((data) => {
-
-        userAccount.innerHTML = loginData.username
+      userAccount.innerHTML = loginData.username;
 
       const template = document.getElementById("postDisplay");
 
@@ -104,12 +102,11 @@ function getPosts() {
           postText.textContent = post.text;
 
           const timeStamp = postEl.querySelector("small");
-          timeStamp.textContent = (new Date(post.createdAt)).toLocaleString()
+          timeStamp.textContent = new Date(post.createdAt).toLocaleString();
 
           const likeBtn = postEl.querySelector("a");
 
           likeBtn.addEventListener("click", (e) => {
-
             e.preventDefault();
 
             console.log(post._id);
@@ -137,7 +134,6 @@ function getPosts() {
       });
     });
 }
-
 
 // function sortPost() {
 //   const options = {
