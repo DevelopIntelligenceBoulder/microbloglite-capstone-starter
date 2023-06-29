@@ -1,89 +1,61 @@
-.nav {
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height*/
+  width: 400px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar */
+  
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #ecebeb; 
+  padding-top: 20px;
+
+}
+
+/* The content of left side bar card contents */
+
+img.profile-pic{
+  width: auto;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
   margin-top: 3%;
-  margin-bottom: 3%;
+  border-radius: 30%;
+  border: 3px solid rgb(213, 36, 92);
 }
-.btn-secondary{
-  background-color: #FF1CA8;
+h4#username{
+display: flex;
+justify-content: center;
+margin-right:15%;
+margin-top: 5%;
 }
-
-  .post {
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .post-header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .post-content img {
-    max-width: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .post-update {
-    border-top: 1px solid #ccc;
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-  
-  .post-update img {
-    max-width: 100%;
-    margin-top: 10px;
+div.follower-container{
+display:flex; 
+flex-direction: row; 
+justify-content: space-around;
+margin-top: 10px;
+font-weight:bolder;
+font-size: small;
 }
-.left-sidebar {
-  border-right: 1px solid pink;
+img#cardProfilepic{
+  width: auto;
+  height:50px;
+  border-radius: 30%;
+  border: 1px solid rgb(246, 144, 203);
  
-  
-  
 }
-.right-sidebar {
-  position:sticky; /* makes content stay */
+
+
+/* main Style page content */
+.main {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  
+  justify-content: center;
 }
 
-
- .profile-pic{
-  max-width: 50px;
-  display: flex;
-  justify-content: right;
- }
- .edit-profile-button {
-  margin-left: 50%;
-}
-.friend-profile {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  margin-bottom: 15%;
-
+/* On smaller screens, where height is less than 450px */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
-.friend-profile-pic {
-  width: 70px;
-  height: 70px;
-  border: 2px solid pink;
-  border-radius: 50%;
-
-}
-
-.path{
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-}
