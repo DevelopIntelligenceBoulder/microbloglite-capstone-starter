@@ -1,58 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css">
+  <!-- Global CSS (CSS rules you want applied to all pages) -->
+  <link rel="stylesheet" href="./global.css" />
 
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./landing.css" />
 
-    <title>Login to the Microblog Network!</title>
+  <title>Login to the PLAYBYTE!</title>
 
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
-    </script>
+  <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+  <script src="auth.js"></script>
+  <script>
+    if (isLoggedIn() === true) window.location.replace("../posts/index.html");
+    console.log(isLoggedIn());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <a href="./index.html"><img src="/images/playbyeeee_copy_2.png" /></a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./registration/registration.html">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./profile/profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./posts/index.html">Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h1>Welcome to <code>PLAYBYTE</code></h1>
+      <h3><span class="change_content">Join US </span></h3>
+      <h5>Get to Scrolling</h5>
+      <main>
+        <section class="logcs"></section> <form id="loginForm">
+          <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" minlength="3" class="col" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" minlength="6" class="col" />
+          </div>
 
-    <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+          <button class="btn" id="loginButton" type="submit">Login</button>
+          <button class="btn" id="signUpButton" onclick="window.location.href = './registration/registration.html'">
+            Sign Up!
+          </button>
+          </form>
+        </section>
 
-    <main>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+      </main>
+      <footer class="foot">
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+        <h3>Created by:</h3>
+        <p>Ricardo - <a href="https://github.com/rsteward85">https://github.com/rsteward85</a></p>
+        <p>Andy - <a href="https://github.com/blazematter">https://github.com/blazematter</a></p>
+        <p>Sameer - <a href="https://github.com/Hacktivist295">https://github.com/Hacktivist295</a></p>
+        <p>Margarita - <a href=""></a> </p>
+        <p>Imani - <a href="https://github.com/TheCodester1">https://github.com/TheCodester1</a></p>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
-
-    </main>
-
-    <footer></footer>
-
-    <!-- Page-specific code -->
-    <script src="./landing.js"></script>
+      </footer>
+      
+      <!-- Page-specific code -->
+      <script src="./landing.js"></script>
 </body>
+
 </html>

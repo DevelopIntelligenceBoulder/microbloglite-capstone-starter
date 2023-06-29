@@ -1,18 +1,141 @@
 /* Global CSS for all pages */
 
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
-    box-sizing: border-box;
+  /* Sizing helper: See Workbook 1b, page 2-33. */
+  box-sizing: border-box;
 
-    /* 
+  /* 
        Vizualization helper: While styling or debugging your HTML & CSS, 
        uncomment the rule below to see all the boxes on your page more
        clearly! (Remove this outline before submitting: users won't 
        want to see it!)
     */
-    /* outline: 1px dotted red; */
+  /* outline: 1px dotted red; */
 }
 
 :root {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #F8F9FA;
+  font-family: 'Bree Serif', serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: black;
+}
+
+a.nav-link {
+  color: black;
+}
+
+a.nav-link:hover {
+  color: #53AD39;
+}
+
+nav:hover {
+  background-color: #86117C;
+}
+
+a:hover {
+  color: #53AD39;
+  text-decoration: none;
+}
+
+a.nav-link.active:hover {
+  color: #53AD39;
+  text-decoration: none;
+}
+
+ul {
+  text-decoration: none;
+}
+
+img {
+  width: 154px;
+  height: auto;
+}
+
+.logoutButton {
+  padding-left: 148rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+} */
+
+footer {
+  background-color: #F8F9FA;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+}
+
+footer:hover {
+  background-color: #86117C;
 }
