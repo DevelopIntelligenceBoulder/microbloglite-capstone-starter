@@ -101,7 +101,7 @@ function getPosts() {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-  fetch(apiBaseURL + "/api/posts", options)
+  fetch(apiBaseURL + "/api/posts?limit=1000", options)
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {

@@ -6,16 +6,20 @@ function getuser() {
       ///does stuff
     });
 }
-function createPost() {
+
+ 
+  const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const form = document.querySelector(".admin-form");
   const titleInput = document.getElementById("title");
   const bodyInput = document.getElementById("post-editor");
   const topicSelect = document.getElementById("topic");
   const publishedCheckbox = document.getElementById("published");
 
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+
 
     const errors = [];
     if (titleInput.value.trim() === "") {
@@ -37,11 +41,9 @@ function createPost() {
     }
 
     const post = {
-      title: titleInput.value.trim(),
-      body: bodyInput.value.trim(),
-      topic: topicSelect.value.trim(),
-      published: publishedCheckbox.checked,
+      text: titleInput.value.trim(),
     };
+    
 
     const options = {
       method: "POST",
@@ -62,27 +64,19 @@ function createPost() {
         topicSelect.value = "";
         publishedCheckbox.checked = false;
 
-        fetch(apiBaseURL + "/api/posts")
-          .then((response) => response.json())
-          .then((posts) => {
-            console.log("Fetched posts:", posts);
-            displayPosts(posts);
-          })
-          .catch((error) => {
-            console.log("Error fetching posts:", error);
-          });
+
       })
-      .catch((error) => {
-        console.log("Error creating post:", error);
-      });
+
+
   });
-}
+
 
 function displayPosts(posts) {
   console.log("Displaying posts:", posts);
 }
 
-createPost();
+
 
 const logoutLink = document.getElementById("logout");
 logoutLink.addEventListener("click", logout);
+
