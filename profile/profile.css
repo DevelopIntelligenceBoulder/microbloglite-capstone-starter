@@ -39,3 +39,11 @@
   .loginMain {
     margin-top: 80pt;
   }
+  .card{
+    background-color: #f5f3e3;
+    border: #a32645 solid;
+  }
+  
+  nav {
+    background-color: #f5f3e3;
+  }
