@@ -16,9 +16,10 @@ function getuser() {
   const publishedCheckbox = document.getElementById("published");
 
 
-  form.addEventListener("submit", event => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
-    
+    const loginData = JSON.parse(window.localStorage.getItem("login-data"));
+
 
     const errors = [];
     if (titleInput.value.trim() === "") {
@@ -31,7 +32,7 @@ function getuser() {
     const formErrors = document.querySelector(".form-errors");
     formErrors.innerHTML = "";
     if (errors.length > 0) {
-      errors.forEach(error => {
+      errors.forEach((error) => {
         const li = document.createElement("li");
         li.textContent = error;
         formErrors.appendChild(li);
@@ -54,8 +55,8 @@ function getuser() {
     };
 
     fetch(apiBaseURL + "/api/posts", options)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log("Post created successfully:", data);
 
         titleInput.value = "";
@@ -63,7 +64,9 @@ function getuser() {
         topicSelect.value = "";
         publishedCheckbox.checked = false;
 
+
       })
+
 
   });
 
@@ -71,4 +74,9 @@ function getuser() {
 function displayPosts(posts) {
   console.log("Displaying posts:", posts);
 }
+
+
+
+const logoutLink = document.getElementById("logout");
+logoutLink.addEventListener("click", logout);
 

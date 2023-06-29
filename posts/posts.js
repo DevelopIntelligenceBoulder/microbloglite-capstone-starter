@@ -1,6 +1,7 @@
 /* Posts Page JavaScript */
 
 "use strict";
+
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
 
@@ -30,7 +31,7 @@ function likePost(id) {
       }
       const clickedBtn = document.querySelector(`button[id='${id}']`);
       clickedBtn.setAttribute("onclick", `removeLike('${like._id}', '${id}')`);
-      clickedBtn.classList.add("bg-primary");
+      clickedBtn.classList.add("likedPost");
       printLikes(id, clickedBtn);
     })
     .catch((err) => {
@@ -87,6 +88,7 @@ function removeLike(likeId, postId) {
       console.log(err, err.status);
     });
 }
+
 function getPosts() {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const options = {
@@ -103,14 +105,32 @@ function getPosts() {
     .then((response) => response.json())
     .then((posts) => {
       posts.forEach((post) => {
-        console.log(post.likes);
-        console.log(loginData.username);
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");
         const dateArea = clone.querySelector(".creationDate");
-        const likesArea = clone.querySelector(".likes");
-        likesArea.innerHTML = `<button id='${post._id}' onclick='likePost(this.id)'}>Like: ${post.likes.length}</button>`;
+        const likesArea = clone.querySelector("div button");
+        likesArea.id = post._id;
+        likesArea.textContent = `Like: ${post.likes.length}`;
+        let liked = false;
+        let likeId;
+        post.likes.forEach((like) => {
+          if (like.username === loginData.username) {
+            console.log(like._id, like.postId);
+            likesArea.setAttribute("class", "likedPost");
+            likeId = like._id;
+            liked = true;
+          }
+        });
+        if (liked) {
+          likesArea.setAttribute(
+            "onclick",
+            `removeLike('${likeId}', '${post._id}')`
+          );
+        } else {
+          likesArea.setAttribute("onclick", "likePost(this.id)");
+        }
+
         const date = new Date(post.createdAt);
 
         dateArea.textContent = `${date.getDate()}-${
