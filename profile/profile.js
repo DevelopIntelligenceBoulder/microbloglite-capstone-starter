@@ -33,8 +33,8 @@ postBtnEl.addEventListener(`click`, (e) => {
     .then((posts) => {
       console.log(posts);
     });
-  //window.location.href = "./profile.html";
   getPosts();
+
 });
 //----------------------------------------------------------------------------------
 
@@ -92,7 +92,17 @@ function getPosts() {
             heartIcon.style.display = "none";
             filledHeartIcon.style.display = "flex";
 
-            // fetch()
+            const options = {
+              method: "POST",
+              body: JSON.stringify({
+                postId: post._id,
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${loginData.token}`,
+              },
+            };
+            fetch(`https://microbloglite.herokuapp.com/api/likes`, options);
           });
 
           displayPostsDiv.appendChild(postEl);
