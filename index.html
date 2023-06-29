@@ -33,7 +33,11 @@
     <title>PluggedIn</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+<<<<<<<<< Temporary merge branch 1
     <script src="js/auth.js"></script>
+=========
+    <script src="../js/auth.js"></script>
+>>>>>>>>> Temporary merge branch 2
     <!-- <script> -->
     <!-- if (!isLoggedIn()) window.location.replace("/"); -->
     <!-- </script> -->
@@ -52,9 +56,17 @@
     </header>
 
     <body>
-     <a href="../html/login.html"><button type="button" class="btn btn-primary btn-lg">Explore</button> </a>
+<<<<<<<<< Temporary merge branch 1
+     <a href="html/login.html"><button type="button" class="btn btn-primary btn-lg">Explore</button> </a>
     </body>
 
     <script src="html/home.js"></script>
+=========
+   
+     <a href="../html/login.html"><button type="button" class="btn btn-primary btn-lg">Explore</button> </a>
+    </body>
+
+    <script src="../html/home.js"></script>
+>>>>>>>>> Temporary merge branch 2
   </body>
 </html>
