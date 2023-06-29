@@ -9,3 +9,15 @@
 .light main label, .light .login-register p {
     color: #000000d2;
   }
+.light main {
+  background-color: rgba(199, 199, 199, 0.712);
+}
+ .light main label,.light main h3, .light main p {
+    color: #0a0a0a;
+  }
+  .light main p {
+    font-size: 16;
+  }
+ .light main label {
+    font-size: 17px;
+  }
