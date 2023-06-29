@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/profile.css">
+    <script src="scripts/auth.js"></script>
+   
+  </head>
+  <body>
+  <div class="header">
+    <!------------------------------------------ Header content goes here ------------------------------------------>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="#FF1CA8" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+          <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+        </svg></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="#FF1CA8" class="bi bi-heart-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+        </svg></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30"  fill="#FF1CA8" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30"  fill="#FF1CA8" class="bi bi-plus-square" viewBox="0 0 16 16">
+          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30"  fill="#FF1CA8" class="bi bi-messenger" viewBox="0 0 16 16">
+          <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+        </svg></a>
+      </div>
+      <div class="container">
+        <div class="left-sidebar">
+          <!---------------------------------------- Left sidebar content start here ------------------------------------------------>
+          <div class="sidebar-image">
+            <img class="z-3 position-absolute top-0 start-30" src="media/profile.jpeg" style="max-width: 100%; height: 20%; border-radius: 30%; border: 5px solid pink; margin-top: 7%; transform: scale(0.8);" alt="Left Image">
+            <h2 id="FullName">Purin Morgan</h2>
+            <h3 id="username">@username</h3>
+          </div>
+          <div class="bio-card" id="bioFieldStatic" style="background-color: rgb(249, 249, 249); border-radius: 20px;font-weight: bolder; padding-top:3%; padding-bottom:3%">
+            <h2>Bio</h2>
+            <p>
+              Location: Miami, Florida <br>
+              Hobbies: Weightlifting, running, donuts, sleeping.</p>
+            </div>
+            <div class="EditingContentsHere">
+              <button type="button" id="EditProfileBtn" class="btn btn-secondary" style="background-color: #FF1CA8;" >Edit Profile</button>
+
+              <button type="submit" id="DoneWithProfileBtn" class="btn btn-secondary" style="background-color: #FF1CA8;" >Save</button>
+              <div class="card" id="CardContentsHeldHere" style="background-color: rgb(249, 249, 249); border-radius: 20px; margin-bottom: 10%; border:none;">
+                <div class="card-body" id="CardForTextInput">
+                  <label for="EditBioTextField" style="font-weight: bold; padding-bottom: 3%;"> Make Your Edits </label>
+                  <textarea class="form-control" style="border-radius: 20px; border:none;" id="EditBioTextField" rows="4" required></textarea>
+                 
+                </div>
+              </div>
+            </div>
+        
+        </div>
+        <div class="main-content">
+          <!--------------------------------------- Main content starts here ---------------------------------------------------------->
+
+          <div class="card" style="background-color: rgb(249, 249, 249); border-radius: 20px; margin-bottom: 10%; border:none;">
+            <div class="card-body" id="cardBody">
+              <form id="postForm">
+                <div class="form-group" id="formGroup">
+                  <label for="postContent" style="font-weight: bold; padding-bottom: 3%;"  >What's on Your Mind?</label>
+                  <textarea class="form-control" style="border-radius: 20px; border:none;" id="postField" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" id="postBtn" class="btn btn-secondary" style="margin-top:3%;background-color: #FF1CA8; border:none; outline:none;" >Post</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <!-------------------------------------- Right sidebar content goes here ------------------------------------------------------>
+
+
+          <button type="submit" id="logOutBtn" class="btn btn-secondary" style="background-color: #FF1CA8; border:none; outline:none;"">Log Out</button>
+
+        </div>
+      </div>
+</body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="scripts/profile.js"></script>
+ 
+</html>
+
+
