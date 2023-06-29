@@ -84,7 +84,3 @@ function logout() {
     });
 }
 
-document.getElementById("logout").addEventListener("click", function(event) {
-  event.preventDefault(); 
-  logout();
-});
