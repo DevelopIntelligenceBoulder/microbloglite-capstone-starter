@@ -25,6 +25,11 @@ window.onload = function () {
     updateBioBtn.onclick = onUpdateBioBtnClick;
 
     editBioContainer.style.display = "none";//hides the  bio editcontainer
+
+    const storedBio = localStorage.getItem("bio");
+    if (storedBio) {
+        bioText.textContent = storedBio;
+    }
   
 
 }
@@ -110,12 +115,14 @@ function onUpdateBioBtnClick(){
          // Update the bio text with the updated value
          bio.textContent = editBioInput.value;
  
+         localStorage.setItem("bio", editBioInput.value);
          // Hide the edit bio input box and show the updated bio text content
          bioText.style.display = "block";
          editBioContainer.style.display = "none";
  
          // Show the edit button
          editBioBtn.style.display = "block";
+
     })
     .catch(error => {
         console.error("Error updating bio:", error);
