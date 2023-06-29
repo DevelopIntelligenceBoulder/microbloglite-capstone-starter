@@ -1,29 +1,30 @@
-// Function to handle post form submission
-async function handlePost(event) {
-    event.preventDefault();
-  
-    const postContent = document.getElementById('postContent').value;
-  
-    try {
-      const response = await fetch('https://microbloglite.herokuapp.com/api/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ content: postContent })
-      });
-      const data = await handleAPIError(response);
-      console.log('Post created:', data);
-      // Clear the form
-      document.getElementById('postForm').reset();
-      // TODO: Display the new post on the page
-    } catch (error) {
-      console.error('Post Error:', error.message);
-      // Display error message to the user
-      alert('Failed to create post. Please try again.');
-    }
+"use strict";
+
+// This function checks if a user is logged in, and redirects them
+// to the login page if they are not.
+function checkLoggedOut() {
+  if (!isLoggedIn()) {
+    window.location.href = "../html/landing.html";
   }
-  
-  // Attach event listener to the post form
-  document.getElementById('postForm').addEventListener('submit', handlePost);
-  
+}
+
+// This function is called when the user clicks the "Logout" button.
+// It calls the `logout()` function and redirects to the landing page.
+async function handleLogout(event) {
+  event.preventDefault();
+
+  try {
+    await logout();
+    window.location.href = "../html/landing.html";
+  } catch (error) {
+    console.error("Logout Error:", error.message);
+    alert("Failed to logout. Please try again.");
+  }
+}
+
+// Add event listener to the logout button
+const logoutButton = document.getElementById("logoutButton");
+logoutButton.addEventListener("click", handleLogout);
+
+// Check if user is logged out on page load
+checkLoggedOut();

@@ -18,6 +18,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
+    />
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="../css/global.css" />
 
@@ -38,119 +42,45 @@
       <nav class="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img
-              src="../img/logo.png"
-              width="30"
-              height="24"
-              class="d-inline-block align-text-top"
-            />
-            Plugged<span>In</span>
+            <img src="../img/logo.png"Logo" width="30" height="24"
+            class="d-inline-block align-text-top"> Plugged<span>In</span>
           </a>
         </div>
       </nav>
     </header>
 
     <body>
-      <div class="container">
-        <div class="card">
-          <div class="card-top d-flex justify-content-center">
-            <img src="#" alt="" />
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input
-                  title="Must be a valid email address"
-                  pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
-                  type="email"
-                  class="form-control"
-                  id="Email"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="Password" class="form-label">Password</label>
-                <input
-                  title="Must be atleast 8 characters"
-                  pattern="[a-zA-Z0-9]{8,}"
-                  type="password"
-                  class="form-control"
-                  id="Password"
-                />
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="Check" />
-                <label class="form-check-label" for="Check">Remember me</label>
-                <p>
-                  Don't have an account?<a href="../html/registration.html"
-                    >Sign up</a
-                  >
-                </p>
-              </div>
-              <button type="submit" class="btn btn-primary">
-                Blasting Off Away!
-              </button>
-            </form>
+      <form class="login-form">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" />
           </div>
         </div>
-      </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label"
+            >Password</label
+          >
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-10 offset-sm-2"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+
+        <p>
+          Don't have an account?
+          <a href="../html/registration.html">Register here</a>
+        </p>
+      </form>
     </body>
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="../js/landing.js"></script>
+    <script src="../js/auth.js"></script>
   </body>
 </html>
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/landing.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-  <title>MicroblogLite - Welcome</title>
-</head>
-<body>
-  <header>
-    <h1>Welcome to MicroblogLite</h1>
-  </header>
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Introducing MicroblogLite</h2>
-          <p>MicroblogLite is a microblogging platform that allows you to share concise insights about your craft, hobby, or profession.</p>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              <h3>Login</h3>
-            </div>
-            <div class="card-body">
-              <form id="loginForm">
-                <div class="mb-3">
-                  <label for="username">Username:</label>
-                  <input type="text" id="username" name="username" required>
-                </div>
-                <div class="mb-3">
-                  <label for="password">Password:</label>
-                  <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Log In</button>
-              </form>
-              <p>Don't have an account? <a href="registration.html">Sign up</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="../js/auth.js"></script>
-  <script src="../js/landing.js"></script>
-</body>
-</html>
--->
