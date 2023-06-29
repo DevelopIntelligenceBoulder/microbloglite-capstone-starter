@@ -1,12 +1,12 @@
 /* Reg Page CSS */
 .body {
-    background-image: url("/images/background-flame.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
-  /* .footerp {
+  background-image: url("/images/background-flame.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* .footerp {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
@@ -18,141 +18,140 @@
     justify-content: center;
     height: 15em;
   } */
-  
-  .imgNavbar{
-    margin-left: 15pt;
-    size: 20pt;
-  }
-  
-  .imgDescription {
-    font-size: medium;
-    color: #5a0303;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .2s, visibility .2s;
-    position: absolute;
-  }
-   .imgWrap:hover .imgDescription {
-    visibility: visible;
-    opacity: .3;
-   }
-  
+
+.imgNavbar {
+  margin-left: 15pt;
+  size: 20pt;
+}
+
+.imgDescription {
+  font-size: medium;
+  color: #5a0303;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  position: absolute;
+}
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 0.3;
+}
+
 .headerReg {
-    margin-top: 80pt;
+  margin-top: 80pt;
 }
 .regInputs {
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background: rgba(249, 228, 232, 0.75) ;
-    background-position: center;
-    padding: 50pt; 
-    width: fit-content;
-    margin: 10px auto;
-    border-radius: 10pt;
-    margin-top: 100pt;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgba(249, 228, 232, 0.75);
+  background-position: center;
+  padding: 50pt;
+  width: fit-content;
+  margin: 10px auto;
+  border-radius: 10pt;
+  margin-top: 100pt;
 }
 
 .fullName {
-    margin-top: 20pt;
+  margin-top: 20pt;
 }
 
 #fullnameInput {
-    border-style: none;
-    border-radius: 5pt;
+  border-style: none;
+  border-radius: 5pt;
 }
 
 .username {
-    margin-top: 20pt;
+  margin-top: 20pt;
 }
 
 #usernameInput {
-        border-style: none;
-        border-radius: 5pt;
+  border-style: none;
+  border-radius: 5pt;
 }
 
-
 .password {
-    margin-top: 20pt;
+  margin-top: 20pt;
 }
 
 #passwordInput {
-    border-style: none;
-    border-radius: 5pt;
+  border-style: none;
+  border-radius: 5pt;
 }
 
-
 .regBtn {
-    margin-top: 37pt;
+  margin-top: 37pt;
 }
 
 .loginNow {
-    margin-top: 30pt;
-
-
+  margin-top: 30pt;
 }
 
 .loginLink {
-    text-decoration: none;
-    font-weight: bold;
-    color: #f6196a;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f6196a;
 }
 
 #registerBtn {
-    border-style: none;
-    padding: 5pt;
-    padding-left: 10pt;
-    padding-right: 10pt;
-    border-radius: 4pt;
-    background-color: #f6196a;
-    color: white;
+  border-style: none;
+  padding: 5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border-radius: 4pt;
+  background-color: #f6196a;
+  color: white;
 }
 
 .regheader {
-    margin-top: 10pt;
-    margin-bottom: 30pt;
-    width: 400pt;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 10pt;
+  margin-bottom: 30pt;
+  width: 400pt;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.noahCheck{
-    width: 130pt;
-    margin-bottom: 10pt;
+.noahCheck {
+  width: 130pt;
+  margin-bottom: 10pt;
 }
- .imgWrap2 {
-    position: relative;
- }
+.imgWrap2 {
+  position: relative;
+}
 
 .noahReg {
-    font-size: medium;
-    color: #5a0303;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .2s, visibility .2s;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: 30pt;
-    margin-left: 110pt;
-    background: rgba(249, 228, 232, 0.75);
-    width: 100pt;
-    height: 20pt;
-    text-align: center;
-  }
-   .imgWrap2:hover .noahReg {
-    visibility: visible;
-    opacity: .9;
-   }
+  font-size: medium;
+  color: #5a0303;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 30pt;
+  margin-left: 110pt;
+  background: rgba(249, 228, 232, 0.75);
+  width: 100pt;
+  height: 20pt;
+  text-align: center;
+}
+.imgWrap2:hover .noahReg {
+  visibility: visible;
+  opacity: 0.9;
+}
 
 .gggImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 nav {
-    background-color: #f5f3e3;
-  }
+  background-color: #f5f3e3;
+}
+
+.LC {
+  width: 100%;
+}

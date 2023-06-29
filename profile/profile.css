@@ -1,11 +1,11 @@
 .body {
-    background-image: url("/images/background-flame.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
-  /* .footerp {
+  background-image: url("/images/background-flame.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* .footerp {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
@@ -17,33 +17,107 @@
     justify-content: center;
     height: 15em;
   } */
-  
-  .imgNavbar{
-    margin-left: 15pt;
-    size: 20pt;
-  }
-  
-  .imgDescription {
-    font-size: medium;
-    color: #5a0303;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .2s, visibility .2s;
-    position: absolute;
-  }
-   .imgWrap:hover .imgDescription {
-    visibility: visible;
-    opacity: .3;
-   }
-  
-  .loginMain {
-    margin-top: 80pt;
-  }
-  .card{
-    background-color: #f5f3e3;
-    border: #a32645 solid;
-  }
-  
-  nav {
-    background-color: #f5f3e3;
-  }
+
+.imgNavbar {
+  margin-left: 15pt;
+  size: 20pt;
+}
+
+.imgDescription {
+  font-size: medium;
+  color: #5a0303;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  position: absolute;
+}
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 0.3;
+}
+
+.loginMain {
+  margin-top: 80pt;
+}
+.card {
+  background-color: #f5f3e3;
+  border: #a32645 solid;
+}
+
+nav {
+  background-color: #f5f3e3;
+}
+
+.myINFO {
+  text-align: end;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgba(249, 228, 232, 0.75);
+  background-position: center;
+  padding: 50pt;
+  width: fit-content;
+  margin: 10px auto;
+  border-radius: 10pt;
+}
+
+.fullNameProfile {
+  margin-top: 20pt;
+}
+
+#fullNameInput {
+  border-style: none;
+  border-radius: 5pt;
+}
+
+.usernameProfile {
+  margin-top: 20pt;
+}
+
+#usernameInput {
+  border-style: none;
+  border-radius: 5pt;
+}
+
+.bio {
+  margin-top: 20pt;
+}
+
+#bioInput {
+  border-style: none;
+  border-radius: 5pt;
+}
+
+#update {
+  margin-top: 37pt;
+  border-style: none;
+  padding: 5pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  border-radius: 4pt;
+  background-color: #f6196a;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgProfile {
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+  width: 200pt;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputFields {
+  margin-top: 40pt;
+}
+.LC {
+  width: 100%;
+}
+
+#logoutBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

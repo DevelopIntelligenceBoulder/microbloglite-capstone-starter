@@ -1,0 +1,58 @@
+.bodyNav {
+  background-image: url("/images/bg-special.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* .footerp {
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      font-size: small;
+    }
+    
+    .footerimage{
+      display: flex;
+      justify-content: center;
+      height: 15em;
+    } */
+
+.imgNavbar {
+  margin-left: 15pt;
+  size: 20pt;
+}
+
+.imgDescription {
+  font-size: medium;
+  color: #5a0303;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  position: absolute;
+}
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 0.3;
+}
+
+nav {
+  background-color: #f5f3e3;
+}
+
+.special {
+  margin-top: 80pt;
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.specialM {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40pt;
+}
+
+.kc {
+    width: 40%;
+}
