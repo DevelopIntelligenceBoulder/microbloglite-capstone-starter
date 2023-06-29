@@ -31,7 +31,7 @@ footer {
     background-color:#f1bf40;
 }
 
-#filledHeartIcon {
+.filledHeartIcon {
     display:none;
 }
 
@@ -39,3 +39,8 @@ footer {
     background:linear-gradient(to bottom,#f5c343,#5cc7ec)
 
 }
+
+#login {
+    height: 460px;
+}
+

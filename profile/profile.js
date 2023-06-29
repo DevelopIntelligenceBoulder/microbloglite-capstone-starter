@@ -3,6 +3,9 @@ const createPostInputEl = document.getElementById(`createPostInput`);
 const logoutBtn = document.getElementById("logoutBtn");
 const displayPostsDivEl = document.getElementById(`DisplayPostsDivs`);
 const postDisplayEl = document.getElementById(`postDisplay`);
+const userAccount = document.getElementById('userAccount');
+const userInfo = document.getElementById('userInfo');
+
 const loginData = getLoginData();
 
 //------------------------------------------------------------------
@@ -49,11 +52,17 @@ function getPosts() {
   fetch(userNameUrl, options)
     .then((response) => response.json())
     .then((data) => {
+
+      userAccount.innerHTML = loginData.username
+
+      userInfo.innerHTML = `${loginData.username}'s Profile`
+
       let template;
-      console.log(loginData.username);
+      
       template = document.getElementById("postDisplay");
 
       data.forEach((post) => {
+
         // const content = `
         // <div class="border p-3 m-3">
         // <h3><span>@</span>${post.username}</h3>

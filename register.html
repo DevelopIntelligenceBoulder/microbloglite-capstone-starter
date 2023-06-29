@@ -41,24 +41,33 @@
 
     
     <main>
-      <a href="./index.html" class="link-light d-flex justify-content-center mb-3">Already have an account? Login</a>
+        <div class="row">
+           <div class="col-6">
+            <img src="../global-images/pexels-pixabay-38544.jpg" width="800" height="607">
+           </div> 
+           <div class="col-6">
+            <a href="./index.html" class="link-light d-flex justify-content-center mb-3">Already have an account? Login</a>
 
-        <form class="container border border-warning rounded w-50 p-3 text-dark">
-            <h2 class="d-flex justify-content-center mt-3">Sign Up</h2>
-            <div class="form-group">
-                <label for="userName">User Name</label>
-                <input type="text" class="form-control bg-dark text-light" id="userName">
-              </div>
-              <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" class="form-control bg-dark text-light" id="fullName">
-              </div>
-              <div class="form-group mb-3">
-              <label for="password">Password</label>
-              <input type="password" class="form-control bg-dark text-light" id="password">
-            </div>
-            <button type="submit" id="signUpBtn" class="btn btn-warning mb-5 col-12">Sign up</button>
-          </form>
+            <form id="registerForm" class="container border border-warning rounded w-50 p-3 text-dark w-75 h-75">
+                <h2 class="d-flex justify-content-center mt-3">Sign Up</h2>
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" class="form-control bg-dark text-light" id="userName">
+                  </div>
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control bg-dark text-light" id="fullName">
+                  </div>
+                  <div class="form-group mb-3">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control bg-dark text-light" id="password">
+                </div>
+                <button type="submit" id="signUpBtn" class="btn btn-warning mb-5 col-12">Sign up</button>
+              </form>
+           </div>
+          
+        </div>
+   
     </main>
     <!-- <script src="/landing.js"></script> -->
     <script src="/register.js"></script>

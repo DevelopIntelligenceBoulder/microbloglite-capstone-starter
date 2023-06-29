@@ -52,7 +52,7 @@
           <h1 class="text-light">Chatter</h1>
         </a>
 
-        <ul class="nav col-8 mb-2 justify-content-center mb-md-0 nav-pills">
+        <ul class="nav col mb-2 justify-content-center mb-md-0 nav-pills">
           <li><a href="./posts.html" class="nav-link px-2 link-dark me-2 active">Timeline</a></li>
           <li><a href="../profile/profile.html" class="nav-link px-2 link-light" id="profileLink">My Profile</a></li>
         </ul>
@@ -63,6 +63,7 @@
             <img
               src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=612x612&w=0&h=NGxdexflb9EyQchqjQP0m6wYucJBYLfu46KCLNMHZYM="
               alt="mdo" width="32" height="32" class="rounded-circle">
+              <span id="userAccount"></span>
           </a>
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
@@ -100,21 +101,20 @@
             <small></small>
             <br>
             <div class="mt-3">
-              <input type="checkbox" class="btn-check" id="likeBtn" autocomplete="off">
-              <label class="btn btn-danger" for="likeBtn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
-                  viewBox="0 0 16 16" id="heartIcon">
+              <a type="checkbox" class="btn btn-danger likeBtn" name="likeButton" autocomplete="off">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart heartIcon"
+                  viewBox="0 0 16 16">
                   <path
                     d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
                 </svg>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-heart-fill" viewBox="0 0 16 16" id="filledHeartIcon">
+                    class="bi bi-heart-fill filledHeartIcon" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                       d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                   </svg>
                 </span>
-              </label>
+              </a>
               <button type="button" class="btn btn-outline-info">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
