@@ -60,7 +60,13 @@
 
     <div class="about">
         <p class="aboutMe">About Me</p>
-        <div id="bioContainer"></div>
+        <div id="bioContainer">
+            <div class="bio-display" id="bioDisplay"></div>
+            <div class="bio-edit" id="bioEdit">
+                <textarea id="biotext" cols="30" rows="10" placeholder="Edit your bio here"></textarea><br>
+                <button id="saveBio" class="btn btn-outline-light">Save</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -83,8 +89,6 @@
 </div>
 
     </main>
-
-    <footer></footer>
 
     <!-- Page-specific code -->
     <script src="./profile.js"></script>
