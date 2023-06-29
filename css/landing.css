@@ -1,36 +1,41 @@
 /* Landing page styles */
-.container {
+/* .navbar {
+  background: transparent;
+} */
+
+.navbar-brand {
+  color: rgba(133, 91, 236, 0.8);
+}
+
+.navbar-brand img {
+  margin-right: 5px;
+}
+
+.navbar-brand span {
+  color: #17a0bb;
+}
+
+.container-fluid {
+  padding: 0;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #333;
+.container {
+  background: transparent;
 }
 
-body {
-  background-image: url("../img/milky-way-l.jpg");
-  background-size: cover;
+header {
+  background: transparent;
+  background: rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.01%;
+  padding-top: 0.01%;
 }
-
 
 .btn{
   display:inline-block;
-   margin-top: 15rem;
+   margin-top: 15rem; 
    margin-left: 35rem;
 }
 
-
-span{
-  color: pink;
-}
-
-header{
-  background-color: black;
-}
-
-.navbar-brand {
-  color: whitesmoke;
-}
