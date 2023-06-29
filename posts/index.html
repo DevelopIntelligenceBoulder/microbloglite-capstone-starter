@@ -102,7 +102,33 @@
         </div>
       </nav>
     </header>
-
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <style>
+            .list-group-item {
+                border: none;
+                position: relative;
+                padding-left: 40px;
+                margin-bottom: 10px;
+                background-color: rgba(0,0,0,0.03);
+                border-radius: 5px;
+            }
+    
+            .list-group-item i {
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 18px;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 50%;
+                background-color: #1a972b;
+            }
+        </style>
+    </head>
     <main class="bg-body-tertiary">
       <div class="container">
         <div class="row">
@@ -111,11 +137,14 @@
           >
             <h2 class="mb-3">Trending</h2>
             <ul class="list-group">
-              <li class="list-group-item">#webdevelopment</li>
-              <li class="list-group-item">#photography</li>
-              <li class="list-group-item">#painting</li>
-              <li class="list-group-item">#fitness</li>
-              <li class="list-group-item">#cooking</li>
+    <ul class="list-group">
+        <li class="list-group-item"><i class="fas fa-code"></i> #webdevelopment</li>
+        <li class="list-group-item"><i class="fas fa-camera"></i> #photography</li>
+        <li class="list-group-item"><i class="fas fa-paint-brush"></i> #painting</li>
+        <li class="list-group-item"><i class="fas fa-dumbbell"></i> #fitness</li>
+        <li class="list-group-item"><i class="fas fa-utensils"></i> #cooking</li>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
             </ul>
           </div>
           <div class="col p-0 bg-body">
@@ -219,5 +248,6 @@
       // Parse emoji on the page with twemoji
       twemoji.parse(document.body);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
