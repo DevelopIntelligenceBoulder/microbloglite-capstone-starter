@@ -41,8 +41,8 @@ function login(loginData) {
   return fetch(apiBaseURL + "/auth/login", options)
     .then((response) => response.json())
     .then((loginData) => {
-      window.localStorage.setItem("login-data", JSON.stringify(loginData));
-      console.log(loginData.statusCode);
+      wlindow.locaStorage.setItem("login-data", JSON.stringify(loginData));
+
       if (loginData.statusCode < 400) {
         window.location.replace("./posts/");
         return loginData;
@@ -83,4 +83,3 @@ function logout() {
       window.location.assign("/"); // redirect back to landing page
     });
 }
-

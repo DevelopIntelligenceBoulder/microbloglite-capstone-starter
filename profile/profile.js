@@ -16,7 +16,6 @@ function getuser() {
   fetch(apiBaseURL + `/api/users/${loginData.username}`, options)
     .then((response) => response.json())
     .then((user) => {
-      console.log(user);
       document.getElementById("username").textContent = user.username;
       document.getElementById("name").textContent = user.fullName;
       document.getElementById("profileBio").textContent = user.bio;
