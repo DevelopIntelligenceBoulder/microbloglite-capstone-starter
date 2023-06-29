@@ -57,22 +57,29 @@
       </header>
 
     <main>
-        <a href="./register.html" class="link-light d-flex justify-content-center mb-3">Don't have an account? Sign Up</a>
+        <div class="row">
+           <div class="col-6">
+             <img src="../global-images/pexels-roman-odintsov-4555321.jpg" width="800" height="500">
+           </div>
+           <div class="col-6">
+            <a href="./register.html" class="link-light d-flex justify-content-center mb-3">Don't have an account? Sign Up</a>
 
-        <form id="login" class="container border border-warning rounded w-50 p-3 text-dark">
-            <h2 class="d-flex justify-content-center mt-3">Log In</h2>
+            <form id="login" class="container border border-warning rounded w-50 p-3 text-dark w-75">
+                <h2 class="d-flex justify-content-center mt-3">Log In</h2>
+                    <div>
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control bg-dark text-light border-secondary" id="username" minlength="3">
+                </div>
+    
                 <div>
-                <label for="username">Username</label>
-                <input type="text" class="form-control bg-dark text-light border-secondary" id="username" minlength="3">
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" class="form-control bg-dark text-light border-secondary" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" class="btn btn-warning mt-3 mb-3 col-12" type="submit">Login</button>
-        </form>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control bg-dark text-light border-secondary" id="password" minlength="6">
+                </div>
+    
+                <button id="loginButton" class="btn btn-warning mt-3 mb-3 col-12" type="submit">Login</button>
+            </form>
+           </div>
+        </div>
     </main>
 
     <!-- footer -->
