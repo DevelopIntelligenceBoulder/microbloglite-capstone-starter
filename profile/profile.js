@@ -76,7 +76,7 @@ window.addEventListener("load", function getPosts() {
         let editBtn = clone.querySelector(".Edit");
         let deleteBtn = clone.querySelector(".Delete");
         title.textContent = post.username;
-        postInfo.value = post.text;
+        postInfo.textContent = post.text;
         deleteBtn.textContent = "Delete";
         // editBtn.textContent = `Edit`;
         templateEl.appendChild(clone);

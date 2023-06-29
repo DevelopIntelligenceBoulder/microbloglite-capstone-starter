@@ -4,6 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-y: hidden;
 }
 
 /* .footerp {
@@ -46,15 +47,11 @@
   width: fit-content;
   margin: 10px auto;
   border-radius: 10pt;
-
 }
-
-
 
 .loginMain {
   margin-top: 80pt;
   margin-bottom: 80pt;
-
 }
 
 .username {
@@ -110,7 +107,7 @@
 
 .imgScroll {
   width: 100%;
-  margin-top: 150pt
+  margin-top: 150pt;
 }
 
 .gggImg {
@@ -129,7 +126,7 @@
 }
 
 .imgCSS {
-  margin-top: 150pt;
+  margin-top: 100pt;
   text-align: center;
   display: block;
   margin-left: auto;
@@ -143,7 +140,7 @@
 
 .noahfrom {
   width: 100%;
-  margin-top: 150pt;
+  margin-top: 100pt;
   /* position: absolute;
   left: 0px;
   top: 0px;
@@ -154,4 +151,8 @@
 
 nav {
   background-color: #f5f3e3;
+}
+
+.LC {
+  width: 100%;
 }

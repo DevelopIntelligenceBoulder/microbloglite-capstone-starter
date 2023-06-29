@@ -23,7 +23,7 @@
 
     <!-- Page-specific CSS -->
 
-    <title>Profile</title>
+    <title>Special Moment</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -31,17 +31,10 @@
       crossorigin="anonymous"
     />
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
-    <script>
-      if (isLoggedIn() === false) window.location.replace("/");
-    </script>
-    <link rel="stylesheet" href="../posts/posts.css" />
-    <link rel="stylesheet" href="/profile/profile.css">
+    <link rel="stylesheet" href="/specialmoment/SM.css" />
   </head>
   <body class="bodyNav">
     <div class="container">
-      <div class="row">
-      </div>
       <!-- ------------------------------------------------------------------------------------------------- -->
       <nav class="navbar fixed-top">
         <div class="container-fluid">
@@ -96,105 +89,19 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts/index.html"> Posts </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">My Profile</a>
+                  <a class="nav-link" href="/index.html"> Home </a>
                 </li>
               </ul>
-              <div class="special">
-                <a href="/specialmoment/specialmoment.html"
-                  ><img
-                    src="/images/lord-calcifer-frame.png"
-                    alt="LC"
-                    class="LC"
-                /></a>
-              </div>
-              <div class="position-relative fixed-bottom">
-                <button
-                  type="button"
-                  class="btn btn-danger btn-lg btn-block"
-                  id="logoutBtn"
-                >
-                  It's too hot in here!
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </nav>
-
+      <div>
+        <img src="/images/special.gif" alt="special" class="special" />
+          <p class="specialM">Ka chow</p>
+          <img src="/images/kc.png" alt="kc" class="kc" />
+      </div>
       <!-- ------------------------------------------------------------------------------------------------- -->
-      <main class="main">
-        <div class="myINFO">
-          <div class="row">
-            <div class="col">
-              <div>
-                <img
-                  src="/images/my-profile-header.png"
-                  alt="imgHeaderProfile"
-                  class="imgProfile"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="usernameProfile">
-                <label for="username">Change Username: </label>
-                <input type="text" id="usernameInput" minlength="3" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="fullNameProfile">
-                <label for="fullNameInput">Change Name: </label>
-                <input type="text" id="fullNameInput" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="bio">
-                <label for="bio">Biography: </label>
-                <input type="text" id="bioInput" minlength="3" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <input type="button" value="Update" id="update" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="inputFields">
-            <input type="text" placeholder="Truthful Posts Only" id="textbox" />
-            <input type="button" value="Post" id="postBtn" />
-          </div>
-        </div>
-        <template id="postCards">
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <!-- <input type="text" class="card-text" /> -->
-                  <p class="card-text"></p>
-                  <p class="card-likes"></p>
-                  <button type="submit" value="Delete" class="Delete"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </template>
-        <div class="row">
-          <div class="col">
-            <input type="button" value="Logout" id="logoutBtn" />
-          </div>
-        </div>
-      </main>
 
       <footer></footer>
 
@@ -205,6 +112,5 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="./profile.js"></script>
   </body>
 </html>
