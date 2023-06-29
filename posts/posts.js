@@ -94,9 +94,9 @@ const spanElDislike = document.createElement('span')
 spanElDislike.setAttribute('id', 'spanElDislike')
 spanElDislike.textContent = 0
 dislikeBtn.addEventListener('click', function() {
-  if (spanElLike.textContent === 0){
+  if (spanElLike.textContent == 0){
     spanElDislike.textContent = 1
-  } else if (spanElLike.textContent === 1) {
+  } else if (spanElLike.textContent == 1) {
     spanElLike.textContent = 0
     spanElDislike.textContent = 1
   }
