@@ -136,7 +136,6 @@ updateBtn.addEventListener("click", () => {
     username: userInput.value,
     fullName: changeNameInput.value,
     bio: bioInput.value,
-    // fullName:
   };
   const options = {
     method: "PUT",
@@ -146,7 +145,7 @@ updateBtn.addEventListener("click", () => {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-  const url = `https://microbloglite.herokuapp.com/api/`;
+  const url = `https://microbloglite.herokuapp.com/api/users/${loginData.username}`;
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => {

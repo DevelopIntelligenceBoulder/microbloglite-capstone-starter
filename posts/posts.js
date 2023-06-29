@@ -17,8 +17,17 @@ window.onload = getPosts;
 
 function renderPosts() {}
 
+window.addEventListener("load", function noahBtn() {
+  const noahImg = document.createElement("img");
+  noahImg.src = "../images/noah.png";
+  noahImg.alt = "Noah Post";
+  postBtnEl.appendChild(noahImg);
+
+  //   postBtnEl.src = url("../images/transparent-noah.png");
+});
+
 function getPosts() {
-  console.log(loginData);
+  //   console.log(loginData);
   const options = {
     method: "GET",
     headers: {
@@ -26,7 +35,7 @@ function getPosts() {
     },
   };
 
-  fetch(`${apiBaseURL}api/posts?limit=100&offset=0`, options)
+  fetch(`${apiBaseURL}api/posts?limit=15&offset=0`, options)
     .then((response) => response.json())
     .then((data) => {
       //   console.log(data);
@@ -68,8 +77,9 @@ function getPosts() {
         const userLike = post.likes.find(
           (data) => data.username === loginData.username
         );
+        console.log(userLike);
         // console.log(userLike);
-        console.log(post);
+        // console.log(post);
         if (userLike) {
           imgEl.src = "../images/likeFlame.png";
           imgEl.alt = "Like Flame";
@@ -89,7 +99,6 @@ function getPosts() {
             fetch(url, options)
               .then((response) => response.json())
               .then((data) => {
-                console.log(data);
                 window.location.assign("/posts");
               });
           });
@@ -140,6 +149,46 @@ postBtnEl.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       window.location.assign("/posts");
+    });
+});
+
+// function reload(){
+//     // var container = document.getElementById("yourDiv");
+//     var content = container.innerHTML;
+//     container.innerHTML= content;
+
+//    //this line is to watch the result in console , you can remove it later
+//     console.log("Refreshed");
+// }
+
+window.addEventListener("load", function morePosts() {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
+  fetch(`${apiBaseURL}api/posts?limit=15&offset=0`, options)
+    .then((response) => response.json())
+    .then((data) => {
+      //   const pagesBottomeEl = document.getElementById("pagesBottom");
+      //   var a = document.createElement("a");
+      //   a.textContent = data.length / 15;
+      //   a.title = data.length / 15;
+      //   //   a.href = `../profile/otherProfile.html?username=${post.username}`;
+      //   document.body.appendChild(a);
+      //   const clone = pagesBottomeEl.content.cloneNode(true);
+      //   let pageNumber = clone.querySelector("li");
+      //   // let title = clone.querySelector(".card-title");
+      //   // let postInfo = clone.querySelector(".card-text");
+      //   // let likeBtn = clone.querySelector('button[class="button"]');
+      //   //   likeBtn.textContent = post.likes.length;
+      //   //   title.appendChild(a);
+      //   pageNumber.appendChild(a);
+      //   //   postInfo.textContent = post.text;
+      //   //   const imgEl = document.createElement("img");
+      //   //   likeBtn.value = `${post.likes.length} `;
+      //   pagesBottomeEl.appendChild(clone);
     });
 });
 
