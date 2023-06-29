@@ -1,0 +1,21 @@
+h1 {text-align: center; font-style: oblique;}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .custom-input {
+    width: 250px;
+  }
+
+  .btn-primary{
+    background-color: #528AAE;
+  }
+
+  .btn-primary:hover {
+      background-color: #2E5984;
+  }
+
+  
