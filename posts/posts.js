@@ -33,7 +33,11 @@ function nextPage() {
   getPosts();
 }
 
-sortDropdown.addEventListener("change", getPosts);
+sortDropdown.addEventListener("change", () => {
+  pageCt = 1;
+  offset = 0;
+  getPosts();
+});
 getPosts();
 
 function likePost(id) {
@@ -187,6 +191,7 @@ function getPosts() {
         userArea.textContent = post.username;
         postArea.textContent = post.text;
         postsContainerEl.appendChild(clone);
+        pgCtEl.textContent = pageCt;
       }
       // sortedPosts.forEach((post) => {
       //   const clone = postsTemplate.content.cloneNode(true);
