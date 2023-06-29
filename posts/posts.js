@@ -43,9 +43,16 @@ function displayPost(post) {
     const usernameElement = document.createElement("span");
     usernameElement.textContent = update.username;
     const timestampElement = document.createElement("span");
-    timestampElement.textContent = update.createdAt;
+    // https://www.freecodecamp.org/news/javascript-date-format-how-to-format-a-date-in-js/ helped format the date
+    const createdAt = new Date(update.createdAt);
+    const timestampText = `${
+      createdAt.getMonth() + 1
+    }/${createdAt.getDate()}/${createdAt.getFullYear()}`;
+    timestampElement.textContent = `Updated at ${timestampText}`;
 
     detailsElement.appendChild(usernameElement);
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode helped me add a space between username and time
+    detailsElement.appendChild(document.createTextNode(" "));
     detailsElement.appendChild(timestampElement);
     postElement.appendChild(contentElement);
     postElement.appendChild(detailsElement);
