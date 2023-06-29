@@ -1,76 +1,40 @@
-// "use strict";
-// const fullnameInput = document.getElementById("inputName");
-// const usernameInput = document.getElementById("inputUsername");
-// const passwordInput = document.getElementById("InputPassword");
-// const confirmPasswordInput = document.getElementById("InputReEnterPassword");
-// const registerBtn = document.getElementById("registerButton");
 
-// window.onload = () => {
-//     registerBtn.onclick = registerBtnClicked
-// }
-
-// function registerBtnClicked(){
-
-//     if(passwordInput.value == confirmPasswordInput.value && usernameInput.value != "" && fullnameInput.value != "" ){
-//         let bodyData = {
-//             username: usernameInput.value,
-//             fullName: fullnameInput.value,
-//             password: passwordInput.value,
-//         };
-//         const options = {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify(bodyData),
-//     };
-//     return fetch("https://microbloglite.herokuapp.com/api/users", options)
-//         .then((response) => response.json())
-//         .then((loginData) => {
-//             window.location.assign("posts.html");
-//         });
-//     }
-//     else{
-//         console.log("error")
-//         errorPass2.innerHTML = "Password does not match"
-//     }
-// };
 "use strict";
+
 const fullnameInput = document.getElementById("inputName");
 const usernameInput = document.getElementById("inputUsername");
 const passwordInput = document.getElementById("InputPassword");
 const confirmPasswordInput = document.getElementById("InputReEnterPassword");
 const registerBtn = document.getElementById("registerButton");
-const errorMessage = document.getElementById("errorMessage");
-
-// Array to store registered usernames
-const registeredUsernames = [];
 
 window.onload = () => {
   registerBtn.onclick = registerBtnClicked;
 };
 
 function registerBtnClicked() {
-  // Check if any of the fields are empty
-  if (
-    fullnameInput.value === "" ||
-    usernameInput.value === "" ||
-    passwordInput.value === "" ||
-    confirmPasswordInput.value === ""
-  ) {
-    errorMessage.textContent = "Please fill out all fields";
-    showErrorModal();
-    return; // Stop further execution
+  let errorMessages = [];
+
+  if (usernameInput.value === "") {
+    errorMessages.push("Interesting, please enter a username");
   }
 
-  // Check if the username already exists in the registeredUsernames array
-  if (registeredUsernames.includes(usernameInput.value)) {
-    errorMessage.textContent = "Username already exists";
-    showErrorModal();
-    return; // Stop further execution
+  if (fullnameInput.value === "") {
+    errorMessages.push("Interesting, please enter a full name");
   }
 
-  if (passwordInput.value == confirmPasswordInput.value) {
+  if (passwordInput.value === "") {
+    errorMessages.push("Interesting, please enter a password");
+  }
+
+  if (confirmPasswordInput.value === "") {
+    errorMessages.push("Interesting, make sure to confirm your password");
+  }
+
+  if (errorMessages.length > 0) {
+    showErrorModal(errorMessages[0]);
+  } else if (passwordInput.value !== confirmPasswordInput.value) {
+    showErrorModal("Hmmm, looks like your passwords do not match");
+  } else {
     let bodyData = {
       username: usernameInput.value,
       fullName: fullnameInput.value,
@@ -83,21 +47,37 @@ function registerBtnClicked() {
       },
       body: JSON.stringify(bodyData),
     };
-
     return fetch("https://microbloglite.herokuapp.com/api/users", options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error creating user");
+        }
+        return response.json();
+      })
       .then((loginData) => {
-        // Add the registered username to the array
-        registeredUsernames.push(usernameInput.value);
-        window.location.assign("posts.html");
+        console.log(loginData);
+        window.location.assign("profile.html");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        if (error.message.includes("duplicate key")) {
+          showErrorModal("Your username has been taken");
+        } else {
+          showErrorModal("Interesting, your username has been taken");
+        }
       });
-  } else {
-    errorMessage.textContent = "Password does not match";
-    showErrorModal();
   }
 }
 
-function showErrorModal() {
+function showErrorModal(errorMessage) {
   const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+  const errorModalMessage = document.getElementById("errorModalMessage");
+  errorModalMessage.textContent = errorMessage;
   errorModal.show();
 }
+
+
+
+
+
+
