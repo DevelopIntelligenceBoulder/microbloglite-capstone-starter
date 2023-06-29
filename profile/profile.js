@@ -5,9 +5,9 @@ const titleInput = document.getElementById("title");
 const bodyInput = document.getElementById("post-editor");
 const topicSelect = document.getElementById("topic");
 const publishedCheckbox = document.getElementById("published");
+const profileBtn = document.getElementById("profile");
 
 function getuser() {
-  console.log(loginData.username);
   const options = {
     headers: {
       Authorization: `Bearer ${loginData.token}`,
@@ -24,6 +24,10 @@ function getuser() {
 }
 
 getuser();
+profileBtn.addEventListener(
+  "click",
+  () => (window.location.href = "./updateUser.html")
+);
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
