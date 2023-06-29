@@ -33,6 +33,13 @@ header {
   padding-top: 0.01%;
 }
 
+body {
+  background-image: url("../img/landing.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center
+}
+
 .btn{
   display:inline-block;
    margin-top: 15rem; 
