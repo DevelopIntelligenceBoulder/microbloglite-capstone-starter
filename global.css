@@ -128,7 +128,7 @@ img {
   100% { background-position: 0 0; }
 } */
 
-footer {
+ footer {
   background-color: #F8F9FA;
   position: absolute;
   bottom: 0;
@@ -140,14 +140,33 @@ footer {
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
-  text-align: center;
-  color: #333;
+  color: #000000;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 3px;
   text-transform: uppercase;
-}
+  text-decoration: none;
+} 
 
 footer:hover {
-  background-color: #86117C;
+}
+
+footer div img{
+  width: 75px;
+}
+
+footer div {
+  align-items: center;
+  display:flex;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+footer div a{
+  text-decoration: none;
+  color: black;
+}
+
+footer div a:hover {
+  color:silver;
 }
