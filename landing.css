@@ -75,7 +75,7 @@ section h3 {
 }
 
 
-#loginButton {
+.btn {
     padding: 0.5rem 1rem;
     background-color: #4caf50;
     color: white;
