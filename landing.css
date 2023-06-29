@@ -1,16 +1,20 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 body {
     font-family: 'Bree Serif', serif;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
+    overflow: auto;
+
 
 }
+
+.container {
+    overflow: auto;
+}
+
 
 
 #navbarNav {
@@ -41,6 +45,7 @@ main {
     align-items: top;
     text-align: center;
     color: rgb(0, 0, 0);
+    overflow: auto;
 }
 
 section h1 {
@@ -98,7 +103,7 @@ section h5 {
     font-weight: 500;
     text-decoration: none;
     letter-spacing: 1px;
-    
+
     margin-right: 0px;
     margin-left: 25px;
 }
@@ -121,8 +126,20 @@ button:focus {
 }
 
 @keyframes changetext {
-    0% {
+    100% {
         content: " And Get Your Game On";
     }
 
+}
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
 }
