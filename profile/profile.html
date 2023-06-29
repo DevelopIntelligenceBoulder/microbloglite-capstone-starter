@@ -17,10 +17,10 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
-    ></script>
-    <script defer src="../posts/posts.js"></script>
-    <script defer src="../profile/profile.js"></script>
+    ></script> 
     <script defer src="../auth.js"></script>
+    <script defer src="../profile/profile.js"></script>
+   
     <!-- Run BEFORE page is finished loading (before window.onload): -->
 
     <script>
@@ -82,8 +82,14 @@
     </header>
 
     <h1><span id="welcomeMessage"></span></h1>
-
-    <a href="../posts/index.html"></a>
+    
+    <form class="statusUpdate" id="statusUpdate">
+      <textarea
+        name="statusText"
+        id="statusText"
+        cols="75"
+        rows="5"
+      ></textarea>
 
     <form id="createPost">
       <button class="glow-on-hover">Create a byte?</button>
