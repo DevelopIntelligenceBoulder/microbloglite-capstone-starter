@@ -13,5 +13,11 @@
   margin-top: 10px;
   color: #666;
 }
+.mb-3 {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
 
 /* Add more posts page styles here */
