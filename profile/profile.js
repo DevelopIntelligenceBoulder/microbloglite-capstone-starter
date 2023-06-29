@@ -33,6 +33,8 @@ postBtnEl.addEventListener(`click`, (e) => {
     .then((posts) => {
       console.log(posts);
     });
+  getPosts();
+
 });
 //----------------------------------------------------------------------------------
 
