@@ -36,6 +36,7 @@ function profileFetch() {
         <div class="card text-center" id="cards" data-post-id="${userProfile._id}">
           <div class="card-header">
               <b>@${userProfile.username}</b>
+              <span><button class="deleteButton" id="${userProfile._id}" onclick="deletePost('${userProfile._id}')">Χ</button></span>
           </div>
           <div class="card-body">
               <p class="card-text">${userProfile.text}</p>
@@ -103,9 +104,9 @@ function sendData(postContent) {
 
   fetch(apiBaseURL + "/api/posts", options)
     .then((response) => response.json())
-    .then((response) => {
+    .then((data) => {
       profileFetch();
-      console.log(response);
+      console.log(data);
     });
 }
 window.onload = main;
@@ -113,4 +114,21 @@ window.onload = main;
 function main() {
   profileFetch();
   displayUserData();
+}
+
+function deletePost(postId) {
+    const loginData = getLoginData();
+    const options = {
+      method: "DELETE",
+      headers: {
+      Authorization: `Bearer ${loginData.token}`,
+      "Content-Type": "application/json",
+    },
+  };
+
+    fetch(apiBaseURL + "/api/posts/" + postId, options)
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.reload()
+    });
 }

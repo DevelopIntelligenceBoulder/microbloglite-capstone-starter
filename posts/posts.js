@@ -31,7 +31,6 @@ function postFetch() {
         .then(response => response.json())
         .then(posts => {
             posts.forEach(post => {
-                console.log(window.localStorage.getItem((post._id)))
                 if(window.localStorage.getItem(post._id) === null) {
                     const cardHTML = `
                     <div class="card text-center" id="cards" data-post-id="${post._id}">
@@ -44,7 +43,7 @@ function postFetch() {
                     <div class="card-footer text-muted">
                     ${convertDateTime(post.createdAt)}<br>
                     <span class="likes-count">${countLikes(post.likes)} Likes</span>
-                    <button onmouseover="mouseOverEffect('${post._id}')" onmouseout="mouseOutEffect('${post._id}')" class="like-button" id="${post._id}" onclick="likedOrNah('${post._id}')">❤</button>
+                    <button onmouseover="mouseOverEffect('${post._id}','${post.likes}')" onmouseout="mouseOutEffect('${post._id}')" class="like-button" id="${post._id}" onclick="likedOrNah('${post._id}')">❤</button>
                     </div>
                 </div>`;
                     postContainer.innerHTML += cardHTML;
@@ -60,7 +59,7 @@ function postFetch() {
                     <div class="card-footer text-muted">
                     ${convertDateTime(post.createdAt)}<br>
                     <span class="likes-count">${countLikes(post.likes)} Likes</span>
-                    <button onmouseover="mouseOverEffect('${post._id}')" onmouseout="mouseOutEffect('${post._id}')" class="like-button liked" id="${post._id}" onclick="likedOrNah('${post._id}')">❤</button>
+                    <button onmouseover="mouseOverEffect('${post._id}','${post.likes}')" onmouseout="mouseOutEffect('${post._id}')" class="like-button liked" id="${post._id}" onclick="likedOrNah('${post._id}')">❤</button>
                     </div>
                     </div>`;
                     postContainer.innerHTML += cardHTML;
@@ -125,14 +124,18 @@ function untoggleLike(postId) {
     });
 }
 
-//
-function mouseOverEffect(postId) {
+
+function mouseOverEffect(postId,postLikes) {
+    console.log(postId)
+    console.log(postLikes)
+    // postLikes.forEach(a=>console.log(a.username))
+    // postLikes.forEach(a=>console.log(a.username))
     const likeButton = document.querySelector(`button[id='${postId}']`)
     likeButton.classList.add('mousedOver')
 }
+
 function mouseOutEffect(postId) {
     const likeButton = document.querySelector(`button[id='${postId}']`)
     likeButton.classList.remove('mousedOver')
 }
-//
 
