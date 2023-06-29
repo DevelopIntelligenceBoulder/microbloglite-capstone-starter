@@ -5,9 +5,37 @@
 const postsContainerEl = document.getElementById("postsContainer");
 const postsTemplate = document.getElementById("postCard");
 const sortDropdown = document.getElementById("postSort");
+const nextPgBtns = document.querySelectorAll("button.next");
+const prevPgBtns = document.querySelectorAll("button.previous");
+const pgCtEl = document.getElementById("pgCt");
+let pageCt = 1;
+let offset = 0;
+const postPerPage = 25;
+
+nextPgBtns.forEach((btn) => {
+  btn.addEventListener("click", nextPage);
+});
+prevPgBtns.forEach((btn) => {
+  btn.addEventListener("click", prevPage);
+});
+
+function prevPage() {
+  if (offset < postPerPage || pageCt < 2) return;
+  offset -= postPerPage;
+  pageCt--;
+
+  getPosts();
+}
+
+function nextPage() {
+  offset += postPerPage;
+  pageCt++;
+  getPosts();
+}
 
 sortDropdown.addEventListener("change", getPosts);
 getPosts();
+
 function likePost(id) {
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
 
@@ -88,6 +116,7 @@ function getPosts() {
   postsContainerEl.innerHTML = "";
   const loginData = JSON.parse(window.localStorage.getItem("login-data"));
   const sort = sortDropdown.value;
+  console.log(sort);
   const options = {
     method: "GET",
     headers: {
@@ -98,7 +127,7 @@ function getPosts() {
       Authorization: `Bearer ${loginData.token}`,
     },
   };
-  fetch(apiBaseURL + "/api/posts?limit=1000", options)
+  fetch(apiBaseURL + "/api/posts?limit=2000", options)
     .then((response) => response.json())
     .then((posts) => {
       const sortedPosts = Array.from(posts).sort(function (a, b) {
@@ -118,8 +147,13 @@ function getPosts() {
           return b[sort].length - a[sort].length;
         }
       });
-
-      sortedPosts.forEach((post) => {
+      for (let i = +offset; i <= +offset + postPerPage; i++) {
+        const post = sortedPosts[i];
+        if (!post) {
+          offset -= postPerPage;
+          pageCt--;
+          break;
+        }
         const clone = postsTemplate.content.cloneNode(true);
         const postArea = clone.querySelector(".card-body");
         const userArea = clone.querySelector(".card-header");
@@ -153,7 +187,42 @@ function getPosts() {
         userArea.textContent = post.username;
         postArea.textContent = post.text;
         postsContainerEl.appendChild(clone);
-      });
+      }
+      // sortedPosts.forEach((post) => {
+      //   const clone = postsTemplate.content.cloneNode(true);
+      //   const postArea = clone.querySelector(".card-body");
+      //   const userArea = clone.querySelector(".card-header");
+      //   const dateArea = clone.querySelector(".creationDate");
+      //   const likesArea = clone.querySelector("div button");
+      //   likesArea.id = post._id;
+      //   likesArea.textContent = `Like: ${post.likes.length}`;
+      //   let liked = false;
+      //   let likeId;
+      //   post.likes.forEach((like) => {
+      //     if (like.username === loginData.username) {
+      //       likesArea.setAttribute("class", "likedPost");
+      //       likeId = like._id;
+      //       liked = true;
+      //     }
+      //   });
+      //   if (liked) {
+      //     likesArea.setAttribute(
+      //       "onclick",
+      //       `removeLike('${likeId}', '${post._id}')`
+      //     );
+      //   } else {
+      //     likesArea.setAttribute("onclick", "likePost(this.id)");
+      //   }
+
+      //   const date = new Date(post.createdAt);
+
+      //   dateArea.textContent = `${date.getDate()}-${
+      //     date.getMonth() + 1
+      //   }-${date.getFullYear()}`;
+      //   userArea.textContent = post.username;
+      //   postArea.textContent = post.text;
+      //   postsContainerEl.appendChild(clone);
+      // });
     });
 }
 
