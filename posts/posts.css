@@ -1,1 +1,71 @@
 /* Posts Page CSS */
+
+body {
+  font-family: 'Bree Serif', serif;
+}
+
+
+.nav-item {
+  padding-left: 250px;
+}
+
+.logoutButton {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.logoutButton:hover {
+  background-color: red;
+}
+
+.statusUpdate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.statusUpdate textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.statusUpdate button {
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.post {
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.post h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.post .post-details {
+  font-size: 14px;
+}
+

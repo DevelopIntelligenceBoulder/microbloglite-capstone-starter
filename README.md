@@ -1,5 +1,22 @@
-# Enjoy the Microblog Project and the MicroblogLite API!
+# Welcome to PLAYBYTE - the best social media for gamers!
+- This is for Capstone 3 of of Learn to Code Academy where we've created a small walled garden blog with the use of the Microblogite API
 
-Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in *Postman!*
+This site contains:
+ - Landing/Login Page that allows user to sign in with a username and password, and gives user a link to sign up
+ - Registration Page that allows user to sign up 
+ - Profile Page that lets you create a post 
+ - Post Page that lets you view all posts
 
-Practice and experimentation provide experience, and experience provides confidence.
+
+Images of pages:
+
+home [Imgur](https://imgur.com/Xpd6uxL)
+registration   [Imgur](https://imgur.com/RrJJPKc)
+profile [Imgur](https://imgur.com/Itn0vtT)
+posts  [Imgur](https://imgur.com/1edP8YD)
+
+
+
+Interesting code we implemented:
+ - https://codepen.io/yellowbob/pen/doZOLb
+- https://codepen.io/alvarotrigo/pen/RwVRYGN
