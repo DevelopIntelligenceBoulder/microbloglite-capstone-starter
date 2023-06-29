@@ -2,8 +2,7 @@
 
 "use strict";
 
-console.log("hi");
-
+const loginData = getLoginData();
 const createPostsDiv = document.getElementById("createPostsSection");
 const createPostInput = document.getElementById("createPostInput");
 const postBtn = document.getElementById("postBtn");
@@ -26,20 +25,28 @@ profileLinkEl.addEventListener(`click`, () => {
   window.location.href = `../profile/profile.html?user=${username}`;
 });
 
-postBtn.addEventListener("click", () => {
+postBtn.addEventListener("click", (e) => {
   console.log(createPostInput.value);
+  e.preventDefault();
+  const options = {
+    method: "POST",
+    body: JSON.stringify({
+      text: createPostInput.value,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${loginData.token}`,
+    },
+  };
 
-  // fetch("https://microbloglite.herokuapp.com/api/posts", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //         text: createPostInput.value
-  //     }),
-  //     headers: {
-  //         Authorization: `Bearer ${loginData.token}`,
-  //         "Content-type": "application/json; charset=utf-8"
-  //     }
+  const url = `https://microbloglite.herokuapp.com/api/posts`;
+  fetch(url, options);
+  // .then((response) => response.json())
+  // .then((posts) => {
+  //   console.log(posts);
   // });
-  window.location.reload() = `posts.html`
+
+  getPosts();
 });
 
 logoutBtn.addEventListener("click", () => {
@@ -49,8 +56,6 @@ logoutBtn.addEventListener("click", () => {
 window.onload = getPosts;
 
 function getPosts() {
-  const loginData = getLoginData();
-
   const options = {
     method: "GET",
     headers: {
@@ -96,15 +101,29 @@ function getPosts() {
           const timeStamp = postEl.querySelector("small");
           timeStamp.textContent = post.createdAt;
 
-          const likeBtn = postEl.querySelector("button");
+          // const timeDate = Date(post.createdAt).toString();
+
+          const likeBtn = postEl.querySelector("input");
+
           likeBtn.addEventListener("click", () => {
+            console.log(post._id);
             const heartIcon = document.getElementById("heartIcon");
             const filledHeartIcon = document.getElementById("filledHeartIcon");
 
             heartIcon.style.display = "none";
             filledHeartIcon.style.display = "flex";
 
-            // fetch()
+            const options = {
+              method: "POST",
+              body: JSON.stringify({
+                postId: post._id,
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: `Bearer ${loginData.token}`,
+              },
+            };
+            fetch(`https://microbloglite.herokuapp.com/api/likes`, options);
           });
 
           displayPostsDiv.appendChild(postEl);
@@ -112,3 +131,26 @@ function getPosts() {
       });
     });
 }
+// function sortPost() {
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Bearer ${loginData.token}`,
+//     },
+//   };
+//   fetch("https://microbloglite.herokuapp.com/api/posts", options)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const postDate = data.filter(data.createdAt);
+//       console.log(postDate);
+//       data.forEach((post) => {
+//         post.createdAt.sort(function (a, b) {
+//           if (a > b) return -1;
+//           else if (a == b) return 0;
+//           else return 1;
+//         });
+//       });
+//     });
+// }
+
+// sortPost();
