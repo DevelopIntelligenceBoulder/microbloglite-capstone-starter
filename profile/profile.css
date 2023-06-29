@@ -74,10 +74,21 @@ hr {
 
 #bioContainer {
     background: rgba(220, 220, 220, 0.336);
-    width: 750px;
-    height: 100px;
+    width: 700px;
+    height: 100pt;
     border-radius: 10px;
     margin-right: 30px;
+}
+
+@media (max-width: 1000px){
+    #bioContainer {
+        background: rgba(220, 220, 220, 0.336);
+        width: 300px;
+        height: 100pt;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+    
 }
 
 h4 {
