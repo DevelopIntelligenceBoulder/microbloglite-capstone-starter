@@ -16,7 +16,9 @@ const postDisplayTemplate = document.getElementById("postDisplay");
 
 const profileLinkEl = document.getElementById(`profileLink`);
 
+
 const userAccount = document.getElementById('userAccount');
+
 //------------------------------------------------------------------
 
 profileLinkEl.addEventListener(`click`, () => {
@@ -135,6 +137,8 @@ function getPosts() {
       });
     });
 }
+
+
 // function sortPost() {
 //   const options = {
 //     method: "GET",
