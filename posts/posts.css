@@ -67,7 +67,10 @@ body {
  #cards {
     margin: 30px;
     max-width: 15in;
+    height: 250px; 
+    overflow: auto;
 }
+
 .like-button {
     border-style: none;
     background: none;
