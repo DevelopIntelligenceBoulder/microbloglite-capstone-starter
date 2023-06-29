@@ -8,21 +8,24 @@ logoutButton.addEventListener("click", () => {
 
 // variables
 
-const postsContainer = document.getElementById("postsDisplay"); //element to display the fetched posts
+const postsContainer = document.getElementById("postsContainer"); //element to display the fetched posts
 const storedAuthToken = localStorage.getItem("authToken"); // retrieves value stored in the webstorage to authToken
 // local storage accesses the stored value in the browser;s storage
 
-if (storedAuthToken) { // checks if the auth token is legit before making the request
+if (isLoggedIn()) { // checks if the auth token is legit before making the request
     // fetches posts
+    let logindata = getLoginData();
+
   fetch("https://microbloglite.herokuapp.com/api/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${storedAuthToken}`
+      Authorization: `Bearer ${logindata.token}`
     }
   })
     .then(response => response.json())
     .then(posts => {
+      console.log(posts);
       posts.forEach(post => {
         const postElement = document.createElement("div"); // creates a new div for each post
         postElement.textContent = post.text; // displays the text of each post inside the div
