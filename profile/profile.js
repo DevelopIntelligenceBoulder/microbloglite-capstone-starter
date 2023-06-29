@@ -81,3 +81,7 @@ function displayPosts(posts) {
 }
 
 createPost();
+
+
+const logoutLink = document.getElementById("logout");
+logoutLink.addEventListener("click", logout);
