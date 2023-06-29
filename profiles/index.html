@@ -35,30 +35,46 @@
   </head>
   <body>
     <header>
-      <h1>PROFILE PAGE</h1>
-      <div class="navbar navbar-expand-lg" style="background-color: #c4bebe">
-        <a href="/posts/index.html">Home</a>
-        <a href="/profiles/index.html">Profile</a>
-        <a href="/Registration/index.html" class="nav-link disabled">Sign Up</a>
-        <button class="btn btn-outline-danger" id="logoutBtn">Logout</button>
+      <div>
+        <h1>Profile Page </h1>
+        <div class="navbar navbar-expand-lg" style="background-color: #c4bebe">
+          <a href="/posts/index.html">Home</a>
+          <a href="/profiles/index.html">Profile</a>
+          <a href="/Registration/index.html" class="nav-link disabled">Sign Up</a>
+          <button class="btn btn-outline-danger" id="logoutBtn">Logout</button>
       </div>
-    </header>
+    </header><br>
     <main>
-      <form>
-        <textarea
-          class="form-control"
-          id="newContent"
-          placeholder="New Post"
-        ></textarea>
-        <button class="btn btn-primary" type="submit" id="createBtn">
-          Create post
-        </button>
-      </form>
+      <div class="main-section">
+        <form>
+          <textarea
+            class="form-control"
+            id="newContent"
+            placeholder="New Post"
+          ></textarea>
+          <button class="btn btn-primary" type="submit" id="createBtn">
+            Create post
+          </button>
+        </form><br>
+          <h3 style=text-align:center; id="currentUsername"></h3><br>
+        <form id="updateUser">
+          <p>
+            <label style="display: flex;" for="updateUser">Update Profile:</label><br>
+            <input type="text" id="password" class="form-control" placeholder="Enter new Password"><br>
+          </p>
+          <p>
+            <input type="text"class="form-control" id="fullName" placeholder="Enter new Full Name"><br>
+          </p>
+          <p>
+            <textarea id="bioText" class="form-control" placeholder="Enter new Bio"></textarea>
+          </p>
+            <button class="btn btn-primary" id="updatetBtn">Update</button>
+            <p id="confirmationMessage">
+          </p>
+        </form>
+      </div>
     </main>
-
     <footer></footer>
-
-    <!-- Page-specific code -->
     <script src="/profiles/profiles.js"></script>
   </body>
 </html>
