@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreatePost</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="./updateUser.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Logo</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../posts/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../profile/index.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container-fluid container-md">
+        <div class="row">
+          <div class="col">
+            <form>
+              <h1>Update User<span id="user"></span></h1>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="username" class="form-label">Username:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="newName" class="form-label">Change Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="newName"
+                    placeholder="Enter Full Real Name"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="newPwd" class="form-label"
+                    >Change Password:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="newPwd"
+                    placeholder="Enter new password"
+                    minlength="6"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="confirmPwd" class="form-label"
+                    >Confirm Password:</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPwd"
+                    placeholder="Confirm new password"
+                    minlength="6"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="bio" class="form-label">Change Bio:</label>
+                  <textarea rows="3" class="form-control" id="bio"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button
+                    class="btn btn-primary bg-primary btn-lg"
+                    id="updateProfile"
+                  >
+                    Update Profile
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p id="messageP"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./updateUser.js"></script>
+  </body>
+</html>
