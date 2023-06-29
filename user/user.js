@@ -3,17 +3,23 @@
 document.addEventListener('DOMContentLoaded', async function() {    
     // get everything here so we dont have to keep refetching
     const loggedInUser = getLoginData(),
-          queryParams  = getQueryParams(),
-          profileUser  = await getUserByUsername(queryParams?.username || loggedInUser.username),
-          userPosts    = await getPosts(profileUser.username);
-    
+          queryParams  = getQueryParams();
     const postForm = document.querySelector("#post-form");
     
-    loadInfo();
-    loadPosts();
+    try {
+        const profileUser = await getUserByUsername(queryParams?.username || loggedInUser.username);
+        try {
+            var userPosts = await loadPosts(profileUser);      
+            loadInfo(profileUser, userPosts);
+        } catch (error) {
+            throw error // lol
+        }
+    } catch (error) {
+        window.location.replace("/user");
+    }
     
-    async function loadInfo() {
-        updateFormVisibility();
+    async function loadInfo(profileUser, userPosts) {
+        updateVisibility(profileUser);
 
         document.querySelector("#user-fullname").textContent = profileUser.fullName;
         document.querySelector("#username").textContent      = `@${profileUser.username}`;
@@ -21,19 +27,28 @@ document.addEventListener('DOMContentLoaded', async function() {
         document.querySelector("#num-posts").textContent     = userPosts.length;
     }
     
-    async function loadPosts() {
-        const userPosts = await getPosts(profileUser.username);
+    async function loadPosts(profileUser) {
+        userPosts = await getPosts(profileUser.username);
     
         // sort from newest to oldest
-        userPosts.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
-        userPosts.forEach((post) => addPost(post, loggedInUser));
+        // userPosts.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+        // userPosts.forEach((post) => addPost(post, loggedInUser));
+        for (const post of userPosts) {
+            await addPost(post, loggedInUser);
+        }
+
+        return userPosts;
     }
 
-    function updateFormVisibility() {
+    function updateVisibility(profileUser) {
         if (profileUser.username != loggedInUser.username) {
-            return document.querySelector("#post-form").classList.add("d-none")
+            document.querySelectorAll(".edit-profile-btn").forEach(e => e.classList.add("d-none"));
+            document.querySelector("#post-form").classList.add("d-none");
+            return;
         }
-        return document.querySelector("#post-form").classList.remove("d-none");
+        document.querySelectorAll(".edit-profile-btn").forEach(e => e.classList.remove("d-none"));
+        document.querySelector("#post-form").classList.remove("d-none");
+        return;
     }
 
     postForm.elements.postBtn.addEventListener('click', async (ev) => {
@@ -44,7 +59,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         // reset textarea and reload posts
         postText.value = "";
         clearPosts();
-        loadPosts();
-        loadInfo();
+        loadPosts().then(loadInfo);
     })
 });
