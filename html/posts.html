@@ -33,19 +33,35 @@
             <nav class="navbar">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                  <img src="../img/logo.png"Logo" width="30" height="24" class="d-inline-block align-text-top">
+                  <img src="../img/logo.png"Logo" width="40" height="40" class="d-inline-block align-text-top">
                   Plugged<span>In</span>
                 </a>
                 <ul>
-                    <li><a href="profile.html"><i class="bi bi-person-circle"></i> Profile</a></li>
+                    <li><a href="profile.html"><i class="hero"></i> Profile</a></li>
                     <li><button id="logoutButton" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> Log Out</button></li>
                   </ul>
               </div>
             </nav>
     </header>
 <body>
+    <div class="container">
+        <div class="card">
+          <div class="card-top d-flex justify-content-center">
+            <img src="#" alt="" />
+          </div>
+          <div class="card-body">
+            <form id="postForm">
+                <div class="mb-3" >
+                  <label for="postContent">Asteroid:</label>
+                  <textarea id="postContent" name="postContent" rows="3" required></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i> Launch</button>
+                 </div>
+            </form>
+        </div>
+    </div>
       <main>
-        <div class="container">
+          <div class="container">
           <div class="row">
             <div class="col-md-8">
               <h2>All Posts</h2>
@@ -53,20 +69,16 @@
             </div>
             <div class="col-md-4">
               <h2>Sort By</h2>
-              <div class="btn-group">
+              <br>
+              <div class="btn-group" size="small">
                 <button id="sortByDateButton" class="btn btn-primary"><i class="bi bi-calendar3"></i> Date</button>
                 <button id="sortByLikesButton" class="btn btn-primary"><i class="bi bi-heart"></i> Likes</button>
+                
               </div>
             </div>
           </div>
         </div>
-        <form id="postForm">
-            <div class="mb-3">
-              <label for="postContent">Content:</label>
-              <textarea id="postContent" name="postContent" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i> Post</button>
-          </form>
+        
       </main>
       <script src="../js/auth.js"></script>
       <script src="../js/posts.js"></script>
