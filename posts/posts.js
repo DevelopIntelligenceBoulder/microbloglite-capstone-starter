@@ -146,7 +146,7 @@ function getPosts() {
 //       Authorization: `Bearer ${loginData.token}`,
 //     },
 //   };
-//   fetch("https://microbloglite.herokuapp.com/api/posts", options)
+//   fetch("https://microbloglite.herokuapp.com/api/posts?limit=100000&offset=0", options)
 //     .then((response) => response.json())
 //     .then((data) => {
 //       const postDate = data.filter(data.createdAt);
