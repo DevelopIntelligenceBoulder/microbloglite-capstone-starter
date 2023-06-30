@@ -61,3 +61,34 @@ img#cardProfilepic{
   .sidenav a {font-size: 18px;}
 }
 
+.online-friends-list {
+           
+  padding: 10px;
+  list-style-type: none;
+  display: inline-block;
+  margin-top: 10%;
+}
+
+.online-friends-list li {
+  margin-bottom: 10px;
+}
+
+.online-friends-list li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #FF1CA8;
+}
+
+.online-friends-list li .username {
+  margin-left: 10px;
+}
+
+.online-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
