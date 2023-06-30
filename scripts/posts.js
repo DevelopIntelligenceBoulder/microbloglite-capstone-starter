@@ -37,13 +37,13 @@ loadFilteredPosts();
 function likeBtnClicked2(post, likeBtnSvg, unlikeBtnSvg) {
   console.log("likeBTN has been clicked");
   likeBtnSvg.style.display = "none";
-  unlikeBtnSvg.style.display = "block";
+  unlikeBtnSvg.style.display = "inline";
   console.log("clicked");
 }
 function unLikeBtnClicked2(post, unlikeBtnSvg, likeBtnSvg) {
   console.log("Unliked :(")
   unlikeBtnSvg.style.display = "none"
-  likeBtnSvg.style.display = "block"
+  likeBtnSvg.style.display = "inline"
 }
 
 function createPostsBtnClicked (post, createNewPostBtnSvg) {

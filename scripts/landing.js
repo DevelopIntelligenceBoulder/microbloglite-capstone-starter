@@ -40,6 +40,7 @@ window.onload = () => {
 
 function signUpBtnClicked(){
     window.location.href = "registration.html";
+ 
     
 }
 
