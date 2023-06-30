@@ -1,6 +1,5 @@
 "use strict";
 
-
   const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
   getAllPosts(accessToken);
 
@@ -19,7 +18,7 @@ let postTextarea = document.getElementById('postTextarea').value
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ text: postTextarea})
+    body: JSON.stringify({text: postTextarea})
   };
   fetch(apiBaseURL + "/api/posts", options)
   .then(response => response.json())
@@ -94,9 +93,9 @@ const spanElDislike = document.createElement('span')
 spanElDislike.setAttribute('id', 'spanElDislike')
 spanElDislike.textContent = 0
 dislikeBtn.addEventListener('click', function() {
-  if (spanElLike.textContent === 0){
+  if (spanElLike.textContent == 0){
     spanElDislike.textContent = 1
-  } else if (spanElLike.textContent === 1) {
+  } else if (spanElLike.textContent == 1) {
     spanElLike.textContent = 0
     spanElDislike.textContent = 1
   }
