@@ -14,7 +14,7 @@ Practice and experimentation provide experience, and experience provides confide
 ## Code Review
 - Carlos: a small piece of code that I enjoyed doing was adding topic options to select from whenever a user is creating a new post. I definitely believe that it would be a cool feature to have in a blogging page, that way the reader can see what type of post it will be by just adding a topic.
 
-- Adan: The toughest part of this project, for me anyways, was dynamically generating a like button, to add and remove likes, for every post on the page. After trying various methods, I finally got it working by setting an onclick event that calls a function to either remove or like a post. Once clicked the button will call a fetch requests to add/remove a like and then change the onclick to call the opposing funciton. For example if a button is clicked to remove a like that button's properties will change as follows:
+- Adan: The toughest part of this project, for me anyways, was dynamically generating a like button, to add and remove likes, for every post on the page. After trying various methods, I finally got it working by setting an onclick event that calls a function to either remove or like a post. Once clicked the button will call a fetch requests and then change the onclick to call the opposing funciton. For example if a button is clicked to remove a like that button's properties will change as follows:
 
 ```
         const clickedBtn = document.querySelector(`button[id='${postId}']`);
