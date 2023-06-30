@@ -4,7 +4,10 @@
   src: url(../fonts/Montserrat-Italic-VariableFont_wght.ttf);
   font-family: "Open Sans";
   src: url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+  font-family: "QuickSand";
+  src: url(../fonts/Quicksand-VariableFont_wght.ttf);
 }
+ 
 
 body {
   background-image: url(../assets/nadine-primeau--ftWfohtjNw-unsplash.jpg);
@@ -29,7 +32,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 header {
-  font-family: "Montserrat";
+  font-family: "QuickSands";
   background-color: rgba(0, 0, 0, 0.753);
   margin-left: auto;
   margin-right: auto;
@@ -52,12 +55,16 @@ header {
 }
 .nav-link {
   margin-top: 10px;
+  font-family: "Quicksand";
 }
 
 .homeLogo{
   width: 150px;
 }
 
+#logoutButton{
+  font-family: "Quicksand";
+}
 
 main {
   margin: 80px 12rem 40px 12rem;

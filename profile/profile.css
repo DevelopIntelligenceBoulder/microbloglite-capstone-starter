@@ -5,6 +5,8 @@
     src: url(../fonts/Montserrat-Italic-VariableFont_wght.ttf);
     font-family: "Open Sans";
     src: url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+    font-family: "Quicksand";
+    src: url(../fonts/Quicksand-VariableFont_wght.ttf);
 }
 
 
@@ -36,10 +38,15 @@ header {
 
 .nav-link {
     margin-top: 10px;
+    font-family: "Quicksand";
 }
 
 .homeLogo {
     width: 150px;
+}
+
+#logoutButton{
+    font-family: "Quicksand";
 }
 
 h1 {
@@ -47,6 +54,7 @@ h1 {
     margin-top: 3rem;
     text-align: center;
     margin-bottom: 2rem;
+    font-family: "Quicksand";
 }
 
 main {
