@@ -12,16 +12,14 @@ Registration Page - The registration page allows the user to create an account s
 
 Installation and Usage:
 
+
 To run this project locally, follow these steps:
 
-Clone the repository: 
+1. Clone the repository: 
 
-![clonerepo](https://github.com/ZionDanielson/microbloglite-capstone/assets/130395112/10c33951-b901-44e3-93c4-640be009fbf6)
+2. Navigate to the project directory: 
 
-
-Navigate to the project directory: 
-
-Open the index.html file in your web browser.
+3. Open the index.html file in your web browser.
 
 Login - ![image](https://github.com/ZionDanielson/microbloglite-capstone/assets/130395112/337a84cd-2076-4bd4-bea5-ce440a916308)
 
