@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to top, #ffffff, #ffab2e);
+    background: linear-gradient(to top, #ffffff, #ffb624);
     background-repeat: repeat-y;
     background-attachment: fixed;
     animation: falling-gradient 10s infinite linear;
@@ -68,14 +68,30 @@ body {
     border-radius: 50%;
 }
 .offcanvas-header {
-    background-color: orange;
+    background-color: rgb(255, 178, 62);
     color: white;
 }
 
 .offcanvas-body {
-    background-color: rgb(255, 160, 50);
+    background-color: rgb(255, 180, 75);
     color: black;
 }
 .navbar-nav {
     justify-content: flex-end;
 }
+.profile-comments .card-body {
+    background: linear-gradient(to top, #ffffff, #ffab2e);
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    animation: falling-gradient 10s infinite linear;
+}
+.profile-comments .list-group {
+    background: linear-gradient(to top, #ffffff, #ffab2e);
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    animation: falling-gradient 10s infinite linear;
+  }
+  .profile-comments .list-group-item {
+    background-color: transparent;
+    border: none;
+  }
