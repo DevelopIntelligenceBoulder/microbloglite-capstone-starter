@@ -1,7 +1,7 @@
 "use strict";
 
 const logoutBtn = document.getElementById("logoutBtn");
-const commentBtn = document.getElementById("commentBtn");
+
 const userCard = document.getElementById("userCard");
 const createPostsBtn = document.getElementById("createPostsBtn");
 const createNewPostBtn = document.getElementById("createNewPostBtn");
@@ -21,10 +21,10 @@ const createNewPostBtn = document.getElementById("createNewPostBtn");
 /*---------------PAGE LOADS IF USER IS LOGGED IN----------------------*/
 window.onload = function () {
   console.log("Page is loading....");
-   logoutBtn.onclick = logoutBtnClicked;
+  //  logoutBtn.onclick = logoutBtnClicked;
    //commentBtn.onclick = commentBtnClicked;
   //createPostsBtn.onclick = createPostsBtnClicked;
-  //createNewPostBtn.onclick = createNewPostBtnClicked;
+  createNewPostBtn.onclick = createNewPostBtnClicked;
 };
 
 //button functionality 
@@ -38,6 +38,13 @@ function unLikeBtnClicked2(post, unlikeBtnSvg, likeBtnSvg) {
   console.log("Unliked :(")
   unlikeBtnSvg.style.display = "none"
   likeBtnSvg.style.display = "inline"
+}
+function commentBtnClicked(commentBtnSvg) {
+  console.log("commented")
+ 
+}
+function createNewPostBtnClicked(){
+  console.log("I am Clicked!")
 }
 
 /*--------------------USER IS ABLE TO COMMENT ON A POST------------------------ */
@@ -142,8 +149,8 @@ fetch("https://microbloglite.onrender.com/api/posts", options)
       likeBtnSvg.setAttribute("viewBox", "0 0 16 16");
       likeBtnSvg.innerHTML = '<path fill-rule="evenodd" d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"></path>';
       const commentBtnSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      commentBtnSvg.setAttribute("id", "commentBtn");
-      commentBtnSvg.setAttribute("type", "button");
+      commentBtnSvg.onclick = function () {commentBtnClicked(commentBtnSvg)}
+      commentBtnSvg.type = "button";
       commentBtnSvg.setAttribute("width", "26");
       commentBtnSvg.setAttribute("height", "26");
       commentBtnSvg.setAttribute("fill", "currentColor");

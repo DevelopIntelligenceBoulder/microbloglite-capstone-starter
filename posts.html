@@ -28,29 +28,39 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.html">
-            <img src="images/Cartoon Matt.png" alt="logo" height="50" width="80" class="d-inline-block align-text-top">
+            <img src="images/ask matt-1.png" alt="logo"class="d-inline-block align-text-top">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+    
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="posts.html">Posts Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.html">Registration Page</a>
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                       aria-controls="offcanvasNavbar">
+                        <img src="images/profile.png" alt="Profile Picture" class="profile-picture">
+                    </a>
                 </li>
             </ul>
         </div>
+    
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="btn" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="registration.html">Make An Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" btn" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <header>
         <div class="chat-logo"></div>
         <h1>
@@ -58,7 +68,7 @@
         </h1>
 
         <div class="newPostContainer">
-            <svg xmlns="http://www.w3.org/2000/svg" id="createNewPostBtn" width="60" height="40" fill="currentColor" class="bi bi-postcard-heart-fill" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn" id="createNewPostBtn" width="60" height="40" fill="currentColor" class="bi bi-postcard-heart-fill" viewBox="0 0 16 16">
                 <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2Zm6 2.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0Zm3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622ZM2 5.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
               </svg>
               </svg>
@@ -71,7 +81,6 @@
 
 
         </div>
-        <button type="button" id="logoutBtn" name="logoutBtn">Logout</button>
     </main>
     <footer>
         <p class="mt-5 mb-3 text-body-secondary">&copy; AskMatt! Inc. 2023</p>
