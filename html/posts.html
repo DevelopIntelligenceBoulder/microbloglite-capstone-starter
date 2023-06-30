@@ -1,12 +1,95 @@
-<!-- POSTS page -->
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #F1F1F1;
 
+font-family: cursive;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #E60073, 0 0 40px #E60073, 0 0 50px #E60073, 0 0 60px #E60073, 0 0 70px #E60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #FF4DA6, 0 0 40px #FF4DA6, 0 0 50px #FF4DA6, 0 0 60px #FF4DA6, 0 0 70px #FF4DA6, 0 0 80px #FF4DA6;
+  }
+}
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.303);
+  border-radius: 30px;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+  border-radius: 30px;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+  border-radius: 30px;
+}
+/* Fake image */
+.fakeimg {
+  background-color: #1c1b1baf;
+  width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+}
+/* Add a card effect for articles */
+.card {
+   background-color: rgba(255, 255, 255, 0.26);
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 30px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #dddddd4a;
+  margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -16,80 +99,95 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="../css/global.css">
-
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="../css/posts.css">
-
     <title>/POSTS</title>
-
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
-        
     </script>
 </head>
-        <header>
-            <nav class="navbar">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <img src="../img/logo.png"Logo" width="40" height="40" class="d-inline-block align-text-top">
-                  Plugged<span>In</span>
-                </a>
-
-                <ul>
-                    <a href="profile.html" class="bi bi-person-circle">Profile</a>
-                    <li><button id="logoutButton" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> Log Out</button></li>
-                  </ul>
-              </div>
-            </nav>
-    </header>
+</head>
+<header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png"Logo" width="40" height="40" class="d-inline-block align-text-top">
+          Plugged<span>In</span>
+        </a>
+        <ul>
+            <li><a href="profile.html"><i class="hero"></i> Profile</a></li>
+            <li><button id="logoutButton" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> Log Out</button></li>
+          </ul>
+      </div>
+    </nav>
+</header>
 <body>
-    <div class="container">
-        <div class="card">
-          <div class="card-top d-flex justify-content-center">
-            <img src="#" alt="" />
-          </div>
-          <div class="card-body">
-            <form id="postForm">
-                <div class="mb-3" >
-                  <label for="postContent">Asteroid:</label>
-                  <textarea id="postContent" name="postContent" rows="3" required></textarea>
-                <br>
-                <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i> Launch</button>
-                 </div>
-            </form>
-        </div>
+<div class="footer">
+  <h2 style="background-color:rgb(210, 127, 255)"><img src="../img/logo.png"Logo" width="40" height="40" class="d-inline-block align-text-top">
+    Plugged<span>In</span></h2>
+</div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2 style="background-color:rgb(157, 66, 203)">Author:</h2>
+      <h2 style="background-color:rgb(88, 189, 244);">content:</h2>
+      <h5 style="color: aqua;">Work Flow Update, jan 7, 2023</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p style="color: aqua;">6/30/23</p>
+      <p style="color: aqua;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     </div>
-      <main>
-          <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <h2>All Posts</h2>
-              <div id="postsList"></div>
-            </div>
-            <div class="col-md-4">
-              <h2>Sort By</h2>
-              <br>
-              <div class="btn-group" size="small">
-                <button id="sortByDateButton" class="btn btn-primary"><i class="bi bi-calendar3"></i> Date</button>
-                <button id="sortByLikesButton" class="btn btn-primary"><i class="bi bi-heart"></i> Likes</button>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </main>
-      <script src="../js/auth.js"></script>
-      <script src="../js/posts.js"></script>
-
-    <main></main>
-
-    <footer></footer>
-
-    <!-- Page-specific code -->
-    <script src="../js/posts.js"></script>
+    <div class="card">
+      <h2 style="background-color:rgb(157, 66, 203)">Author:</h2>
+      <h2 style="background-color:rgb(88, 189, 244);">content:</h2>
+      <h5 style="color: aqua;">Work Flow Update, jan 7, 2023</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p style="color: aqua;">6/30/23</p>
+      <p style="color: aqua;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2 style="background-color:rgb(157, 66, 203)">Author:</h2>
+      <h2 style="background-color:rgb(88, 189, 244);">content:</h2>
+      <h5 style="color: aqua;">Work Flow Update, jan 7, 2023</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p style="color: aqua;">6/30/23</p>
+      <p style="color: aqua;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2 style="background-color:rgb(157, 66, 203)">Author:</h2>
+      <h2 style="background-color:rgb(88, 189, 244);">content:</h2>
+      <h5 style="color: aqua;">Work Flow Update, jan 7, 2023</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p style="color: aqua;">6/30/23</p>
+      <p style="color: aqua;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2 style="background-color:rgb(157, 66, 203)">Author:</h2>
+      <h2 style="background-color:rgb(88, 189, 244);">content:</h2>
+      <h5 style="color: aqua;">Work Flow Update, jan 7, 2023</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p style="color: aqua;">6/30/23</p>
+      <p style="color: aqua;">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <h2><header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png"Logo" width="40" height="40" class="d-inline-block align-text-top">
+          Plugged<span>In</span>
+        </a>
+        <ul>
+            <li><a href="profile.html"><i class="hero"></i> Profile</a></li>
+            <li><button id="logoutButton" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> Log Out</button></li>
+          </ul>
+      </div>
+    </nav>
+</header></h2>
+</div>
 </body>
-
 </html>

@@ -23,6 +23,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: rgba(133, 91, 236, 0.8);
 }
 
 nav h1 {
@@ -43,7 +44,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+
 }
 
 main {
