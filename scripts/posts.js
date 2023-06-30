@@ -2,31 +2,22 @@
 console.log("Start of Posts Page"); 
 
 const logoutBtn = document.getElementById("logoutBtn");
-const commentBtn = document.getElementById("commentBtn");
+
 const userCard = document.getElementById("userCard");
 const createPostsBtn = document.getElementById("createPostsBtn");
 const createNewPostBtn = document.getElementById("createNewPostBtn");
 const createNewPostBtn2 = document.getElementById("createNewPostBtn2"); 
+let loginData;
 
 /*----------------USER NEEDS TO BE LOGGED IN BEFORE ENTERING -------------------*/
- window.onload = 
-function isLoggedIn () {
-  const loginData = getLoginData();
-  return Boolean(loginData.token);
- 
 
-if (isLoggedIn() === false) {
-  window.location.replace("/");
-} else {
-    window.location.reload()
-};
- }
- 
 
 /*---------------PAGE LOADS IF USER IS LOGGED IN----------------------*/
 window.onload = function () {
+  loginData = getLoginData();
+
   console.log("Page is loading....");
-   logoutBtn.onclick = logoutBtnClicked;
+  logoutBtn.onclick = logoutBtnClicked;
    //commentBtn.onclick = commentBtnClicked;
   //createPostsBtn.onclick = createPostsBtnClicked;
 createNewPostBtn.onclick = createNewPost;
@@ -45,6 +36,13 @@ function unLikeBtnClicked2(post, unlikeBtnSvg, likeBtnSvg) {
   unlikeBtnSvg.style.display = "none"
   likeBtnSvg.style.display = "inline"
 }
+function commentBtnClicked(commentBtnSvg) {
+  console.log("commented")
+ 
+}
+function createNewPostBtnClicked(){
+  console.log("I am Clicked!")
+}
 
 function createPostsBtnClicked (post, createNewPostBtnSvg) {
   console.log("create new post button has been clicked"); 
@@ -54,7 +52,7 @@ function createPostsBtnClicked (post, createNewPostBtnSvg) {
 
 /*----------------------VIEW ALL POSTS-----------------------*/
 function loadFilteredPosts(){
-  let authToken = getLoginData().token;"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0" //this will need to be retreived from web storage, the login page should have put it in place.   At page startup if the user is not logged in with a valid token they should have
+  let authToken = getLoginData().token; //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0" //this will need to be retreived from web storage, the login page should have put it in place.   At page startup if the user is not logged in with a valid token they should have
   // been redirected to the login page so we should not be here without a valid auth token.
   console.log("inside of the view all posts...");
   let options = {
@@ -63,7 +61,7 @@ function loadFilteredPosts(){
       Authorization: `Bearer ${authToken}`,
     },
   };
-fetch("https://microbloglite.herokuapp.com/api/posts", options)
+fetch("https://microbloglite.herokuapp.com/api/posts?limit=100000", options)
   .then(response => response.json())
   .then(posts => {
     console.log(posts);
@@ -150,7 +148,21 @@ if (cardsInRow > 0) {
 }
 /*-----------------CREATE A NEW POST USING POST--------------------------------------------------------*/
 function createNewPost() {
-  let authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0";
+
+  //step 1 - figure out, what should I be posting.    This is where you would take a value from a textbox (input tag), or 
+  // also maybe use the "prompt" function to get a value.
+
+
+  /// ...
+
+  //step 2, now that we know what to post, use a FETCH to tell the API about the new post.
+  // step 3, in the .then().then(), respond to the result - if it was a success, great,
+  // refresh all of the posts displayed on this page so that we see the new one. 
+  
+  //you can use your function loadFilteredPosts(); to refresh the posts.
+
+
+  let authToken = loginData.token //  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0";
   let options = {
     method: "POST",
     headers: {
@@ -178,7 +190,7 @@ function createNewPost() {
           };
   
           // Update the options object with the updated bodyData
-          options.body = JSON.stringify(bodyData);
+          //options.body = JSON.stringify(bodyData);
   
           // Send the updated POST request with the user's input
           return fetch("https://microbloglite.herokuapp.com/api/posts", options);
@@ -202,38 +214,15 @@ function createNewPost() {
     });
 }
 
-
-  
-    /*--------------------------ERROR MESSAGE APPEARS----------------------------*/
-    
-  //   function showError(message) {
-  //     const errorCard = document.getElementById("errorCard");
-  //     const errorMessage = document.getElementById("errorMessage");
-      
-  //     errorMessage.textContent = message;
-  //     errorCard.style.display = "block";
-      
-  //     // Optionally, you can add a button or logic to close the error card
-  //     // Example: errorCard.addEventListener("click", hideError);
-  // }
-  
-  // function hideError() {
-  //   const errorCard = document.getElementById("errorCard");
-  //   errorCard.style.display = "none";
-  // }
   
   /*---------------------------------LOGS OUT USER WHEN CLICKED-------------------------------------------------------------------*/
   
 function logoutBtnClicked () {
-  const loginData = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0"
+  let authToken = loginData.token //"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNvbXB1dGVyTmVyZCIsImlhdCI6MTY4ODEzMzU1NiwiZXhwIjoxNjg4MjE5OTU2fQ.kSZ03jY4vGQ5arjsFcq6p4eajfI0K26VGUHEbedZPC0"
   // // GET /auth/logout
   const options = {
     method: "GET",
     headers: {
-      //         // This header is how we authenticate our user with the
-      //         // server for any API requests which require the user
-  //         // to be logged-in in order to have access.
-  //         // In the API docs, these endpoints display a lock icon.
          Authorization: `Bearer ${loginData.token}`,
       },
   };
@@ -241,10 +230,8 @@ function logoutBtnClicked () {
      .then(response => response.json())
      .then(data => console.log(data))
       .finally(() => {
-//             // We're using `finally()` so that we will continue with the
-//             // browser side of logging out (below) even if there is an
-//             // error with the fetch request above.
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
             window.location.assign("/");  // redirect back to landing page
         });
 }
+
