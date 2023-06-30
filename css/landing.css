@@ -100,7 +100,7 @@ header{
 }
 
 #about h1 {
-  font-family:'Major Mono Display', monospace;;
+  font-family:'Major Mono Display', monospace;
   text-transform: lowercase;
   font-size: 40px;
   color: #fff;
