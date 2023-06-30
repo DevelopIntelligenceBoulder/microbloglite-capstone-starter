@@ -1,3 +1,13 @@
+/* Profile Page CSS */
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Italic-VariableFont_wght.ttf);
+    font-family: "Open Sans";
+    src: url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
+  }
+  
+
 body {
     background-image: url(../assets/thomas-yohei-BAlBUJb-SXQ-unsplash.jpg);
     background-size: cover;
@@ -7,6 +17,7 @@ body {
 }
 
 header {
+    font-family: "Montserrat";
     background-color: rgba(0, 0, 0, 0.722);
     margin-left: auto;
     margin-right: auto;
@@ -40,7 +51,14 @@ h1 {
 
 main {
     margin: 5rem 25rem 0rem 25rem;
+    font-family: "Open Sans";
 }
+
+@media screen and (min-width: 1000px) {
+    #profileName {
+      margin-left: 6rem;
+    }
+  }
 
 .card {
     background-color: rgba(0, 0, 0, 0.565);

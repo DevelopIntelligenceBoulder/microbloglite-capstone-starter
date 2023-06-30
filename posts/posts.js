@@ -1,39 +1,57 @@
 "use strict";
 
+window.onload = showLoggedInUser()
 
-  const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
-  getAllPosts(accessToken);
+const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
+getAllPosts(accessToken);
 
-
-
-function showUserName() {
-  const currentUser = JSON.parse(window.localStorage.getItem("login-data")).username;
-  return currentUser
+function showLoggedInUser() {
+  const getCurrentUser = document.getElementById("profileLink")
+  // console.log(getLoginData().username)
+  const loggedInUser = getLoginData().username
+  getCurrentUser.innerText = `${loggedInUser}'s Profile` 
 }
 
+
 function addPost() {
-let postTextarea = document.getElementById('postTextarea').value
+  let postTextarea = document.getElementById('postTextarea').value;
+  const imageSecureUrl = imagePreview.src;
+
+
   const options = {
     method: "POST",
     headers: {
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ text: postTextarea})
+    body: JSON.stringify({ text: postTextarea })
   };
   fetch(apiBaseURL + "/api/posts", options)
-  .then(response => response.json())
-  .then(data =>{
-    let parEl = document.getElementById('postParent')
-    createPost(data, parentElement)
-    console.log(data)
-  }).catch (error => {
-    console.log(error)
-  })
-  
-}
+    .then(response => response.json())
+    .then(data => {
+      parentElement;
 
-function createPost(post) {
+      // Check if image is equal to a cloudinary URL before including it in createPost()
+      if (imageSecureUrl === 'http://127.0.0.1:5501/posts/') {
+        createPost(data, parentElement);
+      } else {
+        createPost(data, parentElement, imageSecureUrl);
+      }
+
+      console.log(data);
+
+      // Reset the image preview
+      document.getElementById('postTextarea').value = '';
+      imagePreview.src = '';
+      imagePreviewContainer.style.display = 'none';
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
+
+function createPost(post, parentElement, imageSecureUrl = '') {
   const postContainer = document.getElementById("postContainer");
 
   const cardContainer = document.createElement("div");
@@ -46,76 +64,83 @@ function createPost(post) {
   postText.classList.add("card-text");
   postText.textContent = post.text;
 
-  const postDate = document.createElement('p')
-  postDate.setAttribute('class', 'post-date')
-  let str = post.createdAt
-  let date = str.slice(0, 10)
-  let time = str.slice(11, 19)
+  const postDate = document.createElement('p');
+  postDate.setAttribute('class', 'post-date');
+  let str = post.createdAt;
+  let date = str.slice(0, 10);
+  let time = str.slice(11, 19);
   postDate.textContent = `${time} | ${date}`;
 
   const userName = document.createElement("h5");
   userName.classList.add("card-title");
-  let uName = post.username
-  let fLetter = uName.charAt(0).toUpperCase()
-  let subName = uName.slice(1)
+  let uName = post.username;
+  let fLetter = uName.charAt(0).toUpperCase();
+  let subName = uName.slice(1);
   userName.textContent = fLetter + subName;
 
-//  like funcitonality
-
-const likesArea = document.createElement("div");
-likesArea.classList.add("card-subtitle");
-
-const likeBtn = document.createElement('img')
-likeBtn.setAttribute('src', '../assets/like.svg')
-likeBtn.setAttribute('class', 'likeBtn')
-likesArea.appendChild(likeBtn)
-
-const spanElLike = document.createElement('span')
-spanElLike.setAttribute('id', 'spanElLike')
-spanElLike.textContent = 0
-
-likeBtn.addEventListener('click', function () {
-  if (spanElDislike.textContent == 0){
-    spanElLike.textContent = 1
-  } else if (spanElDislike.textContent == 1) {
-    spanElDislike.textContent = 0
-    spanElLike.textContent = 1
+  // Create the image element if imageSecureUrl is provided
+  if (imageSecureUrl) {
+    const imagePostElement = document.createElement('img');
+    imagePostElement.src = imageSecureUrl;
+    imagePostElement.alt = "Uploaded Image";
+    imagePostElement.classList.add('img-fluid');
+    cardBody.appendChild(imagePostElement);
   }
-  sendReaction(post._id, 'like')
-  })
-likesArea.appendChild(spanElLike)
 
+  // Like functionality
+  const likesArea = document.createElement("div");
+  likesArea.classList.add("card-subtitle");
 
-const dislikeBtn = document.createElement('img')
-dislikeBtn.setAttribute('src', '../assets/dislike.svg')
-dislikeBtn.setAttribute('class', 'dislikeBtn')
-likesArea.appendChild(dislikeBtn)
-const spanElDislike = document.createElement('span')
-spanElDislike.setAttribute('id', 'spanElDislike')
-spanElDislike.textContent = 0
-dislikeBtn.addEventListener('click', function() {
-  if (spanElLike.textContent === 0){
-    spanElDislike.textContent = 1
-  } else if (spanElLike.textContent === 1) {
-    spanElLike.textContent = 0
-    spanElDislike.textContent = 1
-  }
-  sendReaction(post._id, 'dislike')
-})
-likesArea.appendChild(spanElDislike)
+  const likeBtn = document.createElement('img');
+  likeBtn.setAttribute('src', '../assets/like.svg');
+  likeBtn.setAttribute('class', 'likeBtn');
+  likesArea.appendChild(likeBtn);
 
+  const spanElLike = document.createElement('span');
+  spanElLike.setAttribute('id', 'spanElLike');
+  spanElLike.textContent = 0;
 
+  likeBtn.addEventListener('click', function () {
+    if (spanElDislike.textContent == 0) {
+      spanElLike.textContent = 1;
+    } else if (spanElDislike.textContent == 1) {
+      spanElDislike.textContent = 0;
+      spanElLike.textContent = 1;
+    }
+    sendReaction(post._id, 'like');
+  });
 
-// end
+  likesArea.appendChild(spanElLike);
 
+  const dislikeBtn = document.createElement('img');
+  dislikeBtn.setAttribute('src', '../assets/dislike.svg');
+  dislikeBtn.setAttribute('class', 'dislikeBtn');
+  likesArea.appendChild(dislikeBtn);
+
+  const spanElDislike = document.createElement('span');
+  spanElDislike.setAttribute('id', 'spanElDislike');
+  spanElDislike.textContent = 0;
+
+  dislikeBtn.addEventListener('click', function() {
+    if (spanElLike.textContent == 0) {
+      spanElDislike.textContent = 1;
+    } else if (spanElLike.textContent === 1) {
+      spanElLike.textContent = 0;
+      spanElDislike.textContent = 1;
+    }
+    sendReaction(post._id, 'dislike');
+  });
+
+  likesArea.appendChild(spanElDislike);
+
+  // Append all elements to the card body
   cardBody.append(userName, postText, likesArea, postDate);
 
   cardContainer.appendChild(cardBody);
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
 }
 
-
-
+// Reaction Function
 function sendReaction(postId, reaction) {
   const options = {
     method: "POST",
@@ -143,7 +168,7 @@ function sendReaction(postId, reaction) {
     });
 }
 
-// Get all post
+// Get All Post
 function getAllPosts(accessToken) {
   const options = {
     method: "GET",
@@ -161,7 +186,6 @@ function getAllPosts(accessToken) {
       }
     })
     .then((data) => {
-      const postContainer = document.getElementById("postContainer");
       loadAllPosts(data);
     })
     .catch((error) => {
@@ -202,7 +226,7 @@ addPostClick.addEventListener('click', function() {
 
 });
 
-// back to top
+// Back to Top of Page Feature
 
 window.addEventListener('scroll', function() {
   const windowScrolled = window.scrollY
