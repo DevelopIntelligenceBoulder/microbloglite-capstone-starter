@@ -1,0 +1,125 @@
+/* Posts page styles */
+.post {
+  margin-bottom: 20px;
+}
+
+.post .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post .content {
+  margin-top: 10px;
+  color: #666;
+}
+.mb-3 {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+
+  /* Landing page styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+body {
+  background-image: url("../img/vectorspace.jpg");
+  background-size: cover;
+}
+header {
+  background: transparent;
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 0%;
+  padding-top: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+/* .navbar {
+  background: transparent;
+} */
+
+.navbar-brand {
+  color: rgba(133, 91, 236, 0.8);
+  padding-top: 1%;
+  font-size: 30px;
+}
+
+.navbar-brand img {
+  margin-right: 5px;
+}
+
+.navbar-brand span {
+  color: #17a0bb;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.container {
+  background: transparent;
+}
+
+.card {
+  background: transparent;
+  border: none;
+}
+
+.card-top {
+  background: transparent;
+}
+
+.card-body {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: rgba(133, 91, 236, 0.8);
+  text-decoration-color: rgba(133, 91, 236, 0.8);
+  border-radius: 11%;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  color: rgba(133, 91, 236, 0.8);
+}
+
+input,
+label,
+button {
+  margin-bottom: 10px;
+}
+
+main {
+  background-color: rgb(241, 246, 246);
+  margin: 5% 25% auto 25%;
+  border-radius: 10px;
+  border-color: #333;
+  padding-left: 10%;
+}
+
+div {
+  margin: auto auto 10px auto;
+}
+
+button {
+  margin: auto auto 5px auto;
+}
+
+p {
+  display: inline-flex;
+  text-decoration: italic;
+  text-decoration-thickness: 10px;
+}
+
+/* Add more landing page styles here */

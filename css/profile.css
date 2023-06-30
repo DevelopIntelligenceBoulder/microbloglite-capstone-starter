@@ -1,268 +1,104 @@
-<!DOCTYPE html>
-<html lang="eng">
-<head>
-  <style>
-    body 
-    /*img {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-    }*/
-    
-    {
-  background-image: url('8myno3ir.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-    </style>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../ok2.css" />
-    <link rel="stylesheet" href="test.css" />
-<link rel="stylesheet" type="text/css"
-href="ok2.css">
-    
-    
-    
-</head>
-
-
-<div class="image"></div
-<div class="flex-container">
-<div class="box one"><!DOCTYPE html>
-<html lang="eng">
-<head>
-  <style>
-    body 
-    /*img {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: -1;
-    }*/
-    
-    {
-  background-image: url('8myno3ir.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-    </style>
-  <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../ok2.css" />
-    <link rel="stylesheet" href="test.css" />
-<link rel="stylesheet" type="text/css"
-href="ok2.css">
-    
-    
-</head>
-
-
-<div class="image"></div
-<div class="flex-container">
-<div class="box one"></div>
-<div class="box two"></div>
-<div class="box three"></div>
-<div class="box four"></div>
-<div class="box five"></div>
-<div class="box six"></div>
-<div class="box seven"></div>
-<div class="box eight"></div>
-<div class="box nine"></div>
-
-
-<div style="z-index:100; position: fixed;"> <section></div>
-  <div class="item item-1"><div class="container">
-    <div class="item item-1"><div><section>
-<div class="container">
-  <div class="item item-1"><div class="all">
-    <title>Example</title>
-    <style>
-      * {
-        box-sizing: border-box; 
-      }
-      body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        margin: 100px;
-      }
-      .col-1 {
-        background: #d7e8d41c;
-        flex: 1;
-      }
-      .col-2 {
-        display: flex;
-        flex-direction: column;
-        flex: 5;
-      }
-      .content {
-        display: flex;
-        flex-direction: row;
-      }
-      .content > article {
-        flex: 3;
-        min-height: 60vh;
-        background: rgba(255, 255, 255, 0.178);
-      }
-      .content > aside {
-        background: rgba(255, 255, 255, 0.281);
-        flex: 1;
-      }
-      header, footer {
-        background: rgba(255, 255, 255, 0.163);
-        height: 20vh;
-      }
-      header, footer, article, nav, aside {
-        padding: 1em;
-      }
-    </style>
-     <link rel="stylesheet" type="text/css"
-     href="custom.css">
-    <body>
-      <nav class="col-1"><div class="wrapper">
-        
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Stores.html">Stores</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Gallery.html">gallery</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="Login.html">Login</a></li>
-            </ul>
-       
-    </div></nav>
-      <div class="col-2">
-          <header>Header</header>
-        <main class="content">
-        <article>Article</article>
-        <aside>Aside</aside>
-        </main>
-          <footer>You can contact us at (1)-(678)-(8765)</footer>
-      </div>
- 
-    </div>
-    </div></div>
-</div></div>
-<div class="item item-2"></div> 
- 
-</body>
-</html>
-
-</div>
-<div class="box two"></div>
-<div class="box three"></div>
-<div class="box four"></div>
-<div class="box five"></div>
-<div class="box six"></div>
-<div class="box seven"></div>
-<div class="box eight"></div>
-<div class="box nine"></div>
-
-
-<div style="z-index:100; position: fixed;"> <section></div>
-  <div class="item item-1"><div class="container">
-    <div class="item item-1"><div><section>
-<div class="container">
-  <div class="item item-1"><div class="all">
-
-    </div>
-    </div></div>
-</div></div>
-<div class="item item-2"></div> 
- 
-</body>
-</html>
-
-
-
-*/header{
-    border-radius: 30px;
-    background-image: url("img/vectorspace.jpg");
-    background-color: rgba(0, 255, 255, 0.438);
-    
-    
-    
-  
-}
-h1{
-    text-align: center;
-    text-transform: uppercase;
-    color: #4CAF50;
-   background-color: rgba(240, 255, 255, 0.325);
-   border-radius: 30px;
-   font-style: italic;
-   
-   
-}
-body {
-    background-color: #2c7bca;
-    background-image: url("img/vectorspace.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    image-rendering:-moz-crisp-edges;
-    text-align: center;
-    color: #c1c8c1;
-    
-  }
-  
-  .container {
+/* Landing page styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  .card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .bg-image {
-    background-size: cover;
-    background-position: center;
-  
-  }
-  
-  .card-title {
+  h1 {
     font-size: 24px;
-    font-weight: bold;
+    color: #333;
   }
   
-  .card-text {
-    margin-bottom: 10px;
+  body {
+    background-image: url("../img/vectorspace.jpg");
+    background-size: cover;
+  }
+  header {
+    background: transparent;
+    background: rgba(0, 0, 0, 0.8);
+    padding-bottom: 0%;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
   }
   
-  .card-footer {
-    background-color: #9d33ca;
-    border-top: 4px solid #0ae8f4;
-    border-radius: 30px;
-    padding: 10px;
+  /* .navbar {
+    background: transparent;
+  } */
+  
+  .navbar-brand {
+    color: rgba(133, 91, 236, 0.8);
+    padding-top: 1%;
+    font-size: 30px;
   }
   
-  .card-footer a {
+  .navbar-brand img {
     margin-right: 5px;
   }
   
-  /* Optional additional styling */
+  .navbar-brand span {
+    color: #17a0bb;
+  }
+  
+  .container-fluid {
+    padding: 0;
+  }
   
   .container {
-    max-width: 800px;
-    margin: 0 auto;
+    background: transparent;
+  }
+  
+  .card {
+    background: transparent;
+    border: none;
+  }
+  
+  .card-top {
+    background: transparent;
   }
   
   .card-body {
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
+    color: rgba(133, 91, 236, 0.8);
+    text-decoration-color: rgba(133, 91, 236, 0.8);
+    border-radius: 11%;
   }
   
-  .card-footer p {
-    margin-bottom: 0;
+  form {
+    margin: 0 auto;
+    max-width: 400px;
+    color: rgba(133, 91, 236, 0.8);
   }
-  nav{
-    border-radius: 100px;
-    border-width: 100px;
+  
+  input,
+  label,
+  button {
+    margin-bottom: 10px;
   }
+  
+  main {
+    background-color: rgb(241, 246, 246);
+    margin: 5% 25% auto 25%;
+    border-radius: 10px;
+    border-color: #333;
+    padding-left: 10%;
+  }
+  
+  div {
+    margin: auto auto 10px auto;
+  }
+  
+  button {
+    margin: auto auto 5px auto;
+  }
+  
+  p {
+    display: inline-flex;
+    text-decoration: italic;
+    text-decoration-thickness: 10px;
+  }
+  
+  /* Add more landing page styles here */
+  
