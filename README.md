@@ -9,17 +9,20 @@ CAPSTONE 3 - Nikolas Vega
 
 Team
 
-Jezz Rodriguez
-Nikolas Vega
-
+<ul>
+<li>Jezz Rodriguez</li>
+<li>Nikolas Vega</li>
+</ul>
 
 
 JS Boiler Plate from Team DP
 
-David Park
-Aazad Gas
-Tatiana Stewart
-Daniel Zalutskiy
+<ul>
+<li>David Park</li>
+<li>Aazad Gas</li>
+<li>Tatiana Stewart</li>
+<li>Daniel Zalutskiy</li>
+</ul>
 
 
 # CAPSTONE-3-OUTDOORS
