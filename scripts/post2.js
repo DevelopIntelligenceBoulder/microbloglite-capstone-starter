@@ -1,6 +1,7 @@
 "use strict"
 
-postContent = document.getElementById("postContent")
+const postContent = document.getElementById("postContent");
+const postBtn = document.getElementById("Bttnpostsubmit");
 
 const loginData = getLoginData();
 const token = loginData.token;
@@ -13,12 +14,12 @@ window.onload = () => {
     console.log("Post2.js Initialized")
     
 
+    postBtn.onclick = onPostBtnClicked;
     getPosts()
 
 }
 
 function getPosts() {
-
     //fetch request for all posts (return post)
     fetch("https://microbloglite.herokuapp.com/api/posts", {
         method: "GET",
@@ -116,9 +117,7 @@ function generatePostCard(posts) {
           postCard.style.transform = "translateX(50%)";
         }
       });
-    }
-  }
-  
-  
 
-//like button if I feel like it
+    }
+
+}

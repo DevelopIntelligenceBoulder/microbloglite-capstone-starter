@@ -80,7 +80,7 @@ function onPostBtnClicked() {
         .then(post => {
             // Success msg
             console.log(post);
-           window.location.replace("../post-bootstrap.html");
+         window.location.replace("../post-bootstrapdemo.html");
         });
 }
 
