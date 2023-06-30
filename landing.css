@@ -1,1 +1,34 @@
 /* Landing Page CSS */
+
+
+body {
+    background-color: lightgrey;
+  }
+  
+  h1 {
+    color: teal;
+  }
+  
+  .card-title {
+    color: teal;
+  }
+  
+  .form-label {
+    color: teal;
+  }
+  
+  .form-control {
+    background-color: white;
+    color: teal;
+  }
+  
+  .btn-primary {
+    background-color: teal;
+    border-color: teal;
+  }
+  
+  .btn-primary:hover {
+    background-color: darkcyan;
+    border-color: darkcyan;
+  }
+  
