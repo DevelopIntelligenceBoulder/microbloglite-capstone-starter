@@ -41,20 +41,64 @@
   
     <div id="page-container">
       <div class="container my-3 my-sm-5">
-        <h1>profile PAGE</h1>
+        <h1>Profile Page</h1>
         <p></p>
         <h3>Welcome to the profile</h3>
+        <hr>
+
+        <br>
 
         <main>
 
-          <button id="logout">Logout</button>
-
-          <form id="userPost">
-              <textarea name="userPostArea" id="userPostArea" cols="30" rows="10"></textarea><br>
-              <button type="submit" id="submit">submit</button>
+<!--           <form id="userPost">
+              <label for="formControl" class="form-label">Type Your Post Here</label>
+              <textarea name="userPostArea" class="form-control" id="userPostArea"  cols="30" rows="10"></textarea><br>
+              <button type="submit" id="submit" class="btn btn-primary mb-3">Submit</button>
           </form>
   
-          <div id="profileContainer"></div>
+          <div id="profileContainer"></div> -->
+
+          
+<div class="userInfo">
+  <div class="img-name">
+      <div id="userDataContainer"></div>
+  </div>
+
+  <div class="about">
+      <p class="aboutMe">About Me</p>
+      <br>
+      <div id="bioContainer">
+          <div class="bio-display" id="bioDisplay"></div>
+          <div class="bio-edit" id="bioEdit">
+              <textarea id="biotext" cols="30" rows="10" placeholder="Edit your bio here" class="form-control" cols="30" rows="10"></textarea><br>
+              <button id="saveBio" class="btn btn-outline-dark">Save</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<br><hr><br>
+
+<div class="posts">
+  
+
+  <div class="new">
+      <h4>Create New Post</h4>
+      <form id="userPost">
+        <label for="formControl" class="form-label">Type Your Post Here</label>
+        <textarea name="userPostArea" class="form-control" id="userPostArea"  cols="30" rows="10"></textarea><br><br>
+        <button type="submit" id="submit" class="btn btn-primary mb-3">Submit</button>
+      </form>
+  </div>
+
+  <hr>
+
+
+ <div class="mine">
+      <h4 class="header">My Posts</h4>
+      <div id="profileContainer"></div>
+  </div> 
+</div>
 
 
         </main>

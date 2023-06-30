@@ -16,8 +16,10 @@ Team
 
 Jezz Rodriguez
 Nikolas Vega
-Emaneul Figueroa Pasha
-Andrea Martinez
+
+
+
+JS Boiler Plate from Team DP
 
 David Park
 Aazad Gas
