@@ -12,8 +12,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./registration.css" />
-    <link rel="stylesheet" href="../global.css" />
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -41,79 +40,87 @@
       </header>
 
       <main>
-        <form id="register">
-          <div class="row">
-            <div class="col-md-6">
-              <div>
-                <label class="form-lable" for="registrationFullname"
-                  >Fullname</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="registrationFullname"
-                  minlength="3"
-                />
+        <div class="card">
+          <div class="card-body">
+            <form id="register">
+              <div class="row">
+                <div class="col-md-6">
+                  <div>
+                    <label class="form-lable" for="registrationFullname"
+                      >Full Name</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="registrationFullname"
+                      minlength="3"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div>
+                    <label class="form-lable" for="registrationUsername"
+                      >Username</label
+                    >
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="registrationUsername"
+                      minlength="3"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div>
-                <label class="form-lable" for="registrationUsername"
-                  >Username</label
-                >
-                <input
-                  class="form-control"
-                  type="text"
-                  id="registrationUsername"
-                  minlength="3"
-                />
+              <div class="row">
+                <div class="col">
+                  <div>
+                    <label class="form-lable" for="registrationPassword"
+                      >Password</label
+                    >
+                    <input
+                      class="form-control"
+                      type="password"
+                      id="registrationPassword"
+                      minlength="6"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div>
-                <label class="form-lable" for="registrationPassword"
-                  >Password</label
-                >
-                <input
-                  class="form-control"
-                  type="password"
-                  id="registrationPassword"
-                  minlength="6"
-                />
+              <div class="row">
+                <div class="col">
+                  <div>
+                    <label class="form-lable" for="registrationConfirmPassword"
+                      >Confirm Password</label
+                    >
+                    <input
+                      class="form-control"
+                      type="password"
+                      id="registrationConfirmPassword"
+                      minlength="6"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div>
-                <label class="form-lable" for="registrationConfirmPassword"
-                  >Confirm Password</label
-                >
-                <input
-                  class="form-control"
-                  type="password"
-                  id="registrationConfirmPassword"
-                  minlength="6"
-                />
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-primary" id="createAct" type="submit">
+                    Register
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    id="returnToLogin"
+                    type="submit"
+                  >
+                    Return to Login
+                  </button>
+                </div>
               </div>
-            </div>
+              <div class="row">
+                <p id="messageP"></p>
+              </div>
+            </form>
           </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary" id="createAct" type="submit">
-                Register
-              </button>
-              <button class="btn btn-primary" id="returnToLogin" type="submit">
-                Return to Login
-              </button>
-            </div>
-          </div>
-          <div class="row">
-            <p id="messageP"></p>
-          </div>
-        </form>
+        </div>
       </main>
 
       <footer></footer>
