@@ -22,6 +22,7 @@ window.onload = () => {
 
 
 }
+
 //Require username & name 
 function requireInput() {
     if (usernameInput.value == "") {
@@ -40,7 +41,7 @@ function requireInput() {
 
 
 
-//POST username and password to API 
+//POST username, Full name and password to API 
 function createNewUser() {
     let bodyData = {
         username: usernameInput.value,
@@ -65,7 +66,6 @@ function createNewUser() {
         })
         .then(data => {
             alert("New user created");
-            const authToken = data.token;
             console.log(bodyData.username);
             window.location.href = "../index.html";
         })
@@ -74,8 +74,9 @@ function createNewUser() {
         });
 }
 
+//invoke the require input and POST request when the register btn is clicked
 function onRegisterBtnClicked(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // Prevent form submission from button 
      console.log(requireInput())
     if (requireInput()) { 
       createNewUser();
