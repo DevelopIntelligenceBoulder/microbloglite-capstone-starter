@@ -14,13 +14,12 @@
   color: #666;
 }
 .mb-3 {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-  }
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
 
-
-  /* Landing page styles */
+/* Landing page styles */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -29,11 +28,11 @@
 
 h1 {
   font-size: 24px;
-  color: #333;
+  color: #100f0f;
 }
 
 body {
-  background-image: url("../img/vectorspace.jpg");
+  background-image: url("../img/IMG_0493.JPG");
   background-size: cover;
 }
 header {
@@ -47,6 +46,10 @@ header {
 
 /* .navbar {
   background: transparent;
+} */
+
+/* .navbar-brand .profile-link {
+  color: rgb(225, 5, 5) !important;
 } */
 
 .navbar-brand {
