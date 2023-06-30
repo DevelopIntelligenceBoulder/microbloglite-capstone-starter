@@ -78,27 +78,31 @@
                 <li>Topic required</li>
               </ul>
               <div class="input-group">
-                <label for="title">Title</label>
+                <label for="title" class="form-lable">Title</label>
                 <input
                   type="text"
                   name="title"
                   id="title"
-                  class="input-control"
+                  class="input-control form-control"
                 />
               </div>
               <div class="input-group">
-                <label for="post-editor">Body</label>
+                <label for="post-editor" class="form-label">Body</label>
                 <textarea
                   name="body"
                   id="post-editor"
-                  class="input-control"
+                  class="input-control form-control"
                 ></textarea>
               </div>
               <div class="post-details">
                 <div class="select-topic-wrapper">
                   <div class="input-group">
-                    <label for="topic">Topic</label>
-                    <select name="topic_id" id="topic" class="input-control">
+                    <label for="topic" class="form-label">Topic</label>
+                    <select
+                      name="topic_id"
+                      id="topic"
+                      class="input-control form-control"
+                    >
                       <option>Choose one...</option>
                       <option value="Journaling">Journaling</option>
                       <option value="Life Lesson">Life Lesson</option>
@@ -107,8 +111,13 @@
                   </div>
                 </div>
                 <div class="input-group">
-                  <label for="published">
-                    <input type="checkbox" name="published" id="published" />
+                  <label for="published" class="form-check-label">
+                    <input
+                      type="checkbox"
+                      name="published"
+                      id="published"
+                      class="form-check-label"
+                    />
                     Publish
                   </label>
                 </div>
