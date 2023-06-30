@@ -62,10 +62,6 @@ editBtn.addEventListener("click", () => {
   });
 });
 
-editBio.addEventListener('click', () => {
-  
-})
-
 //------------------------------------------------------------------
 logoutBtn.addEventListener("click", () => {
   logout();
