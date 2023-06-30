@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="/profile/profile.css">
-    <script src="../auth.js"></script>
-    <script defer src="./profile.js"></script>
-    <script>
+    <script src="/auth.js"></script>
+    <script src="/profile/profile.js" type="module" defer></script>
+    <script >
         if (isLoggedIn() === false) window.location.replace("/index.html");
     </script>
 </head>
@@ -68,6 +68,7 @@
                                             </button>
                                         </div>
                                     </div>
+                                    <!-- user email input -->
                                     <div class="form-group userEmail hide" id="userEmail">
                                         <div class="emailIcon">
 
@@ -87,6 +88,7 @@
                                        
                                         </div>
                                     </div>
+                                    <!-- end  -->
                                     <div class="emailHashHolder hide" id="emailHashHolder">
                                         <input type="text" placeholder="Enter your email Hash code" required id="emailHash" autocomplete="off">
                                         <button type="submit" id="hashSubmit">Submit</button>
@@ -128,29 +130,12 @@
                                     </form>
                                 </div>
                             </div>
-                          </div>
                         </div>
-                        <div class="row">
-                          <div class="col">
-                            <button id="saveButton" class="btn btn-primary" type="button" disabled>
-                              <i class="fa fa-fw fa-save"></i>
-                              <span>Save</span>
-                            </button>
-                            <button id="cancelButton" class="btn btn-secondary" type="button" disabled>
-                              <i class="fa fa-fw fa-times"></i>
-                              <span>Cancel</span>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
   </body>
   </html>
