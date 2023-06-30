@@ -69,7 +69,7 @@ h1{
   }
   
   body {
-    background-image: radial-gradient(#fff, #FDBE4A,#c78512, #f19e1a, rgba(184, 103, 45, 0.6), #fff);
+    background-image: radial-gradient(#fff, #FDBE4A,#ffc171, #f19e1a, rgba(255, 167, 74, 0.6), #fff);
     background-size: 300% 300%;
     animation: color 12s ease infinite;
   }
@@ -103,4 +103,51 @@ h1{
 .navbar-brand img {
   height: 75px; /* Adjust the desired height */
   width: auto; /* Maintain aspect ratio */
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar-brand:hover {
+    color: white;
+}
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.search-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 200px;
+}
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.offcanvas-header {
+  background-color: rgb(255, 178, 62);
+  color: white;
+}
+
+.offcanvas-body {
+  background-color: rgb(255, 180, 75);
+  color: black;
+}
+.navbar-nav {
+    justify-content: flex-end;
 }
