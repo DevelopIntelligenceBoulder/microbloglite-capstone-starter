@@ -14,18 +14,18 @@ Installation and Usage:
 
 To run this project locally, follow these steps:
 
-Clone the repository: 
+Clone the repository: ![clonerepo](https://github.com/ZionDanielson/microbloglite-capstone/assets/130395112/10c33951-b901-44e3-93c4-640be009fbf6)
+
 
 Navigate to the project directory: 
 
 Open the index.html file in your web browser.
 
-Login -
+Login - ![image](https://github.com/ZionDanielson/microbloglite-capstone/assets/130395112/337a84cd-2076-4bd4-bea5-ce440a916308)
 
 Posts -
 
-Login -
-
 Profile -
 
-Registration - 
+Registration - ![register](https://github.com/ZionDanielson/microbloglite-capstone/assets/130395112/d78c2494-07f9-4cdc-bb62-29a57eeeaf9a)
+
