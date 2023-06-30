@@ -7,10 +7,9 @@ const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
 getAllPosts(accessToken);
 
 function showLoggedInUser() {
-  const getCurrentUser = document.getElementById("profileLink")
-  // console.log(getLoginData().username)
-  const loggedInUser = getLoginData().username
-  getCurrentUser.innerText = `${loggedInUser}'s Profile` 
+  const getCurrentUser = document.getElementById('profileLink')
+  const loggedInUser = getLoginData().username.toUpperCase()
+  getCurrentUser.innerText = `${loggedInUser}'S PROFILE` 
 }
 
 
