@@ -49,7 +49,7 @@
       <!-- ------------------------------------------------------------------------------------------------- -->
       <nav class="navbar fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">
+          <a class="navbar-brand" href="/posts/index.html?pageNumber=1">
             <div class="imgWrap">
               <img
                 class="imgNavbar"
@@ -62,7 +62,7 @@
             </div>
           </a>
           <div class="gggImg">
-            <a class="navbar-item" href="">
+            <a class="navbar-item" href="/posts/index.html?pageNumber=1">
               <img src="/images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
@@ -100,7 +100,9 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts/index.html"> Posts </a>
+                  <a class="nav-link" href="/posts/index.html?pageNumber=1">
+                    Posts
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/profile/profile.html"
@@ -144,24 +146,27 @@
             </div>
           </div>
         </template>
-        <template id="pagesBottom">
-          <nav aria-label="...">
+        <div class="row">
+          <nav aria-label="..." id="pageBtm">
             <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#"></a></li>
-              <!-- <li class="page-item"><a class="page-link" href="#"></a></li>
-              <li class="page-item"><a class="page-link" href="#"></a></li> -->
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
+              <div class="col">
+                <li class="page-item">
+                  <a class="page-link" id="previousPage" href="" tabindex="-1"
+                    >Previous</a
+                  >
+                </li>
+              </div>
+              <div class="col">
+                <li class="page-item">
+                  <a class="page-link" id="nextPage" href="">Next</a>
+                </li>
+              </div>
             </ul>
           </nav>
-        </template>
+        </div>
         <div class="row">
           <div class="col">
-            <input type="button" value="Logout" id="logoutBtn" />
+            <!-- <input type="button" value="Logout" id="logoutBtn" /> -->
           </div>
         </div>
       </main>

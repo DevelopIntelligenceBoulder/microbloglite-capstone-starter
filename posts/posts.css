@@ -41,14 +41,12 @@
 }
 
 #textbox {
-
-    border-radius: 5px; 
-    padding: 15px;
-    margin-bottom: 20pt;
-    width: 75%;
-    border-style: none;
-    background-color:  #f5f3e3;
-   
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20pt;
+  width: 75%;
+  border-style: none;
+  background-color: #f5f3e3;
 }
 
 .inputFields {
@@ -56,8 +54,6 @@
 }
 
 #postBtn {
-
-  /* margin-left: 5pt; */
   margin-bottom: 10pt;
 
   border-radius: 5px;
@@ -65,7 +61,6 @@
   width: fit-content;
   height: fit-content;
   background-color: #ef467000;
-
 }
 
 .card {
@@ -89,16 +84,11 @@
 }
 
 #postCards {
-
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.card{
+.card {
   background-color: #f5f3e3;
   border: #a32645 solid;
 }
@@ -106,5 +96,29 @@
 nav {
   background-color: #f5f3e3;
 }
-
-
+#pageBtm {
+  background-color: #5a030300;
+}
+.pagination {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+#previousPage {
+  text-align: center;
+  width: 100px;
+  color: #5a0303;
+  font-size: larger;
+  margin-right: 5px;
+  border: solid 3px #5a0303;
+  background-color: #f5f3e3;
+}
+#nextPage {
+  text-align: center;
+  width: 100px;
+  color: #5a0303;
+  font-size: larger;
+  margin-left: 5px;
+  border: solid 3px #5a0303;
+  background-color: #f5f3e3;
+}
