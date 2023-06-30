@@ -74,7 +74,7 @@ function createNewUser() {
         });
 }
 
-//invoke the require input and POST request when the register btn is clicked
+//invoke the require input function and POST request when the register btn is clicked
 function onRegisterBtnClicked(event) {
     event.preventDefault(); // Prevent form submission from button 
      console.log(requireInput())
