@@ -1,7 +1,15 @@
+window.onload = showLoggedInUser()
+
+function showLoggedInUser() {
+  const getCurrentUser = document.getElementById('profileName')
+  const loggedInUser = getLoginData().username
+  getCurrentUser.innerText = `${loggedInUser}'s Profile` 
+}
 
 const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
 
 let userNameValue;
+
 
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
