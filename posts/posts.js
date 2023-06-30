@@ -60,7 +60,7 @@ window.addEventListener("load", function sortPost() {
       const nextPageNumber = +pageNumber + 1;
       nextPageEl.href = `/posts/index.html?pageNumber=${nextPageNumber}`;
       if (+pageNumber === 1) {
-        document.querySelector("#previousPage").disabled = true;
+        document.querySelector("#previousPage").style.visibility = "hidden";
       } else {
         const previousPageNumber = pageNumber - 1;
         previousPageEl.href = `/posts/index.html?pageNumber=${previousPageNumber}`;
