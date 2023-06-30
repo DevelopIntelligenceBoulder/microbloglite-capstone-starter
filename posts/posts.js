@@ -1,6 +1,5 @@
 "use strict";
 
-
   const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
   getAllPosts(accessToken);
 
@@ -19,7 +18,7 @@ let postTextarea = document.getElementById('postTextarea').value
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ text: postTextarea})
+    body: JSON.stringify({text: postTextarea})
   };
   fetch(apiBaseURL + "/api/posts", options)
   .then(response => response.json())
