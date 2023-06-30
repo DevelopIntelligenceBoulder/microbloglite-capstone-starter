@@ -22,7 +22,6 @@ function isLoggedIn () {
     return Boolean(loginData.token);
 }
 
-
 // This function is already being used in the starter code for the
 // landing page, in order to process a user's login. READ this code,
 // and feel free to re-use parts of it for other `fetch()` requests

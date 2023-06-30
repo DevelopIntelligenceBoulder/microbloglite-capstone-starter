@@ -74,10 +74,10 @@ function reset(){
         }
     })
 }
-resetBtn.addEventListener('click', function(){
-    postTextarea.value = null
-    this.classList.add('hide')
-})
-reset()
+// resetButton.addEventListener('click', function(){
+//     postTextarea.value = null
+//     this.classList.add('hide')
+// })
+// reset()
 
 document.getElementById('addPostButton').addEventListener('click', xClick)

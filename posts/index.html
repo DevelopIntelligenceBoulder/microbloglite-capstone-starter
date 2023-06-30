@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!-- Page-specific CSS -->
@@ -37,8 +37,8 @@
 <body>
     <canvas id="canvas" class="hide">Canvas is not supported in your browser.</canvas>
     <div class="backToTop hide" id="backToTop">
-       <img src="../assets/top.png" alt="back to top">
-      </div>
+        <img src="../assets/top.png" alt="back to top">
+    </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong" id="Home">
             <div>
@@ -48,7 +48,7 @@
                                 alt="logo.png"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../profile/profile.html">My Profile</a>
+                        <a id="profileLink" class="nav-link active" href="../profile/profile.html">My Profile</a>
                     </li>
             </div>
             <!-- logout button -->
@@ -56,53 +56,43 @@
         </nav>
     </header>
     <main id="postParent">
-            <div class="container">
-                <div class="mb-3 position-relative">
-                    <textarea id="postTextarea" class="form-control" rows="3"
-                        placeholder="What keeps you fit?..."></textarea>
-                        <button type="submit" class="resetBtn hide" id="resetBtn">reset</button>
+        <div class="container">
+            <div class="mb-3 position-relative">
+                <textarea id="postTextarea" class="form-control" rows="3"
+                    placeholder="What keeps you fit?..."></textarea>
+                    <div id="imagePreviewContainer" style="display: none;">
+                        <img id="imagePreview" src="" alt="Uploaded Image"> 
                     </div>
-                    <div id="buttonArea">
-                        <button type="submit" class="EmojiBtn" id="EmojiBtn">
-                            <p id="default" class="default">😀</p>
-                            <p id="x" class="x hide">❌</p>
-                        </button>
-                        <button id="addPostButton" class="btn btn-success">
-                            <span id="add-post">Add Post</span>
-                            <div class="lds-roller hide" id="roller">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </button>
-                        <button type="button" class="btn btn-light" id="open-modal-button"><i class="fa-solid fa-camera" style="color: #000;"></i>Add Photo</button>
-                    </div>
-                    <div id="emojiContainer" class="hide"></div>
             </div>
-            <dialog id="imageDialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Image Preview</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="dialog"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="" id="imagePreview" alt="Uploaded Image" class="img-fluid">
-                        </div>
+            <div id="buttonArea">
+                <button type="submit" class="EmojiBtn" id="EmojiBtn">
+                    <p id="default" class="default">😀</p>
+                    <p id="x" class="x hide">❌</p>
+                </button>
+                <button id="addPostButton" class="btn btn-success">
+                    <span id="add-post">Add Post</span>
+                    <div class="lds-roller hide" id="roller">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
-                </div>
-            </dialog>
-            <div id="postContainer" class="container mt-4"></div>
+                </button>
+                <button type="button" class="btn btn-light" id="uploadButton">
+                    <i class="fa-solid fa-camera" style="color: #000;">
+                    </i>Add Photo
+                </button>
+            </div>
+            <div id="emojiContainer" class="hide"></div>
+        </div>
+        <div id="postContainer" class="container mt-4"></div>
     </main>
 
     <footer></footer>
-
 
     <!-- script -->
     <script src="./emojies.js" type="module"></script>

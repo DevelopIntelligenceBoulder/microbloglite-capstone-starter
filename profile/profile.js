@@ -1,13 +1,22 @@
+window.onload = showLoggedInUser()
+
+function showLoggedInUser() {
+  const getCurrentUser = document.getElementById('profileName')
+  const loggedInUser = getLoginData().username
+  getCurrentUser.innerText = `${loggedInUser}'s Profile` 
+}
 
 const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
 
 let userNameValue;
+
 
 function getLoginData() {
     return JSON.parse(window.localStorage.getItem("login-data")) || {};
   }
   
   document.addEventListener("DOMContentLoaded", () => {
+    
     const baseURL = "https://microbloglite.herokuapp.com";
     const loginData = getLoginData();
     const fullName = document.getElementById("fullName");
@@ -199,9 +208,6 @@ function getLoginData() {
     profilePicFetch(emailHashCode);
   });
   
-
-
-
   function profilePicFetch(emailHashCode) {
     const apiUrl = `https://www.gravatar.com/${emailHashCode}.json?callback=processProfileData`;
   
