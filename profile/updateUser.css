@@ -1,0 +1,24 @@
+/* updateUser.css */
+
+body {
+    background-color: #f2f2f2;
+    color: teal;
+  }
+  
+  .navbar-brand,
+  .navbar-nav .nav-link,
+  h1,
+  .form-label,
+  .form-control,
+  textarea,
+  .btn-primary {
+    color: teal;
+  }
+  
+  .btn-primary,
+  .btn-primary:hover {
+    background-color: teal;
+    border-color: teal;
+    color: #f2f2f2;
+  }
+  
