@@ -15,19 +15,92 @@
 </head>
 
 <body style="height:100%">
-  <header>
 
-  </header>
   <main style="height:100%">
     <div class="container-fluid" style="height:100%">
       <div class="row" style="height:100%">
+        <div class="col-sm-4 col-lg-3"> <!--Sidebar-->
+          <button type="button" class="btn btn-secondary edit-profile-button" style="margin-top: 10%;margin-left: 7%;" id="logoutButton">Log Out</button>
+          <div class="miniProfilediv" style=" margin-top: 10%;">
 
-        <div class="col-sm-4 col-lg-3" style="background-color: rgb(217, 217, 217);"> <!--Sidebar-->
+            <img class="profile-pic" style="margin-left: 25%;" src="media/profile.jpeg" alt="User Profile Picture"> 
+            <div class="username-name">
+              <h4 id="username" style="margin-left:5%;">@username</h4>
+            </div>
+            <button onclick="window.location.href='profile.html';" id="recentPostId"  class="btn btn-secondary" style="margin-left: 30%;"> View Profile </button>
+            <div class="follower-container" alt="follower.count">             
+              <h4 id="usersFollowers">18 followers</h4> <h4 id="usersPostsCount">6 Posts</h4>
+            </div>
+          </div>
+        <!---images here-->
+        <ul class="online-friends-list">
+          <h2 style="font-weight: bolder2525; font-size: small;"> Suggestions for you</h2>
+          <li>
+              <img src="images/profile-icon-9.png" style="height: 70px; width: auto;"alt="User 1" />
+              <span class="username" style="font-weight: bolder;">User 1<span class="online-indicator"></span></span>
+          </li>
+          <li>
+              <img src="images/profile-icon-9.png"style="height: 70px; width: auto;" alt="User 2" />
+              <span class="username">User 2</span>
+          </li>
+          <li>
+              <img src="images/profile-icon-9.png" style="height: 70px; width: auto;"alt="User 3" />
+              <span class="username">User 3<span class="online-indicator"></span></span>
+          </li>
+          <li>
+              <img src="images/profile-icon-9.png" style="height: 70px; width: auto;"alt="User 4" />
+              <span class="username">User 4</span>
+          </li>
+      </ul>
 
-        </div>
-        <div class="col-sm-8 col-lg-9" style="border: 1px solid blue"> <!-- primary content-->
-          <div class="navbar" style="border: 1px solid yellow">
-            <ul class="nav" style="margin-top: 2%;">
+      <style>
+        .online-friends-list {
+           
+            padding: 10px;
+            list-style-type: none;
+            display: inline-block;
+            margin-top: 10%;
+        }
+    
+        .online-friends-list li {
+            margin-bottom: 10px;
+        }
+    
+        .online-friends-list li img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid pink;
+        }
+    
+        .online-friends-list li .username {
+            margin-left: 10px;
+        }
+    
+        .online-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+      </div>
+
+        <!----------------------------------Main content--------------------------------------------------------------->
+        <div class="col-sm-8 col-lg-9"> <!-- primary content-->
+          <div class="navbar">
+            <ul class="nav" style="margin-top: 2%; margin-left: 15%;">
+
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="profile.html"><svg
                     xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="#FF1CA8"
@@ -44,7 +117,11 @@
                   </svg></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="post.html"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30"
+
+                <a class="nav-link" href="post-bootstrapdemo.html"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30"
+
+              
+
                     fill="#FF1CA8" class="bi bi-search" viewBox="0 0 16 16">
                     <path
                       d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -71,10 +148,12 @@
             <div class="main-container" id="main.container">
 
               <div class="container" id="form-container"
-                style="background-color: rgb(249, 249, 249); width: 40rem; padding-top: 2%; padding-bottom: 2%; border-radius: 20px; margin-top: 3%;">
+
+                style="background-color: rgb(249, 249, 249); width: 40rem; padding-top: 2%; padding-bottom: 2%; border-radius: 20px; margin-top: 3%; margin-right:50%;">
                 <form id="postForm">
                   <div class="form-group" id="formGroup">
-                    <label for="postContent" id="" style="font-weight: bolder;font-size: medium;">Post Content:</label>
+                    <label for="postContent" style="font-weight: bolder;font-size: medium;">Post Content:</label>
+
                     <textarea class="form-control" style="border:none; outline: none; border-radius: 20px;"
                       id="postContent" rows="4" required></textarea>
                   </div>
@@ -84,7 +163,9 @@
               </div>
             </div>
 
+
             <div class="container" id="postCardsContainer">
+
              
                 </div>
               </div>
