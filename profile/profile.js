@@ -16,6 +16,7 @@ function getLoginData() {
   }
   
   document.addEventListener("DOMContentLoaded", () => {
+    
     const baseURL = "https://microbloglite.herokuapp.com";
     const loginData = getLoginData();
     const fullName = document.getElementById("fullName");
@@ -207,9 +208,6 @@ function getLoginData() {
     profilePicFetch(emailHashCode);
   });
   
-
-
-
   function profilePicFetch(emailHashCode) {
     const apiUrl = `https://www.gravatar.com/${emailHashCode}.json?callback=processProfileData`;
   
