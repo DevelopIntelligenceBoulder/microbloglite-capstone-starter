@@ -42,7 +42,7 @@ function login(loginData) {
     .then((response) => response.json())
     .then((loginData) => {
       window.localStorage.setItem("login-data", JSON.stringify(loginData));
-      window.location.assign("/posts"); // redirect
+      window.location.assign("./posts"); // redirect
 
       return loginData;
     });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => console.log(data))
       .finally(() => {
         window.localStorage.removeItem("login-data");
-        window.location.assign("/");
+        window.location.assign("../");
       });
   }
 
