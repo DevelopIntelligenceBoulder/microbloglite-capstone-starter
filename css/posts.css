@@ -104,3 +104,21 @@ h1{
   height: 75px; /* Adjust the desired height */
   width: auto; /* Maintain aspect ratio */
 }
+
+.error-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #ffcccc;
+  border: 1px solid #ff3333;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#errorMessage {
+  font-weight: bold;
+  color: #ff3333;
+}
