@@ -66,7 +66,7 @@ function onLogoutBtnClicked() {
 //POST request to create new posts(redirects to the posts page after creating a post)
 function onPostBtnClicked() {
     let bodyData = {
-        text: postField.textContent
+        text: postField.value
     }
     fetch(apiBaseURL + "/api/posts", {
         method: "POST",
@@ -80,7 +80,7 @@ function onPostBtnClicked() {
         .then(post => {
             // Success msg
             console.log(post);
-           // window.location.replace("../post.html");
+           window.location.replace("../post-bootstrap.html");
         });
 }
 
@@ -143,5 +143,3 @@ function showbioFieldEditable() {
     bioEditBtn.style.display = "none"
     bioSaveBtn.style.display = 'block'
 }
-
-
