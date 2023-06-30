@@ -30,7 +30,7 @@ registerForm.onsubmit = function (event) {
   fetch(apiBaseURL + "/api/users", options)
     .then((response) => response.json())
     .then((acctCreation) => {
-      if (acctCreation.statusCode < 400) {
+      if (!acctCreation.statusCode) {
         messagePEl.textContent = "Success returning to login";
         setTimeout(() => {
           window.location.href = "../index.html";

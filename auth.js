@@ -41,7 +41,7 @@ function login(loginData) {
   return fetch(apiBaseURL + "/auth/login", options)
     .then((response) => response.json())
     .then((loginData) => {
-      wlindow.locaStorage.setItem("login-data", JSON.stringify(loginData));
+      window.localStorage.setItem("login-data", JSON.stringify(loginData));
 
       if (loginData.statusCode < 400) {
         window.location.replace("./posts/");
