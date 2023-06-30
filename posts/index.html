@@ -41,8 +41,7 @@
   </head>
   <body class="bodyNav">
     <div class="container">
-      <div class="row">
-      </div>
+      <div class="row"></div>
       <!-- ------------------------------------------------------------------------------------------------- -->
       <nav class="navbar fixed-top">
         <div class="container-fluid">
@@ -59,10 +58,7 @@
             </div>
           </a>
           <div class="gggImg">
-
             <a class="navbar-item" href="/posts/index.html?pageNumber=1">
-
-
               <img src="/images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
@@ -135,55 +131,57 @@
       <!-- ------------------------------------------------------------------------------------------------- -->
       <main class="main">
         <div class="postBG">
-        <div class="row">
-          <div class="col">
-
-            <img src="/images/post-header.png" alt="postheader" class="postHeader">
-          </div>
-        </div>
-        <div class="row">
-          <div class="inputFields">
-            <input type="text" placeholder="Truthful Posts Only" id="textbox" />
-            <button type="button" value="Post" id="postBtn"></button>
-          </div>
-        </div>
-
-        <template id="postCards">
           <div class="row">
             <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <p class="card-text"></p>
-                  <button class="button"></button>
+              <img
+                src="/images/post-header.png"
+                alt="postheader"
+                class="postHeader"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="inputFields">
+              <input
+                type="text"
+                placeholder="Truthful Posts Only"
+                id="textbox"
+              />
+              <button type="button" value="Post" id="postBtn"></button>
+            </div>
+          </div>
+
+          <template id="postCards">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <button class="button"></button>
+                  </div>
                 </div>
               </div>
             </div>
+          </template>
+          <div class="row">
+            <nav aria-label="..." id="pageBtm">
+              <ul class="pagination">
+                <div class="col">
+                  <li class="page-item">
+                    <a class="page-link" id="previousPage" href="" tabindex="-1"
+                      >Previous</a
+                    >
+                  </li>
+                </div>
+                <div class="col">
+                  <li class="page-item">
+                    <a class="page-link" id="nextPage" href="">Next</a>
+                  </li>
+                </div>
+              </ul>
+            </nav>
           </div>
-        </template>
-        <div class="row">
-          <nav aria-label="..." id="pageBtm">
-            <ul class="pagination">
-              <div class="col">
-                <li class="page-item">
-                  <a class="page-link" id="previousPage" href="" tabindex="-1"
-                    >Previous</a
-                  >
-                </li>
-              </div>
-              <div class="col">
-                <li class="page-item">
-                  <a class="page-link" id="nextPage" href="">Next</a>
-                </li>
-              </div>
-            </ul>
-          </nav>
-        </div>
-        <div class="row">
-          <div class="col">
-            <!-- <input type="button" value="Logout" id="logoutBtn" /> -->
-          </div>
-        </div>
         </div>
       </main>
 
