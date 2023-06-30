@@ -23,6 +23,7 @@ header {
   color: rgba(133, 91, 236, 0.8);
   padding-top: 1%;
   font-size: 30px;
+  font-family:'Rubik Moonrocks', cursive; 
 }
 
 .navbar-brand img {
@@ -61,4 +62,18 @@ header {
 
 div {
   margin: auto auto 10px auto;
+}
+
+label {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
+}
+
+p, a{
+  font-family: 'Space Mono', monospace;
+}
+
+.btn{
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
 }

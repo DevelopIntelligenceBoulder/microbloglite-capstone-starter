@@ -31,6 +31,7 @@ header {
   color: rgba(133, 91, 236, 0.8);
   padding-top: 1%;
   font-size: 30px;
+  font-family: 'Rubik Moonrocks', cursive;
 }
 
 .navbar-brand img {
@@ -98,6 +99,21 @@ p {
   display: inline-flex;
   text-decoration: italic;
   text-decoration-thickness: 10px;
+  font-family: 'Space Mono', monospace;
 }
 
+.form-text{
+  color: whitesmoke;
+}
+
+label {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
+}
+
+
+.btn{
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
+}
 /* Add more landing page styles here */
