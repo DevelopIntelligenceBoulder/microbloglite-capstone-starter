@@ -86,6 +86,7 @@ window.addEventListener("load", function getPosts() {
           let likeBtn = clone.querySelector('button[class="button"]');
           likeBtn.textContent = post.likes.length;
           title.textContent = post.username;
+          title.style.color = "#5a0303";
           postInfo.textContent = post.text;
 
           const imgEl = document.createElement("img");

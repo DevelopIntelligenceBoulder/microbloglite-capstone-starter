@@ -36,18 +36,15 @@
       if (isLoggedIn() === false) window.location.replace("/");
     </script>
     <link rel="stylesheet" href="../posts/posts.css" />
-    <link rel="stylesheet" href="/profile/profile.css">
+    <link rel="stylesheet" href="/profile/profile.css" />
   </head>
   <body class="bodyNav">
     <div class="container">
-      <div class="row">
-      </div>
+      <div class="row"></div>
       <!-- ------------------------------------------------------------------------------------------------- -->
       <nav class="navbar fixed-top">
         <div class="container-fluid">
-
           <a class="navbar-brand" href="../posts/index.html?pageNumber=1">
-
             <div class="imgWrap">
               <img
                 class="imgNavbar"
@@ -60,9 +57,7 @@
             </div>
           </a>
           <div class="gggImg">
-
             <a class="navbar-item" href="/posts/index.html?pageNumber=1">
-
               <img src="/images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
@@ -100,7 +95,9 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts/index.html?pageNumber=1"> Posts </a>
+                  <a class="nav-link" href="/posts/index.html?pageNumber=1">
+                    Posts
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">My Profile</a>
@@ -130,8 +127,6 @@
 
       <!-- ------------------------------------------------------------------------------------------------- -->
       <main class="main">
-
-     
         <div class="myINFO">
           <div class="row">
             <div class="col">
@@ -143,7 +138,6 @@
                 />
               </div>
             </div>
-
           </div>
           <div class="row">
             <div class="col">
@@ -178,7 +172,7 @@
         <div class="row">
           <div class="inputFields">
             <input type="text" placeholder="Truthful Posts Only" id="textbox" />
-            <input type="button" value="Post" id="postBtn" />
+            <button type="button" value="Post" id="postBtn"></button>
           </div>
         </div>
         <template id="postCards">
@@ -187,7 +181,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title"></h5>
-                  <!-- <input type="text" class="card-text" /> -->
+
                   <p class="card-text"></p>
                   <p class="card-likes"></p>
                   <button type="submit" value="Delete" class="Delete"></button>
@@ -196,11 +190,6 @@
             </div>
           </div>
         </template>
-        <div class="row">
-          <div class="col">
-            <!-- <input type="button" value="Logout" id="logoutBtn" /> -->
-          </div>
-        </div>
       </main>
 
       <footer></footer>
