@@ -62,6 +62,10 @@ editBtn.addEventListener("click", () => {
   });
 });
 
+editBio.addEventListener('click', () => {
+  
+})
+
 //------------------------------------------------------------------
 logoutBtn.addEventListener("click", () => {
   logout();
@@ -113,6 +117,8 @@ function getPosts() {
 
       usernamePosts.innerHTML = `${loginData.username}'s Posts`;
 
+      usernamePosts.innerHTML = `${loginData.username}'s Posts`
+
       let template;
 
       template = document.getElementById("postDisplay");
@@ -135,6 +141,8 @@ function getPosts() {
           const deleteBtnEl = postEl.getElementById("deleteBtn");
 
           deleteBtnEl.addEventListener("click", () => {
+
+            console.log('post deleted?')
             fetch(`https://microbloglite.herokuapp.com/api/posts/${post._id}`, {
               method: "DELETE",
 
@@ -143,6 +151,7 @@ function getPosts() {
                 "Content-type": "application/json; charset=utf-8",
               },
             });
+            window.location.reload();
           });
           //--------------------------------------------------------------------
           const likeBtn = postEl.querySelector("a");
