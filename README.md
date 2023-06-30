@@ -61,7 +61,9 @@ Posts page is where users can see all the posts created by all the users in the 
 Each webpage has responsive web design and it will resize to fit all the contents evenly within the viewort
 
 <p align="center">
-  <img src="images/image2.png" width="350">
-  <img src="images/image3.png" width="350">
-  <img src="images/image4.png" width="350">
+  <img src="/images/HOME.png" width="350">
+  <img src="/images/LOGIN.png" width="350">
+  <img src="/images/REGISTER.png" width="350">
+  <img src="/images/POSTS.png" width="350">
+  <img src="/images/PROFILE.png" width="350">
 </p>
