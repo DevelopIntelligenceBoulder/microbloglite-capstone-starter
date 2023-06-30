@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&family=Major+Mono+Display&family=Rubik+Moonrocks&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="../css/global.css" />
 
-  <!-- Global CSS (CSS rules you want applied to all pages) -->
-  <link rel="stylesheet" href="../css/global.css" />
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="../css/login.css" />
 
-  <!-- Page-specific CSS -->
-  <link rel="stylesheet" href="../css/login.css" />
+    <title>Login to the Microblog Network!</title>
 
-  <title>Login to the Microblog Network!</title>
-
-  <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-  <script src="../js/auth.js"></script>
-  <script>
-    if (isLoggedIn() === true) window.location.replace("../posts");
-  </script>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <img src="../img/logo.png" width="40" height="40" class="d-inline-block align-text-top">
-          Plugged<span>In</span>
-        </a>
-      </div>
-    </nav>
-  </header>
+    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+    <script src="../js/auth.js"></script>
+    <script>
+      if (isLoggedIn() === true) window.location.replace("../posts");
+    </script>
+  </head>
 
   <body>
-    <div class="container">
-      <div class="card">
-        <div class="card-top d-flex justify-content-center">
-          <img src="#" alt="" />
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../img/logo.png"
+              width="40"
+              height="40"
+              class="d-inline-block align-text-top"
+            />
+            Plugged<span>In</span>
+          </a>
         </div>
-        <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input title="Must be a valid email address" pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
-                type="email" class="form-control" id="Email" aria-describedby="emailHelp" />
-            </div>
-            <div class="mb-3">
-              <label for="Password" class="form-label">Password</label>
-              <input title="Must be atleast 8 characters" pattern="[a-zA-Z0-9]{8,}" type="password" class="form-control"
-                id="Password" />
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="Check" />
-              <label class="form-check-label" for="Check">Remember me</label>
-              <p>
-                Don't have an account?<a href="../html/registration.html">Sign up</a>
-              </p>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Blasting Off Away!
-            </button>
-          </form>
+      </nav>
+    </header>
+
+    <body>
+      <div class="container">
+        <div class="card">
+          <div class="card-top d-flex justify-content-center">
+            <img src="#" alt="" />
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  title="Must be a valid email address"
+                  pattern="[a-zA-Z0-9._+-]+@[a-zA-Z0-9]+\.[a-z]{2,1}"
+                  type="email"
+                  class="form-control"
+                  id="Email"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input
+                  title="Must be atleast 8 characters"
+                  pattern="[a-zA-Z0-9]{8,}"
+                  type="password"
+                  class="form-control"
+                  id="Password"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="Check" />
+                <label class="form-check-label" for="Check">Remember me</label>
+                <p>
+                  Don't have an account?<a href="../html/registration.html"
+                    >Sign up</a
+                  >
+                </p>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Blasting Off Away!
+              </button>
+              <a href="/index.html">Back to Home</a>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </body>
+
+    <footer></footer>
+
+    <!-- Page-specific code -->
+    <script src="../js/landing.js"></script>
   </body>
-
-  <footer></footer>
-
-  <!-- Page-specific code -->
-  <script src="../js/landing.js"></script>
-</body>
-
 </html>
 
 <!--<!DOCTYPE html>
