@@ -80,3 +80,4 @@ function reset(){
 // })
 // reset()
 
+document.getElementById('addPostButton').addEventListener('click', xClick)

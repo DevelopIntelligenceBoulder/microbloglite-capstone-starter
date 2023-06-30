@@ -1,5 +1,6 @@
 "use strict";
 
+
 window.onload = showLoggedInUser()
 
 const accessToken = JSON.parse(window.localStorage.getItem("login-data")).token;
@@ -24,7 +25,9 @@ function addPost() {
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json"
     },
+    
     body: JSON.stringify({ text: postTextarea })
+
   };
   fetch(apiBaseURL + "/api/posts", options)
     .then(response => response.json())
@@ -77,6 +80,7 @@ function createPost(post, parentElement, imageSecureUrl = '') {
   let fLetter = uName.charAt(0).toUpperCase();
   let subName = uName.slice(1);
   userName.textContent = fLetter + subName;
+
 
   // Create the image element if imageSecureUrl is provided
   if (imageSecureUrl) {
