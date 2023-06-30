@@ -104,3 +104,50 @@ h1{
   height: 75px; /* Adjust the desired height */
   width: auto; /* Maintain aspect ratio */
 }
+
+.navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar-brand:hover {
+    color: white;
+}
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.search-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 200px;
+}
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.offcanvas-header {
+    background-color: orange;
+    color: white;
+}
+
+.offcanvas-body {
+    background-color: rgb(255, 160, 50);
+    color: black;
+}
+.navbar-nav {
+    justify-content: flex-end;
+}

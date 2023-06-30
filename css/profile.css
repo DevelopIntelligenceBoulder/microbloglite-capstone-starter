@@ -29,29 +29,25 @@ body {
 }
 
 .navbar {
-    background-color: #ffb03a;
+    background-color: #FDBE4A;
     padding: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .navbar-brand {
     color: white;
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
 }
-
 .navbar-brand:hover {
     color: white;
 }
-
 .navbar-nav .nav-link {
     color: white;
     font-weight: bold;
     text-decoration: none;
     margin-right: 20px;
 }
-
 .navbar-nav .nav-link:hover {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.2);
