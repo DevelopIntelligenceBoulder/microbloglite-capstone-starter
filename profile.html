@@ -9,43 +9,38 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="index.html">
-            <img src="images/ask matt-1.png" alt="logo" height="80" width="100"
-                        class="d-inline-block align-text-top">
+            <img src="images/ask matt-1.png" alt="logo" height="80" width="100" class="d-inline-block align-text-top">
         </a>
     
-            <ul class="navbar-nav ms-auto">
-                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                       aria-controls="offcanvasNavbar">
-                        <img src="images/profile.png" alt="Profile Picture" class="profile-picture">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    
+        <ul class="navbar-nav ms-auto">
+            <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <img src="images/profile.png" alt="Profile Picture" class="profile-picture">
+            </a>
+        </ul>
     </nav>
     
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="btn" href="profile.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn" href="registration.html">Make An Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn" href="posts.html">Ask Matt!</a>
-              </li>
-            <li class="nav-item">
-                <a class="btn" href="index.html">Logout</a>
-              </li>
-          </ul>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="btn" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="registration.html">Make An Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="posts.html">Ask Matt!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn" href="index.html">Logout</a>
+                </li>
+            </ul>
         </div>
-      </div>
+    </div>
 
     <div class="container">
         <div class="card profile-header">
@@ -58,8 +53,8 @@
                         <h5 class="card-title" id="name">Virgil Abloh</h5>
                         <p class="card-text">Birthdate: <span id="birthdate">January 1, 1990</span></p>
                         <p class="card-text">Email: <span id="email">virgilabloh@gmail.com</span></p>
-                        <button class="btn btn-primary" id="editButton" onclick="enableEdit()">Edit</button>
-                        <button class="btn btn-primary" id="saveButton" onclick="saveChanges()" style="display: none;">Save</button>
+                        <button class="btn btn-warning" id="editButton" onclick="enableEdit()">Edit</button>
+                        <button class="btn btn-warning" id="saveButton" onclick="saveChanges()" style="display: none;">Save</button>
                     </div>
                 </div>
             </div>
@@ -67,7 +62,7 @@
 
         <div class="search-form">
             <input type="date" class="search-input" id="commentDate" />
-            <button class="btn btn-primary" onclick="searchComments()">Search</button>
+            <button class="btn btn-warning" onclick="searchComments()">Search</button>
         </div>
 
         <div class="card profile-comments">
