@@ -17,7 +17,7 @@ window.onload = function () {
   loginData = getLoginData();
 
   console.log("Page is loading....");
-  logoutBtn.onclick = logoutBtnClicked;
+  //logoutBtn.onclick = logoutBtnClicked;
    //commentBtn.onclick = commentBtnClicked;
   //createPostsBtn.onclick = createPostsBtnClicked;
 createNewPostBtn.onclick = createNewPost;
