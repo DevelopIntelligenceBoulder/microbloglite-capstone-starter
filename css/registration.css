@@ -75,14 +75,14 @@ body {
   --bs-btn-disabled-border-color: orange;
 }
 
-.gif{
-    z-index: -3;
-    position: absolute;
-    min-height: 10%;
-    min-width: 100%;
-    left: 50%;
-    top: 50%;
-    transform:translate(-50%,-50%)
+.gif {
+  z-index: -3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 #registerTitle {
