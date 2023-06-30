@@ -228,8 +228,9 @@ h6 {
   border-radius: 50%;
 }
 
-.grid_5 h6 {
+.grid_5 h4 {
   color: #fff;
+  font-family: 'Belleza', sans-serif;
   font-style: italic;
   font-weight: normal;
   text-align: center;
@@ -295,4 +296,3 @@ h6 {
   text-align: center;
 }
 
-/* END FOOTER */
