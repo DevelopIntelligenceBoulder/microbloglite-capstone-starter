@@ -68,7 +68,7 @@ header{
 }
 
 #img1 {
-  background-image: url(/img/vectorgalaxy.jpg);
+  background-image: url(img\vectorgalaxy.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -76,7 +76,7 @@ header{
 }
 
 #img2 {
-  background-image: url(/img/vectorgalaxy.jpg);
+  background-image: url(img\vectorgalaxy.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -84,7 +84,7 @@ header{
 }
 
 #img3 {
-  background-image: url(/img/vectorgalaxy.jpg);
+  background-image: url(img\vectorgalaxy.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
