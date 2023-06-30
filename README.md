@@ -26,4 +26,7 @@ Practice and experimentation provide experience, and experience provides confide
 
 A class is added/removed to visually reperesent if the post is liked. A function printLikes is also called to get an accurate count of likes.
 
+-Andrew: The code i found the most interesting was figuring out how to see more than the default 100 posts from users on the posts page. As a group, we had a difficult time figuring out how to see more than 100 posts until we realized we had to set the query parameter list to 2000. 
+fetch(apiBaseURL + "/api/posts?limit=2000", options)
+    .then((response) => response.json())
 ## And another section here
