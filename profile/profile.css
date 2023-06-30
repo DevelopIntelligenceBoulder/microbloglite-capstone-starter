@@ -5,8 +5,8 @@
     src: url(../fonts/Montserrat-Italic-VariableFont_wght.ttf);
     font-family: "Open Sans";
     src: url(../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
-  }
-  
+}
+
 
 body {
     background-image: url(../assets/thomas-yohei-BAlBUJb-SXQ-unsplash.jpg);
@@ -56,15 +56,18 @@ main {
 
 @media screen and (min-width: 1000px) {
     #profileName {
-      margin-left: 6rem;
+        margin-left: 6rem;
     }
-  }
+}
 
 .card {
     background-color: rgba(0, 0, 0, 0.565);
     color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-color: rgb(255, 255, 255);
-    border-width: 2px;  
+    border-width: 2px;
     border-radius: 20px;
 }
 
@@ -77,25 +80,29 @@ main {
         margin: 3rem;
     }
 }
+
 .emailHashHolder {
     position: absolute;
     top: 28%;
 }
+
 .userEmail {
     position: absolute;
     top: 23%;
 }
 
-.userEmail, .emailHashHolder {
+.userEmail,
+.emailHashHolder {
     z-index: 9;
 }
- 
+
 .emailIcon {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 8px;
 }
+
 .infoBtn {
     width: fit-content;
     display: flex;
@@ -103,24 +110,31 @@ main {
     top: 0%;
 
 }
+
 .infoBtn:hover {
     cursor: pointer;
 }
+
 .infoBtn svg {
     width: 15px;
     height: fit-content;
 
 }
-.userInpt, .emailHashHolder {
+
+.userInpt,
+.emailHashHolder {
     display: flex;
     align-items: center;
     width: 300px;
     gap: 5px;
 }
+
 .btnDiv {
     margin-top: 12px;
 }
-.userInpt #emailBtn, .emailHashHolder button {
+
+.userInpt #emailBtn,
+.emailHashHolder button {
     border: none;
     border-radius: 4px;
     background-color: #fff;
@@ -129,17 +143,26 @@ main {
     padding: 1px 5px;
     transition: all 0.5s;
 }
+
+.fa{
+    margin:5px;
+}
+
 .userInpt #emailBtn:hover {
     background-color: rgba(245, 245, 245, 0.74);
 }
+
 .emailInput, #emailHash {
     width: 80%;
 }
 
 @media screen and (max-width: 768px) {
-    .emailInput, #emailHash {
+
+    .emailInput,
+    #emailHash {
         width: 100%;
-    } 
+    }
+
     .userInpt {
         display: grid;
         width: 100%;
@@ -154,54 +177,62 @@ main {
         top: -20px;
     }
 
+
 }
+
 #userMessage {
     margin: 0;
     position: relative;
     left: 20px;
     background-color: rgba(0, 128, 145, 0.801);
-    padding:0 5px;
+    padding: 0 5px;
     color: #fff;
     border-radius: 5px;
 }
+
 .hide {
     display: none !important;
-}
-.editProfile {
-    border-radius: 4px;
-    border: none;
 }
 
 .slideDown {
     animation: slideDown 0.5s ease forwards 1;
-  }
-  @keyframes slideDown {
-      from {opacity: 0; transform: translateY(-10%);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-  
+}
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
 
-  /* image */
-  .userImg {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* image */
+.userImg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
     width: 100%;
     border-radius: 10px;
-  }
+}
+
 .ppHolder {
     width: 200px;
     height: 200px;
     background-color: white;
     border-radius: 10px;
 }
+
 .topProfileHolder {
-    padding:0 15px;
+    padding: 0 15px;
 
 }
 
-#hashAvail, #hashUnavail{
+#hashAvail,#hashUnavail {
     position: absolute;
     top: 110%;
-    background-color: rgb(24, 24, 24);
     padding: 1px 5px;
 }
-
