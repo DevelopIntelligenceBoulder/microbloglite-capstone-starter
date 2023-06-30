@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreatePost</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="./profile.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("/");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Logo</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../posts/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../profile/index.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container-fluid container-md">
+        <div>
+          <h3>User: <span id="username"></span></h3>
+          <h5>Full Name: <span id="name"></span></h5>
+          <h5>Bio:</h5>
+          <p id="profileBio"></p>
+          <button type="button" class="btn btn-primary bg-primary" id="profile">
+            Update Profile
+          </button>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <form
+              action="#"
+              method="post"
+              class="admin-form md-box"
+              enctype="multipart/form-data"
+            >
+              <h1 class="center form-title">Create a New Post</h1>
+              <ul class="form-errors">
+                <li>Title required</li>
+                <li>Topic required</li>
+              </ul>
+              <div class="input-group">
+                <label for="title" class="form-lable">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  class="input-control form-control"
+                />
+              </div>
+              <div class="input-group">
+                <label for="post-editor" class="form-label">Body</label>
+                <textarea
+                  name="body"
+                  id="post-editor"
+                  class="input-control form-control"
+                ></textarea>
+              </div>
+              <div class="post-details">
+                <div class="select-topic-wrapper">
+                  <div class="input-group">
+                    <label for="topic" class="form-label">Topic</label>
+                    <select
+                      name="topic_id"
+                      id="topic"
+                      class="input-control form-control"
+                    >
+                      <option>Choose one...</option>
+                      <option value="Journaling">Journaling</option>
+                      <option value="Life Lesson">Life Lesson</option>
+                      <option value="Motivational">Motivational</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="published" class="form-check-label">
+                    <input
+                      type="checkbox"
+                      name="published"
+                      id="published"
+                      class="form-check-label"
+                    />
+                    Publish
+                  </label>
+                </div>
+                <div class="input-group">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg bg-primary"
+                  >
+                    Post
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./profile.js"></script>
+  </body>
+</html>

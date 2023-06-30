@@ -1,0 +1,33 @@
+
+/* Registration.css */
+]
+
+body {
+    background-color: #f2f2f2;
+  }
+  
+  h1 {
+    color: teal;
+  }
+  
+  /* Additional styling for the form elements */
+  
+  .form-lable {
+    color: teal;
+  }
+  
+  .form-control {
+    background-color: white;
+    color: teal;
+  }
+  
+  .btn-primary {
+    background-color: teal;
+    border-color: teal;
+  }
+  
+  .btn-primary:hover {
+    background-color: darkcyan;
+    border-color: darkcyan;
+  }
+  
