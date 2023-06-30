@@ -27,6 +27,13 @@ const loginData = getLoginData();
 //
 //
 //
+window.addEventListener("load", function noahBtn() {
+  const noahImg = document.createElement("img");
+  noahImg.src = "../images/noah.png";
+  noahImg.alt = "Noah Post";
+  postBtnEl.appendChild(noahImg);
+  console.log(postBtnEl);
+});
 
 window.addEventListener("load", function getUserInfo() {
   const options = {

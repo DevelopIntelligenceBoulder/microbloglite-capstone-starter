@@ -54,12 +54,14 @@
 }
 
 #postBtn {
-  margin-left: 10pt;
+  margin-bottom: 10pt;
+
   border-radius: 5px;
   border-style: none;
-  width: 40pt;
-  height: 20pt;
-  background-color: #ef4670;
+  width: fit-content;
+  height: fit-content;
+  background-color: #ef467000;
+
 }
 
 .card {
@@ -84,7 +86,8 @@
 
 #postCards {
   display: flex;
-  flex-direction: column-reverse;
+
+  flex-direction: column;
 }
 
 .card {
@@ -95,6 +98,33 @@
 nav {
   background-color: #f5f3e3;
 }
+
+#pageBtm {
+  background-color: #5a030300;
+}
+.pagination {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+#previousPage {
+  text-align: center;
+  width: 100px;
+  color: #5a0303;
+  font-size: larger;
+  margin-right: 5px;
+  border: solid 3px #5a0303;
+  background-color: #f5f3e3;
+}
+#nextPage {
+  text-align: center;
+  width: 100px;
+  color: #5a0303;
+  font-size: larger;
+  margin-left: 5px;
+  border: solid 3px #5a0303;
+  background-color: #f5f3e3;
+
 
 .button {
   background: rgba(249, 228, 232, 0);
@@ -133,4 +163,5 @@ nav {
   display: block;
   margin-left: auto;
   margin-right: auto;
+
 }
