@@ -1,37 +1,26 @@
-/* Posts Page CSS */
-/* .admin-form{
-    margin: 20px auto;
-    background-color: rgba(90, 91, 91, 0.174);
-    border-radius: 5px;
-    padding: 20px;
-} */
-
-.input-group {
-    margin-bottom: 16px;
-}
-
-/* .input-group label{
-    display: block;
-    margin-bottom: 8px;
-} */
-
-.input-control {
-    display: block;
-    width: 80%;
-    font-size: 1.1rem;
-    color: black;
-    background-color: white;
-    line-height: 1.6rem;
-    padding: 0.75rem 1rem;
-    border-radius: 5px;
-    height: 52px;
-}
+/* Profile Page CSS */
 
 body {
-    background-color: #f2f2f2;
+    background-color: lightgrey;
+  }
+  
+  .admin-form,
+  .navbar-brand,
+  .navbar-nav .nav-link,
+  .page-content h1,
+  .form-title,
+  .input-group label,
+  .input-group input,
+  .input-group textarea,
+  .select-topic-wrapper label,
+  .select-topic-wrapper select,
+  .post-details label {
     color: teal;
   }
-.card {
-    background-color: #f2f2f2;
-    color: teal;
+  
+  .btn-primary,
+  .btn-primary:hover {
+    background-color: teal;
+    border-color: teal;
   }
+  
