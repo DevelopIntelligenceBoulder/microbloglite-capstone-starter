@@ -37,7 +37,6 @@ function getLoginData() {
     fetchUserProfile();
     
     function toggleEdit() {
-      getUser(userName.value)
       isEditing = !isEditing;
   
       fullName.disabled = !isEditing;
