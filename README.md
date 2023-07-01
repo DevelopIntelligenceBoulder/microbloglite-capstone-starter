@@ -10,7 +10,7 @@ A project that completed in week where the team was tasked with creating a mock 
 - Karmon Gibson
 - Ahkeem Kelly
 
-* Below are each of the pages with their respective features. 
+** Below are each of the pages with their respective features. **
 
 ## Registartion page
 
