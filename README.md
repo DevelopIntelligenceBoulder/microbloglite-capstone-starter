@@ -16,7 +16,7 @@ A project that completed in week where the team was tasked with creating a mock 
 
 The initial page has the user create an account with a username, fullname and password and email address.
 
-![Registartion-Page](/screenshots/registration.png)
+![Registartion-Page](/screenshots/regis.png)
 
 ## Login Page
 
