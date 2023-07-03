@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css" />
+    <link rel="stylesheet" href="../posts/posts.css" />
 
     <title>Posts</title>
     <link
@@ -35,7 +35,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
-      if (isLoggedIn() === false) window.location.replace("/");
+      if (isLoggedIn() === false) window.location.replace("../index.html");
     </script>
     <link rel="stylesheet" href="../posts/posts.css" />
   </head>
@@ -46,11 +46,11 @@
       <!-- ------------------------------------------------------------------------------------------------- -->
       <nav class="navbar fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/posts/index.html?pageNumber=1">
+          <a class="navbar-brand" href="../posts/index.html?pageNumber=1">
             <div class="imgWrap">
               <img
                 class="imgNavbar"
-                src="/images/transparent-color-fuel-the-flame.png"
+                src="../images/transparent-color-fuel-the-flame.png"
                 alt="Logo"
                 width="40"
                 height="40"
@@ -60,9 +60,9 @@
           </a>
           <div class="gggImg">
 
-            <a class="navbar-item" href="/posts/index.html?pageNumber=1">
+            <a class="navbar-item" href="../posts/index.html?pageNumber=1">
 
-              <img src="/images/GGG.png" alt="GGG" width="300" />
+              <img src="../images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
           <button
@@ -104,15 +104,15 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/profile/profile.html"
+                  <a class="nav-link" href="./profile.html"
                     >My Profile</a
                   >
                 </li>
               </ul>
               <div class="special">
-                <a href="/specialmoment/specialmoment.html"
+                <a href="../specialmoment/specialmoment.html"
                   ><img
-                    src="/images/lord-calcifer-frame.png"
+                    src="../images/lord-calcifer-frame.png"
                     alt="LC"
                     class="LC"
                 /></a>

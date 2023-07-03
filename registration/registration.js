@@ -4,8 +4,6 @@ const passwordInputEl = document.getElementById("passwordInput");
 const fullnameInputEl = document.getElementById("fullnameInput");
 const registerBtnEl = document.getElementById("registerBtn");
 
-// registerBtnEl.onclick = register;
-
 registerBtnEl.addEventListener("click", () => {
   let bodyData = {
     username: usernameInputEl.value,
