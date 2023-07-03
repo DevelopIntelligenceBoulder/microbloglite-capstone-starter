@@ -31,7 +31,7 @@
     <script>
       if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
-    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="./landing.css" />
   </head>
   <body class="body">
     <!-- ------------------------------------------------------------------------------------------------- -->
@@ -42,7 +42,7 @@
             <div class="imgWrap">
               <img
                 class="imgNavbar"
-                src="/images/transparent-color-fuel-the-flame.png"
+                src="./images/transparent-color-fuel-the-flame.png"
                 alt="Logo"
                 width="40"
                 height="40"
@@ -52,7 +52,7 @@
           </a>
           <div class="gggImg">
             <a class="navbar-item" href="#">
-              <img src="/images/GGG.png" alt="GGG" width="300" />
+              <img src="./images/GGG.png" alt="GGG" width="300" />
             </a>
           </div>
           <button
@@ -89,25 +89,26 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"> Login </a>
+                  <a class="nav-link" href="./index.html"> Login </a>
                 </li>
                 <li class="nav-item">
-
-
-                  <a class="nav-link" href="/registration/registration.html"> Register </a>
+                  <a class="nav-link" href="./registration/registration.html">
+                    Register
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts/index.html"> Posts </a>
-
+                  <a class="nav-link" href="./posts/index.html"> Posts </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/profile/profile.html"> Profile </a>
+                  <a class="nav-link" href="./profile/profile.html">
+                    Profile
+                  </a>
                 </li>
               </ul>
               <div class="special">
-                <a href="/specialmoment/specialmoment.html"
+                <a href="./specialmoment/specialmoment.html"
                   ><img
-                    src="/images/lord-calcifer-frame.png"
+                    src="./images/lord-calcifer-frame.png"
                     alt="LC"
                     class="LC"
                 /></a>
@@ -128,7 +129,7 @@
       <div class="row">
         <div class="notenoah col-sm-3">
           <img
-            src="/images/messgae-noah-hp.png"
+            src="./images/messgae-noah-hp.png"
             alt="MessageFromLC"
             class="noahfrom"
             id="noahfrom"
@@ -137,7 +138,7 @@
         <div class="col-sm-9">
           <button type="button" onclick="show()" id="btnImgScroll">
             <img
-              src="/images/scroll-with-stamp.png"
+              src="./images/scroll-with-stamp.png"
               alt="scroll"
               class="imgScroll"
             />
@@ -153,7 +154,7 @@
           function show() {
             document.getElementById("login").style.display = "none";
             let letter = document.getElementById("letter");
-            letter.src = "images/lord-calcifer-letter.png";
+            letter.src = "./images/lord-calcifer-letter.png";
             document.getElementById("btnImgScroll").style.display = "none";
             document.getElementById("noahfrom").style.display = "none";
           }
@@ -173,7 +174,7 @@
     <main class="loginMain">
       <form id="login">
         <img
-          src="/images/login-header.png"
+          src="./images/login-header.png"
           alt="loginheader"
           class="logheader"
         />
@@ -192,7 +193,9 @@
         </div>
         <p class="signUpNow">
           Not an Informant?
-          <a class="regLink" href="registration/registration.html">Sign up!</a>
+          <a class="regLink" href="./registration/registration.html"
+            >Sign up!</a
+          >
         </p>
       </form>
       <!-- -----hides form on load until scroll is clicked----- -->
