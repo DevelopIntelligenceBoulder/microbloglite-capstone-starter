@@ -87,7 +87,7 @@ window.addEventListener("load", function getPosts() {
             .then((response) => response.json())
             .then((data) => {
               console.log(data);
-              window.location.href = "/profile/profile.html";
+              window.location.href = "./profile.html";
             });
         });
       });
@@ -113,7 +113,7 @@ updateBtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       alert("Updated");
-      window.location.assign("/profile/profile.html");
+      window.location.assign("./profile.html");
     });
 });
 
@@ -134,6 +134,6 @@ postBtnEl.addEventListener("click", () => {
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
-      window.location.assign("/profile/profile.html");
+      window.location.assign("./profile.html");
     });
 });

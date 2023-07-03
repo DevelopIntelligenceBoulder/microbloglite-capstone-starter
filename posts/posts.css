@@ -1,6 +1,6 @@
 /* Posts Page CSS */
 .bodyNav {
-  background-image: url("/images/background-flame.png");
+  background-image: url("../images/background-flame.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

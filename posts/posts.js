@@ -58,12 +58,12 @@ window.addEventListener("load", function sortPost() {
       const sorting = sortedPosts.slice(startOff, endOff);
 
       const nextPageNumber = +pageNumber + 1;
-      nextPageEl.href = `/posts/index.html?pageNumber=${nextPageNumber}`;
+      nextPageEl.href = `./index.html?pageNumber=${nextPageNumber}`;
       if (+pageNumber === 1) {
         document.querySelector("#previousPage").style.visibility = "hidden";
       } else {
         const previousPageNumber = pageNumber - 1;
-        previousPageEl.href = `/posts/index.html?pageNumber=${previousPageNumber}`;
+        previousPageEl.href = `./index.html?pageNumber=${previousPageNumber}`;
       }
 
       sorting.forEach((post) => {
@@ -116,7 +116,7 @@ window.addEventListener("load", function sortPost() {
               .then((response) => response.json())
               .then((data) => {
                 window.location.assign(
-                  `/posts/index.html?pageNumber=${pageNumber}`
+                  `./posts/index.html?pageNumber=${pageNumber}`
                 );
               });
           });
@@ -141,9 +141,7 @@ window.addEventListener("load", function sortPost() {
             fetch(url, options)
               .then((response) => response.json())
               .then((data) => {
-                window.location.assign(
-                  `/posts/index.html?pageNumber=${pageNumber}`
-                );
+                window.location.assign(`./index.html?pageNumber=${pageNumber}`);
               });
           });
         }
@@ -168,6 +166,6 @@ postBtnEl.addEventListener("click", () => {
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
-      window.location.assign(`/posts/index.html?pageNumber=1`);
+      window.location.assign(`./index.html?pageNumber=1`);
     });
 });
