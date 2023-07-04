@@ -1,1 +1,28 @@
 /* Landing Page CSS */
+
+.col, .pass{
+font-weight: bold;
+}
+
+.jumbotron {
+  height:100%;
+  width:100%;
+}
+.container {
+  width:1025px;
+}
+.jumbotron .container {
+  max-width: 100%;
+} 
+
+.form-signin {
+  text-align: right;
+}
+
+.bigPara, .howTo .subTitle{
+  text-align: left;
+}
+
+.pageTitle {
+  text-align: center;
+}
