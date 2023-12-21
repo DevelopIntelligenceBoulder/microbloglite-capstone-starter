@@ -2,6 +2,7 @@
 if (!isLoggedIn()) {
     window.location.replace("/index.html");
 }
+// const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
 function logoutAndRedirect(){
     logout();
@@ -28,11 +29,11 @@ function createPost (){
         }),
     };
     // note the api variable is defined in auth.js
-    fetch(api + "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", options)
     .then(response => response.json())
     .then(users => {
         // Do something with created post...
-        console.log(post);
+        console.log(users);
 
         alert('Post created successfully!');
 
