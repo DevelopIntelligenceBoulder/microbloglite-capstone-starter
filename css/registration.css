@@ -1,0 +1,34 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.card {
+    width: 400px; /* Adjust the width as needed */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars on the body */
+}
+
+.scroll-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Optional background color */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents images from wrapping to the next line */
+}
+
+.scroll-container img {
+    max-height: 100px; /* Set a maximum height for the images */
+    margin-right: 10px; /* Optional margin between images */
+}
