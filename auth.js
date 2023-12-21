@@ -81,3 +81,15 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page
         });
 }
+
+export {
+
+    getLoginData,
+    
+    isLoggedIn,
+    
+    login,
+    
+    logout
+    
+    }
