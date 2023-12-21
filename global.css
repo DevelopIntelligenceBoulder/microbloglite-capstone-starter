@@ -1,18 +1,99 @@
 /* Global CSS for all pages */
 
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
-    box-sizing: border-box;
+  /* Sizing helper: See Workbook 1b, page 2-33. */
+  box-sizing: border-box;
 
-    /* 
+  /* 
        Vizualization helper: While styling or debugging your HTML & CSS, 
        uncomment the rule below to see all the boxes on your page more
        clearly! (Remove this outline before submitting: users won't 
        want to see it!)
     */
-    /* outline: 1px dotted red; */
+  /* outline: 1px dotted red; */
 }
 
 :root {
-    font-size: 1rem;
+  font-size: 1rem;
+
+  --ivory: #fffefb;
+  --skyBlue: #71c4ef;
+  --darkCerulean: #00668c;
+  --almostBlack: #1d1c1c;
+  --lightGray: #cccbc8;
+  --charcoal: #3b3c3d;
+  --powderBlue: #d4eaf7;
+}
+
+.ivory {
+  background-color: var(--ivory) !important;
+}
+
+.text-ivory {
+  color: var(--ivory) !important;
+}
+
+.skyBlue {
+  background-color: var(--skyBlue) !important;
+}
+
+.text-skyBlue {
+  color: var(--skyBlue) !important;
+}
+
+.darkCerulean {
+  background-color: var(--darkCerulean) !important;
+}
+
+.text-darkCerulean {
+  color: var(--darkCerulean) !important;
+}
+
+.almostBlack {
+  background-color: var(--almostBlack) !important;
+}
+
+.text-almostBlack {
+  color: var(--almostBlack) !important;
+}
+
+.lightGray {
+  background-color: var(--lightGray) !important;
+}
+
+.text-lightGray {
+  color: var(--lightGray) !important;
+}
+
+.charcoal {
+  background-color: var(--charcoal) !important;
+}
+
+.text-charcoal {
+  color: var(--charcoal) !important;
+}
+
+.powderBlue {
+  background-color: var(--powderBlue) !important;
+}
+
+.text-powderBlue {
+  color: var(--powderBlue) !important;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: var(--skyBlue) !important;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+  background-color: var(--ivory) !important;
+}
+
+.btn-info, .btn-info:hover, .btn-info:active, .btn-info:visited {
+  background-color: #b6ccd8 !important;
 }
