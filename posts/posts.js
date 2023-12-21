@@ -4,7 +4,7 @@
 window.onload = () => {
     let cardContainer = document.getElementById("card-container");
     let loginData = getLoginData();
-    
+
 
 
     // Check if user is logged in
@@ -21,29 +21,45 @@ window.onload = () => {
             'Authorization': `Bearer ${loginData.token}`
         }
     })
-    .then((res) => res.json())
-    .then((posts) => {
-        if (Array.isArray(posts)) {
-            // Iterate through posts and display them
-            posts.forEach((post) => {
-                // Format the date
-                let formattedDate = new Date(post.createdAt).toLocaleString();
+        .then((res) => res.json())
+        .then((posts) => {
+            if (Array.isArray(posts)) {
+                // Iterate through posts and display them
+                posts.forEach((post) => {
+                    // Format the date
+                    let formattedDate = new Date(post.createdAt).toLocaleString();
 
-                cardContainer.innerHTML += `
-                    <div class="card-body">
-                        <h2 class="card-title" id="post-username">${post.username}</h2>
-                        <p class="card-text" id="content-text">${post.text}</p>
-                        <p class="card-date" id="post-created">${formattedDate}</p>
-                    </div>
+                    cardContainer.innerHTML += `
+                    <div class="col mb-4">
+                            <div class="card mb-3 custom-card">
+                                <div class="card-body">
+                                    <div class="card-header mb-3">
+                                        <h2 class="card-title" id="post-username">${post.username}</h2>
+                                    </div>
+                                    <p class="card-text" id="content-text">${post.text}</p>
+                                </div>
+                                <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <small id="post-created">${formattedDate}</small>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-outline-danger" id="like-button" onclick="handleLike('${post.id}')">
+                                            <i class="fas fa-heart"></i> Like
+                                        </button>
+                                        <span class="ms-2" id="like-count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 `;
-            });
-        } else {
-            console.error('Invalid response format.');
-        }
-    })
-    .catch((error) => {
-        console.error('Error fetching posts:', error);
-    });
+                });
+            } else {
+                console.error('Invalid response format.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching posts:', error);
+        });
 }
 
 function escapeHTML(text) {

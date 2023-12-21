@@ -1,1 +1,23 @@
 /* Posts Page CSS */
+h1 {
+    text-align: center;
+}
+main {
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.custom-card {
+    min-height: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+.card-header {
+    margin-bottom: 1rem;
+}
+.btn-like {
+    /* Add styles for your like button */
+    color: #dc3545; /* Bootstrap danger color */
+}
+.like-count {
+    margin-left: 0.5rem; /* Adjust the margin as needed */
+}

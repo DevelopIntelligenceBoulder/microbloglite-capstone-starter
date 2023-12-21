@@ -1,12 +1,12 @@
 :root {
-    font-size: 1rem;
-    --celadon: #b9d8c2;
-    --light-blue: #9ac2c9;
-    --cadet-gray: #8aa1b1;
-    --ebony: #4a5043;
-    --gunmetal: #2a2d34;
-  }
-  
+  font-size: 1rem;
+  --celadon: #b9d8c2;
+  --light-blue: #9ac2c9;
+  --cadet-gray: #8aa1b1;
+  --ebony: #4a5043;
+  --gunmetal: #2a2d34;
+}
+
 .form-control,
 .form-label {
   width: 100%;
@@ -24,19 +24,21 @@ code {
 }
 
 .register-card {
-    background-color: var(--celadon);
+  background-color: var(--celadon);
 }
 
 .btn-primary {
-    background-color: var(--cadet-gray);
-    border-color: var(--cadet-gray);
+  background-color: var(--cadet-gray);
+  border-color: var(--cadet-gray);
 }
 .btn-primary:first-of-type {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: var(--gunmetal);
-    border-color: var(--gunmetal);
-    color: var(--celadon);
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--gunmetal);
+  border-color: var(--gunmetal);
+  color: var(--celadon);
 }
