@@ -21,3 +21,7 @@
     --ebony: #4A5043;
     --gunmetal: #2A2D34;
 }
+
+body {
+    background-color: var(--light-blue);
+}

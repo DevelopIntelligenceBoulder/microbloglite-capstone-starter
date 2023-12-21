@@ -31,15 +31,16 @@
       <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
     </header>
 
-    <main>
-      <div class="container shadow p-4">
+    <main class="container">
+      <div class="shadow p-4 register-card">
         <div class="row">
           <div class="col">
-            <form id="register">
-              <h1 class="text-center"><code> Register</code></h1>
+            <form id="register form-group">
+              <h1 class="text-center text-uppercase"><code> Register</code></h1>
               <div id="innerText" class="innerText"></div>
-              <div class="row mb-3">
-                <label for="name" class="form-label">First Name</label>
+
+              <div class="form-group">
+                <label for="name" class="form-label row mb-2">First Name</label>
                 <input
                   type="text"
                   class="form-control"
@@ -49,8 +50,8 @@
                 />
               </div>
 
-              <div class="row mb-3">
-                <label for="username" class="form-label">Username</label>
+              <div class="form-group">
+                <label for="username" class="form-label row mb-2">Username</label>
                 <input
                   type="text"
                   class="form-control"
@@ -60,8 +61,8 @@
                 />
               </div>
 
-              <div class="row mb-3">
-                <label for="password" class="form-label">Password</label>
+              <div class="form-group">
+                <label for="password" class="form-label row mb-2">Password</label>
                 <input
                   type="password"
                   class="form-control"
@@ -71,8 +72,8 @@
                 />
               </div>
 
-              <div class="row mb-3">
-                <label for="confirmPassword" class="form-label"
+              <div class="form-group">
+                <label for="confirmPassword" class="form-label row mb-2"
                   >Confirm Password</label
                 >
                 <input
@@ -87,7 +88,7 @@
                 <button
                   id="registerButton"
                   type="submit"
-                  class="btn btn-primary"
+                  class="btn btn-primary mt-2"
                 >
                   Register
                 </button>
