@@ -1,1 +1,5 @@
 /* Posts Page CSS */
+.logo-container{
+    display: inline-block;
+    width: 100px;
+}
