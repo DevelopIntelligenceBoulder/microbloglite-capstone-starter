@@ -15,4 +15,13 @@
 
 :root {
     font-size: 1rem;
+    --celadon: #B9D8C2;
+    --light-blue: #9AC2C9;
+    --cadet-gray: #8AA1B1;
+    --ebony: #4A5043;
+    --gunmetal: #2A2D34;
+}
+
+body {
+    background-color: var(--light-blue);
 }

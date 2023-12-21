@@ -1,1 +1,47 @@
 /* Landing Page CSS */
+:root {
+  font-size: 1rem;
+  --celadon: #b9d8c2;
+  --light-blue: #9ac2c9;
+  --cadet-gray: #8aa1b1;
+  --ebony: #4a5043;
+  --gunmetal: #2a2d34;
+}
+
+body {
+  background-color: var(--light-blue);
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin: 2em 0;
+}
+
+header code {
+  color: var(--ebony);
+}
+
+.landing-card {
+  background-color: var(--celadon);
+}
+
+.btn-primary {
+    background-color: var(--cadet-gray);
+    border-color: var(--cadet-gray);
+    margin: 0 auto;
+}
+.btn-primary:first-of-type {
+    margin-right: 1em;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: var(--gunmetal);
+    border-color: var(--gunmetal);
+    color: var(--celadon);
+}
+
+.checkbox {
+    margin: .5em 0;
+    margin-left: -4.25em;
+}

@@ -1,9 +1,6 @@
 // Get the register form element
 const registerForm = document.getElementById('register');
 
-// Remove the unused confirmPasswordInput variable
-// const confirmPasswordInput = document.getElementById('confirmPassword');
-
 // Get the confirm password input element
 const confirmPasswordInput = document.getElementById('confirmPassword');
 
@@ -27,22 +24,22 @@ registerForm.addEventListener('submit', async (e) => {
         return; // Stop the registration process
     }
 
-    // Check if the username is at least 3 characters long
+    // Checks if the username is at least 3 characters long
     if (usernameInput.value.length < 3) {
         // Display error message for username length
         const innerText = document.getElementById('innerText');
         innerText.textContent = 'Username must be at least 3 characters long.';
-        return; // Stop the registration process
+        return;
     }
 
-    // Create a new user object
+    // Creates a new user object
     const newUser = {
         fullName: nameInput.value,
         username: usernameInput.value,
         password: passwordInput.value,
     };
 
-    // Perform the fetch request to register the new user
+    // Performs a fetch request to register the new user
     try {
         const response = await fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users', {
             method: 'POST',
@@ -53,10 +50,10 @@ registerForm.addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
-            // Registration successful, redirect to login page
+            // If registration is successful, redirect to login page
             window.location.href = '../index.html';
         } else {
-            // Registration failed, display error message
+            // If registration failed, display error message
             const error = await response.json();
             console.error(error);
             // Display the error message in the innerText element

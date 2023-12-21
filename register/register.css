@@ -1,6 +1,42 @@
+:root {
+    font-size: 1rem;
+    --celadon: #b9d8c2;
+    --light-blue: #9ac2c9;
+    --cadet-gray: #8aa1b1;
+    --ebony: #4a5043;
+    --gunmetal: #2a2d34;
+  }
+  
 .form-control,
 .form-label {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin: 2em 0;
+}
+
+code {
+  color: var(--ebony);
+}
+
+.register-card {
+    background-color: var(--celadon);
+}
+
+.btn-primary {
+    background-color: var(--cadet-gray);
+    border-color: var(--cadet-gray);
+}
+.btn-primary:first-of-type {
+    margin-right: 1em;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: var(--gunmetal);
+    border-color: var(--gunmetal);
+    color: var(--celadon);
 }
