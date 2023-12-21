@@ -37,79 +37,35 @@
     <!-- Nav Bar -->
     <nav>
       <div class="nav-left">
-        <a href=""><img src="images/logo.png" class="logo" /></a>
-        <ul>
-          <li><img src="images/notification-30.png" /></li>
-          <li><img src="images/icons8-inbox-30.png" /></li>
-          <!-- <li><img src="images/icons8-video-24.png" /></li> -->
-        </ul>
-      </div>
-      <div class="nav-right">
-        <div class="search-box">
-          <img src="images/icons8-search-50.png" />
-          <input type="text" placeholder="Search" />
+            <a href=""><img src="images/logo.png" class="logo" /></a>
+            <ul>
+                <li><img src="images/notification-30.png" /></li>
+                <li><img src="images/icons8-inbox-30.png" /></li>
+                <!-- <li><img src="images/icons8-video-24.png" /></li> -->
+            </ul>
         </div>
-
-        <div class="nav-user-icon online">
-          <img src="images/test-account-30.png" />
-        </div>
-      </div>
-
-<!-- Settings Menu -->
-      <div class="settings-menu">
-            <div id="dark-btn" class="dark-btn-on">
-            <span></span>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/icons8-search-50.png" />
+                <input type="text" placeholder="Search" />
             </div>
 
-            <div class="settings-menu-inner">
-                <div class="user-profile">
-                    <img
-                    src="https://i.pinimg.com/originals/bb/30/32/bb30326dda4f8240abb3ac64b4804583.png"
-                    />
-                    <div>
-                    <p>Brandon Nicholson</p>
-                    <a href="#"> See your profile</a>
-                    <small>Public </small>
-                    </div>
+            <div class="nav-user-dropdown">
+                <div class="nav-user-icon online" onclick="toggleDropdown()">
+                    <!-- Account Image -->
+                    <img src="images/test-account-30.png" />
                 </div>
-                <hr />
-                <div class="user-profile">
-                    <img src="images/feedback.png" />
-                    <div>
-                    <p>Give Feedback</p>
-                    <a href="#"> Help us Improve on designs</a>
-                    <small>Public </small>
-                    </div>
-                </div>
-                <hr />
-
-                <div class="settings-links">
-                    <img src="images/setting.png" class="settings-icon" />
-                    <a href="#"
-                    >Settings & Privacy <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/help.png" class="settings-icon" />
-                    <a href="#"
-                    >Help & Support <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/display.png" class="settings-icon" />
-                    <a href="#"
-                    >Display & Accessibility <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/logout.png" class="settings-icon" />
-                    <a href="#">Logout <img src="images/arrow.png" width="10px" /></a>
+                <div class="dropdown-content" id="dropdownContent">
+                    <!-- Dropdown content  -->
+                    <a href="#">Settings</a>
+                    <a href="#">Account</a>
+                    <a href="#"></a>
                 </div>
             </div>
-      </div>
+        </div>
+
+        <!-- Settings Menu -->
+      
     </nav>
     <header>
       <h1>POSTS PAGE</h1>
