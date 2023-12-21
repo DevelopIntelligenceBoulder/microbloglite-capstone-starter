@@ -11,9 +11,11 @@ function createPost (){
     };
     // note the api variable is defined in auth.js
     fetch(api + "/api/users", options)
-    .then(response => response.json());
+    .then(response => response.json())
     .then(users => {
         // Do something with users array...
         console.log(users);
     });
 }
+
+
