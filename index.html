@@ -19,7 +19,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css">
 
-    <title>Login to the Microblog Network!</title>
+    <title>Login to the Nature Nook Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
@@ -28,25 +28,67 @@
     </script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <!-- <img src="" alt="Nature's Nook Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16">
+                    <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
+                  </svg>
+                Nature's Nook
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Nature's Nook</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./registration/index.html">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./posts/index.html">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./profile/profile.html">Profile</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <h1>Welcome to <code>Nature's Nook</code></h1>
     </header>
 
     <main>
 
-        <form id="login">
-            <div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi qui pariatur eveniet asperiores dolore quae quod cupiditate obcaecati odit! Facilis culpa quaerat repellendus? Vel aliquam quae ab enim illum consectetur.</p>
+        </div>
+
+
+        <form id="login" class="container">
+            <div class="mb-3">
                 <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+                <input type="text" id="username" class="form-control col-6" minlength="3">
             </div>
 
-            <div>
+            <div class="mb-3">
                 <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
+                <input type="password" id="password" class="form-control col-6" minlength="6">
             </div>
 
-            <button id="loginButton" type="submit">Login</button>
+            <button id="loginButton" type="submit" class="btn btn-light">Login</button>
         </form>
 
     </main>
