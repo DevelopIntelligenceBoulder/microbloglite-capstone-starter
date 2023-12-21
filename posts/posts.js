@@ -14,10 +14,10 @@ window.onload = () => {
         return;
     }
 
-    // get all posts
-    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts`, {
+    // GET method to retrieve posts
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+        method: "GET",
         headers: {
-            // Use the users token to retrieve posts
             'Authorization': `Bearer ${loginData.token}`
         }
     })
