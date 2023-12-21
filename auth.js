@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
+const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com/";
 // Backup server:   https://microbloglite.onrender.com
 
 // You can use this function to get the login data of the logged-in
@@ -28,7 +28,7 @@ function isLoggedIn () {
 // you may need to write.
 function login (loginData) {
     // POST /auth/login
-    const options = { 
+    const options = {
         method: "POST",
         headers: {
             // This header specifies the type of content we're sending.
@@ -58,9 +58,9 @@ function logout () {
     const loginData = getLoginData();
 
     // GET /auth/logout
-    const options = { 
+    const options = {
         method: "GET",
-        headers: { 
+        headers: {
             // This header is how we authenticate our user with the
             // server for any API requests which require the user
             // to be logged-in in order to have access.
@@ -74,7 +74,7 @@ function logout () {
         .then(data => console.log(data))
         .finally(() => {
             // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
+            // browser side of logging out (below) even if there is an
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
