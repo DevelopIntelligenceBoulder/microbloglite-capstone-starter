@@ -10,9 +10,24 @@
        clearly! (Remove this outline before submitting: users won't 
        want to see it!)
     */
-    /* outline: 1px dotted red; */
+    /* outline: 1px dotted black; */
 }
 
 :root {
     font-size: 1rem;
+}
+
+body{
+    background-color: #E8DFE0;
+    margin: 70px 20px;
+}
+.navbar-expand-lg{
+    background-color: #8d9b6ac4 !important;
+    /* backdrop-filter: blur(10px); */
+}
+.offcanvas{
+    background-color: #8d9b6a;
+}
+code{
+    color: #8D9B6A;
 }
