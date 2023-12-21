@@ -139,19 +139,32 @@ nav {
 
 /* Style for the post input container */
 .write-post-container {
-    max-width: 600px; /* Adjust the width as needed */
+    max-width: 600px; 
     margin: 0 auto;
+    margin-top: 75px;
     border: 2px solid #000;
     border-radius: 8px;
     padding: 10px;
-    background-color: #efefef;
+    background-color: white;
 }
 
-/* .post-input-container {
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 10px;
-} */
+#textArea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  resize: vertical;
+  text-align: center;
+}
+
+#textArea:focus {
+  outline: none;
+  border-color: #007bff;
+  
+}
 
 .post-input-container textarea {
   width: 100%;
