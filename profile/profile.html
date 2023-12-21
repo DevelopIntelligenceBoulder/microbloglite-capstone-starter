@@ -27,23 +27,25 @@
     </header>
     
     <main>
-        <form class="myForm">
+        <form id="post-form" class="myForm">
             <div class="blog">
                 <textarea type="text" class="title" placeholder="Post Title"></textarea>
                 <textarea type="text" class="article" placeholder="Start writing here"></textarea>
             </div>
+            <div class="blog-options">
+                <button type="submit" class="btn dark publish-btn">Publish</button>
+                <button id="logout" onclick="logoutAndRedirect()">Logout</button>
+            </div>
         </form>
 
-        <button id="logout">Logout</button>
-
-        <a href="/posts/index.html"></a>
+        <a href="/posts/index.html">Go to Posts</a>
     </main>
 
     <footer>
 
     </footer>
 
-    <button id="logout">Logout</button>
     <script src="/profile/profile.js"></script>
+    <script src="/auth.js"></script>
 </body>
 </html>
