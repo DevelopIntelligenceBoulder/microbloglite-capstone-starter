@@ -23,7 +23,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
     <script>
-        if (!isLoggedIn()) window.location.replace("/posts");
+        if (isLoggedIn()) window.location.replace("/posts");
     </script>
 </head>
 <body>
@@ -34,18 +34,31 @@
 
     <main>
 
-        <form id="login">
-            <div>
+        <form id="login" class="container shadow p-5">
+            <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" minlength="3">
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" minlength="6">
             </div>
 
-            <button id="loginButton" type="submit">Login</button>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="lsRememberMe" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                    Remember me
+                </label>
+            </div>
+
+            <div class="form-button">
+                <button id="loginButton" class="btn btn-primary" type="submit">Login</button>
+                <a href="./register/register.html">
+                    <button class="btn btn-primary" id="registerButton" type="button">Register</button>
+                </a>
+            </div>
+
         </form>
 
     </main>
