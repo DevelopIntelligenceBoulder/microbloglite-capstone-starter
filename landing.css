@@ -27,21 +27,23 @@ header code {
 }
 
 .btn-primary {
-    background-color: var(--cadet-gray);
-    border-color: var(--cadet-gray);
-    margin: 0 auto;
+  background-color: var(--cadet-gray);
+  border-color: var(--cadet-gray);
+  margin: 0 auto;
 }
 .btn-primary:first-of-type {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: var(--gunmetal);
-    border-color: var(--gunmetal);
-    color: var(--celadon);
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--gunmetal);
+  border-color: var(--gunmetal);
+  color: var(--celadon);
 }
 
 .checkbox {
-    margin: .5em 0;
-    margin-left: -4.25em;
+  margin: 0.5em 0;
+  margin-left: -4.25em;
 }
