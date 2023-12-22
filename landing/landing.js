@@ -3,16 +3,17 @@ window.onload = () => {
   else loginHandler();
 };
 
-function loginHandler(event) {
-  // Get and read login form
+function loginHandler() {
   const loginForm = document.querySelector("#login");
-  const loginData = {
-    username: loginForm.username.value,
-    password: loginForm.password.value,
-  };
 
   // Disable login button and process the login function in auth.js//
-  loginForm.submit = (event) => {
+  loginForm.onsubmit = (event) => {
+    // Get and read login form data
+    const loginData = {
+      username: loginForm.username.value,
+      password: loginForm.password.value,
+    };
+
     event.preventDefault();
     loginForm.loginButton.disabled = true;
     login(loginData);
