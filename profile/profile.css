@@ -1,0 +1,407 @@
+/* Resetting padding and border for the entire document */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Icons */
+.logo {
+  width: 36px;
+  margin-right: 45px;
+} 
+
+/* Search Bar */
+.search-box {
+  background: #efefef;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-box img {
+  width: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+}
+
+/* User Icon */
+.nav-user-icon {
+  margin-left: 30px;
+}
+
+.nav-user-icon img {
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #41db51;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* User Dropdown */
+.nav-user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+/* Nav Bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1876f2;
+  padding: 5px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-left ul li img {
+  width: 28px;
+  margin: 0 15px;
+}
+
+/* Content Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+
+/* Post Container */
+.write-post-container {
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+}
+
+#textArea {
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 8px;
+font-family: Arial, sans-serif;
+font-size: 14px;
+resize: vertical;
+text-align: center;
+}
+
+#textArea:focus {
+outline: none;
+border-color: #007bff;
+}
+
+.post-input-container textarea {
+width: 100%;
+box-sizing: border-box;
+border: none;
+resize: none;
+margin-bottom: 10px;
+padding: 20px;
+border-radius: 5px;
+}
+
+.add-post-links {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.add-post-links a {
+text-decoration: none;
+color: #333;
+display: flex;
+align-items: center;
+}
+
+.add-post-links img {
+width: 20px;
+height: 20px;
+margin-right: 5px;
+}
+
+.postButton {
+text-align: right;
+}
+
+.postButton button {
+padding: 8px 16px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: white;
+font-weight: bold;
+cursor: pointer;
+}
+
+.postButton button:hover {
+background-color: #0056b3;
+}
+
+/* Side-Bars */
+
+/* Left */
+ .left-sidebar {
+  flex-basis: 25%;
+  position: sticky;
+}
+
+.imp-links {
+  border-bottom: 1px solid #ccc;
+}
+
+ .imp-links a, .shortcut-links{ 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #626262;
+  width: fit-content;
+}
+
+.imp-links a img {
+  width: 25px;
+  margin-right: 15px;
+}
+
+.imp-links a:last-child {
+  color: #1876f2;
+}
+
+.shortcut-links a img {
+  width: 40px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.shortcut-links p {
+  margin: 25px 0;
+  color: #626262;
+  font-weight: 500;
+}
+
+/* Right */
+.right-sidebar {
+  flex-basis: 25%;
+  position: sticky;
+  margin-left: 46px;
+  height: 100vh;
+  align-self: flex-start;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  color: #626262;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.right-sidebar h4 {
+  font-weight: 600;
+   font-size: 16px;
+}
+
+.sidebar-title a {
+  text-decoration: none;
+  color: #1876f2;
+  font-size: 12px;
+}
+
+.event {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 20px; 
+}
+
+.left-event {
+  border-radius: 10px;
+  height: 65px;
+  width: 65px;
+  margin-right: 15px;
+  padding-top: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event p {
+  font-size: 12px;
+}
+
+.event a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #1876f2;
+}
+
+.left-event span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1876f2;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 0;
+}
+
+.sidebar-ads {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.online-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.online-list .online img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.online-list .online {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.online-list .online::after {
+  top: unset;
+  bottom: 5px;
+}
+
+
+/* Middle Content */
+
+.story-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.story {
+  flex-basis: 18%;
+  padding-top: 32%;
+  position: relative;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),url(images/status-1.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.story img {
+  position: absolute;
+  width: 45px;
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+  border: 3px solid #1876f2;
+}
+
+.story p {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.story1 {
+  background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/status-1.png);
+}
+
+.story2 {
+  background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/status-2.png);
+}
+
+.story3 {
+  background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/status-3.png);
+}
+
+.story4 {
+  background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/status-4.png);
+}
+
+.story5 {
+  background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/status-5.png);
+}
+
+.story.story1 img {
+  top: unset;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  border: 0;
+  width: 35px;
+}
+

@@ -15,7 +15,7 @@ loginForm.onsubmit = function (event) {
         username: loginForm.username.value,
         password: loginForm.password.value,
     }
-
+    console.log(loginData)
     // Disables the button after the form has been submitted already:
     loginForm.loginButton.disabled = true;
 
