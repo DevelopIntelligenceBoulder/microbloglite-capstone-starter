@@ -22,3 +22,22 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+// Function to get all users via fetch()
+function getAllUsers() {
+    //GET /api/users
+    const loginData= getLoginData();
+    const options = {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${loginData.token}`,
+        }
+    };
+    // note: the api variable is defined in auth.js
+    fetch(api+"/api/users", options)
+        .then(response => response.json());
+        .then(users =>{
+            //do something with the users aray...
+            console.log(users);
+        });
+}
+//window.location.replace(newURL) window.location.assign(newURL)
