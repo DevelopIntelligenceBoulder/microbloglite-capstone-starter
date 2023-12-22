@@ -11,7 +11,6 @@ function logoutAndRedirect(){
 }
 // Function to create post via fetch ()
 function createPost (){
-    // POST /api.users
 
     // Retrieve values from input fields
     const blogTitle = blogTitleField.value;
@@ -26,7 +25,7 @@ function createPost (){
     // Get login data fro authorization
     const loginData = getLoginData();
 
-
+    // POST request with headers and body
     const options = {
         method: "POST",
         headers: {
@@ -37,7 +36,7 @@ function createPost (){
             text: blogTitle + " " + article,
         }),
     };
-    // note the api variable is defined in auth.js. Sending POST request to create new post
+    // note the api variable is defined in auth.js. FETCH to send request to server
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
     .then(response => {
         if(!response.ok){
@@ -49,7 +48,7 @@ function createPost (){
         console.log(createdPostData);
 
         alert('Post created successfully!');
-
+        // Redirects 
         window.location.href="/posts/index.html";
     })
      .catch(error => {
