@@ -31,5 +31,8 @@
 
     <!-- Page-specific code -->
     <script src="/profile/profile.js"></script>
+    <script>
+        if (!isLoggedIn()) window.location.replace("/profile");
+    </script>
 </body>
 </html>
