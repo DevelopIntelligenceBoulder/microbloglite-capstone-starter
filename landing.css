@@ -1,1 +1,25 @@
 /* Landing Page CSS */
+
+.image-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 80vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-section {
+  display: none;
+  padding: 20px;
+}
+
+header {
+  margin-top: 50px;
+}
+
+main {
+  margin-top: 30px;
+}
