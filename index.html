@@ -28,7 +28,7 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <!-- <img src="" alt="Nature's Nook Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
@@ -57,7 +57,7 @@
                             <a class="nav-link" href="./posts/index.html">Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./profile/profile.html">Profile</a>
+                            <a class="nav-link" href="./profile/index.html">Profile</a>
                         </li>
                         
                     </ul>
@@ -66,32 +66,32 @@
         </div>
     </nav>
 
-    <header>
-        <h1>Welcome to <code>Nature's Nook</code></h1>
-    </header>
-
-    <main>
-
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi qui pariatur eveniet asperiores dolore quae quod cupiditate obcaecati odit! Facilis culpa quaerat repellendus? Vel aliquam quae ab enim illum consectetur.</p>
-        </div>
-
-
-        <form id="login" class="container">
-            <div class="mb-3">
-                <label for="username">Username</label>
-                <input type="text" id="username" class="form-control col-6" minlength="3">
+    <div class="hero-image p-3">
+        <main>
+            <div class="container pt-5 hero-text">
+                <div>
+                    <h1>Welcome to <code>Nature's Nook</code></h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi qui pariatur eveniet asperiores dolore quae quod cupiditate obcaecati odit! Facilis culpa quaerat repellendus? Vel aliquam quae ab enim illum consectetur.</p>
+                </div>
+        
+        
+                <form id="login" class="container p-3">
+                    <div class="mb-3">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control col-6" minlength="3">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control col-6" minlength="6">
+                    </div>
+        
+                    <button id="loginButton" type="submit" class="btn btn-light mb-3">Login</button>
+                </form>
             </div>
-
-            <div class="mb-3">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control col-6" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit" class="btn btn-light">Login</button>
-        </form>
-
-    </main>
+        </main>
+    </div>
+    
 
     <footer></footer>
 

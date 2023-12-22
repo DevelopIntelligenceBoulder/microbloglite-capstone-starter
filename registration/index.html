@@ -22,7 +22,7 @@
     <title>Register for the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
+    <script src="../auth.js"></script>
     <script>
         if (isLoggedIn()) window.location.replace("/posts");
     </script>
@@ -58,7 +58,7 @@
                             <a class="nav-link" href="../posts/index.html">Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../profile/profile.html">Profile</a>
+                            <a class="nav-link" href="../profile/index.html">Profile</a>
                         </li>
                         
                     </ul>
@@ -67,25 +67,30 @@
         </div>
     </nav>
 
-    <header>
-        <h1>Welcome to <code>Nature's Nook</code></h1>
-    </header>
-
     <main>
 
-        <form id="register" class="container">
-            <div class="mb-3">
-                <label for="username">Username</label>
-                <input type="text" id="username" class="form-control col-6" minlength="3">
-            </div>
+        <div id="registration-card" class="container card hero-text px-4">
+            <h2 class="m-3">Register for <code>Nature's Nook</code></h2>
+            <form id="register" class="container">
+                <div class="mb-3">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control col-6" placeholder="Please enter your full name" minlength="3">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control col-6" minlength="3">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control col-6" minlength="6">
+                </div>
+    
+                <button id="registerButton" type="submit" class="btn btn-light mb-3">Register</button>
+            </form>
+        </div>
 
-            <div class="mb-3">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control col-6" minlength="6">
-            </div>
-
-            <button id="registerButton" type="submit" class="btn btn-light">Register</button>
-        </form>
 
     </main>
 
