@@ -13,24 +13,3 @@
 .form-group .form-floating:focus-within {
   z-index: 2;
 }
-
-.btn-primary{
-    background: #8a8432;
-    border-color: #c5b90a;
-}
-
-.btn-primary:hover{
-    background: #bbb013;
-    border-color: #ffee00;
-}
-
-.btn-primary:focus{
-    background: #928904 !important;
-    border-color: #a59a05 !important;
-}
-
-
-
-body{
-    font-family:'Courier New', Courier, monospace;
-}
