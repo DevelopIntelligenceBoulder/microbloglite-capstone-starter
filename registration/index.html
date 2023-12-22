@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Registeration Form</h2>
+      <form id="registerationForm">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required />
+        <br />
+        <br />
+        <label for="fullName">Full Name:</label>
+        <input type="text" name="fullname" id="fullname" required />
+        <br />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+        <input
+          type="checkbox"
+          id="showpasswordcheckbox"
+          onclick="togglePasswordVisibility()"
+        />
+        <label for="showpasswordcheckbox">Show Password</label>
+        <br />
+        <br />
+        <button type="button" id="registerButton">Register</button>
+      </form>
+    </div>
+
+    <script src="registration.js"></script>
+  </body>
 </html>
