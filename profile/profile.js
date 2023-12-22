@@ -2,6 +2,7 @@
 if (!isLoggedIn()) {
     window.location.replace("/index.html");
 }
+// const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 
 function logoutAndRedirect(){
     logout();
@@ -12,9 +13,19 @@ function logoutAndRedirect(){
 function createPost (){
     // POST /api.users
 
-    const loginData = getLoginData();
+    // Retrieve values from input fields
     const blogTitle = blogTitleField.value;
     const article = articleField.value;
+
+    // Check if both title and article have values
+    if(!blogTitle || !article){
+        alert('Please fill in both title and article fields.');
+        return;
+    }
+
+    // Get login data fro authorization
+    const loginData = getLoginData();
+
 
     const options = {
         method: "POST",
@@ -23,21 +34,25 @@ function createPost (){
             "Content-type": "application/json", 
         },
         body:JSON.stringify({
-            title: blogTitle,
-            content: article,
+            text: blogTitle + " " + article,
         }),
     };
-    // note the api variable is defined in auth.js
-    fetch(api + "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
-    .then(response => response.json())
-    .then(users => {
-        // Do something with created post...
-        console.log(post);
+    // note the api variable is defined in auth.js. Sending POST request to create new post
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
+    .then(response => {
+        if(!response.ok){
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json ();
+        
+    }) .then(createdPostData =>{
+        console.log(createdPostData);
 
         alert('Post created successfully!');
 
         window.location.href="/posts/index.html";
-    }) .catch(error => {
+    })
+     .catch(error => {
         console.error("Error creating post:", error);
 
         alert('Error creating post. Please try again.');
@@ -47,13 +62,19 @@ function createPost (){
 //Select elements from HTML
 const blogTitleField = document.querySelector('.title');
 const articleField = document.querySelector('.article');
-const publishBtn = document.querySelector('.publish-btn');
 
+// Event listner for form submission
 document.getElementById('post-form').addEventListener('submit',function(event){
     event.preventDefault();
     createPost();
 });
 
+// // Event listener for Publish button click 
+// document.getElementById('publishBtn').addEventListener('click', function(){
+//     createPost();
+// });
+
+// Event listener for logout button click
 document.getElementById('logoutBtn').addEventListener('click',function(){
     logoutAndRedirect();
 });
