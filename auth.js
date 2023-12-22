@@ -1,5 +1,4 @@
 /* auth.js provides LOGIN-related functions */
-
 "use strict";
 
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com/docs/#/";
