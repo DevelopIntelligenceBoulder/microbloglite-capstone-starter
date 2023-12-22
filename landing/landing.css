@@ -1,1 +1,36 @@
 /* Landing Page CSS */
+.input-group-horizontal .form-floating:first-child > input{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-bottom: -1px;
+}
+
+.form-group .form-floating:last-child > input{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.form-group .form-floating:focus-within {
+  z-index: 2;
+}
+
+.btn-primary{
+    background: #8a8432;
+    border-color: #c5b90a;
+}
+
+.btn-primary:hover{
+    background: #bbb013;
+    border-color: #ffee00;
+}
+
+.btn-primary:focus{
+    background: #928904 !important;
+    border-color: #a59a05 !important;
+}
+
+
+
+body{
+    font-family:'Courier New', Courier, monospace;
+}
