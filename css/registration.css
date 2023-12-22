@@ -1,34 +1,47 @@
 
+/* The card body */
 body {
+    font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
 }
-.card {
-    width: 400px; /* Adjust the width as needed */
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevent scrollbars on the body */
-}
+/* color of the whole page */
+/* body {
+    background-color: rgba(251, 121, 0, 0.995);
+} */
 
+
+/* images scroll code  */
 .scroll-container {
+    /* background-color: #fff; */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f0f0f0; /* Optional background color */
-    padding: 10px;
+    padding: 0px;
     box-sizing: border-box;
     overflow-x: auto;
-    white-space: nowrap; /* Prevents images from wrapping to the next line */
+    white-space: nowrap;
 }
 
 .scroll-container img {
-    max-height: 100px; /* Set a maximum height for the images */
-    margin-right: 10px; /* Optional margin between images */
+    padding: 10px;
+    transition: filter 0.3s ease;
+    max-height: 90px;
+    /* Set a maximum height for the images */
+    margin-right: 10px;
+    /* Optional margin between images */
 }
+
+.scroll-container img:hover {
+    filter: brightness(70%);
+  }
