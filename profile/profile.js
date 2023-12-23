@@ -1,3 +1,4 @@
+
 "use strict"
 
 window.onload = function() {
@@ -28,3 +29,4 @@ function addPost() {
 
 
 }
+ main
