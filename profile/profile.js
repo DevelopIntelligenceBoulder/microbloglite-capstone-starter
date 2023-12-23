@@ -1,7 +1,6 @@
 "use strict"
 
 window.onload = function() {
-    
     const postbtn = document.querySelector('#postBtn');
     postbtn.onclick = addPost;
 }
@@ -10,7 +9,7 @@ function addPost() {
     const textareaContent = document.querySelector('#textarea');
 
     const bodyData = {
-        textContent: textareaContent.value,
+        text: textareaContent.value,
 
     };
 
