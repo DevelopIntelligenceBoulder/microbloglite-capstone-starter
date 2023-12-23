@@ -1,5 +1,6 @@
-# Enjoy the Microblog Project and the MicroblogLite API!
+# Bookface
 
-Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in *Postman!*
+ [*Bookface* API docs](http://microbloglite.us-east-2.elasticbeanstalk.com/docs/)
 
-Practice and experimentation provide experience, and experience provides confidence.
+[Dev Wiki](https://github.com/JonCGroberg/microbloglite-capstone-starter/wiki/)
+
