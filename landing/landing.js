@@ -1,5 +1,5 @@
 window.onload = () => {
-  if (isLoggedIn() === true) window.location.replace("/posts");
+  if (isLoggedIn() === true) window.location.replace("../posts");
   else loginHandler();
 };
 
