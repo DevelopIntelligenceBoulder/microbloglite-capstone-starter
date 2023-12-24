@@ -12,14 +12,11 @@ async function login(loginData) {
 
   return await fetch(apiBaseURL + "/auth/login", options)
     .then((res) => res.json())
-    .then((userData) => {
-      // Check where to save storage and save it
+    .then((userData) =>
       loginData.remember
         ? window.localStorage.setItem("user-data", JSON.stringify(userData))
-        : window.sessionStorage.setItem("user-data", JSON.stringify(userData));
-      window.location.assign("/posts"); // redirect to posts
-      return userData;
-    });
+        : window.sessionStorage.setItem("user-data", JSON.stringify(userData))
+    );
 }
 
 // GET /auth/logout
@@ -34,12 +31,10 @@ async function logout() {
 
   return await fetch(apiBaseURL + "/auth/logout", options)
     .then((response) => response.json())
-    .then((data) => data)
-    .finally(() => {
-      // Clear all storage
+    .then((data) => {
+      console.log(data) //log the logout message
       window.sessionStorage.removeItem("user-data");
       window.localStorage.removeItem("user-data");
-      window.location.assign("/"); // redirect back to landing page
     });
 }
 

@@ -17,7 +17,7 @@ function loginHandler() {
 
     event.preventDefault();
     loginForm.loginButton.disabled = true;
-    document.querySelector("#loginSpinner").classList.remove("visually-hidden") //show loading spinner
-    login(loginData);
+    document.querySelector("#loginSpinner").classList.remove("visually-hidden"); //show loading spinner
+    login(loginData).then(() => window.location.replace("../posts")); // redirect after successful login
   };
 }
