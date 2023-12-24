@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     />
     <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
@@ -28,19 +29,19 @@
     <header class="">
       <nav></nav>
     </header>
-    <main class="d-flex vh-100">
+    <main class="d-flex vh-100 flex-wrap justify-content-center">
       <div
-        class="flex-grow-1 d-flex flex-wrap p-sm-4 m-sm-4 p-md-5 m-md-5 m-2 p-2 gap-5 align-content-center"
+        class="flex-grow-1 d-flex flex-wrap p-sm-4 m-sm-4 p-md-5 m-md-5 m-2 p-2 gap-5 align-content-end mb-5 justify-content-evenly"
       >
-        <section class="flex-grow-1 align-self-center mx-auto px-sm-5 px-4">
-          <div class="mx-auto text-start" style="max-width: 30rem">
+        <section class="flex-grow-1 align-self-center px-sm-5 px-4" style="max-width: 30rem">
+          <div class="mx-auto p-0">
             <h1 class="display-1 m-0 py-0">Bookface</h1>
             <h4 class="m-0 p-0">For all your bookface needs</h4>
           </div>
         </section>
-        <section class="flex-grow-1 mx-auto px-4 px-sm-5">
-          <form class="form-group mx-auto" id="login" style="max-width: 30rem">
-            <h3 class="mb-3">Please sign in</h3>
+        <section class="flex-grow-1 px-4 px-sm-5" style="max-width: 30rem">
+          <form class="form-group mx-auto" id="login">
+            <!-- <h3 class="mb-3">Please sign in</h3> -->
             <div class="input-group-horizontal">
               <div class="form-floating">
                 <input
@@ -66,11 +67,7 @@
               </div>
             </div>
             <div class="form-check text-start my-3">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="remember"
-              />
+              <input class="form-check-input" type="checkbox" id="remember" />
               <label class="form-check-label" for="remember">
                 Remember me
               </label>
@@ -87,11 +84,22 @@
                 aria-hidden="true"
               ></span>
             </button>
-            <!-- <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p> -->
+            <a
+              class="d-block my-4 link-body-emphasis link-underline-opacity-25 link-opacity-50 link-opacity-75-hover link-offset-2 text-start"
+              href="../registration/"
+            >
+              <span>Don't have an account? Create one!</span>
+            </a>
           </form>
         </section>
       </div>
+      <footer
+        class="w-100 position-relative align-self-end bg-dark-subtle py-3"
+      >
+        <p class="text-body-secondary m-auto p-0 text-center m-0">
+          Bookface &copy 2023-2023
+        </p>
+      </footer>
     </main>
-    <footer></footer>
   </body>
 </html>
