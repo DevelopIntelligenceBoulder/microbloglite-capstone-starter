@@ -1,4 +1,4 @@
-const API_URL = "http://microbloglite.us-east-2.elasticbeanstalk.com/api/";
+const API_URL = "https://microbloglite.cyclic.app/api/";
 
 // Main
 window.onload = () => {

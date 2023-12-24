@@ -12,6 +12,7 @@ function loginHandler() {
     const loginData = {
       username: loginForm.username.value,
       password: loginForm.password.value,
+      remember: loginForm.remember.checked,
     };
 
     event.preventDefault();
