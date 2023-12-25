@@ -14,6 +14,8 @@
 import { getLoginData, logout } from "../auth";
 
 window.onload = () => {
+    // logout button variable
+    let logoutBtn = document.getElementById('logout-btn');
     // create post variables
     let createPostForm = document.getElementById('create-post-form');
     let postText = document.getElementById('post-text');
