@@ -21,8 +21,7 @@
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
-    <script>
+    <script type="module" src="../auth.js">
         if (!isLoggedIn()) window.location.replace("/");
     </script>
 </head>
@@ -100,6 +99,6 @@
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script type="module" src="./posts.js"></script>
 </body>
 </html>
