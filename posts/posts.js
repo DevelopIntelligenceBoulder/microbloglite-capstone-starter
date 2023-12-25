@@ -10,8 +10,9 @@
     
 
 */
-
 "use strict";
+import { getLoginData, logout } from "../auth";
+
 window.onload = () => {
     // create post variables
     let createPostForm = document.getElementById('create-post-form');
@@ -19,6 +20,8 @@ window.onload = () => {
     let postSubmit = document.getElementById('post-submit');
     // display post variables
     let allPosts = document.getElementById('all-posts');
+
+    
 }
 
 // let getAllPosts = () => {
