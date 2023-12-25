@@ -11,11 +11,14 @@
 
 */
 "use strict";
-import { getLoginData, logout } from "../auth";
+import {logout } from "../auth.js";
 
 window.onload = () => {
     // logout button variable
     let logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.onclick = () =>{
+        logout();
+    }
     // create post variables
     let createPostForm = document.getElementById('create-post-form');
     let postText = document.getElementById('post-text');
