@@ -12,3 +12,15 @@
 */
 
 "use strict";
+window.onload = () => {
+    // create post variables
+    let createPostForm = document.getElementById('create-post-form');
+    let postText = document.getElementById('post-text');
+    let postSubmit = document.getElementById('post-submit');
+    // display post variables
+    let allPosts = document.getElementById('all-posts');
+}
+
+// let getAllPosts = () => {
+    
+// }
