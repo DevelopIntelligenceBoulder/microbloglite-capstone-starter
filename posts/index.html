@@ -21,9 +21,12 @@
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script type="module" src="../auth.js">
+    <!-- importing the functions from auth.js -->
+    <script type="module" src="../auth.js" ></script>
+    <!-- using imported functions to check if user is logged in  -->
+    <!-- <script type="module" src="../auth.js">
         if (!isLoggedIn()) window.location.replace("/");
-    </script>
+    </script> -->
 </head>
 <body>
 
