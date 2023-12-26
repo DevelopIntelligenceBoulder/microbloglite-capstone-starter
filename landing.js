@@ -1,7 +1,7 @@
 /* Landing Page JavaScript */
 
 "use strict";
-
+// Add the login import
 import {login} from "../auth.js";
 
 const loginForm = document.querySelector("#login");
