@@ -2,6 +2,8 @@
 
 "use strict";
 
+import {login} from "../auth.js";
+
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {
