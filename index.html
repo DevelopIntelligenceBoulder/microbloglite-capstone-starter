@@ -22,8 +22,8 @@
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script type="module" src="./auth.js"></script>
-    <script type="module" src="">
-        // if (isLoggedIn() === true) window.location.replace("/posts");
+    <script type="module">
+        if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
 <body class="ivory">
