@@ -4,3 +4,4 @@
 
 [Dev Wiki](https://github.com/JonCGroberg/microbloglite-capstone-starter/wiki/)
 
+![landingScreenshot](/screen-captures/landing.png)
