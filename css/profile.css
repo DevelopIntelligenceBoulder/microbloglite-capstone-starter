@@ -1,0 +1,14 @@
+body {
+    height: 900px;
+}
+h3 {
+    font-size: 1.5em;
+}
+i {
+    color: coral;
+    border-radius: 50%;
+    width: 140px;
+}
+a {
+    color: coral;
+}
