@@ -1,4 +1,4 @@
-const API_URL = "https://microbloglite.cyclic.app/api/";
+const API_URL = "https://microbloglite.onrender.com";
 
 // Main
 window.onload = () => {
