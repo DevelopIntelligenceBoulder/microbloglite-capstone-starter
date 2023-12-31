@@ -1,4 +1,4 @@
-const apiBaseURL = "https://microbloglite.cyclic.app";
+const apiBaseURL = "https://microbloglite.onrender.com";
 
 // POST /auth/login
 async function login(loginData) {
@@ -32,7 +32,7 @@ async function logout() {
   return await fetch(apiBaseURL + "/auth/logout", options)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data) //log the logout message
+      console.log(data); //log the logout message
       window.sessionStorage.removeItem("user-data");
       window.localStorage.removeItem("user-data");
     });
