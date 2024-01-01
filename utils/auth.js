@@ -10,18 +10,18 @@ async function login(loginData) {
     body: JSON.stringify(loginData),
   };
 
+  // Saves login data if success and throws an error otherwise
   return await fetch(apiBaseURL + "/auth/login", options)
     .then((res) => res.json())
-    .then((userData) =>
-      loginData.remember
-        ? window.localStorage.setItem("user-data", JSON.stringify(userData))
-        : window.sessionStorage.setItem("user-data", JSON.stringify(userData))
-    );
+    .then((userData) => {
+      if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
+      else throw new Error("Login failed with code: " + userData.statusCode);
+    });
 }
 
 // GET /auth/logout
 async function logout() {
-  const loginData = getLoginData();
+  const loginData = getLocalUserData();
   const options = {
     method: "GET",
     headers: {
@@ -39,7 +39,7 @@ async function logout() {
 }
 
 // Retrive login data from session storage
-let getLoginData = () => {
+let getLocalUserData = () => {
   // Checks for user-data and gives empty if not found
   let userData =
     window.sessionStorage.getItem("user-data") ||
@@ -48,5 +48,9 @@ let getLoginData = () => {
   return JSON.parse(userData);
 };
 
+let storeLocalUserData = (userData, loginData) =>
+  loginData.remember
+    ? window.localStorage.setItem("user-data", JSON.stringify(userData))
+    : window.sessionStorage.setItem("user-data", JSON.stringify(userData));
 // Checks if use login token is saved locally
-let isLoggedIn = () => "token" in getLoginData();
+let isLoggedIn = () => "token" in getLocalUserData();

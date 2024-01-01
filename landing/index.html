@@ -33,7 +33,10 @@
       <div
         class="flex-grow-1 d-flex flex-wrap p-sm-4 m-sm-4 p-md-5 m-md-5 m-2 p-2 gap-5 align-content-end mb-5 justify-content-evenly"
       >
-        <section class="flex-grow-1 align-self-center px-sm-5 px-4" style="max-width: 30rem">
+        <section
+          class="flex-grow-1 align-self-center px-sm-5 px-4"
+          style="max-width: 30rem"
+        >
           <div class="mx-auto">
             <h1 class="display-1 m-0 py-0">Bookface</h1>
             <h4 class="m-0 p-0">For all your bookface needs</h4>
@@ -41,8 +44,14 @@
         </section>
         <section class="flex-grow-1 px-4 px-sm-5 mt-4" style="max-width: 30rem">
           <form class="form-group mx-auto" id="login">
-            <!-- <h3 class="mb-3">Please sign in</h3> -->
-            <div class="input-group-horizontal ">
+            <div
+              id="errorMsg"
+              class="mb-4 text-center text-danger-emphasis content-visable-hidden"
+              style="height: 1lh"
+            >
+              Invalid username or password
+            </div>
+            <div class="input-group-horizontal">
               <div class="form-floating">
                 <input
                   type="userName"
@@ -80,13 +89,13 @@
             >
               <span id="loginText">Sign In</span>
               <span
-                id="loginSpinner"
+                id="loadingSpinner"
                 class="spinner-border spinner-border-sm visually-hidden"
                 aria-hidden="true"
               ></span>
             </button>
             <a
-              class="d-block mt-5 link-body-emphasis link-underline-opacity-25 link-opacity-50 link-opacity-75-hover link-offset-2 text-center"
+              class="d-block mt-4 link-body-emphasis link-underline-opacity-25 link-opacity-50 link-opacity-75-hover link-offset-2 text-center"
               href="../registration/"
             >
               <span>Don't have an account? Create one!</span>
