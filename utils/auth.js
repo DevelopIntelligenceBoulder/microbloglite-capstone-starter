@@ -16,7 +16,7 @@ async function login(loginData) {
     .then((userData) => {
       if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
       else throw new Error("Login failed with code: " + userData.statusCode);
-    });
+    })
 }
 
 // GET /auth/logout
