@@ -1,5 +1,44 @@
-# Enjoy the Microblog Project and the MicroblogLite API!
+# About This Project
 
-Don't forget to read the [*MicroblogLite* API docs](https://microbloglite.herokuapp.com/docs/) and experiment with the API in *Postman!*
+_Our {we'll insert a name for our project here} allows users to register, login, logout, make post, and view their own profiles._
 
-Practice and experimentation provide experience, and experience provides confidence.
+## Live Preview
+
+[Microblog Live Preview Site]()
+
+# Preview
+
+### Login 
+ - Allows users to login using a real username and password created on the register page
+[Login Page]()
+
+### Register Page
+    - Allows users to register for an account
+    - Checks to see if users use the minimum amount of characters
+    - Checks to see if password and confirmed password are exactly the same
+[Register Page]()
+
+### Post Page 
+[Post Page]()
+
+### Profile View Page
+[Profile View Page]()
+
+
+# Tech
+
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- API
+
+# Collaborators
+
+- Aviad Churaman
+- Jeanette Gonzalez
+- Tina Nguyen
+
+# Acknowledgments
+
+- [_MicroblogLite_ API docs](https://microbloglite.herokuapp.com/docs/)
