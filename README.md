@@ -9,19 +9,22 @@ _Our {we'll insert a name for our project here} allows users to register, login,
 # Preview
 
 ### Login 
- - Allows users to login using a real username and password created on the register page
+ - Allows users to login using a real username and password created on the register page.
 [Login Page]()
 
 ### Register Page
-    - Allows users to register for an account
-    - Checks to see if users use the minimum amount of characters
-    - Checks to see if password and confirmed password are exactly the same
+- Allows users to register for an account.
+- Checks to see if users use the minimum amount of characters.
+- Checks to see if password and confirmed password are exactly the same.
 [Register Page]()
 
 ### Post Page 
+- Allows users to see post and like them.
 [Post Page]()
 
 ### Profile View Page
+- Allows you to create a post.
+- Allows you to logout.
 [Profile View Page]()
 
 
