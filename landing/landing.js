@@ -19,7 +19,7 @@ function loginHandler() {
 
     event.preventDefault();
     setLoadingState();
-    login(loginData).then(successRedirect, setFailureState);
+    login(loginData).then(successRedirect).catch(setFailureState);
   };
 
   // Actions
