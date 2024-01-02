@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,7 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
     <header>
@@ -33,9 +35,11 @@
     </header>
 
     <main>
-
+        <div id="image">
+            <img src="/images/screenshot4.png" alt="phone image">
+        </div>
         <form id="login">
-            
+
             <div>
                 <label for="username">Username</label>
                 <input type="text" id="username" minlength="3">
@@ -60,4 +64,5 @@
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
 </body>
+
 </html>

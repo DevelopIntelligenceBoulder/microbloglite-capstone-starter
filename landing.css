@@ -8,6 +8,7 @@ main {
 }
 
 form {
+    margin-right: 35%;
     width: 300px;
     border: 2px solid #ccc;
     padding: 20px;
@@ -56,3 +57,7 @@ h3 {
     left: 50%;
     transform: translateX(-50%);
   }
+
+main > div{
+margin-right: 20%;
+}
