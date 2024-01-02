@@ -2,8 +2,12 @@
 
 "use strict";
 
-const api = "http://microbloglite.us-east-2.elasticbeanstalk.com/docs/";
-// Backup server:   https://microbloglite.onrender.com
+const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
+// Backup server (mirror):   "https://microbloglite.onrender.com"
+
+// NOTE: API documentation is available at /docs 
+// For example: http://microbloglite.us-east-2.elasticbeanstalk.com/docs
+
 
 // You can use this function to get the login data of the logged-in
 // user (if any). It returns either an object including the username
@@ -39,7 +43,7 @@ function login (loginData) {
         body: JSON.stringify(loginData),
     };
 
-    return fetch(api + "/auth/login", options)
+    return fetch(apiBaseURL + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
@@ -69,7 +73,7 @@ function logout () {
         },
     };
 
-    fetch(api + "/auth/logout", options)
+    fetch(apiBaseURL + "/auth/logout", options)
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
