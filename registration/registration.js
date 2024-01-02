@@ -22,6 +22,16 @@ window.onload = () => {
       password: password,
     };
 
-    console.log("new data: ", newUser)
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        location.href = "/index.html";
+      });
   }
 };
