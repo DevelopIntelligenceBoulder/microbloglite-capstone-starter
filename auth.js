@@ -85,3 +85,28 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page
         });
 }
+
+
+function register (registrationData) {
+    
+    const options = { 
+        // method: "POST",
+        headers: {
+            // This header specifies the type of content we're sending.
+            // This is required for endpoints expecting us to send
+            // JSON data.
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registrationData),
+    };
+
+    return fetch(apiBaseURL + "/auth/users", options)
+        .then(response => response.json())
+        .then(registrationData => {
+            window.localStorage.setItem("registration-data", JSON.stringify(registrationData));
+            window.location.assign("/login");  // redirect
+
+            return registrationData;
+        });
+
+}
