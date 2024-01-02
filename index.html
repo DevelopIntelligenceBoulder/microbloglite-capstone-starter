@@ -29,32 +29,30 @@
 <body>
 
     <header>
-       
+        <h1>Welcome to <code>Player's Club</code></h1>
     </header>
 
     <main>
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
 
-        <div id="wrapper">
-            <div class="main-content">
-              <div class="header">
-              <h1>Register Here</h1>
-              </div>
-              <div class="l-part">
-                <input type="text" placeholder="Create Username" class="input-1" />
-                <div class="overlap-text">
-                  <input type="password" placeholder="Password" class="input-2" />
-                 
-                </div>
-                 <br>
-                <input type="button" value="Log in" class="btn" />
-              </div>
+        <form id="login">
+            
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" minlength="3">
             </div>
-            <div class="sub-content">
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" minlength="6">
             </div>
-          </div>
-          
-          
+
+            <button id="loginButton" type="submit" href="posts\index.html">Login</button>
+        </form>
+
+        <h3>
+            Don't have an account? <button id="link" type="Sign Up">Sign Up</button>
+        </h3>
+
     </main>
 
     <footer></footer>
