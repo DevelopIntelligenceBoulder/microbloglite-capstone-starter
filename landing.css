@@ -13,7 +13,10 @@ main{
     justify-content: center;  
 }
 
-
+html{
+    background-image: url("https://giphy.com/embed/84SFZf1BKgzeny1WxQ");
+    background-size: fill;
+}
 
 /*card-body
 {
