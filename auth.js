@@ -90,7 +90,7 @@ function logout () {
 function register (registrationData) {
     
     const options = { 
-        // method: "POST",
+         method: "POST",
         headers: {
             // This header specifies the type of content we're sending.
             // This is required for endpoints expecting us to send
@@ -100,10 +100,9 @@ function register (registrationData) {
         body: JSON.stringify(registrationData),
     };
 
-    return fetch(apiBaseURL + "/auth/users", options)
+    return fetch(apiBaseURL + "/api/users", options)
         .then(response => response.json())
         .then(registrationData => {
-            window.localStorage.setItem("registration-data", JSON.stringify(registrationData));
             window.location.assign("/login");  // redirect
 
             return registrationData;
