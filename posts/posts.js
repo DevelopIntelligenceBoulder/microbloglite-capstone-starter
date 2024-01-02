@@ -1,17 +1,13 @@
-/* Posts Page JavaScript */
-"use strict";
-
 window.onload = () => {
     let cardContainer = document.getElementById("card-container");
     let loginData = getLoginData();
 
-    // Check if user is logged in
+    // Check if the user is logged in
     if (!loginData.token) {
-        // If user is not logged in, throw an error
+        // If the user is not logged in, throw an error
         console.error('User needs to log in!');
         return;
     }
-
 
     // GET method to retrieve posts
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
@@ -29,7 +25,7 @@ window.onload = () => {
                     let formattedDate = new Date(post.createdAt).toLocaleString();
 
                     cardContainer.innerHTML += `
-                    <div class="col mb-4">
+                        <div class="col mb-4">
                             <div class="card mb-3 custom-card">
                                 <div class="card-body">
                                     <div class="card-header">
@@ -39,35 +35,56 @@ window.onload = () => {
                                 </div>
                                 <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                                     <div>
-                                        <small id="post-created">${formattedDate}</small>
+                                        ${post.username === loginData.username ?
+                                            `<button class="btn delete-btn" data-postid="${post.postId}" onclick="deletePost('${post.postId}')">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>` : ''}
                                     </div>
                                     <div>
-                                        <button class="btn" id="like-button" onclick="likeAndDislike('${post.postId}')">
+                                        <button class="btn" onclick="likeAndDislike('${post.postId}')">
                                             <i class="fas fa-heart"></i> Like
                                         </button>
-                                        <span class="ms-2" id="like-count">${post.likes}</span>
-                                        
-                                        <button class="btn" id="dislike-button" onclick="likeAndDislike('${post.postId}')">
+                                        <span class="ms-2" id="like-count">${post.likes.likeCount}</span>
+                                        <button class="btn" onclick="likeAndDislike('${post.postId}')">
                                             <i class="fas fa-thumbs-down"></i> Dislike
                                         </button>
-                                        <span class="ms-2" id="dislike-count">${post.likes}</span>
+                                        <span class="ms-2" id="dislike-count">${post.likes.dislikeCount}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                `;
+                        </div>`;
                 });
-            } else {
-                console.error('Invalid response format.');
             }
-        })
-        .catch((error) => {
-            console.error('Error fetching posts:', error);
         });
+};
+
+function deletePost(postId) {
+    let loginData = getLoginData();
+
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`, {
+        method: "DELETE",
+        headers: {
+            'Authorization': `Bearer ${loginData.token}`
+        }
+    })
+    .then((res) => {
+        if (res.ok) {
+            // Post deleted successfully
+            console.log(`Post with ID ${postId} deleted successfully.`);
+        } else {
+            console.error(`Failed to delete post with ID ${postId}.`);
+        }
+    })
+    .catch((error) => {
+        console.error("Error deleting post:", error);
+    });
 }
+
+
+
 
 function escapeHTML(text) {
     let div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
-}
+};
