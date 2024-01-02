@@ -1,1 +1,22 @@
-/* Landing Page CSS */
+h1{
+    display: flex;
+    justify-content: center;   
+}
+button{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: flex;
+    justify-content: center;  
+}
+
+
+
+/*card-body
+{
+   background-image: url(https://giphy.com/gifs/love-animation-art-3ohzdZO0nAL1H2LdMA);
+   background-size: fill;
+}
