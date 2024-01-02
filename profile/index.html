@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>www.naturesnook/profile</title>
     <link href="profile.css" rel="stylesheet">
 </head>
+
 <body>
     <nav>
         <a href="index.html">Home</a>
         <a href="posts/index.html">postsfeed</a>
     </nav>
-<!-- button for logging out - going to add a moon logo(maybe) -->
+    <!-- button for logging out - going to add a moon logo(maybe) -->
     <div id="logout">
         <button id="logout-btn">Logout</button>
     </div>
 
-    
+    <div>
+        <form id="publish-form">
+            <div>
+                <label for="title"></label>
+                <input id="title" type="text" placeholder="What's your blog post title?">
+            </div>
+
+            <div>
+                <label for="blog-post"></label>
+                <textarea id="blog-post" type="text" placeholder="Enter your blog post here."></textarea>
+            </div>
+
+            <input type="submit" value="Draft"/>
+
+            <input type="submit" value="Publish"/>
+        </form>
+    </div>
+
+
     <script src="profile.js"></script>
 </body>
+
 </html>
