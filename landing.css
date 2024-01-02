@@ -2,6 +2,7 @@ h1{
     display: flex;
     justify-content: center;   
 }
+
 button{
     width: 200px;
     height: 50px;
