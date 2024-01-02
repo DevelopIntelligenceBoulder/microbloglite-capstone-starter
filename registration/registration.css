@@ -1,5 +1,9 @@
-/* #registration-card{
-    text-align: center;
-    margin-top: 200px;
-    max-width: 720px;
-} */
+/* Landing Page CSS */
+body, html {
+    height: 100%;
+}
+/* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/_10a2dc04-e67d-460e-8e58-0961292adaf8.jpeg");
+}
