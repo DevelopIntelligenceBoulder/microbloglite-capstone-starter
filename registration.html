@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <title> Sign Up</title>
+    <link rel="stylesheet" href="">
+  </head>
+
+  <body>
+    <section id="signUpPage" class="pt-md-3">
+      <h1 class="section-title text-center"> Register</h1>
+
+      <div class="container d-flex justify-content-center pt-md-3">
+        <div class="card loginCard" style="width: 28rem;"> 
+          <div class="text-center">
+            <form class="px-4 py-3">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control text-center" id="firstName" placeholder="Enter First Name">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control text-center" id="lastName" placeholder="Enter Last Name">
+                </div>
+              </div>
+              <div class="mb-2">
+                <label for="emailAddress" class="form-label">Email address</label>
+                <input type="email" class="form-control text-center" id="emailAddress" placeholder="Enter Email Address" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control text-center" id="password" placeholder="Enter Password">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control text-center" id="rePassword" placeholder="Enter Password Again">
+              </div>
+              <div class="mb-3">
+                <label for="refer" class="form-label refer-selection mb-2"> Which House Do You Represent</label>
+                <select class="form-select text-center" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="gryf">Gryffindor</option>
+                  <option value="sly">Slytherin</option>
+                  <option value="claw">Ravenclaw</option>
+                  <option value="hugg">Hugglepuff</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" id="registerButton"> SIGN UP !</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        crossorigin="anonymous">
+    </script>
+  </body>
+</html>
