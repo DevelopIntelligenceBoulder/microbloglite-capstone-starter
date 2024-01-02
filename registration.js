@@ -1,0 +1,35 @@
+const apiBaseURL = "https://microbloglite.onrender.com";
+
+function signUp(signUpData) {
+        //POST create user
+        const options = { 
+            method: "POST",
+            headers: {
+                // This header specifies the type of content we're sending.
+                // This is required for endpoints expecting us to send
+                // JSON data.
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(signUpData),
+        };
+        
+        return fetch(apiBaseURL + '/api/users', options)
+        .then(response => {
+            console.log(response.json);
+            return response.json;
+        })
+    }
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Retrieve username and password from the form
+    const signUpData = {
+        username: document.getElementById("username").value,
+        fullName: document.getElementById("firstName").value + ' ' + document.getElementById("lastName"),
+        password: document.getElementById("password").value
+    };
+
+    // make an API request to create the account
+    signUp(signUpData);
+});

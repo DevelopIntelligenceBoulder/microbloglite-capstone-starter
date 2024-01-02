@@ -55,7 +55,8 @@
                         </li>
                     </ul>
                     <form style="padding-right: 4%;" class="d-flex" role="search">
-                        <button class="btn btn-outline-primary" type="button">+</button>
+                        <!--post btn; + -->
+                        <button class="btn btn-outline-primary" type="button" href="post.html">+</button>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
@@ -69,7 +70,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Account</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
                         </ul>
                     </li>
                 </div>
@@ -86,7 +87,7 @@
                             <img class="container" src="img/cute-sanrio-background.jpg" alt="background">
                             <img class="pfp" src="img/sanrio-profile.jpg" alt="pfp">
                         </div>
-                        <h2 id="currentUser">kuromi7</h2>
+                        <h2 id="currentUser"></h2>
                     </section>
                 </div>
             </div>
@@ -98,8 +99,9 @@
                     <div>
                         <div class="card">
                             <div class="card-body">
-                                <h4>Bio</h4>
-                                <p id="userBio">halo j'suis kuromi</p>
+                                <h4 id="name"></h4>
+                                <h5>Bio</h5>
+                                <p id="userBio"></p>
                                 <!--add link to profile editing form-->
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button type="button" class="btn btn-primary" href="#">Edit</button>
@@ -125,7 +127,8 @@
                                         <input class="form-control" type="file" id="formFile">
                                     </div>
                                     <br>
-                                    <button class="btn btn-dark" type="submit">Post</button>
+                                    <button class="btn btn-dark" type="submit" id="postBtn">Post</button>
+                                    <!--add a view post btn? -->
                                 </form>
                             </div>
                         </div>
@@ -150,19 +153,17 @@
                                 <div class="card mb-3" style="max-width: 540px;">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <img src="..." class="img-fluid rounded-start" alt="...">
+                                            <img src="img/first-post.jpg" class="img-fluid rounded-start" alt="...">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">This is a wider card with supporting text below as
-                                                    a natural lead-in to additional content. This content is a little
-                                                    bit longer.</p>
+                                                <p class="card-text">This is my first post</p>
                                                 <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                <p class="card-text"><small class="text-body-secondary">Last updated 3
-                                                        mins ago</small></p>
+                                               
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row" style="padding-top: 4%;" id="postContainer">
                                     </div>
                                 </div>
 
@@ -182,7 +183,8 @@
 
 
 
-
+<script src="auth.js"></script>
+<script src="./pfp-js-user-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
