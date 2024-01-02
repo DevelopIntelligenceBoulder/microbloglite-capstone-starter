@@ -29,28 +29,105 @@
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG</code></h1>
+
+        <h1>Welcome to  South site</h1>
      
     </header>
-/// welcome jae
+
     <main>
+
+
+          
+          <form class="modal-content animate" action="/action_page.php" method="post">
+            
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
         <form id="login">
             <div>
-                <label for="username">username</label>
-                <input type="text" id="username" minlength="3">
+            <div class="container">
+                <h2> Login form</h2>
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+        
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+                <br>
+              <button type="submit">Login</button>
+              <br><br>
+
+              <label>
+                
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+              <br>
+                <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
+              <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
-
+          </form>
+        </div>
+        
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+        
+        </body>
     </main>
+<style>
 
+ h1 { 
+    text-decoration: rgb(255, 255, 255);
+  color: rgb(50, 147, 212);
+  
+    
+}
+
+.overlay-form {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+}
+html{
+
+    height: 100%;
+}
+body {
+  background : url("./images/South_ParkBG.png");
+  position: relative;
+    opacity: 0.65;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+input{
+ margin-bottom: 1em;
+
+}
+ header{
+    text-align: center;
+    margin-top: 5rem;
+ }
+
+.container{
+  width: 330px;
+  background: #ededed;
+  text-align: center;
+  border-radius: 5px;
+  padding: 35px 35px 35px 35px;
+
+}
+
+</style>
     <footer></footer>
 
     <!-- Page-specific code -->
