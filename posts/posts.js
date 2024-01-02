@@ -17,3 +17,28 @@
 
 //read me explanantion!
 
+function createNewPost(title, content) {
+  // Make an API request to send the new post data to the server
+  fetch("https://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer <your_token_here>",
+    },
+    body: JSON.stringify({ title: title, content: content }),
+  })
+    .then((response) => {
+      // Handle the response data
+    })
+    //.catch((error) => {
+      // Handle any errors that occur during the API request
+    //});
+}
+
+// Event listener for the form submission
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission
+  const title = document.getElementById("postTitle").value;
+  const content = document.getElementById("postContent").value;
+  createNewPost(title, content); // Call the function to send the new post data
+});
