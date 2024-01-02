@@ -11,7 +11,6 @@ function addPost() {
 
     const bodyData = {
         text: textareaContent.value,
-
     };
 
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
@@ -28,4 +27,4 @@ function addPost() {
 
 
 }
- main
+

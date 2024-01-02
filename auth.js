@@ -21,7 +21,6 @@ function isLoggedIn () {
     return Boolean(loginData.token);
 }
 
-
 // This function is already being used in the starter code for the
 // landing page, in order to process a user's login. READ this code,
 // and feel free to re-use parts of it for other `fetch()` requests
@@ -35,15 +34,16 @@ function login (loginData) {
             // This is required for endpoints expecting us to send
             // JSON data.
             "Content-Type": "application/json",
+            "Accept": "application/json"
         },
         body: JSON.stringify(loginData),
     };
 
-    return fetch(apiBaseURL + "/auth/login", options)
+    return fetch(apiBaseURL + "/api/users", options)
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.assign("/landing");  // redirect
 
             return loginData;
         });
@@ -78,6 +78,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
+            window.location.assign("/landing");  // redirect back to landing page
         });
 }
