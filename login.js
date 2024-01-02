@@ -1,6 +1,6 @@
-'use strict'
+"use strict";
 
-const apiBaseURL = "https://microbloglite.onrender.com";
+//const apiBaseURL = "https://microbloglite.onrender.com";
 
 function login (loginData) {
     // POST /auth/login
@@ -19,13 +19,13 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            //window.location.assign("/posts");  // redirect
+            window.location.assign("/posts");  // redirect
             console.log(loginData);
             return loginData;
         });
 }
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document.getElementById("login").addEventListener("submit", function(event) {
     event.preventDefault();
 
     // get username and password from the form

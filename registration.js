@@ -1,3 +1,5 @@
+'use strict'
+
 const apiBaseURL = "https://microbloglite.onrender.com";
 
 function signUp(signUpData) {
@@ -16,7 +18,7 @@ function signUp(signUpData) {
         return fetch(apiBaseURL + '/api/users', options)
         .then(response => {
             console.log(response.json);
-            return response.json;
+            return response.json();
         })
     }
 
@@ -26,7 +28,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     // Retrieve username and password from the form
     const signUpData = {
         username: document.getElementById("username").value,
-        fullName: document.getElementById("firstName").value + ' ' + document.getElementById("lastName"),
+        fullName: document.getElementById("firstName").value + ' ' + document.getElementById("lastName").value,
         password: document.getElementById("password").value
     };
 
