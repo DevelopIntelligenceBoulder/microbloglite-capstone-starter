@@ -1,6 +1,6 @@
 "use strict";
 
-const loginForm = document.querySelector("#register");
+const registerForm = document.querySelector("#register");
 
 registerForm.onsubmit = function (event) {
     // Prevent the form from refreshing the page,
