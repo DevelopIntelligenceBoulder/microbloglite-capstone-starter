@@ -1,23 +1,37 @@
 /* Posts Page CSS */
 h1 {
     text-align: center;
+    margin-top: 15px;
 }
 main {
     align-items: center;
     text-align: center;
     margin-top: 30px;
 }
+.navbar-nav .nav-item:hover .nav-link {
+    color: var(--cadet-gray);
+}
+.navbar {
+    background: linear-gradient(to right, var(--light-blue), var(--cadet-gray));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    font-family: 'DM Sans', sans-serif;
+}
 .custom-card {
     min-height: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 .card-header {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    background-color:var(--gunmetal);
+    color: white;
 }
 .btn-like {
-    /* Add styles for your like button */
-    color: #dc3545; /* Bootstrap danger color */
+    color: #dc3545;
 }
 .like-count {
-    margin-left: 0.5rem; /* Adjust the margin as needed */
+    margin-left: 0.5rem;
 }
