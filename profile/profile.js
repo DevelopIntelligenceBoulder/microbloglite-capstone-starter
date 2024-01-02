@@ -7,7 +7,7 @@ if (!isLoggedIn()) {
 function logoutAndRedirect(){
     logout();
     //Redirect the user to login page after logging out
-    window.location.replace("/login.html");
+    window.location.replace("/index.html");
 }
 // Function to create post via fetch ()
 function createPost (){
@@ -65,8 +65,22 @@ const articleField = document.querySelector('.article');
 // Event listner for form submission
 document.getElementById('post-form').addEventListener('submit',function(event){
     event.preventDefault();
-    createPost();
+    if(isArticleLengthValid()){
+        createPost();
+    } else {
+        alert('Title or article exceeds the maximum character limit.');
+    }
 });
+
+// Function to check if article length is valid
+function isArticleLengthValid(){
+    const title = blogTitleField.value;
+    const article = articleField.value;
+    const maxArticleLength = 200; 
+    const maxTitleLength = 50;
+
+    return title.length <= maxTitleLength && article.length <= maxArticleLength;
+}
 
 // // Event listener for Publish button click 
 // document.getElementById('publishBtn').addEventListener('click', function(){
