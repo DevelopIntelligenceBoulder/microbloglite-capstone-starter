@@ -12,6 +12,9 @@ window.onload = function() {
     if (userData.username) {
         profileContainer.querySelector('h2').innerText = userData.username;
     }
+
+    const editBtn = document.getElementById("editBtn");
+    editBtn.onclick = editUser;
 }
 
 function addPost() {
@@ -36,4 +39,11 @@ function addPost() {
 
 
 }
+
+function editUser(userInfo){
+
+    
+
+}
+
 
