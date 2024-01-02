@@ -19,7 +19,7 @@
       <div class="container d-flex justify-content-center pt-md-3">
         <div class="card loginCard" style="width: 28rem;"> 
           <div class="text-center">
-            <form class="px-4 py-3">
+            <form id="registrationForm" class="px-4 py-3">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName" class="form-label">First Name</label>
@@ -31,9 +31,9 @@
                 </div>
               </div>
               <div class="mb-2">
-                <label for="emailAddress" class="form-label">Email address</label>
-                <input type="email" class="form-control text-center" id="emailAddress" placeholder="Enter Email Address" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control text-center" id="username" placeholder="Enter Username">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
@@ -44,8 +44,8 @@
                 <input type="password" class="form-control text-center" id="rePassword" placeholder="Enter Password Again">
               </div>
               <div class="mb-3">
-                <label for="refer" class="form-label refer-selection mb-2"> Which House Do You Represent</label>
-                <select class="form-select text-center" aria-label="Default select example">
+                <label for="house" class="form-label refer-selection mb-2"> Which House Do You Represent</label>
+                <select class="form-select text-center" id="house" aria-label="Default select example">
                   <option selected>Open this select menu</option>
                   <option value="gryf">Gryffindor</option>
                   <option value="sly">Slytherin</option>
@@ -64,5 +64,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
         crossorigin="anonymous">
     </script>
+    <script src="./registration.js"></script>
   </body>
 </html>
