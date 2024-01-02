@@ -43,7 +43,7 @@ h1 {
   margin-bottom: 50px;
 }
 
-.loginButton {
+#loginButton {
   align-items: center;
   width: 200px;
   padding: 10px;
