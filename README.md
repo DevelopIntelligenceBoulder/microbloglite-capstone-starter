@@ -44,4 +44,4 @@ _Our {we'll insert a name for our project here} allows users to register, login,
 
 # Acknowledgments
 
-- [_MicroblogLite_ API docs](https://microbloglite.herokuapp.com/docs/)
+- [_MicroblogLite_ API docs](http://microbloglite.us-east-2.elasticbeanstalk.com)
