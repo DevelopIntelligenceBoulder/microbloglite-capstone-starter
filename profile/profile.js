@@ -22,7 +22,7 @@ function createPost (){
         return;
     }
 
-    // Get login data fro authorization
+    // Get login data for authorization
     const loginData = getLoginData();
 
     // POST request with headers and body
@@ -62,7 +62,7 @@ function createPost (){
 const blogTitleField = document.querySelector('.title');
 const articleField = document.querySelector('.article');
 
-// Event listner for form submission
+// Event listner for form submission & character limits
 document.getElementById('post-form').addEventListener('submit',function(event){
     event.preventDefault();
     if(isArticleLengthValid()){

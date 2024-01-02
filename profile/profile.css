@@ -72,8 +72,14 @@ header h1 {
     color: #4a5043;
     font-weight: bold;
     text-decoration: none;
+    padding-bottom: 20px;
 }
 
 #go-to-posts-link:hover {
     text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
 }
