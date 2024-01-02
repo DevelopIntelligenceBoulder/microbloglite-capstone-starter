@@ -10,5 +10,22 @@ window.onload = () => {
     publishForm.onsubmit = (e) => {
         // Preventing the default form submission to avoid a page reload.
         e.preventDefault();
+
+        let currentFormData = {
+            title: titleInputEl.value, 
+            blogPost: blogPostInputEl.value,
+        };
+
+        fetch(apiBaseURL + "/api/posts", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(currentFormData),
+        })
+            .then((res)=>res.json())
+            .then((newBlogPost)=> {
+                location.href = `/posts.html id=${newBlogPost.id}`;
+            })
     }
 }
