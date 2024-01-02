@@ -1,37 +1,31 @@
-/* Posts Page JavaScript 
-
-    prevent access to page unless visitor is logged in
-
-    provide link to profile page
-
-    include logoutBtn
-        logout() function in auth.js
-    
-    
-
-*/
 "use strict";
+
+// imported functions
 import { isLoggedIn, getLoginData, logout } from "../auth.js";
 
 window.onload = () => {
 
+    // if user is not logged in send to home page
     if (!isLoggedIn()) {
         window.location.replace("/");
     }
 
+    // function call for getAllPosts
     getAllPosts();
+
     // logout button variable
     let logoutBtn = document.getElementById('logout-btn');
+    // event listner for logout button
     logoutBtn.onclick = () => {
         logout();
     }
 
-
 }
 
+// initalized variables
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
-let createPostForm = document.getElementById('create-post-form');
-let allPosts = document.getElementById('all-posts');
+const createPostForm = document.getElementById('create-post-form');
+const allPosts = document.getElementById('all-posts');
 
 // function to retrieve and display all posts
 let getAllPosts = () => {
