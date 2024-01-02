@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+}
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    margin: 18px;
+    padding: 36px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+    color: #1877f2;
+}
+
+.content {
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+.form__message {
+    font-size: 1.2rem;
+    color: #262626;
+    margin-bottom: 1rem;
+}
+
+.form__message--error {
+    color: #ed4956;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin: 8px 0;
+}
+
+.form__input:focus {
+    border-color: #3897f0;
+}
+
+.form__input-error-message {
+    font-size: 0.85rem;
+    color: #ed4956;
+    margin-top: 0.5rem;
+}
+
+.form__button {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #3897f0; 
+    border: 1px solid #3897f0;
+}
+
+.form__button:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+}
+
+.form__text {
+    color: #262626;
+    margin: 15px 0;
+    font-size: 0.85rem;
+}
+
+.form__link {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}
