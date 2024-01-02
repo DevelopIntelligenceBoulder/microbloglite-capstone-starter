@@ -179,7 +179,7 @@ header.shadow .logo{
     transition: 0.5s;
 }
 
-.bt2:hover{
+.btn2:hover{
     background-color: var(--second-color);
     border: none #fff;
     color: #fff;
