@@ -1,3 +1,6 @@
+"use strict";
+
+
 window.onload = () => {
     let cardContainer = document.getElementById("card-container");
     let loginData = getLoginData();
@@ -36,9 +39,9 @@ window.onload = () => {
                                 <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                                     <div>
                                         ${post.username === loginData.username ?
-                                            `<button class="btn delete-btn" data-postid="${post.postId}" onclick="deletePost('${post.postId}')">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>` : ''}
+                                            `<button class="btn delete-btn" data-post-id="${post._id}" onclick="deletePost('${post._id}')">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>` : ''}
                                     </div>
                                     <div>
                                         <button class="btn" onclick="likeAndDislike('${post.postId}')">
@@ -49,6 +52,7 @@ window.onload = () => {
                                             <i class="fas fa-thumbs-down"></i> Dislike
                                         </button>
                                         <span class="ms-2" id="dislike-count">${post.likes.dislikeCount}</span>
+                                        <p class="card-text fw-lighter">${formattedDate}</p>
                                     </div>
                                 </div>
                             </div>
@@ -58,8 +62,20 @@ window.onload = () => {
         });
 };
 
+// Delete a post
 function deletePost(postId) {
-    let loginData = getLoginData();
+    const loginData = getLoginData();
+
+    if (typeof postId !== 'string' && !(postId instanceof String)) {
+        console.error("Invalid postId:", postId);
+        return;
+    }
+
+    const isConfirmed = window.confirm("Are you sure you want to delete this post?");
+
+    if (!isConfirmed) {
+        return;
+    }
 
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`, {
         method: "DELETE",
@@ -69,17 +85,16 @@ function deletePost(postId) {
     })
     .then((res) => {
         if (res.ok) {
-            // Post deleted successfully
             console.log(`Post with ID ${postId} deleted successfully.`);
+            location.reload();
         } else {
-            console.error(`Failed to delete post with ID ${postId}.`);
+            console.error(`Failed to delete post.`);
         }
     })
     .catch((error) => {
         console.error("Error deleting post:", error);
     });
 }
-
 
 
 
