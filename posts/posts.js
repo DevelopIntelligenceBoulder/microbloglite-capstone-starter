@@ -59,7 +59,34 @@ let getAllPosts = () => {
             return res.json();
         })
         .then((posts) => {
-            console.log(posts);
+            // console.log(posts);
+            posts.forEach((post)=> {
+                console.log(post);
+                // formats date into: (MON DD, YYYY, 0:00 AM/PM)
+                let date = new Date(post.createdAt);
+                let options = {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true,
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                };
+                let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+                
+                let postCardBody = document.createElement('div');
+                postCardBody.classList.add('container', 'd-flex', 'justify-content-center');
+                postCardBody.innerHTML = `
+                    <div class="card" style='width: 75%;'>
+                        <div class="card-body bg-dark text-white">
+                            <p class="card-title">${post.username}</p>
+                            <p class="card-text">${post.text}</p>
+                            <p class="card-text fw-lighter">${formattedDate}</p>
+                        </div>
+                    </div>
+                `;
+                allPosts.appendChild(postCardBody);
+            })
         })
         .catch((err) => console.err(err, 'Error'));
 }
