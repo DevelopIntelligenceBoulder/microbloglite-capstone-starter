@@ -49,10 +49,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                            <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  active" href="./index.html">Register</a>
+                            <a class="nav-link active" aria-current="page" href="./index.html">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../posts/index.html">Posts</a>
@@ -74,17 +74,22 @@
             <form id="register" class="container">
                 <div class="mb-3">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" class="form-control col-6" placeholder="Please enter your full name" minlength="3">
+                    <input type="text" id="fullName" class="form-control col-6" placeholder="Please enter your full name" minlength="3" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="bio">About You</label>
+                    <textarea id="bio" class="form-control col-6" placeholder="Please enter a short description about yourself"></textarea>
                 </div>
                 
                 <div class="mb-3">
                     <label for="username">Username</label>
-                    <input type="text" id="username" class="form-control col-6" minlength="3">
+                    <input type="text" id="username" class="form-control col-6" minlength="3" maxlength="20" />
                 </div>
     
                 <div class="mb-3">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control col-6" minlength="6">
+                    <input type="password" id="password" class="form-control col-6" minlength="6" />
                 </div>
     
                 <button id="registerButton" type="submit" class="btn btn-light mb-3">Register</button>
