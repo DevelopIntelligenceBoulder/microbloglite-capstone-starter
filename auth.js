@@ -84,10 +84,6 @@ function logout() {
   const options = {
     method: "GET",
     headers: {
-      // This header is how we authenticate our user with the
-      // server for any API requests which require the user
-      // to be logged-in in order to have access.
-      // In the API docs, these endpoints display a lock icon.
       Authorization: `Bearer ${loginData.token}`,
     },
   };
@@ -101,10 +97,7 @@ function logout() {
       // error with the fetch request above.
 
       window.localStorage.removeItem("login-data"); // remove login data from LocalStorage
-      window.location.assign("/"); // redirect back to landing page
+      window.location.assign("/landing"); // redirect back to the landing page
     });
-
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/landing");  // redirect back to landing page
-        });
 }
+

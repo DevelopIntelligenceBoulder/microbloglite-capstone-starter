@@ -1,6 +1,5 @@
 "use strict";
 
-const loginForm = document.querySelector("#login");
 const registerForm = document.querySelector("#registerForm");
 
 // register
