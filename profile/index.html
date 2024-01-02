@@ -8,13 +8,42 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/global.css">
 
     
 </head>
 
-<body class="bg-light">
-    <div class="container">
+<body class="">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-orange">
+            <div class="container-fluid">
+              <a class="navbar-brand text-light" href="/">MiCROBLOGGING</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                </ul>
+                
+                
+                <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                          <a class="nav-link text-light" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active text-light" aria-current="page" href="/posts">Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link text-light" onclick="logout()">Logout</button>
+                        </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 mt-5 pt-5">
                 <div class="row z-depth-3">
@@ -22,7 +51,7 @@
 
                         <div class="card-block text-center" id="profile">
                             <i class="fas fa-user-tie fa-6x mt-5"></i>
-                            <h2 class="font-weight-bold mt-4">Ousmane Konate</h2>
+                            <h2 class="font-weight-bold mt-4"></h2>
                             <p>Web Designer</p>
                             <a href="#"><i class="fas fa-edit fa-2x mb-4"></i></a>
                         </div>
@@ -84,11 +113,10 @@
 
        
 
-    </div>
-    
-    <!-- footer -->
+    </div> 
+    </main>
 
-    <footer class="profile-footer mt-3 mb-2">
+    <footer class="">
         <div class="container">
 
             <div class="row">
@@ -123,12 +151,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
-    
 
     <script src="/auth.js"></script>
     <script>

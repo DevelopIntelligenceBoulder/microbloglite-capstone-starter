@@ -13,8 +13,8 @@ function fetchAllPosts() {
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
         method: "GET",
         headers: {
-             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyMDc0NjMsImV4cCI6MTcwNDI5Mzg2M30.n8oVcxSiSLcKnj9DFV9BiBAeDQCTwrOxr97b7Rx33co"
-            //    Authorization: `${userData.token}`
+            // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyMDc0NjMsImV4cCI6MTcwNDI5Mzg2M30.n8oVcxSiSLcKnj9DFV9BiBAeDQCTwrOxr97b7Rx33co"
+                Authorization: `${userData.token}`
         }
     })
     .then(res => res.json())
