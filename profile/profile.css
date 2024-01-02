@@ -77,3 +77,8 @@ header h1 {
 #go-to-posts-link:hover {
     text-decoration: underline;
 }
+
+footer {
+    text-align: center;
+    padding: 40px;
+}
