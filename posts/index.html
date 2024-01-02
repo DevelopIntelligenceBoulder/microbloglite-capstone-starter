@@ -69,18 +69,20 @@
         
         <div>
             <!-- form to create a post -->
-            <div>
-                <form id="create-post-form">
-                    <div>
-                        <div>
+            <div class="container">
+                <form id="create-post-form" class="d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center my-5 bg-dark py-5 rounded-3">
+                        <div class="text-center text-white mb-4">
                             <h3>Create a post!</h3>
                         </div>
-                        <div>
-                            <textarea id="post-text" cols="15" rows="4" placeholder="hi mom! im famous" maxlength="72"></textarea>
+                        <div class="form-floating col-md-8 col-lg-10">
+                            <textarea id="post-text" class="form-control" cols="40" rows="4" placeholder="hi mom! im famous" maxlength="72"></textarea>
+                            <label for="post-text" class="ms-3">Any thoughts? </label>
+                            
                         </div>
-                        <div><p class="fw-light"><i>max character length: 72</i></p></div>
-                        <div>
-                            <input class="btn text-center btn-primary" type="submit" id="post-submit" label="submit"/>
+                        <!-- <div><p class="fw-light"><i>max character length: 72</i></p></div> -->
+                        <div class="col-md-3 col-lg-2 d-flex justify-content-center">
+                            <input class="btn text-center btn-primary border-0" type="submit" id="post-submit" label="submit"/>
                         </div>
                     </div>
                 </form>
