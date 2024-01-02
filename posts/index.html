@@ -21,10 +21,12 @@
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
-    <script src="../auth.js"></script>
-    <script>
+    <!-- importing the functions from auth.js -->
+    <script type="module" src="../auth.js" ></script>
+    <!-- using imported functions to check if user is logged in  -->
+    <!-- <script type="module" src="../auth.js">
         if (!isLoggedIn()) window.location.replace("/");
-    </script>
+    </script> -->
 </head>
 <body>
 
@@ -53,7 +55,7 @@
             <a class="navbar-brand logo-container" href="">LOGO</a>
         
             <div>
-                <button class="btn btn-primary">BUTTON</button>
+                <button id="logout-btn" class="btn btn-danger">LOGOUT</button>
             </div>
         </div>
         
@@ -63,11 +65,45 @@
         <h1>POSTS PAGE</h1>
     </header>
 
-    <main></main>
+    <main>
+        
+        <div>
+            <!-- form to create a post -->
+            <div class="container">
+                <form id="create-post-form" class="d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center my-5 bg-dark py-5 rounded-3">
+                        <div class="text-center text-white mb-4">
+                            <h3>Create a post!</h3>
+                        </div>
+                        <div class="form-floating col-md-8 col-lg-10">
+                            <textarea id="post-text" class="form-control" cols="40" rows="4" placeholder="hi mom! im famous" maxlength="72"></textarea>
+                            <label for="post-text" class="ms-3">Any thoughts? </label>
+                            
+                        </div>
+                        <!-- <div><p class="fw-light"><i>max character length: 72</i></p></div> -->
+                        <div class="col-md-3 col-lg-2 d-flex justify-content-center">
+                            <input class="btn text-center btn-primary border-0" type="submit" id="post-submit" label="submit"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- space to display posts -->
+            <div class="container">
+                <!-- display: content,username and when posts was uploaded/created -->
+                <div id="all-posts">
+                    <!-- username -->
+                    <!-- text -->
+                    <!-- upload time -->
+                    <!-- possibly likes -->
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./posts.js"></script>
+    <script type="module" src="./posts.js"></script>
 </body>
 </html>
