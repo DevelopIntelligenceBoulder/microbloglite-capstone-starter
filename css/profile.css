@@ -12,3 +12,36 @@ i {
 a {
     color: coral;
 }
+footer {
+    background-color: antiquewhite;
+}
+
+footer h2::first-letter {
+    text-decoration: underline;    
+}
+
+.footer-p {
+    /* text-align: center; */
+    margin: auto;
+    padding: 2% 8%;
+    line-height: 1.6;
+    letter-spacing: .07rem;
+    max-width: 70%;
+
+
+}
+
+footer h3 {
+    border: 2px solid red;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    padding-left: 50px;
+}
+#line {
+    border-right: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
