@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="postpage.css">
 
     <!-- Page-specific CSS -->
    
@@ -27,28 +27,27 @@
     </script>
 </head>
 <body>
-
     <header>
-        <h1>Keep Up To Date with the  <code> Wizarding World</code></h1>
+        <div class="nav container">
+            <a href="#" class="logo"> Slytherin <span> Scripts </span></a>
+            <a href="#" class="feed"> Home</a>
+            <a href="#" class="login"> profile</a>
+
+        </div>
     </header>
 
-
-    <main>
-        <div class="postNow-container">
-            <h1>Conjure a Quill</h1>
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">Wiz Blog</h2>
+            <span class="home-subtitle"> Your source of magical content</span>
         </div>
-
-        <h1> Posts </h1>
-
-        <div class="post-container">
-        <!--Post Page JavaScript goes here-->
-        </div>
-
-    </main>
-
-    <footer></footer>
-
-    <!-- Page-specific code -->
-    <script src="./landing.js"></script>
+    </section>
+    <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="wizards">Wizards</span>
+        <span class="filter-item" data-filter="hogwarts">Hogwarts</span>
+        <span class="filter-item" data-filter="news">News</span>
+    </div>
+    <script src="postpage.js"></script>
 </body>
 </html>
