@@ -25,3 +25,7 @@
 body {
   background-color: var(--light-blue);
 }
+
+footer {
+  background-color: var(--cadet-gray);
+}
