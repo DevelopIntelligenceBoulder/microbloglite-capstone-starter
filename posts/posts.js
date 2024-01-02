@@ -39,19 +39,17 @@ window.onload = () => {
                                 <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                                     <div>
                                         ${post.username === loginData.username ?
-                                            `<button class="btn delete-btn" data-post-id="${post._id}" onclick="deletePost('${post._id}')">
+                            `<button class="btn delete-btn" data-post-id="${post._id}" onclick="deletePost('${post._id}')">
                                             <i class="fas fa-trash"></i> Delete
                                         </button>` : ''}
                                     </div>
                                     <div>
-                                        <button class="btn" onclick="likeAndDislike('${post.postId}')">
+                                        <button class="btn" onclick="likePost('${post._id}')">
                                             <i class="fas fa-heart"></i> Like
                                         </button>
-                                        <span class="ms-2" id="like-count">${post.likes.likeCount}</span>
-                                        <button class="btn" onclick="likeAndDislike('${post.postId}')">
-                                            <i class="fas fa-thumbs-down"></i> Dislike
+                                        <button class="btn" onclick="deleteLike">
+                                            <i class="fas fa-heart"></i> Unlike
                                         </button>
-                                        <span class="ms-2" id="dislike-count">${post.likes.dislikeCount}</span>
                                         <p class="card-text fw-lighter">${formattedDate}</p>
                                     </div>
                                 </div>
@@ -70,31 +68,31 @@ function deletePost(postId) {
         console.error("Invalid postId:", postId);
         return;
     }
-
+    // Confirmation
     const isConfirmed = window.confirm("Are you sure you want to delete this post?");
-
     if (!isConfirmed) {
         return;
     }
-
+    // Fetch post id and delete
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`, {
         method: "DELETE",
         headers: {
             'Authorization': `Bearer ${loginData.token}`
         }
     })
-    .then((res) => {
-        if (res.ok) {
-            console.log(`Post with ID ${postId} deleted successfully.`);
-            location.reload();
-        } else {
-            console.error(`Failed to delete post.`);
-        }
-    })
-    .catch((error) => {
-        console.error("Error deleting post:", error);
-    });
+        .then((res) => {
+            if (res.ok) {
+                console.log(`Post with ID ${postId} deleted successfully.`);
+                location.reload();
+            } else {
+                console.error(`Failed to delete post.`);
+            }
+        })
+        .catch((error) => {
+            console.error("Error deleting post:", error);
+        });
 }
+
 
 
 
