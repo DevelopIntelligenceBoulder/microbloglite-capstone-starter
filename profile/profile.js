@@ -4,6 +4,13 @@
 window.onload = function() {
     const postbtn = document.querySelector('#postBtn');
     postbtn.onclick = addPost;
+
+    const userData = getLoginData();
+    const profileContainer = document.getElementById('profile');
+
+    if (userData.username) {
+        profileContainer.querySelector('h2').innerText = userData.username;
+    }
 }
 
 function addPost() {
@@ -18,7 +25,7 @@ function addPost() {
         body: JSON.stringify(bodyData),
         headers: {'Content-Type': 'application/json',
     "Accept": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im91c21hbmUiLCJpYXQiOjE3MDMyNzE5NDEsImV4cCI6MTcwMzM1ODM0MX0.JU97o44HmFyYUkw1u1NzzPzMPdmwDfs5Fute5OAmIeY"
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvcHNtb2tlIiwiaWF0IjoxNzA0MjI0NzczLCJleHAiOjE3MDQzMTExNzN9.v478-orrt1_zfrZTX4hHK3a99zP9Un5CJQemW6xqddQ"
             
             }
     })
