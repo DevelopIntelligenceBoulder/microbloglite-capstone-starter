@@ -26,6 +26,7 @@ window.onload = () => {
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 const createPostForm = document.getElementById('create-post-form');
 const allPosts = document.getElementById('all-posts');
+const loadMoreBtn = document.getElementById('load-more-btn');
 
 // function to retrieve and display all posts
 let getAllPosts = () => {
