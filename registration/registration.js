@@ -8,15 +8,16 @@ registerForm.onsubmit = function (e) {
     // We can use loginForm.username (for example) to access the input element in the form which has the ID of "username".
     const registerData = {
         username: registerForm.username.value,
+        bio: registerForm.bio.value,
         fullName: registerForm.fullName.value,
         password: registerForm.password.value,
     }
     console.log(registerData, "trigger")
 
-    // Disables the button after the form has been submitted already:
+    // Disables the button after the form has been submitted already
     registerForm.registerButton.disabled = true;
 
-    // Process the register using the function from auth.js
+    // Process the register using the register function
     register(registerData);
 };
 
@@ -33,11 +34,11 @@ function register (registerData) {
         body: JSON.stringify(registerData),
     };
 
-    return fetch(apiBaseURL + "/api/users", options)
+    return fetch("https://microbloglite.us-east-2.elasticbeanstalk.com/api/users", options)
         .then(response => response.json())
         .then(registerData => {
             window.localStorage.setItem("register-data", JSON.stringify(registerData));
-            window.location.assign("index.html");  // redirect
+            window.location.assign("../index.html");  // redirect
 
             return registerData;
         });
