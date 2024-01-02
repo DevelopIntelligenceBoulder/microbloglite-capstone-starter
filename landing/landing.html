@@ -1,131 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="/global.css">
-
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
-
-    <title>Login to the Microblog Network!</title>
-
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/landing/landing.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+  <header>
+    <nav class="navbar md-body">
+      <div class="">
+        <img class="logo" src="/images/TheMedBowlLogo 1.png" alt="logo">
+        <a class="navbar-brand" href="/landing/landingtest.html"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigate</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/posts/index.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log Out</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </nav>
+  </header>
+    <div class="container-fluid">
+        <div>
+            <h1>Login</h1>
 
-    <header>
-        <h1>Welcome to <code>Mediterranean Bliss</code></h1>
-    </header>
+            <form class="form-container" action="your-server-endpoint" method="POST" style="font-size: 24px;">
+              
+                <label for="username">Username:</label> <br>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required style="border-radius: 10px; border: 1px solid #000; background: #FFF"> <br>
+            
+                <label for="password">Password:</label> <br>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required style="border-radius: 10px; border: 1px solid #000; background: #FFF;"> <br>
+            
+                <!-- Submit button -->
+                <input class="loginButton" type="submit" value="Login">
+            </form>
+            
+        </div>
 
-    <main>
-        <section>
-            Hey there! Grab your passport to a world of coastal flavors and healthy living!
-            Immerse yourself in the rich tapestry of Mediterranean cuisine where every post
-            is a culinary adventure waiting to unfold.
+        <p class="text">
+            <span>Don’t have an account </span>
+            <span><a href="#" style="color: #007DD7; text-decoration: none;">SIGN UP</a></span>
+            <span> here.</span>
+        </p>
+    </div>
 
-            Indulge in the sun-kissed delights of the Mediterranean flavor, where our passionate community shares not
-            just
-            recipes but a lifestyle that celebrates the art of savoring every meal. Picture yourself sipping on a
-            refreshing glass of Greek tzatziki paired with warm, freshly baked pita bread, or savoring the zest of
-            Spanish paella made with saffron-infused rice and succulent seafood. These are just a glimpse of the vibrant
-            and wholesome dishes that await you.
 
-            At Mediterranean Bliss, we go beyond recipes, offering curated diet plans inspired by the heart-healthy
-            and longevity-promoting Mediterranean diet. Picture yourself embracing the lifestyle of the Greek isles,
-            where fresh olive oil, vibrant fruits, and lean proteins are not just ingredients but the secret to a
-            well-balanced life.
 
-            Join our community of culinary explorers, where each post invites you to embark on a journey through the
-            aromatic gardens of Italy, the sun-drenched coasts of Spain, and the quaint villages of Greece. Let's
-            transform mealtime into a celebration of good food, good health, and the joy of communal dining!
 
-            Embark on a flavorful journey with us because life is too short for anything less
-            than extraordinary taste and vibrant living! Come join us inside!
-        </section>
-        <br>
-        <h2>Let's Eat! Login in</h2>
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
 
-        <a href="../registration/registration.html">No account? Sign up today!</a>
 
-    </main>
-
-    <footer></footer>
-
-    <!-- Page-specific code -->    
-    <script src="/auth.js"></script>
-    <script src="./landing.js"></script>
-    <script>
-        if (isLoggedIn() == true) window.location.replace("/posts");
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

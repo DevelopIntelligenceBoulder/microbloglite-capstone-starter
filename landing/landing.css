@@ -1,1 +1,59 @@
-/* Landing Page CSS */
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  background: url('/images/stefan-vladimirov-Q_Moi2xjieU-unsplash.jpg') no-repeat;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%; /* Adjust based on your design */
+  margin: auto; /* Center the container */
+}
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed top;
+  background-color: #F9F9F9;
+}
+
+.container-fluid {
+  text-align: center;
+  border-radius: 35px;
+  background: #F9F9F9;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px; 
+  margin-top: 200px;
+  width: 30rem;
+  height: 500px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#username {
+  margin-bottom: 30px;
+}
+
+#password {
+  margin-bottom: 50px;
+}
+
+.loginButton {
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  background: #507A51;
+  border-radius: 50px;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 50px;
+}
+
