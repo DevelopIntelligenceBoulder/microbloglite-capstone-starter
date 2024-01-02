@@ -1,0 +1,8 @@
+.wrapper{
+    border-top: 3px solid rgb(150, 170, 63);
+}
+
+.wrapper a{
+    text-decoration: none;
+    color: rgb(150, 170, 63);
+}
