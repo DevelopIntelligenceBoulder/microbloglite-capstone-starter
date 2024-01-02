@@ -12,7 +12,7 @@ registerForm.onsubmit = function (event) {
     const registrationData = {
         username: registerForm.username.value,
         password: registerForm.password.value,
-        fullname: registerForm.fullname.value,
+        fullName: registerForm.fullName.value,
     }
 
     // Disables the button after the form has been submitted already:
