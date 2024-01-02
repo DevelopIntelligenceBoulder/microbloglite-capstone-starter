@@ -11,4 +11,10 @@ window.onload = () => {
   registerButton.onclick = () => {
     registerUser();
   };
+  function registerUser(){
+    let username = document.getElementById("username").value;
+    let fullName = document.getElementById("fullname").value;
+    let password = document.getElementById("password").value;
+    
+  }
 };
