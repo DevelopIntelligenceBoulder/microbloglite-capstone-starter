@@ -28,28 +28,33 @@
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+    <div class="container">
+        <h3>SocialBook</h3>
+        <p>The hotttest social network since </p>
+        <div class="icon"></div>
+        <div class="content">
+            <form class="form" id="login">
+               <h1 class="form__message">Login</h1>
+               <div class="form__message form__message--error"></div>
+               <div class="form__input-group">
+                <input type="text" id="username" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+               </div>
+               <div class="form__input-group">
+                <input type="password" id="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+               </div>
+               <button class="form__button" type="submit" id="loginButton">Continue</button>
+               <p class="form__text">
+                <a href="#" class="form__link">Forgot Password</a>
+               </p>
+               <p class="form__text">
+                <a class="form__link" id="linkCreateAccount" href="/registration/registration.html">New? Create an account</a>
+               </p>
+            </form>
 
-    <main>
-
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
-
-            <button id="loginButton" type="submit" class="btn btn-light">Login</button>
-        </form>
-            <a href="/registration/registration.html" class="btn btn-light">Register</a>
+    </div>
     </main>
-
     <footer></footer>
 
     <!-- Page-specific code -->
