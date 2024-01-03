@@ -149,3 +149,5 @@ function displayAllPosts(allPosts) {
     allPostContainer.appendChild(card);
   });
 }
+
+// adding 
