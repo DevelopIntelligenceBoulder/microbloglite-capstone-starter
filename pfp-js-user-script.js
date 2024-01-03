@@ -8,7 +8,7 @@ window.onload = init;
 function init() {
     let username;
 
-    const fetchUsernamePromise = fetch(apiBaseURL + `/api/users/${username}`)
+    const fetchUsername = fetch(apiBaseURL + `/api/users/${username}`)
         .then(response => response.json())
         .then(usernameData => {
             username = usernameData;
