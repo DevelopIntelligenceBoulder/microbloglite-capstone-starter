@@ -25,7 +25,6 @@ function fetchAllPosts() {
     });
 }
 
-
 function likePost(postId) {
     console.log(`Liking post with ID: ${postId}`);
     const token = getLoginData().token;
@@ -55,57 +54,26 @@ function likePost(postId) {
 
     });
 }
+
+// function unlikePost(likeId) {
+//     console.log(`Unliking post with Like ID: ${likeId}`);
 //     const token = getLoginData().token;
 
-//     const apiUrl = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`;
-//     fetch(apiUrl, {
-//         method: 'GET',
+//     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes/${likeId}`, {
+//         method: "DELETE",
 //         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json",
-//             "Authorization": `Bearer ${token}`
+//             Authorization: `Bearer ${token}`
 //         }
 //     })
-//         .then(response => response.json())
-//         .then(deletedPost => {
-//             console.log(`Post with ID ${postId} deleted successfully.`, deletedPost);
-//             return fetchAllPosts();
-//         })
-//         .then(response => response.json())
-//         .then(postData => {
-//             if (getLoginData().username === postData.username) {
-//                 // If yes, proceed with the delete request
-//                 return fetch(apiUrl, {
-//                     method: 'DELETE',
-//                     headers: {
-//                         'Content-Type': 'application/json',
-//                         'Accept': 'application/json',
-//                         Authorization: `Bearer ${token}`
-//                     }
-//                 });
-//             } else {
-//                 const card = document.getElementById(`postCard_${postId}`);
-//                 if (card) {
-//                     const errMsg = document.createElement('p');
-//                     errMsg.innerHTML = "You don't have permission to delete this post.";
-//                     errMsg.style.color = "red";
-//                     card.appendChild(errMsg);
-//                 }
-//                 // Throw an error to prevent card removal
-//                 throw new Error("Permission denied");
-//             }
-//         })
-//         .then(() => {
-//             // IF POST WAS DELETED, THIS WILL RUN 
-//             const card = document.getElementById(`postCard_${postId}`);
-//             if (card) {
-//                 card.remove();
-//             }
-//         })
-//         .catch(error => {
-//             console.error('Error deleting post', error);
-//         });
-//     }    
+//     .then(response => response.json())
+//     .then(unlikedPost => {
+//         console.log(unlikedPost);
+//         fetchAllPosts();
+//     })
+//     .catch(error => {
+//         console.error("Failed to unlike the post:", error);
+//     });
+// }
 
 function deletePost(postId) {
     const token = getLoginData().token;
@@ -183,3 +151,4 @@ function displayAllPosts(allPosts) {
         allPostContainer.appendChild(card);
     });
 }
+
