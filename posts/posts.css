@@ -1,1 +1,6 @@
 /* Posts Page CSS */
+@media screen and (max-width: 991px)  {
+    .mobile{
+        display: none;
+    }
+}
