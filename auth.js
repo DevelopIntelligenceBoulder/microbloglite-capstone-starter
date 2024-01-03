@@ -42,11 +42,14 @@ function login (loginData) {
     return fetch(apiBaseURL + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
+            console.log(loginData)
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
 
             return loginData;
-        });
+        }).catch((err)=>{
+            console.error(err);
+        })
 }
 
 
