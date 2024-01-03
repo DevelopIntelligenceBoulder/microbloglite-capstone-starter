@@ -5,6 +5,9 @@ window.onload = () => {
   let userIcon = document.getElementById("userIcon");
   let dropdownContent = document.getElementById("dropdownContent");
   let logOutBtnEl = document.getElementById("logOutBtn");
+  let postBtnEl = document.getElementById("postBtn");
+  let textAreaEl = document.getElementById("textArea");
+  
 
   // Picture Variables
 
@@ -25,6 +28,7 @@ window.onload = () => {
       dropdownContent.classList.remove("show");
     }
   });
+
 
   // Picture Logic
 
@@ -71,9 +75,51 @@ window.onload = () => {
     profilePicEl.click();
   });
 
+  // Post Box
+
+   // Event Listener to Post
+   postBtnEl.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Post Data
+    let postData = {
+      text: textAreaEl.value,
+    };
+
+    // Fetch Posts
+
+    const loginData = getLoginData();
+
+ 
+
+      fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${loginData.token}`,
+        },
+        body: JSON.stringify(postData),
+      })
+        .then((res) => res.json())
+        .then((newPost) => {
+          let postsContainerEl = document.getElementById("box");
+          let newPostDiv = document.createElement("div");
+          newPostDiv.classList.add("card");
+          newPostDiv.textContent = newPost.message;
+
+          postsContainerEl.appendChild(newPostDiv);
+
+          textAreaEl.value = "";
+        })
+        .catch((err) => {
+          console.error("Error", err);
+        });
+  });
+
   // Get All Posts
   function getAllPosts() {
-    // GET /api/users
+    
     const loginData = getLoginData();
     const options = {
       method: "GET",
@@ -82,7 +128,7 @@ window.onload = () => {
       },
     };
     fetch(
-      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
+      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0&username=Terence",
       options
     )
       .then((response) => response.json())
@@ -105,9 +151,11 @@ window.onload = () => {
           postEl.appendChild(postTextEl);
 
           profilePostsEl.appendChild(postEl);
+         
         });
         console.log(posts);
       });
   }
   getAllPosts();
+  setInterval(getAllPosts, 2000);
 };

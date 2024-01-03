@@ -30,6 +30,9 @@ window.onload = () => {
   let postsContainerEl = document.getElementById("write-post-container");
   let postBtnEl = document.getElementById("postBtn");
 
+  // Fetch to Show Username
+  fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/')
+
   // Event Listener to Post
   postBtnEl.addEventListener("click", (e) => {
     e.preventDefault();
@@ -69,13 +72,11 @@ window.onload = () => {
         });
   });
 
- 
-  setInterval(getAllPosts, 5000);
 
   // Get All Posts
 
   function getAllPosts() {
-    // GET /api/users
+   
     const loginData = getLoginData();
     const options = {
       method: "GET",
@@ -90,7 +91,8 @@ window.onload = () => {
       .then((response) => response.json())
       .then((posts) => {
         let postsContainerEl = document.getElementById("postsContainer");
-        // Do something with the users array...
+        postsContainerEl.innerHTML = "";
+        
         posts.forEach((post) => {
           let postEl = document.createElement("div");
           postEl.classList.add("card");
@@ -112,4 +114,5 @@ window.onload = () => {
       });
   }
   getAllPosts();
+  setInterval(getAllPosts, 5000);
 };
