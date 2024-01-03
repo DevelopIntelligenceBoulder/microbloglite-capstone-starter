@@ -1,1 +1,17 @@
 /* Posts Page CSS */
+
+*{
+    font-family: 'Quilon', sans-serif;
+}
+
+
+
+.cardcontainer {
+  width: 400px;
+  background-color: #f3be11;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.2);
+}
