@@ -23,7 +23,7 @@
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
     <script>
-        if (isLoggedIn()) window.location.replace("/");
+        if (isLoggedIn()) window.location.replace("posts");
     </script>
 </head>
 <body>
@@ -58,55 +58,7 @@
     <footer></footer>
 
     <!-- Page-specific code -->
-    <div class="container">
-        <h3>SocialBook</h3>
-        <div class="icon"></div>
-        <div class="content">
-            <form class="form" id="login">
-               <h1 class="form__message">Login</h1>
-               <div class="form__message form__message--error"></div>
-               <div class="form__input-group">
-                <input type="text" id="username" class="form__input" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"></div>
-               </div>
-               <div class="form__input-group">
-                <input type="password" id="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-               </div>
-               <button class="form__button" type="submit" id="loginButton">Continue</button>
-               <p class="form__text">
-                <a href="#" class="form__link">Forgot Password</a>
-               </p>
-               <p class="form__text">
-                <a class="form__link" id="linkCreateAccount" href="/registration/registration.html">New? Create an account!!</a>
-               </p>
-            </form> 
-            <form class="form form--hidden" id="createAccount">
-               <h1 class="form__message">Create Account</h1>
-               <div class="form__message form__message--error"></div>
-               <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
-                <div class="form__input-error-message"></div>
-               </div>
-               <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Email Address">
-                <div class="form__input-error-message"></div>
-               </div>
-               <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-               </div>
-               <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Confirm Password">
-                <div class="form__input-error-message"></div>
-               </div>
-               <button class="form__button" type="submit">Continue</button>
-               <p class="form__text">
-                <a class="form__link" id="linkLogin">Already have an Account? Sign in Here</a>
-               </p>
-            </form> 
-        </div>
-    </div>
+   
     <script src="./landing.js"></script>
 </body>
 </html>

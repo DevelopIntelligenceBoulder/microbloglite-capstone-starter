@@ -1,6 +1,5 @@
 "use strict";
 
-<<<<<<< HEAD
 window.onload = () => {
     document.getElementById("createAccount").addEventListener("submit", function (e) {
         e.preventDefault();
@@ -72,7 +71,6 @@ window.onload = () => {
         });
     });
 };
-=======
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {
@@ -94,4 +92,3 @@ loginForm.onsubmit = function (event) {
     login(loginData);
 };
 
->>>>>>> a185d5726147ce15e839f38b46edfe3d346101b0
