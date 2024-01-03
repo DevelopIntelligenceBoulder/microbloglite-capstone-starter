@@ -1,3 +1,95 @@
 /* Posts Page CSS */
+.card {
+    width: 70%vw; 
+    /* max-width: 300px; */
+    margin: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
+ .side-image{
+
+    width: 60%;
+ }
+
+ .profile-pic{
+width: 10vw;
+object-fit: cover;
+height: 10vw;
+border-radius: 100%;
+ }
+
+ .card-content{
+ width: 40%;
+ }
+
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+   
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+      
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+  
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #d3d4e8;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #de5959;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #0f0202;
+  }
+  
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
 
   
