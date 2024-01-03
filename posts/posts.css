@@ -56,4 +56,6 @@ main {
 .btn:hover {
     filter: brightness(90%);
 }
-
+footer {
+    background-color: var(--cadet-gray);
+}
