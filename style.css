@@ -9,10 +9,10 @@
 
 body {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
   min-height: 100vh;
-  background: url('image/town.jfif') no-repeat;
+  background: url('image/town\ 3.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
