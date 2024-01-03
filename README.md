@@ -1,8 +1,8 @@
 # ChatterGrape 🍇
 
-_ChatterGrape allows users to register, login, logout, make post, and view their own profiles._
+_ChatterGrape allows users to register, login, logout, make post, delete post, like post, dislike post, and view their own profiles._
 
-## Live Preview
+# Live Preview
 
 [ChatterGrape Live Preview Site]()
 
@@ -19,7 +19,9 @@ _ChatterGrape allows users to register, login, logout, make post, and view their
 [Register Page]()
 
 ### Post Page 
-- Allows users to see post and like them.
+- Allows users to see post.
+- Allows you to like or dislike a post.
+- Allows you to delete your post.
 [Post Page]()
 
 ### Profile View Page
@@ -41,6 +43,27 @@ _ChatterGrape allows users to register, login, logout, make post, and view their
 - Aviad Churaman
 - Jeanette Gonzalez
 - Tina Nguyen
+
+# Interesting Code
+
+### Aviad
+
+```
+if (response.ok) {
+        window.location.href = "../index.html";
+    }
+```
+
+### Jeanette
+
+```
+
+```
+
+### Tina
+
+```
+```
 
 # Acknowledgments
 

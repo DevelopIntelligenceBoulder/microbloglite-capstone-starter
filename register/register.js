@@ -55,13 +55,11 @@ window.onload = () => {
       } else {
         // Registration failed, display error message
         const error = await response.json();
-        console.error(error);
         // Display the error message in the innerText element
         const innerText = document.getElementById("innerText");
         innerText.textContent = error.message;
       }
     } catch (error) {
-      console.error(error);
       // Display the error message in the innerText element
       const innerText = document.getElementById("innerText");
       innerText.textContent = "An error occurred during registration.";
