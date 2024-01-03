@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="/profile/profile.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -13,40 +14,97 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
     <title>Profile Page</title>
+    <script>
+      if (isLoggedIn() === false) window.location.replace("index.html");
+    </script>
   </head>
   <body>
-    <!-- Your content goes here -->
-    <nav class="navbar navbar-expand-lg ivory">
-      <div class="container-fluid">
-        <a class="navbar-brand text-darkCerulean" href="index.html">Logo</a>
-        <a class="btn btn-dark btn-secondary text-charcoal"
-          href="/index.html">Log out</a>
+    <!-- Navbar Content -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav d-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/index.html">Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/registration/index.html">Registration</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="navbar-brand logo-container" href>
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            <image href="../images/Y%20logo.svg" width="100" height="100" id="logo" />
+          </svg>
+        </a>
+
+        <div>
+          <button id="logout" class="btn btn-dark">Logout</button>
+        </div>
       </div>
     </nav>
 
-    <header>
-      <h1>Berleezy Eugh</h1>
-    </header>
-
-    <section class="profile">
-      <div class="profile-info">
-        <div>
-          <img class="profile-image" src="/images/test pic.png" alt="Profile picture" />
-        </div>
-        <h2>About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
-          nisl sed metus sagittis, ac aliquet est ultricies.</p>
+    <div class="profile-container">
+      <div class="profile-header">
+        <img src="/images/test pic.png" alt="Profile Picture"
+          class="profile-picture">
+        <h1>Berleezy Eugh</h1>
+        <p>Email: Eugh@gmail.com</p>
       </div>
-    </section>
 
-    <main>
-      <form>
-        <label>Create a Post:</label>
-        <textarea id="post-content" name="post-content" rows="4" placeholder="What's on your mind?"></textarea>
-        <button type="submit">Post</button>
-      </form>
-    </main>
+      <hr />
 
+      <div class="container">
+        <form id="create-post-form">
+          <h3 class="header">Create Post</h3>
+          <textarea class="post" placeholder="What's on your mind?" cols="50"
+            rows="5"></textarea>
+            <div class="col-md-3 col-lg-2 d-flex justify-content-center">
+              <input class="btn text-center btn-dark border-0" type="submit"
+                id="post-submit" label="submit" />
+            </div>
+        </form>
+      </div>
+
+      <hr />
+
+      <div class="profile-posts">
+        <h3 class="title">Your Posts</h3>
+        <div class="post">
+          <p class="post-date">January 5, 2024</p>
+          <p class="post-content">WHATS GOOD YALL WELCOME BACK! New video on my
+            channel LETS GET IT!</p>
+        </div>
+        <div class="post">
+          <p class="post-date">January 4, 2024</p>
+          <p class="post-content">Some things you gotta get right the first
+            time.</p>
+        </div>
+        <div class="post">
+          <p class="post-date">January 3, 2024</p>
+          <p class="post-content">Words can't express the amount of gratitude I
+            feel right now. Thank you to everyone who came out to celebrate my
+            birthday with me. It feels like a dream. I love you all.</p>
+        </div>
+        <div class="post">
+          <p class="post-date">January 1, 2024</p>
+          <p class="post-content">Happy New Year everyone!!! 2024 LETS GET IT!
+            Eugh</p>
+        </div>
+
+      </div>
+    </div>
+    <!-- Footer Content -->
     <footer></footer>
 
     <script src="/profile/profile.js"></script>
