@@ -1,13 +1,13 @@
+"use strict";
 
-"use strict"
-
+let userData; 
 
 window.onload = function() {
     const postbtn = document.querySelector('#postBtn');
     postbtn.onclick = addPost;
 
     const profileContainer = document.getElementById('profile');
-    const userData = getLoginData();
+    userData = getLoginData(); 
 
     if (userData.username) {
         profileContainer.querySelector('h2').innerText = userData.username;
@@ -17,9 +17,10 @@ window.onload = function() {
     editBtn.onclick = editUser;
 }
 
-function addPost() {
+function addPost(e) {
+    e.preventDefault();
+    
     const textareaContent = document.querySelector('#textarea');
-
 
     const bodyData = {
         text: textareaContent.value,
@@ -28,22 +29,20 @@ function addPost() {
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
         method: 'POST', 
         body: JSON.stringify(bodyData),
-        headers: {'Content-Type': 'application/json',
-    "Accept": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBvcHNtb2tlIiwiaWF0IjoxNzA0MjI0NzczLCJleHAiOjE3MDQzMTExNzN9.v478-orrt1_zfrZTX4hHK3a99zP9Un5CJQemW6xqddQ"
-                //Authorization: `${userData.token}`
-            }
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
     })
     .then(response => response.json())
-    .then(createPost => console.log(createPost));
-
-
+    .then(createPost => {
+        console.log(createPost);
+        textareaContent.value = ""; 
+    });
 }
 
-function editUser(userInfo){
 
+function editUser(userInfo) {
     
-
 }
-
-
