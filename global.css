@@ -1,0 +1,52 @@
+/* Global CSS for all pages */
+
+
+/* Sizing helper: See Workbook 1b, page 2-33. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+       Vizualization helper: While styling or debugging your HTML & CSS, 
+       uncomment the rule below to see all the boxes on your page more
+       clearly! (Remove this outline before submitting: users won't 
+       want to see it!)
+    */
+
+
+
+
+/* css added 1.2.2024 */
+
+a {
+    color: #F9F9F9;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    background-color: #507A51;
+    margin: 0;
+}
+
+
+.navbar {
+    position: fixed top;
+    padding: 10px;
+    background-color: #F9F9F9;
+}
+
+#navbar img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+
+}
+
+.container-fluid {
+    text-align: center;
+    border-radius: 35px;
+}
