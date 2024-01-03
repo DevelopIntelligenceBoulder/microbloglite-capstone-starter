@@ -17,6 +17,10 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="profile.css" />
     <link rel="stylesheet" href="../global-styles/global-styles.css" />
@@ -31,35 +35,60 @@
           <a class="nav-item nav-link" href="#">Explore</a>
         </div>
     </nav> -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary shadow-sm py-0">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bookface</a>
+    <nav class="navbar navbar-expand-sm shadow-sm bg-secondary-subtle py-0">
+      <div class="container text-center">
+        <a class="navbar-brand my-1" href="#">Bookface</a>
         <button
           class="navbar-toggler d-lg-none"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavId"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="bi bi-list"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <div class="navbar-nav w-100 gap-0 justify-content-center nav-underline">
-            <a class="nav-link p-3 active" href="#">Feed</a>
-            <a class="nav-link p-3" href="#">Explore</a>
-          </div>
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="dropdownId"
-              data-bs-toggle="dropdown"
-              >Profile</a
-            >
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownId">
-              <a class="dropdown-item p-0 m-0" href="#">Settings</a>
-              <a class="dropdown-item bg-black p-0 m-0" href="#">Profile</a>
+          <div
+            class="navbar-nav w-100 justify-content-center"
+          >
+            <div class="navbar-nav nav-underline pill-group gap-2 gap-sm-0 p-0">
+              <a class="nav-link p-3 px-4 " href="../posts/">Explore</a>
+              <a class="nav-link p-3 px-4 active border-primary" href="#">My Feed</a>
             </div>
           </div>
+
+          <div class="nav-item w-fit-content mx-auto py-2">
+            <div class="dropdown pe-1">
+              <a
+                class="dropdown-toggle nav-link"
+                href="#"
+                id="dropdownId"
+                data-bs-toggle="dropdown"
+                ><span id="usernameLabel"
+                  ><i class="bi-person-fill"></i> guestuser
+                </span></a
+              >
+              <div
+                class="dropdown-menu dropdown-menu-sm-end shadow-sm"
+                aria-labelledby="dropdownId"
+              >
+                <a class="dropdown-item bi bi-gear-fill" href="#"> Settings </a>
+                <a class="dropdown-item bi bi-person-fill" href="#">
+                  Profile
+                </a>
+                <a class="dropdown-item bi bi-people-fill" href="#">
+                  Friends
+                </a>
+                <a class="dropdown-item bi bi-heart-fill" href="#"> Likes </a>
+                <a
+                  class="dropdown-item bi bi-bookmark-fill bi-bookmark-fill"
+                  href="#"
+                >
+                  Saved
+                </a>
+              </div>
+            </div>
+          </div>
+
           <!-- <form class="d-flex my-2 my-lg-0">
             <div class="input-group">
                 <input

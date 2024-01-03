@@ -1,4 +1,4 @@
-const apiBaseURL = "https://microbloglite.onrender.com";
+const API_URL = "https://microbloglite.onrender.com";
 
 // POST /auth/login
 async function login(loginData) {
@@ -11,7 +11,7 @@ async function login(loginData) {
   };
 
   // Saves login data if success and throws an error otherwise
-  return await fetch(apiBaseURL + "/auth/login", options)
+  return await fetch(API_URL + "/auth/login", options)
     .then((res) => res.json())
     .then((userData) => {
       if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
@@ -29,7 +29,7 @@ async function logout() {
     },
   };
 
-  return await fetch(apiBaseURL + "/auth/logout", options)
+  return await fetch(API_URL + "/auth/logout", options)
     .then((response) => response.json())
     .then((data) => {
       console.log(data); //log the logout message
