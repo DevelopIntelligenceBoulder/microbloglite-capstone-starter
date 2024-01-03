@@ -27,8 +27,9 @@
     <!-- Scripts -->
     <script src="../utils/auth.js"></script>
     <script defer src="./registration.js"></script>
+    
   </head>
-  <body data-bs-theme="dark">
+  <body data-bs-theme="dark" class="d-flex flex-column min-vh-100">
     <div class="container">
       <div class="row mt-5">
         <div class="col-lg-4 bg-dark-subtle m-auto rounded-top wrapper">
@@ -46,11 +47,11 @@
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-              <input id="password" type="text" class="form-control" placeholder="Password" required/>
+              <input id="password" type="password" class="form-control" placeholder="Password" required/>
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-              <input id="password-conformation" type="text" class="form-control" placeholder="Confirm Password" required/>
+              <input id="password-conformation" type="password" class="form-control" placeholder="Confirm Password" required/>
             </div>
             <div class="d-grid">
               <button
@@ -78,11 +79,13 @@
       </div>
     </div>
 
+
     <footer
-    class="w-100 position-relative align-self-end bg-dark-subtle py-3 mt-3"
-  >
+  class="w-100 position-relative align-self-end bg-dark-subtle py-3 mt-auto">
     <p class="text-body-secondary m-auto p-0 text-center m-0">
       Bookface &copy 2023-2024
     </p>
+  </footer>
   </body>
-</html>
+  
+  </html>
