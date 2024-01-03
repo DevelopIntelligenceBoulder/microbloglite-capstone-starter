@@ -1,3 +1,15 @@
+:root {
+    font-size: 1rem;
+  
+    --ivory: #fffefb;
+    --skyBlue: #71c4ef;
+    --darkCerulean: #00668c;
+    --almostBlack: #1d1c1c;
+    --lightGray: #cccbc8;
+    --charcoal: #3b3c3d;
+    --powderBlue: #d4eaf7;
+  }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +25,7 @@ body {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #d4eaf7;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -25,6 +37,7 @@ body {
   
   .post {
     border-radius: 9px;
+    background-color: #fffefb;
   }
   
   .header {
@@ -61,4 +74,14 @@ body {
   .post-date {
     font-style: italic;
     color: #888;
+  }
+
+  hr.break {
+    border: 2px solid #003142;
+    border-radius: 3px;
+  }
+
+  hr.break2 {
+    border: 2px solid #003142;
+    border-radius: 3px;
   }

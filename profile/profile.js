@@ -10,13 +10,11 @@ window.onload = () => {
         window.location.replace("/");
     }
 
-    // Function call for getAllPosts
-    // getAllPosts();
-
     // Logout button variable
     let logoutBtn = document.getElementById('logout');
     // Event listener for the logout button
     logoutBtn.onclick = () => {
+        console.log("Logout button clicked")
         logout();
     };
 
