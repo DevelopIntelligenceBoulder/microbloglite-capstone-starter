@@ -30,6 +30,9 @@ window.onload = () => {
   let postsContainerEl = document.getElementById("write-post-container");
   let postBtnEl = document.getElementById("postBtn");
 
+  // Emoji JS
+  
+
   // Fetch to Show Username
   fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/')
 
@@ -41,6 +44,8 @@ window.onload = () => {
     let postData = {
       text: textAreaEl.value,
     };
+
+  
 
     // Fetch Posts
 
@@ -72,7 +77,7 @@ window.onload = () => {
         });
   });
 
-
+  textAreaEl.value = "";
   // Get All Posts
 
   function getAllPosts() {
@@ -114,5 +119,5 @@ window.onload = () => {
       });
   }
   getAllPosts();
-  setInterval(getAllPosts, 5000);
+  setInterval(getAllPosts, 2000);
 };
