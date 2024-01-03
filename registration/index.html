@@ -3,32 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Registeration Page</title>
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="registration.css" />
   </head>
-  <body>
+
+  <body class="ivory">
     <div class="container">
-      <h2>Registeration Form</h2>
-      <form id="registerationForm">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required />
-        <br />
-        <br />
-        <label for="fullName">Full Name:</label>
-        <input type="text" name="fullname" id="fullname" required />
-        <br />
-        <br />
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required />
-        <input
-          type="checkbox"
-          id="showpasswordcheckbox"
-          onclick="togglePasswordVisibility()"
-        />
-        <label for="showpasswordcheckbox">Show Password</label>
-        <br />
-        <br />
-        <button type="button" id="registerButton">Register</button>
-      </form>
+      <div class="logo-container">
+        <a class="navbar-brand text-charcoal" href="index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            <image href="../images/Y%20logo.svg" width="100" height="100" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="registration-form">
+        <h2 class="text-charcoal">Registeration Form</h2>
+        <form id="registerationForm">
+          <label for="username" class="text-charcoal">Username:</label>
+          <input type="text" name="username" id="username" required />
+          <br />
+          <br />
+          <label for="fullName" class="text-charcoal">Full Name:</label>
+          <input type="text" name="fullname" id="fullname" required />
+          <br />
+          <br />
+          <label for="password" class="text-charcoal">Password:</label>
+          <input type="password" name="password" id="password" required />
+          <input
+            type="checkbox"
+            id="showpasswordcheckbox"
+            onclick="togglePasswordVisibility()"
+          />
+
+          <label for="showpasswordcheckbox" class="text-charcoal"
+            >Show Password</label
+          >
+          <br />
+          <br />
+          <button type="button" id="registerButton" >
+            Register
+          </button>
+        </form>
+      </div>
     </div>
 
     <script src="registration.js"></script>
