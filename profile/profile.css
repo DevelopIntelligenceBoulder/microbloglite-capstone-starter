@@ -1,0 +1,39 @@
+/* Basic styles for the profile page */
+.profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    /* Add any additional styles for the profile page container */
+  }
+  
+  /* Styles for the profile header section */
+  .profile-header {
+    /* Define styles for profile picture, cover photo, user details, etc. */
+  }
+
+  .headerImg {
+    /* Define styles for profile picture, cover photo, user details, etc. */
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Styles for the profile information section */
+  .profile-info {
+    margin-top: 20px;
+    /* Add styles for about, stats, bio, etc. */
+  }
+  
+  /* Styles for the profile posts section */
+  .profile-posts {
+    margin-top: 20px;
+    /* Add styles for posts, timeline, activity, etc. */
+  }
+  
+  /* Styles for the profile photos section */
+  .profile-photos {
+    margin-top: 20px;
+    /* Add styles for photo gallery, albums, etc. */
+  }
+  

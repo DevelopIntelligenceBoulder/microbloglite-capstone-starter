@@ -34,119 +34,197 @@
     </script>
   </head>
   <body>
+
+
+    <!-- Page-specific code -->
+
     <!-- Nav Bar -->
     <nav>
       <div class="nav-left">
-        <a href=""><img src="images/logo.png" class="logo" /></a>
+        <a href="/index.html"
+          ><img src="images/nav-icons/icons8-new-moon-48.png" class="logo"
+        /></a>
         <ul>
-          <li><img src="images/notification-30.png" /></li>
-          <li><img src="images/icons8-inbox-30.png" /></li>
+          <li><img src="images/nav-icons/notification-30.png" /></li>
+          <li><img src="images/nav-icons/icons8-inbox-30.png" /></li>
           <!-- <li><img src="images/icons8-video-24.png" /></li> -->
         </ul>
       </div>
       <div class="nav-right">
         <div class="search-box">
-          <img src="images/icons8-search-50.png" />
+          <img src="images/nav-icons/icons8-search-50.png" />
           <input type="text" placeholder="Search" />
         </div>
-
-        <div class="nav-user-icon online">
-          <img src="images/test-account-30.png" />
+        <!-- Account Dropdown -->
+        <div class="nav-user-dropdown">
+          <div class="nav-user-icon online" id="userIcon">
+            <!-- Account Image -->
+            <img src="images/nav-icons/test-account-30.png" />
+          </div>
+          <div class="dropdown-content" id="dropdownContent">
+            <!-- Dropdown content  -->
+            <a href="/posts/index.html">Profile</a>
+            <a href="#">Account</a>
+            <a id="logOutBtn">Logout</a>
+          </div>
         </div>
-        <div>
-          <a href="/index.html" id="logoutLink" class="text-bg-light">Log out </a>
-        </div>
-      </div>
-
-<!-- Settings Menu -->
-      <div class="settings-menu">
-            <div id="dark-btn" class="dark-btn-on">
-            <span></span>
-            </div>
-
-            <div class="settings-menu-inner">
-                <div class="user-profile">
-                    <img
-                    src="https://i.pinimg.com/originals/bb/30/32/bb30326dda4f8240abb3ac64b4804583.png"
-                    />
-                    <div>
-                    <p>Brandon Nicholson</p>
-                    <a href="#"> See your profile</a>
-                    <small>Public </small>
-                    </div>
-                </div>
-                <hr />
-                <div class="user-profile">
-                    <img src="images/feedback.png" />
-                    <div>
-                    <p>Give Feedback</p>
-                    <a href="#"> Help us Improve on designs</a>
-                    <small>Public </small>
-                    </div>
-                </div>
-                <hr />
-
-                <div class="settings-links">
-                    <img src="images/setting.png" class="settings-icon" />
-                    <a href="#"
-                    >Settings & Privacy <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/help.png" class="settings-icon" />
-                    <a href="#"
-                    >Help & Support <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/display.png" class="settings-icon" />
-                    <a href="#"
-                    >Display & Accessibility <img src="images/arrow.png" width="10px"
-                    /></a>
-                </div>
-
-                <div class="settings-links">
-                    <img src="images/logout.png" class="settings-icon" />
-                    <a href="#">Logout <img src="images/arrow.png" width="10px" /></a>
-                </div>
-            </div>
       </div>
     </nav>
-    <header>
-      <h1>POSTS PAGE</h1>
-    </header>
 
-    <main>
-        <!-- Post Box -->
-        <div class="write-post-container">
-            <div class="user-profile">
-                <img src="images/profile-pic.png">
-                <div>
-                    <p>Brandon Nicholson</p>
-                    <small>Public </small>
-                </div>
-            </div>
+    <!-- Stories -->
 
-            <div class="post-input-container">
-                <textarea rows="3" placeholder="What's on your mind,John?"></textarea>
-                <div class="add-post-links">
-                    <a href="#"><img src="images/live-video.png"> Live Video</a>
-                    <a href="#"><img src="images/photo.png"> Photo/Video</a>
-                    <a href="#"><img src="images/feeling.png"> Feeling Activity</a>
-                </div>
-                <div class="postButton">
-                    <button>Post</button>
-                </div>
-            </div>
+    <div class="story-gallery">
+      <div class="story story1">
+        <img src="images/post-icons/icons8-bust-in-silhouette-48.png" />
+        <p>Post Story</p>
+      </div>
+      <div class="story story2">
+        <img src="images/story-icons/channels4_profile.jpg" />
+        <p>Alison</p>
+      </div>
+      <div class="story story3">
+        <img src="images/story-icons/lauren_headshot2022.webp" />
+        <p>Jackson</p>
+      </div>
+      <div class="story story4">
+        <img src="images/story-icons/unnamed.webp" />
+        <p>Samona</p>
+      </div>
+      <div class="story story5">
+        <img src="images/story-icons/download.jpg" />
+        <p>John Doe</p>
+      </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="container">
+      <!-- Left Side Bar -->
+      <div id="box" class="left-sidebar">
+        <div class="imp-links">
+          <a href="#"
+            ><img src="images/left-bar/icons8-news-50.png" /> Latest News</a
+          >
+          <a href="#"
+            ><img src="images/left-bar/icons8-friends-50.png" /> Friends</a
+          >
+          <a href="#"
+            ><img src="images/left-bar/icons8-group-50.png" /> Group</a
+          >
+          <a href="#"
+            ><img src="images/left-bar/icons8-marketplace-50.png" />
+            Marketplace</a
+          >
+          <a href="#"><img src="images/left-bar/icons8-tv-30.png" /> Watch</a>
+          <a href="#">See More</a>
         </div>
-        
-    </main>
+      </div>
 
-    <footer></footer>
+      <!-- Main Content -->
+      <div id="box" class="write-post-container">
+        <div class="user-profile">
+          <img src="images/post-icons/icons8-bust-in-silhouette-48.png" />
+          <div>
+            <p>Brandon Nicholson</p>
+            <small>Public </small>
+          </div>
+        </div>
 
-    <!-- Page-specific code -->
+        <div class="post-input-container">
+          <textarea
+            id="textArea"
+            rows="3"
+            placeholder="What's on your mind?"
+          ></textarea>
+          <div class="add-post-links">
+            <a href="#"
+              ><img src="images/post-icons/icons8-youtube-live-24.png" /> Live
+              Video</a
+            >
+            <a href="#"
+              ><img src="images/post-icons/icons8-upload-image-24.png" />
+              Photo/Video</a
+            >
+            <a href="#"
+              ><img src="images/post-icons/icons8-smiley-face-48.png" /> Feeling
+              Activity</a
+            >
+          </div>
+          <div class="postButton">
+            <button id="postBtn">Post</button>
+          </div>
+        </div>
+
+        <!-- See All Posts -->
+        <div id="all-posts-container">
+          <div id="postsContainer"></div>
+        </div>
+      </div>
+
+      <!-- Right Side Bar -->
+      <div id="box" class="right-sidebar">
+        <div class="sidebar-title">
+          <h4>Events</h4>
+          <a href="#">See All</a>
+        </div>
+
+        <div class="event">
+          <div class="left-event">
+            <h3>18</h3>
+            <span>March</span>
+          </div>
+          <div class="right-event">
+            <h4>Social Media</h4>
+            <p>Wilson Tech Park</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="left-event">
+            <h3>22</h3>
+            <span>June</span>
+          </div>
+          <div class="right-event">
+            <h4>Mobile Marketing</h4>
+            <p>Wilson Tech Park</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+
+        <div class="sidebar-title">
+          <h4>Advertisement</h4>
+          <a href="#">Close</a>
+        </div>
+        <img src="images/conversation/ad.png" class="sidebar-ads" />
+
+        <div class="sidebar-title">
+          <h4>Conversation</h4>
+          <a href="#">Hide Chat</a>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="images/conversation/Alison.jfif" />
+          </div>
+          <p>Alison Mina</p>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="images/conversation/suit guy.jfif" />
+          </div>
+          <p>Jackson Aston</p>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="images/conversation/samona.jpg" />
+          </div>
+          <p>Samona Rose</p>
+        </div>
+      </div>
+    </div>
+
     <script src="./posts.js"></script>
   </body>
 </html>
