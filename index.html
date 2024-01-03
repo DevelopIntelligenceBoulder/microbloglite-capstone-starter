@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +31,7 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
     <header>
@@ -40,7 +42,10 @@
     </header>
 
     <main>
-
+        <div id="image">
+            <img src="/images/screenshot4.png" alt="phone image">
+        </div>
+       
         <form id="login">
             
             <div>
@@ -53,18 +58,19 @@
                 <input type="password" id="password" minlength="6">
             </div>
 
-            <button id="loginButton" type="submit" href="posts\index.html">Login</button>
+            <button id="loginButton" type="submit">Login</button>
         </form>
 
         <h3>
-            Don't have an account? <button id="link" type="Sign Up">Sign Up</button>
+            Don't have an account? 
+            <button id="link" type="Sign Up">Sign Up</button>
         </h3>
 
     </main>
-
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
 </body>
+
 </html>

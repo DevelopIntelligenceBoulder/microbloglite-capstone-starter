@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="/Register/register.css">
-    <link rel="stylesheet" href="/Register/register.js">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+
+  <!-- Run BEFORE page is finished loading (before window.onload): -->
+  <script src="../auth.js"></script>
+  <script>
+    if (isLoggedIn() === false) window.location.replace("/");
+  </script>
+  <link rel="stylesheet" href="/Register/register.css">
+  <script defer src="/Register/register.js"></script>
 </head>
+
 <body>
-    <main>
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
+  <main>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
 
-        <div id="wrapper">
-            <div class="main-content">
-              <div class="header">
-              <h1>Become a Player</h1>
-              </div>
-              <div class="l-part">
-                <input type="text" placeholder="Create Username" class="input-1" />
-                <div class="overlap-text">
-                  <input type="password" placeholder="Create Password" class="input-2" />
-                  <div class="overlap-text">
-                    <input type="password" placeholder="confirm Password" class="input-2" />
-                 
-                </div>
+    <div id="wrapper">
+      <div class="main-content">
+        <div class="header">
+          <h1>Become a Player</h1>
+        </div>
 
-                 <br>
-                <input type="button" value="Register" class="btn" />
+        <form id="register">
+
+          <div class="l-part">
+            <input type="text" placeholder="Create Username" class="input-1" name="username">
+            <div class="overlap-text">
+              <input type="password" placeholder="Create Password" class="input-2" name="password">
+              <div class="overlap-text">
+                <input type="text" placeholder="confirm Name" class="input-2" name="fullName">
               </div>
             </div>
-            
+          </div>
 
-    </main>
+          <br>
+          <input type="submit" value="Register" class="btn">
+        </form>
+      </div>
+    </div>
+
+
+
+  </main>
 </body>
+
 </html>
