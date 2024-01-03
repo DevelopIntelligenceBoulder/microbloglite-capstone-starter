@@ -92,9 +92,9 @@ function deletePost(postId) {
         fetchAllPosts();
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            Authorization: `Bearer ${token}`
+            "Authorization": `Bearer ${token}`
         }
-    })
+    });
     .then(response => response.json())
     .then(postData => {
         if (getLoginData().username === postData.username) {
