@@ -1,13 +1,15 @@
-
-"use strict"
+"use strict";
 
 const profileContainer = document.getElementById('profile');
+
+let userData;
+
 window.onload = function() {
     const postbtn = document.querySelector('#postBtn');
     postbtn.onclick = addPost;
+ 
+    userData = getLoginData();
 
-    
-    const userData = getLoginData();
 
     if (userData.username) {
         profileContainer.querySelector('h2').innerText = userData.username;
@@ -17,9 +19,11 @@ window.onload = function() {
     editBtn.onclick = editUser;
 }
 
-function addPost() {
-    const textareaContent = document.querySelector('#textarea');
 
+function addPost(e) {
+    e.preventDefault();
+    
+    const textareaContent = document.querySelector('#textarea');
 
     const bodyData = {
         text: textareaContent.value,
@@ -28,17 +32,21 @@ function addPost() {
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
         method: 'POST', 
         body: JSON.stringify(bodyData),
-        headers: {'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyOTAzMzUsImV4cCI6MTcwNDM3NjczNX0.QHXBPnUc1KFZ7kJwknWTcj8XuqPqqMPRcfaAmnjwgn0"
-                // 'Authorization': `Bearer ${userData.token}`
-            }
+
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
+
     })
     .then(response => response.json())
-    .then(createPost => console.log(createPost));
-
-
+    .then(createPost =>{
+        console.log(createPost);
+        textareaContent.value = '';
+    })
 }
+
 
 function editUser(){
 
@@ -72,8 +80,8 @@ function editUser(){
     }else{
         alert("Please enter a valid username");
     }
-
 }
+
 
 function displayProfile(updatedUserData){
     
