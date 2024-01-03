@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.us-east-2.elasticbeanstalk.com";
+const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 // Backup server:   https://microbloglite.onrender.com
 
 // You can use this function to get the login data of the logged-in
@@ -42,11 +42,14 @@ function login (loginData) {
     return fetch(apiBaseURL + "/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
+            console.log(loginData)
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             window.location.assign("/posts");  // redirect
 
             return loginData;
-        });
+        }).catch((err)=>{
+            console.error(err);
+        })
 }
 
 

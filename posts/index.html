@@ -20,7 +20,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./posts.css">
 
-    <title>/POSTS</title>
+    <title>POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
@@ -74,10 +74,11 @@
 
     <header>
         <div class="logo-container">
-            <img src="/microbloglite-capstone-starter/logo/alr blog.png" alt="blog logo">
+            <img src="./logo/alr blog.png" alt="blog logo">
         </div>
-        <h1>POSTS PAGE</h1>
+        <h1>Create A Post </h1>
     </header>
+    <main>
     <form id="newPostForm">
         <div>
             <label for="postTitle">Title:</label>
@@ -89,17 +90,18 @@
         </div>
         <button type="submit">Submit</button>
     </form>
+    <div class="btns">
+        <button id="likeButton" class="btn-like">Like<i class="fa-solid fa-seedling"></i></button>
+        <button id="unlikeButton" class="btn-unlike">Unlike<i class="fa-solid fa-plant-wilt"></i></button>
+    </div>
+    <div id="logout">
+        <button id="logout-btn">Logout</button>
+    </div>
+        </main>
 
-    <div class="card" style="width: 30rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">NEW POST</h5>
-            <p class="card-text">yo</p>
-            <a href="#" class="btn btn-primary">POST</a>
-        </div>
-        <main></main>
-
-        <footer></footer>
+        <footer>
+            <p>&copy;A.L.R Blog</p>
+        </footer>
 
         <!-- Page-specific code -->
         <script src="./posts.js"></script>

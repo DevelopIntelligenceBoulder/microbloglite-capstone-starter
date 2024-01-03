@@ -19,11 +19,11 @@
 
 function createNewPost(title, content) {
   // Make an API request to send the new post data to the server
-  fetch("https://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer <your_token_here>",
+      Authorization: `Bearer ${logindata.token}`,
     },
     body: JSON.stringify({ title: title, content: content }),
   })
