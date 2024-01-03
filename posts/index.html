@@ -28,7 +28,6 @@
         if (!isLoggedIn()) window.location.replace("/");
     </script>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
@@ -72,23 +71,23 @@
         </div>
     </nav>
 
+    <main>
 
     <header>
         <div class="logo-container">
             <img src="./logo/alr blog.png" alt="blog logo">
         </div>
-        <h1>Nature Nooks Posts </h1>
+        <h1>Uploaded Posts</h1>
     </header>
-    <main>
-    <div id="posts-container" class="centered-card"></div>
-    <div class="btns">
-        <button id="likeButton" class="btn-like">Like<i class="fa-solid fa-seedling"></i></button>
-        <button id="unlikeButton" class="btn-unlike">Unlike<i class="fa-solid fa-plant-wilt"></i></button>
-    </div>
+
+   
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div id="posts-container"class="card-group"></div>
+       
     <div id="logout">
         <button id="logout-btn">Logout</button>
     </div>
-        </main>
+    </main>
 
         <footer>
             <p>&copy;A.L.R Blog</p>
