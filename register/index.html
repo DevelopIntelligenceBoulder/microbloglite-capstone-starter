@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>registration page</title>
   <link rel="stylesheet" href="/Register/register.css">
-  <link rel="stylesheet" href="/Register/register.js">
+  <script defer src="/register/register.js"></script>
 </head>
 
 <body>
@@ -18,21 +18,22 @@
         <div class="header">
           <h1>Become a Player</h1>
         </div>
-        <form id="Register">
+        
+        <form id="register">
 
           <div class="l-part">
-            <input type="text" placeholder="Create Username" class="input-1">
+            <input type="text" placeholder="Create Username" class="input-1" name="username">
             <div class="overlap-text">
-              <input type="password" placeholder="Create Password" class="input-2">
-              <div class="overlap-text">
-                <input type="fullName" placeholder="confirm Name" class="input-2">
-              </div>
-            </div>
+            <input type="password" placeholder="Create Password" class="input-2" name="password">
+            <div class="overlap-text">
+            <input type="text" placeholder="confirm Name" class="input-2" name="fullName">
           </div>
+        </div>
+      </div>
+      
+          <br>
+          <input type="submit" value="Register" class="btn">
         </form>
-
-        <br>
-        <input type="button" value="Register" class="btn">
       </div>
     </div>
 
