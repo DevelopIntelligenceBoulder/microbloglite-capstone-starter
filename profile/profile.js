@@ -80,25 +80,6 @@ function displayProfile(updatedUserData){
     // go into updatedUserData retrive username = pdatedUserData.username 
 
     // make a fetch request with username just like the put u did - GET REQUEST TO GET UODATED USERNAME 
-
-    const usernameEl = document.querySelector('h2');
-    usernameEl.innerHTML = `${updatedUserData.username}`;
-
-    const userData = getLoginData();
-
-    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${updatedUserData.username}`, {
-        method:'GET',
-        headers:{
-            "Content-Type":'application/json',
-            'Accept': 'application/json',
-            'Authorization':`Bearer ${userData.token}`
-        }
-    })
-    .then(resp=> resp.json())
-    .then(updatedUserData => {
-        console.log('Updated User Data:', updatedUserData);
-    })
-    .catch(err => console.error('Error fetching updated user data:', err))
     
 }
 
