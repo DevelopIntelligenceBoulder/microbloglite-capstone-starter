@@ -1,9 +1,8 @@
 "use strict";
 
-const fullNameInput = document.getElementById('fullName');
 const userNameInput = document.getElementById('username');
+const fullNameInput = document.getElementById('fullName');
 const passwordInput = document.getElementById('password');
-const bioTextInput = document.getElementById('bioText');
 const newUserBtn = document.getElementById('newUser');
 
 window.onload = init;
@@ -14,10 +13,9 @@ function init() {
 
 function newUserBtnClicked() {
     const newUserData = {
-        fullName: fullNameInput.value,
         username: userNameInput.value,
+        fullName: fullNameInput.value,
         password: passwordInput.value,
-        bioText: bioTextInput.value
     };
 
     // Make a request to the server to register the new user
