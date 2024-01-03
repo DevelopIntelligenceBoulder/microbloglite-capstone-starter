@@ -8,7 +8,7 @@ window.onload = () => {
         console.error('User needs to log in!');
         return;
     }
-
+    // Fetch to getall posts
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
         method: "GET",
         headers: {
