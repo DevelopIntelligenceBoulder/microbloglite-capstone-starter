@@ -16,7 +16,7 @@ window.onload = () => {
             blogPost: blogPostInputEl.value,
         };
 
-        fetch(apiBaseURL + "/api/posts", {
+        fetch(apiBaseURL + "/api/post", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
