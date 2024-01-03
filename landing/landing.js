@@ -1,9 +1,7 @@
-/* Landing Page JavaScript */
-
 "use strict";
 
 //login API
-//const apiBaseURL = "microbloglite.us-east-2.elasticbeanstalk.com";
+// const apiBaseURL = "microbloglite.us-east-2.elasticbeanstalk.com";
 
 const loginButton = document.getElementById("loginButton")
 const loginForm = document.querySelector("#login");
@@ -62,7 +60,7 @@ function login(loginData) {
 
     };
 
-    return fetch(apiBaseURL + "/auth/login", options)
+    return fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/auth/login", options)
         .then(response => response.json())
         .then(loginData => {
             console.log("loginsuccessful:",loginData)
