@@ -1,7 +1,9 @@
 body {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  background: url('/images/stefan-vladimirov-Q_Moi2xjieU-unsplash.jpg') no-repeat;
+  background: url('/images/medcuisine.jpg') no-repeat;
+  background-size: cover;
+  background-color: #507A51;
   margin: 0;
 }
 
@@ -16,8 +18,17 @@ body {
 
 .navbar {
   position: fixed top;
+  padding: 10px;
   background-color: #F9F9F9;
 }
+
+#navbar img { 
+  display: block; 
+  width: 140px; 
+  height: 140px; 
+  margin: auto; 
+
+} 
 
 .container-fluid {
   text-align: center;
