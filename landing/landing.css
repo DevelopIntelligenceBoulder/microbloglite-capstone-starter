@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-  max-width: 100%; /* Adjust based on your design */
-  margin: auto; /* Center the container */
+  max-width: 100%; 
+  margin: auto; 
 }
 
 .header {
