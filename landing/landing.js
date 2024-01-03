@@ -3,7 +3,7 @@
 "use strict";
 
 //login API
-//const apiBaseURL = "microbloglite.us-east-2.elasticbeanstalk.com";
+const apiBaseURL = "microbloglite.us-east-2.elasticbeanstalk.com";
 
 const loginButton = document.getElementById("loginButton")
 const loginForm = document.querySelector("#login");
