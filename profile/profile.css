@@ -1,39 +1,362 @@
+/* Icons */
+
+.logo {
+  width: 36px;
+  margin-right: 16px;
+}
+
+/* Search Bar */
+
+.search-box {
+  background: #efefef;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10 15px;
+}
+
+.search-box img {
+  width: 18px;
+  margin-left: 18px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  padding: 8px;
+  outline: none;
+  border: 0;
+}
+
+/* User Icon */
+
+.nav-user-icon {
+  margin-left: 30px;
+}
+
+.nav-user-icon img {
+  width: 33px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #41db51;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* User Dropdown */
+
+.nav-user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+#logOutBtn {
+  cursor: pointer;
+}
+
+/* Nav Bar */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1876f2;
+  padding: 10px 5%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav-left ul li {
+  margin-right: 15px;
+}
+
+.nav-left ul li img {
+  width: 28px;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
 /* Basic styles for the profile page */
 .profile {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    
-    /* Add any additional styles for the profile page container */
-  }
-  
-  /* Styles for the profile header section */
-  .profile-header {
-    /* Define styles for profile picture, cover photo, user details, etc. */
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
-  .headerImg {
-    /* Define styles for profile picture, cover photo, user details, etc. */
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Styles for the profile information section */
-  .profile-info {
-    margin-top: 20px;
-    /* Add styles for about, stats, bio, etc. */
-  }
-  
-  /* Styles for the profile posts section */
-  .profile-posts {
-    margin-top: 20px;
-    /* Add styles for posts, timeline, activity, etc. */
-  }
-  
-  /* Styles for the profile photos section */
-  .profile-photos {
-    margin-top: 20px;
-    /* Add styles for photo gallery, albums, etc. */
-  }
-  
+  /* Add any additional styles for the profile page container */
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+/* Styles for the profile header section */
+.profile-header {
+  /* Define styles for profile picture, cover photo, user details, etc. */
+}
+
+.headerImg {
+  /* Define styles for profile picture, cover photo, user details, etc. */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styles for the profile information section */
+.profile-info {
+  margin-top: 20px;
+  /* Add styles for about, stats, bio, etc. */
+}
+
+/* Styles for the profile posts section */
+.profile-posts {
+  margin-top: 20px;
+
+  /* Add styles for posts, timeline, activity, etc. */
+}
+
+/* Styles for the profile photos section */
+.profile-photos {
+  margin-top: 20px;
+}
+
+/* Profile Picture */
+#imgBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  margin: 0 auto;
+}
+
+#imgBox img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+#changeBtn {
+  display: block;
+  margin: 10px auto;
+}
+
+#profilePic {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Input Fields */
+
+#inputBox {
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+#inputBox input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#inputBox input[type="date"] {
+  appearance: none;
+}
+
+#inputBox input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Post Box */
+.write-post-container {
+  width: 60%;
+  margin: 0 auto;
+  margin-right: 455px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  flex: 1;
+  min-width: 0;
+  margin: 5px;
+}
+
+#postImg {
+  width: 33px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#textArea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  resize: vertical;
+}
+
+#textArea,
+.post-input-container textarea {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#textArea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.post-input-container textarea {
+  border: none;
+  resize: none;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+/* Post Links */
+
+.add-post-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.add-post-links a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.add-post-links img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Post Button */
+
+.postButton {
+  text-align: right;
+}
+
+.postButton button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.postButton button:hover {
+  background-color: #0056b3;
+}
+
+/* All Posts CSS */
+
+.card {
+  flex: 1;
+  min-width: 0;
+  margin: 5px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the username */
+.card .username {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Style for the post text */
+.card .post-text {
+  color: #555;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.card .post-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card .post-text a:hover {
+  text-decoration: underline;
+}

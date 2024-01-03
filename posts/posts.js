@@ -70,7 +70,7 @@ window.onload = () => {
   });
 
  
-  
+  setInterval(getAllPosts, 5000);
 
   // Get All Posts
 
@@ -112,5 +112,4 @@ window.onload = () => {
       });
   }
   getAllPosts();
-  setInterval(getAllPosts, 5000);
 };
