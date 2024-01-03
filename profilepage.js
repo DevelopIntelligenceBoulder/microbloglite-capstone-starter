@@ -3,18 +3,102 @@
 window.onload = init;
 
 function init() {
+
+    // fwtch username
+    let username;
+
+   fetch(apiBaseURL + `/api/users/${username}`)
+        .then(response => response.json())
+        .then(usernameData => {
+            username = usernameData.username; 
+            return usernameData;
+        })
+        .catch(error => console.error('Error:', error))
+        .finally(() => {
+            if (username) {
+                // if username available then get user data +  posts
+                fetchUserData(username)
+                    .then(user => {
+                        // update profile 
+                        updateProfile(user);
+                        return fetchUserPosts(username);
+                    })
+                    .then(posts => displayUserPosts(posts));
+            }
+        });
+
+
+    // post eventlistener
     document.getElementById('postBtn').addEventListener('click', function (event) {
         event.preventDefault();
+
+
+        // new post const
 
         const newPostContent = document.getElementById('newPost').value;
         const fileInput = document.getElementById('formFile');
         const imageUrl = fileInput.files.length > 0 ? URL.createObjectURL(fileInput.files[0]) : null;
 
-        post(newPostContent, imageUrl);
+        // display new posts
+        //
+        displayPosts({ newPostContent, imageUrl });
     });
 }
 
-function post(content, imageUrl) {
+// update page
+function updateProfile(user) {
+    const profileImage = document.getElementById('img');
+    const currentUser = document.getElementById('currentUser');
+    const userBio = document.getElementById('userBio');
+    const usersName = document.getElementById('name');
+
+    // update elements
+    profileImage.src = user.profileImage;
+    currentUser.textContent = user.username;
+    userBio.textContent = user.bio;
+    usersName.textContent = user.fullname;
+}
+
+// get all posts made by this user
+function fetchUserPosts(username) {
+    return fetch(apiBaseURL + `/users/${username}/posts`)
+        .then(response => response.json())
+        .catch(error => console.error('Error:', error));
+}
+
+// post function for prev post 
+
+function displayPosts({ newPostContent, imageUrl }) {
+    // old posts
+    fetchUserPosts(username)
+        .then(posts => {
+            // display  
+            displayUserPosts(posts);
+
+            // display + post new posts
+            const postContainer = document.getElementById('postContainer');
+            displayPostInContainer(newPostData, postContainer);
+
+            // post new posts
+            postNewData({ content: newPostContent, imageUrl });
+        });
+    }
+
+
+// and new posts
+
+function displayUserPosts(posts) {
+    const postContainer = document.getElementById('postContainer');
+    postContainer.innerHTML = '';
+
+    posts.forEach(postData => {
+        displayPostInContainer(postData, postContainer);
+    });
+}
+
+// 
+
+function displayPostInContainer({ content, imageUrl }) {    
     const loginData = getLoginData();
 
     const postContainer = document.getElementById('postContainer');
@@ -55,6 +139,10 @@ function post(content, imageUrl) {
 
     newPostContainer.appendChild(postRow);
     postContainer.appendChild(newPostContainer);
+}
+
+function postNewData({ content, imageUrl }) {
+    const loginData = getLoginData();
 
     const options = {
         method: 'POST',
@@ -62,9 +150,10 @@ function post(content, imageUrl) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${loginData.token}`,
         },
-        body: JSON.stringify({ content: content, imageUrl: imageUrl }),
+        body: JSON.stringify({ content, imageUrl }),
     };
 
+    // post new things to api
     fetch(apiBaseURL + '/posts', options)
         .then(response => response.json())
         .then(data => {
