@@ -43,13 +43,13 @@ function addPost(e) {
     })
 }
 
-function editUser(userInfo){
+// function editUser(userInfo){
 
-    .then(createPost => {
-        console.log(createPost);
-        textareaContent.value = ""; 
-    });
-}
+//     .then(createPost => {
+//         console.log(createPost);
+//         textareaContent.value = ""; 
+//     });
+// }
 
 
 
