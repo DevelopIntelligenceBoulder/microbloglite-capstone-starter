@@ -32,6 +32,25 @@ function isLoggedIn () {
 //}
  //document.addEventListener('DOMContentLoaded', Useraccess);
 
+ function signUp(signUpData) {
+    //POST create user
+    const options = { 
+        method: "POST",
+        headers: {
+            // This header specifies the type of content we're sending.
+            // This is required for endpoints expecting us to send
+            // JSON data.
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signUpData),
+    };
+    
+    return fetch(apiBaseURL + '/api/users', options)
+    .then(response => {
+        console.log(response.json);
+        return response.json();
+    })
+}
 
 
 // This function is already being used in the starter code for the
@@ -52,13 +71,13 @@ function login (loginData) {
     };
 
     return fetch(apiBaseURL + "/auth/login", options)
-        .then(response => response.json())
-        .then(loginData => {
-            window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
-
-            return loginData;
-        });
+    .then(response => response.json())
+    .then(loginData => {
+        window.localStorage.setItem("login-data", JSON.stringify(loginData));
+        window.location.assign("/posts");  // redirect
+        console.log(loginData);
+        return loginData;
+    });
 }
 
 
@@ -98,6 +117,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/login");  // redirect back to landing page
+            window.location.assign("login.html");  // redirect back to login page
         });
 }
