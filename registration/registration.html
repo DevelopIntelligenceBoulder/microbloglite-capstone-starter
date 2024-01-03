@@ -14,7 +14,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
+<style>
+  body{
+    background-color:#FFF ;
+  }
 
+
+  .container-fluid{
+    width:fit-content; 
+  margin-left: 38rem;
+  text-align: center; 
+  margin-top: 2rem;
+
+  }
+
+
+</style>
 <body>
 
     <header>
@@ -40,30 +55,29 @@
 
     
     <main>
-        <div style="text-align: center; margin: 10px;"><h1>Sign Up Today!</h1></div>
+        <div class="container-fluid"><h1>Sign Up Today!</h1>
         <br>
-        <div class="container">
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username">
-                    </div>
-                    <label for="fullName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullName">
-                </div>
-                <div class="col-md-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password">
-                </div>
-                <br>
-                <br>
-              <div class="text-center">
-                <button class="btn btn-primary" id="newUser">Sign Up!</button>
-                <br>
-                <a href="/landing/landing.html">Already have an account? Log in!</a>
-            </form>
+        <form id="login" class="form-container" style="font-size: 18px;">
+           <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username"
+          placeholder =" &nbsp; &nbsp; Enter your username" required
+          style="border-radius: 10px; border: 1px solid #000; background: #FFF"> <br>
+
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName"
+          placeholder=" &nbsp; &nbsp; Enter your full name" required
+          style="border-radius: 10px; border: 1px solid #000; background: #FFF;"> <br>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password"
+          placeholder=" &nbsp; &nbsp; Enter your password" required
+          style="border-radius: 10px; border: 1px solid #000; background: #FFF;"> <br>
+          
+          <button class="btn btn-primary" id="newUser">Sign Up!</button>
+          <br>
+          <a href="/landing/landing.html" style="color:#000">Already have an account? Log in!</a>
+        </form>
         </div>
+    
     </main>
 
 
