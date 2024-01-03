@@ -1,16 +1,22 @@
 "use strict";
 
+let userData; 
+
 window.onload = () => {
     fetchAllPosts();
+
 };
 
 function fetchAllPosts() {
     const token = getLoginData().token;
 
+
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
         method: "GET",
         headers: {
+
             Authorization: `Bearer ${token}`
+
         }
     })
     .then(response => {
@@ -41,7 +47,9 @@ function likePost(postId) {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+
             Authorization: `Bearer ${token}`
+
         },
         body: JSON.stringify(bodyObject)
     })
@@ -54,20 +62,34 @@ function likePost(postId) {
     .then(likedPost => {
         console.log(likedPost);
         fetchAllPosts();
+
     })
     .catch(error => {
         console.error("Failed to like the post:", error);
+
     });
 }
 
 function deletePost(postId) {
+
     const token = getLoginData().token;
+
     const apiUrl = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`;
 
     // Fetch post data to check for the creator
     fetch(apiUrl, {
         method: 'GET',
         headers: {
+
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${userData.token}`
+        }
+    })
+    .then(response => response.json())
+    .then(deletedPost => {
+        console.log(`Post with ID ${postId} deleted successfully.`, deletedPost);
+        fetchAllPosts();
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             Authorization: `Bearer ${token}`
@@ -110,9 +132,9 @@ function deletePost(postId) {
 }
 
 function displayAllPosts(allPosts) {
-    const allPostContainer = document.getElementById("allPostContainer");
+    let allPostContainer = document.getElementById("allPostContainer");
+    allPostContainer.innerHTML = ""; 
   
-
     allPosts.forEach(post => {
        
         const card = document.createElement('div');
@@ -137,4 +159,3 @@ function displayAllPosts(allPosts) {
         allPostContainer.appendChild(card);
     });
 }
-

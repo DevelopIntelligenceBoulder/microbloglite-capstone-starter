@@ -17,6 +17,7 @@ window.onload = function() {
     editBtn.onclick = editUser;
 }
 
+
 function addPost(e) {
     e.preventDefault();
     
@@ -36,6 +37,14 @@ function addPost(e) {
         }
     })
     .then(response => response.json())
+    .then(createPost =>{
+        console.log(createPost);
+        textareaContent.value = '';
+    })
+}
+
+function editUser(userInfo){
+
     .then(createPost => {
         console.log(createPost);
         textareaContent.value = ""; 
@@ -43,6 +52,4 @@ function addPost(e) {
 }
 
 
-function editUser(userInfo) {
-    
-}
+
