@@ -61,3 +61,8 @@ footer h3 {
 footer a {
     text-decoration: none;
 }
+
+#editBtn {
+    border: 0;
+    background-color: white;
+}
