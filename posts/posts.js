@@ -1,8 +1,8 @@
 "use strict";
 
 window.onload = () => {
-    const cardContainer = document.getElementById("card-container");
-    const loginData = getLoginData();
+    let cardContainer = document.getElementById("card-container");
+    let loginData = getLoginData();
 
     if (!loginData.token) {
         console.error('User needs to log in!');
@@ -25,9 +25,14 @@ window.onload = () => {
         });
 };
 
-// Modify createPostCard function
 function createPostCard(post, loginData) {
-    const formattedDate = new Date(post.createdAt).toLocaleString();
+    let formattedDate = new Date(post.createdAt);
+    let datePart = formattedDate.toLocaleDateString();
+    let timePart = formattedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    // Combine date and time
+    let dateTimeString = `${datePart} ${timePart}`;
+
 
     return `
         <div class="col mb-4">
@@ -36,7 +41,7 @@ function createPostCard(post, loginData) {
                     <div class="card-header">
                         <h2 class="card-title" id="post-username">${post.username}</h2>
                     </div>
-                    <p class="card-text" id="content-text">${post.text}</p>
+                    <div class="card-text" id="content-text" style="overflow: auto; max-height: 150px;">${post.text}</div>
                 </div>
 
                 <div class="card-footer text-muted d-flex justify-content-between align-items-center">
@@ -48,28 +53,29 @@ function createPostCard(post, loginData) {
                     </div>
                     <div class="d-flex align-items-center">
                         <button class="btn like-btn" data-post-id="${post._id}" onclick="likePost('${post._id}')">
-                            <i class="fas fa-heart"></i> Like
+                            <i class="fas fa-heart btn-like"></i> Like
                         </button>
                         <span id="like-count-${post._id}" class="ml-2">${post.likes.length}</span>
                     </div>
                     <div>
-                        <p class="card-date">${formattedDate}</p>
+                        <p class="card-date">${dateTimeString}</p>
                     </div>
                 </div>
             </div>
         </div>`;
 }
 
+
 // Delete a post
 function deletePost(postId) {
-    const loginData = getLoginData();
+    let loginData = getLoginData();
 
     if (typeof postId !== 'string' && !(postId instanceof String)) {
         console.error("Invalid postId:", postId);
         return;
     }
     // Confirmation
-    const isConfirmed = window.confirm("Are you sure you want to delete this post?");
+    let isConfirmed = window.confirm("Are you sure you want to delete this post?");
     if (!isConfirmed) {
         return;
     }
@@ -95,7 +101,7 @@ function deletePost(postId) {
 
 // Like a post
 function likePost(postId) {
-    const loginData = getLoginData();
+    let loginData = getLoginData();
 
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes', {
         method: 'POST',
@@ -117,10 +123,10 @@ function likePost(postId) {
         }
     })
     .then((data) => {
-        const likeCountElement = document.getElementById(`like-count-${postId}`);
+        let likeCountElement = document.getElementById(`like-count-${postId}`);
 
         if (likeCountElement) {
-            const currentLikeCount = parseInt(likeCountElement.textContent) || 0;
+            let currentLikeCount = parseInt(likeCountElement.textContent) || 0;
             likeCountElement.textContent = currentLikeCount + 1;
         }
 
