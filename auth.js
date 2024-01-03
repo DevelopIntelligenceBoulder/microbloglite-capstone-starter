@@ -2,8 +2,14 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.onrender.com";
-// Backup server:   https://microbloglite.onrender.com  https://microbloglite.herokuapp.com
+
+const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
+// Backup server (mirror):   "https://microbloglite.onrender.com"
+
+// NOTE: API documentation is available at /docs 
+// For example: http://microbloglite.us-east-2.elasticbeanstalk.com/docs
+
+
 
 // You can use this function to get the login data of the logged-in
 // user (if any). It returns either an object including the username
