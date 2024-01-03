@@ -1,20 +1,18 @@
 /* Posts Page CSS */
 
-*{
-    font-family: 'Quilon', sans-serif;
+* {
+  font-family: "Quilon", sans-serif;
 }
 
-
 /* post card */
-.allPost {
+#allPostContainer {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   gap: 20px;
 }
 
-.postCard {
+.card {
   width: 400px;
   background-color: #fff;
   border-radius: 20px;
@@ -23,4 +21,8 @@
   flex-direction: column;
   box-shadow: 0px 5px 11px 4px rgba(0, 0, 0, 0.2);
 }
-
+.card-title {
+  max-height: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
