@@ -7,6 +7,10 @@
   --gunmetal: #2a2d34;
 }
 
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
 .form-control,
 .form-label {
   width: 100%;
