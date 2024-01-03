@@ -20,7 +20,7 @@
 
         .pfp {
             position: absolute;
-            top: 60px;
+            top: 90px;
             left: 0;
             width: 100px;
             height: auto;
@@ -45,7 +45,7 @@
                             <a class="nav-link" aria-current="page" href="#">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="./registration.html">Sign In</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Our Portfolio</a>
@@ -56,19 +56,19 @@
                     </ul>
                     <form style="padding-right: 4%;" class="d-flex" role="search">
                         <!--post btn; + -->
-                        <button class="btn btn-outline-primary" type="button" href="post.html">+</button>
+                        <button class="btn btn-outline-primary" type="button" href="./post">+</button>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <li style="padding-right: 5%;" class="nav-item dropdown">
                         <!--pfp avatar in nav-->
                         <button id="avatar-btn" aria-haspopup="true" aria-label="Account menu">
-                            <img id="img" alt="Avatar image" height="32" width="32" src="img/sanrio-profile.jpg">
+                            <img id="img" alt="Avatar image" height="32" width="32" src="img/download (1).jpg">
                         </button>
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Profile</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Account</a></li>
+                            <li><a class="dropdown-item" href="./login.html">Account</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
                         </ul>
@@ -79,15 +79,16 @@
     </header>
 
     <main class="container" style="padding-top: 4%;">
-        <div class="container text-center">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <section>
-                        <div class="img_container">
-                            <img class="container" src="img/cute-sanrio-background.jpg" alt="background">
-                            <img class="pfp" src="img/sanrio-profile.jpg" alt="pfp">
+                        <div class="card">
+                        <div class="card-body">
+                            <h2> Greetings, <span id="currentUser" style="text-decoration: underline;"></span></h2>   
                         </div>
-                        <h2 id="currentUser"></h2>
+                    </div>
+                </div>
                     </section>
                 </div>
             </div>
@@ -99,7 +100,6 @@
                     <div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 id="name"></h4>
                                 <h5>Bio</h5>
                                 <p id="userBio"></p>
                                 <!--add link to profile editing form-->
@@ -122,10 +122,7 @@
                                     <br>
                                     <textarea id="newPost" class="form-control"
                                         placeholder="What's on your mind?"></textarea>
-                                    <div class="mb-3">
-                                        <label for="formFile" class="form-label">Add Image</label>
-                                        <input class="form-control" type="file" id="formFile">
-                                    </div>
+                                    
                                     <br>
                                     <button class="btn btn-dark" type="submit" id="postBtn">Post</button>
                                     <!--add a view post btn? -->
@@ -145,24 +142,13 @@
                                             Filter
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Picture</a></li>
-                                            <li><a class="dropdown-item" href="#">Text</a></li>
+                                            <li><a class="dropdown-item">created by</a></li>
+                                            <li><a class="dropdown-item">default</a></li>
                                         </ul>
                                     </div>
                                 </h6>
                                 <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="img/first-post.jpg" class="img-fluid rounded-start" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <p class="card-text">This is my first post</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
+                    
                                     <div class="row" style="padding-top: 4%;" id="postContainer">
                                     </div>
                                 </div>
