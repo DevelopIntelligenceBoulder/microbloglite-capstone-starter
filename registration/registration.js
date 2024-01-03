@@ -1,36 +1,39 @@
 window.onload = ()=>{
-    let formEl = document.getElementById("register");
-    formEl.onsubmit = (event) => {
-        event.preventDefault();
-
-        let nameEl = document.getElementById("name").value;
-        let userNameEl = document.getElementById("userName").value;
-        let passwordEl = document.getElementById("password").value;
-        let conformationEl = document.getElementById("password-conformation").value;
-        
-        
-        let currentFormData = {
-            name: nameEl,
-            username: userNameEl,
-            password: passwordEl,
-            passwordConformation: conformationEl
+    async function register(registerData) {
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(registerData),
+          
         };
-        console.log(currentFormData);
-        fetch(apiBaseURL + "/api/users", {
-            method: "POST",
-            headers: {
-                "content-type" : "application/json"
-            },
-            body: JSON.stringify(currentFormData),
-        })
-        .then((res)=>{
-            if(passwordEl === conformationEl){
-                res.json()
-            }
-        })
-        .then((data)=> {
-            console.log(data);
-        })
-    };
+        const res = await fetch(apiBaseURL + "/api/users", options);
+        const success = await res.json();
+        console.log(res.status);
+        if (res.status === 201) {
+            window.location.replace("/posts/index.html"); // redirect 
+        } else {
+            console.error("registration unsuccessful");
+        }
+        return registerData;
+}
+
+    let registerForm = document.querySelector("#register");
+
+    registerForm.addEventListener("submit", function(event){
+        event.preventDefault();
+        console.log("form submission successful");
+
+        let registerData = {
+            fullName: document.querySelector("#name").value,
+            username: document.querySelector("#userName").value,
+            password: document.querySelector("#password").value,
+        };
+
+        // registerForm.register-btn.disabled = true;
+
+        register(registerData);
+    });
 
 }
