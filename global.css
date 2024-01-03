@@ -19,9 +19,9 @@
 
 .body{
     background-color: #346130;
-    }
+}
 
-    body{
+body{
     background-color: #E8DFE0;
 }
 .navbar-expand-lg{
@@ -45,6 +45,17 @@ code{
 }
 main{
     margin-top: 50px;
+}
+/* The hero image */
+.hero-image {
+    /* Set the height to cover the entire viewport */
+    height: 100vh;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 /* Place text in the middle of the image */
 .hero-text {

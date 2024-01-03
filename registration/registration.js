@@ -34,7 +34,7 @@ function register (registerData) {
         body: JSON.stringify(registerData),
     };
 
-    return fetch("https://microbloglite.us-east-2.elasticbeanstalk.com/api/users", options)
+    return fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users", options)
         .then(response => response.json())
         .then(registerData => {
             window.localStorage.setItem("register-data", JSON.stringify(registerData));
