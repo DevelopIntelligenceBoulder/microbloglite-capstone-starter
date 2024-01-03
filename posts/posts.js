@@ -44,4 +44,7 @@ function logoutButtonClicked() {
         });
 }
 
-
+function isLoggedIn() {
+    const loginData = getLoginData();
+    return Boolean(loginData.token);
+}
