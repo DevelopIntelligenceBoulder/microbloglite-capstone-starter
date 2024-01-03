@@ -19,6 +19,9 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./registration.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../posts/logo/alr blog.png">
+
     <title>Register for the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
@@ -31,8 +34,8 @@
     
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-                <!-- <img src="" alt="Nature's Nook Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
+            <a class="navbar-brand"  id="logout-btn" href="./index.html">
+                <!-- <img src="../posts/logo/alr blog.png" alt="Nature's Nook Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16">
                     <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
                   </svg>
@@ -70,9 +73,11 @@
     <div class="hero-image p-3">
         <main>
 
-            <div id="registration-card" class="container card hero-text px-4">
+            <div id="registration-card" class="container-md hero-text px-4">
+                <img src="../posts/logo/alr blog.png" alt="Nature Nook Logo">
                 <h2 class="m-3">Register for <code>Nature's Nook</code></h2>
-                <form id="register" class="container">
+                
+                <form id="register" class="container-sm">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
                         <input type="text" id="fullName" class="form-control" placeholder="Please enter your full name" minlength="3" aria-label="Full Name" />
