@@ -55,7 +55,6 @@ a{
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
 }
 
 #login label{
@@ -75,9 +74,4 @@ a{
 
 #login button:hover{
   background-color: #0d8ecf;
-}
-
-.main-section{
-  max-width: 800px;
-  margin: 20px auto;
 }
