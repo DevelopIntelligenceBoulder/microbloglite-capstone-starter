@@ -10,72 +10,10 @@
   <link rel="stylesheet" href="/global.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/profile/profile.css">
 </head>
-
-<style>
-  body {
-    background-color: white;
-  }
-
-  .row {
-    display: flex;
-    padding: 5rem;
-  }
-
-  .column1,
-  .column2 {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .column3,
-  .column4 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    text-align: left;
-  }
-
-  .row1,
-  .row2,
-  .row3 {
-    padding: 10px;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-
-  .box {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgb(255, 255, 255);
-    /* border-radius: 2%;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    padding: 20px; */
-  }
-
-  h4 {
-    font-size: larger;
-    font-weight: bold;
-  }
-
-  .blog-container {
-    width: fit-content;
-    height: fit-content;
-    background-color: rgb(248, 248, 248);
-    box-shadow: 10px 5px 5px;
-    margin-left: 658.325px;
-    margin-right: 658.325px;
-    margin-top: 30px;
-  }
-</style>
 
 <body>
 
@@ -96,7 +34,7 @@
             <a class="nav-link" href="/posts/index.html">Post Feed</a>
           </li>
           <li class="nav-item">
-            <button id="logoutButton" type="submit">Logout</button>
+            <button id="logoutButton" type="submit" style="font-size: large;">Logout</button>
           </li>
     </nav>
 
@@ -149,10 +87,23 @@
     </div>
   </div>
 
-  <div class="New-Blog">
-    <button id="">
-      <h4 style="margin-left: 20rem;">+ Write a New Blog</h4>
-    </button>
+  <hr>
+
+  <button onclick="togglePopup()" style="margin-left: 100rem;">+ Write a new Blog</button>
+
+  <div class="div" id="postsContainer">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="recipe">Recipe:</label>
+    <textarea id="recipe" name="recipe" rows="4" required></textarea>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <button onclick="submitBlogPost()" style="margin-top: 20px;">Submit</button>
+
   </div>
 
   <script src="./profile.js"></script>
