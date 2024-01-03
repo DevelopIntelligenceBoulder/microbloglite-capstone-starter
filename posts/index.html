@@ -15,6 +15,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        position: fixed top;
+    }
+
+    h1 {
+        font-size: 100px;
+        text-align: center;
+        margin: 0px;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .hero-description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        margin-left: 724.89px;
+        margin-right: 724.89px;
+    }
+
+    p {
+        font-size: 25px;
+        font-weight: lighter;
+    }
+</style>
+
 <body>
     <header>
         <nav class="navbar" id="navbar">
@@ -33,15 +70,43 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/profile/profile.html">My Profile</a>
                     </li>
-                    <button id="logoutButton" type="submit">Logout</button>
+                    <li class="nav-item">
+                        <button id="logoutButton" type="submit">Logout</button>
+                    </li>
+
                 </ul>
         </nav>
     </header>
 
+
+    <div class="title-container">
+        <h1>MEDITERRANEAN BOWL</h1>
+        <p
+            style="display: flex; font-size: 50px; font-style: italic; font-weight: bolder; margin-left: 90rem; margin-bottom: 0px;">
+            "blog"</p>
+    </div>
+    <hr>
+    <div class="hero-description">
+        <p>
+            Indulge your senses in a culinary journey through the sun-kissed shores of the Mediterranean with our blog,
+            where we celebrate the vibrant flavors, wholesome ingredients, and cultural richness of this exquisite
+            cuisine. Explore mouthwatering recipes, culinary tips, and the art of savoring life the Mediterranean way.
+        </p>
+    </div>
+    <hr>
+    <h2 class="additiona-text">
+        Pick your favorite Mediterranean Dish!
+    </h2>
+
+    <button id="allPostsBtn">View All Posts</button>
+
+    <div class="div" id="postsContainer"></div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="posts.js"></script>
+    <script src="/posts/posts.js"></script>
     <script>
         if (isLoggedIn() === false) window.location.replace("/landing/landing.html");
     </script>
