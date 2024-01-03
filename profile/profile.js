@@ -17,8 +17,10 @@ window.onload = function() {
     editBtn.onclick = editUser;
 }
 
-function addPost(event) {
-    event.preventDefault();
+
+function addPost(e) {
+    e.preventDefault();
+    
     const textareaContent = document.querySelector('#textarea');
 
     const bodyData = {
@@ -42,5 +44,12 @@ function addPost(event) {
 }
 
 function editUser(userInfo){
-    // Add your edit user logic here using the global variable `userData`
+
+    .then(createPost => {
+        console.log(createPost);
+        textareaContent.value = ""; 
+    });
 }
+
+
+
