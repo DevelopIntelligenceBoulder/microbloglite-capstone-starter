@@ -19,8 +19,20 @@ html{
     background-size: fill;
 }
 
-/*card-body
-{
-   background-image: url(https://giphy.com/gifs/love-animation-art-3ohzdZO0nAL1H2LdMA);
-   background-size: fill;
+section{
+    display: flex;
+    justify-content: center; 
+}
+
+
+
+
+
+
+body{
+   background-image: url(photos/giphylogin.gif);
+   background-size: 1200px;
+   color: hotpink;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 20px;
 }
