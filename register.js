@@ -19,6 +19,7 @@ registerForm.onsubmit = function (event) {
     username: registerForm.username.value,
     fullName: registerForm.fullName.value,
     password: registerForm.password.value,
+    bio: registerForm.bio.value,
   };
 
   // Disables the button after the form has been submitted already:

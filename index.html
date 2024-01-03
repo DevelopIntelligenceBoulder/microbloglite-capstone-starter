@@ -10,7 +10,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="css/registration.css" rel="stylesheet" />
+    <link href="global.css" rel="stylesheet" />
+
+    <!-- Font style link -->
+    <link href="https://api.fontshare.com/v2/css?f[]=quilon@400&display=swap" rel="stylesheet">
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
@@ -19,12 +22,12 @@
     </script>
   </head>
 
-  <body>
+  <body class="registration-page" style="background-color: rgb(255, 140, 0);">
     <!-- Registration form code -->
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="card border border-dark border-3">
+        <div class="col-md-4 custom-form">
+          <div class="card custom-border">
             <div class="card-body">
               <h1 class="text-center mb-4">Registration Page</h1>
               <form id="registerForm">
@@ -72,6 +75,17 @@
                   />
                 </div>
 
+                <div class="mb-3">
+                  <label for="bio">Bio:</label>
+                  <textarea
+                      id="bio"
+                      type="bio"
+                      name="bio"
+                      class="form-control"
+                  ></textarea>
+                </div>
+              
+
                 <button
                   id="registerButton"
                   type="submit"
@@ -81,6 +95,7 @@
                 </button>
 
                 <a href="/landing/index.html">Already have an account? Login</a>
+
               </form>
             </div>
           </div>

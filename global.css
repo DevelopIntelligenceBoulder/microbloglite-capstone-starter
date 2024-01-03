@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
 :root {
@@ -17,23 +15,27 @@
 body {
     height: 900px;
 }
+
 h3 {
     font-size: 1.5em;
 }
+
 i {
     color: coral;
     border-radius: 50%;
     width: 140px;
 }
+
 a {
     color: coral;
 }
+
 footer {
     background-color: antiquewhite;
 }
 
 footer h2::first-letter {
-    text-decoration: underline;    
+    text-decoration: underline;
 }
 
 .footer-p {
@@ -43,8 +45,6 @@ footer h2::first-letter {
     line-height: 1.6;
     letter-spacing: .07rem;
     max-width: 70%;
-
-
 }
 
 footer h3 {
@@ -54,10 +54,56 @@ footer h3 {
     border-left: 0;
     padding-left: 50px;
 }
+
 #line {
     border-right: 0;
 }
 
 footer a {
     text-decoration: none;
+}
+
+/* Registration page */
+*.registration-page {
+    font-family: 'Quilon', sans-serif;
+}
+.registration-page a {
+    color: blue;
+}
+
+/* The card body */
+.custom-form {
+    margin-top: 20px;
+}
+
+/* images scroll code  */
+.scroll-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: rgb(255, 213, 0);
+}
+
+.scroll-container img {
+    padding: 10px;
+    transition: filter 0.3s ease;
+    max-height: 90px;
+    /* Set a maximum height for the images */
+    margin-right: 10px;
+    /* Optional margin between images */
+}
+
+.scroll-container img:hover {
+    filter: brightness(70%);
+}
+
+/* button style */
+#registerButton {
+    background-color: rgb(255, 140, 0);
+    ;
 }
