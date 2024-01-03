@@ -23,3 +23,23 @@ header {
 main {
   margin-top: 30px;
 }
+
+.author-image{
+  border-radius: 50%;
+  width: 15%;
+  height: 15%;
+  object-fit: cover;
+}
+
+.authors-section{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.author{
+  text-align: center;
+  margin-top: 50px;
+}
