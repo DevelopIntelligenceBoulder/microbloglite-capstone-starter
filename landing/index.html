@@ -1,85 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="./landing.css" />
+
+    <!--font sheet-->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=quilon@600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
-    </script>
-</head>
-<body>
 
-    <header>
-        
-    </header>
+  </head>
+  <body>
+    <header></header>
 
-    <main>
 
-        <section class="login-section">
-            <div class="login-container">
-                <div class="card login-card" style="width: 30rem;">
-                    <div class="card-body">
-                        <div class="col text-center">
-                            <h3 class="position-relative d-inline-block">LOGIN</h3> 
-                            <h4 class="card-subtitle mb-2 text-muted">Welcome Back!</h4>
-                        </div>
-                        
-                        <form id="login">
-                            <div class="form-group">
-                                <i class="fa fa-user icon"></i>
-                                <label for="username">Username</label>
-                                <input type="text" id="username" minlength="3" placeholder="Username">
-                                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                              <i class="fa fa-key icon"></i>
-                              <label for="password">Password</label>
-                              <input type="password" id="password" minlength="6" placeholder="Password">
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember me?</label>
-                            </div>
-        
-                            <div class="col text-center">
-                                <a href="registration.html">Create Account</a>
-                            </div>
-        
-                            <div class="col text-center">
-                                <a href="#signin" class="mt-2 btn btn-dark">Login</a>
-                            </div>
-        
-                        </form>
-                    </div>
-                </div>
+    <main class="container">
+      <img src="images/Join the Conversation.jpg" class="heroimg" />
+      <div class="section2">
+        <h1>Where Fresh Ideas Flourish..</h1>
+        <h3>#Stay Connected 🗨️</h3>
+
+        <div class="login-card">
+          <h2>Sign In</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required />
             </div>
-        </section>
-
-
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-group">
+              <button type="submit" id="loginButton">Login</button>
+            </div>
+            <a href="/index.html">Sign up for account</a>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer></footer>
 
+    
     <!-- Page-specific code -->
+    <script src="../auth.js"></script>
+    <script>
+      if (isLoggedIn() === true) window.location.replace("/posts");
+    </script>
     <script src="./landing.js"></script>
-</body>
+  </body>
 </html>
