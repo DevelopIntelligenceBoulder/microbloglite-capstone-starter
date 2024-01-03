@@ -1,0 +1,480 @@
+/* Resetting padding and border for the entire document */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  max-width: 1800px;
+}
+
+#box {
+  flex: 1;
+  min-width: 0;
+  margin: 5px;
+}
+
+#all-posts-container {
+  margin-top: 20px;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+/* Icons */
+
+.logo {
+  width: 36px;
+  margin-right: 16px;
+} 
+
+/* Search Bar */
+
+.search-box {
+  background: #efefef;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10 15px;
+}
+
+.search-box img {
+  width: 18px;
+  margin-left: 18px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  padding: 8px;
+  outline: none;
+  border: 0;
+}
+
+/* User Icon */
+
+.nav-user-icon {
+  margin-left: 30px;
+}
+
+.nav-user-icon img {
+  width: 33px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #41db51;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* User Dropdown */
+
+.nav-user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+#logOutBtn {
+  cursor: pointer;
+}
+
+/* Nav Bar */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1876f2;
+  padding: 10px 5%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav-left, 
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav-left ul li {
+  margin-right: 15px;
+}
+
+.nav-left ul li img {
+  width: 28px;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+/* Left Side Bar */
+
+.left-sidebar {
+  width: 25%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  flex: 1;
+  min-width: 0;
+  margin: 5px;
+}
+
+.imp-links {
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+}
+
+ .imp-links a, 
+ .shortcut-links{ 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #626262;
+}
+
+.imp-links a img {
+  width: 25px;
+  margin-right: 15px;
+}
+
+.imp-links a:last-child {
+  color: #1876f2;
+}
+
+.shortcut-links a img {
+  width: 40px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.shortcut-links p {
+  margin: 25px 0;
+  color: #626262;
+  font-weight: 500;
+}
+
+  /* Stories */
+
+  .story-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  .story {
+    flex-basis: 18%;
+    padding-top: 32%;
+    position: relative;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),url(images/status-1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+  .story img {
+    position: absolute;
+    width: 45px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    border: 3px solid #1876f2;
+  }
+
+  .story p {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .story1 {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url();
+  }
+
+  .story2 {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/story-pics/5a6bccf8ff846b0001f03994_FeaturedImage48.jpg);
+  }
+
+  .story3 {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/story-pics/bigstock-Young-Woman-Taking-Selfie-In-A-183422428-1539645257.jpg);
+  }
+
+  .story4 {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/story-pics/doonuts.avif);
+  }
+
+  .story5 {
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(images/story-pics/pexels-oladimeji-ajegbile-3314294.jpg);
+  }
+
+  .story.story1 img {
+    top: unset;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    border: 0;
+    width: 35px;
+  }
+  
+
+
+  /* Right Side Bar */
+  
+  .right-sidebar {
+    /* position: sticky; */
+    width: 25%;
+    top: 80px;
+    background: #fff;
+    color: #626262;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 5px;
+    flex: 1;
+    min-width: 0;
+    margin: 5px;
+    height: 97vh;
+  }
+
+  .sidebar-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .right-sidebar h4 {
+    font-weight: 600;
+     font-size: 16px;
+  }
+
+  .sidebar-title a {
+    text-decoration: none;
+    color: #1876f2;
+    font-size: 12px;
+  }
+
+  .event {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px; 
+  }
+
+  .left-event {
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .event p {
+    font-size: 12px;
+  }
+
+  .event a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #1876f2;
+  }
+
+  .left-event span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1876f2;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 0;
+  }
+
+  .sidebar-ads {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .online-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .online-list .online img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .online-list .online {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .online-list .online::after {
+    top: unset;
+    bottom: 5px;
+  }
+
+   /* Post Box */
+   .write-post-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-right: 455px;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    flex: 1;
+    min-width: 0;
+    margin: 5px;
+  }
+  
+  #textArea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  resize: vertical;
+  }
+  
+  #textArea, .post-input-container textarea {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #textArea:focus {
+  outline: none;
+  border-color: #007bff;
+  }
+  
+  .post-input-container textarea {
+  border: none;
+  resize: none;
+  margin-bottom: 10px;
+  padding: 20px;
+  }
+
+  /* Post Links */
+
+  .add-post-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    }
+    
+    .add-post-links a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    }
+    
+    .add-post-links img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    }
+
+  /* Post Button */
+
+  .postButton {
+    text-align: right;
+    }
+    
+    .postButton button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    
+    .postButton button:hover {
+    background-color: #0056b3;
+    }
+
+  /* Fetch All Posts  */
+  .card {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #000;
+    margin: 5px;
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 8px; /* Round the corners */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Space between cards */
+    background-color: #fff; /* Card background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  }
+  
+  /* Style for the username */
+  .card .username {
+    font-weight: bold; /* Make the username bold */
+  }
+  
+  /* Style for the post text */
+  .card .post-text {
+    margin-top: 10px; /* Space between text */
+  }
