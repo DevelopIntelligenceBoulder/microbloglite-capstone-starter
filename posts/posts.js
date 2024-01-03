@@ -66,9 +66,9 @@ let getAllPosts = () => {
                 let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
                 
                 let postCardBody = document.createElement('div');
-                postCardBody.classList.add('container', 'd-flex', 'justify-content-center');
+                postCardBody.classList.add('container');
                 postCardBody.innerHTML = `
-                    <div class="card" style='width: 75%;'>
+                    <div class="card">
                         <div class="card-body bg-dark text-white">
                             <p class="card-title">${post.username}</p>
                             <p class="card-text">${post.text}</p>
@@ -117,10 +117,10 @@ createPostForm.onsubmit = (e) => {
         let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
 
         let newPost = document.createElement('div');
-        newPost.classList.add('container', 'd-flex', 'justify-content-center');
+        newPost.classList.add('container');
 
         newPost.innerHTML = `
-        <div class="card" style='width: 75%;'>
+        <div class="card";'>
             <div class="card-body bg-dark text-white">
                 <p class="card-title">${newPostData.username}</p>
                 <p class="card-text">${newPostData.text}</p>
