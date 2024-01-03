@@ -122,3 +122,107 @@ h3{
 }
 
 
+body{
+    --color-primary: #009579
+    --color-primary-dark: #007F67
+    --color-secondary:#252c6a
+    --color-error:#cc3333
+    --color-success: #4BB544
+    --border-radius: 4px
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: #Ebd9c8
+    ;
+}
+h3{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    justify-content: center;
+    color: #1876F2;
+}
+/* Content Box */
+ .container{
+    width: 400px;
+    max-width: 400px;
+    margin: 18px;
+    padding: 36px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+.form--hidden {
+    display: none;
+}
+.form__title {
+    margin-bottom: 36px;
+    text-align: center;
+}
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.form__message--success {
+    color: green;
+}
+.form__message--error {
+    color: red;
+}
+.form__input-group {
+    margin-bottom: 15px;
+}
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #DDDDDD;
+    outline: none;
+    background: #EEEEEE;
+}
+.form__input:focus {
+    border-color: #009579;
+    background: #FFFFFF;
+}
+.form__input--error {
+    color: red;
+    border-color: red;
+}
+.form__input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: red;
+}
+.form__button {
+    width: 100%;
+    padding: 18px 36px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #1876F2
+    ;
+}
+.form__button:hover {
+    background: #1876F2;
+}
+.form__button:active {
+    transform: scale(0.98);
+}
+.form__text {
+    text-align: center;
+}
+.form__link {
+    color: #252C6A;
+    text-decoration: none;
+    cursor: pointer;
+}
+.form__link:hover {
+    text-decoration: underline;
+}
