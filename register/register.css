@@ -25,6 +25,7 @@ code {
 
 .register-card {
   background-color: var(--celadon);
+  border-radius: 10px;
 }
 
 .btn-primary {

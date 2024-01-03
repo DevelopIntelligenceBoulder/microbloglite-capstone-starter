@@ -24,6 +24,7 @@ header code {
 
 .landing-card {
   background-color: var(--celadon);
+  border-radius: 10px;
 }
 
 .btn-primary {

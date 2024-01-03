@@ -1,10 +1,10 @@
-# About This Project
+# ChatterGrape 🍇
 
-_Our {we'll insert a name for our project here} allows users to register, login, logout, make post, and view their own profiles._
+_ChatterGrape allows users to register, login, logout, make post, and view their own profiles._
 
 ## Live Preview
 
-[Microblog Live Preview Site]()
+[ChatterGrape Live Preview Site]()
 
 # Preview
 
