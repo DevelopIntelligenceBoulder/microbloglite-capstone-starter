@@ -63,6 +63,7 @@ footer a {
     text-decoration: none;
 }
 
+
 /* Registration page */
 *.registration-page {
     font-family: 'Quilon', sans-serif;
@@ -106,4 +107,8 @@ footer a {
 #registerButton {
     background-color: rgb(255, 140, 0);
     ;
+
+#editBtn {
+    border: 0;
+    background-color: white;
 }
