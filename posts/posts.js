@@ -11,34 +11,42 @@
 // display all posts (display content,
 // author, timestamp) *use fetch
 
-// create vector imgs with a bud (unliked post)
-// blooming flower (liked post)
-// custom compass direction vector img (cursor)
-
 //read me explanantion!
 
-function createNewPost(title, content) {
-  // Make an API request to send the new post data to the server
-  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${logindata.token}`,
-    },
-    body: JSON.stringify({ title: title, content: content }),
-  })
-    .then((response) => {
-      // Handle the response data
-    })
-    //.catch((error) => {
-      // Handle any errors that occur during the API request
-    //});
-}
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to get posts from the server
+  function getPosts() {
+      // Make an API request to get the list of posts
+      fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${loginData.token}`
+          }
+      })
+          .then(response => response.json())
+          .then(posts => {
+              // Retrieved posts
+              displayPosts(posts);
+          })
+  }
 
-// Event listener for the form submission
-document.querySelector("form").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission
-  const title = document.getElementById("postTitle").value;
-  const content = document.getElementById("postContent").value;
-  createNewPost(title, content); // Call the function to send the new post data
-});
+  // Function to display posts on the page
+  function displayPosts(posts) {
+      const postsContainer = document.getElementById('posts-container');
+      postsContainer.innerHTML = '';
+
+      posts.forEach(post => {
+          const postElement = document.createElement('div');
+          postElement.innerHTML = `
+              <div class="post-card">
+                  <h2>${post.title}</h2>
+                  <p>${post.content}</p>
+              </div>
+          `;
+          postsContainer.appendChild(postElement);
+      });
+  }
+
+    // Get posts when the page loads
+    getPosts();
+  });
