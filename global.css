@@ -20,6 +20,7 @@
 
 body{
     background-color: #E8DFE0;
+    cursor: url('./images/person-hiking-solid-g.svg'), auto !important;
 }
 .navbar-expand-lg{
     background-color: #8d9b6ac4 !important;
@@ -66,4 +67,10 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 5px;
     border: none;
-  }
+}
+#logout-btn:hover{
+    cursor: url('./images/moon-stars-fill.svg'), auto !important;
+}
+a:hover, input:hover, textarea:hover, button:hover{
+    cursor: url('./images/mountain-solid-y.svg'), auto !important;
+}
