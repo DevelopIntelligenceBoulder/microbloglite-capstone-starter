@@ -35,18 +35,21 @@ window.onload = () => {
     }
 
     function publishPost(postData) {
+        const loginData = getLoginData();
         // publishing the post to the api
-        fetch(apiBaseURL + "/api/posts", {
+        fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", { 
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                Authorization: `Bearer ${logindata.token}`,
+             Authorization: `Bearer ${logindata.token}`,
             },
+
             body: JSON.stringify(postData),
         })
             .then((res)=>res.json())
             .then((newBlogPost)=> {
-                location.href = `/posts.html id=${newBlogPost.id}`;
-            });
+                console.log(newBlogPost);
+            //     location.href = `/posts.html?id=${newBlogPost.id}`;
+             });
     }
 };
