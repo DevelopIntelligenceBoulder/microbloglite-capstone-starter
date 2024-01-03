@@ -2,107 +2,158 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./global.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microblog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="/global.css">
 
-    <title>Login to the Microblog Network!</title>
-
+  <title>Microblog</title>
 </head>
+
+<style>
+  .row {
+    display: flex;
+    padding: 5rem;
+}
+
+.column1,
+.column2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.column3,
+.column4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding: 2px;
+  text-align: left;
+}
+
+.row1,
+.row2,
+.row3 {
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.box {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    /* border-radius: 2%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px; */
+}
+
+h4 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.blog-container {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(248, 248, 248);
+  box-shadow: 10px 5px 5px;
+  margin-left: 658.325px; 
+  margin-right: 658.325px;
+  margin-top: 30px;
+}
+</style>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+  <header>
+
+    <nav class="navbar bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <img src="/images/TheMedBowlLogo 1.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigate</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/posts/index.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile/profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log Out</a>
+              </li>
+          </div>
         </div>
     </nav>
 
-    <header>
+  </header>
 
-    </header>
+  <div class="row">
+    <div class="column1" style="margin-left: 40rem;">
+      <img src="/images/no-profile-picture-icon.png" alt="noImgIcon" style="border-radius: 50%;">
+    </div>
+    <div class="column2" style="margin-right: 40rem;">
 
-    <main>
-        <h1>Profile Page</h1>
+      <div class="box">
+        <h2>Lawrence</h2>
+        <br>
+        <h2 style="color:#17A7C7;">User since December 2023</h2>
+        <br>
+        <p style="font-weight: lighter; font-style: italic;">
+          "Passionate about Mediterranean cuisine, my blog
+          serves as a flavorful journey through
+          sun-kissed landscapes, offering a taste of the
+          region's rich culinary heritage through vibrant recipes,
+          captivating stories, and a celebration of the art of
+          savoring life's delicious moments."
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            data-bs-whatever="@getbootstrap">Create a Post</button>
+  <h2 style="margin-left: 30rem; margin-top: 5rem; color: #507A51; font-weight: bold;"> <u>MY BLOGS</u></h2>
+ 
+<div class="blog-container" style="border-radius: 20px;">
+  <div class="row" style="padding: 1rem;">
+    <div class="column3">
+      <img src="/images/greek.salad.jpg" alt="GreekSaladBlog" style="border-radius: 50%; align-items: center;">
+    </div>
+    <div class="column4" style="align-items: flex-start;">
+      <div class="row1"><h4 style="color: #DF6C02; text-align: left;"><u>December 20, 2023</u></h4></div>
+      <div class="row2"><h4>Greek Salad</h4></div>
+      <div class="row3">A refreshing classic, Greek salad features crisp cucumbers, juicy tomatoes...</div>
+      <div class="row4"><h4 style="color: #17A7C7; text-align: justify;"><u>Get the recipe</u></h4></div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create a Post</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Post Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="send-message">Send message</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+    </div>
+  </div>
+</div>
 
 
-        <div class="mt-5" style="color: #333; background-color: #333; height: 2px; border: none;"></div>
-
-        <div id="posts"></div>
-    </main>
-
-    <footer></footer>
 
 
-    <script src="./profile.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+  <script src="./profile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
