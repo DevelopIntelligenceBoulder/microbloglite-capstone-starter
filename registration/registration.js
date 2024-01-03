@@ -1,5 +1,5 @@
 window.onload = ()=>{
-    function register(registerData) {
+    async function register(registerData) {
         const options = {
           method: "POST",
           headers: {
@@ -8,18 +8,15 @@ window.onload = ()=>{
           body: JSON.stringify(registerData),
           
         };
-        return fetch(apiBaseURL + "/api/users", options)
-    .then((res) => res.json())
-    .then((success) => {
-    //   console.log(registerData,success);
-      if (success.status === '200') {
+        const res = await fetch(apiBaseURL + "/api/users", options);
+        const success = await res.json();
+        console.log(res.status);
+        if (res.status === 201) {
             window.location.replace("/posts/index.html"); // redirect 
-      } else{
-        console.error("registration unsuccessful");
-      }
-
-      return registerData;
-    });
+        } else {
+            console.error("registration unsuccessful");
+        }
+        return registerData;
 }
 
     let registerForm = document.querySelector("#register");
