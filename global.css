@@ -19,29 +19,32 @@
 
 body{
     background-color: #E8DFE0;
-    cursor: url('./images/person-hiking-solid-db-lg.svg'), auto !important;
+    cursor: url('./images/person-hiking-solid-ru-lg.svg'), auto !important;
 }
-.navbar-expand-lg{
+
+.navbar-expand-md{
     background-color: #8d9b6ac4 !important;
 }
+.dropdown-menu, .dropdown-item, .dropdown-item:hover{
+    background-color: #B4BE9D !important;
+}
 .offcanvas{
-    background-color: #8d9b6a;
+    background-color: #8d9b6a !important;
 }
-.nav-link, .navbar-brand, .offcanvas-title{
-    color: #694326 !important;
-}
-.nav-link:hover, .navbar-brand:hover{
+code, .nav-link, .navbar-brand, .offcanvas-title, .dropdown-item{
     color: #E3D477 !important;
 }
-.nav-link.active{
-    color: #4B311B !important;
+.nav-link:hover, .navbar-brand:hover, .dropdown-item:hover{
+    color: #8F5B34!important;
 }
-code{
-    color: #694326;
+.nav-link.active, .dropdown-item.active{
+    color: #53361e !important;
 }
+
 main{
-    margin-top: 50px;
+    margin-top: 70px;
 }
+
 /* The hero image */
 .hero-image {
     /* Set the height to cover the entire viewport */
@@ -65,14 +68,17 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 5px;
     border: none;
-  }
-  footer {
+}
+footer {
     text-align: center;
-  }
 }
 #logout-btn:hover{
     cursor: url('./images/moon-stars-fill.svg'), auto !important;
 }
 a:hover, input:hover, textarea:hover, button:hover{
     cursor: url('./images/mountain-solid-y.svg'), auto !important;
+}
+.dropdown-menu-right {
+    right: 0 !important;
+    left: auto !important;
 }

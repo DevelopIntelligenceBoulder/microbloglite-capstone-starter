@@ -1,11 +1,13 @@
 "use strict";
 
+addFontToBody();
+
 const registerForm = document.querySelector("#register");
 
 registerForm.onsubmit = function (e) {
     e.preventDefault();
 
-    // We can use loginForm.username (for example) to access the input element in the form which has the ID of "username".
+    // Use registerForm.username (for example) to access the input element in the form which has the ID of "username".
     const registerData = {
         username: registerForm.username.value,
         bio: registerForm.bio.value,
