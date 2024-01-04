@@ -1,0 +1,9 @@
+body, h2{
+    background-color: rgb(6, 21, 68);
+    color: white;
+}
+
+form {
+    background-color: white;
+    color: black;
+}
