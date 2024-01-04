@@ -6,27 +6,29 @@ const viewAllPostsContainer = document.getElementById("viewAllPostsContainer");
 
 window.onload = init;
 
+//initializing and setting variables to onclick events
 function init() {
     logoutButton.onclick = logoutButtonClicked;
     allPostsBtn.onclick = allPostsBtnClicked;
 
 }
 
+//pulling logindata
 function getLoginData() {
     const loginJSON = window.localStorage.getItem("login-data");
     return JSON.parse(loginJSON) || {};
 }
 
+//logout redirect function
 function logoutButtonClicked() {
     // Check if loginData is defined
     const loginData = getLoginData();
     if (!loginData || !loginData.token) {
-        // Redirect to the landing page if loginData or token is missing
         window.location.assign("/landing/landing.html");
         return;
     }
 
-    // GET /auth/logout
+    //logout with get token authorization
     const options = {
         method: "GET",
         headers: {
@@ -34,25 +36,25 @@ function logoutButtonClicked() {
             "Content-Type": "application/json",
         },
     };
-
+    //fetching response, removing data from local storage, and then redirecting
     fetch("http://http://microbloglite.us-east-2.elasticbeanstalk.com/auth/logout", options)
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
-            // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
-            // error with the fetch request above.
 
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/landing/landing.html");  // redirect back to landing page
+
+            window.localStorage.removeItem("login-data"); 
+            window.location.assign("/landing/landing.html"); 
         });
 }
 
+//initializing functions
 function allPostsBtnClicked() {
     getAllPosts();
     displayPosts();
 }
 
+//using fetch to get all posts and display through api response, and logout function
 function getAllPosts() {
     const loginData = getLoginData();
 
@@ -81,10 +83,11 @@ function getAllPosts() {
         });
 }
 
+// Display only the first 6 posts within their container 
 function displayPosts(posts) {
     viewAllPostsContainer.innerHTML = "";
 
-    // Display only the first 6 posts
+    
     const numOfPosts = posts.slice(0, 6);
 
     numOfPosts.forEach(post => {
@@ -111,7 +114,7 @@ function displayPosts(posts) {
     });
 }
 
-
+//is logged in to get data authorization
 function isLoggedIn() {
     const loginData = getLoginData();
     return Boolean(loginData.token);
