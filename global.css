@@ -3,7 +3,6 @@
 * {
     /* Sizing helper: See Workbook 1b, page 2-33. */
     box-sizing: border-box;
-    /* cursor: url('https://www.svgrepo.com/show/326691/leaf-outline.svg'), auto !important; */
 
     /* 
        Vizualization helper: While styling or debugging your HTML & CSS, 
@@ -20,11 +19,10 @@
 
 body{
     background-color: #E8DFE0;
-    cursor: url('./images/person-hiking-solid-g.svg'), auto !important;
+    cursor: url('./images/person-hiking-solid-db-lg.svg'), auto !important;
 }
 .navbar-expand-lg{
     background-color: #8d9b6ac4 !important;
-    /* backdrop-filter: blur(10px); */
 }
 .offcanvas{
     background-color: #8d9b6a;

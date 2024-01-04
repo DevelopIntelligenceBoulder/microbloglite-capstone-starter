@@ -7,3 +7,6 @@ body, html {
     /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/_10a2dc04-e67d-460e-8e58-0961292adaf8.jpeg");
 }
+#registration-card img{
+    height: 250px;
+}
