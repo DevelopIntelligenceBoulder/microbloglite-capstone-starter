@@ -1,8 +1,8 @@
 // Main
-window.onload = () => {
-  if (isLoggedIn()) populatePage();
-  else window.location.replace("../");
-};
+// window.onload = () => {
+//   if (isLoggedIn()) populatePage();
+//   else window.location.replace("../");
+// };
 
 async function populatePage() {
   document.getElementById("logoutBtn").onclick=logout;
@@ -75,26 +75,25 @@ const createArticle = (...classes) => {
 const createCard = (cardData) => {
   const cardElement = createArticle("card", "container", "shadow");
   cardElement.innerHTML = `
-    <div class="row">
+    <div class="row ">
       <div class="p-0">
         <div class="card-header">
           <div class="d-flex flex-wrap gap-2">
             <div class="bi bi-person-fill" style="font-size: x-large"></div>
             <div class="">${cardData.name}</div>
             <div class="text-secondary-emphasis flex-grow-1">@${cardData.username}</div>
-            <div class="">${cardData.createdAt}</div>
+            <div class="">${cardData.createdAt.split("T")[0]}</div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card-body">
+        <div class="card-body ">
           <div class="row">
             <div class="col-12">
               ${cardData.text}
             </div>
           </div>
         </div>
-        <div>
       </div>
     </div>`;
   return cardElement;

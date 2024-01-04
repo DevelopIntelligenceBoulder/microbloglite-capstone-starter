@@ -6,11 +6,12 @@ window.onload = ()=>{
             "Content-Type": "application/json",
           },
           body: JSON.stringify(registerData),
-          
+
         };
         const res = await fetch(API_URL + "/api/users", options);
         const success = await res.json();
         console.log(res.status);
+
         if (res.ok) {
             window.location.replace("/posts/index.html"); // redirect 
         } else {
