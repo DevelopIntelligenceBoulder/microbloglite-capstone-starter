@@ -27,6 +27,7 @@
 .logo {
   width: 36px;
   margin-right: 16px;
+  background-color: #1876f2;
 }
 
 /* Search Bar */
@@ -527,3 +528,5 @@ nav {
 .card .post-text a:hover {
   text-decoration: underline;
 }
+
+
