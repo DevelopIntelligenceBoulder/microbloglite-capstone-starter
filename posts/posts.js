@@ -2,8 +2,7 @@
 
 "use strict";
 
-console.log("IM WORKING")
-//maybe have nav bar in html?
+/* Posts Page JavaScript */
 
 
 // load all posts
