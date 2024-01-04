@@ -1,6 +1,6 @@
 /* Posts Page CSS */
-body {
-  background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+iframe{
+    max-width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -21,6 +21,7 @@ body {
     padding-top: 75px;
     padding-bottom: 75px;
   }
+
 }
 
 @media screen and (max-width: 991px) {
