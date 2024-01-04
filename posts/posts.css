@@ -4,6 +4,59 @@
   font-family: "Quilon", sans-serif;
 }
 
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image:
+    url(../images/conversation.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+}
+.convoHeader {
+  min-height: 50vh;
+}
+
+
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background-color: #ffa500;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 33px;
+}
+
 /* post card */
 #allPostContainer {
   display: flex;

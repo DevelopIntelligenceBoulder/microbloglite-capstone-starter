@@ -140,7 +140,7 @@ function displayAllPosts(allPosts) {
             <p class="card-text">By: ${post.username}</p>
             <p class="card-text">Likes: ${post.likes.length}</p>
             <button class="btn btn-dark text-light" onclick="likePost('${post._id}')">❤️ Like</button>
-            <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">Delete Post</button>
+            <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">🗑️ Delete Post</button>
         `;
 
     card.appendChild(cardBody);
