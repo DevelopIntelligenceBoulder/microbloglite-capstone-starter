@@ -3,3 +3,33 @@
     display: inline-block;
     width: 100px;
 }
+
+.centered-card {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid#8d9b6a
+}
+.h1 {
+    text-align: center;
+}
+.btns {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-like{
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.btn-unlike{
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.logout-btn {
+    padding: 10px;
+    margin: 0 5px;
+}
