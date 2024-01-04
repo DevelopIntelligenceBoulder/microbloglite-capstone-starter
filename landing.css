@@ -219,10 +219,18 @@ h3{
     text-align: center;
 }
 .form__link {
-    color: #252C6A;
+    color: #3897f0;
     text-decoration: none;
     cursor: pointer;
 }
 .form__link:hover {
     text-decoration: underline;
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }

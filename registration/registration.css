@@ -5,7 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fafafa;
+    background-color: #Ebd9c8;
 }
 
 .container {
@@ -92,4 +92,12 @@ h1 {
 
 .form__link:hover {
     text-decoration: underline;
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
