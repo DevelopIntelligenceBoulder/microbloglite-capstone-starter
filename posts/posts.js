@@ -125,17 +125,20 @@ function deletePost(postId) {
 }
 
 function displayAllPosts(allPosts) {
-  let allPostContainer = document.getElementById("allPostContainer");
-  allPostContainer.innerHTML = "";
 
-  allPosts?.forEach((post) => {
-    const card = document.createElement("div");
-    card.className = "card mb-3";
+    let allPostContainer = document.getElementById("allPostContainer");
+    
+  
+    allPosts?.forEach(post => {
+       
+        const card = document.createElement('div');
+        card.className = 'card mb-3';
+        
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
 
-    const cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+        cardBody.innerHTML = `
 
-    cardBody.innerHTML = `
             <h3 class="card-title">${post.text}</h3>
             <p class="card-text">By: ${post.username}</p>
             <p class="card-text">Likes: ${post.likes.length}</p>

@@ -15,10 +15,13 @@ window.onload = function() {
         profileContainer.querySelector('h2').innerText = userData.username;
     }
 
+    if (userData.bio) {
+        profileContainer.querySelector('p').innerText = userData.bio;
+    }
+
     const editBtn = document.getElementById("editBtn");
     editBtn.onclick = editUser;
 }
-
 
 function addPost(e) {
     e.preventDefault();
@@ -47,47 +50,59 @@ function addPost(e) {
     })
 }
 
+function editUser() {
+    const bioEl = profileContainer.querySelector('p');
+    const newBio = prompt('Enter your new bio: ', bioEl.innerText);
 
-function editUser(){
-
-    const usernameEl = document.querySelector('h2');
-
-    const newUsername = prompt('Enter you new username: ', usernameEl.innerText);
-    
-    if (newUsername !== null && newUsername.trim() !== ''){
-        usernameEl.innerText = newUsername;
-
-        const userData = getLoginData();
-
+    if (newBio) {
+        bioEl.innerText = newBio.value;
+        userData = getLoginData();
         const currentUsername = userData.username;
 
         fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${currentUsername}`, {
             method: 'PUT',
-            body: JSON.stringify({ username: newUsername}),
+            body: JSON.stringify({ bio: newBio }),
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Authorization': `Bearer ${userData.token}`
-                }
+            }
         })
         .then(res => res.json())
         .then(updatedUserData => {
-            // DISPLAY UPDATED USER
-            console.log(updatedUserData)})
-            displayProfile(updatedUserData)
-        .catch((err) => console.error('Error update username:', err));
-
-    }else{
-        alert("Please enter a valid username");
+            console.log(updatedUserData);
+            fetchAndDisplayUpdatedUserData(currentUsername);
+        })
+        .catch((err) => console.error('Error updating bio:', err));
+    } else {
+        alert("Please enter a valid bio");
     }
 }
 
-
-function displayProfile(updatedUserData){
-    
-    // go into updatedUserData retrive username = pdatedUserData.username 
-
-    // make a fetch request with username just like the put u did - GET REQUEST TO GET UODATED USERNAME 
-    
+function fetchAndDisplayUpdatedUserData(currentUsername) {
+    // Fetch the updated user data with the new username
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${currentUsername}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
+    })
+    .then(res => res.json())
+    .then(retrievedUserData => {
+        console.log('Retrieved User Data:', retrievedUserData);
+        displayProfile(retrievedUserData);
+    })
+    .catch((err) => console.error('Error fetching updated user data:', err));
 }
+
+function displayProfile(retrievedUserData) {
+    console.log('Updated UI with retrievedUserData:', retrievedUserData);
+
+    const bioElement = profileContainer.querySelector('p');
+
+    bioElement.innerText = retrievedUserData.bio; 
+}
+
 
