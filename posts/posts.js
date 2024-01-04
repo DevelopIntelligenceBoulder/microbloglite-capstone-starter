@@ -6,36 +6,46 @@ console.log("IM WORKING")
 //maybe have nav bar in html?
 
 
-//load all posts
-// function getPosts() {   
+// load all posts
+function formatCreatedAt(createdAt) {
+    const date = new Date(createdAt);
+    const formattedDate = date.toLocaleString();
+    return formattedDate;
+}
+function getPosts() {
 
-//     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
-//         headers: {
-//             'Authorization': `Bearer ${getLoginData().token}`
-//         },
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(displayPosts(data));
-//     })
-//     .catch((error) => {
-//         console.error('Error:', error);
-//     });
-// }
-// function displayPosts (data){
-//     const resultDiv = document.getElementById('allPosts')
-//     html = ''
-//     for (let index = 0; index < data.length; index += 1) {
-//         const posts = data[index];
-//     html += ` <div class="card" style="width: 18rem;">
-//     <div class="card-body">
-//         <h5 class="card-header"> ${posts.name}</h5>
-//     </div>
-// </div>`;
-// }
+    fetch(, {
+        headers: {
+            'Authorization': `Bearer ${getLoginData().token}`
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            displayPosts(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+function displayPosts(data) {
+    const resultDiv = document.getElementById('allPosts')
+    let html = ''
+    for (let index = 0; index < data.length; index += 1) {
+        const posts = data[index];
+        html += ` <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-header"> ${posts.username}</h5>
+            <h2>${posts.text}</h2>
+            <p>${formatCreatedAt}</p2>
+           
 
-//     resultDiv.innerHTML = html
-// }
+    </div>
+</div>`;
+    }
+
+    resultDiv.innerHTML = html
+}
 
 //make function for fetch request
 //it's POST REQUEST
@@ -48,4 +58,6 @@ console.log("IM WORKING")
 // for (blah blah blah)
 //html += `html that makes post cards`
 //innerhtml = html
-//done :D
+//done :D''
+
+getPosts()
