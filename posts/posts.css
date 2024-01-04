@@ -1,19 +1,41 @@
 /* Posts Page CSS */
+body {
+    background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+  }
+
+h1 {
+    font-size: 10rem;
+}
+
 @media screen and (min-width: 768px){
     .md-card:nth-of-type(even){
-        margin-top: 5px;
+        margin-bottom: 10px;
         max-width: 15rem;
+        /* border: 1px solid red;
+        border-radius: 15px; */
     }
     .md-card:nth-of-type(odd){
-        margin-bottom: 10px;
+        margin-top: 21px;
+        margin-bottom: 30px;
+        max-width: 13rem; 
+        /* border: 1px solid blue;
+        border-radius: 15px; */
     }
     .md-card:nth-child(3n){
-        margin-top: 70px;
+        margin-bottom: 10px;
+    }
+
+    .card-body {
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }
 
 @media screen and (max-width: 991px)  {
     .mobile{
         display: none;
+    }
+    .card {
+        margin-bottom: 10px;
     }
 }
