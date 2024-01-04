@@ -23,6 +23,7 @@ h2 {
 
 .herotext {
   color: #1d0c04b9;
+  margin-top: 300px;
 }
 
 body {
@@ -36,13 +37,36 @@ body {
 .container {
   display: flex;
   gap: 30px;
+}
+
+.background-image {
+
+background-image: linear-gradient(
+  rgba(4, 9, 30, 0.416),
+  rgba(4, 9, 30, 0.345)
+),
+url(./images/background.jpg);
+background-repeat: no-repeat; 
+background-size: cover;
+height: 150vh;
+width: 300vh;
+
+};
+
+
+.container {
+  display: flex;
+  gap: 30px;
   justify-content: center;
+
 }
 
 .heroimg {
   height: 600px;
   max-width: 100%;
   border-radius: 30px;
+  margin-top:300px;
+  
 }
 .section2 {
   flex: 0.5;
@@ -58,11 +82,14 @@ body {
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top:70px;
+ 
+  
 }
 
 .login-card h2 {
   text-align: center;
-  margin-bottom: 20px;
+
 
 }
 
