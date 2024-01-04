@@ -21,8 +21,10 @@ window.onload = () => {
 };
 
 // Initialized variables
-const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com/";
+// const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com/";
 const createPostForm = document.getElementById('create-post-form');
+const allPosts = document.getElementById('all-posts')
+
 
 // Event handler for creating a new post
 createPostForm.onsubmit = (e) => {
@@ -42,7 +44,7 @@ createPostForm.onsubmit = (e) => {
         body: JSON.stringify(postDataContent)
     };
 
-    fetch(`${apiBaseURL}/api/posts`, options)
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
     .then((res) => res.json())
     .then((newPostData) => {
 
@@ -69,11 +71,13 @@ createPostForm.onsubmit = (e) => {
                 <p class="card-text fw-lighter">${formattedDate}</p>
             </div>
         </div>`;
-        // allPosts.prepend(newPost);
+        console.log(allPosts)
+        allPosts.prepend(newPost);
         console.log(newPostData);
 
     })
-    .catch((err) => console.error(err));
+    .catch((err) => console.error('Error fetching posts:', err))
+
 
     createPostForm.reset();
 };
