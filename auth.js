@@ -73,6 +73,15 @@ function login (loginData) {
     };
 
     return fetch(apiBaseURL + "/auth/login", options)
+<<<<<<< HEAD
+        .then(response => response.json())
+        .then(loginData => {
+            window.localStorage.setItem("login-data", JSON.stringify(loginData));
+            //window.location.assign("/posts");  // redirect
+
+            return loginData;
+        });
+=======
     .then(response => response.json())
     .then(loginData => {
         window.localStorage.setItem("login-data", JSON.stringify(loginData));
@@ -80,6 +89,7 @@ function login (loginData) {
         console.log(loginData);
         return loginData;
     });
+>>>>>>> feature/leila-clesca
 }
 
 

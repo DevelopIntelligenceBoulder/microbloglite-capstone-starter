@@ -22,16 +22,17 @@ function signUp(signUpData) {
         })
     }
 
-document.getElementById("registrationForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Retrieve username and password from the form
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    // retrieve username and password from the form
     const signUpData = {
         username: document.getElementById("username").value,
         fullName: document.getElementById("firstName").value + ' ' + document.getElementById("lastName").value,
         password: document.getElementById("password").value
     };
-
     // make an API request to create the account
     signUp(signUpData);
+
+    // clear the form 
+    document.getElementById("registrationForm").reset();
 });
