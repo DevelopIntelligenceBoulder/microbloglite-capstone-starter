@@ -82,3 +82,7 @@ h4 {
 .nav-underline > *:hover{
     border-color:#e0d209 !important;
 }
+
+.text-primary{
+  color: #e0d209 !important;
+}
