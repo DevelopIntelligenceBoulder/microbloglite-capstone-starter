@@ -8,7 +8,7 @@ window.onload = () => {
         console.error('User needs to log in!');
         return;
     }
-    // Fetch to getall posts
+    // Fetch to get all posts
     fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
         method: "GET",
         headers: {
@@ -24,6 +24,10 @@ window.onload = () => {
             }
         });
 };
+
+function countLikes(likes) {
+    return likes.length;
+}
 
 function createPostCard(post, loginData) {
     let formattedDate = new Date(post.createdAt);
@@ -47,15 +51,15 @@ function createPostCard(post, loginData) {
                 <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                     <div>
                         ${post.username === loginData.username ?
-                            `<button class="btn delete-btn" data-post-id="${post._id}" onclick="deletePost('${post._id}')">
+            `<button class="btn delete-btn" data-post-id="${post._id}" onclick="deletePost('${post._id}')">
                                 <i class="fas fa-trash"></i> Delete
                             </button>` : ''}
                     </div>
                     <div class="d-flex align-items-center">
-                        <button class="btn like-btn" data-post-id="${post._id}" onclick="likePost('${post._id}')">
+                        <button class="like-button like-btn" id="${post._id}" onclick="likeUnlikeToggle('${post._id}')">
                             <i class="fas fa-heart btn-like"></i> Like
                         </button>
-                        <span id="like-count-${post._id}" class="ml-2">${post.likes.length}</span>
+                        <span class="likes-count">${countLikes(post.likes)} Likes</span>
                     </div>
                     <div>
                         <p class="card-date">${dateTimeString}</p>
@@ -74,11 +78,13 @@ function deletePost(postId) {
         console.error("Invalid postId:", postId);
         return;
     }
+
     // Confirmation
     let isConfirmed = window.confirm("Are you sure you want to delete this post?");
     if (!isConfirmed) {
         return;
     }
+
     // Fetch post id and delete
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`, {
         method: "DELETE",
@@ -99,46 +105,57 @@ function deletePost(postId) {
         });
 }
 
-// Like a post
-function likePost(postId) {
-    let loginData = getLoginData();
-
-    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${loginData.token}`
-        },
-        body: JSON.stringify({ postId: postId })
-    })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        } else {
-            if (res.status === 399) {
-                console.log("Post already liked.");
-            } else {
-                throw new Error("Failed to like post");
-            }
-        }
-    })
-    .then((data) => {
-        let likeCountElement = document.getElementById(`like-count-${postId}`);
-
-        if (likeCountElement) {
-            let currentLikeCount = parseInt(likeCountElement.textContent) || 0;
-            likeCountElement.textContent = currentLikeCount + 1;
-        }
-
-        console.log("Post liked successfully:", data);
-    })
-    .catch(error => console.error("Error:", error));
+// Toggle to give and remove a like
+function likeUnlikeToggle(postId) {
+    if (window.localStorage.getItem(postId) === null) {
+        toggleLike(postId)
+    } else {
+        untoggleLike(postId)
+    }
 }
 
+// Give a like
+function toggleLike(postId) {
+    let loginData = getLoginData();
 
+    let likeButton = document.querySelector(`button[id='${postId}']`)
+    likeButton.classList.toggle('like-btn')
+    let options = {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ postId: postId }),
+    };
 
-// function escapeHTML(text) {
-//     let div = document.createElement('div');
-//     div.textContent = text;
-//     return div.innerHTML;
-// };
+    fetch(apiBaseURL + "/api/likes", options)
+        .then((response) => response.json())
+        .then((data) => {
+            window.localStorage.setItem(data.postId, data._id)
+            window.location.reload()
+            
+        });
+}
+
+// Remove a like
+function untoggleLike(postId) {
+    let loginData = getLoginData();
+
+    let likeButton = document.querySelector(`button[id='${postId}']`)
+    likeButton.classList.toggle('like-btn')
+    let endpoint = window.localStorage.getItem(postId)
+    let options = {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+    };
+    fetch(apiBaseURL + "/api/likes/" + endpoint, options)
+        .then((response) => response.json())
+        .then((data) => {
+            window.localStorage.removeItem(postId)
+            window.location.reload()
+        });
+}
