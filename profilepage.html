@@ -10,7 +10,7 @@
         <!-- style for profile section -->
         <link rel="stylesheet" href="styles/profilepage.css">
         <script>
-            if (isLoggedIn() === false) window.location.replace("/login.html");
+         //   if (isLoggedIn() === false) window.location.replace("/login.html");
 </script>
 </head>
 
@@ -61,7 +61,7 @@
                             <p id="userBio"></p>
                             <!--add link to profile editing form-->
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button type="button" class="btn btn-primary" href="#">Edit</button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit</button>
                             </div>
                         </div>
                     </div>
@@ -125,6 +125,42 @@
                 
             </div>
         </div>
+
+
+        <!-- modal for editing -->
+
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="editProfileForm">
+                    <div class="mb-3">
+                      <label for="fullName" class="form-label">Full Name:</label>
+                      <input type="text" class="form-control" id="currentUser" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username:</label>
+                      <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="bio" class="form-label">Bio:</label>
+                      <textarea class="form-control" id="userBio" rows="4"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="saveProfileChanges">Save Changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
     </main>
 
     

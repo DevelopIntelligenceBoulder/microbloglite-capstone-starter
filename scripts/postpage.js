@@ -41,48 +41,9 @@ function getLoginData() {
 }
 
 
-//function loadAllPosts(posts) {
-
-
-    //const postContainer = document.getElementById("postContainer");
-  
- //   for (let i = 0; i < posts.length; i++) {
- //     const post = posts[i];
- //     createPost(post, postContainer);
- //   }
-//}
-
-//function getAllPosts(accessToken) {
-
- // username = loginData.username; // Set the username
-
-
-    //const options = {
-    //  method: "GET",
-    //  headers: {
-    //    Authorization: `Bearer ${accessToken}`,
-    //  },
-   // };
-  
-  //  fetch(apiLink)
-  //    .then((response) => {
-  //      if (response.ok) {
-   //       return response.json();
-  //      } else {
-  //        throw new Error("Failed to retrieve posts");
-  //      }
-  //    })
-   //   .then((data) => {
-   //     loadAllPosts(data);
-  //    })
-  //    .catch((error) => {
- //       console.error("Error fetching posts:", error);
-//        });
-//}
-
 function displayUserPosts(loginData) {
   // const username = 'quiditch123';
-  username = loginData.username; // Set the username
+  username = loginData.username; 
   fetch(apiLink, {
       headers: {
           Authorization: `Bearer ${accessToken}`,

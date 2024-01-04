@@ -101,7 +101,7 @@ subtitleElement.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
 const createdAtDate = new Date(post.createdAt);
 
 const options = {
-  hour12: true,
+  hour12: false,
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric',
