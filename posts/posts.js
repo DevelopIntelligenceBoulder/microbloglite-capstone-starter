@@ -65,11 +65,8 @@ let getAllPosts = () => {
                 };
                 let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
 
-                
-
-                
                 let postCardBody = document.createElement('div');
-                postCardBody.classList.add('container');
+                postCardBody.classList.add('col-md-4', 'md-card');
                 
                 postCardBody.innerHTML = `
                     <div class="card">
@@ -122,16 +119,18 @@ createPostForm.onsubmit = (e) => {
         let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
 
         let newPost = document.createElement('div');
-        newPost.classList.add('container');
+        newPost.classList.add('col-md-4', 'md-card');
 
         newPost.innerHTML = `
-        <div class="card";'>
-            <div class="card-body bg-dark text-white">
-                <p class="card-title">${newPostData.username}</p>
-                <p class="card-text">${newPostData.text}</p>
-                <p class="card-text fw-lighter">${formattedDate}</p>
+       
+            <div class="card";'>
+                <div class="card-body bg-dark text-white">
+                    <p class="card-title">${newPostData.username}</p>
+                    <p class="card-text">${newPostData.text}</p>
+                    <p class="card-text fw-lighter">${formattedDate}</p>
+                </div>
             </div>
-        </div>
+       
         `;
         allPosts.prepend(newPost);
         console.log(newPostData);
