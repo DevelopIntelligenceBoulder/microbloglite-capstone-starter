@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>registration page</title>
+  <title>Registration</title>
+
+  <!-- Run BEFORE page is finished loading (before window.onload): -->
+  <script src="../auth.js"></script>
+  <script>
+    if (isLoggedIn() === false) window.location.replace("/");
+  </script>
   <link rel="stylesheet" href="/Register/register.css">
 </head>
 
