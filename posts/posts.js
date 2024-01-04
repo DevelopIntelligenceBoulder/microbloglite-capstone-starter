@@ -80,7 +80,6 @@ function displayPosts(data) {
     <div class="card-body">
         <h5 class="card-header"> ${posts.username}</h5>
             <h2>${posts.text}</h2>
-            // display the formatted time instead of the raw timestamp
             <p>${formattedTime}</p2>
             </div>
 </div>`;
