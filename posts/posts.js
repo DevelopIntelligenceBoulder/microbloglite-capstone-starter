@@ -9,36 +9,45 @@ window.onload = function (_event) {
 }
 
 function getPosts() {
-    const {token} = getLoginData()
+    const { token } = getLoginData()
     const options = {
         headers: {
-             Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
         }
     }
-
+    
     return fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts`, options)
-        .then(response => response.json())
-}
+    .then(response => response.json()) 
+    .then(data =>  populatePostcards(data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+    
+}  
+
+
 
 function populatePostcards(posts) {
+    const postCards = document.getElementById("postDiv")
     let html = ""
     for (const currentPost of (posts)) {
         html += `
-            <div class="card border-light mb-3" style="max-width: 20rem;">
+            <div class="card border-light mb-3" style="max-width: 50rem;">
                 <div class="card-title">${currentPost.username}</div>
                 <div class="card-body">
                     <h4>${currentPost.text}</h4>
                 </div>
                 <p class="text">${formatDate(currentPost.createdAt)}</p>
                 <p class="text"><strong>Likes:</strong> ${currentPost.likes.length}</p>
+                <button type="button" class="btn btn-primary btn-sm">LIKE</button>
             </div>
         `
     }
 
-    document.body.innerHTML += html
+    postCards.innerHTML+= html
 }
 
-function formatDate (timestamp) {
+function formatDate(timestamp) {
     const date = new Date(timestamp)
     const formatOptions = {
         dateStyle: 'long',  // "long", "medium", "short"
