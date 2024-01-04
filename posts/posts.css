@@ -62,3 +62,39 @@ button {
     margin-left: 20rem;
     margin-right: 20rem;
   }
+
+  .post-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+}
+
+.post-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.post-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.post-timestamp {
+    font-style: italic;
+    color: #555;
+}

@@ -1,8 +1,8 @@
 "use strict";
 
-const postsContainer = document.getElementById("postsContainer");
 const logoutButton = document.getElementById("logoutButton");
 const allPostsBtn = document.getElementById("allPostsBtn");
+const viewAllPostsContainer = document.getElementById("viewAllPostsContainer");
 
 window.onload = init;
 
@@ -82,31 +82,35 @@ function getAllPosts() {
 }
 
 function displayPosts(posts) {
-    postsContainer.innerHTML = "";
+    viewAllPostsContainer.innerHTML = "";
 
     // Display only the first 6 posts
     const numOfPosts = posts.slice(0, 6);
 
     numOfPosts.forEach(post => {
-        const postDiv = document.createElement("div");
-        postDiv.classList.add("post");
+        const postCard = document.createElement("div");
+        postCard.classList.add("post-card");
 
         const contentParagraph = document.createElement("p");
-        contentParagraph.innerText = `Content ${post.text}`;
+        contentParagraph.classList.add("post-content");
+        contentParagraph.innerText = post.text;
 
         const authorParagraph = document.createElement("p");
+        authorParagraph.classList.add("post-author");
         authorParagraph.innerText = `Author: ${post.username}`;
 
         const timestampParagraph = document.createElement("p");
+        timestampParagraph.classList.add("post-timestamp");
         timestampParagraph.innerText = `Timestamp: ${post.createdAt}`;
 
-        postDiv.appendChild(contentParagraph);
-        postDiv.appendChild(authorParagraph);
-        postDiv.appendChild(timestampParagraph);
+        postCard.appendChild(contentParagraph);
+        postCard.appendChild(authorParagraph);
+        postCard.appendChild(timestampParagraph);
 
-        postsContainer.appendChild(postDiv);
+        viewAllPostsContainer.appendChild(postCard);
     });
 }
+
 
 function isLoggedIn() {
     const loginData = getLoginData();
