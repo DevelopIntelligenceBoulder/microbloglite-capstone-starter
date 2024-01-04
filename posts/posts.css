@@ -1,4 +1,17 @@
 /* Posts Page CSS */
+@media screen and (min-width: 768px){
+    .md-card:nth-of-type(even){
+        margin-top: 5px;
+        max-width: 15rem;
+    }
+    .md-card:nth-of-type(odd){
+        margin-bottom: 10px;
+    }
+    .md-card:nth-child(3n){
+        margin-top: 70px;
+    }
+}
+
 @media screen and (max-width: 991px)  {
     .mobile{
         display: none;
