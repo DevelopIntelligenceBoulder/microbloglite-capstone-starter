@@ -36,8 +36,8 @@
     </script> -->
   </head>
   <body>
-    <nav class="navbar navbar-expand-md">
-      <div class="container">
+    <nav class="navbar navbar-expand-md py-4 sticky-top bg-dark">
+      <div class="container-fluid">
         <button
           class="navbar-toggler"
           type="button"
@@ -53,14 +53,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
-              <a class="nav-link" href="../profile/index.html">Profile</a>
+              <a class="nav-link fw-bold text-white" href="../profile/index.html">Profile</a>
             </li>
           </ul>
         </div>
 
         <a class="navbar-brand logo-container" href="../index.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-            <image href="../images/Y%20logo.svg" width="50" height="50" />
+            <image href="../images/Y_logo.svg" width="50" height="50" />
           </svg>
         </a>
 
@@ -71,20 +71,20 @@
     </nav>
 
     <!-- <header>
-        <h1>POSTS PAGE</h1>
+        <h1 class="text-center mt-5">CREATE A POST</h1>
     </header> -->
 
-    <main>
+    <main class="mt-5">
       <!-- form to create a post -->
       <div class="container">
-        <form id="create-post-form" class="d-flex justify-content-center">
+        <form id="create-post-form" class="d-flex justify-content-center bg-dark rounded-5 px-4">
           <div
-            class="row d-flex justify-content-center my-5 bg-dark py-5 rounded-3"
+            class="row d-flex justify-content-center my-5"
           >
             <div class="text-center text-white mb-4">
-              <h3>Create a post!</h3>
+              <h2>Create a post!</h2>
             </div>
-            <div class="form-floating col-md-8 col-lg-10">
+            <div class="form-floating col-md-8 col-lg-10 mb-4 mb-md-0">
               <textarea
                 id="post-text"
                 class="form-control"
@@ -109,9 +109,9 @@
       </div>
 
       <!-- space to display posts -->
-      <div class="container">
+      <div class="container mt-5">
         <!-- display: content,username and when posts was uploaded/created -->
-        <div id="all-posts" class="row justify-content-evenly">
+        <div id="all-posts" class="row justify-content-evenly mt-5">
             
           
             
@@ -121,7 +121,24 @@
       
     </main>
 
-    <footer></footer>
+    <footer class="bg-dark py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <a class="navbar-brand logo-container" href="../index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                <image href="../images/Y_logo.svg" width="50" height="50" />
+              </svg>
+            </a>
+          </div>
+          <div class="col-md-12 mt-4">
+            <h3 id="random-y" class="text-center text-white">
+              "Yellow yarn yields yawns yearly."
+            </h3>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Page-specific code -->
     <script type="module" src="./posts.js"></script>
