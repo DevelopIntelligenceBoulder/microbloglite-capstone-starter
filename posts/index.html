@@ -1,6 +1,7 @@
 <!-- POSTS page -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,17 +28,27 @@
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
 </head>
+
 <body>
 
     <header>
-        <h1>POSTS PAGE</h1>
-    </header>
+        <div id="tempNav">
+            <h1>Icon</h1>
+            <h1>POSTS PAGE</h1>
+            <button onclick="logout()">Logout</button>
+        </div>
 
-    <main></main>
+    </header>
+    
+    <main>
+        <section id="postList"></section>
+    </main>
+
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="./posts.js"></script>
 </body>
+
 </html>
