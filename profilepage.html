@@ -8,61 +8,59 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- style for profile section -->
-  
+    <link rel="stylesheet" href="profilepage.css">
 
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Feed</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./registration.html">Sign In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Our Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Contact Us</a>
-                        </li>
+        <!--Nav Bar-->
+<nav>
+    <div class="container nav-container">
+        <a href="#" class="logo"><h3>Slytherin <span>Scripts</span>
+        </h3></a>
+        <ul class="nav-link">
+            <li><a href="feed">For You</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="login">Log In</a></li>
+            <li>
+                <div class="nav-profile">
+                    <div class="profile-img">
+                        <img src="images/pfpic1.png" alt="">
+                    </div>
+                    <ul>
+                        <li><a class="menu-post"  data-bs-toggle="modal" data-bs-target="#createNewPostModal">Post</a></li> <!--You can create a post here, -->
+                        <li><a class="menu-profile" href="#">Profile</a></li>
+                        <li><a class="menu-logout" href="#">Log Out</a></li>
                     </ul>
-                    <form style="padding-right: 4%;" class="d-flex" role="search">
-                        <!--post btn; + -->
-                        <button class="btn btn-outline-primary" type="button" href="./post">+</button>
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <li style="padding-right: 5%;" class="nav-item dropdown">
-                        <!--pfp avatar in nav-->
-                        <button id="avatar-btn" aria-haspopup="true" aria-label="Account menu">
-                            <img id="img" alt="Avatar image" height="32" width="32" src="img/sample-pfp.jpg">
-                        </button>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Profile</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./login.html">Account</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
-                        </ul>
-                    </li>
                 </div>
-            </div>
-        </nav>
+            </li>
+        </ul>
+            <button class="phone-button Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button Close"><i class="fa fa-close"></i></button>
+    </div> 
+</nav>
+<!--Nav Bar End-->
     </header>
 
-    <main class="container" style="padding-top: 4%;">
+    <main class="container" style="padding-top: 8%;">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <section>
                         <div class="card">
                         <div class="card-body">
-                            <h2> Greetings, <span id="currentUser" style="text-decoration: underline;"></span></h2>   
+                            <h2> Greetings, <span id="currentUser" style="text-decoration: underline; color: rgb(4, 48, 141);"></span></h2>
+                            <hr>
+                            <br>
+                            <h3>Bio</h3>
+                            <p id="userBio"></p>
+                            <!--add link to profile editing form-->
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-primary" href="#">Edit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,14 +72,22 @@
         <div class="row" style="padding-top: 4%;">
             <div class="col">
                 <section>
-                    <div>
+                    <div> 
+                        <br>
                         <div class="card">
-                            <div class="card-body">
-                                <h5>Bio</h5>
-                                <p id="userBio"></p>
-                                <!--add link to profile editing form-->
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-primary" href="#">Edit</button>
+                            <div class="card">
+                                <div class="card-body">
+                                   
+                                    <form>
+                                        <label for="newPost">New Post:</label>
+                                        <br>
+                                        <textarea id="newPost" class="form-control"
+                                            placeholder="What's on your mind?"></textarea>
+                                        
+                                        <br>
+                                        <button class="btn btn-dark" type="submit" id="postBtn">Post</button>
+                                        <!--add a view post btn? -->
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -91,25 +97,9 @@
             <div class="col">
                 <section>
                     <!-- 2 colonnes de l'autre, la premiere avec un insert qui s'agrandit pour un nouveau post puis une section a l'autre post precdent-->
-                    <div>
-                        <div class="card">
-                            <div class="card-body">
-                                <form>
-                                    <label for="newPost">New Post:</label>
-                                    <br>
-                                    <textarea id="newPost" class="form-control"
-                                        placeholder="What's on your mind?"></textarea>
-                                    
-                                    <br>
-                                    <button class="btn btn-dark" type="submit" id="postBtn">Post</button>
-                                    <!--add a view post btn? -->
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                     <div style="padding-top: 4%;">
                         <div class="card">
-                            <div class="card-body" style="background-color:azure;">
+                            <div class="card-body" style="background-color:rgba(77,228, 255);">
                                 <h5 class="card-title">Posts</h5>
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-primary dropdown-toggle"

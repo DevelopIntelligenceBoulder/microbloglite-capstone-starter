@@ -88,14 +88,30 @@ function createPostElement(post) {
     
     const cardBodyElement = document.createElement('div');
     cardBodyElement.classList.add('card-body');
+
     
     const titleElement = document.createElement('h5');
     titleElement.classList.add('card-title');
     titleElement.textContent = `Username: ${post.username}`;
     
     const subtitleElement = document.createElement('h6');
-    subtitleElement.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
-    subtitleElement.textContent = `Created at: ${post.createdAt}`;
+subtitleElement.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
+
+// date string
+const createdAtDate = new Date(post.createdAt);
+
+const options = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: true,
+};
+
+const formattedDate = createdAtDate.toLocaleString(undefined, options);
+subtitleElement.textContent = `Created at: ${formattedDate}`;
     
     const contentElement = document.createElement('p');
     contentElement.classList.add('card-text');
