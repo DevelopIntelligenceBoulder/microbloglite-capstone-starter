@@ -7,44 +7,44 @@ function showSelectedPic(url, profilePicPreview) {
   }
 }
 
-  window.addEventListener("load", function() {
-    let storedImgURL = localStorage.getItem("profilePicURL");
-    if (storedImgURL) {
-      let profilePicPreview = document.getElementById("profilePicPreview");
-      let userImgEl = document.getElementById("userImg");
-      let postImgEl = document.getElementById("postImg");
-      profilePicPreview.src = storedImgURL;
-      userImgEl.src = storedImgURL;
-      postImgEl.src = storedImgURL;
-    }
-  });
+window.addEventListener("load", function () {
+  let storedImgURL = localStorage.getItem("profilePicURL");
+  if (storedImgURL) {
+    let profilePicPreview = document.getElementById("profilePicPreview");
+    let userImgEl = document.getElementById("userImg");
+    let postImgEl = document.getElementById("postImg");
+    profilePicPreview.src = storedImgURL;
+    userImgEl.src = storedImgURL;
+    postImgEl.src = storedImgURL;
+  }
+});
 
-  let profilePicEl = document.getElementById("profilePic");
-  let changeBtnEl = document.getElementById("changeBtn");
+let profilePicEl = document.getElementById("profilePic");
+let changeBtnEl = document.getElementById("changeBtn");
 
-  profilePicEl.addEventListener("change", function() {
-    let file = this.files[0];
-    let reader = new FileReader();
+profilePicEl.addEventListener("change", function () {
+  let file = this.files[0];
+  let reader = new FileReader();
 
-    reader.onload = function(e) {
-      let imageUrl = e.target.result;
-      let profilePicPreview = document.getElementById("profilePicPreview");
-      let userImgEl = document.getElementById("userImg");
-      let postImgEl = document.getElementById("postImg");
-  
-      showSelectedPic(imageUrl, profilePicPreview);
-      showSelectedPic(imageUrl, userImgEl);
-      showSelectedPic(imageUrl, postImgEl);
-    }
+  reader.onload = function (e) {
+    let imageUrl = e.target.result;
+    let profilePicPreview = document.getElementById("profilePicPreview");
+    let userImgEl = document.getElementById("userImg");
+    let postImgEl = document.getElementById("postImg");
 
-    if(file) {
-      reader.readAsDataURL(file);
-    }
-  });
+    showSelectedPic(imageUrl, profilePicPreview);
+    showSelectedPic(imageUrl, userImgEl);
+    showSelectedPic(imageUrl, postImgEl);
+  };
 
-  changeBtnEl.addEventListener("click", function() {
-    profilePicEl.click();
-  });
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+
+changeBtnEl.addEventListener("click", function () {
+  profilePicEl.click();
+});
 
 window.onload = () => {
   // Nav Variables
@@ -53,7 +53,6 @@ window.onload = () => {
   let logOutBtnEl = document.getElementById("logOutBtn");
   let postBtnEl = document.getElementById("postBtn");
   let textAreaEl = document.getElementById("textArea");
-  
 
   // Function to toggle dropdown visibility
   function toggleDropdown() {
@@ -72,8 +71,8 @@ window.onload = () => {
 
   // Post Box
 
-   // Event Listener to Post
-   postBtnEl.addEventListener("click", (e) => {
+  // Event Listener to Post
+  postBtnEl.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Post Data
@@ -85,36 +84,33 @@ window.onload = () => {
 
     const loginData = getLoginData();
 
- 
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${loginData.token}`,
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((res) => res.json())
+      .then((newPost) => {
+        let postsContainerEl = document.getElementById("box");
+        let newPostDiv = document.createElement("div");
+        newPostDiv.classList.add("card");
+        newPostDiv.textContent = newPost.message;
 
-      fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${loginData.token}`,
-        },
-        body: JSON.stringify(postData),
+        postsContainerEl.appendChild(newPostDiv);
+
+        textAreaEl.value = "";
       })
-        .then((res) => res.json())
-        .then((newPost) => {
-          let postsContainerEl = document.getElementById("box");
-          let newPostDiv = document.createElement("div");
-          newPostDiv.classList.add("card");
-          newPostDiv.textContent = newPost.message;
-
-          postsContainerEl.appendChild(newPostDiv);
-
-          textAreaEl.value = "";
-        })
-        .catch((err) => {
-          console.error("Error", err);
-        });
+      .catch((err) => {
+        console.error("Error", err);
+      });
   });
 
   // Get All Posts
   function getAllPosts() {
-    
     const loginData = getLoginData();
     const options = {
       method: "GET",
@@ -134,6 +130,34 @@ window.onload = () => {
           let postEl = document.createElement("div");
           postEl.classList.add("card");
 
+          // Like Button
+          let likeBtn = document.createElement("button");
+          likeBtn.textContent = "Like";
+          likeBtn.classList.add("likeBtn");
+
+          // Unlike Button
+          let unlikeBtn = document.createElement("button");
+          unlikeBtn.textContent = "Unlike";
+          unlikeBtn.classList.add("unlikeBtn");
+
+          
+          // Function to handle like button 
+          function handleLikeClick() {
+            likeBtn.classList.toggle("active"); 
+            unlikeBtn.classList.remove("active"); 
+          }
+
+          // Function to handle unlike button 
+          function handleUnlikeClick() {
+            unlikeBtn.classList.toggle("active");
+
+            likeBtn.classList.remove("active");  
+          }
+
+          
+          likeBtn.addEventListener("click", handleLikeClick);
+          unlikeBtn.addEventListener("click", handleUnlikeClick);
+
           let usernameEl = document.createElement("div");
           usernameEl.classList.add("username");
           usernameEl.textContent = `${post.username}`;
@@ -144,13 +168,16 @@ window.onload = () => {
 
           postEl.appendChild(usernameEl);
           postEl.appendChild(postTextEl);
+          postEl.appendChild(likeBtn);
+          postEl.appendChild(unlikeBtn);
 
           profilePostsEl.appendChild(postEl);
-         
+          document.body.appendChild(postEl);
         });
         console.log(posts);
       });
   }
+
   getAllPosts();
   setInterval(getAllPosts, 2000);
 };

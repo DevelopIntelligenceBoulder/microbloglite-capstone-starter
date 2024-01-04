@@ -30,22 +30,21 @@
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="../auth.js"></script>
     <script>
-      
       if (!isLoggedIn()) window.location.replace("/");
     </script>
   </head>
   <body>
-
-
     <footer></footer>
 
     <!-- Page-specific code -->
 
-     <!-- Nav Bar -->
-     <nav>
+    <!-- Nav Bar -->
+    <nav>
       <div class="nav-left">
         <a href="/index.html"
-          ><img  class="logo" src="/posts/images/nav-icons/icons8-new-moon-48.png"
+          ><img
+            class="logo"
+            src="/posts/images/nav-icons/icons8-new-moon-48.png"
         /></a>
         <ul>
           <li><img src="/posts/images/nav-icons/notification-30.png" /></li>
@@ -62,7 +61,7 @@
         <div class="nav-user-dropdown">
           <div class="nav-user-icon online" id="userIcon">
             <!-- Account Image -->
-            <img src="" id="userImg"/>
+            <img src="" id="userImg" />
           </div>
           <div class="dropdown-content" id="dropdownContent">
             <!-- Dropdown content  -->
@@ -77,16 +76,15 @@
     <div class="profile">
       <div class="profile-header">
         <!-- Profile header section -->
-       
+
         <!-- Profile picture, cover photo, user details, etc. -->
-      
       </div>
       <div class="profile-photos">
         <!-- Profile photos section -->
         <!-- Photo gallery, albums, etc. -->
         <div id="imgBox">
-          <input type="file" id="profilePic" accept="image/*">
-          <img src="" alt="" id="profilePicPreview">
+          <input type="file" id="profilePic" accept="image/*" />
+          <img src="" alt="" id="profilePicPreview" />
         </div>
         <button id="changeBtn">Change Picture</button>
       </div>
@@ -94,10 +92,10 @@
         <!-- Profile information section -->
         <!-- About, stats, bio, etc. -->
         <div id="inputBox">
-          <input type="text" placeholder="Change Name">
-          <input type="text" placeholder="Change Username">
-          <input type="date">
-          <input type="text" placeholder="Change Password">
+          <input type="text" placeholder="Change Name" />
+          <input type="text" placeholder="Change Username" />
+          <input type="date" />
+          <input type="text" placeholder="Change Password" />
         </div>
       </div>
 
@@ -106,13 +104,13 @@
         <!-- Posts, timeline, activity, etc. -->
         <div id="box" class="write-post-container">
           <div class="user-profile">
-            <img src="" id="postImg"/>
+            <img src="" id="postImg" />
             <div>
               <p>Brandon Nicholson</p>
               <small>Public </small>
             </div>
           </div>
-  
+
           <div class="post-input-container">
             <textarea
               id="textArea"
@@ -121,16 +119,22 @@
             ></textarea>
             <div class="add-post-links">
               <a href="#"
-                ><img src="/posts/images/post-icons/icons8-youtube-live-24.png" /> Live
-                Video</a
+                ><img
+                  src="/posts/images/post-icons/icons8-youtube-live-24.png"
+                />
+                Live Video</a
               >
               <a href="#"
-                ><img src="/posts/images/post-icons/icons8-upload-image-24.png" />
+                ><img
+                  src="/posts/images/post-icons/icons8-upload-image-24.png"
+                />
                 Photo/Video</a
               >
               <a href="#"
-                ><img src="/posts/images/post-icons/icons8-smiley-face-48.png" /> Feeling
-                Activity</a
+                ><img
+                  src="/posts/images/post-icons/icons8-smiley-face-48.png"
+                />
+                Feeling Activity</a
               >
             </div>
             <div class="postButton">
@@ -139,9 +143,8 @@
           </div>
         </div>
       </div>
-      
     </div>
-    
+
     <script src="./profile.js"></script>
   </body>
 </html>
