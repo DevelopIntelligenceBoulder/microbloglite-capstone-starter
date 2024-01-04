@@ -72,6 +72,10 @@ body {
     border-color:#e0d209 !important;
 }
 
-.card{
+.card {
+  border-radius: 0px;
+}
+
+.card > *{
   border-radius: 0px;
 }
