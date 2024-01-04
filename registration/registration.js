@@ -8,10 +8,10 @@ window.onload = ()=>{
           body: JSON.stringify(registerData),
           
         };
-        const res = await fetch(apiBaseURL + "/api/users", options);
+        const res = await fetch(API_URL + "/api/users", options);
         const success = await res.json();
         console.log(res.status);
-        if (res.status === 201) {
+        if (res.ok) {
             window.location.replace("/posts/index.html"); // redirect 
         } else {
             console.error("registration unsuccessful");
