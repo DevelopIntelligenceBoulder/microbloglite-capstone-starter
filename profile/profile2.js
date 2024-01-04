@@ -1,63 +1,107 @@
 "use strict";
 
-const logoutButton = document.getElementById("logoutButton");
-const postForm = document.getElementById("postForm");
+const profileContainer = document.getElementById('profile');
 
-window.onload = init;
+let userData;
 
-function init() {
-    logoutButton.onclick = logoutButtonClicked;
-    postForm.onsubmit = createPost;
-}
+window.onload = function() {
+    const postbtn = document.querySelector('#postBtn');
+    postbtn.onclick = addPost;
+ 
+    userData = getLoginData();
 
-function logoutButtonClicked() {
-    logout();
-}
 
-function createPost() {
-    // Retrieve login data from local storage or use an empty object if not present
-    const loginData = JSON.parse(localStorage.getItem("login-data")) || {};
-    const postContent = document.getElementById("postContent").value;
-
-    // Set up options for the fetch request
-    const options = {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${loginData.token}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: postContent }),
-    };
-
-    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", options)
-        .then(response => response.json())
-        .then(data => {
-            console.log("Post created successfully", data);
-        })
-        .catch(error => {
-            console.error("Error creating post", error);
-        });
-}
-
-// Function to toggle the display of a popup
-function togglePopup() {
-    const popup = document.getElementById("postsContainer");
-
-    popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
-}
-
-// Function to submit a blog post
-function submitBlogPost() {
-    const title = document.getElementById("title").value;
-    const recipe = document.getElementById("recipe").value;
-    const date = document.getElementById("date").value;
-
-    // Check if any of the fields are empty and show an alert if true
-    if (title.trim() === "" || recipe.trim() === "" || date.trim() === "") {
-        alert("Please fill in all fields before submitting.");
-        return;
+    if (userData.username) {
+        profileContainer.querySelector('h2').innerText = userData.username;
     }
 
-    // Call the togglePopup function
-    togglePopup();
+    if (userData.bio) {
+        profileContainer.querySelector('p').innerText = userData.bio;
+    }
+
+    const editBtn = document.getElementById("editBtn");
+    editBtn.onclick = editUser;
 }
+
+function addPost(e) {
+    e.preventDefault();
+    
+    const textareaContent = document.querySelector('#textarea');
+
+    const bodyData = {
+        text: textareaContent.value,
+    };
+
+    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
+        method: 'POST', 
+        body: JSON.stringify(bodyData),
+
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
+
+    })
+    .then(response => response.json())
+    .then(createPost =>{
+        console.log(createPost);
+        textareaContent.value = '';
+    })
+}
+
+function editUser() {
+    const bioEl = profileContainer.querySelector('p');
+    const newBio = prompt('Enter your new bio: ', bioEl.innerText);
+
+    if (newBio) {
+        bioEl.innerText = newBio.value;
+        userData = getLoginData();
+        const currentUsername = userData.username;
+
+        fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${currentUsername}`, {
+            method: 'PUT',
+            body: JSON.stringify({ bio: newBio }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${userData.token}`
+            }
+        })
+        .then(res => res.json())
+        .then(updatedUserData => {
+            console.log(updatedUserData);
+            fetchAndDisplayUpdatedUserData(currentUsername);
+        })
+        .catch((err) => console.error('Error updating bio:', err));
+    } else {
+        alert("Please enter a valid bio");
+    }
+}
+
+function fetchAndDisplayUpdatedUserData(currentUsername) {
+    // Fetch the updated user data with the new username
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${currentUsername}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
+    })
+    .then(res => res.json())
+    .then(retrievedUserData => {
+        console.log('Retrieved User Data:', retrievedUserData);
+        displayProfile(retrievedUserData);
+    })
+    .catch((err) => console.error('Error fetching updated user data:', err));
+}
+
+function displayProfile(retrievedUserData) {
+    console.log('Updated UI with retrievedUserData:', retrievedUserData);
+
+    const bioElement = profileContainer.querySelector('p');
+
+    bioElement.innerText = retrievedUserData.bio; 
+}
+
