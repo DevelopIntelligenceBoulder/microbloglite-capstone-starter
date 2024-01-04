@@ -267,4 +267,11 @@ small{
     border-radius: var(--border-radius-4);  
 }
 
-/* end of general feed */
+#postContainer {
+    background-color: rgba(78, 78, 78, 0.582);
+    backdrop-filter: blur(5px);
+    padding: 30px 10px;
+    border-radius: 20px;
+    display: grid;
+    gap: 20px;
+  }
