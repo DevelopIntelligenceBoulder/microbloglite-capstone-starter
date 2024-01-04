@@ -44,6 +44,9 @@ body{
     
 
 }
+a{
+    text-decoration: none;
+}
 /* Begin of Navbar*/
 nav{
     height: 5rem;
@@ -143,5 +146,4 @@ nav .nav-profile ul{
     visibility: visible;
     opacity: 75%;
 }
-
 /* The End of the Nav bar*/

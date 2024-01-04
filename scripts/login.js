@@ -19,14 +19,15 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("profilepage.html");
+            window.location.assign("postpage2.html");
             // redirect
             console.log(loginData);
             return loginData;
         });
-}
 
-document.getElementById("loginButton").addEventListener("submit", function(event) {
+    }
+
+document.getElementById("loginButton").addEventListener("click", function(event) {
     event.preventDefault();
 
     // get username and password from the form

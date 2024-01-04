@@ -24,15 +24,7 @@ function isLoggedIn () {
 
 }
 
-// user access; if user is NOT logged in redirect to login/landing(?) page
-function Useraccess() {
-     if (!isLoggedIn()) {
 
-     window.location.href = "/login.html" // landing;
-
-}
-}
- document.addEventListener('DOMContentLoaded', Useraccess);
 
  function signUp(signUpData) {
     //POST create user
@@ -76,7 +68,7 @@ function login (loginData) {
       .then(response => response.json())
     .then(loginData => {
         window.localStorage.setItem("login-data", JSON.stringify(loginData));
-        window.location.assign("/posts");  // redirect
+        window.location.assign("postpage2.html");  // redirect
         console.log(loginData);
         return loginData;
     });
@@ -94,10 +86,8 @@ function login (loginData) {
 
 function logout () {
     const loginData = getLoginData();
-    document.getElementById('logoutBtn').addEventListener('click', function() {
-        logout();
-    });
-
+    
+    
     // GET /auth/logout
     const options = { 
         method: "GET",
@@ -109,16 +99,21 @@ function logout () {
             Authorization: `Bearer ${loginData.token}`,
         },
     };
-
+    
     fetch(apiBaseURL + "/auth/logout", options)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .finally(() => {
-            // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
-            // error with the fetch request above.
-
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("./registration");  // redirect back to login page
-        });
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .finally(() => {
+        // We're using `finally()` so that we will continue with the
+        // browser side of logging out (below) even if there is an 
+        // error with the fetch request above.
+        
+        window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
+        window.location.assign("login.html");  // redirect back to login page
+    });
 }
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    logout();
+});
+

@@ -101,17 +101,22 @@ subtitleElement.classList.add('card-subtitle', 'mb-2', 'text-body-secondary');
 const createdAtDate = new Date(post.createdAt);
 
 const options = {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
+  hour12: true,
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric',
-  hour12: true,
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
 };
 
 const formattedDate = createdAtDate.toLocaleString(undefined, options);
-subtitleElement.textContent = `Created at: ${formattedDate}`;
+
+// Manually extract date and time components
+const date = formattedDate.slice(0, 10);
+const time = formattedDate.slice(11, 19);
+
+subtitleElement.textContent = `${time} | ${date}`;
     
     const contentElement = document.createElement('p');
     contentElement.classList.add('card-text');

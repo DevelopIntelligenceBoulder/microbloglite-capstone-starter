@@ -10,10 +10,46 @@
     
     <title> Sign Up</title>
     <link rel="stylesheet" href="styles/registration.css">
+    
   </head>
 
   <body>
-    <a href="./login.html">LOG IN</a>
+
+    <header>
+      <!--Nav Bar-->
+<nav>
+  <div class="container nav-container">
+      <a href="#" class="logo"><h3>Slytherin <span>Scripts</span>
+      </h3></a>
+      <ul class="nav-link">
+          <li><a href="postpage2.html">For You</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+
+
+          <li>
+              <div class="nav-profile">
+                  <div class="profile-img">
+                      <img src="images/pfpic1.png" alt="">
+                  </div>
+                  <ul>
+                      <li><a class="menu-post"  data-bs-toggle="modal" data-bs-target="#createNewPostModal">Post</a></li> <!--You can create a post here, -->
+                      <li><a class="menu-profile" href="#">Profile</a></li>
+                      <li><a class="menu-logout" href="#" id="logoutBtn">Log Out</a></li>
+                  </ul>
+              </div>
+          </li>
+      </ul>
+          <button class="phone-button Open"><i class="fa fa-bars"></i></button>
+          <button class="phone-button Close"><i class="fa fa-close"></i></button>
+  </div> 
+</nav>
+<!--Nav Bar End-->
+  </header>
+
+
     <section id="signUpPage" class="pt-md-3">
       <div class="container mt-5">
         <div class="row">

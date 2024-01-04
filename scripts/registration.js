@@ -17,7 +17,11 @@ function signUp(signUpData) {
         
         return fetch(apiBaseURL + '/api/users', options)
         .then(response => {
-                window.location.assign("login.html");
+            if (!response.ok) {
+                throw new Error("Error in sign up");
+            }
+
+            window.location.assign("login.html");
                 // redirect
                 console.log(signUp);
                 return signUp;

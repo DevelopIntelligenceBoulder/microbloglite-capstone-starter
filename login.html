@@ -23,20 +23,36 @@
 </head>
 <body>
     <header>
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Feed</a>
+        <!--Nav Bar-->
+<nav>
+    <div class="container nav-container">
+        <a href="#" class="logo"><h3>Slytherin <span>Scripts</span>
+        </h3></a>
+        <ul class="nav-link">
+            <li><a href="postpage2.html">For You</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="registration.html">Sign Up</a></li>
+
+            <li>
+                <div class="nav-profile">
+                    <div class="profile-img">
+                        <img src="images/pfpic1.png" alt="">
+                    </div>
+                    <ul>
+                        <li><a class="menu-post"  data-bs-toggle="modal" data-bs-target="#createNewPostModal">Post</a></li> <!--You can create a post here, -->
+                        <li><a class="menu-profile" href="#">Profile</a></li>
+                        <li><a class="menu-logout" href="#" id="logoutBtn">Log Out</a></li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
+        </ul>
+            <button class="phone-button Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button Close"><i class="fa fa-close"></i></button>
+    </div> 
+</nav>
+<!--Nav Bar End-->
     </header>
 
     <main class="container pt-md-3">
@@ -51,7 +67,7 @@
                         <button class="btn btn-secondary">More Info</button>
                     </div>
                 </div>
-                <div class="col-6 text-center">
+                <div class="col-6 text-center" style="padding-top: 11%;">
                     <h2 class="section-title">Login</h2>
                     <form class="px-4 py-3 card container d-flex justify-content-center pt-md-3" style="width: 28rem;">
                         <div class="mb-3">
