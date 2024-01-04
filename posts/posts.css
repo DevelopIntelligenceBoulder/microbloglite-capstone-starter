@@ -15,16 +15,7 @@
     border-radius: 50%;
     margin-right: 10px;
 }
-.post-name {
-    font-weight: bold;
-}
-.post-time {
-    color: gray;
-    margin-left: 10px;
-}
-.post-content {
-    margin-top: 10px;
-}
+
 .post-image {
     width: 100%;
     height: auto;
@@ -123,6 +114,61 @@ h3 {
     color: #262626;
 }
 
-h2 {
-    text-align: center;
+/* Style the card elements */
+.card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* Style the card header */
+.card-header {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #f44336;
+}
+
+/* Style the card body */
+.card-body {
+    padding: 10px;
+}
+
+/* Style the post text */
+.card-body h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the post date */
+.card-body p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Style the post image */
+.card-body img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Style the link element */
+a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #f44336;
+    border-radius: 5px;
+}
+
+/* Change the link color on hover */
+a:hover {
+    background-color: #ff5722;
+}
+
+img {
+    border-radius: 50%;
+  }
