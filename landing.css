@@ -226,3 +226,18 @@ h3{
 .form__link:hover {
     text-decoration: underline;
 }
+
+#textContainer {
+    position: relative;
+    text-align: center;
+}
+
+#bookLogo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    z-index: 1;
+    background-color: white;
+}

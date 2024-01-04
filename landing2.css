@@ -54,3 +54,11 @@ p {
     margin-bottom: 40px ;
 
 }
+
+#bookLogo {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 185px;
+    
+}
