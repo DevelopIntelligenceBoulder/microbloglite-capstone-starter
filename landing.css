@@ -219,12 +219,35 @@ h3{
     text-align: center;
 }
 .form__link {
-    color: #252C6A;
+    color: #3897f0;
     text-decoration: none;
     cursor: pointer;
 }
 .form__link:hover {
     text-decoration: underline;
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#textContainer {
+    position: relative;
+    text-align: center;
+}
+
+#bookLogo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    z-index: 1;
+    background-color: white;
 }
 
 #textContainer {
