@@ -1,61 +1,87 @@
+:root {
+    font-size: 1rem;
+  
+    --ivory: #fffefb;
+    --skyBlue: #71c4ef;
+    --darkCerulean: #00668c;
+    --almostBlack: #1d1c1c;
+    --lightGray: #cccbc8;
+    --charcoal: #3b3c3d;
+    --powderBlue: #d4eaf7;
+  }
+
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #cde5eb;
-}
-
-header {
-    background-color: #c8f0f9;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-.profile {
+  }
+  
+  /* #logo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+  } */
+  
+  .profile-container {
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
-}
-
-.profile-info {
-    flex: 1;
-}
-
-.profile-image {
-    max-width: 100%;
+    background-color: #d4eaf7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .post {
+    border-radius: 9px;
+    background-color: #fffefb;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-header {
+    text-align: center;
+  }
+  
+  .profile-picture {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-}
-
-form {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-textarea {
-    width: 100%;
-    padding: 8px;
     margin-bottom: 10px;
+  }
+  
+  .profile-posts {
+    margin-top: 20px;
+  }
+  
+  .post {
     border: 1px solid #ccc;
-    border-radius: 9px;
-}
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .post-date {
+    font-style: italic;
+    color: #888;
+  }
 
-button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 9px;
-    cursor: pointer;
-}
+  hr.break {
+    border: 2px solid #003142;
+    border-radius: 3px;
+  }
 
-button:hover {
-    background-color: #2980b9;
-}
+  hr.break2 {
+    border: 2px solid #003142;
+    border-radius: 3px;
+  }

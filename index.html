@@ -33,6 +33,16 @@
       if (isLoggedIn()) {
         window.location.replace("/posts");
       }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const passwordInput = document.getElementById("password");
+        const showPasswordCheckbox = document.getElementById("showPassword");
+
+        showPasswordCheckbox.addEventListener("change", function() {
+          passwordInput.type = this.checked ? "text" : "password";
+        });
+      });
+
     </script>
   </head>
   <body class="ivory">
@@ -57,7 +67,7 @@
 
     <header class="text-charcoal">
       <h1>
-        Welcome to <code class="text-darkCerulean">YOUR MICROBLOG NETWORK</code>
+        Welcome to <code class="text-darkCerulean">Y</code>
       </h1>
     </header>
 
@@ -71,6 +81,10 @@
         <div>
           <label for="password" class="text-charcoal">Password</label>
           <input type="password" id="password" minlength="6" />
+          <div style="text-align: center;">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword" class="text-charcoal">Show Password</label>
+          </div>
         </div>
 
         <button
