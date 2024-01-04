@@ -18,7 +18,7 @@ function init() {
 function logoutButtonClicked() {
     // Check if loginData is defined
     const loginData = getLoginData();
-    if (!loginData  !loginData.token) {
+    if (!loginData || !loginData.token) {
         // Redirect to the landing page if loginData or token is missing
         window.location.assign("/landing/landing.html");
         return;
@@ -28,7 +28,7 @@ function logoutButtonClicked() {
     const options = {
         method: "GET",
         headers: {
-            Authorization: Bearer ${loginData.token},
+            Authorization: `Bearer ${loginData.token}`,
             "Content-Type": "application/json",
         },
     };
@@ -48,7 +48,7 @@ function logoutButtonClicked() {
 
 function getLoginData() {
     const userJSON = window.localStorage.getItem("username");
-    return JSON.parse(userJSON)  {};
+    return JSON.parse(userJSON);
 }
 
 function createPost() {
@@ -98,13 +98,13 @@ function displayUsername(posts) {
         postDiv.classList.add("post");
 
         const contentParagraph = document.createElement("p");
-        contentParagraph.innerText = Content ${post.text};
+        contentParagraph.innerText = `Content ${post.text}`;
 
         const authorParagraph = document.createElement("p");
-        authorParagraph.innerText = Author: ${post.username};
+        authorParagraph.innerText = `Author: ${post.username}`;
 
         const timestampParagraph = document.createElement("p");
-        timestampParagraph.innerText = Timestamp: ${post.createdAt};
+        timestampParagraph.innerText = `Timestamp: ${post.createdAt}`;
 
         postDiv.appendChild(contentParagraph);
         postDiv.appendChild(authorParagraph);
@@ -115,7 +115,7 @@ function displayUsername(posts) {
 }
 function getLoginData() {
     const loginJSON = window.localStorage.getItem("login-data");
-    return JSON.parse(loginJSON)  {};
+    return JSON.parse(loginJSON);
 }
 
 
@@ -145,7 +145,7 @@ function recipeButtonClicked() {
 
 function getLoginData() {
     const loginJSON = window.localStorage.getItem("login-data");
-    return JSON.parse(loginJSON)  {};
+    return JSON.parse(loginJSON);
 }
 
 
