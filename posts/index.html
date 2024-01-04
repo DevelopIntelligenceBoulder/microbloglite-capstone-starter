@@ -28,22 +28,60 @@
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
+
 </head>
 
 <body data-bs-theme="dark">
 
-    <div id="logout-button" class="btn btn-primary w-100 py-2" type="submit"></div>
+    <nav class="navbar navbar-expand-sm shadow-sm bg-dark-subtle py-0">
+        <div class="container-fluid px-4" style="max-width: 1200px">
+            <a class="navbar-brand" href="#">Bookface</a>
+            <button class="navbar-toggler d-lg-none my-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <div
+                    class="navbar-nav w-100 px-5 px-sm-0 justify-content-evenly justify-content-md-start text-center nav-underline gap-1 gap-sm-0">
+                    <a class="nav-link p-3" href="../posts/">Explore</a>
+                    <a class="nav-link p-3 active" href="#">Feed</a>
+                    <a class="nav-link p-3  border-primary" href="../profile/">Profile</a>
+                </div>
 
-    <a href="/registration/">Post Feed</a>
+                <div class="nav-item w-fit-content mx-auto py-3 ps-3">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" id="dropdownId" data-bs-toggle="dropdown"><span
+                                id="usernameLabel"><i class="bi-person-fill"></i>
+                                <span id="loginName"></span> </span></a>
+                        <div class="dropdown-menu dropdown-menu-sm-end shadow-sm" aria-labelledby="dropdownId">
+                            <!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-gear-fill pe-1"></i> <span>Settings</span> </btn> -->
+                            <a class="dropdown-item btn" href="#">
+                                <i class="bi bi-person-fill pe-2"></i><span>Profile</span></a>
+                            <!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-people-fill pe-2"></i><span>Friends</span></btn> -->
+                            <!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-heart-fill pe-2"></i> <span>Likes</span> </btn> -->
+                            <!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-bookmark-fill pe-2"></i><span>Saved</span></btn> -->
+                            <btn class="dropdown-item btn" id="logoutBtn">
+                                <i class="bi bi-x-circle-fill pe-1"></i>
+                                <span>Logout</span>
+                            </btn>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <a href="/profile/index.html">profile link</a>
-    <header>
-        <h1>POSTS PAGE</h1>
-    </header>
 
 
 
-    <main id="posts"></main>
+
+
+    <main class="container">
+        <div class="row align-items-center  col-12 mx-auto">
+            <div id="posts" class="col-12 mx-auto"></div>
+        </div>
+    </main>
+
 
 
     <footer></footer>
