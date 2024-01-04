@@ -69,8 +69,8 @@ let getAllPosts = () => {
                 postCardBody.classList.add('col-md-4', 'md-card');
                 
                 postCardBody.innerHTML = `
-                    <div class="card">
-                        <div class="card-body bg-dark text-white">
+                    <div class="card border-0">
+                        <div class="card-body bg-dark text-white rounded-5 ">
                             <p class="card-title">${post.username}</p>
                             <p class="card-text">${post.text}</p>
                             
