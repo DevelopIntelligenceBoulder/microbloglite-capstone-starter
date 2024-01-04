@@ -1,4 +1,44 @@
-.register{
-    --bs-blue: #1ba2f6;
+.container{
+  height:100vh ;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+
+.form{
+    background: #fff;
+    border-radius: 6px;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+}
+
+header{
+    font-size: 28px ;
+    font-weight: 600;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+
+form .field{
+    height: 45px;
+    width: 100%;
+    margin-top: 20px;
+}
+.field input,
+.field button{
+ height: 100%;
+ width: 100%;
+ border: none;
+ font-size: 16px;
+ font-weight: 400;
+}
+
+.field input{
+    border: 1px solid#cacaca;
+    padding: 0 15px; 
 }

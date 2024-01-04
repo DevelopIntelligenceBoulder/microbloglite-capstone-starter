@@ -16,7 +16,7 @@ registerForm.onsubmit = function (event) {
     }
 
     // Disables the button after the form has been submitted already:
-    registerForm.registerButton.disabled = true;
+    //registerForm.registerButton.disabled = false;
 
     // Time to actually process the login using the function from auth.js!
     register(registrationData);

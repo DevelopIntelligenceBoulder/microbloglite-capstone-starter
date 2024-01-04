@@ -103,7 +103,7 @@ function register (registrationData) {
     return fetch(apiBaseURL + "/api/users", options)
         .then(response => response.json())
         .then(registrationData => {
-            window.location.assign("/login");  // redirect
+            window.location.assign("/index.html");  // redirect
 
             return registrationData;
         });
