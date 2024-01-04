@@ -69,8 +69,8 @@ let getAllPosts = () => {
                 postCardBody.classList.add('col-md-4', 'md-card');
                 
                 postCardBody.innerHTML = `
-                    <div class="card border-0">
-                        <div class="card-body bg-dark text-white rounded-5 ">
+                    <div class="card border-0 bg-dark rounded-5">
+                        <div class="card-body text-white">
                             <p class="card-title">${post.username}</p>
                             <p class="card-text">${post.text}</p>
                             
@@ -123,8 +123,8 @@ createPostForm.onsubmit = (e) => {
 
         newPost.innerHTML = `
        
-            <div class="card";'>
-                <div class="card-body bg-dark text-white rounded-5 border-0">
+            <div class="card border-0 bg-dark rounded-5";'>
+                <div class="card-body text-white">
                     <p class="card-title">${newPostData.username}</p>
                     <p class="card-text">${newPostData.text}</p>
                     <p class="card-text fw-lighter">${formattedDate}</p>
