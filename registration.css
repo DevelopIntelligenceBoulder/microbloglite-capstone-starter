@@ -1,0 +1,53 @@
+
+.container {
+    display: flex;
+    gap: 30px;
+  }
+
+  .background-image {
+
+background-image: linear-gradient(
+    rgba(4, 9, 30, 0.416),
+    rgba(4, 9, 30, 0.345)
+  ),
+  url(./images/background.jpg);
+background-repeat: no-repeat; 
+background-size: cover;
+height: 150vh;
+
+
+  };
+
+
+.heroimg {
+    height: 400px;
+    max-width: 100%;
+    border-radius: 30px;
+    margin-top: 80px;
+  }
+
+  .heroimg2 {
+    height: 400px;
+    max-width: 100%;
+    border-radius: 30px;
+    margin-top: 80px;
+  }
+
+  .card-body {
+    flex: 1;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .herotext {
+    font-size: 24px; 
+    color: #333; 
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+

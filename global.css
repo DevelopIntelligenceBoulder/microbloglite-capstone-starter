@@ -74,7 +74,8 @@ footer a {
 
 /* The card body */
 .custom-form {
-    margin-top: 20px;
+    margin-top: 80px;
+    margin-left: 20px;
 }
 
 /* images scroll code  */
@@ -87,16 +88,15 @@ footer a {
     box-sizing: border-box;
     overflow-x: auto;
     white-space: nowrap;
-    background-color: rgb(255, 213, 0);
+    background-color: rgb(255, 136, 0);
 }
 
 .scroll-container img {
     padding: 10px;
     transition: filter 0.3s ease;
     max-height: 90px;
-    /* Set a maximum height for the images */
+
     margin-right: 10px;
-    /* Optional margin between images */
 }
 
 .scroll-container img:hover {
@@ -106,7 +106,7 @@ footer a {
 /* button style */
 #registerButton {
     background-color: rgb(255, 140, 0);
-    ;
+};
 
 #editBtn {
     border: 0;
