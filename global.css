@@ -65,6 +65,10 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 5px;
     border: none;
+  }
+  footer {
+    text-align: center;
+  }
 }
 #logout-btn:hover{
     cursor: url('./images/moon-stars-fill.svg'), auto !important;

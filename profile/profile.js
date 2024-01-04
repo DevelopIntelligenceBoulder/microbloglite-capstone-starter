@@ -3,7 +3,6 @@ window.onload = () => {
     let publishForm = document.getElementById("publish-form");
 
     // Created a container for all fields in the form using their id's
-    let titleInputEl = document.getElementById("title");
     let blogPostInputEl = document.getElementById("blog-post");
 
 
@@ -16,14 +15,16 @@ window.onload = () => {
         };
 
         // check which button was clicked
-        if (e.submitter.value === "Draft") {
+        if (e.submitter.value === "Save") {
             //save the draft to local starage
             saveDraft(postData);
+        } else if (e.submitter.value === "Drafts") {
+                //save the draft to local starage
+                getDrafts(postData);
         } else {
-            //publsh the post using fetch API
-            publishPost(postData);
+         //publsh the post using fetch API
+         publishPost(postData);
         }
-        publishPost(postData);
     };
 
     function saveDraft(draftData) {
@@ -32,6 +33,13 @@ window.onload = () => {
 
         //informs user of Draft being saved
         alert("Draft has been saved!");
+    }
+
+    function getDrafts() {
+        // pulling the draft from local storage
+        let draftDataLocal = localStorage.getItem("draftData")
+        console.log(draftDataLocal);
+        blogPostInputEl.value = JSON.parse(draftDataLocal).text;
     }
 
     function publishPost(postData) {
@@ -60,4 +68,4 @@ window.onload = () => {
     logoutBtn.onclick = () => {
     logout();
     }
-};
+}
