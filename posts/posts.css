@@ -3,11 +3,31 @@
     width: 70%vw; 
     /* max-width: 300px; */
     margin: auto;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: row;
     gap: 1vw;
+    position: center;
   }
+ .sidenav .card{
+    text-align: center;
+    width: 100%;
+ }
+ .sidenav .card-content{
+    width: 100%;
+ }
+ /* Style the search box inside the navigation bar */
+.sidenav .input[type=text] {
+    width: 70%;  
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-left: 5%;
+    font-size: 17px;
+    position: center;
+
+  }
+
  .side-image{
 
     width: 60%;
@@ -25,7 +45,7 @@ border-radius: 100%;
  }
 
   .title {
-    color: grey;
+    color: rgb(194, 70, 70);
     font-size: 18px;
   }
   

@@ -55,6 +55,12 @@
 
             </div>
             Content goes here
+            <form role="form" action="action.php" method="POST">
+                <input name="commentorname" type="text"  required>
+                <!--and some other inputs-->
+                <input type="hidden" name="post_id" value="<?php echo $_GET['id']; ?>"/>
+             
+            </form>
 
         </div> <!-- end div container -->
     </div>
