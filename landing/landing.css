@@ -1,15 +1,26 @@
 /* Landing Page CSS */
-.input-group-horizontal .form-floating:first-child > input{
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    margin-bottom: -1px;
+.input-group-horizontal .input-group:first-child > * {
+  margin-bottom: -1px;
 }
 
-.form-group .form-floating:last-child > input{
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
+.input-group-horizontal .input-group:first-child * {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.input-group-horizontal .input-group:last-child * {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
 
 .form-group .form-floating:focus-within {
   z-index: 2;
+}
+
+h1 {
+  text-indent: -3px;
+  text-align: center;
+}
+h4 {
+  text-align: center;
 }

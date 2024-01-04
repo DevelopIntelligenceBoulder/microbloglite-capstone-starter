@@ -1,5 +1,3 @@
-const API_URL = "https://microbloglite.onrender.com";
-
 // Main
 window.onload = () => {
   if (isLoggedIn()) getData();
@@ -7,7 +5,7 @@ window.onload = () => {
 };
 
 async function getData() {
-  const { token, username } = getLoginData(); // Load local user Data
+  const { token, username } = getLocalUserData(); // Load local user Data
   const fetchOptions = {
     headers: {
       Authorization: `Bearer ${await token}`,
@@ -21,7 +19,7 @@ async function getData() {
 
 //  Helper Functions
 const getUser = ({ username, fetchOptions }) =>
-  fetch(API_URL + `users/${username}`, fetchOptions).then((res) => res.json());
+  fetch(API_URL + `/api/users/${username}`, fetchOptions).then((res) => res.json());
 
 const getAllUsers = ({ fetchOptions }) =>
-  fetch(API_URL + `users/`, fetchOptions).then((res) => res.json());
+  fetch(API_URL + `/api/users/`, fetchOptions).then((res) => res.json());

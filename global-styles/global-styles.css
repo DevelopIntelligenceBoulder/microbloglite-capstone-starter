@@ -1,59 +1,84 @@
 /* Layout viewer */
 * {
-    box-sizing: border-box;
-    /* outline: 1px dotted red; */
+  box-sizing: border-box;
+  /* outline: 1px dotted red; */
 }
 
-body{
-    /* font-family:'Courier New', system-ui; */
-    line-height:160%;
-    /* line-height: normal; */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  /* font-family:'Courier New', system-ui; */
+  line-height: 160%;
+  /* line-height: normal; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-h1{
-    text-indent: -3px;
-    text-align: center;
-}
-h4{
-    text-align: center;
-}
-
-.content-visable-hidden{
-    content-visibility: hidden;
+.content-visable-hidden {
+  content-visibility: hidden;
 }
 
 .svh-100 {
-    height: 100svh;
+  height: 100svh;
 }
 
 :root {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-.btn-primary{
-    background: #8a8432;
-    border-color: #c5b90a;
-    transition-duration: 100ms;
+.btn-primary {
+  background: #8a8432;
+  border-color: #c5b90a;
+  transition-duration: 100ms;
 }
 
-.btn-primary:hover{
-    background: #b3aa36;
-    border-color: #ffee00;
+.btn-primary:hover {
+  background: #b3aa36;
+  border-color: #ffee00;
 }
 
-.btn-primary:focus{
-    background: #978f20 !important;
-    border-color: #a59a05 !important;
+.btn-primary:focus {
+  background: #978f20 !important;
+  border-color: #a59a05 !important;
 }
 
-.btn-primary:active{
-    background: #928b25 !important;
-    border-color: #a59a05 !important;
+.btn-primary:active {
+  background: #928b25 !important;
+  border-color: #a59a05 !important;
 }
 
-.btn-primary:disabled{
-    background: #77733f !important;
-    border-color: #b9af3c !important;
-    color: lightgray;
+.btn-primary:disabled {
+  background: #77733f !important;
+  border-color: #b9af3c !important;
+  color: lightgray;
+}
+
+.bg-primary{
+ background:#ffd31152 !important;
+}
+
+
+.w-fit-content {
+  max-width: min-content;
+}
+
+.dropdown-menu {
+  /* border: #ffffff10 1px solid */
+}
+.dropdown-menu > *:active {
+  background: #8a8432;
+}
+
+.bg-darker {
+  /* background-color: #14161ac9; */
+}
+
+.border-primary{
+    border-color:#e0d209  !important;
+}
+
+.nav-underline > *:hover{
+    border-color:#e0d209 !important;
+}
+
+.card{
+  border-radius: 0px;
 }
