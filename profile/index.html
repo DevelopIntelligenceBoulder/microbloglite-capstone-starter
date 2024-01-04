@@ -29,17 +29,11 @@
     <script defer src="./profile.js"></script>
   </head>
   <body data-bs-theme="dark" class="bg-body">
-    <!-- <nav class="navbar navbar-expand pb-0">
-        <div class="nav navbar-nav w-100 nav-underline justify-content-center">
-          <a class="nav-item nav-link active pb-3" href="#">Feed</a>
-          <a class="nav-item nav-link" href="#">Explore</a>
-        </div>
-    </nav> -->
-    <nav class="navbar navbar-expand-sm shadow-sm bg-secondary-subtle py-0">
-      <div class="container text-center">
-        <a class="navbar-brand my-1" href="#">Bookface</a>
+    <nav class="navbar navbar-expand-sm shadow-sm bg-dark-subtle py-0">
+      <div class="container-fluid px-4" style="max-width: 1200px;">
+        <a class="navbar-brand" href="#">Bookface</a>
         <button
-          class="navbar-toggler d-lg-none"
+          class="navbar-toggler d-lg-none my-3"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavId"
@@ -48,16 +42,15 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <div
-            class="navbar-nav w-100 justify-content-center"
+            class="navbar-nav w-100 px-5 px-sm-0 justify-content-evenly justify-content-md-start text-center nav-underline gap-1 gap-sm-0"
           >
-            <div class="navbar-nav nav-underline pill-group gap-2 gap-sm-0 p-0">
-              <a class="nav-link p-3 px-4 " href="../posts/">Explore</a>
-              <a class="nav-link p-3 px-4 active border-primary" href="#">My Feed</a>
-            </div>
+            <a class="nav-link p-3" href="../posts/">Explore</a>
+            <a class="nav-link p-3" href="../posts/">Feed</a>
+            <a class="nav-link p-3 active border-primary" href="#">Profile</a>
           </div>
 
-          <div class="nav-item w-fit-content mx-auto py-2">
-            <div class="dropdown pe-1">
+          <div class="nav-item w-fit-content mx-auto py-3 ps-3">
+            <div class="dropdown">
               <a
                 class="dropdown-toggle nav-link"
                 href="#"
@@ -88,21 +81,98 @@
               </div>
             </div>
           </div>
-
-          <!-- <form class="d-flex my-2 my-lg-0">
-            <div class="input-group">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Search"
-                />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                  Search
-                </button>
-            </div>
-          </form> -->
         </div>
       </div>
     </nav>
+    <main>
+      <section class="bg-body-secondary py-5 shadow">
+        <div class="container-fluid mx-auto px-4" style="max-width: 1200px;">
+          <div class="row gap-3 m-0">
+            <div
+              class="col align-content-center mx-auto"
+              style="
+                max-width: 200px;
+                max-width: 200px;
+                min-width: 200px;
+                min-height: 200px;
+              "
+            >
+              <i
+                class="bi bi-person-fill row h-100 align-content-center justify-content-center bg-dark shadow"
+                style="font-size: xx-large"
+              ></i>
+            </div>
+            <div class="col-12 text-center text-sm-start col-sm">
+              <det class="row gap-3">
+                <div class="col col-md-col">
+                  <h1 class="p-0 m-0 text-capitalize">guestuser</h1>
+                  <h5 class="m-0 p-0 text-secondary-emphasis">@guest123</h5>
+                </div>
+                <div class="col-12 col-md align-self-start">
+                  <button class="btn btn-primary float-md-end">
+                    Edit
+                  </button>
+                </div>
+                <details class="col-12">
+                  <summary>About</summary>
+                  <h6 class="">
+                    Laudantium ut amet voluptatibus perspiciatis temporibus
+                    necessitatibus labore cumque ducimus iure quo perferendis
+                    dolorem provident, eligendi tempore esse iusto quas natus
+                    minima.
+                  </h6>
+                </details>
+              </det>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid my-4 px-4" style="max-width: 1200px;">
+        <div class="row gap-3 m-0">
+          <div class="col-sm col-12">
+            <div class="row gap-2">
+              <div class="col-12 p-0" id="posts-holder">
+                <article class="card container shadow">
+                  <div class="row">
+                    <div class="p-0">
+                      <div class="card-header">
+                        <div class="d-flex flex-wrap gap-2">
+                          <div
+                            class="bi bi-person-fill"
+                            style="font-size: x-large"
+                          ></div>
+                          <div class="">Guestuser</div>
+                          <div class="text-secondary-emphasis flex-grow-1"> @guest123 </div>
+                          <div class="">6/30/2023</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-12">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <article class="card shadow" style="min-height: 100px"></article>
+              <article
+                class="card shadow"
+                style="min-height: 100px"
+              ></article>
+            </div>
+          </div>
+          <article
+            class="card col-sm-3 col-12 shadow"
+            style="min-height: 200px; min-width: 10rem;"
+          ></article>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
