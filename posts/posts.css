@@ -39,8 +39,17 @@ main {
     padding: 1rem;
     border-bottom: 1px solid #495057;
 }
-.btn-like {
-    color: #dc3545;
+.like-button {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.like-button:hover {
+    text-decoration: underline;
+    color: rgb(16, 233, 96);
 }
 .like-count {
     margin-left: 0.5rem;
