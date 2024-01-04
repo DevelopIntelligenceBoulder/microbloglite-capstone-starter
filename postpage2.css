@@ -32,7 +32,7 @@
     appearance: none;
     text-decoration: none;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: .4s;
+   
 }
 
 body{
@@ -267,8 +267,71 @@ small{
     border-radius: var(--border-radius-4);  
 }
 
-<<<<<<< HEAD
 /* end of general feed */
-=======
-/* end of general feed */
->>>>>>> feature/leila-clesca
+
+/* start of category */
+.category-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: fit-content;
+    gap: 1rem;
+    text-align: center;
+
+}
+
+.catergory{
+    padding: 4rem 0;
+    border-top: 2px solid var(--grolor-gray-1);
+    border-bottom: 2px solid var(--color-gray-1);
+    background: var(--color-primary-light);
+}
+
+/* the end of category */
+
+/* the start footer */
+footer{
+    background: var(--color-gray-1);
+    padding: 5rem 0;
+    box-shadow: inset 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.footer-social{
+    display:flex;
+    margin-inline: auto;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+.footer-social a{
+    background: var(--color-bg);
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 3rem;
+    color: var(--color-black);
+}
+
+.footer-social a:hover{
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.footer-container ul li a{
+    color:var(--color-white);
+}
+
+.footer-container ul li a:hover{
+    color: var(--color-danger);
+}
+
+.footer-container h4{
+    color:var(--color-white);
+}
+/* the end footer */
+
