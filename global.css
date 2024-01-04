@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quilon', sans-serif; 
 }
 
 :root {
     font-size: 1rem;
 }
 
-.bg-orange {
-    background-color: #ff8506;
+.bg-tan {
+    background-color: antiquewhite;
 }
 
 body {
@@ -28,14 +29,6 @@ i {
 
 a {
     color: coral;
-}
-
-footer {
-    background-color: antiquewhite;
-}
-
-footer h2::first-letter {
-    text-decoration: underline;
 }
 
 .footer-p {
