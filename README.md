@@ -5,29 +5,34 @@ _ChatterGrape allows users to register, login, logout, make post, delete post, l
 # Live Preview
 
 [ChatterGrape Live Preview Site](https://jewelsonmyjeans.github.io/microbloglite-capstone-starter/)
+- Note that this live preview will not work due to URL being secured (https instead of http)
 
 # Preview
 
 ### Login 
  - Allows users to login using a real username and password created on the register page.
-[Login Page]()
+
+![Login Page](./images/login.png)
 
 ### Register Page
 - Allows users to register for an account.
 - Checks to see if users use the minimum amount of characters.
 - Checks to see if password and confirmed password are exactly the same.
-[Register Page]()
+
+![Register Page](./images/register.png)
 
 ### Post Page 
 - Allows users to see post.
 - Allows you to like or dislike a post.
 - Allows you to delete your post.
-[Post Page]()
+
+![Post Page](./images/posts.png)
 
 ### Profile View Page
 - Allows you to create a post.
 - Allows you to logout.
-[Profile View Page]()
+
+![Profile View Page](./images/profile.png)
 
 
 # Tech

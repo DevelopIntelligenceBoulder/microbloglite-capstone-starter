@@ -45,10 +45,6 @@ function login(loginData) {
       window.location.assign("/posts"); // redirect
 
       return loginData;
-    })
-    .catch((error) => {
-    
-      console.error("Login fetch:", error);
     });
 }
 
