@@ -19,6 +19,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Emoji HTML -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/css/emoji.css" rel="stylesheet">
+
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="../global.css" />
 
@@ -63,8 +67,7 @@
           </div>
           <div class="dropdown-content" id="dropdownContent">
             <!-- Dropdown content  -->
-            <a href="/posts/index.html">Profile</a>
-            <a href="#">Account</a>
+            <a href="/profile/profile.html">Profile</a>
             <a id="logOutBtn">Logout</a>
           </div>
         </div>
@@ -124,13 +127,13 @@
         <div class="user-profile">
           <img src="images/post-icons/icons8-bust-in-silhouette-48.png" />
           <div>
-            <p>Brandon Nicholson</p>
+            <p id="profileName"></p>
             <small>Public </small>
           </div>
         </div>
 
         <div class="post-input-container">
-          <textarea
+          <textarea 
             id="textArea"
             rows="3"
             placeholder="What's on your mind?"
@@ -226,5 +229,11 @@
     </div>
 
     <script src="./posts.js"></script>
+    <!-- Emoji JQuery -->
+    http://lib/js/config.js
+  http://lib/js/util.js
+  http://lib/js/jquery.emojiarea.js
+  http://lib/js/emoji-picker.js
   </body>
 </html>
+
