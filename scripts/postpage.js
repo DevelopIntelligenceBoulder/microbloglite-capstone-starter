@@ -7,21 +7,22 @@ let username;
 let accessToken;
 const postContainer = document.getElementById('postContainer');
 
-let apiLink = "https://microbloglite.onrender.com/api/posts";
+let apiLink = "https://microbloglite.onrender.com/api/posts?limit=100&offset=0";
 
 window.onload = init();
 
 function init(){
 
-  const loginData = getLoginData();
+  document.addEventListener("DOMContentLoaded", function () {
+    const loginData = getLoginData();
 
-  if (loginData && loginData.token) {
-      accessToken = loginData.token;
-      displayUserPosts(loginData);
-  } else {
-      console.error('Invalid login data');
-  
-  }
+    if (loginData && loginData.token) {
+        accessToken = loginData.token;
+        displayUserPosts(loginData);
+    } else {
+        console.error('Invalid login data');
+    }
+});
 }
 
 function getLoginData() {
@@ -73,24 +74,31 @@ function getLoginData() {
 //}
 
 function displayUserPosts(loginData) {
-    // const username = 'quiditch123';
-    username = loginData.username; // Set the username
-    fetch(apiLink, {
-        headers: {
-            Authorization: `Bearer ${accessToken}`,
-        },
-    })
-    .then(response => response.json())
-    .then(posts => {
-        posts.forEach(post => {
-            const postElement = createPost(post);
-            postContainer.appendChild(postElement);
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching user posts:', error);
-    });
+  // const username = 'quiditch123';
+  username = loginData.username; // Set the username
+  fetch(apiLink, {
+      headers: {
+          Authorization: `Bearer ${accessToken}`,
+      },
+  })
+  .then(response => response.json())
+  .then(posts => {
+      const postContainer = document.getElementById("postContainer");
+      if (!postContainer) {
+          console.error("Error: postContainer not found");
+          return;
+      }
+
+      posts.forEach(post => {
+          const postElement = createPost(post);
+          postContainer.appendChild(postElement);
+      });
+  })
+  .catch(error => {
+      console.error('Error fetching user posts:', error);
+  });
 }
+
 
 function createPost(post) {
   const postContainer = document.getElementById("postContainer");
@@ -124,5 +132,7 @@ function createPost(post) {
 
   cardContainer.appendChild(cardBody);
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
+
+  return cardContainer
 }
 
