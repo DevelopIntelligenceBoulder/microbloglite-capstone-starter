@@ -1,1 +1,33 @@
 /* Posts Page CSS */
+body {
+  background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+}
+
+@media screen and (min-width: 768px) {
+  .md-card:nth-of-type(even) {
+    margin-bottom: 10px;
+    max-width: 15rem;
+  }
+  .md-card:nth-of-type(odd) {
+    margin-top: 21px;
+    margin-bottom: 30px;
+    max-width: 13rem;
+  }
+  .md-card:nth-child(3n) {
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .mobile {
+    display: none;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+}

@@ -1,113 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./posts.css">
+    <link rel="stylesheet" href="./posts.css" />
 
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <!-- importing the functions from auth.js -->
-    <script type="module" src="../auth.js" ></script>
+    <script type="module" src="../auth.js"></script>
     <!-- using imported functions to check if user is logged in  -->
     <!-- <script type="module" src="../auth.js">
         if (!isLoggedIn()) window.location.replace("/");
     </script> -->
-</head>
-<body>
+  </head>
+  <body id="top">
+    <nav class="navbar navbar-expand-md py-4 sticky-top bg-dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav class="navbar navbar-expand-md">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            
-        
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="">link1</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">link2</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">link</a> 
-                    </li>
-                </ul>
-            </div>
-
-            <a class="navbar-brand logo-container" href="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-                    <image href="../images/Y%20logo.svg" width="100" height="100" />
-                  </svg>
-            </a>
-        
-            <div>
-                <button id="logout-btn" class="btn btn-danger">LOGOUT</button>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav d-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link fw-bold text-white" href="../profile/index.html">Profile</a>
+            </li>
+          </ul>
         </div>
-        
+
+        <a class="navbar-brand logo-container" href="../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+            <image href="../images/Y_logo.svg" width="50" height="50" />
+          </svg>
+        </a>
+
+        <div>
+          <button id="logout-btn" class="btn btn-danger">LOGOUT</button>
+        </div>
+      </div>
     </nav>
 
-    <header>
-        <h1>POSTS PAGE</h1>
+    <header class="mb-5">
+        <p></p>
     </header>
 
-    <main>
-        
-        <div>
-            <!-- form to create a post -->
-            <div class="container">
-                <form id="create-post-form" class="d-flex justify-content-center">
-                    <div class="row d-flex justify-content-center my-5 bg-dark py-5 rounded-3">
-                        <div class="text-center text-white mb-4">
-                            <h3>Create a post!</h3>
-                        </div>
-                        <div class="form-floating col-md-8 col-lg-10">
-                            <textarea id="post-text" class="form-control" cols="40" rows="4" placeholder="hi mom! im famous" maxlength="72"></textarea>
-                            <label for="post-text" class="ms-3">Any thoughts? </label>
-                            
-                        </div>
-                        <!-- <div><p class="fw-light"><i>max character length: 72</i></p></div> -->
-                        <div class="col-md-3 col-lg-2 d-flex justify-content-center">
-                            <input class="btn text-center btn-primary border-0" type="submit" id="post-submit" label="submit"/>
-                        </div>
-                    </div>
-                </form>
+    <main class="mt-5">
+      <!-- form to create a post -->
+      <div class="container">
+        <form id="create-post-form" class="d-flex justify-content-center bg-dark rounded-5 px-4">
+          <div
+            class="row d-flex justify-content-center my-5"
+          >
+            <div class="text-center text-white mb-4">
+              <h2>Create a post!</h2>
             </div>
+            <div class="form-floating col-md-8 col-lg-10 mb-4 mb-md-0">
+              <textarea
+                id="post-text"
+                class="form-control"
+                cols="40"
+                rows="4"
+                placeholder="hi mom! im famous"
+                maxlength="72"
+              ></textarea>
+              <label for="post-text" class="ms-3">Any thoughts? </label>
+            </div>
+            <!-- <div><p class="fw-light"><i>max character length: 72</i></p></div> -->
+            <div class="col-md-3 col-lg-2 d-flex justify-content-center">
+              <input
+                class="btn text-center btn-primary border-0"
+                type="submit"
+                id="post-submit"
+                label="submit"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
 
-            <!-- space to display posts -->
-            <div class="container">
-                <!-- display: content,username and when posts was uploaded/created -->
-                <div id="all-posts">
-                    <!-- username -->
-                    <!-- text -->
-                    <!-- upload time -->
-                    <!-- possibly likes -->
-                </div>
-            </div>
+      <!-- space to display posts -->
+      <div class="container mt-5">
+        <!-- display: content,username and when posts was uploaded/created -->
+        <div id="all-posts" class="row justify-content-evenly mt-5">
+            
+          
+            
         </div>
+        
+      </div>
+      
     </main>
 
-    <footer></footer>
+    <footer class="bg-dark py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <a class="navbar-brand logo-container" href="../index.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                <image href="../images/Y_logo.svg" width="50" height="50" />
+              </svg>
+            </a>
+          </div>
+          <div class="col-md-12 mt-4 text-center text-white">
+            <h3 id="random-y">
+              
+            </h3>
+            <p class=" my-4">You've reached the end</p>
+            <a href="#top" class="btn btn-light mb-5">Yell Back Up</a>
+          </div>
+          <div class="col-md-12 border-top text-center text-white pt-5">
+            <span class="small me-5">Copyright</span>
+            <span class="small ms-5">terms and condition</span>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Page-specific code -->
     <script type="module" src="./posts.js"></script>
-</body>
+  </body>
 </html>
