@@ -2,8 +2,10 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.onrender.com";
-// Backup server:   https://microbloglite.onrender.com  https://microbloglite.herokuapp.com
+const apiBaseURL = "https://microbloglite.onrender.com"
+
+// https://microbloglite.herokuapp.com";
+// Backup server:   https://microbloglite.onrender.com
 
 // You can use this function to get the login data of the logged-in
 // user (if any). It returns either an object including the username
@@ -19,6 +21,37 @@ function getLoginData () {
 function isLoggedIn () {
     const loginData = getLoginData();
     return Boolean(loginData.token);
+
+}
+
+// user access; if user is NOT logged in redirect to login/landing(?) page
+function Useraccess() {
+     if (!isLoggedIn()) {
+
+     window.location.href = "/login.html" // landing;
+
+}
+}
+ document.addEventListener('DOMContentLoaded', Useraccess);
+
+ function signUp(signUpData) {
+    //POST create user
+    const options = { 
+        method: "POST",
+        headers: {
+            // This header specifies the type of content we're sending.
+            // This is required for endpoints expecting us to send
+            // JSON data.
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signUpData),
+    };
+    
+    return fetch(apiBaseURL + '/api/users', options)
+    .then(response => {
+        console.log(response.json);
+        return response.json();
+    })
 }
 
 
@@ -40,6 +73,7 @@ function login (loginData) {
     };
 
     return fetch(apiBaseURL + "/auth/login", options)
+<<<<<<< HEAD
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
@@ -47,6 +81,15 @@ function login (loginData) {
 
             return loginData;
         });
+=======
+    .then(response => response.json())
+    .then(loginData => {
+        window.localStorage.setItem("login-data", JSON.stringify(loginData));
+        window.location.assign("/posts");  // redirect
+        console.log(loginData);
+        return loginData;
+    });
+>>>>>>> feature/leila-clesca
 }
 
 
@@ -54,6 +97,14 @@ function login (loginData) {
 // which you may include in various pages in your app. Again, READ this
 // function and you will probably want to re-use parts of it for other
 // `fetch()` requests you may need to write.
+
+// get id
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    logout();
+});
+
+
 function logout () {
     const loginData = getLoginData();
 
@@ -78,6 +129,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
+            window.location.assign("login.html");  // redirect back to login page
         });
 }

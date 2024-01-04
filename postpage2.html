@@ -46,8 +46,13 @@
                     </div>
                     <ul>
                         <li><a class="menu-post"  data-bs-toggle="modal" data-bs-target="#createNewPostModal">Post</a></li> <!--You can create a post here, -->
+<<<<<<< HEAD
                         <li><a class="menu-profile" href="#">Profile</a></li>
                         <li><a class="menu-logout" href="#">Log Out</a></li>
+=======
+                        <li><a class="menu-profile" href="profilepage.html">Profile</a></li>
+                        <li><a class="menu-logout" href="#" id="logoutBtn">Log Out</a></li>
+>>>>>>> feature/leila-clesca
                     </ul>
                 </div>
             </li>
@@ -262,14 +267,23 @@
         <div class="modal-body">
             <form>
                 <!-- Add form fields for the post content, image upload, etc. -->
+<<<<<<< HEAD
                 <input type="text" placeholder="Post Content">
+=======
+                <!-- added id for postUserData() in profilepage.js-->
+                <input type="text" placeholder="Post Content" id="newPost">
+>>>>>>> feature/leila-clesca
                 <input type="file" accept="image/*">
             </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
+<<<<<<< HEAD
           <button type="button" class="btn btn-primary">Post</button>
+=======
+          <button type="button" class="btn btn-primary" id="postBtn">Post</button>
+>>>>>>> feature/leila-clesca
         </div>
       </div>
     </div>
@@ -282,5 +296,10 @@
 
 <!--End of General Feed-->
     <script src="postpage.js"></script>
+<<<<<<< HEAD
+=======
+    <!-- script for postBtn 
+        <script src="profilepage.js"></script> -->
+>>>>>>> feature/leila-clesca
 </body>
 </html>
