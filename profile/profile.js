@@ -1,27 +1,44 @@
 "use strict";
 
 const logoutButton = document.getElementById("logoutButton");
-const profileContainer = document.getElementById("profile");
+const profileContainer = document.getElementById("profileContainer");
 const textBoxContent = document.getElementById("textBoxContent");
 const postButton = document.getElementById("postButton");
-const bioElement = profileContainer.querySelector("p");
-
 
 let userData;
 
 window.onload = function () {
+    logoutButton.onclick = logoutButtonClicked;
     postButton.onclick = addPost;
 
-    userData = getLoginData
+   fetchUserData();
+}
+
+function fetchUserData() {
+
+    userData = getLoginData();
 
     if (userData.username) {
         profileContainer.querySelector('h2').innerText = userData.username;
     }
 
-    if (userData.bio) {
-        profileContainer.querySelector('p').innerText = userData.bio;
-    }
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${userData.username}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${userData.token}`
+        }
+    })
+    .then(res => res.json())
+    .then(retrievedUserData => {
+        if (retrievedUserData.bio) {
+            profileContainer.querySelector('p').innerText = retrievedUserData.bio;
+        }
+    })
+    .catch((err) => console.error('Error fetching user data:', err));
 }
+
 
 function addPost(event) {
     event.preventDefault();
@@ -59,12 +76,14 @@ function getUpdatedUserData(currentUsername) {
     .then(res => res.json())
     .then(retrievedUserData => {
         console.log('Retrieved User Data:', retrievedUserData);
-        displayProfile(retrievedUserData);
+        handleProfileDisplay(retrievedUserData);
     })
     .catch((err) => console.error('Error fetching updated user data:', err));
 }
 
 function handleProfileDisplay(retrievedUserData) {
+
+    const bioElement = profileContainer.querySelector("p");
     bioElement.innerText = retrievedUserData.bio;
 }
 
@@ -86,7 +105,7 @@ function logoutButtonClicked() {
         },
     };
 
-    fetch("http://http://microbloglite.us-east-2.elasticbeanstalk.com/auth/logout", options)
+    fetch("http:///microbloglite.us-east-2.elasticbeanstalk.com/auth/logout", options)
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
