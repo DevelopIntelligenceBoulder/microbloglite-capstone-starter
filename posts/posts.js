@@ -127,7 +127,7 @@ function deletePost(postId) {
 
 function displayAllPosts(allPosts) {
     let allPostContainer = document.getElementById("allPostContainer");
-    allPostContainer.innerHTML = ""; 
+    
   
     allPosts?.forEach(post => {
        
