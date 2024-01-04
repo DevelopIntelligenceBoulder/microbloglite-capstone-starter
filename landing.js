@@ -5,6 +5,7 @@
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {
+    console.log("hello world")
     // Prevent the form from refreshing the page,
     // as it will do by default when the Submit event is triggered:
     event.preventDefault();
@@ -21,4 +22,7 @@ loginForm.onsubmit = function (event) {
 
     // Time to actually process the login using the function from auth.js!
     login(loginData);
+};
+document.getElementById("link").onclick = function () {
+    location.href ='/register/index.html';
 };
