@@ -6,7 +6,7 @@ main {
 }
 
 form {
-    margin-right: 36%;
+    margin-right: 0%;
   width: 300px;
   border: 2px solid #ccc;
   padding: 20px;
@@ -56,9 +56,6 @@ h3 {
   transform: translateX(-50%);
 }
 
-main > div{
-    margin-right: 20%;
-}
 
 h2 {
   text-align: center;
