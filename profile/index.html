@@ -26,7 +26,7 @@
     <script>
         if (!isLoggedIn()) window.location.replace("/");
     </script>
-    
+
 </head>
 
 <body>
@@ -34,15 +34,19 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <!-- <img src="" alt="Nature's Nook Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16">
-                    <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z" />
+                </svg>
                 Nature's Nook
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Nature's Nook</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -57,32 +61,93 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.html">Profile</a>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+
     <main>
-    <!-- button for logging out - going to add a moon logo(maybe) -->
-    <div id="logout">
-        <button id="logout-btn">Logout</button>
-    </div>
+        <!-- button for logging out - going to add a moon logo(maybe) -->
+        <div id="logout">
+            <button id="logout-btn">Logout</button>
+        </div>
 
-    <div>
-        <form id="publish-form">
+        <div>
+            <!-- a place for a quote on the profile page-->
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+            </figure>
+        </div>
 
-            <div>
-                <label for="blog-post"></label>
-                <textarea id="blog-post" type="text" placeholder="Enter your blog post here."></textarea>
+        <div class="row">
+
+            <div class="col-12 col-md-4 p-5">
+                <!-- image for the profile page, want it to be next to the blog post-->
+                <div class="card" style="width: 18rem; height: 350px;">
+                    <img src="images/userPhoto.png" class="card-img-top" alt="Photo of the Authorof this blog">
+                    <div class="card-body">
+                        <h5 class="card-title">Author's Name</h5>
+                        <p class="card-text">Fill in a bio about yourself</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Favorite thing about nature</li>
+                        <li class="list-group-item">Favorite nature place</li>
+                        <li class="list-group-item">Favorite nature activity</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link"> Website</a>
+                        <br>
+                        <a href="#" class="card-link">IG link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 p-5">
+                <form id="publish-form" style="width: 18rem">
+                    <!--textbox for the blogpost-->
+
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Enter your blog post here." id="blog-post"
+                            type="text" style="height: 470px"></textarea>
+                        <label for="blog-post">Enter your blog post here.</label>
+                    </div>
+
+                    <br>
+                    <!-- <label for="blog-post"></label>
+                <textarea id="blog-post" type="text" placeholder="Enter your blog post here."></textarea> -->
+                    <div class="text-center">
+                        <input type="submit" value="Drafts" />
+
+                        <input type="submit" value="Save" />
+
+                        <input type="submit" value="Publish" />
+                    </div>
+                </form>
             </div>
 
-            <input type="submit" value="Draft"/>
-
-            <input type="submit" value="Publish"/>
-        </form>
-    </div>
+            <!-- space for the old posts by this user -->
+            <div class="col-6 col-md-4 p-5">
+                <div class="card" style="width: 18rem; height: 350px;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Read Recent post</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy;A.L.R Blog</p>
+    </footer>
 
     <script src="profile.js"></script>
 </body>

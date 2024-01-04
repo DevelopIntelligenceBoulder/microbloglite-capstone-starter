@@ -67,3 +67,7 @@ main{
     border-radius: 5px;
     border: none;
   }
+
+  footer {
+    text-align: center;
+  }
