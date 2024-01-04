@@ -1,13 +1,9 @@
 /* Landing Page CSS */
 body, html {
     height: 100%;
-    /* cursor: url('./images/person-hiking-solid.svg'), auto !important; */
 }
 /* The hero image */
 .hero-image {
     /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/_28a92cfe-624b-4d30-a571-8f74bd9e83b9.jpeg");
 }
-/* a:hover, input:hover, button:hover{
-    cursor: url('./images/mountain-solid-y.svg'), auto !important;
-} */
