@@ -1,35 +1,36 @@
-'use strict'
+'use strict';
 
-const registrationForm = document.querySelector(Register);
-registrationForm.onsubmit = function (event) {
-    console.log("hello world")
-    // Prevent the form from refreshing the page,
-    // as it will do by default when the Submit event is triggered:
-    event.preventDefault();
+const registrationForm = document.querySelector('#register');
 
-const RegisterData = {
-    username: registrationForm.username.value,
-    password: registrationForm.password.value,
-    fullName: registrationForm.fullName.value
+registrationForm.onsubmit = DOSOMETHING
+
+function DOSOMETHING (event) {
+    event.preventDefault()
+    console.log("HEYAAA")
+
+    const registerData = {
+        username: registrationForm.elements.username.value,
+        password: registrationForm.elements.password.value,
+        fullName: registrationForm.elements.fullName.value
+    };
+    return Post(registerData)
 }
 
-
-    // Time to actually process the login using the function from auth.js!
-    Register(RegisterData);
-}
+function Post (registerData) {
     fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(users)
+        body: JSON.stringify(registerData)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    }
-    )
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            window.location.assign("/");
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+};
+
