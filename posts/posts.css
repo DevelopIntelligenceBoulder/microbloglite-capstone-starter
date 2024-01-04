@@ -1,8 +1,4 @@
 /* Posts Page CSS */
-body {
-  background: linear-gradient(135deg, #ff6b6b, #6b47ff);
-}
-
 @media screen and (min-width: 768px) {
   .md-card:nth-of-type(even) {
     margin-bottom: 10px;
