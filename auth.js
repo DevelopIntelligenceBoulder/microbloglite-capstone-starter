@@ -82,6 +82,22 @@ function logout () {
         });
 }
 
+const randomY = document.getElementById('random-y');
+
+let listOfYs = [
+    "Yodeling yetis yanked your yogurt yesterday.", 
+    "Yummy yaks yawned, yelling 'Yoohoo!'",
+    "Yellow yak yoga yields youthful yodels.",          
+    "Yikes! Yapping yellow yahoos yodel!",
+    "Yogurt-loving yeti yells 'Yum!' in yoga class."
+]
+
+// function to 'randomly' add a string from listOfYs array to footer
+let addRandomY = () =>{
+    let randomNum = Math.floor(Math.random() * 5)
+    randomY.innerHTML = listOfYs[randomNum];
+}
+
 export {
 
     getLoginData,
@@ -90,6 +106,8 @@ export {
     
     login,
     
-    logout
+    logout,
+
+    addRandomY
     
     }
