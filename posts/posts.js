@@ -20,6 +20,8 @@ window.onload = () => {
         logout();
     }
 
+    addRandomY();
+
 }
 
 // initalized variables
@@ -27,6 +29,21 @@ const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
 const createPostForm = document.getElementById('create-post-form');
 const allPosts = document.getElementById('all-posts');
 const loadMoreBtn = document.getElementById('load-more-btn');
+const randomY = document.getElementById('random-y');
+
+let listOfYs = [
+    "Yodeling yetis yanked your yogurt yesterday.", 
+    "Yummy yaks yawned, yelling 'Yoohoo!'",
+    "Yellow yak yoga yields youthful yodels.",          
+    "Yikes! Yapping yellow yahoos yodel!",
+    "Yogurt-loving yeti yells 'Yum!' in yoga class."
+]
+
+// function to 'randomly' add a string from listOfYs array to footer
+let addRandomY = () =>{
+    let randomNum = Math.floor(Math.random() * 5)
+    randomY.innerHTML = listOfYs[randomNum];
+}
 
 // function to retrieve and display all posts
 let getAllPosts = () => {
