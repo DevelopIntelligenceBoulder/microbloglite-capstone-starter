@@ -16,7 +16,7 @@ async function login(loginData) {
     .then((userData) => {
       if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
       else throw new Error("Login failed with code: " + userData.statusCode);
-    })
+    });
 }
 
 // GET /auth/logout
@@ -29,13 +29,11 @@ async function logout() {
     },
   };
 
-  return await fetch(API_URL + "/auth/logout", options)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data); //log the logout message
-      window.sessionStorage.removeItem("user-data");
-      window.localStorage.removeItem("user-data");
-    });
+  return await fetch(API_URL + "/auth/logout", options).then(() => {
+    window.sessionStorage.removeItem("user-data");
+    window.localStorage.removeItem("user-data");
+    window.location.assign("../");
+  });
 }
 
 // Retrive login data from session storage

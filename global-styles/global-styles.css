@@ -60,15 +60,8 @@ body {
   max-width: min-content;
 }
 
-.dropdown-menu {
-  /* border: #ffffff10 1px solid */
-}
 .dropdown-menu > *:active {
   background: #8a8432;
-}
-
-.bg-darker {
-  /* background-color: #14161ac9; */
 }
 
 .border-primary{
