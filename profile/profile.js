@@ -1,5 +1,51 @@
 "use strict";
 
+function showSelectedPic(url, profilePicPreview) {
+  if (url) {
+    profilePicPreview.src = url;
+    localStorage.setItem("profilePicURL", url);
+  }
+}
+
+  window.addEventListener("load", function() {
+    let storedImgURL = localStorage.getItem("profilePicURL");
+    if (storedImgURL) {
+      let profilePicPreview = document.getElementById("profilePicPreview");
+      let userImgEl = document.getElementById("userImg");
+      let postImgEl = document.getElementById("postImg");
+      profilePicPreview.src = storedImgURL;
+      userImgEl.src = storedImgURL;
+      postImgEl.src = storedImgURL;
+    }
+  });
+
+  let profilePicEl = document.getElementById("profilePic");
+  let changeBtnEl = document.getElementById("changeBtn");
+
+  profilePicEl.addEventListener("change", function() {
+    let file = this.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function(e) {
+      let imageUrl = e.target.result;
+      let profilePicPreview = document.getElementById("profilePicPreview");
+      let userImgEl = document.getElementById("userImg");
+      let postImgEl = document.getElementById("postImg");
+  
+      showSelectedPic(imageUrl, profilePicPreview);
+      showSelectedPic(imageUrl, userImgEl);
+      showSelectedPic(imageUrl, postImgEl);
+    }
+
+    if(file) {
+      reader.readAsDataURL(file);
+    }
+  });
+
+  changeBtnEl.addEventListener("click", function() {
+    profilePicEl.click();
+  });
+
 window.onload = () => {
   // Nav Variables
   let userIcon = document.getElementById("userIcon");
@@ -9,70 +55,19 @@ window.onload = () => {
   let textAreaEl = document.getElementById("textArea");
   
 
-  // Picture Variables
-
   // Function to toggle dropdown visibility
   function toggleDropdown() {
     dropdownContent.classList.toggle("show");
   }
 
-  // Redirect to Landing Page
   logOutBtnEl.addEventListener("click", logout);
 
-  // Event listener to toggle dropdown when clicking on the user icon
   userIcon.addEventListener("click", toggleDropdown);
 
-  // Close the dropdown if clicking outside of it
   window.addEventListener("click", function (event) {
     if (!event.target.closest(".nav-user-dropdown")) {
       dropdownContent.classList.remove("show");
     }
-  });
-
-
-  // Picture Logic
-
-  function showSelectedPic(file, profilePicPreview) {
-    if (file) {
-      let reader = new FileReader();
-
-      reader.addEventListener("load", function () {
-        profilePicPreview.src = reader.result;
-
-        localStorage.setItem("profilePicSave", reader.result);
-      });
-
-      reader.readAsDataURL(file);
-    }
-  }
-
-  window.addEventListener("load", function () {
-    let storedImg = localStorage.getItem("profilePicSave");
-    if (storedImg) {
-      let profilePicPreview = document.getElementById("profilePicPreview");
-      let userImgEl = document.getElementById("userImg");
-      let postImgEl = document.getElementById("postImg");
-      profilePicPreview.src = storedImg;
-      userImgEl.src = storedImg;
-      postImgEl.src = storedImg;
-    }
-  });
-
-  let profilePicEl = document.getElementById("profilePic");
-  let changeBtnEl = document.getElementById("changeBtn");
-
-  profilePicEl.addEventListener("change", function () {
-    let file = this.files[0];
-    let profilePicPreview = document.getElementById("profilePicPreview");
-    let userImgEl = document.getElementById("userImg");
-    let postImgEl = document.getElementById("postImg");
-    showSelectedPic(file, profilePicPreview);
-    showSelectedPic(file, userImgEl);
-    showSelectedPic(file, postImgEl);
-  });
-
-  changeBtnEl.addEventListener("click", function () {
-    profilePicEl.click();
   });
 
   // Post Box

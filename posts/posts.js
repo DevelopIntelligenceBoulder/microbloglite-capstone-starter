@@ -24,6 +24,18 @@ window.addEventListener("click", function (event) {
   }
 });
 
+window.addEventListener("load", function() {
+  let storedImgURL = localStorage.getItem("profilePicURL");
+  if(storedImgURL) {
+    let imageDisplay = document.getElementById("accImg");
+    let storyDisplay = document.getElementById("storyImg");
+    let postDisplay = this.document.getElementById("postBoxImg")
+    imageDisplay.src = storedImgURL;
+    storyDisplay.src = storedImgURL;
+    postDisplay.src = storedImgURL;
+  }
+})
+
 window.onload = () => {
   // Get ID from HTML
   let textAreaEl = document.getElementById("textArea");
@@ -90,7 +102,7 @@ window.onload = () => {
       },
     };
     fetch(
-      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
+      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=50&offset=0",
       options
     )
       .then((response) => response.json())

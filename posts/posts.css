@@ -178,6 +178,7 @@ nav {
 .shortcut-links {
   text-decoration: none;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   color: #626262;
@@ -204,6 +205,26 @@ nav {
   font-weight: 500;
 }
 
+#newsBox {
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  height: 35px;
+  margin: 20px;
+  padding: 4px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+#newsBox a {
+  text-decoration: none;
+  color: #000;
+}
+
+#newsBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Stories */
 
 .story-gallery {
@@ -211,6 +232,7 @@ nav {
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 40px;
+  padding: 40px;
 }
 
 .story {
@@ -388,6 +410,11 @@ nav {
   flex: 1;
   min-width: 0;
   margin: 5px;
+}
+
+#postBoxImg {
+  width: 60px;
+  border-radius: 50%;
 }
 
 #textArea {
