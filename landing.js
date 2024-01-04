@@ -2,6 +2,8 @@
 
 "use strict";
 
+addFontToBody();
+
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {
@@ -15,7 +17,7 @@ loginForm.onsubmit = function (event) {
         username: loginForm.username.value,
         password: loginForm.password.value,
     }
-    console.log("trigger", loginData)
+
     // Disables the button after the form has been submitted already:
     loginForm.loginButton.disabled = true;
 
