@@ -23,6 +23,13 @@ function init(){
         console.error('Invalid login data');
     }
 });
+
+// postBtn
+document.getElementById('postBtn').addEventListener('click', function (event) {
+    event.preventDefault();
+    postUserData();
+});
+
 }
 
 function getLoginData() {
@@ -134,5 +141,35 @@ function createPost(post) {
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
 
   return cardContainer
+}
+
+function postUserData() {
+    const newPostContent = document.getElementById('newPost').value;
+    //const username = 'quiditch123';
+    
+    const postUrl = `${apiBaseURL}/api/posts`;
+    
+    const postData = {
+        text: newPostContent
+    };
+    
+    fetch(postUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Post successful:', data);
+        displayUserPosts();
+
+        document.getElementById('newPost').value = '';
+    })
+    .catch(error => {
+        console.error('Error posting user data:', error);
+    });
 }
 
