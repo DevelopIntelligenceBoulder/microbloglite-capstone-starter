@@ -35,7 +35,7 @@
         if (!isLoggedIn()) window.location.replace("/");
     </script> -->
   </head>
-  <body>
+  <body id="top">
     <nav class="navbar navbar-expand-md py-4 sticky-top bg-dark">
       <div class="container-fluid">
         <button
@@ -70,9 +70,9 @@
       </div>
     </nav>
 
-    <!-- <header>
-        <h1 class="text-center mt-5">CREATE A POST</h1>
-    </header> -->
+    <header class="mb-5">
+        <p></p>
+    </header>
 
     <main class="mt-5">
       <!-- form to create a post -->
@@ -131,10 +131,16 @@
               </svg>
             </a>
           </div>
-          <div class="col-md-12 mt-4">
-            <h3 id="random-y" class="text-center text-white">
-              "Yellow yarn yields yawns yearly."
+          <div class="col-md-12 mt-4 text-center text-white">
+            <h3 id="random-y">
+              
             </h3>
+            <p class=" my-4">You've reached the end</p>
+            <a href="#top" class="btn btn-light mb-5">Yell Back Up</a>
+          </div>
+          <div class="col-md-12 border-top text-center text-white pt-5">
+            <span class="small me-5">Copyright</span>
+            <span class="small ms-5">terms and condition</span>
           </div>
         </div>
       </div>
