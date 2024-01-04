@@ -11,6 +11,8 @@
 body {
   background-color: var(--light-blue);
   margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+
 }
 
 header {
