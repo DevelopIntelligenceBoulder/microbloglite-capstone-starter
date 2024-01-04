@@ -11,7 +11,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/global.css">
     <script src="/auth.js"></script>
-    
+
     <script defer src="registration.js"></script>
     <!-- <script>
         if (isLoggedIn() === true) window.location.replace("/login");
@@ -22,30 +22,30 @@
 
 <body>
     <main>
-        <h1>Registration</h1>
-        <code>
-        <form id="register"> 
-            <div>
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" minlength="9">
+        <section class="container forms">
+            <div class="form login"></div>
+            <code>
+            <header>Registration</header>
 
-            </div>
-            
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+            <form id="register">
+                <div class="field input-field">
+                    <input type="text" placeholder="Email" minlength="9">
+                </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+                <div class="field input-field">
+                    <input type="text" placeholder="Username" minlength="3">
+                </div>
 
-           
+                <div class="field input-field">
+                     <input type="password" placeholder="Password" minlength="6">
+                </div>
+                <button id="registrationButton" type="submit">Create Account</button>
 
-            <button id="registrationButton" type="submit">Create Account</button>
-        </form>
-        </code>
+
+                
+            </form>
+            </code>
+        </section>
     </main>
 </body>
 
