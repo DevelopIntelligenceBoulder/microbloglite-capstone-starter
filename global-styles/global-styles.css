@@ -79,3 +79,6 @@ body {
 .card > *{
   border-radius: 0px;
 }
+.text-primary{
+  color: #e0d209 !important;
+}

@@ -1,8 +1,8 @@
 .wrapper{
-    border-top: 3px solid rgb(150, 170, 63);
+    border-top: 3px solid #e0d209 !important;
 }
 
 .wrapper a{
     text-decoration: none;
-    color: rgb(150, 170, 63);
+    color: #e0d209 !important;
 }
