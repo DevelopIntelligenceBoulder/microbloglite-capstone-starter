@@ -124,7 +124,7 @@ createPostForm.onsubmit = (e) => {
         newPost.innerHTML = `
        
             <div class="card";'>
-                <div class="card-body bg-dark text-white">
+                <div class="card-body bg-dark text-white rounded-5 border-0">
                     <p class="card-title">${newPostData.username}</p>
                     <p class="card-text">${newPostData.text}</p>
                     <p class="card-text fw-lighter">${formattedDate}</p>
