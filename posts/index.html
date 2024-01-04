@@ -19,6 +19,10 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Emoji HTML -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/css/emoji.css" rel="stylesheet">
+
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="../global.css" />
 
@@ -59,12 +63,11 @@
         <div class="nav-user-dropdown">
           <div class="nav-user-icon online" id="userIcon">
             <!-- Account Image -->
-            <img src="images/nav-icons/test-account-30.png" />
+            <img id="accImg" />
           </div>
           <div class="dropdown-content" id="dropdownContent">
             <!-- Dropdown content  -->
-            <a href="/posts/index.html">Profile</a>
-            <a href="#">Account</a>
+            <a href="/profile/profile.html">Profile</a>
             <a id="logOutBtn">Logout</a>
           </div>
         </div>
@@ -75,7 +78,7 @@
 
     <div class="story-gallery">
       <div class="story story1">
-        <img src="images/post-icons/icons8-bust-in-silhouette-48.png" />
+        <img id="storyImg"/>
         <p>Post Story</p>
       </div>
       <div class="story story2">
@@ -101,20 +104,35 @@
       <!-- Left Side Bar -->
       <div id="box" class="left-sidebar">
         <div class="imp-links">
-          <a href="#"
-            ><img src="images/left-bar/icons8-news-50.png" /> Latest News</a
-          >
-          <a href="#"
-            ><img src="images/left-bar/icons8-friends-50.png" /> Friends</a
-          >
-          <a href="#"
-            ><img src="images/left-bar/icons8-group-50.png" /> Group</a
-          >
-          <a href="#"
-            ><img src="images/left-bar/icons8-marketplace-50.png" />
-            Marketplace</a
-          >
-          <a href="#"><img src="images/left-bar/icons8-tv-30.png" /> Watch</a>
+          <div id="newsBox">
+            <a href="#"
+              ><img src="images/left-bar/icons8-news-50.png" /> Latest News</a
+            >
+          </div>
+
+          <div id="newsBox">
+            <a href="#"
+              ><img src="images/left-bar/icons8-friends-50.png" /> Friends</a
+            >
+          </div>
+
+          <div id="newsBox">
+            <a href="#"
+              ><img src="images/left-bar/icons8-group-50.png" /> Group</a
+            >
+          </div>
+
+          <div id="newsBox">
+            <a href="#"
+              ><img src="images/left-bar/icons8-marketplace-50.png" />
+              Marketplace</a
+            >
+          </div>
+
+          <div id="newsBox">
+            <a href="#"><img src="images/left-bar/icons8-tv-30.png" /> Watch</a>
+          </div>
+
           <a href="#">See More</a>
         </div>
       </div>
@@ -122,15 +140,15 @@
       <!-- Main Content -->
       <div id="box" class="write-post-container">
         <div class="user-profile">
-          <img src="images/post-icons/icons8-bust-in-silhouette-48.png" />
+          <img id="postBoxImg"/>
           <div>
-            <p>Brandon Nicholson</p>
+            <p id="profileName"></p>
             <small>Public </small>
           </div>
         </div>
 
         <div class="post-input-container">
-          <textarea
+          <textarea 
             id="textArea"
             rows="3"
             placeholder="What's on your mind?"
@@ -228,3 +246,4 @@
     <script src="./posts.js"></script>
   </body>
 </html>
+

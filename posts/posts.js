@@ -24,11 +24,29 @@ window.addEventListener("click", function (event) {
   }
 });
 
+window.addEventListener("load", function() {
+  let storedImgURL = localStorage.getItem("profilePicURL");
+  if(storedImgURL) {
+    let imageDisplay = document.getElementById("accImg");
+    let storyDisplay = document.getElementById("storyImg");
+    let postDisplay = this.document.getElementById("postBoxImg")
+    imageDisplay.src = storedImgURL;
+    storyDisplay.src = storedImgURL;
+    postDisplay.src = storedImgURL;
+  }
+})
+
 window.onload = () => {
   // Get ID from HTML
   let textAreaEl = document.getElementById("textArea");
   let postsContainerEl = document.getElementById("write-post-container");
   let postBtnEl = document.getElementById("postBtn");
+
+  // Emoji JS
+  
+
+  // Fetch to Show Username
+  fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/')
 
   // Event Listener to Post
   postBtnEl.addEventListener("click", (e) => {
@@ -38,6 +56,8 @@ window.onload = () => {
     let postData = {
       text: textAreaEl.value,
     };
+
+  
 
     // Fetch Posts
 
@@ -69,13 +89,11 @@ window.onload = () => {
         });
   });
 
- 
-  
-
+  textAreaEl.value = "";
   // Get All Posts
 
   function getAllPosts() {
-    // GET /api/users
+   
     const loginData = getLoginData();
     const options = {
       method: "GET",
@@ -84,13 +102,14 @@ window.onload = () => {
       },
     };
     fetch(
-      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
+      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=50&offset=0",
       options
     )
       .then((response) => response.json())
       .then((posts) => {
         let postsContainerEl = document.getElementById("postsContainer");
-        // Do something with the users array...
+        postsContainerEl.innerHTML = "";
+        
         posts.forEach((post) => {
           let postEl = document.createElement("div");
           postEl.classList.add("card");
@@ -112,5 +131,5 @@ window.onload = () => {
       });
   }
   getAllPosts();
-  setInterval(getAllPosts, 5000);
+  setInterval(getAllPosts, 2000);
 };

@@ -2,21 +2,22 @@
 
 # SocialConnect
 
-Welcome to SocialConnect, a social media platform that connects people globally.
+Welcome to SocialConnect, a social media platform that connects people globally and locally!!!
 
 ## Screenshots
 
-### Home Page
-![News Feed](/path/to/news-feed-screenshot.png)
+### Login Page Page
+![News Feed](/readme-images/Screenshot%202024-01-04%20090147.png)
 The news feed displays posts from friends and followed accounts.
 
 ### Profile Page
-![Profile Page](/path/to/profile-screenshot.png)
-This is where users can view and edit their profiles, including personal information and settings.
+![Profile Page](/readme-images/Screenshot%202024-01-04%20084620.png)
+This is where users can view and edit their profiles, including personal information. Which includes changing their profile picture if they desire to!
+This is implemented by a wonderful combination of codes called FileReader and readAsDataURL!!
 
 ### Posts Page
-![Messaging](/path/to/messaging-screenshot.png)
-Users can communicate via direct messaging with friends or groups.
+![Messaging](/readme-images/Screenshot%202024-01-04%20084850.png)
+Users can communicate via direct messaging with friends or groups or connect with others globally on our platform! They can also view stories of others to make new friends if they so wish!
 
 ## Installation
 
