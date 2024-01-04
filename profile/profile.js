@@ -55,10 +55,20 @@ window.onload = () => {
   let textAreaEl = document.getElementById("textArea");
   
 
-  // Picture Variables
-
   // Function to toggle dropdown visibility
+  function toggleDropdown() {
+    dropdownContent.classList.toggle("show");
+  }
 
+  logOutBtnEl.addEventListener("click", logout);
+
+  userIcon.addEventListener("click", toggleDropdown);
+
+  window.addEventListener("click", function (event) {
+    if (!event.target.closest(".nav-user-dropdown")) {
+      dropdownContent.classList.remove("show");
+    }
+  });
 
   // Post Box
 

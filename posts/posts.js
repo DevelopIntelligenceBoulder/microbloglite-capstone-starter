@@ -102,7 +102,7 @@ window.onload = () => {
       },
     };
     fetch(
-      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
+      "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=50&offset=0",
       options
     )
       .then((response) => response.json())
