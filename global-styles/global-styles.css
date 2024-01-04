@@ -12,14 +12,6 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-h1 {
-  text-indent: -3px;
-  text-align: center;
-}
-h4 {
-  text-align: center;
-}
-
 .content-visable-hidden {
   content-visibility: hidden;
 }
@@ -59,6 +51,10 @@ h4 {
   color: lightgray;
 }
 
+.bg-primary{
+ background:#ffd31152 !important;
+}
+
 
 .w-fit-content {
   max-width: min-content;
@@ -81,4 +77,8 @@ h4 {
 
 .nav-underline > *:hover{
     border-color:#e0d209 !important;
+}
+
+.card{
+  border-radius: 0px;
 }

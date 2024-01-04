@@ -16,3 +16,11 @@
 .form-group .form-floating:focus-within {
   z-index: 2;
 }
+
+h1 {
+  text-indent: -3px;
+  text-align: center;
+}
+h4 {
+  text-align: center;
+}
