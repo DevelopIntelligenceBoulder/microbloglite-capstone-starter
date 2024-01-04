@@ -64,14 +64,19 @@ let getAllPosts = () => {
                     year: 'numeric',
                 };
                 let formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+
+                
+
                 
                 let postCardBody = document.createElement('div');
                 postCardBody.classList.add('container');
+                
                 postCardBody.innerHTML = `
                     <div class="card">
                         <div class="card-body bg-dark text-white">
                             <p class="card-title">${post.username}</p>
                             <p class="card-text">${post.text}</p>
+                            
                             <p class="card-text fw-lighter">${formattedDate}</p>
                         </div>
                     </div>
