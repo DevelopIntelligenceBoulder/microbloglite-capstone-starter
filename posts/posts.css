@@ -211,6 +211,7 @@ nav {
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 40px;
+  padding: 40px;
 }
 
 .story {
@@ -388,6 +389,11 @@ nav {
   flex: 1;
   min-width: 0;
   margin: 5px;
+}
+
+#postBoxImg {
+  width: 60px;
+  border-radius: 50%;
 }
 
 #textArea {
