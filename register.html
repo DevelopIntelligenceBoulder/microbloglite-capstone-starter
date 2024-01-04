@@ -24,7 +24,9 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css" />
 
-    <title>Login to InstaSmurf</title>
+    <link rel="stylesheet" href="./register.css">
+
+    <title>Create an Account</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
@@ -38,25 +40,34 @@
     </header>
 
     <main>
-      <form id="login">
+      <form id="register">
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" minlength="3" />
         </div>
 
         <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" minlength="6" />
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" minlength="3" />
         </div>
 
-        <button id="loginButton" type="submit">Log in</button>
-        <a href="register.html">No account? Register here.</a>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="6" />
+        </div>
+
+        <button id="registerButton" type="submit">Register</button>
+
+        <a href="index.html">Log in here.</a>
+
+        <div id="registration-confirmation"></div>
       </form>
     </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
-    <script src="./landing.js"></script>
+    <!-- <script src="./landing.js"></script> -->
+    <script src="register.js"></script>
   </body>
 </html>
