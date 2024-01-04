@@ -9,7 +9,7 @@ window.onload = () => {
 function fetchAllPosts() {
   const token = getLoginData().token;
 
-  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=18", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -54,25 +54,25 @@ function likePost(postId) {
     });
 }
 
-// function unlikePost(likeId) {
-//     console.log(`Unliking post with Like ID: ${likeId}`);
-//     const token = getLoginData().token;
+function unlikePost(likeId) {
+    console.log(`Unliking post with Like ID: ${likeId}`);
+    const token = getLoginData().token;
 
-//     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes/${likeId}`, {
-//         method: "DELETE",
-//         headers: {
-//             Authorization: `Bearer ${token}`
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(unlikedPost => {
-//         console.log(unlikedPost);
-//         fetchAllPosts();
-//     })
-//     .catch(error => {
-//         console.error("Failed to unlike the post:", error);
-//     });
-// }
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes/${likeId}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+    .then(response => response.json())
+    .then(unlikedPost => {
+        console.log(unlikedPost);
+        fetchAllPosts();
+    })
+    .catch(error => {
+        console.error("Failed to unlike the post:", error);
+    });
+}
 
 function deletePost(postId) {
   const token = getLoginData().token;
@@ -142,6 +142,7 @@ function displayAllPosts(allPosts) {
             <h3 class="card-title">${post.text}</h3>
             <p class="card-text">By: ${post.username}</p>
             <p class="card-text">Likes: ${post.likes.length}</p>
+            <p class="card-text">Created at: ${post.createdAt}</p>
             <button class="btn btn-dark text-light" onclick="likePost('${post._id}')">❤️ Like</button>
             <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">🗑️ Delete Post</button>
         `;
