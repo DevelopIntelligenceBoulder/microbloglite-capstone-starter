@@ -25,12 +25,14 @@ function isLoggedIn () {
 }
 
 // user access; if user is NOT logged in redirect to login/landing(?) page
-// //function Useraccess() {
-  // if (!isLoggedIn()) {
-// //      window.location.href = "/login" // landing;
-  // }
-//}
- //document.addEventListener('DOMContentLoaded', Useraccess);
+function Useraccess() {
+     if (!isLoggedIn()) {
+
+     window.location.href = "/login.html" // landing;
+
+}
+}
+ document.addEventListener('DOMContentLoaded', Useraccess);
 
  function signUp(signUpData) {
     //POST create user
