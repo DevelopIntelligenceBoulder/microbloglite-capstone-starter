@@ -7,6 +7,24 @@
   font-family: "Quilon", sans-serif;
 }
 
+.site-name {
+  font-family: 'Quilon', sans-serif; 
+  font-size: 24px; 
+  color: #14130f; 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+
+h2 {
+  color: rgb(255, 153, 0);
+}
+
+.herotext {
+  color: #1d0c04b9;
+}
+
 body {
   background-color: rgb(255, 140, 0);
   display: flex;
