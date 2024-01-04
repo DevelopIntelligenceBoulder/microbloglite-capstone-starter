@@ -75,7 +75,7 @@
 
     <h2><u>MY BLOGS</u></h2>
 
-    <button onclick="togglePopup()">+ Write a new blog</button>
+    <button onclick="togglePopup()" id="newblog">+ Write a new blog</button>
 
     <div class="blog-container" style="justify-content: center;">
       <div class="row">
@@ -105,12 +105,12 @@
     <input type="text" id="title" name="title" required>
 
     <label for="recipe">Recipe:</label>
-    <textarea id="recipe" name="recipe" rows="4" required></textarea>
+    <textarea id="popupTextbox" name="popupTextbox" rows="4" required></textarea>
 
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required>
 
-    <button onclick="submitBlogPost()" style="margin-top: 20px;">Submit</button>
+    <button onclick="submitBlogPost()" id="submitblog" style="margin-top: 20px;">Submit</button>
 
   </div>
 
