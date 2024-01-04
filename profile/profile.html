@@ -42,23 +42,21 @@
     </nav>
   </header>
 
-  <div id="grad1"></div>
-
-
   <div class="bio-content">
-
     <div class="row">
-      <div class="column1" style="margin-left: 40rem;">
-        <img src="/images/no-profile-picture-icon.png" alt="noImgIcon" style="border-radius: 50%;">
-      </div>
+      <div class="column1" style="margin-left: 20rem;"></div>
       <div class="column2" style="margin-right: 40rem;">
-
-        <div class="box">
-          <h2>Lawrence</h2>
-          <br>
-          <h2 style="color:#17A7C7;">User since December 2023</h2>
-          <br>
-          <p style="font-weight: lighter; font-style: italic;">
+        <div class="box" style="text-align: center;">
+          <img src="/images/no-profile-picture-icon.png" alt="noImgIcon"
+            style="border-radius: 50%; width: 100px;"><br><br>
+            <div id="profileContainer"></div>
+            <p></p>
+          <h2>Karen Katsikis</h2>
+          <h6>
+            Blogs Posted: 2,456<br>
+            Member since: December 1st, 2020
+          </h6>
+          <p style="font-weight: lighter; font-style: italic; color:#ffffff">
             "Passionate about Mediterranean cuisine, my blog
             serves as a flavorful journey through
             sun-kissed landscapes, offering a taste of the
@@ -72,32 +70,16 @@
   </div>
 
   <main class="main-content">
-
-    <h2><u>MY BLOGS</u></h2>
-
-    <button onclick="togglePopup()" id="newblog">+ Write a new blog</button>
-
-    
+    <form id="postContainer" class="card card-body">
+      <p>Write a new blog post!</p>
+      <textarea id="textBoxContent" placeholder="Let's talk food..." cols="20"></textarea>
+      <div class="form-control mt-2">
+        <button class="btn mt-2" id="postButton">Post</button>
+      </div>
+    </form>
   </main>
 
-
-  <div class="div" id="postsContainer">
-
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" required>
-
-    <label for="recipe">Recipe:</label>
-    <textarea id="popupTextbox" name="popupTextbox" rows="4" required></textarea>
-
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
-
-    <button onclick="submitBlogPost()" id="submitblog" style="margin-top: 20px;">Submit</button>
-
-  </div>
-
-
-  <script src="./profile.js"></script>
+  <script src="profile.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
