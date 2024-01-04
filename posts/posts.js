@@ -89,7 +89,7 @@ window.onload = () => {
         });
   });
 
-  textAreaEl.value = "";
+  
   // Get All Posts
 
   function getAllPosts() {
