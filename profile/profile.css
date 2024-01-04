@@ -1177,11 +1177,7 @@
     border-radius: 50%;
   }
   
-  .avatar-sm {
-    font-size: .875rem;
-    width: 36px;
-    height: 36px;
-  }
+  
   
   .btn {
     font-size: .875rem;
@@ -1529,10 +1525,7 @@
     color: #5e72e4;
   }
   
-  .nav-link i.ni {
-    position: relative;
-    top: 2px;
-  }
+  
   
   .navbar-search .input-group {
     border: 2px solid;
@@ -1580,52 +1573,18 @@
   
   
     
-  @media (max-width: 767.98px) {
-    .navbar-nav .nav-link {
-      padding: .625rem 0;
-      color: #172b4d !important;
-    }
+
   
-    .navbar-nav .dropdown-menu {
-      min-width: auto;
-      box-shadow: none;
-    }
-  }
+ 
   
-  p {
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
+ 
+ 
   
-  .description {
-    font-size: .875rem;
-  }
   
-  .heading {
-    font-size: .95rem;
-    font-weight: 600;
-    letter-spacing: .025em;
-    text-transform: uppercase;
-  }
   
-  .heading-small {
-    font-size: .75rem;
-    padding-top: .25rem;
-    padding-bottom: .25rem;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-  }
+
+
   
-  .display-2 span {
-    font-weight: 300;
-    display: block;
-  }
   
-  @media (max-width: 768px) {
-    .btn {
-      margin-bottom: 10px;
-    }
-  }
   
   
