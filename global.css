@@ -13,6 +13,10 @@
   /* outline: 1px dotted red; */
 }
 
+body {
+  background: linear-gradient(135deg, #ff6b6b, #6b47ff);
+}
+
 :root {
   font-size: 1rem;
 

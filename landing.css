@@ -1,16 +1,4 @@
 /* Landing Page CSS */
-
-.image-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/hero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  min-height: 80vh;
-  width: 100vw;
-  position: relative;
-  overflow: hidden;
-}
-
 .content-section {
   display: none;
   padding: 20px;
@@ -50,7 +38,8 @@ a{
 
 #login{
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0;
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -74,4 +63,8 @@ a{
 
 #login button:hover{
   background-color: #0d8ecf;
+}
+
+.y-hero-image{
+  max-width: 300px;
 }

@@ -34,23 +34,22 @@
         window.location.replace("/posts");
       }
 
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const passwordInput = document.getElementById("password");
         const showPasswordCheckbox = document.getElementById("showPassword");
 
-        showPasswordCheckbox.addEventListener("change", function() {
+        showPasswordCheckbox.addEventListener("change", function () {
           passwordInput.type = this.checked ? "text" : "password";
         });
       });
-
     </script>
   </head>
-  <body class="ivory">
-    <nav class="navbar navbar-expand-lg ivory">
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-            <image href="../images/Y_logo_dark.svg" width="100" height="100" />
+            <image href="../images/Y_logo_light.svg" width="100" height="100" />
           </svg>
         </a>
         <a
@@ -65,36 +64,48 @@
       <!-- <img src="images/hero.jpg" alt="Group of people in a cafe on our app" class="img-fluid"> -->
     </section>
 
-    <header class="text-charcoal">
-      <h1>
-        Welcome to <code class="text-darkCerulean">Y</code>
-      </h1>
-    </header>
-
-    <main class="text-darkCerulean main-section">
-      <form id="login">
-        <div>
-          <label for="username" class="text-charcoal">Username</label>
-          <input type="text" id="username" minlength="3" />
+    
+    <main class="text-white main-section">
+      
+      <div class="container">
+        <div class="row d-flex justify-content-sm-center">
+          <section class="form-section col-md-6 ">
+            <form id="login">
+              <div class="text-charcoal text-center">
+                <h1>Welcome to <i>Y</i></h1>
+              </div>
+              <div>
+                <label for="username" class="text-charcoal">Username</label>
+                <input type="text" id="username" minlength="3" />
+              </div>
+    
+              <div>
+                <label for="password" class="text-charcoal">Password</label>
+                <input type="password" id="password" minlength="6" />
+                <div style="text-align: center">
+                  <input type="checkbox" id="showPassword" />
+                  <label for="showPassword" class="text-charcoal"
+                    >Show Password</label
+                  >
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <button
+                  id="loginButton"
+                  type="submit"
+                  class="btn btn-secondary text-charcoal"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </section>
+          <section class="col-md-6 mb-5 d-flex justify-content-center">
+            <img class="y-hero-image img-fluid rounded-5" src="/images/Y_hero_image.png" alt="Women with Y on back of phone">
+          </section>
         </div>
-
-        <div>
-          <label for="password" class="text-charcoal">Password</label>
-          <input type="password" id="password" minlength="6" />
-          <div style="text-align: center;">
-            <input type="checkbox" id="showPassword">
-            <label for="showPassword" class="text-charcoal">Show Password</label>
-          </div>
-        </div>
-
-        <button
-          id="loginButton"
-          type="submit"
-          class="btn-secondary text-charcoal"
-        >
-          Login
-        </button>
-      </form>
+      </div>
 
       <section>
         <p>
@@ -143,34 +154,34 @@
       <section class="authors-section">
         <h2>Meet Our Creators</h2>
         <div class="author">
-          <a class="text-charcoal" href="https://github.com/Javirb26">
-          <img
-            src="https://avatars.githubusercontent.com/u/112392832?v=4"
-            alt="Javier B."
-            class="author-image"
-          />
-          <p>Javier Ballester</p>
-        </a>
+          <a class="text-white" href="https://github.com/Javirb26">
+            <img
+              src="https://avatars.githubusercontent.com/u/112392832?v=4"
+              alt="Javier B."
+              class="author-image"
+            />
+            <p>Javier Ballester</p>
+          </a>
         </div>
         <div class="author">
-          <a class="text-charcoal" href="https://github.com/tacostrash">
-          <img
-            src="https://avatars.githubusercontent.com/u/146863806?v=4"
-            alt="Carlos M."
-            class="author-image"
-          />
-          <p>Carlos Marin</p>
-        </a>
+          <a class="text-white" href="https://github.com/tacostrash">
+            <img
+              src="https://avatars.githubusercontent.com/u/146863806?v=4"
+              alt="Carlos M."
+              class="author-image"
+            />
+            <p>Carlos Marin</p>
+          </a>
         </div>
         <div class="author">
-          <a class="text-charcoal" href="https://github.com/AmarisNichole">
-          <img
-            src="https://avatars.githubusercontent.com/u/146863945?v=4"
-            alt="Amaris S."
-            class="author-image"
-          />
-          <p>Amaris Sanders</p>
-        </a>
+          <a class="text-white" href="https://github.com/AmarisNichole">
+            <img
+              src="https://avatars.githubusercontent.com/u/146863945?v=4"
+              alt="Amaris S."
+              class="author-image"
+            />
+            <p>Amaris Sanders</p>
+          </a>
         </div>
       </section>
     </main>
