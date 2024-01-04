@@ -514,10 +514,11 @@ nav {
 }
 
 /* Style for the post text */
-.card .post-text {
+.card .post-text img {
   color: #555;
   line-height: 1.4;
   margin-top: 10px;
+  max-width: 100%;
 }
 
 .card .post-text a {

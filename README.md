@@ -23,6 +23,10 @@ Users can communicate via direct messaging with friends or groups or connect wit
 This is where users can view and edit their profiles, including personal information. Which includes changing their profile picture if they desire to!
 This is implemented by a wonderful combination of codes called FileReader and readAsDataURL!!
 
+### Interesting Code
+![Interesting Code](/readme-images/Screenshot%202024-01-04%20182505.png)
+This code stumped me for a little bit because after EXTENSIVE googling, I had to understand it to implement it and to be fair I still don't fully understand it.
+
 
 ## Installation
 

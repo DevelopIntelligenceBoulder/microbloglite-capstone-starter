@@ -120,7 +120,7 @@ window.onload = () => {
 
           let postTextEl = document.createElement("div");
           postTextEl.classList.add("post-text");
-          postTextEl.textContent = post.text;
+          postTextEl.innerHTML = post.text;
 
           postEl.appendChild(usernameEl);
           postEl.appendChild(postTextEl);
