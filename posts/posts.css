@@ -1,19 +1,30 @@
 /* Posts Page CSS */
 .logo-container{
-    display: inline-block;
-    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+.logo-container img{
+    max-width: 100%;
+    height: auto;
 }
 
-.centered-card {
+header {
     text-align: center;
     margin: 0 auto;
-    max-width: 600px;
-    padding: 20px;
-    border: 1px solid#8d9b6a
 }
-.h1 {
-    text-align: center;
+
+.posts-container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;  
 }
+
+.card {
+    width: 800px;
+    margin: 10px;
+    display: flex;
+}
+
 .btns {
     text-align: center;
     margin-top: 20px;
@@ -30,6 +41,7 @@
 }
 
 .logout-btn {
-    padding: 10px;
-    margin: 0 5px;
+    position: fixed;
+    top: 75px;
+    right: 10px; 
 }

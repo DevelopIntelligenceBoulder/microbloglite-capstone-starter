@@ -28,6 +28,7 @@
         if (!isLoggedIn()) window.location.replace("/");
     </script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
@@ -71,7 +72,7 @@
         </div>
     </nav>
 
-    <main>
+
 
     <header>
         <div class="logo-container">
@@ -79,22 +80,23 @@
         </div>
         <h1>Uploaded Posts</h1>
     </header>
-
-   
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-            <div id="posts-container"class="card-group"></div>
-       
     <div id="logout">
         <button id="logout-btn">Logout</button>
     </div>
+    <main>
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div id="posts-container">
+                </div>
+        </div>
+
     </main>
 
-        <footer>
-            <p>&copy;A.L.R Blog</p>
-        </footer>
+    <footer>
+        <p>&copy;A.L.R. Blog</p>
+    </footer>
 
-        <!-- Page-specific code -->
-        <script src="./posts.js"></script>
+    <!-- Page-specific code -->
+    <script src="./posts.js"></script>
 </body>
 
 </html>
