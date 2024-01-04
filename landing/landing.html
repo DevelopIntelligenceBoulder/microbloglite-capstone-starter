@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" style="padding: 40px;">
       <img class="logo" src="/images/TheMedBowlLogo.png" alt="logo">
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -26,15 +26,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="landing.html">Home</a>
+            <span class="row">
+              <span class="col-md-6">
+                <a class="nav-link active" active-current="page" href="/landing/landing.html">Home</a>
+              </span>
+              <span class="col-md-6">
+                <a class="nav-link" href="/registration/registration.html" style="color: #507A51;">Sign Up!</a>
+              </span>
+            </span>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/registration/registration.html">Sign Up!</a>
-          </li>
+        </ul>
     </nav>
-    
   </header>
-  
+
 
   <main>
     <div class="container-fluid">
@@ -52,7 +56,8 @@
             placeholder=" &nbsp; &nbsp; Enter your password" required
             style="border-radius: 10px; border: 1px solid #000; background: #FFF;"> <br>
 
-          <button id="loginButton" type="submit">Login</button>
+          <button id="loginButton" type="submit"
+            style="background: #507A51; color: white; margin-bottom: 50px;">Login</button>
         </form>
       </div>
 

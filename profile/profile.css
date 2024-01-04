@@ -1,10 +1,39 @@
-body {
-  background-color: white;
+.navbar {
+  display: flex;
+  position: fixed top;
+  padding: 10px;
+  box-shadow: 0px 5px #000000;
+  text-align: center;
+  padding-top: 20px;
+  background-color: #ffffff;
 }
 
-.row {
-  display: flex;
-  padding: 5rem;
+#navbar img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+}
+
+#navbarSupportedContent {
+  padding-top: 2rem;
+  font-size:x-large;
+}
+
+/* end of navbar CSS */
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  background-color: #507A51;
+  background: linear-gradient(45deg, #17A7C7, #507A51) no-repeat;
+}
+
+/* start of bio-content CSS */
+
+.bio-content {
+  padding: 1rem; 
 }
 
 .column1,
@@ -35,36 +64,34 @@ body {
   text-align: left;
 }
 
-.box {
-  width: fit-content;
-  height: fit-content;
-  background-color: rgb(255, 255, 255);
-  /* border-radius: 2%;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  padding: 20px; */
-}
+/* end */
 
 h4 {
   font-size: larger;
   font-weight: bold;
 }
 
-.blog-container {
-  width: fit-content;
-  height: fit-content;
-  background-color: rgb(248, 248, 248);
-  box-shadow: 10px 5px 5px;
-  margin-left: 658.325px;
-  margin-right: 658.325px;
-  margin-top: 30px;
-  margin-bottom: 100px;
+.main-content {
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+  
 }
 
+.blog-container {
+  background-color: rgb(248, 248, 248);
+  box-shadow: 10px 5px 5px;
+  border-radius: 20px;
+  width: fit-content;
+
+}
+
+/* + Write a blog CSS start */
 
 #postsContainer {
   display: none;
   background-color: #fff;
-  font-size:x-large;
+  font-size: x-large;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -97,3 +124,5 @@ button {
 #date {
   border-radius: 10px;
 }
+
+/* end */
