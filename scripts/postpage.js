@@ -1,16 +1,27 @@
 "use strict";
 
-const accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzIiwiaWF0IjoxNzA0MzgzMDEwLCJleHAiOjE3MDQ0Njk0MTB9.yAgvIpoD-lQSWxG9RY7_aHb7wZXNAvQdQ4LXrMXNzsE`
-getAllPosts(accessToken);
+//const accessToken = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzIiwiaWF0IjoxNzA0MzgzMDEwLCJleHAiOjE3MDQ0Njk0MTB9.yAgvIpoD-lQSWxG9RY7_aHb7wZXNAvQdQ4LXrMXNzsE`
+//getAllPosts(accessToken);
 
-const parentElement = document.querySelector("main");
+let username;
+let accessToken;
+const postContainer = document.getElementById('postContainer');
 
 let apiLink = "https://microbloglite.onrender.com/api/posts";
 
 window.onload = init();
+
 function init(){
-    loadAllPosts(posts);
-    getAllPosts(accessToken);
+
+  const loginData = getLoginData();
+
+  if (loginData && loginData.token) {
+      accessToken = loginData.token;
+      displayUserPosts(loginData);
+  } else {
+      console.error('Invalid login data');
+  
+  }
 }
 
 function getLoginData() {
@@ -22,43 +33,49 @@ function getLoginData() {
 }
 
 
-function loadAllPosts(posts) {
-    const postContainer = document.getElementById("postContainer");
-  
-    for (let i = 0; i < posts.length; i++) {
-      const post = posts[i];
-      createPost(post, postContainer);
-    }
-}
+//function loadAllPosts(posts) {
 
-function getAllPosts(accessToken) {
-    const options = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    };
+
+    //const postContainer = document.getElementById("postContainer");
   
-    fetch(apiLink, options)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to retrieve posts");
-        }
-      })
-      .then((data) => {
-        loadAllPosts(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-        });
-}
+ //   for (let i = 0; i < posts.length; i++) {
+ //     const post = posts[i];
+ //     createPost(post, postContainer);
+ //   }
+//}
+
+//function getAllPosts(accessToken) {
+
+ // username = loginData.username; // Set the username
+
+
+    //const options = {
+    //  method: "GET",
+    //  headers: {
+    //    Authorization: `Bearer ${accessToken}`,
+    //  },
+   // };
+  
+  //  fetch(apiLink)
+  //    .then((response) => {
+  //      if (response.ok) {
+   //       return response.json();
+  //      } else {
+  //        throw new Error("Failed to retrieve posts");
+  //      }
+  //    })
+   //   .then((data) => {
+   //     loadAllPosts(data);
+  //    })
+  //    .catch((error) => {
+ //       console.error("Error fetching posts:", error);
+//        });
+//}
 
 function displayUserPosts(loginData) {
     // const username = 'quiditch123';
     username = loginData.username; // Set the username
-    fetch(apiBaseURL + `/api/posts?limit=100&offset=0&username=${username}`, {
+    fetch(apiLink, {
         headers: {
             Authorization: `Bearer ${accessToken}`,
         },
@@ -109,24 +126,3 @@ function createPost(post) {
   postContainer.insertBefore(cardContainer, postContainer.firstChild);
 }
 
-const loginData = getLoginData();
-
-    if (loginData && loginData.token) {
-        accessToken = loginData.token;
-        loadData(loginData);
-        displayUserPosts(loginData);
-    } else {
-        console.error('Invalid login data');
-    
-    }
-
-
-    function getLoginData() {
-        const loginData = JSON.parse(window.localStorage.getItem("login-data"));
-        if (!loginData || !loginData.token) {
-            console.error('Invalid login data');
-        }
-        return loginData;
-    }
-
-    

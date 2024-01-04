@@ -73,23 +73,13 @@ function login (loginData) {
     };
 
     return fetch(apiBaseURL + "/auth/login", options)
-<<<<<<< HEAD
-        .then(response => response.json())
-        .then(loginData => {
-            window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            //window.location.assign("/posts");  // redirect
-
-            return loginData;
-        });
-=======
-    .then(response => response.json())
+      .then(response => response.json())
     .then(loginData => {
         window.localStorage.setItem("login-data", JSON.stringify(loginData));
         window.location.assign("/posts");  // redirect
         console.log(loginData);
         return loginData;
     });
->>>>>>> feature/leila-clesca
 }
 
 
@@ -100,13 +90,13 @@ function login (loginData) {
 
 // get id
 
-document.getElementById('logoutBtn').addEventListener('click', function() {
-    logout();
-});
 
 
 function logout () {
     const loginData = getLoginData();
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+        logout();
+    });
 
     // GET /auth/logout
     const options = { 
@@ -129,6 +119,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("login.html");  // redirect back to login page
+            window.location.assign("./registration");  // redirect back to login page
         });
 }

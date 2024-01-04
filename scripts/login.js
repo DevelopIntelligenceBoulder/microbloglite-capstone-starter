@@ -26,7 +26,7 @@ function login (loginData) {
         });
 }
 
-document.getElementById("login").addEventListener("submit", function(event) {
+document.getElementById("loginButton").addEventListener("submit", function(event) {
     event.preventDefault();
 
     // get username and password from the form

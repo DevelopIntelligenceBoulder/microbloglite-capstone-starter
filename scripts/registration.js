@@ -17,10 +17,15 @@ function signUp(signUpData) {
         
         return fetch(apiBaseURL + '/api/users', options)
         .then(response => {
-            console.log(response.json);
+                window.location.assign("login.html");
+                // redirect
+                console.log(signUp);
+                return signUp;
+            });
+
             return response.json();
-        })
-    }
+        }
+    
 
 document.getElementById("registrationForm").addEventListener("submit", function(e) {
     e.preventDefault();
