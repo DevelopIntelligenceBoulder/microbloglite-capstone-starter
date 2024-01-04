@@ -1,3 +1,27 @@
+.navbar {
+  display: flex;
+  position: fixed top;
+  padding: 10px;
+  background-color: #F9F9F9;
+  box-shadow: 0px 5px #000000;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#navbar img { 
+  display: block; 
+  width: 140px; 
+  height: 140px; 
+  margin: auto; 
+}
+
+#navbarSupportedContent {
+  padding-top: 2rem;
+  font-size:x-large;
+}
+
+/* end */
+
 body {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
@@ -7,34 +31,21 @@ body {
   margin: 0;
 }
 
+.header {
+  width: 100%;
+}
+
 .container {
   max-width: 100%; 
   margin: auto; 
 }
 
-.header {
-  width: 100%;
-}
-
-.navbar {
-  position: fixed top;
-  padding: 10px;
-  background-color: #F9F9F9;
-}
-
-#navbar img { 
-  display: block; 
-  width: 140px; 
-  height: 140px; 
-  margin: auto; 
-
-} 
-
 .container-fluid {
   text-align: center;
+  font-size: 25px;
   border-radius: 35px;
   background: #F9F9F9;
-  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px #000000;
   padding: 20px; 
   margin-top: 200px;
   width: 30rem;
@@ -48,23 +59,24 @@ h1 {
 
 #username {
   margin-bottom: 30px;
+  width: 15rem;
+  text-align: center;
 }
 
 #password {
   margin-bottom: 50px;
+  width: 15rem;
+  text-align: center;
+
 }
 
-#loginButton {
-  align-items: center;
-  width: 200px;
-  padding: 10px;
-  background: #507A51;
-  border-radius: 50px;
-  color: white;
-  font-size: 24px;
-  font-weight: 300;
+button {
+  font-size:x-large;
+  background-color: #ffffff;
+  width: fit-content;
+  color: #000000;
   cursor: pointer;
-  border: none;
-  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px #000000;
 }
 
