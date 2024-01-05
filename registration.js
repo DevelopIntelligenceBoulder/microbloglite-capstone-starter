@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", e => {
             fullName: fullName.value, 
             password: password.value 
         });
-        window.location = ".."
+        window.location.href = "./index.html"
     });
 
 });
