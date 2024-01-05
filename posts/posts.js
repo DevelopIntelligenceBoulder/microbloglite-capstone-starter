@@ -3,9 +3,14 @@
 "use strict";
 
 
-window.onload = function (_event) {
+window.onload = function (_event) {  
+    let logoutBtn = document.getElementById('logout');
+    logoutBtn.onclick = logout 
+    
+
     getPosts()
         .then(populatePostcards)
+         
 }
 
 function getPosts() {
@@ -30,7 +35,8 @@ function getPosts() {
 function populatePostcards(posts) {
     const postCards = document.getElementById("postDiv")
     let html = ""
-    for (const currentPost of (posts)) {
+    for (const currentPost of posts){
+        currentPost.text = currentPost.text.replace("?autoplay=1", "").replace("autoplay;")
         html += `
             <div class="card border-light mb-3" style="max-width: 50rem;">
                 <div class="card-title">${currentPost.username}</div>
@@ -39,13 +45,20 @@ function populatePostcards(posts) {
                 </div>
                 <p class="text">${formatDate(currentPost.createdAt)}</p>
                 <p class="text"><strong>Likes:</strong> ${currentPost.likes.length}</p>
-                <button type="button" class="btn btn-primary btn-sm">LIKE</button>
+                <button onclick="createLike('${currentPost._id}')" id="like_button" class="btn btn-primary btn-sm">LIKE</button>
             </div>
         `
     }
 
     postCards.innerHTML+= html
 }
+
+function createLike(postId){
+    console.log("Like button clicked for post id#" + postId)
+    
+}
+    
+
 
 function formatDate(timestamp) {
     const date = new Date(timestamp)
