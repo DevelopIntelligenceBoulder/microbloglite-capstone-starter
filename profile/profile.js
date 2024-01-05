@@ -124,7 +124,7 @@ const createCard = (cardData) => {
                     <a class="bi bi-x-octagon-fill text-danger-emphasis btn btn-sm float-end" onclick = "deletePost('${
                       cardData.id
                     }')">
-                      <span class="ps-0">Remove</span>
+                      <span class="">Remove</span>
                     </a>
                   </div>
                 </div>
