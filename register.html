@@ -24,7 +24,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css" />
 
-    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="./register.css" />
 
     <title>Create an Account</title>
 
@@ -35,34 +35,103 @@
     </script>
   </head>
   <body>
-    <header>
-      <h1>Welcome to <code>InstaSmurf</code></h1>
-    </header>
-
-    <main>
-      <form id="register">
-        <div>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" minlength="3" />
+    <section>
+      <div class="main">
+        <div class="first">
+          <h1>Welcome to <code>InstaSmurf</code></h1>
         </div>
 
-        <div>
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" minlength="3" />
+        <div class="second">
+          <form id="register">
+            <div>
+              <!-- <label for="username">Username</label> -->
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="fullName"></label> -->
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="username">Username</label> -->
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="password">Password</label> -->
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                minlength="6"
+              />
+            </div>
+
+            <button id="registerButton" type="submit">Register</button>
+
+            <!-- <span>
+              <p>___________________</p>
+              OR
+              <p>___________________</p>
+            </span> -->
+
+            <!-- <div class="fb">
+              <img src="fb-logo.png" alt="facebook logo">
+              <h5>Log in with Facebook</h5>
+            </div> -->
+
+            <!-- <small>Forgot password?</small> -->
+          </form>
         </div>
-
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" minlength="6" />
+        
+        <div class="sub">
+          <p>Already have an account? <span><a href="index.html">Log in.</a></span></p>
+          <div id="registration-confirmation"></div>
         </div>
-
-        <button id="registerButton" type="submit">Register</button>
-
-        <a href="index.html">Log in here.</a>
-
-        <div id="registration-confirmation"></div>
-      </form>
-    </main>
+        <div class="apps">
+          <p>Get the app.</p>
+          <div class="images">
+            <img src="app-store.png" alt="apple store image">
+            <img src="google-play.png" alt="google play image">
+          </div>
+        </div>
+        <div class="footer">
+          <span>Meta</span>
+          <span>About</span>
+          <span>Blog</span>
+          <span>Jobs</span>
+          <span>Help</span>
+          <span>API</span>
+          <span>Privacy</span>
+          <span>Terms</span>
+          <span>Top Accounts</span>
+          <span>Hashtags</span>
+          <span>Locations</span>
+          <span>InstaSmurf Lite</span>
+          <span>Contact Uploading & Non-Users</span>
+        </div>
+      </div>
+    </section>
 
     <footer></footer>
 
