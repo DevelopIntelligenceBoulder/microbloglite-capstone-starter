@@ -25,7 +25,7 @@
 
 ## Landing/Login Page
 
-The home page has a simple, responsive design with a navbar linking to the Register page and a login form.
+The home page has a simple, responsive design. It allows users to login with a username and password if it is in the API and has a navbar linking to the Register page.
 
 <p align="center" width="100%">
     <img width="90%" src="images/landing-page.png" /> 
@@ -34,7 +34,7 @@ The home page has a simple, responsive design with a navbar linking to the Regis
 
 ## Registration Page
 
-The registration page has a registration form utilizing Bootstrap to help with responsiveness.
+The registration page's main feature is the registration form which utilized Bootstrap to help with responsiveness. It links to the home page through the navbar and redirects the user back to the home page after they register. 
 
 <p align="center" width="100%">
     <img width="90%" src="images/register-page.png" /> 
@@ -83,7 +83,6 @@ posts.forEach((post) => {
          `;
      postsContainer.appendChild(postElement);
    });
- };
 ```
 
 - I found this code to be the most interesting beacuse this code dynamically creates HTML elements (representing posts) based on the data in the posts array. It includes the post's username, text, formatted date and time, and buttons for liking and unliking. The generated elements are appended to an existing container in the HTML document.
@@ -139,8 +138,6 @@ All Pages are responsive through the use of Bootstrap 5
 <p align="center" width="100%">
     <img width="50%" src="images/register-page-tablet.png" /> 
     <img width="30%" src="images/landing-page-phone.png" /> 
-    <!-- <img width="30%" src="images/" /> 
-    <img width="30%" src="images/" />  -->
 </p>
 
 ### Interesting Code
