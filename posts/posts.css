@@ -1,4 +1,4 @@
-/* Posts Page CSS */
+* Posts Page CSS */
 .card {
     width: 70%vw; 
     /* max-width: 300px; */
@@ -111,5 +111,3 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
-
-  
