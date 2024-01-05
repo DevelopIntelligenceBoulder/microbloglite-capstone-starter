@@ -15,15 +15,6 @@ a {
     z-index: 1;
 }
 
-
-/* .card-body {
-    position: relative;
-} */
-
-/* .btn-outline-danger{
-    display: none;
-} */
-
 @media screen and (min-width: 768px) {
   .md-card:nth-of-type(even) {
     margin-bottom: 10px;
