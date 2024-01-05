@@ -10,7 +10,7 @@
        clearly! (Remove this outline before submitting: users won't 
        want to see it!)
     */
-    /* outline: 1px dotted black; */
+ /* outline: 1px dotted black;  */
 }
 
 :root {
@@ -69,7 +69,7 @@ main{
   footer {
     text-align: center;
   }
-}
+
 #logout-btn:hover{
     cursor: url('./images/moon-stars-fill.svg'), auto !important;
 }
