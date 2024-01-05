@@ -126,3 +126,12 @@ small{
     height: 40px;
     margin: 3px
 }
+
+.P{
+    background-color:white;
+}
+
+*{
+    background-image: url(/pictures/background\ loginpage.jpg);
+    
+}
