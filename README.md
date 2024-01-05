@@ -1,19 +1,12 @@
-# Bookface
 
-
-
-
-
-# [Project Name]
+# DevSwitch
 Overview:
 
-DevSwitch is a social media platform designed to connect web developers from around the globe. It provides a space where developers can share their experiences, knowledge, and coding adventures. Whether you're looking for inspiration, seeking advice, or just want to showcase your latest project, DevSwitch has you covered.
 Welcome to DevSwitch, your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, DevSwitch is the place to be.
 
 Project Description:
 
-[Dev Switch] is a comprehensive IT solution designed to address [specific problem or challenge]. This project encompasses various elements of IT, including but not limited to [list key components or technologies involved]. The goal is to provide a robust and efficient solution that not only meets the requirements outlined but also showcases my proficiency in the latest technologies and methodologies within the IT domain.
-
+ DevSwitch is your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, DevSwitch is the place to be
 
 Key Founders:
 [Xabier Jones]
@@ -52,7 +45,10 @@ On our profile page developers
 
 # Interesting pieces of code
 Armanie 
+if (res.ok) {
+            window.location.replace("/posts/index.html"); // redirect
+            }
 "I found this code interesting because at first I was trying to redirect the page if the status was === 200 but when looking further it would be 201 or even 399 so then with jonathans help we realized you could just do the res.ok to make it redirect as long as it was a working status code"
 
 # Acknowledge
-I would like to express my gratitude to [professors, mentors, or anyone who contributed to the project]. Their guidance and support have been instrumental in the successful completion of this capstone project.
+I would like to express my gratitude to professor, or anyone who contributed to the project. Their guidance and support have been instrumental in the successful completion of this capstone project.
