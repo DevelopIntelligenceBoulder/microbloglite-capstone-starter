@@ -14,7 +14,7 @@ window.onload = () => {
         },
     };
 
-    fetch(apiBaseURL + "/api/posts", options)
+    fetch(API_URL + "/api/posts", options)
         .then((response) => response.json())
         .then((posts) => {
             console.log(posts); //log grab all post 
