@@ -1,3 +1,21 @@
 .container {
     max-width: 720px;
 }
+
+/* Profile Page CSS */
+body, html {
+    height: 100%;
+}
+/* Profile Page The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/_28a92cfe-624b-4d30-a571-8f74bd9e83b9.jpeg");
+}
+
+.blockquote, .blockquote-footer {
+    color: white;
+}
+
+.card-img-top {
+    background-size: cover;
+}
