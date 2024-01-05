@@ -20,7 +20,8 @@ Key Founders:
 
 
 # Landing page/Login page
-![landingScreenshot](/screen-captures/landing.png)
+![terms](https://github.com/JonCGroberg/microbloglite-capstone-starter/assets/146864064/4b411068-4feb-43eb-8d1b-e894983bf2a3)
+
 Landing Landing Landing....
 -Users see the face of DevSwitch
 -Ability to log in or create account
