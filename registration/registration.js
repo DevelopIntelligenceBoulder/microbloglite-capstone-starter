@@ -32,7 +32,7 @@ window.onload = ()=>{
             password: document.querySelector("#password").value,
         };
 
-        // registerForm.register-btn.disabled = true;
+      
 
         register(registerData);
     });

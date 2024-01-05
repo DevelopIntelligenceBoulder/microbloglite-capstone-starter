@@ -44,7 +44,7 @@ Here on the post page is where customers and users are able to freely post about
 
 # Profile Page
 On our profile page developers 
-![profileScreenshot](/screen-captures/Profile%20-%20Copy.PNG)
+![profileScreenshot](/screen-captures)
 
 
 
