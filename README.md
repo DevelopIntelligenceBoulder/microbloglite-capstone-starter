@@ -16,7 +16,7 @@ This project consists of **4 pages:**
 # Registration Page
 > Author: Jayla Young
 
-**1.** Functioning Sign-Up Form
+**1.** Functioning Sign-Up Form, 
 **2.** After The User Successfully Creates An Account, User Is Redirected To "Posts" Page
 **3.** Also Offer A Working Link To The Login Page For "New Users"
 
