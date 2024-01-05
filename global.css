@@ -19,6 +19,16 @@ body{
     background-color: #E8DFE0;
     cursor: url('./images/person-hiking-solid-db-lg.svg'), default !important;
 }
+ 
+code, .nav-link, .dropdown-item{
+    font-size: 1.35em;
+}
+.navbar-brand{
+    font-size: 1.55em;
+}
+.offcanvas-title{
+    font-size: 1.95em;
+}
 
 .navbar-expand-md, footer{
     background-color: #8d9b6a9f !important;
@@ -82,17 +92,6 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 5px;
     border: none;
-  }
-
-  footer {
-    text-align: center;
-  }
-}
-#logout-btn:hover{
-    cursor: url('./images/moon-stars-fill.svg'), auto !important;
-}
-a:hover, input:hover, textarea:hover, button:hover{
-    cursor: url('./images/mountain-solid-y.svg'), auto !important;
 }
 footer {
     text-align: center;
