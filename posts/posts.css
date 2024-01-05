@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     position: fixed top;
+    background-color: white;
     padding: 25px;
     box-shadow: 0px 5px #000000;
     text-align: center;
@@ -22,9 +23,11 @@
 body {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
-    background-color: white;
+    background-color: #507A51;
+    background: linear-gradient(45deg, #17A7C7, #507A51) no-repeat;
     margin: 0;
     padding: 0;
+
 }
 
 .header {
@@ -42,7 +45,6 @@ body {
 .post-content {
     text-align: center;
     font-size: 25px;
-    background-color: #ffffff;
     padding: 10px;
     padding-top: 1rem;
 }
@@ -50,7 +52,6 @@ body {
 
 button {
     font-size:x-large;
-    background-color: #ffffff;
     width: fit-content;
     color: #000000;
     cursor: pointer;
@@ -65,17 +66,24 @@ button {
 
   .post-container {
     display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    height: fit-content;
     flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: row;
+    flex: 3;
 }
 
+/*DisplayPosts CSS dynamically on JS file*/
+
+/*Post Card*/
+
 .post-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    background-color: white;
+    border-radius: 10px;
     padding: 15px;
     width: calc(33.33% - 20px);
     box-sizing: border-box;
-    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
 }
@@ -90,11 +98,14 @@ button {
 }
 
 .post-author {
+    font-size: larger;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: auto;
+    color: #507A51;
 }
 
 .post-timestamp {
     font-style: italic;
-    color: #555;
+    color: #ff0000;
 }
+
