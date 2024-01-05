@@ -52,7 +52,7 @@ On our profile page developers
 
 # Interesting pieces of code
 Armanie 
-I found this code interesting because at first I was trying to redirect the page if the status was === 200 but when looking further it would be 201 or even 399 so then with jonathans help we realized you could just do the res.ok to make it redirect as long as it was a working status code
+"I found this code interesting because at first I was trying to redirect the page if the status was === 200 but when looking further it would be 201 or even 399 so then with jonathans help we realized you could just do the res.ok to make it redirect as long as it was a working status code"
 
 # Acknowledge
 I would like to express my gratitude to [professors, mentors, or anyone who contributed to the project]. Their guidance and support have been instrumental in the successful completion of this capstone project.
