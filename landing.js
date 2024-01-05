@@ -2,8 +2,6 @@
 
 "use strict";
 
-addFontToBody();
-
 const loginForm = document.querySelector("#login");
 
 loginForm.onsubmit = function (event) {

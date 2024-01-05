@@ -1,7 +1,5 @@
 "use strict";
 
-addFontToBody();
-
 const registerForm = document.querySelector("#register");
 
 registerForm.onsubmit = function (e) {
