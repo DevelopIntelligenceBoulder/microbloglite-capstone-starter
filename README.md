@@ -45,7 +45,8 @@ Here on the post page is where customers and users are able to freely post about
 - Engage with the community by liking, commenting, and sharing posts that resonate with you.
 
 # Terms and conditions/privacy page
-![termsScreenshot](/screen-captures/terms.PNG)
+![terms](https://github.com/JonCGroberg/microbloglite-capstone-starter/assets/146864064/1371761b-ac14-4385-a924-a8fcf48d5e2e)
+
 - Please read our terms and conditions carefully!
 
 
