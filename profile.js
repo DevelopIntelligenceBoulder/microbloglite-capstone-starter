@@ -19,7 +19,6 @@ function openTwitter() {
     window.open('https://twitter.com');
 }
 
-function learnMore() {
-    // Add the logic to navigate to the 'Learn more' page
-    console.log('Navigate to Learn more page');
+function logOut() {
+    window.open("../index.html")
 }
