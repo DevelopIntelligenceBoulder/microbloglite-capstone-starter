@@ -1,9 +1,9 @@
-# Enjoy the Microblog Project and the MicroblogLite API!
+# Microblog Capstone and the MicroblogLite API
 
-Purpose 
+## Purpose 
 Purpose of this project is to practice group collaboration along with showcase knowledge learned with API's
 
-Challenges 
+## Challenges 
 Managing time constraints 
 API went into maintaince while working with it
 Getting autherizations to gain acesss to functions 
