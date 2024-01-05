@@ -6,14 +6,14 @@ const textBoxContent = document.getElementById("textBoxContent");
 const postButton = document.getElementById("postButton");
 
 let userData;
-
+//window.onload to call upon onclick and run usrename code
 window.onload = function () {
     logoutButton.onclick = logoutButtonClicked;
     postButton.onclick = addPost;
 
    fetchUserData();
 }
-
+//display username using queryselector and authorizing it using our token
 function fetchUserData() {
 
     userData = getLoginData();
@@ -39,7 +39,7 @@ function fetchUserData() {
     .catch((err) => console.error('Error fetching user data:', err));
 }
 
-
+//post info sent to api using post method
 function addPost(event) {
     event.preventDefault();
 
@@ -64,6 +64,7 @@ function addPost(event) {
     })
 }
 
+//pulling user bio using api auth
 function getUpdatedUserData(currentUsername) {
     fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/${currentUsername}`, {
         method: 'GET',
@@ -81,12 +82,14 @@ function getUpdatedUserData(currentUsername) {
     .catch((err) => console.error('Error fetching updated user data:', err));
 }
 
+//display bio
 function handleProfileDisplay(retrievedUserData) {
 
     const bioElement = profileContainer.querySelector("p");
     bioElement.innerText = retrievedUserData.bio;
 }
 
+//logout functionality
 function logoutButtonClicked() {
     // Check if loginData is defined
     const loginData = getLoginData();
