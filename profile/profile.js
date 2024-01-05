@@ -1,21 +1,22 @@
 // Main
-// window.onload = () => {
-//   if (isLoggedIn()) populatePage();
-//   else window.location.replace("../");
-// };
+window.onload = () => {
+  if (isLoggedIn()) populatePage();
+  else window.location.replace("../");
+};
 
 async function populatePage() {
-  document.getElementById("logoutBtn").onclick=logout;
+  document.getElementById("logoutBtn").onclick = logout;
+  window.deletePost = deletePost; //make this global
 
   const localUserData = await getLocalUserData(); //Auth token required to access server
   const pageData = await fetchPageData(localUserData);
 
-  populateBio({ user: pageData.user })
+  populateBio({ user: pageData.user });
   populatePosts({
     allUserPosts: pageData.allUserPosts,
     user: pageData.user,
     localUserData,
-  })
+  });
 }
 
 function populateBio({ user }) {
@@ -27,17 +28,17 @@ function populateBio({ user }) {
 
 function populatePosts({ allUserPosts, localUserData, user }) {
   const cardHolder = document.getElementById("cardHolder");
-  cardHolder.innerHTML="";
+  cardHolder.innerHTML = "";
 
   allUserPosts.forEach((post) => {
-    cardHolder.append(
-      createCard({
-        name: user.fullName,
-        username: post.username,
-        createdAt: post.createdAt,
-        text: post.text,
-      })
-    );
+    const card = createCard({
+      name: user.fullName,
+      username: post.username,
+      createdAt: post.createdAt,
+      text: post.text,
+      id: post._id,
+    });
+    cardHolder.append(card);
   });
 }
 
@@ -47,13 +48,22 @@ async function fetchPageData({ token, username }) {
       Authorization: `Bearer ${await token}`,
     },
   };
-  const query = `?username=${username}&limit=5`;
+  const query = `?username=${username}&limit=10`;
 
-  const allUsers = await fetchAllUsers({ options });
+  // const allUsers = await fetchAllUsers({ options });
   const user = await fetchUser({ username, options });
   const allUserPosts = await fetchAllPosts({ query, options });
 
-  return { user, allUsers, allUserPosts };
+  return { user, allUserPosts };
+}
+
+function deletePost(id) {
+  const options = {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${getLocalUserData().token}` },
+  };
+  document.getElementById(id).remove();
+  fetch(API_URL + `/api/posts/${id}`, options).then((res) => {});
 }
 //  Helper Functions
 const fetchUser = ({ username, options }) =>
@@ -74,27 +84,54 @@ const createArticle = (...classes) => {
 // HTML element generation
 const createCard = (cardData) => {
   const cardElement = createArticle("card", "container", "shadow");
+  cardElement.id = cardData.id;
   cardElement.innerHTML = `
-    <div class="row ">
-      <div class="p-0">
-        <div class="card-header">
-          <div class="d-flex flex-wrap gap-2">
-            <div class="bi bi-person-fill" style="font-size: x-large"></div>
-            <div class="">${cardData.name}</div>
-            <div class="text-secondary-emphasis flex-grow-1">@${cardData.username}</div>
-            <div class="">${cardData.createdAt.split("T")[0]}</div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card-body ">
-          <div class="row">
-            <div class="col-12">
-              ${cardData.text}
+        <div class="row" >
+          <div class="col-12 px-0">
+            <div class="card-header">
+              <div class="d-flex flex-wrap gap-3">
+                <div
+                  class="bi bi-person-fill"
+                  style="font-size: x-large"
+                ></div>
+                <div class="">${cardData.name}</div>
+                <div
+                  class="text-secondary-emphasis flex-grow-1"
+                >
+                  @${cardData.username}
+                </div>
+                <div class="small">
+                  ${cardData.createdAt.split("T")[0]}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>`;
+          <div class="col">
+            <div class="row">
+              <div class="col-12">
+                <div class="card-body">
+                  <div class="col-12 small">
+                    ${cardData.text}
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 p-0">
+                <div class="card-footer py-1 gap-3">
+                  <div class="col-12">
+                    <a class="bi bi-heart btn btn-sm"></a>
+                    <a class="bi-repeat btn btn-sm"></a>
+                    <a class="btn btn-sm bi-share"></a>
+                    <a class="bi bi-x-octagon-fill text-danger-emphasis btn btn-sm float-end" onclick = "deletePost('${
+                      cardData.id
+                    }')">
+                      <span class="">Remove</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+
   return cardElement;
 };
