@@ -96,7 +96,6 @@ function logout () {
 
 
 function register (registrationData) {
-    
     const options = { 
          method: "POST",
         headers: {
@@ -111,9 +110,8 @@ function register (registrationData) {
     return fetch(apiBaseURL + "/api/users", options)
         .then(response => response.json())
         .then(registrationData => {
-            window.location.assign("/index.html");  // redirect
+            window.location.assign("/");  // redirect
 
             return registrationData;
         });
-
 }
