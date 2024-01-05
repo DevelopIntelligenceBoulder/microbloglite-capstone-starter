@@ -67,9 +67,9 @@
    logout();
  };
 
-//  const likeButton = document.getElementById(`likeButton${post.id}`);
+//  const likeButton = document.getElementById(`likeButton${post._id}`);
 //      likeButton.addEventListener("click", () => {
-//       likePost(postId);
+//       likePost(post._Id);
 //      });
 // const likeButton = document.querySelectorAll(".btn-like");
 // console.log(likeButton);
@@ -78,7 +78,8 @@
 //   const loginData = getLoginData();
 
 //   fetch("http://microbloglite.us-east-2.elasticbeanstalk.com.com/api/likes", {
-//     method: 'POST',
+//     method: "POST",
+//     
 //     headers: {
 //       Authorization: `Bearer ${loginData.token}`,
 //     },

@@ -1,24 +1,28 @@
 /* Posts Page CSS */
 
+.body {
+    padding: 0;
+}
+
 .logo-container{
     display: flex;
     justify-content: center;
 }
 .logo-container img{
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
    }
 
 header {
     text-align: center;
-    margin: 0 auto;
+    margin: 70px auto 0;
 }
 
 .posts-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;  
+    gap: 10px; 
 }
 
 .card {
@@ -40,10 +44,4 @@ header {
 .btn-unlike{
     padding: 10px;
     margin: 0 5px;
-}
-
-.logout-btn {
-    position: fixed;
-    top: 75px;
-    right: 10px; 
 }
