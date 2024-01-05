@@ -112,7 +112,9 @@
                   </h5>
                 </div>
                 <div class="col-12 col-md align-self-start">
-                  <button class="btn btn-primary py-1 px-2 float-md-end rounded-0">
+                  <button
+                    class="btn btn-primary py-1 px-2 float-md-end rounded-0"
+                  >
                     <i class="bi bi-pencil-fill small"></i
                     ><span class=""> edit profile</span>
                   </button>
@@ -131,10 +133,16 @@
         </div>
       </section>
       <section class="container-fluid my-4 px-4" style="max-width: 1200px">
-        <div class="row gap-3 m-0">
+        <div class="row gap-4 m-0">
+          <article
+            class="card col-sm-3 col-12 shadow"
+            style="min-height: 100px; min-width: 10rem"
+          ></article>
           <div class="col-sm col-12">
-            <div id="cardHolder" class="row gap-2">
-              <article class="container card shadow">
+            <div id="cardHolder" class="row gap-4">
+              <article
+                class="container card shadow placeholder bg-body-tertiary placeholder-glow"
+              >
                 <div class="row">
                   <div class="col-12 px-0">
                     <div class="card-header">
@@ -143,29 +151,22 @@
                           class="bi bi-person-fill"
                           style="font-size: x-large"
                         ></div>
-                        <div class="">${cardData.name}</div>
-                        <div class="text-secondary-emphasis flex-grow-1">
-                          @${cardData.username}
-                        </div>
-                        <div class="">${cardData.createdAt.split("T")[0]}</div>
                       </div>
                     </div>
                   </div>
                   <div class="col">
                     <div class="row">
                       <div class="col-12">
-                        <div class="card-body">${cardData.text}</div>
+                        <div class="card-body">
+                          <div class="placeholder col-12">${cardData.text}</div>
+                        </div>
                       </div>
                       <div class="col-12 p-0">
                         <div class="card-footer py-1 gap-3">
                           <div class="col-12">
-                            <a class="bi bi-heart btn btn-sm "></a>
-                            <a class="bi-repeat btn btn-sm "></a>
-                            <a
-                              class="bi bi-x-octagon-fill text-danger-emphasis btn btn-sm float-end "
-                            >
-                              <span class="ps-0">Remove</span></a
-                            >
+                            <a class="btn btn-sm bi-heart"></a>
+                            <a class="btn btn-sm bi-repeat"></a>
+                            <a class="btn btn-sm bi-share"></a>
                           </div>
                         </div>
                       </div>
@@ -174,12 +175,12 @@
                 </div>
               </article>
               <article
-                class="card container shadow placeholder bg-body-tertiary"
+                class="container card shadow placeholder bg-body-tertiary placeholder-glow"
               >
                 <div class="row">
-                  <div class="p-0">
+                  <div class="col-12 px-0">
                     <div class="card-header">
-                      <div class="d-flex flex-wrap gap-2">
+                      <div class="d-flex flex-wrap gap-1">
                         <div
                           class="bi bi-person-fill"
                           style="font-size: x-large"
@@ -188,15 +189,19 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card-body">
-                      <div class="row">
-                        <div
-                          class="col-12 placeholder-glow"
-                          style="min-height: 30px"
-                        >
-                          <span
-                            class="placeholder col-6 placeholder-lg bg-secondary"
-                          ></span>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card-body">
+                          <div class="placeholder col-12">${cardData.text}</div>
+                        </div>
+                      </div>
+                      <div class="col-12 p-0">
+                        <div class="card-footer py-1 gap-3">
+                          <div class="col-12">
+                            <a class="btn btn-sm bi-heart"></a>
+                            <a class="btn btn-sm bi-repeat"></a>
+                            <a class="btn btn-sm bi-share"></a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -204,12 +209,12 @@
                 </div>
               </article>
               <article
-                class="card container shadow placeholder-glow placeholder bg-body-tertiary"
+                class="container card shadow placeholder bg-body-tertiary placeholder-glow"
               >
                 <div class="row">
-                  <div class="p-0">
+                  <div class="col-12 px-0">
                     <div class="card-header">
-                      <div class="d-flex flex-wrap gap-2">
+                      <div class="d-flex flex-wrap gap-1">
                         <div
                           class="bi bi-person-fill"
                           style="font-size: x-large"
@@ -218,12 +223,19 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-12" style="min-height: 30px">
-                          <span
-                            class="placeholder col-8 placeholder-lg bg-secondary"
-                          ></span>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card-body">
+                          <div class="placeholder col-12">${cardData.text}</div>
+                        </div>
+                      </div>
+                      <div class="col-12 p-0">
+                        <div class="card-footer py-1 gap-3">
+                          <div class="col-12">
+                            <a class="btn btn-sm bi-heart"></a>
+                            <a class="btn btn-sm bi-repeat"></a>
+                            <a class="btn btn-sm bi-share"></a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -231,12 +243,12 @@
                 </div>
               </article>
               <article
-                class="card container shadow placeholder-glow placeholder bg-body-tertiary"
+                class="container card shadow placeholder bg-body-tertiary placeholder-glow"
               >
                 <div class="row">
-                  <div class="p-0">
+                  <div class="col-12 px-0">
                     <div class="card-header">
-                      <div class="d-flex flex-wrap gap-2">
+                      <div class="d-flex flex-wrap gap-1">
                         <div
                           class="bi bi-person-fill"
                           style="font-size: x-large"
@@ -245,39 +257,19 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-12" style="min-height: 30px">
-                          <span
-                            class="placeholder col-6 placeholder-lg bg-secondary"
-                          ></span>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card-body">
+                          <div class="placeholder col-12">${cardData.text}</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article
-                class="card container shadow placeholder placeholder-glow bg-body-tertiary"
-              >
-                <div class="row">
-                  <div class="p-0">
-                    <div class="card-header">
-                      <div class="d-flex flex-wrap gap-2">
-                        <div
-                          class="bi bi-person-fill"
-                          style="font-size: x-large"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-12" style="min-height: 30px">
-                          <span
-                            class="placeholder col-8 placeholder-lg bg-secondary"
-                          ></span>
+                      <div class="col-12 p-0">
+                        <div class="card-footer py-1 gap-3">
+                          <div class="col-12">
+                            <a class="btn btn-sm bi-heart"></a>
+                            <a class="btn btn-sm bi-repeat"></a>
+                            <a class="btn btn-sm bi-share"></a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -286,10 +278,6 @@
               </article>
             </div>
           </div>
-          <article
-            class="card col-sm-3 col-12 shadow"
-            style="min-height: 200px; min-width: 10rem"
-          ></article>
         </div>
       </section>
     </main>
