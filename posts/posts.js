@@ -152,5 +152,5 @@ window.onload = () => {
       });
   }
   getAllPosts();
-  setInterval(getAllPosts, 2000);
+  setInterval(getAllPosts, 10000);
 };

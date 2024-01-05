@@ -162,7 +162,7 @@ window.onload = () => {
 
           let postTextEl = document.createElement("div");
           postTextEl.classList.add("post-text");
-          postTextEl.textContent = post.text;
+          postTextEl.innerHTML = post.text;
 
           postEl.appendChild(usernameEl);
           postEl.appendChild(postTextEl);
@@ -177,5 +177,5 @@ window.onload = () => {
   }
 
   getAllPosts();
-  setInterval(getAllPosts, 2000);
+  setInterval(getAllPosts, 8000);
 };
