@@ -1,4 +1,4 @@
-/* Posts Page CSS */
+* Posts Page CSS */
 .card {
     width: 70%vw; 
     /* max-width: 300px; */
@@ -113,6 +113,7 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+<<<<<<< HEAD
 
   input, textarea, button {
     font-family: 'Nunito', sans-serif;
@@ -177,3 +178,5 @@ body {
     font-size: 14px;
     color: rgb(0, 0, 0);
   }
+=======
+>>>>>>> 45cc4b4fcd15896303c4d21c6584d539546bce05

@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="Profilecss.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
+
 <body>
     <div class="container">
         <div class="profile-box">
-            <img src="image/bx-menu.svg" class="menu-icon">
+            <a href="posts/post.html" class="menu-icon">Go to Post Page</a>
             <img src="image/bx-cog.svg" class="setting-icon">
             <img src="image/icon.png" class="profile-pic">
             <h3>Name</h3>
-           
+
             <div class="social-media">
-                <img src="image/bxl-facebook-square.svg" >
-                <img src="image/bxl-instagram.svg">
-                <img src="image/bxl-twitter.svg">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="image/bxl-facebook-square.svg" alt="Facebook">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank">
+                    <img src="image/bxl-instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="image/bxl-twitter.svg" alt="Twitter">
+                </a>
             </div>
+
             <button type="button">Follow</button>
+
             <div class="profile-bottom">
-                <p>Learn more about my Profile</p>
-            <img src="image/bx-down-arrow-alt.svg">
+                <a href="#" onclick="learnMore()">Learn more about my Profile</a>
+                <img src="image/bx-down-arrow-alt.svg">
             </div>
-            
-            
         </div>
     </div>
-    
 </body>
+
 </html>
