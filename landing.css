@@ -1,1 +1,37 @@
 /* Landing Page CSS */
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(166, 202, 238);
+    border: 1px solid #dbdbdb;
+    width: 999px;
+    height: 396px;
+    margin: auto;
+}
+
+
+/* body{ */
+    /* background-image: url(https://1.bp.blogspot.com/-FYWhIb7KDIg/XldDakibvvI/AAAAAAACf4o/ROp2QSNBEhU6dtMAMBEXeJXhs8D2cqeZQCLcBGAsYHQ/s1600/Smurfs_2_animatedfilminspector.filminspector.com_1.gif); */
+    /* background-size: 800px; */
+/* } */
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h2{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
