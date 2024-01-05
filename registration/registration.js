@@ -12,7 +12,7 @@ registerForm.onsubmit = function (event) {
     const registrationData = {
         username: registerForm.username.value,
         password: registerForm.password.value,
-        fullName: registerForm.fullName.value,
+        fullName: registerForm.email.value,
     }
 
     // Disables the button after the form has been submitted already:
@@ -20,4 +20,5 @@ registerForm.onsubmit = function (event) {
 
     // Time to actually process the login using the function from auth.js!
     register(registrationData);
+  
 };
