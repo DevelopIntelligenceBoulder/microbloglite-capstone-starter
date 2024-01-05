@@ -54,17 +54,46 @@
                 <img src="../images\South_ParkBG.png" alt="John" class="side-image">
 
             </div>
-            Content goes here
-            <form role="form" action="action.php" method="POST">
-                <input name="commentorname" type="text"  required>
-                <!--and some other inputs-->
-                <input type="hidden" name="post_id" value="<?php echo $_GET['id']; ?>"/>
-             
-            </form>
+            <p> Comment here</p>
+            <form onclick="myFunction()">
 
-        </div> <!-- end div container -->
+            <label for="freeform">Tell us how you heard about us:</label>
+            <br>
+            <textarea id="freeform" name="freeform" rows="4" cols="50">
+            </textarea><br><br>
+
+                <input type="submit" value="Submit">
+             </form> 
+              
+              <p id="demo"></p>
+              
+              <script>
+              function myFunction(Event) {
+                Event.preventDefault()
+                var txt;
+                if (confirm("Press a button!")) {
+                  txt = "You pressed OK!";
+                } else {
+                  txt = "You pressed Cancel!";
+                }
+                document.getElementById("demo").innerHTML = txt;
+              
+                // If you want to prevent the form from submitting, return false
+                // If you want the form to submit regardless of the user's choice, return true
+                return false;
+              }
+              </script>
+              
+            
+              
+              
+     
+ 
+            
+                
+
+    </div><!-- end div container -->
     </div>
 
 </body>
-
 </html>

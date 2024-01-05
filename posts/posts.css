@@ -40,8 +40,10 @@ height: 10vw;
 border-radius: 100%;
  }
 
- .card-content{
+ .card-content2{
  width: 40%;
+ border: 5px solid #ffffff;
+
  }
 
   .title {
@@ -86,7 +88,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #d3d4e8;
+    background-color: aquamarine;
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -112,4 +114,66 @@ body {
     .sidenav a {font-size: 18px;}
   }
 
+  input, textarea, button {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    color: #fae881;
+  }
   
+.flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    position: absolute;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    transition: 0.2s;
+  }
+
+  form {
+    position: absolute;
+    padding: 30px 20px;
+    width: 320px;
+    border-radius: 7px;
+    background-color: white;
+    backdrop-filter: blur(5px);
+    background-color: rgba(158, 189, 199, 0.288);
+    overflow: hidden;
+  }
+  
+  .input {
+    display: flex;
+    flex-direction: column;
+  }
+  textarea{
+
+    width: 85%;    
+  }
+  input, textarea {
+
+    padding: 8px 10px;
+    margin: 3px 8px 0px 8px;
+    background-color: rgba(250, 250, 250, 0.877);
+    border: 0px transparent;
+    border-radius: 5px;
+    color:rgb(97, 4, 184);
+    font-size: 16px;
+    word-break: break-all; /* haven't found the best solution here yet, paragraphs are difficult to deal with */
+    hyphens: auto;
+    z-index: 1;
+  }
+  
+  label {
+    margin: 0 8px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+  }
