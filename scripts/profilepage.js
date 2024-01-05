@@ -169,7 +169,76 @@ document.getElementById('postBtn').addEventListener('click', function (event) {
     postUserData();
 });
 
+// edits save btn
+
+document.getElementById('saveChanges').addEventListener('click', function (event) {
+    event.preventDefault();
+    saveChanges();
+});
 
 
 
+function getUserInfo(username) {
+    // const username = 'quiditch123';
+    const loginData = getLoginData();
+    username = loginData.username; // Set the username
+    fetch(apiBaseURL + `/api/users/${username}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to fetch user data. Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(userData => {
+        const newFullName = document.getElementById('currentUser1').value;
+        const newPassword = document.getElementById('password').value;
+        const newBio = document.getElementById('userBio1').value;;
 
+        document.getElementById('currentUser').textContent = newFullName;
+        username = newUsername;
+        password = newPassword;
+
+
+    })
+    .catch(error => {
+        console.error('Error fetching user data:', error);
+        alert('Failed to fetch user data. Please try again.');
+    });
+}
+
+
+// save changes and PUT to api
+
+function saveChanges() {
+    const newFullName = document.getElementById('currentUser1').value;
+    const newPassword = document.getElementById('password').value;
+    const newBio = document.getElementById('userBio1').value;
+  
+    const updatedUserData = {
+      fullName: newFullName,
+      password: newPassword,
+      bio: newBio,
+    };
+  
+    fetch(apiBaseURL + `/api/users/${username}` , {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(updatedUserData),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(responseData => {
+        console.log('Success:', responseData);
+
+
+      })
+  }
+
+  
