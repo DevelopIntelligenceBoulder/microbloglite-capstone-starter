@@ -9,13 +9,10 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <!-- style for profile section -->
         <link rel="stylesheet" href="styles/profilepage.css">
-        <script>
-         //   if (isLoggedIn() === false) window.location.replace("/login.html");
-</script>
-</head>
-
-<body>
-    <header>
+    </head>
+    
+    <body>
+        <header>
         <!--Nav Bar-->
         <nav>
             <div class="container nav-container">
@@ -171,10 +168,14 @@
     
     
     <script src="scripts/profilepage.js"></script>
-    <script src="scripts/auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+        <script src="scripts/auth.js"></script>
+    
+        <script>
+           if (isLoggedIn() === false) window.location.replace("/login.html");
+    </script>
 </body>
 
 </html>

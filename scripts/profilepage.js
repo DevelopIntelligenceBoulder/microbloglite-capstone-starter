@@ -194,8 +194,8 @@ function getUserInfo(username) {
         const newPassword = document.getElementById('password').value;
         const newBio = document.getElementById('userBio1').value;;
 
-        document.getElementById('currentUser').textContent = newFullName;
-        username = newUsername;
+       // document.getElementById('currentUser').textContent = newFullName;
+     //   username = newUsername;
         password = newPassword;
 
 
