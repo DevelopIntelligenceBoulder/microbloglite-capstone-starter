@@ -100,7 +100,7 @@ function displayPosts(posts) {
 
         const authorParagraph = document.createElement("p");
         authorParagraph.classList.add("post-author");
-        authorParagraph.innerText = `Author: ${post.username}`;
+        authorParagraph.innerText = `User: ${post.username}`;
 
         const timestampParagraph = document.createElement("p");
         timestampParagraph.classList.add("post-timestamp");

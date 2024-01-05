@@ -20,62 +20,60 @@
   font-size:x-large;
 }
 
+#logoutButton {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px #000000;
+  font-size: x-large;
+  width: fit-content;
+  padding: 10px;
+}
+
 /* end of navbar CSS */
 
 body {
+  justify-content: center;
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  margin: 0;
   background-color: #507A51;
   background: linear-gradient(45deg, #17A7C7, #507A51) no-repeat;
+  background-image: url(/images/signupbackgroundimg.jpg);
+  height: 100vh;
 }
+
+
 
 /* start of bio-content CSS */
 
 .bio-content {
   padding: 1rem; 
-}
-
-.column1,
-.column2 {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.column3,
-.column4 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  text-align: left;
-}
-
-.row1,
-.row2,
-.row3 {
-  padding: 10px;
-  margin-bottom: 5px;
-  text-align: left;
+  text-align: center;
+  align-content: center;
+  background-color: #ffffff;
+  box-shadow: 10px 10px #000000;
+  border-radius:10px;
+  width: 50%;
+  height: fit-content;
+  margin-left: 27%;
+  margin-top: 5%;
 }
 
 /* end */
 
+h2,
+h6 {
+  margin: 10px 0;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
 h4 {
   font-size: larger;
   font-weight: bold;
-}
-
-.main-content {
-  text-align: center;
-  align-items: center;
-  font-size: 25px;
-  
 }
 
 .blog-container {
@@ -83,46 +81,44 @@ h4 {
   box-shadow: 10px 5px 5px;
   border-radius: 20px;
   width: fit-content;
-
 }
 
 /* + Write a blog CSS start */
 
 #postsContainer {
+  text-align: center;
+  font-size: x-large;
   display: none;
   background-color: #fff;
   font-size: x-large;
-  padding: 20px;
+  padding: 8rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 60rem;
-  box-sizing: border-box;
   margin-left: 35rem;
 }
 
-input,
-textarea,
-button {
-  margin-bottom: 10px;
+
+textarea{
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
   padding: 8px;
+  border-radius: 10px;
+  font-size:x-large;
 }
 
-button {
-  font-size: xx-large;
+
+.btn {
   background-color: #ffffff;
-  width: fit-content;
   color: #000000;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 5px 5px #000000;
-}
-
-#title,
-#recipe,
-#date {
-  border-radius: 10px;
+  font-size: x-large;
+  width: fit-content;
+  padding: 10px;
 }
 
 /* end */

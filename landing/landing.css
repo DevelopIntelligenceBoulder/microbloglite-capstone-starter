@@ -49,7 +49,7 @@ body {
   padding: 20px; 
   margin-top: 200px;
   width: 30rem;
-  height: 500px;
+  height: 550px;
 }
 
 h1 {
@@ -71,7 +71,7 @@ h1 {
 }
 
 button {
-  font-size:x-large;
+  font-size: xx-large;
   background-color: #ffffff;
   width: fit-content;
   color: #000000;
