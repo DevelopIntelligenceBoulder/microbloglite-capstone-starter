@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Sign Up!</title>
-
-    <link rel="stylesheet" href="./style.css">
-    
-    <script src="../auth.js"></script>
-    <script src="../registration.js"></script>
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./auth.js"></script>
 </head>
 <body>
 
-    <div class="wrapper">
-        <form action="">
-            <h1>Registration</h1>
+        <div class="wrapper">
+            <form action="">
+                <h1>Registration</h1>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class='bx bxs-user' ></i>
-                </div>
-               
-                <div class="input-field">
-                    <input type="text" 
-                    placeholder="Username" required>
-                    <i class='bx bxs-user' ></i>
-            </div>
-
-        </div>
-            
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="email" placeholder="Email" 
-                    required>
-                    <i class='bx bxs-envelope' ></i>
-                </div>
-                <div class="input-field">
-                    <input type="number" placeholder="Phone Number" required>
-                    <i class='bx bxs-phone' ></i>
-            </div>
-            <div>
                 <div class="input-box">
-                    <div class="input-field">
-                        <input type="password" placeholder="Password" 
-                        required>
-                        <i class='bx bxs-lock-alt' ></i>
+                    <div class="input-feild">
+                        <input type="text" placeholder="Full Name" required>
+                        <i class='bx bxs-user' ></i>
                     </div>
-                    <div class="input-field">
-                        <input type="password" placeholder="Confirm Password" required>
-                        <i class='bx bxs-lock-alt' ></i>
+                
+                    <div class="input-feild">
+                        <input type="text" 
+                        placeholder="Username" required>
+                        <i class='bx bxs-user' ></i>
                 </div>
-          
 
-                <label><input type="checkbox">I hereby declare that the above information provided is true and correct.</label>
-           
-                <button type="submit" class="btn" id="registerbutton">Register</button>
-        </form>
-    </div>
+            </div>
+                
+                <div class="input-box">
+                    <div class="input-feild">
+                        <input type="email" placeholder="Email" 
+                        required>
+                        <i class='bx bxs-envelope' ></i>
+                    </div>
+                    <div class="input-feild">
+                        <input type="number" placeholder="Phone Number" required>
+                        <i class='bx bxs-phone' ></i>
+                </div>
+                <div>
+                    <div class="input-box">
+                        <div class="input-feild">
+                            <input type="password" placeholder="Password" 
+                            required>
+                            <i class='bx bxs-lock-alt' ></i>
+                        </div>
+                        <div class="input-feild">
+                            <input type="password" placeholder="Confirm Password" required>
+                            <i class='bx bxs-lock-alt' ></i>
+                    </div>
+            
 
-</body>
-</html>
+                    <label><input type="checkbox">I hereby declare that the above information provided is true and correct.</label>
+            
+                    <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+
+    </body>
+    </html>

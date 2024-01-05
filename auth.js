@@ -1,83 +1,87 @@
-/* auth.js provides LOGIN-related functions */
+class API {
+    constructor(host = "") {
+        this.host = host;
+    }
 
-"use strict";
+    async get(path, token = "") {
+        console.log("GETing", "FROM:", path, "USING:", token);
+        let headers = {};
+        
+        if (token != "") {
+            headers["Authorization"] = `Bearer ${token}`
+        }
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
-// Backup server:   https://microbloglite.onrender.com
+        let options = { method: 'GET', headers: headers };
+        const response = await fetch(this.host + path, options);
+        
+        if (!response.ok) { 
+            const json = await response.json();
+            console.log(json);
+            throw new Error(`HTTP error! status: ${response.status} FULL:${response.statusText}`) 
+        };
 
-// You can use this function to get the login data of the logged-in
-// user (if any). It returns either an object including the username
-// and token, or an empty object if the visitor is not logged in.
-function getLoginData () {
-    const loginJSON = window.localStorage.getItem("login-data");
-    return JSON.parse(loginJSON) || {};
+        return await response.json();
+    }
+
+    async post(path, input = {}, token = "") {
+        console.log("POSTING", "TO:", path, "PAYLOAD:", JSON.stringify(input), "USING:", token);
+        
+        let headers = { "Content-Type": "application/json" };
+
+        if (token != "") {
+            headers["Authorization"] = `Bearer ${token}`
+        }
+
+        let options = {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(input)
+        };
+
+        const response = await fetch(this.host + path, options);
+
+        if (!response.ok) { 
+            const json = await response.json();
+            console.log(json);
+            throw new Error(`HTTP error! status: ${response.status} FULL:${response.statusText}`) 
+        };
+
+        return await response.json();
+    }
+
+    async register(data = { username: "string", fullName: "string", password: "string" }) {
+        return await this.post("/api/users", data)
+    }
+
+    async login(data = { username: "string", password: "string" }) {
+        const result = await this.post("/auth/login", data)
+        return result.token;
+    }
+
+    async like(postId) {
+        await api.post("/api/likes", { postId: postId }, token);
+    }
 }
 
 
-// You can use this function to see whether the current visitor is
-// logged in. It returns either `true` or `false`.
-function isLoggedIn () {
-    const loginData = getLoginData();
-    return Boolean(loginData.token);
+let token = "";
+let user = {};
+
+const api = new API("http://microbloglite.us-east-2.elasticbeanstalk.com");
+
+async function init() {
+
+    user = await api.register({ username: "bob111", fullName: "Bob Dobbs", password: "secret" });
+    token = await api.login({ username: "bob", password: "secret" });
+    console.log(user)
+    console.log(token)
+
+    let userList = await api.get("/api/users", token);
+    console.log(userList);
+
+    let messages = await api.get("/api/posts", token);
+    console.log(messages);
+
+    api.like(messages[0]._id)
 }
-
-
-// This function is already being used in the starter code for the
-// landing page, in order to process a user's login. READ this code,
-// and feel free to re-use parts of it for other `fetch()` requests
-// you may need to write.
-function login (loginData) {
-    // POST /auth/login
-    const options = { 
-        method: "POST",
-        headers: {
-            // This header specifies the type of content we're sending.
-            // This is required for endpoints expecting us to send
-            // JSON data.
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-    };
-
-    return fetch(apiBaseURL + "/auth/login", options)
-        .then(response => response.json())
-        .then(loginData => {
-            window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
-
-            return loginData;
-        });
-}
-
-
-// This is the `logout()` function you will use for any logout button
-// which you may include in various pages in your app. Again, READ this
-// function and you will probably want to re-use parts of it for other
-// `fetch()` requests you may need to write.
-function logout () {
-    const loginData = getLoginData();
-
-    // GET /auth/logout
-    const options = { 
-        method: "GET",
-        headers: { 
-            // This header is how we authenticate our user with the
-            // server for any API requests which require the user
-            // to be logged-in in order to have access.
-            // In the API docs, these endpoints display a lock icon.
-            Authorization: `Bearer ${loginData.token}`,
-        },
-    };
-
-    fetch(apiBaseURL + "/auth/logout", options)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .finally(() => {
-            // We're using `finally()` so that we will continue with the
-            // browser side of logging out (below) even if there is an 
-            // error with the fetch request above.
-
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
-        });
-}
+init();

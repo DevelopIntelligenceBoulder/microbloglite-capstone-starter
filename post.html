@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirp Chat Site</title>
+    <link rel="stylesheet" href="./posts.css">
+    <script src="./auth.js"></script>
+    <script>
+     if (isLoggedIn() === true) window.location.replace("/posts");
+    </script>
+    <script src="./posts.js"></script>
+</head>
+
+<body>
+    <div class="side-nav">
+        <img class="profile-picture" src="./image/town 3.jpg" alt="Profile Picture">
+        <a href="#">Home</a>
+        <a href="./Profile.html">Profile</a>
+        <a href="#">Messages</a>
+    </div>
+
+    <div class="content">
+        <a href="./index.html">LOGOUT</a>
+        <fieldset id="chirp">
+            <legend>Send a Chirp</legend>
+            <label>
+                <input value="" id="message" placeholder="message text">
+                <input type="button" value="POST" onclick="post(message.value)">            
+            </label>
+        </fieldset>
+
+        <h1>POSTS</h1>
+        <select id="userList">
+            <option value="">Find User </option>
+        </select>
+        <div id="results"></div>
+    </div>
+
+    <div class="trending">
+        <h2>What's Trending</h2>
+        <ul>
+            <li>Jeffrey Epstein documents unsealed, was Bryce involved?!?</li>
+            <li>Pancakes or waffles</li>
+            <li>It's ok to lie to your psychologist</li>
+            <li>GTA6 Leaked</li>
+            
+        </ul>
+    </div>
+</body>
+
+</html>

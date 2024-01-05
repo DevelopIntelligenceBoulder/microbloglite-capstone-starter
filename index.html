@@ -1,148 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-
-    <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="./global.css">
-
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="./landing.css">
-
-    <title>Login to the Microblog Network!</title>
-
-    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
-    <script src="./auth.js"></script>
-    <script>
-        if (isLoggedIn() === true) window.location.replace("/posts");
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+  <title>Login to the Microblog Network!</title>
 </head>
 <body>
+  <header>
+    <h1>Welcome to South Site</h1>
+  </header>
+  <main>
 
-    <header>
+    <form class="modal-content animate" action="/action_page.php" method="post">
 
-        <h1>Welcome to  South site</h1>
-     
-    </header>
-
-    <main>
-
-
-          
-          <form class="modal-content animate" action="/action_page.php" method="post">
-            
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
+      <div class="imgcontainer">
+    
         <form id="login">
-            <div>
+          <div>
             <div class="container">
-                <h2> Login form</h2>
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-        
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-                <br>
-              <button type="submit">Login</button>
+              <h2> Login form</h2>
+              <input type="text" placeholder="Enter Username"id="username">
+              <label for="username"><b>Username</b></label>
+              <input type="password" placeholder="Enter Password" id="password">
+              <label for="password"><b>Password</b></label>
+              <br>
+              <button class="log" type="button" onclick="login()">Log in</button>
               <br><br>
 
               <label>
-                
+
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>
-              <br>
-                <!-- <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
-              <span class="psw">Forgot <a href="#">password?</a></span>
+
             </div>
-          </form>
-        </div>
-        
-        <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        </script>
-        
-        </body>
-    </main>
+        </form>
+      </div>
+
+
+</body>
+</main>
 <style>
-
- h1 { 
+  h1 {
     text-decoration: rgb(255, 255, 255);
-  color: rgb(228, 34, 34);
-  
-    
-}
+    color: rgb(228, 34, 34);
 
-.overlay-form {
+
+  }
+
+  .overlay-form {
     width: 100%;
     max-width: 280px;
     margin: 0 auto;
-}
-html{
+  }
+
+  html {
 
     height: 100%;
-}
-body {
-  background : url("./images/South_ParkBG.png");
-  position: relative;
+  }
+
+  body {
+    background: url("./images/South_ParkBG.png");
+    position: relative;
     opacity: 0.65;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-}
+  }
 
-input{
- margin-bottom: 1em;
+  input {
+    margin-bottom: 1em;
 
-}
- header{
+  }
+
+  header {
     text-align: center;
     margin-top: 5rem;
- }
+  }
 
-.container{
-  width: 330px;
-  background: #ededed;
-  text-align: center;
-  border-radius: 5px;
-  padding: 35px 35px 35px 35px;
+  .container {
+    width: 330px;
+    background: #ededed;
+    text-align: center;
+    border-radius: 5px;
+    padding: 35px 35px 35px 35px;
 
-}
+  }
 
 
-footer{
-  color: black;
-  text-align: center;
-}
- 
+  footer {
+    color: black;
+    text-align: center;
+  }
 </style>
 
-
-
-<footer>
-<p></p>
-</footer>
-
-
-    <!-- Page-specific code -->
-    <script src="./landing.js"></script>
 </body>
+
 </html>
