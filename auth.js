@@ -44,9 +44,7 @@ function login (loginData) {
         .then(loginData => {
             if (loginData.message === "Invalid username or password") {
                 console.error(loginData)
-                // Here is where you might want to add an error notification 
-                // or other visible indicator to the page so that the user is  
-                // informed that they have entered the wrong login info.
+                alert("Invalid username or password");
                 return null
             }
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
