@@ -19,6 +19,16 @@ body{
     background-color: #E8DFE0;
     cursor: url('./images/person-hiking-solid-db-lg.svg'), default !important;
 }
+ 
+code, .nav-link, .dropdown-item{
+    font-size: 1.35em;
+}
+.navbar-brand{
+    font-size: 1.55em;
+}
+.offcanvas-title{
+    font-size: 1.95em;
+}
 
 .navbar-expand-md, footer{
     background-color: #8d9b6a9f !important;
