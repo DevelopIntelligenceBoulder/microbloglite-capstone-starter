@@ -69,7 +69,6 @@ function login (loginData) {
     .then(loginData => {
         window.localStorage.setItem("login-data", JSON.stringify(loginData));
         window.location.assign("postpage2.html");  // redirect
-        console.log(loginData);
         return loginData;
     });
 }
