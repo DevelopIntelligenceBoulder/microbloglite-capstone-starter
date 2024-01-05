@@ -1,30 +1,160 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.form{
+.form {
     background: #fff;
     border-radius: 6px;
     max-width: 430px;
     width: 100%;
     padding: 30px;
+}
+
+header {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.form .field {
+    border-radius: 6px;
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.field input {
+    outline: none;
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.field input:focus {
+    border-bottom-width: 2px;
+}
+
+.field input {
+    border: 1px solid#cacaca;
+    padding: 0 15px;
+}
+
+.field button,
+.field input[type="submit"] {
+    color: #fff;
+    background-color: rgb(205, 15, 177);
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.field button:hover,
+.field input[type="submit"]:hover {
+    background-color: rgb(64, 58, 58)
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: grey;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: rgb(90, 36, 205);
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+    box-shadow: none;
+}
+
+.hr-text:before {
+    content: '';
+    /* use the linear-gradient for the fading effect
+     use a solid background color for a solid bar */
+    background: linear-gradient(to right, transparent, #f12be8, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: rgb(175, 34, 163);
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+   
+    color: #818078;
+    background-color: #fcfcfa;
+}
+
+/* .line-container hr {
+    position: static;
+} */
+
+.line {
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+
+}
+
+.or {
+    color: black;
+    position: relative;
+}
+
+/* .line::before{
+    content: 'Or';
+    position: absolute;
+    top: 71%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: black;
+    padding:0 15px;
+} */
+
+media-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.facebook {
+    background-color: #4267b2;
+    color: #fff;
+}
+
+button.google {
+    background-color: #42b24f;
+    color: #fff;
 }
