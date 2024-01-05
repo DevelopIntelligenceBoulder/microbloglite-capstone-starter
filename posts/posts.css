@@ -1,9 +1,5 @@
 /* Posts Page CSS */
 
-.body {
-    padding: 0;
-}
-
 .logo-container{
     display: flex;
     justify-content: center;
