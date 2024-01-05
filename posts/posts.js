@@ -22,14 +22,13 @@ function getAllPosts() {
   // note: the api variable is defined in auth.js
   let element = document.getElementById("postList")
 
-  fetch(apiBaseURL + "/api/posts", options)
+  fetch(apiBaseURL + "/api/posts?limit=5000", options)
     .then(response => response.json())
     .then(data => {
       let html = ''
       for (let index = 0; index < data.length; index += 1) {
         let post = data[index]
-
-
+        
         if (post.username.includes("Smurf") && post.text.includes("pic" || "Pic")) {
           // let profilePage = ''
           // switch (post.username){
@@ -52,7 +51,7 @@ function getAllPosts() {
                             <p class="Likes"><span style="font-weight: bolder;">Likes: ${post.likes.length}</span></p>
                             <p class="card-text"><a href="http://127.0.0.1:5500/profile/${post.username}.html" style="color:inherit"><span style="font-weight: bolder;">${post.username}</span></a> : ${post.text}</p>
                             <img src="/posts/Images/${post.username}.jpeg" class="card-img-top" alt="Image Placeholder">
-                            <button value = "${post._id}" onclick = "addLike()">Like Post</button>
+                            <button onclick="addLike(${post._id})">Like Post</button>
                             <button >Unlike Post</button>
                             </div>
                             </div>
@@ -62,6 +61,7 @@ function getAllPosts() {
 
         }
         else if (post.username.includes("Smurf") && !post.text.includes("Pic" || "pic")) {
+          
           html += `
                       <br><br>
                       <div class="d-flex justify-content-center">
@@ -100,7 +100,7 @@ function getAllPosts() {
     });
 }
 
-function addLike() {
+function addLike(postId) {
   const loginData = getLoginData();
   const options = {
     method: "GET",
