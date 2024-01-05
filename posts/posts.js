@@ -24,17 +24,17 @@ window.addEventListener("click", function (event) {
   }
 });
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   let storedImgURL = localStorage.getItem("profilePicURL");
-  if(storedImgURL) {
+  if (storedImgURL) {
     let imageDisplay = document.getElementById("accImg");
     let storyDisplay = document.getElementById("storyImg");
-    let postDisplay = this.document.getElementById("postBoxImg")
+    let postDisplay = this.document.getElementById("postBoxImg");
     imageDisplay.src = storedImgURL;
     storyDisplay.src = storedImgURL;
     postDisplay.src = storedImgURL;
   }
-})
+});
 
 window.onload = () => {
   // Get ID from HTML
@@ -43,10 +43,9 @@ window.onload = () => {
   let postBtnEl = document.getElementById("postBtn");
 
   // Emoji JS
-  
 
   // Fetch to Show Username
-  fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/')
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/");
 
   // Event Listener to Post
   postBtnEl.addEventListener("click", (e) => {
@@ -57,43 +56,37 @@ window.onload = () => {
       text: textAreaEl.value,
     };
 
-  
-
     // Fetch Posts
 
     const loginData = getLoginData();
 
- 
+    fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${loginData.token}`,
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((res) => res.json())
+      .then((newPost) => {
+        let newPostDiv = document.createElement("div");
+        newPostDiv.classList.add("card");
+        newPostDiv.textContent = newPost.message;
 
-      fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${loginData.token}`,
-        },
-        body: JSON.stringify(postData),
+        postsContainerEl.appendChild(newPostDiv);
+
+        textAreaEl.value = "";
       })
-        .then((res) => res.json())
-        .then((newPost) => {
-          let newPostDiv = document.createElement("div");
-          newPostDiv.classList.add("card");
-          newPostDiv.textContent = newPost.message;
-
-          postsContainerEl.appendChild(newPostDiv);
-
-          textAreaEl.value = "";
-        })
-        .catch((err) => {
-          console.error("Error", err);
-        });
+      .catch((err) => {
+        console.error("Error", err);
+      });
   });
 
-  
   // Get All Posts
 
   function getAllPosts() {
-   
     const loginData = getLoginData();
     const options = {
       method: "GET",
@@ -109,7 +102,7 @@ window.onload = () => {
       .then((posts) => {
         let postsContainerEl = document.getElementById("postsContainer");
         postsContainerEl.innerHTML = "";
-        
+
         posts.forEach((post) => {
           let postEl = document.createElement("div");
           postEl.classList.add("card");
@@ -122,8 +115,36 @@ window.onload = () => {
           postTextEl.classList.add("post-text");
           postTextEl.innerHTML = post.text;
 
+          // Like Button
+          let likeBtn = document.createElement("button");
+          likeBtn.innerHTML = "Like &#x2665;";
+          likeBtn.classList.add("iconBtn", "likeBtn");
+
+          // Unlike Button
+          let unlikeBtn = document.createElement("button");
+          unlikeBtn.innerHTML = "Unlike &#x2661;";
+          unlikeBtn.classList.add("iconBtn", "unlikeBtn");
+
+          // Function to handle like button
+          function handleLikeClick() {
+            likeBtn.classList.toggle("active");
+            unlikeBtn.classList.remove("active");
+          }
+
+          // Function to handle unlike button
+          function handleUnlikeClick() {
+            unlikeBtn.classList.toggle("active");
+
+            likeBtn.classList.remove("active");
+          }
+
+          likeBtn.addEventListener("click", handleLikeClick);
+          unlikeBtn.addEventListener("click", handleUnlikeClick);
+
           postEl.appendChild(usernameEl);
           postEl.appendChild(postTextEl);
+          postEl.appendChild(likeBtn);
+          postEl.appendChild(unlikeBtn);
 
           postsContainerEl.appendChild(postEl);
         });

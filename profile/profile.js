@@ -132,29 +132,27 @@ window.onload = () => {
 
           // Like Button
           let likeBtn = document.createElement("button");
-          likeBtn.textContent = "Like";
-          likeBtn.classList.add("likeBtn");
+          likeBtn.innerHTML = "Like &#x2665;";
+          likeBtn.classList.add("iconBtn", "likeBtn");
 
           // Unlike Button
           let unlikeBtn = document.createElement("button");
-          unlikeBtn.textContent = "Unlike";
-          unlikeBtn.classList.add("unlikeBtn");
+          unlikeBtn.innerHTML = "Unlike &#x2661;";
+          unlikeBtn.classList.add("iconBtn", "unlikeBtn");
 
-          
-          // Function to handle like button 
+          // Function to handle like button
           function handleLikeClick() {
-            likeBtn.classList.toggle("active"); 
-            unlikeBtn.classList.remove("active"); 
+            likeBtn.classList.toggle("active");
+            unlikeBtn.classList.remove("active");
           }
 
-          // Function to handle unlike button 
+          // Function to handle unlike button
           function handleUnlikeClick() {
             unlikeBtn.classList.toggle("active");
 
-            likeBtn.classList.remove("active");  
+            likeBtn.classList.remove("active");
           }
 
-          
           likeBtn.addEventListener("click", handleLikeClick);
           unlikeBtn.addEventListener("click", handleUnlikeClick);
 
