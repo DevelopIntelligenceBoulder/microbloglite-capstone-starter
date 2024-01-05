@@ -42,3 +42,6 @@ Landing Landing Landing....
 Sign up below for DevSwitch the only platform where users can be themselves and switch...
 
 ![registrationScreenshot](/screen-captures/registration.PNG)
+
+# Acknowledge
+I would like to express my gratitude to [professors, mentors, or anyone who contributed to the project]. Their guidance and support have been instrumental in the successful completion of this capstone project.
