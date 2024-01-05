@@ -3,6 +3,18 @@ iframe{
     max-width: 100%;
 }
 
+img {
+    max-width: 100%;
+}
+
+a {
+    max-width: fit-content;
+}
+
+#delete-btn {
+    z-index: 1;
+}
+
 @media screen and (min-width: 768px) {
   .md-card:nth-of-type(even) {
     margin-bottom: 10px;
