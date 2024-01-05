@@ -21,13 +21,9 @@ function signUp(signUpData) {
                 throw new Error("Error in sign up");
             }
 
-            window.location.assign("login.html");
-                // redirect
-                console.log(signUp);
-                return signUp;
-            });
+            window.location.assign("login.html"); // redirect
 
-            return response.json();
+            });
         }
     
 
