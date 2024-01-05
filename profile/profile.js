@@ -27,7 +27,7 @@ function logoutAndRedirect() {
 function newPostItem() {
   const newPostTitle = document.getElementById("titleHm").value
   const newPostBody = document.getElementById("description").value
-  const newPostText = `${newPostTitle} ${newPostBody}`.trim()
+  const newPostText = `Title: "${newPostTitle}" | Description: "${newPostBody}"`.trim()
 
   // Authentication Token  
   const loginData = getLoginData()
