@@ -1,35 +1,38 @@
 /* Global CSS for all pages */
 
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
+    /* Sizing helper */
     box-sizing: border-box;
-
-    /* 
-       Vizualization helper: While styling or debugging your HTML & CSS, 
-       uncomment the rule below to see all the boxes on your page more
-       clearly! (Remove this outline before submitting: users won't 
-       want to see it!)
-    */
-    /* outline: 1px dotted black; */
 }
 
 :root {
     font-size: 1rem;
 }
+nav *, code, header h1{
+    font-family: 'Caveat', cursive;
+}
 
+h1, body, footer{
+    font-family: 'Varela Round', sans-serif;
+}
 body{
     background-color: #E8DFE0;
-    cursor: url('./images/person-hiking-solid-ru-lg.svg'), auto !important;
+    cursor: url('./images/person-hiking-solid-db-lg.svg'), default !important;
 }
 
-.navbar-expand-md{
-    background-color: #8d9b6ac4 !important;
+.navbar-expand-md, footer{
+    background-color: #8d9b6a9f !important;
+    backdrop-filter: blur(10px) !important;
 }
-.dropdown-menu, .dropdown-item, .dropdown-item:hover{
-    background-color: #B4BE9D !important;
+.dropdown-menu, .dropdown-item, .dropdown-item:hover, .offcanvas.show{
+    background-color: #8d9b6a!important;
 }
-.offcanvas{
-    background-color: #8d9b6a !important;
+.offcanvas.show{
+    overflow-y: visible;
+    height: 100vh;
+}
+.offcanvas-body, .dropdown-menu{
+    text-align: center;
 }
 code, .nav-link, .navbar-brand, .offcanvas-title, .dropdown-item{
     color: #E3D477 !important;
@@ -37,8 +40,19 @@ code, .nav-link, .navbar-brand, .offcanvas-title, .dropdown-item{
 .nav-link:hover, .navbar-brand:hover, .dropdown-item:hover{
     color: #8F5B34!important;
 }
-.nav-link.active, .dropdown-item.active{
+.nav-link.active, .dropdown-item.active, footer{
     color: #53361e !important;
+}
+.dropdown-menu-right {
+    right: 0 !important;
+    left: auto !important;
+    padding: 0 5px;
+}
+#logout-btn:hover{
+    cursor: url('./images/moon-stars-fill.svg'), auto !important;
+}
+a:hover, input:hover, textarea:hover, button:hover{
+    cursor: url('./images/mountain-solid-y.svg'), auto !important;
 }
 
 main{
@@ -71,14 +85,9 @@ main{
 }
 footer {
     text-align: center;
-}
-#logout-btn:hover{
-    cursor: url('./images/moon-stars-fill.svg'), auto !important;
-}
-a:hover, input:hover, textarea:hover, button:hover{
-    cursor: url('./images/mountain-solid-y.svg'), auto !important;
-}
-.dropdown-menu-right {
-    right: 0 !important;
-    left: auto !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    margin: 0;
 }
