@@ -1,6 +1,6 @@
 "use strict";
 
-const loginForm = document.querySelector("#register");
+const registerForm = document.querySelector("#register");
 
 registerForm.onsubmit = function (event) {
     // Prevent the form from refreshing the page,
@@ -12,12 +12,13 @@ registerForm.onsubmit = function (event) {
     const registrationData = {
         username: registerForm.username.value,
         password: registerForm.password.value,
-        fullname: registerForm.fullname.value,
+        fullName: registerForm.email.value,
     }
 
     // Disables the button after the form has been submitted already:
-    registerForm.registerButton.disabled = true;
+    //registerForm.registerButton.disabled = false;
 
     // Time to actually process the login using the function from auth.js!
     register(registrationData);
+  
 };
