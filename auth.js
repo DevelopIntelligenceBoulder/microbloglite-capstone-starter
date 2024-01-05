@@ -49,29 +49,41 @@ function login(loginData) {
 }
 
 // register function
+
+/// This line declares a function named register that takes registerData as a parameter.
 function register(registerData) {
-  // POST /api/users
-  const options = {
-    method: "POST",
-    headers: {
-      // This header specifies the type of content we're sending.
-      // This is required for endpoints expecting us to send
-      // JSON data.
-      "Content-Type": "application/json",
-      
-    },
-    body: JSON.stringify(registerData),
-  };
 
-  return fetch(apiBaseURL + "/api/users", options)
-    .then((response) => response.json())
-    .then((registerData) => {
-      console.log(registerData);
-      window.location.assign("/landing");  // redirect to login
+  /// POST request to /api/users with user registration data
+   const options = {
+     method: "POST",
+     headers: {
+       // This header specifies the type of content we're sending.
+       // This is required for endpoints expecting us to send
+       // JSON data.
+       "Content-Type": "application/json", 
+     },
+     body: JSON.stringify(registerData),
+   };
+ 
+ //Here, it prepares the options object for a POST request. It sets the method to "POST,"
+  //specifies the content type as JSON, and converts registerData into a JSON string for the request body.
+  
+ /// Send the registration request to the server
+   return fetch(apiBaseURL + "/api/users", options)
+     .then((response) => response.json())
+     .then((registerData) => {
+       console.log(registerData);
+       window.location.assign("/landing"); // redirect to login
+ 
+       return registerData;
+     });
+ }
+ //This block uses the Fetch API to send a POST request to the server endpoint ("/api/users") with the provided options. 
+ //It then processes the response, logs it to the console, redirects to "/landing" if successful, and returns the registration data.
+ 
 
-      return registerData;
-    });
-}
+ 
+ 
 
 // This is the `logout()` function you will use for any logout button
 // which you may include in various pages in your app. Again, READ this
