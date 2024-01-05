@@ -27,15 +27,26 @@
         if (!isLoggedIn()) window.location.replace("/");
     </script>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../posts/images/seedling-solid.svg">
+
+    <!-- Google fonts for title and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Varela+Round&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16">
-                    <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z" />
+                </svg>
                 Nature's Nook
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -55,13 +66,17 @@
                         </li>
                         <!-- logout button in nav dropdown with profile page -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href=".index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              User
+                            <a class="nav-link dropdown-toggle" href=".index.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                User
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a class="dropdown-item nav-link active" href="./index.html">Profile</a></li>
-                                <li><hr class="dropdown-divider"></li>                    
-                                <li><a class="dropdown-item nav-link" id="logout-btn" href="../index.html">Logout</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item nav-link" id="logout-btn" href="../index.html">Logout</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -70,68 +85,70 @@
         </div>
     </nav>
 
-<div class="hero-image p-3">
-    
-    <main>
-        <div>
-            <!-- a place for a quote on the profile page-->
-            <figure class="text-center">
-                <blockquote class="blockquote">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </figcaption>
-            </figure>
-        </div>
+    <div class="hero-image p-3">
 
-        <div class="row" >
+        <main>
+            <div>
+                <!-- a place for a quote on the profile page-->
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Someone famous in <cite title="Source Title">Source Title</cite>
+                    </figcaption>
+                </figure>
+            </div>
 
-            <div class="col-12 col-md-4 p-5 text-center">
-                <!-- image for the profile page, want it to be next to the blog post-->
-                <div class="card" style="width: 18rem; height: 500px; opacity: 75%;">
-                    <img src="images/userPhoto.png" style="height: 215px; width: 285px;" class="card-img-top" alt="Photo of the Authorof this blog">
-                    <div class="card-body">
-                        <h5 class="card-title">Author's Name</h5>
-                        <p class="card-text">Fill in a bio about yourself</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Favorite thing about nature</li>
-                        <li class="list-group-item">Favorite nature place</li>
-                        <li class="list-group-item">Favorite nature activity</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">www.authorsname.com</a>
-                        <br>
-                        <a href="#" class="card-link">authorsname@gmail.com</a>
+            <div class="row">
+
+                <div class="col-12 col-md-4 p-5 text-center">
+                    <!-- image for the profile page, want it to be next to the blog post-->
+                    <div class="card" style="width: 18rem; height: 500px; opacity: 75%;">
+                        <img src="images/userPhoto.png" style="height: 215px; width: 285px;" class="card-img-top"
+                            alt="Photo of the Authorof this blog">
+                        <div class="card-body">
+                            <h5 class="card-title">Author's Name</h5>
+                            <p class="card-text">Fill in a bio about yourself</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Favorite thing about nature</li>
+                            <li class="list-group-item">Favorite nature place</li>
+                            <li class="list-group-item">Favorite nature activity</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">www.authorsname.com</a>
+                            <br>
+                            <a href="#" class="card-link">authorsname@gmail.com</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 p-5">
-                <form id="publish-form" style="width: 53rem; opacity: 75%;">
-                    <!--textbox for the blogpost-->
+                <div class="col-12 col-md-4 p-5">
+                    <form id="publish-form" style="width: 53rem; opacity: 75%;">
+                        <!--textbox for the blogpost-->
 
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Enter your blog post here." id="blog-post"
-                            type="text" style="height: 500px"></textarea>
-                        <label for="blog-post">Enter your blog post here.</label>
-                    </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Enter your blog post here." id="blog-post"
+                                type="text" style="height: 500px"></textarea>
+                            <label for="blog-post">Enter your blog post here.</label>
+                        </div>
 
-                    
-                    <!-- <label for="blog-post"></label>
+
+                        <!-- <label for="blog-post"></label>
                 <textarea id="blog-post" type="text" placeholder="Enter your blog post here."></textarea> -->
-                    <div class="text-center">
-                        <input type="submit" value="Drafts" />
+                        <div class="text-center">
 
-                        <input type="submit" value="Save" />
+                            <input type="submit" value="Drafts" />
 
-                        <input type="submit" value="Publish" />
-                    </div>
-                </form>
+                            <input type="submit" value="Save" />
+
+                            <input type="submit" value="Publish" />
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </main>
-</div>
+        </main>
+    </div>
     <footer>
         <p>&copy;A.L.R Blog</p>
     </footer>

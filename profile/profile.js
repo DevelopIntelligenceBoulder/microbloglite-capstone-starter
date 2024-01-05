@@ -10,7 +10,7 @@ window.onload = () => {
         // Preventing the default form submission to avoid a page reload.
         e.preventDefault();
 
-        let postData = { 
+        let postData = {
             text: blogPostInputEl.value,
         };
 
@@ -19,11 +19,11 @@ window.onload = () => {
             //save the draft to local starage
             saveDraft(postData);
         } else if (e.submitter.value === "Drafts") {
-                //save the draft to local starage
-                getDrafts(postData);
+            //save the draft to local starage
+            getDrafts(postData);
         } else {
-         //publsh the post using fetch API
-         publishPost(postData);
+            //publsh the post using fetch API
+            publishPost(postData);
         }
     };
 
@@ -45,7 +45,7 @@ window.onload = () => {
     function publishPost(postData) {
         const loginData = getLoginData();
         // publishing the post to the api
-        fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", { 
+        fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -54,18 +54,18 @@ window.onload = () => {
 
             body: JSON.stringify(postData),
         })
-            .then((res)=>res.json())
-            .then((newBlogPost)=> {
+            .then((res) => res.json())
+            .then((newBlogPost) => {
                 console.log(newBlogPost);
 
 
-            //     location.href = `/posts.html?id=${newBlogPost.id}`;
-             });
+                //     location.href = `/posts.html?id=${newBlogPost.id}`;
+            });
     }
 
     // grabbing a logout button from HTML and using the auth.js logout function
     let logoutBtn = document.getElementById("logout-btn");
     logoutBtn.onclick = () => {
-    logout();
+        logout();
     }
 }
