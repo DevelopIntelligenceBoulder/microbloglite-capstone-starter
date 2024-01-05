@@ -1,106 +1,157 @@
-/* Posts Page JavaScript */
-
 "use strict";
 
+let userData;
+
 window.onload = () => {
-    fetchAllPosts();
-}
+  fetchAllPosts();
+};
 
 function fetchAllPosts() {
+  const token = getLoginData().token;
 
-    const userData = getLoginData();
-
-    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts', {
-        method: "GET",
-        headers: {
-            // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyMDc0NjMsImV4cCI6MTcwNDI5Mzg2M30.n8oVcxSiSLcKnj9DFV9BiBAeDQCTwrOxr97b7Rx33co"
-                Authorization: `${userData.token}`
-        }
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=18", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => response.json())
+    .then((allPosts) => {
+      console.log(allPosts);
+      displayAllPosts(allPosts);
     })
-    .then(res => res.json())
-    .then(allPosts => {
-        console.log(allPosts);
-        displayAllPosts(allPosts);
-    })
-    .catch(error => {
-        console.error("THIS AIN'T WORKING", error);
+    .catch((error) => {
+      console.error("Failed to fetch posts", error);
     });
 }
 
-function likePost(postId){
-    console.log(`this is the post being liked`, postId)
-    const userData = getLoginData();
+function likePost(postId) {
+  console.log(`Liking post with ID: ${postId}`);
+  const token = getLoginData().token;
 
-let bodyObject = {
-    postId: postId
-}
-    fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes', {
-        method: "POST",
-        headers: {
-            "mode": "no-cors", 
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyMDc0NjMsImV4cCI6MTcwNDI5Mzg2M30.n8oVcxSiSLcKnj9DFV9BiBAeDQCTwrOxr97b7Rx33co"
-             //    Authorization: `${userData.token}`
-        },
-        body: JSON.stringify(bodyObject)
+  const bodyObject = {
+    postId: postId,
+  };
+
+  fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(bodyObject),
+  })
+    .then((response) => {
+      response.json();
     })
-    .then(res => res.json())
-    .then(likedPost => {
-        console.log(likedPost);
+    .then((likedPost) => {
+      console.log(likedPost);
+      fetchAllPosts();
+    })
+    .catch((error) => {
+      console.error("Failed to like the post:", error);
+    });
+}
+
+function unlikePost(likeId) {
+    console.log(`Unliking post with Like ID: ${likeId}`);
+    const token = getLoginData().token;
+
+    fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/likes/${likeId}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+    .then(response => response.json())
+    .then(unlikedPost => {
+        console.log(unlikedPost);
         fetchAllPosts();
     })
+    .catch(error => {
+        console.error("Failed to unlike the post:", error);
+    });
 }
 
 function deletePost(postId) {
-    console.log('Deleting post with ID:', postId);
-    const userData = getLoginData();
+  const token = getLoginData().token;
+  const apiUrl = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`;
 
-    // get post data to check for username 
-    if (!userData.username) {
-       console.error(`YOU DONT HAVE PERMISSION TO DELETE THIS POST`)
-       return; 
-    }
-
-    const apiUrl = `http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/${postId}`;
-
-    fetch(apiUrl, {
-        method: "DELETE",
-        headers: {
+  // Fetch post data to check for the creator
+  fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => response.json())
+    // CHECKING TO SEE IF LOGGED IN USERNAME MATCHES THE PERSON WHO CREATED IT
+    .then((postData) => {
+      if (getLoginData().username === postData.username) {
+        // If yes, proceed with the delete request
+        return fetch(apiUrl, {
+          method: "DELETE",
+          headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            // "Authorization": `Bearer ${userData.token}`
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW4xMjMiLCJpYXQiOjE3MDQyMDc0NjMsImV4cCI6MTcwNDI5Mzg2M30.n8oVcxSiSLcKnj9DFV9BiBAeDQCTwrOxr97b7Rx33co"
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      } else {
+        const card = document.getElementById(`postCard_${postId}`);
+        if (card) {
+          const errMsg = document.createElement("p");
+          errMsg.innerHTML = "You don't have permission to delete this post.";
+          errMsg.style.color = "red";
+          card.appendChild(errMsg);
         }
+        // THIS WILL STOP CODE FROM CONTINUING AND MOVE ON TO THE CATCH ERROR
+        throw new Error("Permission denied");
+      }
     })
-    .then(response => { 
-        response.json() 
+    .then(() => {
+      // IF POST CAN DELETE, THIS WILL RUN
+      const card = document.getElementById(`postCard_${postId}`);
+      if (card) {
+        card.remove();
+      }
     })
-    .then(deletedPost => {
-        console.log(`Post with ID ${postId} deleted successfully.`, deletedPost);
-        fetchAllPosts();
-    })
-    .catch(error => {
-        console.error('Error deleting post:', error);
+    .catch((error) => {
+      console.error("Error deleting post", error);
     });
 }
-
 
 function displayAllPosts(allPosts) {
-    let allPostContainer = document.getElementById("allPostContainer");
 
-    allPosts.map(post => {
-        allPostContainer.innerHTML += `
-        <div class="card">
-            <div class="card-body">
-                <h3>${post.text}</h3>
-                <p> By: ${post.username}</p>
-                <p>Likes: ${post.likes.length}</p>
-                <button class="btn btn-dark text-light" onclick="likePost('${post._id}')">Like</button>
-                <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">Delete Post</button> 
-                </div>
-        </div>
+    let allPostContainer = document.getElementById("allPostContainer");
+    
+  
+    allPosts?.forEach(post => {
+       
+        const card = document.createElement('div');
+        card.className = 'card mb-3';
+        
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        cardBody.innerHTML = `
+
+            <h3 class="card-title">${post.text}</h3>
+            <p class="card-text">By: ${post.username}</p>
+            <p class="card-text">Likes: ${post.likes.length}</p>
+            <p class="card-text">Created at: ${post.createdAt}</p>
+            <button class="btn btn-dark text-light" onclick="likePost('${post._id}')">❤️ Like</button>
+            <button class="btn btn-dark text-light" onclick="deletePost('${post._id}')">🗑️ Delete Post</button>
         `;
-    });
+
+    card.appendChild(cardBody);
+    // giving card id value -- with this we're able to do getElementById.
+    card.id = `postCard_${post._id}`;
+    allPostContainer.appendChild(card);
+  });
 }
 
+// adding 
