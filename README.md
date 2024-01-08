@@ -25,6 +25,10 @@ Welcome to Bookface, your go-to social media platform designed exclusively for w
 
 ![loadingAnimation](screen-captures/loading%20animation.gif)
 
+### Validation
+
+![valiation](./screen-captures/validation.png)
+
 ## Registration Page
 
 ![registrationScreenshot](./screen-captures/register.png)
@@ -52,9 +56,18 @@ Welcome to Bookface, your go-to social media platform designed exclusively for w
 
 ### Returning promises for more readable and logical code
 
-`Auth.js/login`
+ `landing.js/loginhandler` Demonstration
+
+
+```javascript
+// loads until a successfull login or failed login
+setLoadingState();
+login(loginData).then(successRedirect).catch(setFailureState);
+```
+`Auth.js/login` Implementation
 
 Returns a promise allowing failure and success logic to be handled uniquely on a page by page basis. Additionally allows for more clean and readable code
+
 
 ```javascript
 // Saves login data if success and throws an error otherwise
@@ -64,14 +77,4 @@ return await fetch(API_URL + "/auth/login", options)
     if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
     else throw new Error("Login failed with code: " + userData.statusCode);
   });
-```
-
-`landing.js/loginhandler`
-
-Login handling on landing page
-
-```javascript
-// loads until a successfull login or failed login
-setLoadingState();
-login(loginData).then(successRedirect).catch(setFailureState);
 ```
