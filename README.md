@@ -1,7 +1,5 @@
 # Bookface
 
-Overview:
-
 Welcome to Bookface, your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, Bookface is the place to be.
 
 > Created by: [Jonathan Groberg](https://github.com/joncgroberg)
@@ -17,12 +15,19 @@ Welcome to Bookface, your go-to social media platform designed exclusively for w
 
 ![terms](./screen-captures/landing&login.png)
 
-- Users see the face of booface
 - Ability to log in or create account
+- Intutitive and leave user interface design
+- Intuitive user feedback
+  - Login failure message
+  - Logging in loading animation
 
 ### User feedback/ Loading animation
 
 ![loadingAnimation](screen-captures/loading%20animation.gif)
+
+### Validation
+
+![valiation](./screen-captures/validation.png)
 
 ## Registration Page
 
@@ -51,25 +56,25 @@ Welcome to Bookface, your go-to social media platform designed exclusively for w
 
 ### Returning promises for more readable and logical code
 
-`Auth.js/login`
+ `landing.js/loginhandler` Demonstration
 
-Returns a promise allowing failure and success logic to be handled uniquely on a page by page basis. Additionally allows for more clean and readable code
-```javascript
-// Saves login data if success and throws an error otherwise
-return await fetch(API_URL + "/auth/login", options)
-.then((res) => res.json())
-.then((userData) => {
-    if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
-    else throw new Error("Login failed with code: " + userData.statusCode);
-});
-```
-
-`landing.js/loginhandler`
-
-Login handling on landing page
 
 ```javascript
 // loads until a successfull login or failed login
 setLoadingState();
 login(loginData).then(successRedirect).catch(setFailureState);
+```
+`Auth.js/login` Implementation
+
+Returns a promise allowing failure and success logic to be handled uniquely on a page by page basis. Additionally allows for more clean and readable code
+
+
+```javascript
+// Saves login data if success and throws an error otherwise
+return await fetch(API_URL + "/auth/login", options)
+  .then((res) => res.json())
+  .then((userData) => {
+    if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
+    else throw new Error("Login failed with code: " + userData.statusCode);
+  });
 ```
