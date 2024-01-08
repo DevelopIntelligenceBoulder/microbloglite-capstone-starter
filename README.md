@@ -1,61 +1,75 @@
+# Bookface
 
-# DevSwitch
 Overview:
 
-Welcome to DevSwitch, your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, DevSwitch is the place to be.
+Welcome to Bookface, your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, Bookface is the place to be.
 
-Project Description:
+> Created by: [Jonathan Groberg](https://github.com/joncgroberg)
+> , [Armanie Feliciano](https://github.com/MrRobut98), and [Xabier Jones](https://github.com/l3tsgititzay)
 
- DevSwitch is your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, DevSwitch is the place to be
+### Links
 
-Key Founders:
-[Xabier Jones]
-[Jonathan Groberg]
-[Armanie Feliciano]
+> [Bookface API docs](http://microbloglite.us-east-2.elasticbeanstalk.com/docs/)
 
- [*DevSwitch* API docs](http://microbloglite.us-east-2.elasticbeanstalk.com/docs/)
+> [Bookface Wiki](https://github.com/JonCGroberg/microbloglite-capstone-starter/wiki/)
 
-[Dev Wiki](https://github.com/JonCGroberg/microbloglite-capstone-starter/wiki/)
+## Landing page
 
+![terms](./screen-captures/landing&login.png)
 
+- Users see the face of booface
+- Ability to log in or create account
 
-# Landing page/Login page
-![terms](https://github.com/JonCGroberg/microbloglite-capstone-starter/assets/146864064/4b411068-4feb-43eb-8d1b-e894983bf2a3)
+### User feedback/ Loading animation
 
-Landing Landing Landing....
--Users see the face of DevSwitch
--Ability to log in or create account
+![loadingAnimation](screen-captures/loading%20animation.gif)
 
+## Registration Page
 
-# Registration Page
-![registrationScreenshot](/screen-captures/registration.PNG)
-Sign up below for DevSwitch the only platform where users can be themselves and flip the switch...
+![registrationScreenshot](./screen-captures/register.png)
+
 - Create a user by inputing required values for you Name, Username, and Password
 - If no such account exists your registrations will be successful and you will be redirected to the posts page
-- By submitting the register button you will be agreeing to our terms and conditions and privacy policy which can be viewed by clicking the hyperlinks 
+- By submitting the register button you will be agreeing to our terms and conditions and privacy policy which can be viewed by clicking the hyperlinks
 
-# Post Content Page
-![postScreenshot](/screen-captures/post.PNG)
-Here on the post page is where customers and users are able to freely post about hobbies,activities,and things they like. The post page for me was a challenge but I also was seeking one so I learned alot tackling this portion of the project. I would like to thank and send flowers to my teammates for helping me along the way and Mr. Grrrrrreg for the knowledge and guidance. 
+## Post Content Page
 
+![postScreenshot](/screen-captures/feed.png)
 
-# Profile Page 
-![profileScreenshot](/screen-captures/Profile%20-%20Copy.PNG)
+## Profile Page
+
+![profileScreenshot](/screen-captures/profile.png)
+
 - The posts page, allows developers to share their thoughts code snippets, and project updates
 - Engage with the community by liking, commenting, and sharing posts that resonate with you.
 
-# Terms and conditions/privacy page
-![terms](https://github.com/JonCGroberg/microbloglite-capstone-starter/assets/146864064/1371761b-ac14-4385-a924-a8fcf48d5e2e)
+### Loading Placeholders
 
-- Please read our terms and conditions carefully!
+![loadingProfile](./screen-captures/placeholders.png)
 
+## Notable features and code snippets
 
-# Interesting pieces of code
-Armanie 
--if (res.ok) {
-            window.location.replace("/posts/index.html"); // redirect
-            }
--"I found this code interesting because at first I was trying to redirect the page if the status was === 200 but when looking further it would be 201 or even 399 so then with jonathans help we realized you could just do the res.ok to make it redirect as long as it was a working status code"
+### Returning promises for more readable and logical code
 
-# Acknowledge
-I would like to express my gratitude to professor, or anyone who contributed to the project. Their guidance and support have been instrumental in the successful completion of this capstone project.
+`Auth.js/login`
+
+Returns a promise allowing failure and success logic to be handled uniquely on a page by page basis. Additionally allows for more clean and readable code
+```javascript
+// Saves login data if success and throws an error otherwise
+return await fetch(API_URL + "/auth/login", options)
+.then((res) => res.json())
+.then((userData) => {
+    if (userData.statusCode === 200) storeLocalUserData(userData, loginData);
+    else throw new Error("Login failed with code: " + userData.statusCode);
+});
+```
+
+`landing.js/loginhandler`
+
+Login handling on landing page
+
+```javascript
+// loads until a successfull login or failed login
+setLoadingState();
+login(loginData).then(successRedirect).catch(setFailureState);
+```
