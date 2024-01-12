@@ -78,3 +78,13 @@ return await fetch(API_URL + "/auth/login", options)
     else throw new Error("Login failed with code: " + userData.statusCode);
   });
 ```
+
+## Structure
+
+The project is organized into several directories, each containing the HTML, CSS, and JavaScript files for a specific feature of the application:
+
+- `landing/`: Contains the files for the landing page of the application.
+- `registration/`: Contains the files for the user registration feature.
+- `profile/`: Contains the files for the user profile feature.
+- `posts/`: Contains the files for the posts feature.
+
