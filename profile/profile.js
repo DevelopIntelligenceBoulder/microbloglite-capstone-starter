@@ -1,11 +1,10 @@
-// Main
 window.onload = () => {
   if (isLoggedIn()) populatePage();
   else window.location.replace("../");
 };
 
 async function populatePage() {
-  document.getElementById("logoutBtn").onclick = logout;
+  document.getElementById("logoutBtn").onclick = logout; //init logout btn
   window.deletePost = deletePost; //make this global
 
   const localUserData = await getLocalUserData(); //Auth token required to access server

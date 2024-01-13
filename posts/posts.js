@@ -1,9 +1,10 @@
-/* Posts Page JavaScript */
-"use strict";
 window.onload = () => {
-  let logoutBtn = document.getElementById("logoutBtn");
+  if (isLoggedIn()) populatePage();
+  else window.location.replace("../");
+};
 
-  logoutBtn.onclick = logout;
+function populatePage() {
+  populateMenu()
 
   const loginData = getLocalUserData();
   const options = {
@@ -18,8 +19,20 @@ window.onload = () => {
     .then((posts) => {
       let postsContainer = document.getElementById("posts");
       for (let post of posts) {
-        let div = document.createElement("div");
-        div.innerHTML = `<div class="card justify-content-center " style="width:18 rem;">
+        let postElem = createPostElem(post);
+        postsContainer.appendChild(postElem);
+      }
+    });
+}
+
+function populateMenu (){
+    document.getElementById("logoutBtn").onclick = logout; //init logout btn
+    document.getElementById("loginName").innerHTML = getLocalUserData().user
+}
+
+let createPostElem = (post) => {
+  let div = document.createElement("div");
+  div.innerHTML = `<div class="card justify-content-center " style="width:18 rem;">
           <div class="card-body ">
             <h5 class="card-title">${post.username}</h5>
             <p class="card-text" >${post.text}</p>
@@ -27,7 +40,5 @@ window.onload = () => {
             <a class="btn text-danger-emphasis">Fudge it</a>
           </div>
          </div>`;
-        postsContainer.appendChild(div);
-      }
-    });
+  return div;
 };
