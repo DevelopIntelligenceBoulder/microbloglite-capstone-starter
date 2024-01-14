@@ -27,7 +27,7 @@ function populatePage() {
 
 function populateMenu (){
     document.getElementById("logoutBtn").onclick = logout; //init logout btn
-    document.getElementById("loginName").innerHTML = getLocalUserData().user
+    document.getElementById("loginName").innerHTML = getLocalUserData().username
 }
 
 let createPostElem = (post) => {

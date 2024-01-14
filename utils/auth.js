@@ -51,4 +51,4 @@ let storeLocalUserData = (userData, loginData) =>
     ? window.localStorage.setItem("user-data", JSON.stringify(userData))
     : window.sessionStorage.setItem("user-data", JSON.stringify(userData));
 // Checks if use login token is saved locally
-let isLoggedIn = () => "token" in getLocalUserData();
+let isLoggedIn = () => getLocalUserData().token;
