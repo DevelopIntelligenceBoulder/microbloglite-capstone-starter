@@ -1,18 +1,83 @@
-/* Global CSS for all pages */
-
 * {
-    /* Sizing helper: See Workbook 1b, page 2-33. */
-    box-sizing: border-box;
-
-    /* 
-       Vizualization helper: While styling or debugging your HTML & CSS, 
-       uncomment the rule below to see all the boxes on your page more
-       clearly! (Remove this outline before submitting: users won't 
-       want to see it!)
-    */
-    /* outline: 1px dotted red; */
+    margin: 0;
+    padding: 0;
 }
 
-:root {
-    font-size: 1rem;
+/* navbar */
+
+.navbar {
+    display: flex;
+    position: fixed top;
+    padding: 10px;
+    background-color: #F9F9F9;
+    box-shadow: 0px 5px #000000;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#navbar img {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}
+
+#navbarSupportedContent {
+    padding-top: 2rem;
+    font-size: x-large;
+}
+
+/* end */
+
+body {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    background-color: #507A51;
+    background: linear-gradient(45deg, #17A7C7, #507A51) no-repeat;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    text-align: center;
+    font-size: x-large;
+    border-radius: 35px;
+    background: #F9F9F9;
+    box-shadow: 5px 5px #000000;
+    padding: 2rem;
+    width: 40rem;
+    height: 550px;
+    margin-top: 5rem;
+    margin-bottom: 20rem;
+}
+
+.form-control {
+    font-size:large;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+button {
+    font-size: x-large;
+    background-color: #ffffff;
+    width: fit-content;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px #000000;
+    margin-bottom: 2rem;
+}
+
+#username,
+#fullName,
+#password {
+    width: 100%;
+    text-align: center;
 }

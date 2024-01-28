@@ -1,0 +1,128 @@
+.navbar {
+  display: flex;
+  position: fixed top;
+  padding: 10px;
+  box-shadow: 0px 5px #000000;
+  text-align: center;
+  padding-top: 20px;
+  background-color: #ffffff;
+}
+
+#navbar img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+}
+
+#navbarSupportedContent {
+  padding-top: 2rem;
+  font-size:x-large;
+}
+
+/* end of navbar CSS */
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  background-color: #507A51;
+  background: linear-gradient(45deg, #17A7C7, #507A51) no-repeat;
+}
+
+/* start of bio-content CSS */
+
+.bio-content {
+  padding: 1rem; 
+}
+
+.column1,
+.column2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.column3,
+.column4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  text-align: left;
+}
+
+.row1,
+.row2,
+.row3 {
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* end */
+
+h4 {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.main-content {
+  text-align: center;
+  align-items: center;
+  font-size: 25px;
+  
+}
+
+.blog-container {
+  background-color: rgb(248, 248, 248);
+  box-shadow: 10px 5px 5px;
+  border-radius: 20px;
+  width: fit-content;
+
+}
+
+/* + Write a blog CSS start */
+
+#postsContainer {
+  display: none;
+  background-color: #fff;
+  font-size: x-large;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 60rem;
+  box-sizing: border-box;
+  margin-left: 35rem;
+}
+
+input,
+textarea,
+button {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+button {
+  font-size: xx-large;
+  background-color: #ffffff;
+  width: fit-content;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px #000000;
+}
+
+#title,
+#recipe,
+#date {
+  border-radius: 10px;
+}
+
+/* end */
