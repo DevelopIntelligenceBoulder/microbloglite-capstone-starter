@@ -1,1 +1,30 @@
-/* Posts Page CSS */
+a {
+    color: #F9F9F9;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    background-color: #507A51;
+    margin: 0;
+}
+
+
+.navbar {
+    position: fixed top;
+    padding: 10px;
+    background-color: #F9F9F9;
+}
+
+#navbar img {
+    display:block;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+
+}
+
+.container-fluid {
+    text-align: center;
+    border-radius: 35px;
+} 
