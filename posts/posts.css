@@ -1,1 +1,174 @@
 /* Posts Page CSS */
+
+.post {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+}
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+}
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.post-action {
+    color: gray;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: right;
+}
+
+#logout {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post {
+    border: 1px solid #dbdbdb;
+    margin: 20px 0;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.post-username {
+    font-weight: bold;
+    color: #262626;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+.post-action {
+    font-size: 24px;
+    color: #262626;
+}
+
+.post-likes {
+    padding: 0 16px;
+    font-weight: bold;
+    color: #262626;
+}
+
+.post-caption {
+    display: flex;
+    align-items: center;
+    padding: 0 16px 16px;
+}
+
+.post-caption-username {
+    font-weight: bold;
+    color: #262626;
+    margin-right: 8px;
+}
+
+.post-caption-text {
+    color: #262626;
+}
+
+/* Style the card elements */
+.card {
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Style the card header */
+.card-header {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #f44336;
+}
+
+/* Style the card body */
+.card-body {
+    padding: 10px;
+}
+
+/* Style the post text */
+.card-body h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the post date */
+.card-body p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Style the post image */
+.card-body img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Style the link element */
+a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #f44336;
+    border-radius: 5px;
+}
+
+/* Change the link color on hover */
+a:hover {
+    background-color: #ff5722;
+}
+
+img {
+    border-radius: 50%;
+  }
