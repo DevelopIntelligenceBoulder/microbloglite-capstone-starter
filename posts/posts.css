@@ -1,1 +1,8 @@
 /* Posts Page CSS */
+#tempNav{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    
+}

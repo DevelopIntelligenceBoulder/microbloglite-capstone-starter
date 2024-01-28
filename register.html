@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="./global.css" />
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="./landing.css" />
+
+    <link rel="stylesheet" href="./register.css" />
+
+    <title>Create an Account</title>
+
+    <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
+    <script src="./auth.js"></script>
+    <script>
+      if (isLoggedIn() === true) window.location.replace("/posts");
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <div class="first">
+          <h1>Welcome to <code>InstaSmurf</code></h1>
+        </div>
+
+        <div class="second">
+          <form id="register">
+            <div>
+              <!-- <label for="username">Username</label> -->
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="fullName"></label> -->
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="username">Username</label> -->
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                minlength="3"
+              />
+            </div>
+
+            <div>
+              <!-- <label for="password">Password</label> -->
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                minlength="6"
+              />
+            </div>
+
+            <button id="registerButton" type="submit">Register</button>
+
+            <!-- <span>
+              <p>___________________</p>
+              OR
+              <p>___________________</p>
+            </span> -->
+
+            <!-- <div class="fb">
+              <img src="fb-logo.png" alt="facebook logo">
+              <h5>Log in with Facebook</h5>
+            </div> -->
+
+            <!-- <small>Forgot password?</small> -->
+          </form>
+        </div>
+        
+        <div class="sub">
+          <p>Already have an account? <span><a href="index.html">Log in.</a></span></p>
+          <div id="registration-confirmation"></div>
+        </div>
+        <!-- <div class="apps">
+          <p>Get the app.</p>
+          <div class="images">
+            <img src="app-store.png" alt="apple store image">
+            <img src="google-play.png" alt="google play image">
+          </div>
+        </div> -->
+        <!-- <div class="footer">
+          <span>Meta</span>
+          <span>About</span>
+          <span>Blog</span>
+          <span>Jobs</span>
+          <span>Help</span>
+          <span>API</span>
+          <span>Privacy</span>
+          <span>Terms</span>
+          <span>Top Accounts</span>
+          <span>Hashtags</span>
+          <span>Locations</span>
+          <span>InstaSmurf Lite</span>
+          <span>Contact Uploading & Non-Users</span>
+        </div> -->
+      </div>
+    </section>
+
+    <footer></footer>
+
+    <!-- Page-specific code -->
+    <!-- <script src="./landing.js"></script> -->
+    <script src="register.js"></script>
+  </body>
+</html>

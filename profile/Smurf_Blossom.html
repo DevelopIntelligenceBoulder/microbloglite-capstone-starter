@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="./profile.js"></script>
+
+
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <script src='https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+  <link rel="stylesheet" href="./profile.css">
+
+  <title>Profile Page</title>
+
+  <script src="../auth.js"></script>
+  <script>
+    if (isLoggedIn() === false) window.location.replace("/")
+    //window.location.replace() method -redirect the browser to 
+    //new page, replacing the current page in the browser's history
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <div id="snippetContent">
+      <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+      <div class="container bootstrap snippets bootdeys">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="panel rounded shadow">
+              <div class="panel-body">
+                <div class="inner-all">
+                  <ul class="list-unstyled">
+                    <li class="text-center">
+                      <img data-no-retina="" class="img-circle img-responsive img-bordered-priBlossom"
+                        src="./profile_media/5a.jpg" alt="Blossom Smurf">
+                    </li>
+                    <li class="text-center">
+                      <h4 class="text-capitalize">Blossom Smurf</h4>
+                      <p class="text-muted text-capitalize"> 🏹 Archery | 💙 Family | 🍓 Gardening </p>
+                    </li>
+                    <li> <a href="./index.html" class="btn btn-success text-center btn-block">My Profile</a></li>
+                    <li><br></li>
+                    <li>
+                      <div class="btn-group-vertical btn-block">
+                        <a href="" class="btn btn-default"> <i class="fa fa-cog pull-right"></i>Edit Account</a>
+                        <button class="btn btn-default" id="logoutBtn" onclick="logoutAndRedirect()">
+                          <i class="fa fa-sign-out pull-right"></i>Logout</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+            <div class="panel panel-theme rounded shadow">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h3 class="panel-title">Contact</h3>
+                </div>
+                <div class="pull-right"> <a href="#" class="btn btn-sm btn-success"><i class="fa fa-facebook"></i></a>
+                  <a href="#" class="btn btn-sm btn-success"><i class="fa fa-twitter"></i></a>
+                  <a href="#" class="btn btn-sm btn-success"><i class="fa fa-google-plus"></i></a>
+                </div>
+                <div class="clearfix">
+
+                </div>
+              </div>
+              <div class="panel-body no-padding rounded">
+                <ul class="list-group no-margin">
+                  <li class="list-group-item"><i class="fa fa-envelope mr-5"></i> Baby_Blue@Outlook.com</li>
+                  <li class="list-group-item"><i class="fa fa-globe mr-5"></i> www.Smurf_Turf.com</li>
+                  <li class="list-group-item"><i class="fa fa-phone mr-5"></i> +1 303 xxx xxxx</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel panel-theme rounded shadow">
+              <div class="panel-heading">
+                <div class="pull-left">
+                  <h3 class="panel-title">Top Friends</h3>
+                </div>
+                <br>
+
+                <div class="clearfix"></div>
+
+              </div>
+              <div class="panel-body no-padding rounded">
+
+                <ul class="list-group no-margin">
+                  <li class="list-group-item" 
+                  style="margin: auto; text-align: center; padding: 10px 35px 10px 35px">
+                    <div class="containerFriends">
+                      <a href="./index4.html">
+                        <img src="./profile_media/3a.jpg" class="circular-image">
+                        </a>
+                    </div>Smurfette
+                  </li>
+
+                  <li class="list-group-item"
+                  style="margin: auto; text-align: center; padding: 10px 35px 10px 35px">
+                    <div class="containerFriends">
+                      <a href="./index5.html">
+                        <img src="./profile_media/4a.png" class="circular-image">
+                        </a>
+                    </div>Clumsy Smurf
+                  </li>
+
+                  <li class="list-group-item"
+                  style="margin: auto; text-align: center; padding: 10px 35px 10px 35px">
+                    <div class="containerFriends">
+                      <a href="./index2.html">
+                        <img src="./profile_media/2a.jpg" class="circular-image">
+                        </a>
+                    </div>Brainy Smurf
+                  </li>
+
+                  <li class="list-group-item"
+                  style="margin: auto; text-align: center; padding: 10px 35px 10px 35px">
+                    <div class="containerFriends">
+                      <a href="./index.html">
+                        <img src="./profile_media/1a.jpg" class="circular-image">
+                        </a>
+                    </div>Papa Smurf
+                  </li>
+                </ul>
+
+                <div> <a href="" class="btn btn-success text-center btn-block">More Friends</a></div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+
+
+          <div class="col-lg-9 col-md-9 col-sm-8">
+            <div class="profile-cover">
+              <div class="cover rounded shadow no-overflow">
+                <div class="inner-cover">
+                  <div class="btn-group cover-menu-mobile hidden-lg hidden-md open">
+                    <button type="button" class="btn btn-theme btn-sm dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="true"> <i class="fa fa-bars"></i> </button>
+                    <div class="dropdown-backdrop"></div>
+                    <ul class="dropdown-menu pull-right no-border" role="menu">
+                      <li class="active"><a href="#"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                      <li><a href="#"><i class="fa fa-fw fa-user"></i> <span>About</span></a></li>
+                      <li><a href="#"><i class="fa fa-fw fa-photo"></i> <span>Photos</span> <small>(98)</small></a></li>
+                      <li><a href="#"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>(23)</small></a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-fw fa-envelope"></i> <span>Messages</span> <small>(7
+                            new)</small></a></li>
+                    </ul>
+                  </div>
+                  <img src="./profile_media/tim1.jpg" class="img-responsive full-width" alt="cover"
+                    style="max-height: 600px;">
+                </div>
+                <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu">
+                  <li class="active"><a href="#"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                  <li><a href="#"><i class="fa fa-fw fa-user"></i> <span>About</span></a></li>
+                  <li><a href="#"><i class="fa fa-fw fa-photo"></i> <span>Photos</span> <small>(98)</small></a></li>
+                  <li><a href="#"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>(23)</small></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel rounded shadow">
+
+
+              <div class="divider"></div>
+              <div class="panel rounded shadow">
+                <form id="media-form" style="padding: 20px">
+                  <div class="upload">
+                    <textarea class="form-control input-lg no-border" type="text" rows="1" id="titleHm" name="titleHm"
+                      placeholder="Title?" required></textarea>
+                    <textarea class="form-control input-lg no-border" type="text" rows="2" id="description"
+                      name="description" placeholder="What would you like to share?"></textarea>
+                  </div>
+
+                  <div class="panel-footer" style="padding-bottom: 30px">
+                    <button type="submit" class="btn btn-success pull-right mt-5" id="postBtn">POST</button>
+
+                    <ul class="nav nav-pills">
+                      <li><a href="#"><i class="fa fa-user"></i></a></li>
+                      <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
+                      <li><a href="#"><i class="fa fa-camera"></i></a></li>
+                      <li><a href="#"><i class="fa fa-smile-o"></i></a></li>
+                    </ul><!-- /.nav nav-pills -->
+
+                  </div><!-- /.panel-footer -->
+                  <div id=newPost></div>
+                </form>
+
+              </div><!-- /.panel -->
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="panel panel-success rounded shadow">
+                    <div class="panel-heading no-border">
+                      <div class="pull-left half">
+                        <div class="media">
+                          <div class="media-object pull-left">
+                            <img src="./profile_media/5a.jpg" alt="..." style="height: 75px; width: 75px"
+                              class="img-circle img-post">
+                          </div>
+                          <div class="media-body">
+                            <a href="#" class="media-heading block mb-0 h4 text-green">Blossom Smurf</a>
+                            <span class="text-green h6">on 31st December, 2023</span>
+                          </div>
+                        </div>
+                      </div><!-- /.pull-left -->
+                      <div class="pull-right">
+                        <a href="#" class="text-green h4"><i class="fa fa-heart"></i> 11</a>
+                      </div><!-- /.pull-right -->
+                      <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding">
+                      <h4>Friends Keep You True Blue! (●◡●)</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat
+                        porro.
+                      </p>
+                      <img src="./profile_media/6a.jpg" alt="..." class="img-responsive full-width"
+                        style=" margin: auto; padding: 10px;">
+
+                      <div class="panel panel-success rounded shadow" style="margin: 2px; padding: 2px;">
+                        view all <a href="#">7 comments</a>
+                      </div><!-- /.inner-all -->
+
+                      <div class="panel panel-success rounded shadow" style="margin: 5px">
+                        <div class="panel-footer no-padding no-border">
+                          <div class="line no-margin"></div><!-- /.line -->
+                          <div class="media inner-all no-margin">
+                            <div class="pull-left">
+                              <img src="./profile_media/2a.jpg" alt="..." class="img-post2">
+                            </div><!-- /.pull-left -->
+                            <!-- <div class="panel panel-success rounded shadow" style="margin: 5px"> -->
+                            <div class="media-body">
+
+                              <a href="./index3.html" class="h4">Brainy Smurf</a>
+                              <small class="block text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </small>
+                              <em class="text-xs text-muted">Posted on <span class="text-danger">Dec 31,
+                                  2023</span></em>
+                            </div><!-- /.media-body -->
+
+
+                            <div class="line no-margin"></div><!-- /.line -->
+                            <div class="media inner-all no-margin">
+                              <div class="pull-left">
+                                <img src="./profile_media/4a.png" alt="..." class="img-post2">
+                              </div><!-- /.pull-left -->
+                              <div class="media-body">
+                                <a href="./index5.html" class="h4">Clumsy Smurf</a>
+                                <small class="block text-muted">Quaerat, impedit minus non commodi facere doloribus nemo
+                                  ea voluptate nesciunt deleniti.</small>
+                                <em class="text-xs text-muted">Posted on <span class="text-danger">Jan 01,
+                                    2024</span></em>
+                              </div><!-- /.media-body -->
+                            </div><!-- /.media -->
+                            <!-- </div>/.panel-body -->
+                          </div><!-- /.media -->
+
+
+                          <form action="#" class="form-horizontal">
+                            <div class="form-group has-feedback no-margin">
+                              <input class="form-control" type="text" placeholder="Your comment here...">
+                              <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
+                            </div>
+                          </form>
+                        </div><!-- /.panel-footer -->
+                      </div><!-- /.panel -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="panel panel-success rounded shadow">
+                    <div class="panel-heading no-border">
+                      <div class="pull-left half">
+                        <div class="media">
+                          <div class="media-object pull-left">
+                            <img src="./profile_media/5a.jpg" alt="..." style="height: 75px; width: 75px"
+                              class="img-circle img-post">
+                          </div>
+                          <div class="media-body">
+                            <a href="./index3.html" class="media-heading block mb-0 h4 text-green">Blossom Smurf</a>
+                            <span class="text-green h6">on 1st January, 2024</span>
+                          </div>
+                        </div>
+                      </div><!-- /.pull-left -->
+                      <div class="pull-right">
+                        <a href="#" class="text-green h4"><i class="fa fa-heart"></i> 25</a>
+                      </div><!-- /.pull-right -->
+                      <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding">
+                      <div class="inner-all block">
+                        <h4>View My Vacation :D</h4>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat
+                          porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias
+                          aperiam voluptatibus quia aliquid! Sed, minima.
+                        </p>
+                        <blockquote class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A,
+                          delectus!</blockquote>
+
+                        <img data-no-retina="" src="./profile_media/mo1.jpg" alt="..." width="250"
+                          style="margin: 10px; height: 150px">
+                        <img data-no-retina="" src="./profile_media/mo2.jpg" alt="..." width="250"
+                          style="margin: 10px; height: 150px">
+                        <img data-no-retina="" src="./profile_media/mo3.jpg" alt="..." width="250"
+                          style="margin: 10px; height: 150px">
+                      </div><!-- /.inner-all -->
+
+                      <div class="panel panel-success rounded shadow" style="margin: 2px; padding: 2px;">
+                        view all <a href="#">7 comments</a>
+                      </div>
+
+                      <div class="panel panel-success rounded shadow" style="margin: 5px">
+
+
+                        <div class="panel-footer no-padding no-border">
+                          <div class="media inner-all no-margin">
+                            <div class="pull-left">
+                              <img src="./profile_media/3a.jpg" alt="..." class="img-post2">
+                            </div><!-- /.pull-left -->
+                            <div class="media-body">
+                              <a href="./index4.html" class="h4">Smurfette</a>
+                              <small class="block text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </small>
+                              <em class="text-xs text-muted">Posted on <span class="text-danger">Jan 01,
+                                  2024</span></em>
+                            </div><!-- /.media-body -->
+                          </div><!-- /.media -->
+                          <div class="line no-margin"></div><!-- /.line -->
+                          <div class="media inner-all no-margin">
+                            <div class="pull-left">
+                              <img src="./profile_media/5a.jpg" alt="..." class="img-post2">
+                            </div><!-- /.pull-left -->
+                            <div class="media-body">
+                              <a href="./index3.html" class="h4">Blossom Smurf</a>
+                              <small class="block text-muted">Quaerat, impedit minus non commodi facere doloribus nemo
+                                ea voluptate nesciunt deleniti.</small>
+                              <em class="text-xs text-muted">Posted on <span class="text-danger">Jan 02,
+                                  2024</span></em>
+                            </div><!-- /.media-body -->
+                          </div><!-- /.media -->
+                          <div class="line no-margin"></div><!-- /.line -->
+
+                          <form action="#" class="form-horizontal inner-all">
+                            <div class="form-group has-feedback no-margin">
+                              <input class="form-control" type="text" placeholder="Your comment here...">
+                              <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
+                            </div>
+                          </form><!-- /.form-horizontal -->
+                        </div><!-- /.panel-footer -->
+                      </div>
+                      <!-- </div>/.panel-body -->
+                    </div><!-- /.panel -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <section id="postList"></section>
+          <a href="/posts" class="btn btn-success text-center btn-block"
+            style="margin: auto; width: 30%; margin-bottom: 50px">All Posts</a>
+
+  </main>
+  <footer style="text-align: center; margin: 25px">Copyright &copy; Team Blue InstaSmurf 2024</footer>
+
+
+  <script src="./profile.js"></script>
+</body>
+
+</html>
