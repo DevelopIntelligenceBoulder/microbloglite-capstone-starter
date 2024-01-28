@@ -1,0 +1,70 @@
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  background: url('/images/medcuisine.jpg') no-repeat;
+  background-size: cover;
+  background-color: #507A51;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%; 
+  margin: auto; 
+}
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed top;
+  padding: 10px;
+  background-color: #F9F9F9;
+}
+
+#navbar img { 
+  display: block; 
+  width: 140px; 
+  height: 140px; 
+  margin: auto; 
+
+} 
+
+.container-fluid {
+  text-align: center;
+  border-radius: 35px;
+  background: #F9F9F9;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px; 
+  margin-top: 200px;
+  width: 30rem;
+  height: 500px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#username {
+  margin-bottom: 30px;
+}
+
+#password {
+  margin-bottom: 50px;
+}
+
+#loginButton {
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  background: #507A51;
+  border-radius: 50px;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 50px;
+}
+
