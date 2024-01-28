@@ -1,1 +1,32 @@
-/* Landing Page CSS */
+h1{
+    display: flex;
+    justify-content: center;   
+}
+
+button{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: flex;
+    justify-content: center;  
+}
+
+html{
+    background-image: url("https://giphy.com/embed/84SFZf1BKgzeny1WxQ");
+    background-size: fill;
+}
+
+
+
+
+
+
+body{
+   background-image: url(photos/giphylogin.gif);
+   background-size: 1200px;
+}
+
+
