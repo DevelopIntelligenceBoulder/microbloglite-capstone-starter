@@ -1,12 +1,14 @@
+import * as auth from "../utils/auth.js"
+
 window.onload = () => {
-  if (isLoggedIn()) populatePage();
+  if (auth.isLoggedIn()) populatePage();
   else window.location.replace("../");
 };
 
 function populatePage() {
   populateMenu()
 
-  const loginData = getLocalUserData();
+  const loginData = auth.getLocalUserData();
   const options = {
     method: "GET",
     headers: {
@@ -14,7 +16,7 @@ function populatePage() {
     },
   };
 
-  fetch(API_URL + "/api/posts", options)
+  fetch(auth.API_URL + "/api/posts", options)
     .then((response) => response.json())
     .then((posts) => {
       let postsContainer = document.getElementById("posts");
@@ -26,8 +28,8 @@ function populatePage() {
 }
 
 function populateMenu (){
-    document.getElementById("logoutBtn").onclick = logout; //init logout btn
-    document.getElementById("loginName").innerHTML = getLocalUserData().username
+    document.getElementById("logoutBtn").onclick = auth.logout; //init logout btn
+    document.getElementById("loginName").innerHTML = auth.getLocalUserData().username
 }
 
 let createPostElem = (post) => {

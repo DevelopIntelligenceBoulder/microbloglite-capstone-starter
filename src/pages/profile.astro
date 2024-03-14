@@ -1,0 +1,256 @@
+---
+import "../styles/global.css";
+import Page from "../layouts/Page.astro";
+
+const title = "Profile | Bookface";
+---
+
+<Page title={title}>
+	<script>
+		import "../js/profile.js";
+	</script>
+	<nav class="navbar navbar-expand-sm shadow-sm bg-dark-subtle py-0">
+		<div class="container-fluid px-4" style="max-width: 1200px">
+			<a class="navbar-brand" href="#top">Bookface</a>
+			<button
+				class="navbar-toggler d-lg-none my-3"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#collapsibleNavId"
+			>
+				<span class="bi bi-list"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavId">
+				<div
+					class="navbar-nav w-100 px-5 px-sm-0 justify-content-evenly justify-content-md-start text-center nav-underline gap-1 gap-sm-0"
+				>
+					<a class="nav-link p-3" href="../posts/">Explore</a>
+					<a class="nav-link p-3" href="../posts/">Feed</a>
+					<a class="nav-link p-3 active border-primary" href="#top">Profile</a>
+				</div>
+
+				<div class="nav-item w-fit-content mx-auto py-3 ps-3">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle nav-link"
+							href="#top"
+							id="dropdownId"
+							data-bs-toggle="dropdown"
+							><span id="usernameLabel"
+								><i class="bi-person-fill"></i>
+								<span id="loginName"></span>
+							</span></a
+						>
+						<div
+							class="dropdown-menu dropdown-menu-sm-end shadow-sm"
+							aria-labelledby="dropdownId"
+						>
+							<!-- <btn class="dropdown-item btn" href="#top"> <i class="bi bi-gear-fill pe-1"></i> <span>Settings</span> </btn> -->
+							<a class="dropdown-item btn" href="#top">
+								<i class="bi bi-person-fill pe-2"></i><span>Profile</span></a
+							>
+							<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-people-fill pe-2"></i><span>Friends</span></btn> -->
+							<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-heart-fill pe-2"></i> <span>Likes</span> </btn> -->
+							<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-bookmark-fill pe-2"></i><span>Saved</span></btn> -->
+							<btn class="dropdown-item btn" id="logoutBtn">
+								<i class="bi bi-x-circle-fill pe-1"></i>
+								<span>Logout</span></btn
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<section class="bg-body-secondary py-5 shadow">
+			<div class="container-fluid mx-auto px-4" style="max-width: 1200px">
+				<div class="row gap-3 m-0">
+					<div
+						class="col align-content-center mx-auto"
+						style="
+                max-width: 200px;
+                max-width: 200px;
+                min-width: 200px;
+                min-height: 200px;
+              "
+					>
+						<i
+							class="bi bi-person-fill row h-100 align-content-center justify-content-center bg-dark shadow"
+							style="font-size: xx-large"></i>
+					</div>
+					<div class="col-12 text-center text-sm-start col-sm">
+						<div class="row gap-3">
+							<div class="col col-md-col placeholder-glow">
+								<h1 id="fullname" class="p-0 m-0 text-capitalize">
+									<span class="placeholder col-6 placeholder-sm"></span>
+								</h1>
+								<h5 id="username" class="m-0 p-0 text-secondary-emphasis">
+									<span class="placeholder col-4 placeholder-xs bg-secondary"
+									></span>
+								</h5>
+							</div>
+							<div class="col-12 col-md align-self-start">
+								<button
+									class="btn btn-primary py-1 px-2 float-md-end rounded-0"
+								>
+									<i class="bi bi-pencil-fill small"></i><span class="">
+										edit profile</span
+									>
+								</button>
+							</div>
+							<div class="col-12">
+								<div id="about">
+									<span
+										class="placeholder col-8 placeholder-lg bg-secondary"
+										style="height: 4rem"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid my-4 px-4" style="max-width: 1200px">
+			<div class="row gap-2 m-0">
+				<article
+					class="card col-sm-2 col-12 shadow"
+					style="min-height: 100px; min-width: 10rem"
+				>
+				</article>
+				<div class="col-sm col-12">
+					<div id="cardHolder" class="row gap-2">
+						<article
+							class="container card shadow placeholder bg-body-tertiary placeholder-glow"
+						>
+							<div class="row">
+								<div class="col-12 px-0">
+									<div class="card-header">
+										<div class="d-flex flex-wrap">
+											<div class="bi bi-person-fill" style="font-size: x-large">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row">
+										<div class="col-12">
+											<div class="card-body">
+												<div class="placeholder col-12"></div>
+											</div>
+										</div>
+										<div class="col-12 p-0">
+											<div class="card-footer py-1 gap-3">
+												<div class="col-12">
+													<a class="btn btn-sm bi-heart"></a>
+													<a class="btn btn-sm bi-repeat"></a>
+													<a class="btn btn-sm bi-share"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article
+							class="container card shadow placeholder bg-body-tertiary placeholder-glow"
+						>
+							<div class="row">
+								<div class="col-12 px-0">
+									<div class="card-header">
+										<div class="d-flex flex-wrap gap-1">
+											<div class="bi bi-person-fill" style="font-size: x-large">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row">
+										<div class="col-12">
+											<div class="card-body">
+												<div class="placeholder col-12"></div>
+											</div>
+										</div>
+										<div class="col-12 p-0">
+											<div class="card-footer py-1 gap-3">
+												<div class="col-12">
+													<a class="btn btn-sm bi-heart"></a>
+													<a class="btn btn-sm bi-repeat"></a>
+													<a class="btn btn-sm bi-share"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article
+							class="container card shadow placeholder bg-body-tertiary placeholder-glow"
+						>
+							<div class="row">
+								<div class="col-12 px-0">
+									<div class="card-header">
+										<div class="d-flex flex-wrap gap-1">
+											<div class="bi bi-person-fill" style="font-size: x-large">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row">
+										<div class="col-12">
+											<div class="card-body">
+												<div class="placeholder col-12"></div>
+											</div>
+										</div>
+										<div class="col-12 p-0">
+											<div class="card-footer py-1 gap-3">
+												<div class="col-12">
+													<a class="btn btn-sm bi-heart"></a>
+													<a class="btn btn-sm bi-repeat"></a>
+													<a class="btn btn-sm bi-share"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article
+							class="container card shadow placeholder bg-body-tertiary placeholder-glow"
+						>
+							<div class="row">
+								<div class="col-12 px-0">
+									<div class="card-header">
+										<div class="d-flex flex-wrap gap-1">
+											<div class="bi bi-person-fill" style="font-size: x-large">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row">
+										<div class="col-12">
+											<div class="card-body">
+												<div class="placeholder col-12"></div>
+											</div>
+										</div>
+										<div class="col-12 p-0">
+											<div class="card-footer py-1 gap-3">
+												<div class="col-12">
+													<a class="btn btn-sm bi-heart"></a>
+													<a class="btn btn-sm bi-repeat"></a>
+													<a class="btn btn-sm bi-share"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Page>
