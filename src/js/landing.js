@@ -1,5 +1,7 @@
+import * as auth from "../utils/auth.js";
+
 window.onload = () => {
-  if (isLoggedIn() === true) window.location.replace("../posts");
+  if (auth.isLoggedIn()) window.location.replace("../posts");
   else loginHandler();
 };
 
@@ -19,7 +21,7 @@ function loginHandler() {
 
     event.preventDefault();
     setLoadingState();
-    login(loginData).then(successRedirect).catch(setFailureState);
+    auth.login(loginData).then(successRedirect).catch(setFailureState);
   };
 
   // Actions
