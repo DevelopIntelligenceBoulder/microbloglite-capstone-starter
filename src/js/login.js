@@ -1,4 +1,5 @@
 import * as auth from "../utils/auth.js";
+export {loginHandler}
 
 window.onload = () => {
   if (auth.isLoggedIn()) window.location.replace("../posts");
