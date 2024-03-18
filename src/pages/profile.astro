@@ -6,11 +6,11 @@ import Navbar from "../components/Navbar.astro";
 const title = "Profile";
 ---
 
-<Page title={title}>
+<Page currentPage={title}>
 	<script>
 		import "../js/profile.js";
 	</script>
-	<Navbar title={title}/>
+	<Navbar currentPage={title} />
 	<main>
 		<section class="bg-body-secondary py-5 shadow">
 			<div class="container-fluid mx-auto px-4" style="max-width: 1200px">
@@ -60,7 +60,10 @@ const title = "Profile";
 				</div>
 			</div>
 		</section>
-		<section class="container-fluid my-4 px-4" style="max-width: 1200px">
+		<section
+			class="container-fluid my-4 px-4"
+			style="max-width: 1200px"
+		>
 			<div class="row gap-2 m-0">
 				<article
 					class="card col-sm-2 col-12 shadow"
