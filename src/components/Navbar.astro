@@ -1,7 +1,7 @@
 ---
 const { currentPage } = Astro.props;
 
-const checkIfNeedUnderline = (page: string) => {
+const underlineIfNeeded = (page: string) => {
 	return page == currentPage
 		? "nav-link p-3 active border-primary"
 		: "nav-link p-3";
@@ -28,9 +28,9 @@ const profileLink = () => {
 			<div
 				class="navbar-nav w-100 px-5 px-sm-0 justify-content-evenly justify-content-md-start text-center nav-underline gap-1 gap-sm-0"
 			>
-				<a class={checkIfNeedUnderline("Explore")} href="/posts/">Explore</a>
-				<a class={checkIfNeedUnderline("Feed")} href="/posts/">Feed</a>
-				<a class={checkIfNeedUnderline("Profile")} href="/profile">Profile</a>
+				<a class={underlineIfNeeded("Explore")} href="/posts/">Explore</a>
+				<a class={underlineIfNeeded("Feed")} href="/posts/">Feed</a>
+				<a class={underlineIfNeeded("Profile")} href="/profile">Profile</a>
 			</div>
 
 			<div class="nav-item w-fit-content mx-auto py-3 ps-3">
