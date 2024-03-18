@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Page from "../layouts/Page.astro";
+import Feed from "../components/Feed.astro";
 
 const title = "Feed";
 ---
@@ -11,6 +12,7 @@ const title = "Feed";
 		<div class="row align-items-center col-12 mx-auto">
 			<div id="posts" class="col-12 mx-auto"></div>
 		</div>
+		<Feed/>
 	</main>
 	<script>
 		import "../js/posts.js";
