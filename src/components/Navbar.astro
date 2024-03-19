@@ -1,70 +1,40 @@
 ---
-const { currentPage } = Astro.props;
+import UserSettingsDropDown from "../components/UserSettingsDropDown.jsx";
 
+const { currentPage } = Astro.props;
 const underlineIfNeeded = (page: string) => {
 	return page == currentPage
 		? "nav-link p-3 w-100 active border-primary"
 		: "nav-link p-3 w-100";
 };
-
 const profileLink = () => {
 	return currentPage != "Profile" ? "/profile" : "#top";
 };
-
 ---
 
 <nav class="navbar navbar-expand-sm shadow-sm bg-dark-subtle py-0">
 	<div class="container-fluid px-4" style="max-width: 1200px">
-		<a class="navbar-brand p-0 m-0" style="min-width:125px" href="#top">Bookface</a>
+		<a class="navbar-brand p-0 m-0" style="min-width:125px" href="#top"
+			>Bookface</a
+		>
 		<button
 			class="navbar-toggler d-lg-none my-3"
 			type="button"
 			data-bs-toggle="collapse"
 			data-bs-target="#collapsibleNavId"
-
 		>
 			<span class="bi bi-list"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavId">
 			<div
-				class="navbar-nav w-100 px-0 justify-content-evenly justify-content-start text-center nav-underline gap-1 gap-sm-0 mx-auto "
+				class="navbar-nav w-100 px-0 justify-content-evenly justify-content-start text-center nav-underline gap-1 gap-sm-0 mx-auto"
 				style="max-width: 100%;"
 			>
 				<a class={underlineIfNeeded("Explore")} href="/posts/">Explore</a>
 				<a class={underlineIfNeeded("Feed")} href="/posts/">Feed</a>
 				<a class={underlineIfNeeded("Profile")} href="/profile">Profile</a>
 			</div>
-
-			<div class="nav-item w-fit-content mx-auto py-3 text-center " style="min-width: 125px;" >
-				<div class="dropdown ps-2" >
-					<a
-						class="dropdown-toggle nav-link text-center float-sm-end "
-						href="#top"
-						id="dropdownId"
-						data-bs-toggle="dropdown"
-						><span id="usernameLabel"
-							><i class="bi-person-fill"></i>
-							<span id="loginName"></span>
-						</span></a
-					>
-					<div
-						class="dropdown-menu dropdown-menu-sm-end shadow-sm"
-						aria-labelledby="dropdownId"
-					>
-						<!-- <btn class="dropdown-item btn" href="#top"> <i class="bi bi-gear-fill pe-1"></i> <span>Settings</span> </btn> -->
-						<a class="dropdown-item btn" href={profileLink()}>
-							<i class="bi bi-person-fill pe-2"></i><span>Profile</span></a
-						>
-						<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-people-fill pe-2"></i><span>Friends</span></btn> -->
-						<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-heart-fill pe-2"></i> <span>Likes</span> </btn> -->
-						<!-- <btn class="dropdown-item btn" href="#"> <i class="bi bi-bookmark-fill pe-2"></i><span>Saved</span></btn> -->
-						<btn class="dropdown-item btn" id="logoutBtn">
-							<i class="bi bi-x-circle-fill pe-1"></i>
-							<span>Logout</span></btn
-						>
-					</div>
-				</div>
-			</div>
+			<UserSettingsDropDown client:only profileLink={profileLink()} />
 		</div>
 	</div>
 </nav>

@@ -25,9 +25,9 @@ const Prompt = (props) => {
 	}
 	return (
 		<article className="card shadow bg-dark-subtle p-0">
-			<div className="card-body px-4">
-				<div className="row">
-					<div className="col-auto py-4">
+			<div className="card-body container m-0 p-0 py-3">
+				<div className="row mx-3 py-3">
+					<div className="col-auto">
 						<div
 							className="bi bi-person-fill bg-secondary p-1 "
 							style={{
@@ -49,15 +49,15 @@ const Prompt = (props) => {
 				</div>
 			</div>
 
-			<div className="container">
-				<div className="row pb-3 px-4">
+			<div className="container card-footer ">
+				<div className="row px-1 py-0">
 					<button
 						type="submit"
 						onClick={() => {
 							handlePost(message);
 							setMessage("");
 						}}
-						className="btn btn-primary btn-sm"
+						className="btn btn-primary"
 					>
 						Post
 					</button>
