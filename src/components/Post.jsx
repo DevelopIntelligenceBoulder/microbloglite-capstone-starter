@@ -4,7 +4,7 @@
 function Post({ postData, deletable = false }) {
 	console.log(postData);
 	return (
-		<article className="card container shadow ">
+		<article className="card container bg-dark-subtle">
 			<div className="row">
 				<Header postData={postData} />
 				<div className="col">
@@ -20,22 +20,22 @@ function Post({ postData, deletable = false }) {
 
 const Message = ({postData}) => (
 	<div className="col-12">
-		<div className="card-body">
-			<div className="col-12 small">{postData.text}</div>
+		<div className="px-3 py-4">
+			<div className="col-12 small ps-3">{postData.text}</div>
 		</div>
 	</div>
 );
 
 const Header = ({postData}) => (
-	<div className="col-12 px-0">
-		<div className="card-header">
+	<div className="col-12 ">
+		<div className="px-3 pt-4">
 			<div className="d-flex flex-wrap gap-3">
 				<div
 					className="bi bi-person-fill"
 					style={{ fontSize: "x-large" }}
 				></div>
 				<div className="">{postData.name}</div>
-				<div className="text-secondary-emphasis flex-grow-1">
+				<div className="text-secondary-emphasis flex-grow-1 small ">
 					@{postData.username}
 				</div>
 				<div className="small">{postData.createdAt.split("T")[0]}</div>
@@ -45,8 +45,8 @@ const Header = ({postData}) => (
 );
 
 const Footer = ({postData, deletable }) => (
-	<div className="col-12 p-0">
-		<div className="card-footer py-1 gap-3">
+	<div className="col-12 px-0">
+		<div className="px-3 pb-4 gap-3">
 			<div className="col-12">
 				<a className="bi bi-heart btn btn-sm"></a>
 				<a className="bi-repeat btn btn-sm"></a>

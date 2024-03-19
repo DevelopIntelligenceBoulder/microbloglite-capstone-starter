@@ -2,6 +2,7 @@ import * as auth from "../utils/auth.js";
 import { useState, useEffect } from "react";
 import Post from "./Post.jsx";
 import LoadingFeedTemplate from "./LoadingFeedTemplate.jsx";
+import Prompt from "./Prompt.jsx";
 
 const loginData = auth.getLocalUserData();
 const options = {
@@ -12,9 +13,7 @@ const options = {
 };
 
 function Feed() {
-	const [posts, setPosts] = useState([
-		<LoadingFeedTemplate amount={10}/>
-	]);
+	const [posts, setPosts] = useState([<LoadingFeedTemplate amount={10} />]);
 
 	useEffect(() => {
 		//Make a fetch request
@@ -27,13 +26,14 @@ function Feed() {
 
 	return (
 		<section className="container-fluid my-4">
-			<div className="row gap-2 m-0">
+			<div className="row gap-4 m-0">
 				<article
 					className="card col-sm-2 col-12 shadow"
 					style={{ minHeight: 1000 + "px", minWidth: 10 + "rem" }}
 				></article>
 				<div className="col-sm col-12">
-					<div id="cardHolder" className="row gap-2">
+					<div className="row gap-2">
+						<Prompt></Prompt>
 						{posts}
 					</div>
 				</div>
