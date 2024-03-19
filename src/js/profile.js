@@ -6,18 +6,18 @@ window.onload = () => {
 };
 
 async function populatePage() {
-	document.getElementById("logoutBtn").onclick = auth.logout; //init logout btn
-	window.deletePost = deletePost; //make this global
+	// document.getElementById("logoutBtn").onclick = auth.logout; //init logout btn
+	// window.deletePost = deletePost; //make this global
 
 	const localUserData = await auth.getLocalUserData(); //Auth token required to access server
 	const pageData = await fetchPageData(localUserData);
 
 	populateBio({ user: pageData.user });
-	populatePosts({
-		allUserPosts: pageData.allUserPosts,
-		user: pageData.user,
-		localUserData
-	});
+	// populatePosts({
+	// 	allUserPosts: pageData.allUserPosts,
+	// 	user: pageData.user,
+	// 	localUserData
+	// });
 }
 
 function populateBio({ user }) {
