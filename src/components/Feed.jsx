@@ -26,7 +26,7 @@ function Feed() {
 
 	return (
 		<section className="container-fluid my-4">
-			<div className="row gap-4 m-0">
+			<div className="row gap-2 m-0">
 				<article
 					className="card col-sm-2 col-12 shadow"
 					style={{ minHeight: 1000 + "px", minWidth: 10 + "rem" }}
