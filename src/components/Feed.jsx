@@ -44,7 +44,7 @@ function Feed({ users = "all", limit = 10 }) {
 		<section className="container-fluid mb-4">
 			<div className="row gap-2 m-0">
 				<article
-					className="card col-md-2 col-12 shadow"
+				className="card col-md-2 col-12 shadow order-md-first order-last"
 					style={{ minHeight: 100 + "px", minWidth: 10 + "rem" }}
 				></article>
 				<div className="col-sm col-12">
