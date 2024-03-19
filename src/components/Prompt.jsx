@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as utils from "../utils/auth.js";
 
-const token = await utils.getLocalUserData().token;
+const { token, username } = await utils.getLocalUserData();
 
 const Prompt = (props) => {
 	const [message, setMessage] = useState([""]);
@@ -20,7 +20,7 @@ const Prompt = (props) => {
 		fetch(utils.API_URL + "/api/posts", options).then((res) => {
 			console.log(res);
 			if (res.ok) window.location.reload();
-            else setMessage("")
+			else setMessage("");
 		});
 	}
 	return (
@@ -43,7 +43,7 @@ const Prompt = (props) => {
 								setMessage(e.target.value);
 							}}
 							value={message}
-							placeholder="What is happening near you?"
+							placeholder={`What is happening near you?`}
 						></input>
 					</div>
 				</div>
