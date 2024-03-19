@@ -1,6 +1,6 @@
 # Bookface
 
-> Currently being ported to Astro, Netlify, and React
+> Currently in the process of to react+astro components
 
 Welcome to Bookface, your go-to social media platform designed exclusively for web developers. Connect, share, and explore the world of coding with like-minded individuals. Whether you're a seasoned developer or just starting your coding journey, Bookface is the place to be.
 
