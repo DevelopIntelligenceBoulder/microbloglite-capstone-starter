@@ -18,17 +18,9 @@ function Post({ postData, deletable = false }) {
 	);
 }
 
-const Message = ({postData}) => (
-	<div className="col-12">
-		<div className="px-3 py-4">
-			<div className="col-12 small ps-3">{postData.text}</div>
-		</div>
-	</div>
-);
-
 const Header = ({postData}) => (
 	<div className="col-12 ">
-		<div className="px-3 pt-4">
+		<div className="px-3 pt-3">
 			<div className="d-flex flex-wrap gap-3">
 				<div
 					className="bi bi-person-fill"
@@ -44,9 +36,18 @@ const Header = ({postData}) => (
 	</div>
 );
 
+const Message = ({postData}) => (
+	<div className="col-12">
+		<div className="px-0 py-3">
+			<div className="col-12 small ps-3">{postData.text}</div>
+		</div>
+	</div>
+);
+
+
 const Footer = ({postData, deletable }) => (
-	<div className="col-12 px-0">
-		<div className="px-3 pb-4 gap-3">
+	<div className="col-12">
+		<div className="px-2 pb-3 gap-3">
 			<div className="col-12">
 				<a className="bi bi-heart btn btn-sm"></a>
 				<a className="bi-repeat btn btn-sm"></a>
