@@ -1,29 +1,45 @@
-import Post from "../components/Post.jsx";
+import * as auth from "../utils/auth.js";
+import { useState, useEffect } from "react";
+import Post from "./Post.jsx";
+import LoadingFeedTemplate from "./LoadingFeedTemplate.jsx";
+import Prompt from "./Prompt.jsx";
 
-function Feed(props) {
+const loginData = auth.getLocalUserData();
+const options = {
+	method: "GET",
+	headers: {
+		Authorization: `Bearer ${loginData.token}`
+	}
+};
+
+function Feed() {
+	const [posts, setPosts] = useState([<LoadingFeedTemplate amount={10} />]);
+
+	useEffect(() => {
+		//Make a fetch request
+		fetch(auth.API_URL + "/api/posts", options)
+			.then((response) => response.json())
+			.then((posts) => {
+				setPosts(posts.map((post) => <Post key={post.id} postData={post} />));
+			});
+	}, []);
+
 	return (
-		<section class="container-fluid my-4 px-4">
-			<div class="row gap-2 m-0">
+		<section className="container-fluid my-4">
+			<div className="row gap-4 m-0">
 				<article
-					class="card col-sm-2 col-12 shadow"
+					className="card col-sm-2 col-12 shadow"
 					style={{ minHeight: 1000 + "px", minWidth: 10 + "rem" }}
 				></article>
-				<div class="col-sm col-12">
-					<div id="cardHolder" class="row gap-2">
-						{repeat(<Post />, 10)}
+				<div className="col-sm col-12">
+					<div className="row gap-2">
+						<Prompt></Prompt>
+						{posts}
 					</div>
 				</div>
 			</div>
 		</section>
 	);
 }
-
-const repeat = (func, n) => {
-	let res = [];
-	for (let i = 0; i < n; i++) {
-		res.push(func);
-	}
-	return res;
-};
 
 export default Feed;
