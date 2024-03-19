@@ -25,11 +25,11 @@ function Feed() {
 	}, []);
 
 	return (
-		<section className="container-fluid my-4">
+		<section className="container-fluid mb-4">
 			<div className="row gap-2 m-0">
 				<article
 					className="card col-sm-2 col-12 shadow"
-					style={{ minHeight: 1000 + "px", minWidth: 10 + "rem" }}
+					style={{ minHeight: 100 + "px", minWidth: 10 + "rem" }}
 				></article>
 				<div className="col-sm col-12">
 					<div className="row gap-2">
