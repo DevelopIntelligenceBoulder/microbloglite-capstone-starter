@@ -19,7 +19,7 @@ Created by: [Jonathan Groberg](https://github.com/joncgroberg)
 
 ## Landing page
 
-![terms](./screen-captures/landing&login.png)
+![terms](./images/landing&login.png)
 
 - Ability to log in or create account
 - Intutitive and leave user interface design
@@ -29,15 +29,15 @@ Created by: [Jonathan Groberg](https://github.com/joncgroberg)
 
 ### User feedback/ Loading animation
 
-![loadingAnimation](screen-captures/loading%20animation.gif)
+![loadingAnimation](images/loading%20animation.gif)
 
 ### Validation
 
-![valiation](./screen-captures/validation.png)
+![valiation](./images/validation.png)
 
 ## Registration Page
 
-![registrationScreenshot](./screen-captures/register.png)
+![registrationScreenshot](./images/register.png)
 
 - Create a user by inputing required values for you Name, Username, and Password
 - If no such account exists your registrations will be successful and you will be redirected to the posts page
@@ -45,18 +45,18 @@ Created by: [Jonathan Groberg](https://github.com/joncgroberg)
 
 ## Post Content Page
 
-![postScreenshot](/screen-captures/feed.png)
+![postScreenshot](/images/feed.png)
 
 ## Profile Page
 
-![profileScreenshot](/screen-captures/profile.png)
+![profileScreenshot](/images/profile.png)
 
 - The posts page, allows developers to share their thoughts code snippets, and project updates
 - Engage with the community by liking, commenting, and sharing posts that resonate with you.
 
 ### Loading Placeholders
 
-![loadingProfile](./screen-captures/placeholders.png)
+![loadingProfile](./images/placeholders.png)
 
 ## Notable features and code snippets
 
