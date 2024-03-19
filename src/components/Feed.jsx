@@ -1,5 +1,5 @@
 import * as auth from "../utils/auth.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, StrictMode } from "react";
 import Post from "./Post.jsx";
 import LoadingFeedTemplate from "./LoadingFeedTemplate.jsx";
 import Prompt from "./Prompt.jsx";
@@ -12,15 +12,31 @@ const options = {
 	}
 };
 
-function Feed() {
+function Feed({ users = "all", limit = 10 }) {
 	const [posts, setPosts] = useState([<LoadingFeedTemplate amount={10} />]);
+
+	users = users == "all" ? "" : loginData.username;
+
+	const queryParams = new URLSearchParams();
+	queryParams.append("username", users);
+	queryParams.append("limit", limit);
+	const query = "?" + queryParams;
 
 	useEffect(() => {
 		//Make a fetch request
-		fetch(auth.API_URL + "/api/posts", options)
+		fetch(auth.API_URL + `/api/posts/${query}`, options)
 			.then((response) => response.json())
 			.then((posts) => {
-				setPosts(posts.map((post) => <Post key={post.id} postData={post} />));
+				setPosts(
+					posts.map((post) => (
+						<Post
+							key={post._id}
+							postData={post}
+							deletable={users == loginData.username ? true : false}
+							users={users ? users : null}
+						/>
+					))
+				);
 			});
 	}, []);
 
