@@ -11,9 +11,14 @@ const UserSettingsDropDown = ({ profileLink }) => {
 				id="dropdownId"
 				data-bs-toggle="dropdown"
 			>
-				<span id="usernameLabel">
-					<i className="bi-person-fill"></i>
-					<span> {username ? username : ""}</span>
+				<span id="usernameLabel" className="placeholder-glow">
+					{username ? (
+						<>
+							<i className="bi-person-fill"></i> <span> {username} </span>
+						</>
+					) : (
+						<span className=" placeholder col-12 px-5" ></span>
+					)}
 				</span>
 			</a>
 			<div

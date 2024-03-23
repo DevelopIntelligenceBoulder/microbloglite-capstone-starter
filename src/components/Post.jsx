@@ -26,7 +26,7 @@ const Header = ({ postData }) => (
 		<div className="px-3 pt-3">
 			<div className="d-flex flex-wrap gap-3">
 				<div
-					className="bi bi-person-fill"
+					className=" bi bi-person-fill border border-1 shadow-lg bg-dark px-0 py-0"
 					style={{ fontSize: "x-large" }}
 				></div>
 				<div className="">{postData.name}</div>

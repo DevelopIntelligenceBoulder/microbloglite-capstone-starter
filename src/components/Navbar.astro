@@ -27,7 +27,7 @@ const profileLink = () => {
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavId">
 			<div
-				class="navbar-nav  nav-underline gap-1 gap-sm-0 me-auto"
+				class="navbar-nav  nav-underline gap-1 gap-sm-0 text-center "
 				style="max-width: 100%;"
 			>
 				<a class={underlineIfNeeded("Explore")} href="/posts/">Explore</a>
@@ -35,7 +35,7 @@ const profileLink = () => {
 				<a class={underlineIfNeeded("Profile")} href="/profile">Profile</a>
 			</div>
 
-			<div class="nav-item w-fit-content ms-auto py-3 text-center" style="min-width: 125px;">
+			<div class="nav-item w-fit-content ms-sm-auto mx-sm-0 mx-auto  py-3 text-center" style="min-width: 125px;">
 				<UserSettingsDropDown client:only profileLink={profileLink()} />
 			</div>
 		</div>

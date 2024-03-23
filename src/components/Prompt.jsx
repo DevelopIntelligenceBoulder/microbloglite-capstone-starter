@@ -27,9 +27,9 @@ const Prompt = (props) => {
 		<article className="card shadow bg-dark-subtle p-0">
 			<div className="card-body container m-0 p-0 py-3">
 				<div className="row mx-3 py-3">
-					<div className="col-auto">
+					<div className="col-auto ">
 						<div
-							className="bi bi-person-fill bg-secondary p-1 "
+							className="bi bi-person-fill border border-1 shadow-lg bg-dark p-2"
 							style={{
 								fontSize: "xx-large"
 							}}
