@@ -1,1 +1,86 @@
 /* Landing Page CSS */
+
+body {
+    background-image: url('./assets/healthyphoto.webp');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+#help{
+  color: #ffffff;
+}
+
+#login{
+  color:#ffffff
+}
+
+.form-group{
+  margin-top: 1rem;
+}
+
+#loginButton{
+  margin-top: 1rem;
+}
+
+#registerLink{
+  margin-top: 1rem;
+}
+
+main{
+  background-color: rgba(0, 0, 0, 0.618);
+  backdrop-filter: blur(4px);
+  padding: 6rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#logo{
+ max-width: 200px;
+ margin-bottom: 20px;
+ margin-left: 15px;
+}
+
+h3 {
+  margin-top: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.h3Special {
+  color: rgb(65, 191, 113);
+}
+
+.hide {
+  display: none !important;
+}
+
+  /* light dark */
+  .lightIco, .darkIco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px 0 5px 5px;
+  }
+
+  .lightIco img, .darkIco img{
+    width: 30px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+
+  .lightIco img:hover, .darkIco img:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+
+  /* light dark end */

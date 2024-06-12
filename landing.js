@@ -22,3 +22,23 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+
+  // light/dark mode
+  let lightIco = document.getElementById('lightIco')
+  let darkIco = document.getElementById('darkIco')
+  
+    function darkMod() {
+      document.body.classList.remove('light')
+      lightIco.classList.remove('hide')
+      darkIco.classList.add('hide')
+  
+    }
+  
+    function lightMod() {
+      document.body.classList.add('light')
+      darkIco.classList.remove('hide')
+      lightIco.classList.add('hide')
+    }
+    // light/dark mode end
+  

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/POSTS</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/profile/profile.css">
+    <script src="/auth.js"></script>
+    <script src="/profile/profile.js"></script>
+    <script>
+        if (isLoggedIn() === false) window.location.replace("/index.html");
+    </script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-4-strong">
+            <div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="../posts/"><img class="homeLogo" src="../assets/fitblog-logo-tprt.png"
+                                alt="logo.png"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./profile.html">My Profile</a>
+                    </li>
+            </div>
+            <!-- logout button -->
+            <button onclick="logout()" id="logoutButton" class="btn btn-dark" type="button">logout</button>
+        </nav>
+    </header>
+
+    <!-- USER PROFILE -->
+
+    <header>
+        <h1>USER PROFILE</h1>
+    </header>
+
+    <div class="container">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col-12 col-sm-auto mb-3">
+                      <div class="mx-auto" style="width: 140px;">
+                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                          <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 id="profileTitle" class="pt-sm-2 pb-1 mb-0 text-nowrap">Edit Profile</h4>
+                        <p id="accountDate">Joined <span id="creationDate"></span></p>
+                        <button class="btn btn-primary" type="button">
+                          <i class="fa fa-fw fa-camera"></i>
+                          <span>Change Photo</span>
+                        </button>
+                      </div>
+                      <div class="text-center text-sm-right">
+                        <div class="mt-2">
+                          <button id="editButton" class="btn btn-primary" type="button">
+                            <i class="fa fa-fw fa-edit"></i>
+                            <span>Edit</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="#" class="active nav-link">Profile</a></li>
+                  </ul>
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label for="fullName">Full Name</label>
+                              <input class="form-control" type="text" id="fullName" placeholder="Full Name" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label for="username">Username</label>
+                              <input class="form-control" type="text" id="userName" placeholder="Username" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <button id="saveButton" class="btn btn-primary" type="button" disabled>
+                              <i class="fa fa-fw fa-save"></i>
+                              <span>Save</span>
+                            </button>
+                            <button id="cancelButton" class="btn btn-secondary" type="button" disabled>
+                              <i class="fa fa-fw fa-times"></i>
+                              <span>Cancel</span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </body>
+  </html>
