@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Twemoji (Twitter Emojis) -->
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Global CSS (CSS rules you want applied to all pages) -->
+    <link rel="stylesheet" href="../global.css">
+    
+    <!-- Run BEFORE page is finished loading (before window.onload): -->
+    <script src="../auth.js"></script>
+    <script>
+        if (!isLoggedIn()) window.location.replace("/");
+    </script>
+    <title>Profile</title>
+</head>
+<body class="bg-body-secondary">
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-lg text-bg-success">
+            <div class="container">
+              <a class="navbar-brand py-0" style="font-size: xx-large;" href="#">🐸</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../">Home</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section class="bg-body-secondary">
+        <div class="container">
+            <div class="row px-4 px-lg-0 align-content-end">
+                <div class="col-3 col-lg-3 col-xl-2 me-lg-3 px-2 py-4 px-lg-4 align-self-end justify-content-center">
+                    <img class="rounded-circle img-fluid" src="https://placehold.it/500" alt="Profile picture">
+                </div>
+                <div class="col p-2 p-md-4 align-self-end">
+                    <hgroup class="mb-3">
+                        <h3 class="mb-0" id="user-fullname">User FullName</h3>
+                        <p class="lead text-muted" id="username">@username</p>
+                    </hgroup>
+                </div>
+                <div class="col-12 py-2 py-lg-4 col-lg-auto align-self-end">
+                    <button type="button" class="btn btn-outline-secondary w-100">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="bg-body-tertiary">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 col-xl-2 p-4 bg-body mb-3 mb-lg-0 me-lg-3">
+                    <p id="user-bio"></p>
+                    <p>
+                        Ribbits: <strong id="num-posts">##</strong>
+                    </p>
+                </div>
+                <div class="col p-0 bg-body">
+                    <form id="post-form" class="p-4 border-bottom">
+                        <div class="mb-3">
+                            <textarea class="form-control post-field" name="text" id="post-text" rows="3" placeholder="What's on your mind?"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button name="postBtn" class="btn btn-lg btn-success fw-bold">Ribbit</button>
+                        </div>
+                    </form>
+                    <template id="ribbit-post">
+                        <div class="ribbit-post px-4 py-3 border-bottom">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                  <img class="rounded-5" width="55" src="https://placehold.it/500" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <div class="row">
+                                        <div class="col-auto pe-1">
+                                            <a class="link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="user/">
+                                                <strong id="post-author-fullname">User FullName</strong>
+                                            </a>
+                                        </div>
+                                        <div class="col p-0">
+                                            <a id="post-author-username" class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="user/">
+                                                @username
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p id="post-content">
+                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <div class="row fw-semibold text-body-secondary mb-0 gx-2 gx-lg-4">
+                                            <div class="col col-lg-auto">
+                                                <a id="post-like-btn" class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0" href="#">
+                                                    <i class="bi bi-heart"></i>
+                                                    Like
+                                                </a>
+                                            </div>
+                                            <div class="col col-lg-auto">
+                                                <a id="post-reribbit-btn"class="link-body-emphasis text-body-secondary link-underline link-underline-opacity-0" href="#">
+                                                    <i class="bi bi-repeat"></i>
+                                                    Reribbit
+                                                </a>
+                                            </div>
+                                            <div class="col col-lg-auto">
+                                                <a id="post-delete-btn" class="d-none link-danger text-danger link-underline link-underline-opacity-0" href="#">
+                                                    <i class="bi bi-x-circle"></i>
+                                                    Delete
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right;"><img src="" width="100" alt="My Image" /></div>
+    </main>
+
+    <footer>
+        <div class="container text-center text-secondary p-5">
+            <p>
+                &copy; TeamRibbit 2023
+            </p>
+        </div>
+    </footer>
+
+    <script src="../utils.js"></script>
+    <script src="../postUtils.js"></script>
+    
+    <script src="user.js"></script>
+    <script>
+        // Parse emoji on the page with twemoji
+        twemoji.parse(document.body);
+    </script>
+</body>
+</html>
