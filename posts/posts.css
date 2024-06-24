@@ -1,25 +1,2 @@
 /* Posts Page CSS */
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f5f8fa;
-    border-bottom: 1px solid #e1e8ed;
-}
-.header h1 {
-    margin: 0;
-}
-.header button {
-    background-color: #1da1f2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.header button:hover {
-    background-color: #0d95e8;
-}

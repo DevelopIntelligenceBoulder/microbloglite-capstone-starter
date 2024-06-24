@@ -24,7 +24,7 @@ const signUp = async (event) => {
     //try catch for error handling
     try {
 
-        //make a fetch (POST) request to create a comment in the API
+        //make a fetch (POST) request to create a user in the API
         let response = await fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/users",
             {
                 method: "POST",
@@ -36,7 +36,7 @@ const signUp = async (event) => {
         //turn the response in to something we can work with
         let newCourse = await response.json();
 
-        //put the comments in the console
+        //put the users in the console
         console.log(newCourse, "this should show up if I created a new user")
 
         // window.location.href = "/";

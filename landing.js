@@ -24,5 +24,5 @@ loginForm.onsubmit = function (event) {
 };
 
 function redirectToRegistration() {
-    window.location.href = "/registration_page"; // Replace with your registration page URL
+    window.location.href = "/registration"; // Replace with your registration page URL
 }
