@@ -22,3 +22,7 @@ loginForm.onsubmit = function (event) {
     // Time to actually process the login using the function from auth.js!
     login(loginData);
 };
+
+function redirectToRegistration() {
+    window.location.href = "./registration_page/register.html"; // Replace with your registration page URL
+}
