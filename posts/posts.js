@@ -11,25 +11,6 @@ displayPost();
 }
 const displayPost= async () => {
 
-    // //getting a hold of the divs where the username, comment and time will go
-    // let userName= document.querySelector("#usersPost");
-
-    // let comment = document.querySelector("#userComment");
-
-    // let displayTime = document.querySelector("#timeOfPost");
-
-    // let allPosts = await getPosts();
-
-    // allPosts.forEach((post) => {
-
-    //     userName.innerHTML= post.username
-
-    //     comment.innerHTML= post.text
-
-    //     displayTime.innerHTML= post.createdAt
-        
-        
-    // });
 
      // Getting a hold of the container where posts will be displayed
      let postContainer = document.querySelector("#postContainer");

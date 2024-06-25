@@ -1,0 +1,21 @@
+
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.post p {
+    margin: 5px 0;
+}
+
+.post .username {
+    font-weight: bold;
+    color: #333;
+}
+
+.post .createdAt {
+    color: #666;
+    font-size: 0.9em;
+}

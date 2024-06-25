@@ -16,3 +16,7 @@
 :root {
     font-size: 1rem;
 }
+
+body {
+    background-color: rgb(189, 188, 188);
+}

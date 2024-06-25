@@ -3,6 +3,7 @@
 "use strict";
 
 const loginForm = document.querySelector("#login");
+const nameForm = document.querySelector("#username")
 
 loginForm.onsubmit = function (event) {
     // Prevent the form from refreshing the page,
@@ -15,6 +16,10 @@ loginForm.onsubmit = function (event) {
         username: loginForm.username.value,
         password: loginForm.password.value,
     }
+
+    let name = nameForm.value
+
+    localStorage.setItem("username", name);
 
     // Disables the button after the form has been submitted already:
     loginForm.loginButton.disabled = true;
