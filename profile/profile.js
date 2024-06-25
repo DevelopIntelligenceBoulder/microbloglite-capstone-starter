@@ -12,9 +12,54 @@ window.onload = () => {
     // and logout the user snf clear the local data of and send them to the login page
     logOutButton.addEventListener("click", logout)
 
+    const addTodoForm = document.querySelector("#createPost");
+
+    addTodoForm.addEventListener("submit", addPosts)
+
+
 }
 
 
+// Create todo 
+const addPosts = async (event) => {
+    // call preventDefault to keep the page from reloading the form and refreshing 
+    event.preventDefault();
+    console.log("alec")
+    //generate new form data object
+    let formData = new FormData(event.target);
+
+    // generate  a javascript Objext from the form data object created above 
+    let formDataASObject = Object.fromEntries(formData);
+
+    try {
+        const loginData = getLoginData();
+        // we make a fetch POST request to create a todo in the API
+        const response = await fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
+
+            {
+                method: "POST",
+                headers: {
+                    
+                    Authorization: `Bearer ${loginData.token}`,
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                // take the data from the form and build the body of the request
+                body: JSON.stringify(formDataASObject)
+                
+            }
+        );
+        // turn the response into somthing we can work with 
+        const newPost = await response.json();
+
+        console.log(newPost)
+    } catch (error) {
+
+        console.log("HELP!!!!!!")
+
+
+    }
+
+}
 
 
 
@@ -49,3 +94,6 @@ function logout() {
             window.location.assign("/");  // redirect back to landing page
         });
 }
+
+
+

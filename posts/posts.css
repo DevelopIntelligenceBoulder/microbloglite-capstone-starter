@@ -1,2 +1,24 @@
 /* Posts Page CSS */
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.post h3 {
+    margin: 0 0 10px;
+}
+.post p {
+    margin: 0 0 5px;
+}
+.post .timestamp {
+    color: #999;
+    font-size: 0.9em;
+}
