@@ -39,7 +39,7 @@ const displayPost= async () => {
          // Assign values to the elements
          userName.textContent = `Username: ${post.username}`;
          comment.textContent = `Comment: ${post.text}`;
-         displayTime.textContent = `Posted at: ${post.createdAt}`;
+         displayTime.textContent = `Posted at: ${post.createdAt.toLocaleString()}`;
  
          // Append elements to the post container
          postDiv.appendChild(userName);
@@ -75,7 +75,7 @@ const getPosts = async () => {
     const data = await response.json();
 
     //do something with the posts
-    console.log(data);
+    // console.log(data);
 
     return data
 

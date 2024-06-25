@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,15 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
     <link rel="stylesheet" href="./global.css">
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
 
     <title>Login to the Microblog Network!</title>
 
@@ -26,36 +27,48 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
-    <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
-    </header>
+    <!-- seperates for backgroundimage -->
+    <div id="loginbackgroud" class="pt-5 img-fluid">
 
-    <main>
+        <div class="box mx-auto ">
+            <header>
+                <h1 style="font-family:'Jacquard 12'" class="text-light">Welcome to
+                    Social Garden</h1>
+            </header>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+            <main>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+                <form id="login">
+                    <div class="mb-3">
+                        <label for="username" class="text-light">Username</label>
+                        <input type="text" id="username" minlength="3">
+                    </div>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
 
-        <div>
-            New user? <a href="registration/index.html">Register here</a>
-        </div> 
-    </main>
+                    <div class="mb-2">
+                        <label for="password" class="text-light">Password</label>
+                        <input type="password" id="password" minlength="6">
+                    </div>
 
+                    <button id="loginButton" type="submit">Login</button>
+                </form>
+
+                <div class="text-light mt-2">
+                    New user? <a href="registration/index.html">Register here</a>
+                </div>
+            </main>
+        </div>
+    </div>
     <footer></footer>
 
     <!-- Page-specific code -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <script src="./landing.js"></script>
 </body>
+
 </html>
