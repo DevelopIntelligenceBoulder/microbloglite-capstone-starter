@@ -19,6 +19,11 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css">
 
+    <!-- link to footer images  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
@@ -55,8 +60,30 @@
             <button onclick="redirectToRegistration()"> Sign Up</button>
 
             <footer id="footer">
-                <p> Brought to you by and made by Alec Philavong</p>
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="footerNav">
+                        <ul>
+                            <li> <a href=""></a>Home</li>
+                            <li> <a href=""></a>News</li>
+                            <li> <a href=""></a>About</li>
+                            <li> <a href=""></a>Contact Us</li>
+                            <li> <a href=""></a>Our Team</li>
+                        </ul>
+                    </div>
+                    <div class="footerBottom">
+                        <p> Copyright @2024; Designed by <strong>Alec Philavong</strong></p>
+                    </div>
+                </div>
+                
             </footer>
+
         </div>
 
 
