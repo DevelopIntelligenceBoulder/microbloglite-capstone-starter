@@ -44,7 +44,7 @@ const addANewComment = async (event) => {
         //turning the response into something that we can work with
         let newComment = await response.json();
 
-        console.log(newComment);
+        // console.log(newComment);
 
          window.location.href = "index.html"
 
@@ -104,7 +104,7 @@ const getUsersPost = async () => {
     const data = await response.json();
 
     //do something with the posts
-    console.log(data);
+    // console.log(data);
 
     return data
 

@@ -56,3 +56,19 @@ body {
     font-size: 0.8em;
     color: white;
 }
+
+#text {
+
+    width: 800px;
+    margin-left: 20px;
+
+}
+#buttn{
+
+    margin-left: 20px;
+}
+
+#onlyPost{
+
+   font-size: xx-large;
+}
