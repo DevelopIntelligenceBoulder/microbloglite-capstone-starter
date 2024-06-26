@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
     <title>New User</title>
 </head>
+
 <body>
-    Welcome New User! 
+    <!-- seperates for backgroundimage -->
+    <div id="registerbackgroud" class="pt-5 img-fluid">
 
-    <form id="newLoginForm">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" minlength="3" value="" required>
+        <div class="box mx-auto ">
+            <header>
+                <h1 style="font-family:'Jacquard 12'" class="text-light"> Welcome New User!</h1>
+            </header>
+
+            <form id="newLoginForm">
+                <div class="mb-3">
+                    <label for="username" class="text-light">Username</label>
+                    <input type="text" name="username" id="username" minlength="3" value="" required>
+                </div>
+                <div class="mb-2">
+                    <label for="fullName" class="text-light">Full Name</label>
+                    <input type="text" name="fullName" id="fullName" minlength="3" value="" required>
+                </div>
+
+                <div class="mb-2 mt-3">
+                    <label for="password" class="text-light">Password</label>
+                    <input type="password" name="password" id="password" minlength="6" value="" required>
+                </div>
+
+                <button id="createButton" type="submit">Create User</button>
+            </form>
+
         </div>
-        <div>
-            <label for="fullName">Full Name</label>
-            <input type="text" name="fullName" id="fullName" minlength="3" value="" required>
-        </div>
 
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" minlength="6" value="" required>
-        </div>
-
-        <button id="createButton" type="submit">Create User</button>
-    </form>
-
-    
+    </div>
     <!-- JavaScript -->
-     <script src="registration.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="registration.js"></script>
 </body>
+
 </html>

@@ -49,9 +49,10 @@ const displayPost= async () => {
          postDiv.appendChild(displayTime);
  
          postContainer.appendChild(postDiv);
-     });
-    
 
+        
+
+     });
 
 
 
