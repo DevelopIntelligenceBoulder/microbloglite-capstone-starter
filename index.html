@@ -31,34 +31,39 @@
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <h1>Welcome to <code>Chirpper</code></h1>
     </header>
 
     <main>
+        <div id="page-container">
+            <form id="login">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" minlength="3">
+                </div>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" >
-            </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
+                <button id="loginButton" type="submit">Login</button>
+            </form>
 
 
 
-        <button  onclick="redirectToRegistration()"> Sign Up</button>
+            <button onclick="redirectToRegistration()"> Sign Up</button>
+
+            <footer id="footer">
+                <p> Brought to you by and made by Alec Philavong</p>
+            </footer>
+        </div>
 
 
 
     </main>
 
-    <footer></footer>
+
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>

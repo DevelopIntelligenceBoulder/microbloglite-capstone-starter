@@ -20,6 +20,9 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./posts.css">
 
+    <!-- link to stylesheet for like buttons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
@@ -45,10 +48,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link " aria-current="page" href="#">Home</a>
+
                     <a class="nav-link active" href="../posts/index.html">Posts</a>
                     <a class="nav-link" href="../profile/index.html">Profile</a>
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+
                 </div>
             </div>
         </div>
@@ -57,18 +60,21 @@
 
 
     <main>
-
-        <div class="container" id="postsContainer">
-            <h1>All Posts</h1>
-            <!-- Posts will be dynamically inserted here -->
+        <div>
+            <div class="container" id="postsContainer">
+                <h1>All Posts</h1>
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+            <footer id="footer">
+                <p> Brought to you by and made by Alec Philavong</p>
+            </footer>
+    
         </div>
-
-
+      
 
 
     </main>
 
-    <footer></footer>
 
     <!-- Page-specific code -->
     <script src="./posts.js"></script>

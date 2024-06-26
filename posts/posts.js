@@ -74,7 +74,10 @@ const getPostsAsyncExample = async () => {
             <h3>${post.text}</h3>
             <p class="author"><strong>Author:</strong> ${post.username}</p>
             <p class="timestamp"><strong>Timestamp:</strong> ${new Date(post.createdAt).toLocaleString()}</p>
-        `;
+            <p> <span class="material-symbols-outlined">
+            thumb_up
+            </span> </p>
+             `;
 
             postElement.innerHTML = postContent;
             postsContainer.appendChild(postElement);

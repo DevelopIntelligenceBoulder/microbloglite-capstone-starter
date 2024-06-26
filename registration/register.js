@@ -50,3 +50,7 @@ const signUp = async (event) => {
 
 }
 
+function redirectToLogin() {
+    window.location.href = "/"; // Replace with your registration page URL
+}
+
