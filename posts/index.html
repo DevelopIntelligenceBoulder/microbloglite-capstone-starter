@@ -16,6 +16,10 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./posts.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+
     <title>/POSTS</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
@@ -28,34 +32,38 @@
 <body>
     <nav class="navbar bg-secondary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
-            <img src="/images/logo.png" alt="logo" width="270" height="60" >
-          </a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Your Profile
+            <a class="navbar-brand mx-auto" href="index.html">
+                <img src="/images/logo.png" alt="logo" width="270" height="60">
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/profile/index.html">View Profile</a></li>
-              <li><a class="dropdown-item" href="#" id="logoutButton">Logout</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="font-family:'Jacquard 12'">
+                    Your Profile
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/profile/index.html" style="font-family:'Jacquard 12'">View
+                            Profile</a></li>
+                    <li><a class="dropdown-item" href="#" id="logoutButton" style="font-family:'Jacquard 12'">Logout</a>
+                    </li>
+                </ul>
+            </li>
         </div>
-      </nav>
+    </nav>
 
-    <header>
-        <h1>Welcome to Walled Garden </h1>
+    <header style="text-align: center;" class="text-light">
+        <h1 style="font-family:'Jacquard 12'">Welcome to Walled Garden </h1>
+
+        <h3 style="font-family:'Jacquard 12'">Heres whats been blossoming</h3>
     </header>
-    <h4>Heres whats been blossoming</h4>
 
-    <div id="postform"></div>
 
     <main id="commentSection" class="card mb-3">
-        <div id="postContainer" class="card-body">
-            <!-- Posts will be dynamically added here -->
+        <div id="commentContainer">
+            <div id="postContainer" class="card-body" style="font-family:'Courier New', Courier, monospace">
+                <!-- Posts will be dynamically added here -->
+            </div>
         </div>
-        
-               
+
     </main>
 
     <footer></footer>

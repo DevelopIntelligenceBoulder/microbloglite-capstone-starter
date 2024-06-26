@@ -1,10 +1,14 @@
 /* styles.css */
+body {
+    background-color: rgb(0, 0, 0);
+  }
 
 .post {
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
+    background-color: #767575;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #f9f9f9;
+    
 }
 
 .post p {
@@ -13,11 +17,18 @@
 
 .post .username {
     font-weight: bold;
-    color: #333;
+    color: #aa0909;
 }
 
 .post .createdAt {
-    color: #666;
+    color: #201f1f;
     font-size: 0.9em;
 }
 
+#commentContainer {
+
+  background: #000000;
+  margin: auto;
+
+
+}
