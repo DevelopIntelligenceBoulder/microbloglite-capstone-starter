@@ -52,6 +52,8 @@ const addPosts = async (event) => {
         const newPost = await response.json();
 
         console.log(newPost)
+
+        window.location.href="/posts/index.html"
     } catch (error) {
 
         console.log("HELP!!!!!!")
