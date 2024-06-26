@@ -22,6 +22,9 @@ h1 {
 
 }
 
+.registerForm button{
+    margin: 10px;
+}
 
 footer {
     text-align: center;

@@ -1,12 +1,30 @@
 /* Landing Page CSS */
 
 
+h1 {
+    text-align: center;
+    padding: 25px;
+}
+#login {
 
+    text-align: center;
+    background-color: #ffffff;
+    padding: 15px;
+    margin-left: 50rem;
+    margin-right: 50rem;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
 
+.box input  {
+    padding: 5px;
+    margin: 5px;
 
-
-
-
+}
+.button button {
+    margin: 10px;
+}
 
 
 
