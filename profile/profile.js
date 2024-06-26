@@ -56,46 +56,32 @@ const addANewComment = async (event) => {
 
 const displayUsersPost = async () => {
 
-    // Getting a hold of the container where posts will be displayed
-    let postContainer = document.querySelector("#postContainer");
+     // Getting a hold of the container where posts will be displayed
+     let postContainer = document.querySelector("#postContainer");
 
-    // Clear previous content if needed
-    postContainer.innerHTML = '';
+     // Clear previous content if needed
+     postContainer.innerHTML = '';
+ 
+     let allUserPosts = await getUsersPost();
+ 
 
-    let allUserPosts = await getUsersPost();
+     allUserPosts.forEach((post) => {
 
-    allUserPosts.forEach((post) => {
+        
+        let date = new Date(post.createdAt).toLocaleString();
 
-        if (post.username === localStorage.username) {
-            // Create elements for each post
-            let postDiv = document.createElement('div');
-            postDiv.classList.add('post');
-
-            let userName = document.createElement('p');
-            userName.classList.add('username');
-
-            let comment = document.createElement('p');
-
-            let displayTime = document.createElement('p');
-            displayTime.classList.add('createdAt');
-
-            // Assign values to the elements
-            userName.textContent = `Username: ${post.username}`;
-            comment.textContent = `Comment: ${post.text}`;
-            displayTime.textContent = `Posted at: ${post.createdAt}`;
-
-            // Append elements to the post container
-            postDiv.appendChild(userName);
-            postDiv.appendChild(comment);
-            postDiv.appendChild(displayTime);
-
-            postContainer.appendChild(postDiv);
-
+        if (post.username === localStorage.username){
+         postContainer.innerHTML += `
+        <div class="post">
+                <span class="username">Username: ${post.username}</span><br>
+                <span class="comment">Comment: ${post.text}</span><br>
+                <span class="date">Posted at: ${date}</span><br>
+            </div><hr>`;
+        
         }
-    }
-    );
+        
 
-
+     });
 
 }
 

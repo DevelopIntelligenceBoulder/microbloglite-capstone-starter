@@ -26,30 +26,16 @@ const displayPost= async () => {
 
      allPosts.forEach((post) => {
 
-         // Create elements for each post
-         let postDiv = document.createElement('div');
-         postDiv.classList.add('post');
+        
+        let date = new Date(post.createdAt).toLocaleString();
 
-         let userName = document.createElement('p');
-         userName.classList.add('username');
-
-         let comment = document.createElement('p');
-
-         let displayTime = document.createElement('p');
-         displayTime.classList.add('createdAt');
- 
-         // Assign values to the elements
-         userName.textContent = `Username: ${post.username}`;
-         comment.textContent = `Comment: ${post.text}`;
-         displayTime.textContent = `Posted at: ${post.createdAt}`;
- 
-         // Append elements to the post container
-         postDiv.appendChild(userName);
-         postDiv.appendChild(comment);
-         postDiv.appendChild(displayTime);
- 
-         postContainer.appendChild(postDiv);
-
+         postContainer.innerHTML += `
+        <div class="post">
+                <span class="username">Username: ${post.username}</span><br>
+                <span class="comment">Comment: ${post.text}</span><br>
+                <span class="date">Posted at: ${date}</span><br>
+            </div><hr>`;
+        
         
 
      });
