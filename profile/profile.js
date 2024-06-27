@@ -20,7 +20,22 @@ window.onload = () => {
     //when user inputs text they are able to create a new comment when his function is ran
     addCommentForm.addEventListener("submit", addANewComment);
 
+    const bioForm = document.getElementById('bioForm');
+
+    bioForm.addEventListener("submit", changebio);
+
 }
+const changebio  = (event) =>{
+
+    const bioTextarea = document.getElementById('bio');
+    const currentBioText = document.getElementById('currentBioText');
+    
+    event.preventDefault();
+
+    currentBioText.textContent = bioTextarea.value;
+
+}
+
 const addANewComment = async (event) => {
 
     //calling preventDefault to keep the page from reloading
@@ -61,9 +76,15 @@ const addANewComment = async (event) => {
 
 const displayUsersPost = async () => {
 
-    let welcomeIntro = document.querySelector("#usersName");
+    let welcomeIntro = document.querySelector("#usersNamef");
 
     welcomeIntro.innerHTML= localStorage.username
+
+    let profileBox = document.querySelector("#usersName");
+
+    profileBox.innerHTML= localStorage.username
+
+
 
      // Getting a hold of the container where posts will be displayed
      let postContainer = document.querySelector("#postContainer");
