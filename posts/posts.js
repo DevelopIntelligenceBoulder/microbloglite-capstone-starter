@@ -71,12 +71,13 @@ const getPostsAsyncExample = async () => {
             postElement.className = 'post';
 
             const postContent = `
-            <h3>${post.text}</h3>
             <p class="author"><strong>Author:</strong> ${post.username}</p>
+            <h3>${post.text}</h3>
             <p class="timestamp"><strong>Timestamp:</strong> ${new Date(post.createdAt).toLocaleString()}</p>
             <p> <span class="material-symbols-outlined">
             thumb_up
             </span> </p>
+            <p> </p>
              `;
 
             postElement.innerHTML = postContent;

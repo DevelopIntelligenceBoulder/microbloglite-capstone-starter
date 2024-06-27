@@ -18,6 +18,9 @@
 }
 .post p {
     margin: 0 0 5px;
+    overflow-wrap: break-word;
+    
+    
 }
 .post .timestamp {
     color: #999;

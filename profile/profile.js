@@ -33,7 +33,7 @@ const addPosts = async (event) => {
 
     try {
         const loginData = getLoginData();
-        // we make a fetch POST request to create a todo in the API
+        // we make a fetch POST request to create a post in the API
         const response = await fetch("http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts",
 
             {
