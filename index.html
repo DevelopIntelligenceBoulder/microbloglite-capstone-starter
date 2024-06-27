@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,11 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="./landing.css">
 
+    <!-- link to footer images  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
@@ -26,33 +32,73 @@
         if (isLoggedIn() === true) window.location.replace("/posts");
     </script>
 </head>
+
 <body>
 
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+        <h1>Welcome to <code>Chirpper</code></h1>
     </header>
 
     <main>
+        <div class="page-container">
+            <form id="login">
+                <div class="box">
+                    <div>
+                        <input type="text" id="username" minlength="3" placeholder="User Name">
+                    </div>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
-            </div>
+                    <div>
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
-            </div>
+                </div>
+                <div class="button">
+                    <button id="loginButton" type="submit">Login</button>
 
-            <button id="loginButton" type="submit">Login</button>
-        </form>
+                    <button onclick="redirectToRegistration()"> Sign Up</button>
+                </div>
+            
+            </form>
+
+
+
+
+
+            <footer id="footer">
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="footerNav">
+                        <ul>
+                            <li> <a href=""></a>Home</li>
+                            <li> <a href=""></a>News</li>
+                            <li> <a href=""></a>About</li>
+                            <li> <a href=""></a>Contact Us</li>
+                            <li> <a href=""></a>Our Team</li>
+                        </ul>
+                    </div>
+                    <div class="footerBottom">
+                        <p> Copyright @2024; Designed by <strong>Alec Philavong</strong></p>
+                    </div>
+                </div>
+
+            </footer>
+
+        </div>
+
+
 
     </main>
 
-    <footer></footer>
+
 
     <!-- Page-specific code -->
     <script src="./landing.js"></script>
 </body>
+
 </html>
