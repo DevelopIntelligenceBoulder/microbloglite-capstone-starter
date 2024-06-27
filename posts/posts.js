@@ -6,12 +6,15 @@ console.log("Hey user!");
 
 displayPost();
 
+// grabbing the logout link off the HTML
 let logOutButton = document.querySelector("#logoutButton");
 
+// Once the Button is clicked the page will run this function
 logOutButton.addEventListener("click", logout);
 
 
 }
+
 const displayPost= async () => {
 
 
@@ -23,7 +26,7 @@ const displayPost= async () => {
  
      let allPosts = await getPosts();
  
-
+     // running a loop through data to work with it individually 
      allPosts.forEach((post) => {
 
         

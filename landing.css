@@ -1,4 +1,5 @@
 /* Landing Page CSS */
+/* styling entry box */
 .box {
     width: 600px;
     padding: 20px;
@@ -6,7 +7,7 @@
     border: 2px solid #5a0808;
 }
 
-
+/* styling background image */
 #loginbackgroud {
     background-image: url('/images/secondBG.jpg');
     height: 710px;
@@ -14,11 +15,13 @@
 
 }
 
+/* adding color to clickble link */
 a {
     color: rgb(128, 0, 0);
     background-color: transparent;
 }
 
+/* adding color to clickble link */
 a:hover,
 a:active {
     color: rgb(15, 113, 25);

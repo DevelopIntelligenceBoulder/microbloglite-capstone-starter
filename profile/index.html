@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand mx-auto" href="/posts/index.html">
+            <a class="navbar-brand" href="/posts/index.html">
                 <img src="/images/logo.png" alt="logo" width="270" height="60">
             </a>
             <form class="d-flex">
@@ -66,6 +66,20 @@
         <p style="font-family:'Jacquard 12'" id="welcomeIntro">Welcome to Your Garden
         <p>
     </div>
+    <div class="mt-4" id="audiomp">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="audio-player" id="playMusic">
+                    <audio controls autoplay loop>
+                        <source src="/audio/Soundgarden   Black Hole Sun With Lyrics.mp3" type="audio/mpeg">
+
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="text-light" style="padding-left: 20px;">
         <h3 style="font-family:'Jacquard 12'">Whats on your mind?</h3>
     </div>
@@ -76,12 +90,14 @@
             <label for="text"></label>
             <textarea type="text" id="text" name="text" value=""></textarea>
         </div>
-        <button id="buttn" class="btn btn-secondary mt-3 mb-3" type="submit" style="font-family:'Courier New', Courier, monospace">
+        <button id="buttn" class="btn btn-secondary mt-3 mb-3" type="submit"
+            style="font-family:'Courier New', Courier, monospace">
             Make a Post
         </button>
     </form>
 
-    <h4 style=" text-align: center; font-family:'Jacquard 12'" class="text-light" id="onlyPost">Heres whats you've been blossoming &#127801;</h4>
+    <h4 style=" text-align: center; font-family:'Jacquard 12'" class="text-light" id="onlyPost">Heres whats you've been
+        blossoming &#127801;</h4>
 
     <form>
         <div id="userPostform"></div>
@@ -95,10 +111,10 @@
                 <div class="scroll-box mx-auto">
                     <div id="postContainer" class="card-body" style="font-family:'Courier New', Courier, monospace">
                         <!--Posts will be dynamically added here -->
-    
-                     </div>
+
+                    </div>
                 </div>
-            </div> 
+            </div>
 
 
         </main>

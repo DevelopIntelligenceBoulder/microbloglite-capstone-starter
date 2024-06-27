@@ -62,3 +62,23 @@ font-family: monospace;
 text-shadow: #f30000;
 
 }
+
+.audio-player {
+    background-color:transparent;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: right; /* Aligns content inside the .audio-player div to the right */
+    color: #fff;
+    
+    
+}
+.audio-player audio {
+    width: 100%;
+   
+}
+.audio-player audio::-webkit-media-controls-panel {
+    background-color: #6a6868;
+    color: #524949;
+    border-radius: 8px;
+    
+}

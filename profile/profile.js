@@ -8,12 +8,16 @@ window.onload = () => {
 
     displayUsersPost();
 
+    // grabbing the logout link off the HTML
     let logOutButton = document.querySelector("#logoutButton");
 
+    // Once the Button is clicked the page will run this function
     logOutButton.addEventListener("click", logout);
 
+    // grabbing the comment section form from HTML
     let addCommentForm = document.querySelector("#addCommentForm");
 
+    //when user inputs text they are able to create a new comment when his function is ran
     addCommentForm.addEventListener("submit", addANewComment);
 
 }
@@ -29,6 +33,7 @@ const addANewComment = async (event) => {
     //generating a Javascript object from the formdata object created above
     let formDataAsObject = Object.fromEntries(formData);
 
+    
     const loginData = getLoginData();
 
     try {
@@ -62,12 +67,13 @@ const displayUsersPost = async () => {
      // Clear previous content if needed
      postContainer.innerHTML = '';
  
+    //  calling the fetch request made with avaliable data
      let allUserPosts = await getUsersPost();
  
-
+    // running a loop through data to work with it individually 
      allUserPosts.forEach((post) => {
 
-        
+        // display data in a prettier way
         let date = new Date(post.createdAt).toLocaleString();
 
         if (post.username === localStorage.username){
@@ -85,7 +91,7 @@ const displayUsersPost = async () => {
 
 }
 
-
+// calling the data from the API
 const getUsersPost = async () => {
 
     const loginData = getLoginData();

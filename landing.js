@@ -17,6 +17,7 @@ loginForm.onsubmit = function (event) {
         password: loginForm.password.value,
     }
 
+    // addding the name to local storage for the profile page
     let name = nameForm.value
 
     localStorage.setItem("username", name);

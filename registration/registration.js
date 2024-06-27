@@ -32,14 +32,10 @@ let createUser = async (event)=>{
             body: JSON.stringify(formDataAsObject)
         });
 
-      
-        // if (!response.ok) {
-        //     throw new Error("Failed to add user. Please try again later.");
-        // }
-
          let newUser = await response.json();
 
-        console.log(newUser, "this should show up if new user is created");
+        //  testing code
+        // console.log(newUser, "this should show up if new user is created");
 
         //redirect user to log in for the first time and create a key
         window.location.href = "../index.html";
