@@ -1,0 +1,46 @@
+body {
+    background-image: url('/images/secondBG.jpg');
+  }
+  #welcomeIntro{
+
+    font-size: 450%;
+}
+#dropdown{
+
+    text-align: center;
+}
+#postContainer{
+    text-align: center;
+    border: 2px solid #a40202;
+    background-color: #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+    
+
+}
+
+.post {
+    margin-bottom: 20px;
+    border: 1px solid #232222;
+    padding: 10px;
+    text-align: center;
+}
+
+.username {
+    font-weight: bold;
+    color: rgb(178, 25, 25);
+}
+
+.comment {
+    color:white;
+}
+
+.date {
+    font-size: 0.8em;
+    color: white;
+}
+#deletebttn{
+
+    text-align: center;
+}

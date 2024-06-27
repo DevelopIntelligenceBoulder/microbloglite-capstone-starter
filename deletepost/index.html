@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +21,13 @@
     <script>
         if (isLoggedIn() === false) window.location.replace("/");
     </script>
-    
+
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <img src="/images/logo.png" alt="logo" width="270" height="60">
             </a>
             <form class="d-flex">
@@ -55,27 +57,37 @@
             </form>
         </div>
     </nav>
-    
-    <h1>Delete Comment</h1>
+
+    <div style="text-align: center;" class="text-danger ">
+        <p style="font-family:'Jacquard 12'" id="welcomeIntro">Delete Comment
+        <p>
+    </div>
     <hr>
 
-    <select id="chooseComment">
+    <div id="dropdown">
+        <select id="chooseComment">
         </select>
 
-    <!-- This is where the courses details will show up -->
-    <div id="commentDetails"></div>
+    </div>
 
+    <!-- This is where the courses details will show up -->
+    <div id="postContainer">
+        <div id="commentDetails" style="font-family:'Courier New', Courier, monospace"></div>
+    </div>
     <br>
 
-    <button id="deleteCommentButton">Delete the Comment</button>
-
+    <div id="deletebttn">
+        <button id="deleteCommentButton" class="btn btn-secondary mt-3 mb-3" type="submit"
+            style="font-family:'Courier New', Courier, monospace">Delete the Comment</button>
+    </div>
 
 
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-     <script src="deletepost.js"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="deletepost.js"></script>
 </body>
+
 </html>

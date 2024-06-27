@@ -110,9 +110,7 @@ const deleteTheCourse = async () => {
                 },
             });
 
-            console.log("DELETE Request URL:", "http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts/" + commentDrop.value);
-            console.log("Authorization Token:", `Bearer ${loginData.token}`);
-            console.log("DELETE Response:", response);
+        
 
             
 

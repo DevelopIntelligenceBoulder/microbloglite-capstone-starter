@@ -61,6 +61,10 @@ const addANewComment = async (event) => {
 
 const displayUsersPost = async () => {
 
+    let welcomeIntro = document.querySelector("#usersName");
+
+    welcomeIntro.innerHTML= localStorage.username
+
      // Getting a hold of the container where posts will be displayed
      let postContainer = document.querySelector("#postContainer");
 
