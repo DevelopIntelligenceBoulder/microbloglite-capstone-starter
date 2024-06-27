@@ -60,12 +60,40 @@
     </nav>
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4 mt-3">
+                    <div class="card-body text-center bg-dark">
+                        <img src="/images/pfp.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3 text-light" id="usersNamef"
+                            style="font-family:'Courier New', Courier, monospace"></h5>
+                             <div id="currentBio">
+                                <h3 style="font-family:'Courier New', Courier, monospace" class="text-light">Current Bio:</h3>
+                                <p  class="text-light" id="currentBioText" style="font-family:'Courier New', Courier, monospace"></p>
+                              </div>h5>
 
-
-    <div style="text-align: center;" class="text-light ">
-        <p style="font-family:'Jacquard 12'" id="welcomeIntro">Welcome to Your Garden,<p id="usersName" style="font-family:'Jacquard 12'"></p>
-        <p>
+                        <form id="bioForm">
+                            <div><label for="bio"> Bio:</label><textarea class="mb-"
+                                    style="font-family:'Courier New', Courier, monospace" id="bio" name="bio"
+                                    placeholder="Write something about yourself..."></textarea></div><br>
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-secondary"
+                                            style="font-family:'Courier New', Courier, monospace">Save Bio</button>
+                                    </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div style="text-align: center;" class="text-light">
+                    <p style="font-family:'Jacquard 12'" id="welcomeIntro">Welcome to Your Garden,</p>
+                    <p id="usersName" style="font-family:'Jacquard 12'"></p>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="mt-4" id="audiomp">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -95,9 +123,9 @@
             Make a Post
         </button>
         <button id="deleteButton" class="btn btn-secondary mt-3 mb-3" type="submit"
-        style="font-family:'Courier New', Courier, monospace"><a href="/deletepost/index.html">
-        Delete a Post</a>
-    </button>
+            style="font-family:'Courier New', Courier, monospace"><a href="/deletepost/index.html">
+                Delete a Post</a>
+        </button>
     </form>
 
 
