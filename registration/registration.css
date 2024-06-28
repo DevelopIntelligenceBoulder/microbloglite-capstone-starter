@@ -1,0 +1,21 @@
+#registerbackgroud {
+    background-image: url('/images/secondBG.jpg');
+    height: 740px;
+
+
+}
+.box {
+    width: 600px;
+    padding: 20px;
+    background: #000000;
+    border: 2px solid #5a0808;
+}
+a {
+    color: rgb(128, 0, 0);
+    background-color: transparent;
+}
+
+a:hover,
+a:active {
+    color: rgb(15, 113, 25);
+}
