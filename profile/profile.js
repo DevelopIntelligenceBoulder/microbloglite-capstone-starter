@@ -24,15 +24,28 @@ window.onload = () => {
 
     bioForm.addEventListener("submit", changebio);
 
+    const storedBio = localStorage.getItem('bioText');
+    if (storedBio) {
+        const currentBioText = document.getElementById('currentBioText');
+        currentBioText.textContent = storedBio;
+    }
+
 }
-const changebio  = (event) =>{
+const changebio = (event) => {
+    event.preventDefault();
 
     const bioTextarea = document.getElementById('bio');
     const currentBioText = document.getElementById('currentBioText');
-    
-    event.preventDefault();
 
-    currentBioText.textContent = bioTextarea.value;
+   // Update the currentBioText with the value from bioTextarea
+   currentBioText.textContent = bioTextarea.value;
+    
+   // Store the bio text in localStorage
+   localStorage.setItem('bioText', bioTextarea.value);
+
+    window.location.href = "index.html"
+
+
 
 }
 
@@ -48,16 +61,17 @@ const addANewComment = async (event) => {
     //generating a Javascript object from the formdata object created above
     let formDataAsObject = Object.fromEntries(formData);
 
-    
+
     const loginData = getLoginData();
 
     try {
         //making a fetch POST request to add a user in the api
         let response = await fetch(`http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts`, {
             method: "POST",
-            headers: { 
-                 Authorization: `Bearer ${loginData.token}`,
-                "Content-type": "application/json; charset=UTF-8"},
+            headers: {
+                Authorization: `Bearer ${loginData.token}`,
+                "Content-type": "application/json; charset=UTF-8"
+            },
             body: JSON.stringify(formDataAsObject),
         });
 
@@ -66,7 +80,7 @@ const addANewComment = async (event) => {
 
         // console.log(newComment);
 
-         window.location.href = "index.html"
+        window.location.href = "index.html"
 
     } catch (err) {
         console.log("This wont work");
@@ -78,41 +92,41 @@ const displayUsersPost = async () => {
 
     let welcomeIntro = document.querySelector("#usersNamef");
 
-    welcomeIntro.innerHTML= localStorage.username
+    welcomeIntro.innerHTML = localStorage.username
 
     let profileBox = document.querySelector("#usersName");
 
-    profileBox.innerHTML= localStorage.username
+    profileBox.innerHTML = localStorage.username
 
 
 
-     // Getting a hold of the container where posts will be displayed
-     let postContainer = document.querySelector("#postContainer");
+    // Getting a hold of the container where posts will be displayed
+    let postContainer = document.querySelector("#postContainer");
 
-     // Clear previous content if needed
-     postContainer.innerHTML = '';
- 
+    // Clear previous content if needed
+    postContainer.innerHTML = '';
+
     //  calling the fetch request made with avaliable data
-     let allUserPosts = await getUsersPost();
- 
+    let allUserPosts = await getUsersPost();
+
     // running a loop through data to work with it individually 
-     allUserPosts.forEach((post) => {
+    allUserPosts.forEach((post) => {
 
         // display data in a prettier way
         let date = new Date(post.createdAt).toLocaleString();
 
-        if (post.username === localStorage.username){
-         postContainer.innerHTML += `
+        if (post.username === localStorage.username) {
+            postContainer.innerHTML += `
         <div class="post">
                 <span class="username">Username: ${post.username}</span><br>
                 <span class="comment">Comment: ${post.text}</span><br>
                 <span class="date">Posted at: ${date}</span><br>
             </div><hr>`;
-        
-        }
-        
 
-     });
+        }
+
+
+    });
 
 }
 
