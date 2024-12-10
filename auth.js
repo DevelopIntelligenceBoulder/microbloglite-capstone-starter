@@ -2,11 +2,12 @@
 
 "use strict";
 
-const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
-// Backup server (mirror):   "https://microbloglite.onrender.com"
+const apiBaseURL = "http://localhost:5000";
+// Online server:   "http://microbloglite.us-east-2.elasticbeanstalk.com"
 
 // NOTE: API documentation is available at /docs 
-// For example: http://microbloglite.us-east-2.elasticbeanstalk.com/docs
+// For example: http://localhost:5000/docs
+// For example: https://microbloglite.us-east-2.elasticbeanstalk.com/docs
 
 
 // You can use this function to get the login data of the logged-in
@@ -55,7 +56,7 @@ function login (loginData) {
             }
 
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.assign("posts.html");  // redirect
 
             return loginData;
         });
@@ -90,6 +91,6 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
+            window.location.assign("/");  // redirect back to landing page (index.html)
         });
 }
