@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "http://localhost:5000";
+const apiBaseURL = "http://localhost:5005";
 // Online server:   "http://microbloglite.us-east-2.elasticbeanstalk.com"
 
 // NOTE: API documentation is available at /docs 
